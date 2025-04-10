@@ -36,16 +36,16 @@ function unityShowBanner(msg, type) {
 }
 
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/Build_Webgl.loader.js";
+var loaderUrl = buildUrl + "/Sudoku.loader.js";
 var config = {
-    dataUrl: buildUrl + "/Build_Webgl.data",
-    frameworkUrl: buildUrl + "/Build_Webgl.framework.js",
-    codeUrl: buildUrl + "/Build_Webgl.wasm",
+    dataUrl: buildUrl + "/Sudoku.data",
+    frameworkUrl: buildUrl + "/Sudoku.framework.js",
+    codeUrl: buildUrl + "/Sudoku.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "MAD",
     productName: "Sudoku",
     productVersion: "1.2",
-    showBanner: unityShowBanner,
+    /*showBanner: unityShowBanner,*/
 };
 
 // By default Unity keeps WebGL canvas render target size matched with
@@ -63,7 +63,7 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
     document.getElementsByTagName('head')[0].appendChild(meta);
 }
 
-canvas.style.background = "url('" + buildUrl + "/Build_Webgl.jpg') center / cover";
+canvas.style.background = "url('" + buildUrl + "/Sudoku.jpg') center / cover";
 loadingBar.style.display = "block";
 
 var script = document.createElement("script");
@@ -73,10 +73,6 @@ script.onload = () => {
         progressBarFull.style.width = 100 * progress + "%";
     }).then((unityInstance) => {
         window.unityInstance = unityInstance;
-
-        // if(unityInstance){
-        //     unityInstance.SendMessage('JavaScriptHook', 'ConnectToRPC', 'https://bsc-testnet-rpc.publicnode.com');
-        // }
 
         try {
             if(!window.Telegram || !window.Telegram.WebApp){

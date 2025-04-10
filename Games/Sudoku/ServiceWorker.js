@@ -1,9 +1,9 @@
 const cacheName = "MAD-Sudoku-1.2";
 const contentToCache = [
-    "Build/Build_Webgl.loader.js",
-    "Build/Build_Webgl.framework.js",
-    "Build/Build_Webgl.data",
-    "Build/Build_Webgl.wasm",
+    "Build/Sudoku.loader.js",
+    "Build/Sudoku.framework.js",
+    "Build/Sudoku.data",
+    "Build/Sudoku.wasm",
     "TemplateData/style.css"
 
 ];
