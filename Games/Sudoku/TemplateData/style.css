@@ -44,7 +44,7 @@ body {
 #unity-logo { 
 	width: 100%; 
 	height: 100%; 
-	background: url('logo.png') no-repeat center/100% 100%; 
+	background: url('logo_mad.png') no-repeat center/100% 100%; 
 }
 
 #unity-progress-bar-empty { 
@@ -89,3 +89,23 @@ body {
 	width: 90%;
 	transform: translateX(-50%);
 }
+
+.back-button {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	padding: 10px 16px;
+	background-color: rgba(0, 0, 0, 0.6);
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 8px;
+	font-family: sans-serif;
+	z-index: 9999;
+	transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+  }
+  

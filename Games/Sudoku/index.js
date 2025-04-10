@@ -45,7 +45,7 @@ var config = {
     companyName: "MAD",
     productName: "Sudoku",
     productVersion: "1.2",
-    /*showBanner: unityShowBanner,*/
+    showBanner: unityShowBanner,
 };
 
 // By default Unity keeps WebGL canvas render target size matched with
