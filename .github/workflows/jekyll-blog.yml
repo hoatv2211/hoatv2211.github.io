@@ -1,0 +1,39 @@
+name: Build Jekyll Blog
+
+on:
+  push:
+    paths:
+      - 'blog/**'
+      - '.github/workflows/jekyll-blog.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+
+      - name: Build Jekyll blog
+        working-directory: blog
+        run: |
+          gem install bundler jekyll
+          bundle install
+          bundle exec jekyll build --baseurl "/blog"
+
+      - name: Copy blog to root
+        run: |
+          rm -rf blog-html
+          mv blog/_site blog-html
+
+      - name: Commit built blog
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add blog-html
+          git commit -m "Update built blog"
+          git push || true
