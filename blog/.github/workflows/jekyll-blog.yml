@@ -1,10 +1,10 @@
-name: Build and Deploy Blog
+name: Build Jekyll Chirpy Blog
 
 on:
   push:
     paths:
       - 'blog/**'
-      - '.github/workflows/jekyll-blog.yml'
+      - '.github/workflows/**'
 
 jobs:
   build:
@@ -16,17 +16,16 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
+          ruby-version: '3.1'
 
-      - name: Install and Build Jekyll Blog
+      - name: Install dependencies and build
         working-directory: blog
         run: |
           gem install bundler
           bundle install
           bundle exec jekyll build --baseurl "/blog"
 
-      - name: Deploy to blog-html
+      - name: Move built blog to blog-html
         run: |
-          mkdir -p ./blog-html
-          rm -rf ./blog-html/*
-          cp -r blog/_site/* ./blog-html/
+          rm -rf blog-html
+          mv blog/_site blog-html
