@@ -1,0 +1,6 @@
+title: My Dev Blog
+description: >- 
+  Personal blog by MAD - Game Developer
+baseurl: "/blog"
+url: "https://hoatv2211.github.io"
+theme: minima
