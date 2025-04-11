@@ -23,6 +23,42 @@
   object-fit: cover;
 }
 
+.service-item-box2 {
+  width: 250px; /* hoặc bạn tự điều chỉnh 300px, 280px tuỳ màn hình */
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service-content-box {
+  margin-top: 12px;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.service-item-title2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFD85C; /* Vàng cam nổi bật giống phần title Experience */
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.service-content-box p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #dcdcdc; /* Trắng xám giống phần mô tả trong timeline */
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+
+
 
 /**
  * copyright 2022 @codewithsadee
@@ -621,7 +657,11 @@ main {
 }
 
 .service-icon-box {
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;  /* Canh giữa theo chiều ngang */
+  align-items: center;      /* Canh giữa theo chiều dọc */
+  height: 60px;             /* Chiều cao đủ để căn giữa */
+  margin-bottom: 12px;
 }
 
 .service-icon-box img {
