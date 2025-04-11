@@ -831,7 +831,11 @@ main {
 }
 
 .service-icon-box {
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;  /* Canh giữa theo chiều ngang */
+    align-items: center;      /* Canh giữa theo chiều dọc */
+    height: 60px;             /* Chiều cao đủ để căn giữa */
+    margin-bottom: 12px;
 }
 
 .service-icon-box img {
