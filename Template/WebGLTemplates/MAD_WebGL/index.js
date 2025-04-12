@@ -87,28 +87,6 @@ script.onload = () => {
     }).then((unityInstance) => {
         window.unityInstance = unityInstance;
 
-        try {
-            if(!window.Telegram || !window.Telegram.WebApp){
-                alert("Cannot get Telegram Data, please reload Bot");
-            }
-            if (window.Telegram && window.Telegram.WebApp) {
-                window.Telegram.WebApp.ready();
-                window.Telegram.WebApp.expand();
-                window.Telegram.WebApp.enableClosingConfirmation();
-                window.Telegram.WebApp.disableVerticalSwipes();
-                if (typeof window.Telegram.WebApp.requestFullscreen === 'function') {
-                    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-                        window.Telegram.WebApp.requestFullscreen();
-                    } else {
-                        console.log("Not opening fullscreen due to desktop playback.");
-                    }
-                } else {
-                    console.log("requestFullscreen is not supported.");
-                }
-            }
-        } catch (error) {
-            alert("Cannot get Telegram Data, please reload Bot");
-        }
         
         unityInstanceRef = unityInstance;
         loadingBar.style.display = "none";
