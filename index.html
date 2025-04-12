@@ -172,6 +172,13 @@
             </a>
           </li>
 
+          
+          <li class="social-item">
+            <a href="https://o0-mad-0o.itch.io/" class="social-link">
+              <img src="https://www.giantbomb.com/a/uploads/square_medium/23/236982/3210085-itchio-logo-textless-white.png" alt="hoatv" height="20" width="20" />
+            </a>
+          </li>
+
           <li class="social-item">
             <a href="https://github.com/hoatv2211" class="social-link">
               <ion-icon name="logo-github"></ion-icon>
@@ -312,7 +319,7 @@
 
         <section class="service">
 
-          <ul class="service-list">
+          <ul class="service-list" >
 
             <!-- Unity Development -->
             <li class="service-item-box2">
@@ -382,7 +389,7 @@
           
        
           </ul>
-          <p>
+          <p style="color: var(--light-gray); /* Đồng bộ với about-text */">
             🔥 <strong>More:</strong><br>
             ✅ High-Quality Game Design & Custom Mechanics<br>
             ✅ Mobile & Cross-Platform Unity Development<br>
@@ -604,9 +611,7 @@
               <ul class="skills-list">
                 <li class="skills-item">Modern C/C++</li>
                 <li class="skills-item">C#</li>
-                <li class="skills-item">Java</li>
                 <li class="skills-item">HTML5</li> 
-                <li class="skills-item">Regex</li>
                 <li class="skills-item">TypeScript</li>
                 <li class="skills-item">JavaScript</li>
                 <li class="skills-item">PHP</li>
@@ -619,8 +624,7 @@
               <ul class="skills-list">
                 <li class="skills-item">Git</li>
                 <li class="skills-item">Github Project</li>
-                <li class="skills-item">Trello</li>
-                <li class="skills-item">Generative AI</li>
+                <li class="skills-item">AI Agent</li>
                 <li class="skills-item">Notion</li>
                 <li class="skills-item">Blender</li>
                 <li class="skills-item">Jira</li>
@@ -642,13 +646,25 @@
             </div>
 
             <div class="skills-category">
+              <h4 class="h4 skills-header">Soft Skills</h4>
+              <ul class="skills-list">
+                <li class="skills-item">Agile</li>
+                <li class="skills-item">Communication</li>
+                <li class="skills-item">Teamwork</li>
+                <li class="skills-item">Self-planning</li>
+                <li class="skills-item">RnD</li>
+                <li class="skills-item">Critical Thinking</li>
+                <li class="skills-item">Problem Solving</li>
+              </ul>
+            </div>
+
+
+            <div class="skills-category">
               <h4 class="h4 skills-header">IDE</h4>
               <ul class="skills-list">
                 <li class="skills-item">Rider</li>
                 <li class="skills-item">Visual Studio Code</li>
                 <li class="skills-item">Visual Studio</li>
-                <li class="skills-item">Android Studio</li>
-                <li class="skills-item">Xcode</li>
               </ul>
             </div>
 
@@ -668,19 +684,7 @@
               </ul>
             </div>
 
-            <div class="skills-category">
-              <h4 class="h4 skills-header">Soft Skills</h4>
-              <ul class="skills-list">
-                <li class="skills-item">Agile</li>
-                <li class="skills-item">Communication</li>
-                <li class="skills-item">Teamwork</li>
-                <li class="skills-item">Self-planning</li>
-                <li class="skills-item">RnD</li>
-                <li class="skills-item">Critical Thinking</li>
-                <li class="skills-item">Problem Solving</li>
-              </ul>
-            </div>
-
+        
           </div>
 
         </section>
@@ -750,29 +754,68 @@
           </div>
 
           <!-- Project Thumbnail -->
-          <ul class="project-list">
+          <ul class="project-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 360px)); gap: 1.5rem; padding: 0; margin: 0;">
 
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="muloren">
               <a href="#" data-detail-category="muloren">
-                <figure class="project-img"  style="width: 360px; height: 360px;">
+                <figure class="project-img" style="width: 360px; height: 360px;">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline" data-detail-category="muloren" ></ion-icon>
                   </div>
-                  <img src="assets/images/game/MuLoren/banner-1.jpg" style="width: 360px; height: 360px;"  alt="muloren" loading="lazy">
+                  <img src="assets/images/game/MuLoren/banner-1.jpg" alt="muloren" loading="lazy">
                 </figure>
                 <h3 class="project-title" data-detail-category="muloren"> MU Loren Mobile</h3>
                 <div class="unity-icon">
                   <p class="project-category tag">Unity</p>
                 </div>
-    
-                <div class="chplay-icon">
-                  <p class="project-category tag">Chplay Store</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="unity" data-detail-category="sandwich">
+              <a href="#" data-detail-category="sandwich">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline" data-detail-category="sandwich" ></ion-icon>
+                  </div>
+                  <img src="assets/images/game/Sanwitch/icon.webp"alt="sandwich" loading="lazy">
+                </figure>
+                <h3 class="project-title" data-detail-category="sandwich"> Sandwich Please!</h3>
+                <div class="unity-icon">
+                  <p class="project-category tag">Unity</p>
                 </div>
-    
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="unity" data-detail-category="MeowFlow">
+              <a href="#" data-detail-category="MeowFlow">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline" data-detail-category="MeowFlow" ></ion-icon>
+                  </div>
+                  <img src="assets/images/game/MeowFlow/icon.webp" alt="MeowFlow" loading="lazy">
+                </figure>
+                <h3 class="project-title" data-detail-category="MeowFlow">Meow flow</h3>
+                <div class="unity-icon">
+                  <p class="project-category tag">Unity</p>
+                </div>
               </a>
             </li>
 
 
+            <li class="project-item active" data-filter-item data-category="unity" data-detail-category="nekoverse">
+              <a href="#" data-detail-category="nekoverse">
+                <figure class="project-img"  style="width: 360px; height: 360px;">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline" data-detail-category="nekoverse" ></ion-icon>
+                  </div>
+                  <img src="assets/images/game/Nekoverse/4.jpg" alt="nekoverse" loading="lazy">
+                </figure>
+                <h3 class="project-title" data-detail-category="nekoverse"> Nekoverse (NFT)</h3>
+                <div class="unity-icon">
+                  <p class="project-category tag">Unity</p>
+                </div>
+              </a>
+            </li>
 
 
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="tilesmatch3">
@@ -781,20 +824,14 @@
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline" data-detail-category="tilesmatch3" ></ion-icon>
                   </div>
-                  <img src="assets/images/game/Tilesmatch3/icon.png" style="width: 360px; height: 360px;"  alt="tilesmatch3" loading="lazy">
+                  <img src="assets/images/game/Tilesmatch3/icon.png" alt="tilesmatch3" loading="lazy">
                 </figure>
                 <h3 class="project-title" data-detail-category="tilesmatch3">Tiles Match 3: Mahjong</h3>
                 <div class="unity-icon">
                   <p class="project-category tag">Unity</p>
                 </div>
-    
-                <div class="chplay-icon">
-                  <p class="project-category tag">Chplay Store</p>
-                </div>
-    
               </a>
             </li>
-
 
 
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="sudoku">
@@ -803,17 +840,12 @@
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline" data-detail-category="sudoku" ></ion-icon>
                   </div>
-                  <img src="assets/images/game/Sudoku/icon.png" style="width: 360px; height: 360px;"  alt="sudoku" loading="lazy">
+                  <img src="assets/images/game/Sudoku/icon.png" alt="sudoku" loading="lazy">
                 </figure>
                 <h3 class="project-title" data-detail-category="sudoku">Sudoku Universe - Modern</h3>
                 <div class="unity-icon">
                   <p class="project-category tag">Unity</p>
                 </div>
-    
-                <div class="chplay-icon">
-                  <p class="project-category tag">Chplay Store</p>
-                </div>
-    
               </a>
             </li>
 
@@ -826,13 +858,9 @@
                   </div>
                   <img src="assets/images/game/Idle_cyber/icon_idle_cyber.png"  alt="Idle Cyber" loading="lazy">
                 </figure>
-                <h3 class="project-title" data-detail-category="idleCyber">Idle Cyber</h3>
+                <h3 class="project-title" data-detail-category="idleCyber">Idle Cyber (NFT)</h3>
                 <div class="unity-icon">
                   <p class="project-category tag">Unity</p>
-                </div>
-    
-                <div class="chplay-icon">
-                  <p class="project-category tag">Chplay Store</p>
                 </div>
     
               </a>
@@ -843,7 +871,7 @@
               data-api-url-ios="https://app.sensortower.com/api/ios/apps?app_ids=6742034673">
               <a href="#" data-detail-category="heroicDefense">
 
-                <figure class="project-img">
+                <figure class="project-img" style="width: 360px; height: 360px;">
                   <div class="project-item-icon-box" >
                     <ion-icon name="eye-outline" data-detail-category="heroicDefense"></ion-icon>
                   </div>
@@ -858,13 +886,6 @@
                   <p class="project-category tag">Unity</p>
                 </div>
 
-                <div class="chplay-icon">
-                  <p class="project-download-count-android tag">Loading...</p>
-                </div>
-                <div class="applestore-icon">
-                  <p class="project-download-count-ios tag">Loading...</p>
-                </div>
-
               </a>
             </li>
 
@@ -872,7 +893,7 @@
               data-api-url-android="https://app.sensortower.com/api/android/apps/com.ibb.ice.breaking.battle">
               <a href="#" data-detail-category="iceBreakingBattle">
 
-                <figure class="project-img">
+                <figure class="project-img" style="width: 360px; height: 360px;">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline" data-detail-category="iceBreakingBattle"></ion-icon>
                   </div>
@@ -886,10 +907,11 @@
                 <div class="unity-icon">
                   <p class="project-category tag">Unity</p>
                 </div>
-
+                    <!--
                 <div class="chplay-icon">
                   <p class="project-download-count-android tag">Loading...</p>
                 </div>
+                -->
               </a>
             </li>
 
@@ -897,7 +919,7 @@
             <li class="project-item active" data-filter-item data-category="unreal">
               <a href="#" data-detail-category="metameAmusementPark">
 
-                <figure class="project-img">
+                <figure class="project-img" style="width: 360px; height: 360px;">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline" data-detail-category="metameAmusementPark"></ion-icon>
                   </div>
@@ -919,7 +941,7 @@
             <li class="project-item  active" data-filter-item data-category="unity">
               <a href="#" data-detail-category="cryptoquest">
 
-                <figure class="project-img">
+                <figure class="project-img" style="width: 360px; height: 360px;">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline" data-detail-category="cryptoquest"></ion-icon>
                   </div>
@@ -937,10 +959,11 @@
 
               </a>
             </li>
+
             <li class="project-item  active" data-filter-item data-category="unity">
               <a href="#" data-detail-category="fireFireFire">
 
-                <figure class="project-img">
+                <figure class="project-img" style="width: 360px; height: 360px;">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline" data-detail-category="fireFireFire"></ion-icon>
                   </div>
@@ -963,18 +986,502 @@
 
         </section>
 
+
+
+
+         <!-- Project Detail MEOW FLOW  -->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="MeowFlow">
+            <ul class="project-list">
+    
+            </ul>
+            <section class="video-demo">
+              <h4 class="h4">🎥 Gameplay Trailer</h4>
+              <div class="video-wrapper" style="margin-top: 12px;">
+               
+                <iframe 
+                  width="100%" 
+                  height="480" 
+                  src="https://www.youtube.com/embed/WXV-iMqmcpc" 
+                  title="Meow flow - Android Gameplay" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </section>
+            
+            <div class="project-gallery">
+             
+              
+  
+              <div class="project-item active" >
+                <a onclick="expandImage(this)">
+                  <figure class="project-img">
+                    <img
+                      src="assets/images/game/MeowFlow/1.webp"
+                      loading="lazy" alt="screenshot 1"/>
+                  </figure>
+                </a>
+              </div>
+  
+  
+              <div class="project-item active" >
+                <a onclick="expandImage(this)">
+                  <figure class="project-img">
+                    <img
+                    src="assets/images/game/MeowFlow/2.webp"
+                      loading="lazy" alt="screenshot 1"/>
+                  </figure>
+                </a>
+              </div>
+  
+  
+              <div class="project-item active" >
+                <a onclick="expandImage(this)">
+                  <figure class="project-img">
+                    <img
+                      src="assets/images/game/MeowFlow/3.webp"
+                      loading="lazy" alt=" screenshot 1"/>
+                  </figure>
+                </a>
+              </div>
+  
+              
+              <div class="project-item active" >
+                <a onclick="expandImage(this)">
+                  <figure class="project-img">
+                    <img
+                      src="assets/images/game/MeowFlow/4.webp"
+                      loading="lazy" alt="screenshot 1"/>
+                  </figure>
+                </a>
+              </div>
+  
+              
+              <div class="project-item active" >
+                <a onclick="expandImage(this)">
+                  <figure class="project-img">
+                    <img
+                      src="assets/images/game/MeowFlow/5.webp"
+                      loading="lazy" alt="screenshot 1"/>
+                  </figure>
+                </a>
+              </div>
+  
+              <div class="project-item active" >
+                <a onclick="expandImage(this)">
+                  <figure class="project-img">
+                    <img
+                      src="assets/images/game/MeowFlow/6.webp"
+                      loading="lazy" alt="screenshot 1"/>
+                  </figure>
+                </a>
+              </div>
+  
+  
+              <!-- ... thêm ảnh khác tương tự -->
+            </div>
+  
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+              <h3 class="h3">Meow flow : Cute Cat Games</h3>
+            </div>
+            <ul class="timeline-list">
+              <li class="timeline-item">
+                <span>2021 — 2022</span>
+                <p class="timeline-text description">
+                  <strong>Meow Flow</strong> is a charming and relaxing puzzle game where players connect matching cat-themed tiles to clear the board. With its cute visuals and soothing music, the game offers a delightful experience for players of all ages.
+                </p>
+              </li>
+          
+              <li class="timeline-item">
+                <h1 class="h4 timeline-item-title">Key Features:</h1>
+                <ul class="timeline-description-list">
+                  <li class="timeline-description">
+                    <p class="timeline-text description">🐾 <strong>Adorable Cat Themes:</strong> Enjoy a variety of cat-inspired tiles and backgrounds.</p>
+                  </li>
+                  <li class="timeline-description">
+                    <p class="timeline-text description">🧩 <strong>Challenging Puzzles:</strong> Connect matching tiles without overlapping paths to solve each level.</p>
+                  </li>
+                  <li class="timeline-description">
+                    <p class="timeline-text description">🎵 <strong>Relaxing Soundtrack:</strong> Soothing music enhances the calming gameplay experience.</p>
+                  </li>
+                  <li class="timeline-description">
+                    <p class="timeline-text description">📱 <strong>Accessible Gameplay:</strong> Simple mechanics suitable for players of all skill levels.</p>
+                  </li>
+                </ul>
+              </li>
+          
+              <li class="timeline-item">
+                <h1 class="h4 timeline-item-title">My Role:</h1>
+                <ul class="timeline-description-list">
+                  <li class="timeline-description">
+                    <p class="timeline-text description">👨‍💻 Developed core puzzle mechanics and implemented level progression system.</p>
+                  </li>
+                  <li class="timeline-description">
+                    <p class="timeline-text description">🎨 Designed and integrated user interface elements for a seamless user experience.</p>
+                  </li>
+                  <li class="timeline-description">
+                    <p class="timeline-text description">🔧 Optimized game performance across various devices to ensure smooth gameplay.</p>
+                  </li>
+                  <li class="timeline-description">
+                    <p class="timeline-text description">📈 Integrated analytics tools to monitor player engagement and inform future updates.</p>
+                  </li>
+                </ul>
+              </li>
+        
+            </ul>
+            
+          
+            <section class="service">
+              <ul class="service-list">
+   
+                <a class="service-item" href="https://play.google.com/store/apps/details?&id=com.falcon.p.blameo.meow.flow">
+                  <div class="service-icon-box">
+                    <img src="assets/images/GooglePlay-Icon.svg" alt="Demo" width="40" />
+                  </div>
+                  <div class="service-content-box">
+                    <h4 class="h4 service-item-title">Play Game Android</h4>
+                  </div>
+                </a>
+              </ul>
+            </section>
+  
+        </section>
+        <!--- end Project MEOWFLOW --> 
+
+
+
+       <!-- Project Detail Sandwich please -->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="sandwich">
+          <ul class="project-list">
+          </ul>
+          <section class="video-demo">
+            <h4 class="h4">🎥 Gameplay Trailer</h4>
+            <div class="video-wrapper" style="margin-top: 12px;">
+             
+              <iframe 
+                width="100%" 
+                height="480" 
+                src="https://www.youtube.com/embed/LoYwMs8mFsc" 
+                title="Sandwich Please! Game Gameplay Video for Android" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </section>
+          
+          <div class="project-gallery">
+           
+            
+
+            <div class="project-item active" >
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img
+                    src="assets/images/game/Sanwitch/1.webp"
+                    loading="lazy" alt="screenshot 1"/>
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active" >
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img
+                  src="assets/images/game/Sanwitch/2.webp"
+                    loading="lazy" alt="screenshot 1"/>
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active" >
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img
+                    src="assets/images/game/Sanwitch/3.webp"
+                    loading="lazy" alt=" screenshot 1"/>
+                </figure>
+              </a>
+            </div>
+
+            
+            <div class="project-item active" >
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img
+                    src="assets/images/game/Sanwitch/4.webp"
+                    loading="lazy" alt="screenshot 1"/>
+                </figure>
+              </a>
+            </div>
+
+            
+            <div class="project-item active" >
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img
+                    src="assets/images/game/Sanwitch/5.webp"
+                    loading="lazy" alt="screenshot 1"/>
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active" >
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img
+                    src="assets/images/game/Sanwitch/6.webp"
+                    loading="lazy" alt="screenshot 1"/>
+                </figure>
+              </a>
+            </div>
+
+
+            <!-- ... thêm ảnh khác tương tự -->
+          </div>
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Sandwich Please!</h3>
+          </div>
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <span>2023 — 2024</span>
+              <p class="timeline-text description">
+                <strong>Sandwich Please!</strong> is a delightful idle simulation game where players manage a bustling sandwich shop. Starting with basic ingredients like bread and cheese, players can expand their menu, upgrade their shop, and serve a growing number of customers. The game offers a casual yet engaging experience, perfect for fans of time-management and tycoon games.
+              </p>
+            </li>
+        
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">Key Features:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">🥪 <strong>Idle Gameplay:</strong> Earn income even when offline, allowing continuous progress.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🍳 <strong>Menu Expansion:</strong> Unlock a variety of ingredients to create diverse sandwiches.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🏪 <strong>Shop Upgrades:</strong> Enhance your shop's equipment and decor to attract more customers.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">👥 <strong>Customer Management:</strong> Serve a variety of customers with unique preferences and increase satisfaction.</p>
+                </li>
+              </ul>
+            </li>
+        
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">My Role:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">👨‍💻 Developed core gameplay mechanics, including sandwich assembly and customer service systems.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🎨 Implemented user interface elements and ensured a smooth user experience.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🔧 Optimized game performance across various devices to ensure stability and responsiveness.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📈 Integrated analytics tools to monitor player engagement and inform future updates.</p>
+                </li>
+              </ul>
+            </li>
+      
+          </ul>
+          
+        
+          <section class="service">
+            <ul class="service-list">
+        
+              <a class="service-item" href="https://apps.apple.com/us/app/sandwich-please/id6475763350?l">
+                <div class="service-icon-box">
+                  <img src="assets/images/AppStore-Icons.svg" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game IOS</h4>
+                </div>
+              </a>
+
+              <a class="service-item" href="https://play.google.com/store/apps/details?id=com.gb.sandwichidle.burgerplease.pizza.coffee&hl">
+                <div class="service-icon-box">
+                  <img src="assets/images/GooglePlay-Icon.svg" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game Android</h4>
+                </div>
+              </a>
+            </ul>
+          </section>
+
+        </section>
+        <!--- end Project Sandwitch --> 
+
+       <!-- Project Detail Nekoverse  -->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="nekoverse">
+          <ul class="project-list">
+
+          </ul>
+          <section class="video-demo">
+            <h4 class="h4">🎥 Gameplay Trailer</h4>
+            <div class="video-wrapper" style="margin-top: 12px;">
+              <iframe 
+                width="100%" 
+                height="480" 
+                src="https://www.youtube.com/embed/4FiWVHmdfig" 
+                title="What is Nekoverse?" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </section>
+          
+          <div class="project-gallery">
+          
+
+            <div class="project-item active" >
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img
+                    src="assets/images/game/Nekoverse/2.jpg"
+                    loading="lazy" alt="screenshot 1"/>
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active" >
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img
+                  src="assets/images/game/Nekoverse/3.webp"
+                    loading="lazy" alt="screenshot 1"/>
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active" >
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img
+                    src="assets/images/game/Nekoverse/5.jpg"
+                    loading="lazy" alt=" screenshot 1"/>
+                </figure>
+              </a>
+            </div>
+
+            
+            <div class="project-item active" >
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img
+                    src="assets/images/game/Nekoverse/6.webp"
+                    loading="lazy" alt="screenshot 1"/>
+                </figure>
+              </a>
+            </div>
+
+            
+            <div class="project-item active" >
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img
+                    src="assets/images/game/Nekoverse/7.jpg"
+                    loading="lazy" alt="screenshot 1"/>
+                </figure>
+              </a>
+            </div>
+
+
+            <!-- ... thêm ảnh khác tương tự -->
+          </div>
+
+
+ 
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Nekoverse - GameFI</h3>
+          </div>
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <span>2022 — 2023</span>
+              <p class="timeline-text description">
+                <strong>Nekoverse</strong> is a Play-to-Earn MMORPG built on blockchain technology, offering players a decentralized in-game economy and a Guild system utilizing DAO governance. Players can engage in PvE and PvP battles, explore the world, farm resources, and craft items.
+              </p>
+            </li>
+        
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">Key Features:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">⚔️ <strong>Real-time Skill-based Battles:</strong> Engage in various modes like 1v1, 3v3, Tournaments, and Boss Raids, utilizing elements, skills, and equipment.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🌍 <strong>Exploration & Resource Farming:</strong> Discover hidden areas, harvest resources like ores and wood, and sell them in the marketplace.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🛠️ <strong>Comprehensive Crafting System:</strong> Craft items that drive game progression and impact battle prowess.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🏛️ <strong>Neko Temple:</strong> Stake in-game currencies to earn governance tokens and passive income, enhancing community engagement.</p>
+                </li>
+              </ul>
+            </li>
+        
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">My Role:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">👨‍💻 Served as a <strong>Senior Unity Developer</strong>, collaborating with a team to implement core gameplay mechanics and optimize performance.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🔧 Developed real-time battle systems, including skill mechanics and elemental interactions.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🌐 Integrated blockchain features, such as NFT assets and staking mechanisms, into the Unity environment.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📊 Conducted performance profiling and optimization to ensure smooth gameplay on various devices.</p>
+                </li>
+              </ul>
+            </li>
+      
+          </ul>
+          
+        
+          <section class="service">
+            <ul class="service-list">
+              <a class="service-item" href="https://gam3s.gg/nekoverse/">
+                <div class="service-icon-box">
+                  <img src="assets/images/icon-dev.svg" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Main website</h4>
+                </div>
+              </a>
+
+            </ul>
+          </section>
+
+        </section>
+        <!--- end Project Nekoverse --> 
+
         
         <!-- Project Detail MU loren -->
         <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="muloren">
           <ul class="project-list">
-            <div class="project-item active">
-              <a onclick="expandImage(this)">
-                <figure class="project-img">
-                  
-                </figure>
-              </a>
-            </div>
-            
 
           </ul>
           <section class="video-demo">
@@ -1158,7 +1665,7 @@
             </ul>
           </section>
         </section>
-        <!--- end Project Detail Sudoku --> 
+        <!--- end Project MU loren --> 
 
 
          <!-- Project Detail Idle Cyber-->
@@ -1316,14 +1823,6 @@
         <!-- Project Detail Sudoku -->
         <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="sudoku">
           <ul class="project-list">
-            <div class="project-item active">
-              <a onclick="expandImage(this)">
-                <figure class="project-img">
-                  <img src="assets/images/game/Sudoku/icon.png"  style="width: 500px; height: 500px;" loading="lazy" alt="sudoku Banner" />
-                </figure>
-              </a>
-            </div>
-
           </ul>
      
           <div class="project-gallery">
