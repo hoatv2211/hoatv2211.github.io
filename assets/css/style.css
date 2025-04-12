@@ -24,15 +24,17 @@
 }
 
 .service-item-box2 {
-  width: 250px; /* hoặc bạn tự điều chỉnh 300px, 280px tuỳ màn hình */
   background-color: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 300px; /* Điều chỉnh phù hợp theo kích thước mong muốn */
+  box-sizing: border-box;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .service-content-box {
@@ -53,7 +55,7 @@
 .service-content-box p {
   font-size: 14px;
   font-weight: 400;
-  color: #dcdcdc; /* Trắng xám giống phần mô tả trong timeline */
+  color: var(--light-gray); /* Đồng bộ với about-text */
   line-height: 1.6;
   font-family: 'Poppins', sans-serif;
 }
@@ -630,12 +632,17 @@ main {
 
 .service-title {
   margin-bottom: 20px;
+  
 }
 
 .service-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 .service-item {
@@ -1131,14 +1138,20 @@ main {
 }
 
 .project-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  margin-bottom: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap; /* Quan trọng để xuống dòng khi không đủ chỗ */
+  justify-content: center; /* Cho đẹp trên mobile */
+  gap: 20px; /* khoảng cách giữa các item */
+  padding: 0;
+  margin: 0;
 }
 
 .project-item {
-  display: none;
+  list-style: none;
+  flex: 1 1 300px; /* Tự co giãn nhưng tối thiểu là 300px */
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .project-item.active {
@@ -1161,12 +1174,15 @@ main {
 }
 
 .project-img {
-  position: relative;
   width: 100%;
-  height: 200px;
-  border-radius: 16px;
+  position: relative;
   overflow: hidden;
-  margin-bottom: 15px;
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .project-img::before {
@@ -2119,9 +2135,6 @@ textarea.form-input::-webkit-resizer {
    * PORTFOLIO
    */
 
-  .project-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
   /**
    * BLOG
