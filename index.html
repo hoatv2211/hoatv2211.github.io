@@ -29,6 +29,14 @@
   <link rel="stylesheet" href="assets/css/custome-ver2.css">
   <link rel="stylesheet" href="assets/css/modern-enhancements.css">
   <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="manifest" href="manifest.json" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
 </head>
 
 <body>
@@ -64,6 +72,8 @@
       const currentTheme = document.documentElement.classList.contains('light-mode') ? 'light' : 'dark';
       localStorage.setItem('theme', currentTheme);
     }
+
+    
   </script>
   <!--
     - #MAIN
