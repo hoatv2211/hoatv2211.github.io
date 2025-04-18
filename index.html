@@ -29,15 +29,20 @@
   <link rel="stylesheet" href="assets/css/custome-ver2.css">
   <link rel="stylesheet" href="assets/css/modern-enhancements.css">
   <link rel="stylesheet" href="assets/css/animations.css">
-  <link rel="manifest" href="assets/css/manifest.json" />
+  <link rel="manifest" href="assets/js/manifest.json" />
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('assets/css/service-worker.js');
+        navigator.serviceWorker.register('assets/js/service-worker.js');
+
+          // Gửi webhook sau khi trang tải xong
+         fetch("https://n8n-f48v.onrender.com/webhook/f7b2b54e-c076-44f1-87cc-72f16e10167d", {
+        method: "GET"
+        });
       });
     }
 
-    fetch("https://n8n-f48v.onrender.com/webhook/f7b2b54e-c076-44f1-87cc-72f16e10167d", { method: "GET" });
+  
   
   </script>
 </head>
