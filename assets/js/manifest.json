@@ -1,7 +1,7 @@
 {
   "name": "MAD Portfolio",
-  "short_name": "MAD",
-  "start_url": "index.html",
+  "short_name": "MAD Port",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
