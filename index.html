@@ -21,7 +21,9 @@
   <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <link rel="preload" href="assets/css/style.css" as="style">
   <link rel="preload" href="assets/css/animations.css" as="style">
   <link rel="preload" href="assets/logo.png" as="image">
@@ -35,15 +37,15 @@
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('assets/js/service-worker.js');
 
-          // Gửi webhook sau khi trang tải xong
-         fetch("https://n8n-f48v.onrender.com/webhook/f7b2b54e-c076-44f1-87cc-72f16e10167d", {
-        method: "GET"
+        // Gửi webhook sau khi trang tải xong
+        fetch("https://n8n-f48v.onrender.com/webhook/f7b2b54e-c076-44f1-87cc-72f16e10167d", {
+          method: "GET"
         });
       });
     }
 
-  
-  
+
+
   </script>
 </head>
 
@@ -55,22 +57,18 @@
       <h2 class="loading-text">Loading...</h2>
     </div>
   </div>
-  
+
   <!-- Add accessibility skip link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  
+
   <!-- Back button - only visible when viewing a project -->
   <button class="button-floating hidden" id="portfolio-back-button" title="Go back to portfolio">
     <ion-icon name="home-outline" aria-label="Go back to portfolio"></ion-icon>
   </button>
-  
+
   <!-- Theme toggle button positioned at top-right -->
-  <button 
-    class="theme-toggle button-floating" 
-    id="theme-toggle" 
-    aria-label="Toggle dark/light mode" 
-    title="Toggle dark/light mode" 
-    onclick="toggleTheme()">
+  <button class="theme-toggle button-floating" id="theme-toggle" aria-label="Toggle dark/light mode"
+    title="Toggle dark/light mode" onclick="toggleTheme()">
     <ion-icon name="contrast-outline"></ion-icon>
   </button>
 
@@ -81,7 +79,7 @@
       localStorage.setItem('theme', currentTheme);
     }
 
-    
+
   </script>
   <!--
     - #MAIN
@@ -192,14 +190,17 @@
 
           <li class="social-item">
             <a href="https://t.me/o0_MaD_0o" class="social-link">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="hoatv" height="20" width="20" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="hoatv"
+                height="20" width="20" />
             </a>
           </li>
 
-          
+
           <li class="social-item">
             <a href="https://o0-mad-0o.itch.io/" class="social-link">
-              <img src="https://www.giantbomb.com/a/uploads/square_medium/23/236982/3210085-itchio-logo-textless-white.png" alt="hoatv" height="20" width="20" />
+              <img
+                src="https://www.giantbomb.com/a/uploads/square_medium/23/236982/3210085-itchio-logo-textless-white.png"
+                alt="hoatv" height="20" width="20" />
             </a>
           </li>
 
@@ -283,39 +284,47 @@
           <h2 class="h2 article-title"></h2>
           <h2></h2>
           <p>
-            <div style="display: flex; justify-content: center; align-items: center; height: 60vh;">
-            <video width="90%" controls autoplay muted loop style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" max-width: 960px;>
+          <div style="display: flex; justify-content: center; align-items: center; height: 60vh;">
+            <video width="90%" controls autoplay muted loop
+              style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" max-width: 960px;>
               <source src="assets/videos/IMG_5960.MP4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-          </p>
+            </p>
         </header>
 
         <section class="about-text">
           <h2 class="h2 article-title">About me</h2>
           <p>
-            A highly experienced <strong>Senior Unity Developer</strong> with 7+ years in the game industry, I specialize in building high-quality 2D/3D games for mobile and web platforms. My expertise spans <strong>idle, defense, strategy, and GameFi games</strong> with deep integration of <strong>blockchain technologies (NFT, Web3)</strong> and monetization systems.
+            A highly experienced <strong>Senior Unity Developer</strong> with 7+ years in the game industry, I
+            specialize in building high-quality 2D/3D games for mobile and web platforms. My expertise spans
+            <strong>idle, defense, strategy, and GameFi games</strong> with deep integration of <strong>blockchain
+              technologies (NFT, Web3)</strong> and monetization systems.
           </p>
-          
+
           <p>
-            I take pride in delivering <strong>cross-platform Unity experiences</strong> with custom game mechanics, clean UI/UX, optimized performance, and scalable design systems — all crafted with precision and creativity. I’ve led and solo-developed projects from concept to release, and continuously improve through prototyping, reskinning, and long-term support.
+            I take pride in delivering <strong>cross-platform Unity experiences</strong> with custom game mechanics,
+            clean UI/UX, optimized performance, and scalable design systems — all crafted with precision and creativity.
+            I’ve led and solo-developed projects from concept to release, and continuously improve through prototyping,
+            reskinning, and long-term support.
           </p>
-          
+
           <p>
-            🔧 <strong>Tech stack & Skills:</strong> Unity, C#, C++, Firebase, WebGL, AdMob, Game Optimization, Game Design, Web3/NFT, N8N, Telegram App/Bot Automation
+            🔧 <strong>Tech stack & Skills:</strong> Unity, C#, C++, Firebase, WebGL, AdMob, Game Optimization, Game
+            Design, Web3/NFT, N8N, Telegram App/Bot Automation
           </p>
-          
+
           <p>
             🚀 Let’s connect and bring your game idea to life with scalable tech and engaging gameplay!
           </p>
-          
+
 
           <p>
             🚀 <strong>Unlock the Future of Gaming with a Professional Unity Developer!</strong>
           </p>
-          
 
-   
+
+
           <p>
             🎯 <strong>Why Me?</strong><br>
             🔹 Passionate & Reliable — From concept to release<br>
@@ -323,13 +332,13 @@
             🔹 Creative Problem Solver — Focused on gameplay and performance<br>
             🔹 Long-Term Support — Helping you scale your product
           </p>
-          
+
           <p>
             💬 Let’s connect and turn your ideas into powerful gaming experiences!
           </p>
-          
 
-          
+
+
         </section>
 
 
@@ -343,7 +352,7 @@
 
         <section class="service">
 
-          <ul class="service-list" >
+          <ul class="service-list">
 
             <!-- Unity Development -->
             <li class="service-item-box2">
@@ -355,7 +364,7 @@
                 <p>Build high-quality 2D/3D mobile games, from core mechanics to monetization and publishing.</p>
               </div>
             </li>
-          
+
             <!-- App Development -->
             <li class="service-item-box2">
               <div class="service-icon-box">
@@ -366,7 +375,7 @@
                 <p>Create mobile and desktop apps tailored to business needs and user experiences.</p>
               </div>
             </li>
-          
+
             <!-- Blockchain Integration -->
             <li class="service-item-box2">
               <div class="service-icon-box">
@@ -377,7 +386,7 @@
                 <p>Integrate NFTs, wallets, and GameFi features seamlessly into Unity games.</p>
               </div>
             </li>
-          
+
             <!-- N8N Automation -->
             <li class="service-item-box2">
               <div class="service-icon-box">
@@ -388,7 +397,7 @@
                 <p>Automate workflows, AI agents, and cross-platform integrations with n8n.</p>
               </div>
             </li>
-          
+
             <!-- Telegram Integration -->
             <li class="service-item-box2">
               <div class="service-icon-box">
@@ -399,7 +408,7 @@
                 <p>Build interactive Telegram games, AI bots, and mini-apps for global audiences.</p>
               </div>
             </li>
-          
+
             <!-- Monetization / Ads / Plugins -->
             <li class="service-item-box2">
               <div class="service-icon-box">
@@ -410,8 +419,8 @@
                 <p>Boost revenue with ad networks, in-app purchases, plugin systems, and reskin workflows.</p>
               </div>
             </li>
-          
-       
+
+
           </ul>
           <p style="color: var(--light-gray); /* Đồng bộ với about-text */">
             🔥 <strong>More:</strong><br>
@@ -471,7 +480,7 @@
           </button>
         </section>
 
- 
+
 
         <div class="modal-container disabled" data-modal-container>
 
@@ -500,7 +509,7 @@
         <header>
           <h2 class="h2 article-title gradient-title">Resume</h2>
         </header>
-      
+
         <section class="timeline">
           <div class="title-wrapper">
             <div class="icon-box">
@@ -508,7 +517,7 @@
             </div>
             <h3 class="h3 gradient-subtitle transition">Experience</h3>
           </div>
-      
+
           <ol class="timeline-list">
             <li class="timeline-item animated fadeInUp shadow-box">
               <h3 class="h3 timeline-item-title">Gamota - Gabros Team</h3>
@@ -522,7 +531,7 @@
                 <li>Trained team members.</li>
               </ul>
             </li>
-      
+
             <li class="timeline-item animated fadeInUp shadow-box">
               <h3 class="h3 timeline-item-title">Neko Global</h3>
               <h4 class="h4 timeline-item-position">Project Manager / Senior Unity Developer</h4>
@@ -536,7 +545,7 @@
                 <li>Trained team members.</li>
               </ul>
             </li>
-      
+
             <li class="timeline-item animated fadeInUp shadow-box">
               <h3 class="h3 timeline-item-title">BLAMEO Technology</h3>
               <h4 class="h4 timeline-item-position">Project Manager / Technical Leader</h4>
@@ -550,7 +559,7 @@
                 <li>Trained team members.</li>
               </ul>
             </li>
-      
+
             <li class="timeline-item animated fadeInUp shadow-box">
               <h3 class="h3 timeline-item-title">BEEMOB Studio</h3>
               <h4 class="h4 timeline-item-position">Unity Developer</h4>
@@ -562,7 +571,7 @@
                 <li>Researched new technologies.</li>
               </ul>
             </li>
-      
+
             <li class="timeline-item animated fadeInUp shadow-box">
               <h3 class="h3 timeline-item-title">Techies Studio</h3>
               <h4 class="h4 timeline-item-position">Technical Leader</h4>
@@ -575,7 +584,7 @@
                 <li>Trained team members.</li>
               </ul>
             </li>
-      
+
             <li class="timeline-item animated fadeInUp shadow-box">
               <h3 class="h3 timeline-item-title">2NF Office Solutions</h3>
               <h4 class="h4 timeline-item-position">Unity Developer</h4>
@@ -587,7 +596,7 @@
                 <li>Researched new technologies.</li>
               </ul>
             </li>
-      
+
             <li class="timeline-item animated fadeInUp shadow-box">
               <h3 class="h3 timeline-item-title">CSCMobi Studio</h3>
               <h4 class="h4 timeline-item-position">Unity Developer</h4>
@@ -600,8 +609,43 @@
               </ul>
             </li>
           </ol>
+
         </section>
-      
+
+        <section class="timeline">
+          <!-- Career Highlights -->
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="flame-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Career Highlights</h3>
+          </div>
+
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <p class="timeline-text description">🎮 <strong>50+ published games</strong> on App Store, Google Play,
+                and WebGL.</p>
+            </li>
+            <li class="timeline-item">
+              <p class="timeline-text description">🛠️ <strong>Full-cycle developer</strong>: from concept → gameplay
+                core → UI/UX → performance optimization → publishing & live ops.</p>
+            </li>
+            <li class="timeline-item">
+              <p class="timeline-text description">🌐 <strong>Blockchain/GameFi Integration</strong>: hands-on
+                experience with NFT marketplace, staking, wallets (MetaMask, TON, World App), and Play-to-Earn economy.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <p class="timeline-text description">👨‍💻 <strong>Team Leadership</strong>: managed and mentored 5–15
+                devs/artists/designers, applying Agile/Scrum and CI/CD pipelines.</p>
+            </li>
+            <li class="timeline-item">
+              <p class="timeline-text description">🚀 <strong>Cross-platform</strong>: Unity WebG
+
+
+        </section>
+
+
         <section class="timeline">
           <div class="title-wrapper">
             <div class="icon-box">
@@ -609,7 +653,7 @@
             </div>
             <h3 class="h3 gradient-subtitle transition">Education</h3>
           </div>
-      
+
           <ol class="timeline-list">
             <li class="timeline-item animated slideInUp shadow-box">
               <h4 class="h4 timeline-item-title">University of Transport and Communications</h4>
@@ -635,7 +679,7 @@
               <ul class="skills-list">
                 <li class="skills-item">Modern C/C++</li>
                 <li class="skills-item">C#</li>
-                <li class="skills-item">HTML5</li> 
+                <li class="skills-item">HTML5</li>
                 <li class="skills-item">TypeScript</li>
                 <li class="skills-item">JavaScript</li>
                 <li class="skills-item">PHP</li>
@@ -705,10 +749,11 @@
               <ul class="skills-list">
                 <li class="skills-item">Unity</li>
                 <li class="skills-item">Unreal</li>
+                <li class="skills-item">Cocos</li>
               </ul>
             </div>
 
-        
+
           </div>
 
         </section>
@@ -778,13 +823,29 @@
           </div>
 
           <!-- Project Thumbnail -->
-          <ul class="project-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 360px)); gap: 1.5rem; padding: 0; margin: 0;">
+          <ul class="project-list"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 360px)); gap: 1.5rem; padding: 0; margin: 0;">
+
+            <li class="project-item active" data-filter-item data-category="unity" data-detail-category="dalgona">
+              <a href="#" data-detail-category="dalgona">
+                <figure class="project-img" style="width: 360px; height: 360px;">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline" data-detail-category="dalgona"></ion-icon>
+                  </div>
+                  <img src="assets/images/game/Dalgona/logo.png" alt="dalgona" loading="lazy">
+                </figure>
+                <h3 class="project-title" data-detail-category="dalgona"> Dalgona - Worldchain</h3>
+                <div class="unity-icon">
+                  <p class="project-category tag">Unity</p>
+                </div>
+              </a>
+            </li>
 
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="muloren">
               <a href="#" data-detail-category="muloren">
                 <figure class="project-img" style="width: 360px; height: 360px;">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline" data-detail-category="muloren" ></ion-icon>
+                    <ion-icon name="eye-outline" data-detail-category="muloren"></ion-icon>
                   </div>
                   <img src="assets/images/game/MuLoren/banner-1.jpg" alt="muloren" loading="lazy">
                 </figure>
@@ -799,9 +860,9 @@
               <a href="#" data-detail-category="archero">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline" data-detail-category="archero" ></ion-icon>
+                    <ion-icon name="eye-outline" data-detail-category="archero"></ion-icon>
                   </div>
-                  <img src="assets/images/game/Archero/icon.png"alt="archero" loading="lazy">
+                  <img src="assets/images/game/Archero/icon.png" alt="archero" loading="lazy">
                 </figure>
                 <h3 class="project-title" data-detail-category="archero"> Archero (clone) </h3>
                 <div class="unity-icon">
@@ -812,27 +873,27 @@
 
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="idleCyber">
               <a href="#" data-detail-category="idleCyber">
-                <figure class="project-img"  style="width: 360px; height: 360px;">
+                <figure class="project-img" style="width: 360px; height: 360px;">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline" data-detail-category="idleCyber" ></ion-icon>
+                    <ion-icon name="eye-outline" data-detail-category="idleCyber"></ion-icon>
                   </div>
-                  <img src="assets/images/game/Idle_cyber/icon_idle_cyber.png"  alt="Idle Cyber" loading="lazy">
+                  <img src="assets/images/game/Idle_cyber/icon_idle_cyber.png" alt="Idle Cyber" loading="lazy">
                 </figure>
                 <h3 class="project-title" data-detail-category="idleCyber">Idle Cyber (NFT)</h3>
                 <div class="unity-icon">
                   <p class="project-category tag">Unity</p>
                 </div>
-    
+
               </a>
             </li>
 
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="bike">
               <a href="#" data-detail-category="bike">
-                <figure class="project-img" >
+                <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline" data-detail-category="bike" ></ion-icon>
+                    <ion-icon name="eye-outline" data-detail-category="bike"></ion-icon>
                   </div>
-                  <img src="assets/images/game/BikeTrail/BG Game.jpg"alt="bike" loading="lazy" >
+                  <img src="assets/images/game/BikeTrail/BG Game.jpg" alt="bike" loading="lazy">
                 </figure>
                 <h3 class="project-title" data-detail-category="bike"> Rise of Trial Bike</h3>
                 <div class="unity-icon">
@@ -841,14 +902,15 @@
               </a>
             </li>
 
-        
+
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="sandwich">
               <a href="#" data-detail-category="sandwich">
-                <figure class="project-img" >
+                <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline" data-detail-category="sandwich" ></ion-icon>
+                    <ion-icon name="eye-outline" data-detail-category="sandwich"></ion-icon>
                   </div>
-                  <img src="assets/images/game/Sanwitch/icon.webp" style="width: 360px; height: 360px;" alt="sandwich" loading="lazy" >
+                  <img src="assets/images/game/Sanwitch/icon.webp" style="width: 360px; height: 360px;" alt="sandwich"
+                    loading="lazy">
                 </figure>
                 <h3 class="project-title" data-detail-category="sandwich"> Sandwich Please!</h3>
                 <div class="unity-icon">
@@ -861,7 +923,7 @@
               <a href="#" data-detail-category="MeowFlow">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline" data-detail-category="MeowFlow" ></ion-icon>
+                    <ion-icon name="eye-outline" data-detail-category="MeowFlow"></ion-icon>
                   </div>
                   <img src="assets/images/game/MeowFlow/icon.webp" alt="MeowFlow" loading="lazy">
                 </figure>
@@ -872,14 +934,14 @@
               </a>
             </li>
 
-            
+
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="tilecandy">
               <a href="#" data-detail-category="tilecandy">
-                <figure class="project-img" >
+                <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline" data-detail-category="tilecandy" ></ion-icon>
+                    <ion-icon name="eye-outline" data-detail-category="tilecandy"></ion-icon>
                   </div>
-                  <img src="assets/images/game/TileCandy/icon_6.png" alt="tilecandy" loading="lazy" >
+                  <img src="assets/images/game/TileCandy/icon_6.png" alt="tilecandy" loading="lazy">
                 </figure>
                 <h3 class="project-title" data-detail-category="tilecandy"> Tile Candy!</h3>
                 <div class="unity-icon">
@@ -890,9 +952,9 @@
 
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="nekoverse">
               <a href="#" data-detail-category="nekoverse">
-                <figure class="project-img"  style="width: 360px; height: 360px;">
+                <figure class="project-img" style="width: 360px; height: 360px;">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline" data-detail-category="nekoverse" ></ion-icon>
+                    <ion-icon name="eye-outline" data-detail-category="nekoverse"></ion-icon>
                   </div>
                   <img src="assets/images/game/Nekoverse/4.jpg" alt="nekoverse" loading="lazy">
                 </figure>
@@ -906,9 +968,9 @@
 
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="tilesmatch3">
               <a href="#" data-detail-category="tilesmatch3">
-                <figure class="project-img"  style="width: 360px; height: 360px;">
+                <figure class="project-img" style="width: 360px; height: 360px;">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline" data-detail-category="tilesmatch3" ></ion-icon>
+                    <ion-icon name="eye-outline" data-detail-category="tilesmatch3"></ion-icon>
                   </div>
                   <img src="assets/images/game/Tilesmatch3/icon.png" alt="tilesmatch3" loading="lazy">
                 </figure>
@@ -922,9 +984,9 @@
 
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="sudoku">
               <a href="#" data-detail-category="sudoku">
-                <figure class="project-img"  style="width: 360px; height: 360px;">
+                <figure class="project-img" style="width: 360px; height: 360px;">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline" data-detail-category="sudoku" ></ion-icon>
+                    <ion-icon name="eye-outline" data-detail-category="sudoku"></ion-icon>
                   </div>
                   <img src="assets/images/game/Sudoku/icon.png" alt="sudoku" loading="lazy">
                 </figure>
@@ -938,11 +1000,12 @@
 
             <li class="project-item active" data-filter-item data-category="unity" data-detail-category="surviver">
               <a href="#" data-detail-category="surviver">
-                <figure class="project-img" >
+                <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline" data-detail-category="surviver" ></ion-icon>
+                    <ion-icon name="eye-outline" data-detail-category="surviver"></ion-icon>
                   </div>
-                  <img src="assets/images/game/SurvivorIO/Image Sequence_002_0000.png" style="width: 360px; height: 360px;"alt="surviver" loading="lazy" >
+                  <img src="assets/images/game/SurvivorIO/Image Sequence_002_0000.png"
+                    style="width: 360px; height: 360px;" alt="surviver" loading="lazy">
                 </figure>
                 <h3 class="project-title" data-detail-category="surviver"> Survivor.IO (template)</h3>
                 <div class="unity-icon">
@@ -950,7 +1013,7 @@
                 </div>
               </a>
             </li>
-        
+
 
             <li class="project-item active" data-filter-item data-category="unity"
               data-api-url-android="https://app.sensortower.com/api/android/apps/com.hd.heroic.defense"
@@ -958,7 +1021,7 @@
               <a href="#" data-detail-category="heroicDefense">
 
                 <figure class="project-img" style="width: 360px; height: 360px;">
-                  <div class="project-item-icon-box" >
+                  <div class="project-item-icon-box">
                     <ion-icon name="eye-outline" data-detail-category="heroicDefense"></ion-icon>
                   </div>
 
@@ -993,7 +1056,7 @@
                 <div class="unity-icon">
                   <p class="project-category tag">Unity</p>
                 </div>
-                    <!--
+                <!--
                 <div class="chplay-icon">
                   <p class="project-download-count-android tag">Loading...</p>
                 </div>
@@ -1072,962 +1135,1087 @@
 
         </section>
 
+        <!-- Project Detail Dalgona -->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="dalgona">
 
-         <!-- Project Detail Survivor -->
-        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="surviver">
+          <div class="project-gallery">
 
-                <div class="project-gallery">
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/SurvivorIO/Image Sequence_002_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                        src="assets/images/game/SurvivorIO/Image Sequence_003_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                        src="assets/images/game/SurvivorIO/Image Sequence_004_0000.png"
-                          loading="lazy" alt=" screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-                  
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                        src="assets/images/game/SurvivorIO/Image Sequence_005_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-                  
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                        src="assets/images/game/SurvivorIO/Image Sequence_006_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                        src="assets/images/game/SurvivorIO/Image Sequence_007_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-              
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Dalgona/1.jpg" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
 
-                  <!-- ... thêm ảnh khác tương tự -->
-                </div>
-      
-                <div class="title-wrapper">
-                  <div class="icon-box">
-                    <ion-icon name="book-outline"></ion-icon>
-                  </div>
-                  <h3 class="h3">Zombie Survivor: IO</h3>
-                </div>
-                <ul class="timeline-list">
-                  <li class="timeline-item">
-                    <span>2021 — 2022</span>
-                    <p class="timeline-text description">
-                      <strong>Zombie Survivor: IO</strong> is a fast-paced action-survival roguelike where players battle endless hordes of zombies using auto-firing weapons and evolving skills. With intense bullet-hell gameplay and randomly generated upgrades, each run delivers a thrilling fight for survival.
-                    </p>
-                  </li>
-                
-                  <li class="timeline-item">
-                    <h1 class="h4 timeline-item-title">Key Features:</h1>
-                    <ul class="timeline-description-list">
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🧟 <strong>Zombie Horde Combat:</strong> Face thousands of zombies swarming in waves, with increasing difficulty over time.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🔫 <strong>Auto-Attack Mechanics:</strong> Focus on movement while your hero auto-fires with equipped weapons.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">⚡ <strong>Skill Evolution System:</strong> Combine random upgrades during battle to unlock powerful synergies.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🧬 <strong>Hero Progression:</strong> Level up your hero with gear, talents, and permanent stat boosts.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🌆 <strong>Dynamic Stages:</strong> Battle across different urban maps with unique obstacles and enemy types.</p>
-                      </li>
-                    </ul>
-                  </li>
-                
-                  <li class="timeline-item">
-                    <h1 class="h4 timeline-item-title">My Role:</h1>
-                    <ul class="timeline-description-list">
-                      <li class="timeline-description">
-                        <p class="timeline-text description">👨‍💻 Solo developed core game systems including auto-attack logic, enemy wave generation, and skill upgrade mechanics.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🧠 Designed random upgrade system with skill-tree synergy logic to support replayability.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🎮 Created multiple maps with dynamic spawn zones and environmental hazards.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">📱 Implemented mobile-friendly UI and optimized controls for one-handed gameplay.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">📊 Integrated analytics, ads, and in-app purchase systems for monetization and user tracking.</p>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-                
-              
-                <section class="service">
-                  <ul class="service-list"> 
-       
-                    <a class="service-item" href="https://github.com/hoatv2211/Survivor.IO">
-                      <div class="service-icon-box">
-                        <img src="assets/images/icon-dev.svg" alt="Demo" width="40" />
-                      </div>
-                      <div class="service-content-box">
-                        <h4 class="h4 service-item-title">Template Git</h4>
-                      </div>
-                    </a>
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Dalgona/2.jpg" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
 
-                    <a class="service-item" href="https://hoatv2211.github.io/Survivor.IO/">
-                      <div class="service-icon-box">
-                        <img src="assets/images/game/SurvivorIO/Mission_022.png" alt="Demo" width="40" />
-                      </div>
-                      <div class="service-content-box">
-                        <h4 class="h4 service-item-title">Play Game (WebGL)</h4>
-                      </div>
-                    </a>
 
-                    <a class="service-item" href="https://apps.apple.com/us/app/survivor-io/id1528941310?l">
-                      <div class="service-icon-box">
-                        <img src="assets/images/AppStore-Icons.svg" alt="Demo" width="40" />
-                      </div>
-                      <div class="service-content-box">
-                        <h4 class="h4 service-item-title">Play Game IOS</h4>
-                      </div>
-                    </a>
-                  </ul>
-                </section>
-      
-        </section>
-         <!--- end Project ARCHERO --> 
 
-       <!-- Project Detail Candy -->
-        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="tilecandy">
-              <ul class="project-list">
-      
-              </ul>
-           
-              
-              <div class="project-gallery">
-               
-                
-    
-                <div class="project-item active" >
-                  <a onclick="expandImage(this)">
-                    <figure class="project-img">
-                      <img
-                        src="assets/images/game/TileCandy/Image Sequence_001_0000.jpg"
-                        loading="lazy" alt="screenshot 1"/>
-                    </figure>
-                  </a>
-                </div>
-    
-    
-                <div class="project-item active" >
-                  <a onclick="expandImage(this)">
-                    <figure class="project-img">
-                      <img
-                      src="assets/images/game/TileCandy/Image Sequence_002_0000.jpg"
-                        loading="lazy" alt="screenshot 1"/>
-                    </figure>
-                  </a>
-                </div>
-    
-    
-                
-                <div class="project-item active" >
-                  <a onclick="expandImage(this)">
-                    <figure class="project-img">
-                      <img
-                      src="assets/images/game/TileCandy/Image Sequence_004_0000.jpg"
-                        loading="lazy" alt="screenshot 1"/>
-                    </figure>
-                  </a>
-                </div>
-    
-                
-                <div class="project-item active" >
-                  <a onclick="expandImage(this)">
-                    <figure class="project-img">
-                      <img
-                      src="assets/images/game/TileCandy/Image Sequence_005_0000.jpg"
-                        loading="lazy" alt="screenshot 1"/>
-                    </figure>
-                  </a>
-                </div>
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Dalgona/3.jpg" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
 
-                <div class="project-item active" >
-                  <a onclick="expandImage(this)">
-                    <figure class="project-img">
-                      <img
-                      src="assets/images/game/TileCandy/Image Sequence_007_0000.jpg"
-                        loading="lazy" alt="screenshot 1"/>
-                    </figure>
-                  </a>
-                </div>
-                
-                <div class="project-item active" >
-                  <a onclick="expandImage(this)">
-                    <figure class="project-img">
-                      <img
-                      src="assets/images/game/TileCandy/Image Sequence_008_0000.jpg"
-                        loading="lazy" alt="screenshot 1"/>
-                    </figure>
-                  </a>
-                </div>
-    
-           
 
-                <!-- ... thêm ảnh khác tương tự -->
-              </div>
-    
-              <div class="title-wrapper">
-                <div class="icon-box">
-                  <ion-icon name="book-outline"></ion-icon>
-                </div>
-                <h3 class="h3">Tile Candy!</h3>
-              </div>
-              <ul class="timeline-list">
-                <li class="timeline-item">
-                  <span>2020 — 2021</span>
-                  <p class="timeline-text description">
-                    <strong>Tiles Candy!</strong> is a sweet and addictive tile-matching puzzle game where players must match 3 identical candy tiles to clear them from the board. With hundreds of levels and colorful visuals, the game delivers a relaxing yet challenging experience perfect for casual players.
-                  </p>
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Dalgona/top.jpg" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <!-- ... thêm ảnh khác tương tự -->
+          </div>
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Dalgona</h3>
+          </div>
+
+          <ul class="timeline-list">
+            <!-- Description -->
+            <li class="timeline-item">
+              <span>6/2025 — 8/2025</span>
+              <p class="timeline-text description">
+                <strong>Dalgona</strong> is a fun and addictive mini-game developed and integrated directly on
+                <a href="https://world.org/ko-kr/ecosystem/app_87ae73f8d0558b142fb9c5fc7811b8af" target="_blank"
+                  rel="noopener noreferrer" style="color: var(--green-teal);">
+                  World App
+                </a>.
+                Inspired by the famous “sugar candy challenge” (Dalgona), the game brings a nostalgic yet thrilling
+                experience to a global audience.
+              </p>
+            </li>
+
+            <!-- Key Achievements -->
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">Key Achievements:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">🏆 Reached <strong>Top 1 on the World App game ranking</strong>
+                    during its launch period.</p>
                 </li>
-              
-                <li class="timeline-item">
-                  <h1 class="h4 timeline-item-title">Key Features:</h1>
-                  <ul class="timeline-description-list">
-                    <li class="timeline-description">
-                      <p class="timeline-text description">🍬 <strong>Match 3 Gameplay:</strong> Match 3 identical tiles to remove them and progress through candy-themed levels.</p>
-                    </li>
-                    <li class="timeline-description">
-                      <p class="timeline-text description">🧠 <strong>Strategic Tile Stacking:</strong> Think ahead to manage your tile slots and avoid a game over.</p>
-                    </li>
-                    <li class="timeline-description">
-                      <p class="timeline-text description">🎨 <strong>Colorful Candy Graphics:</strong> Eye-catching UI with vibrant candy visuals and animations.</p>
-                    </li>
-                    <li class="timeline-description">
-                      <p class="timeline-text description">📱 <strong>Casual Friendly:</strong> Easy to pick up, with increasing difficulty to keep players engaged.</p>
-                    </li>
-                    <li class="timeline-description">
-                      <p class="timeline-text description">💡 <strong>Level Progression:</strong> Hundreds of hand-crafted levels with unique tile layouts.</p>
-                    </li>
-                  </ul>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🌍 Engaged hundreds of thousands of users within the Worldcoin
+                    ecosystem.</p>
                 </li>
-              
-                <li class="timeline-item">
-                  <h1 class="h4 timeline-item-title">My Role:</h1>
-                  <ul class="timeline-description-list">
-                    <li class="timeline-description">
-                      <p class="timeline-text description">👨‍💻 Solo integrated full game logic including tile matching, slot management, and level progression system.</p>
-                    </li>
-                    <li class="timeline-description">
-                      <p class="timeline-text description">🎨 Customized UI layout and animations to improve game feel and visual feedback.</p>
-                    </li>
-                    <li class="timeline-description">
-                      <p class="timeline-text description">📈 Implemented daily reward system and hint boosters to enhance player retention.</p>
-                    </li>
-                    <li class="timeline-description">
-                      <p class="timeline-text description">🔧 Optimized game performance and tested compatibility across a wide range of Android/iOS devices.</p>
-                    </li>
-                    <li class="timeline-description">
-                      <p class="timeline-text description">🚀 Handled full publishing pipeline from build to app store submission and live updates.</p>
-                    </li>
-                  </ul>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📱 Optimized for smooth performance and seamless play on mobile
+                    devices.</p>
                 </li>
               </ul>
-              
-              
-            
-              <section class="service">
-                <ul class="service-list">
-     
-                  <a class="service-item" href="Games/TileCandy/index.html">
-                    <div class="service-icon-box">
-                      <img src="assets/images/game/TileCandy/candy_logo.png" alt="Demo" width="40" />
-                    </div>
-                    <div class="service-content-box">
-                      <h4 class="h4 service-item-title">Play Game (WebGL)</h4>
-                    </div>
-                  </a>
+            </li>
+
+            <!-- My Role -->
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">My Role:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">👨‍💻 Solo-developed the entire mini-game including core
+                    mechanics, difficulty progression, and win/lose logic.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🎨 Designed and implemented UI/UX with playful animations to
+                    capture the “sugar candy challenge” feel.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🔧 Optimized performance for <strong>Web3 Mini App
+                      integration</strong> within World App.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🌐 Integrated leaderboard and ranking system to engage users
+                    worldwide.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🚀 Published and maintained the game with continuous updates and
+                    player support.</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
 
 
-                </ul>
-              </section>
-    
-      </section>
-       <!--- end Project Candy --> 
+          <section class="service">
+            <ul class="service-list">
 
 
-       <!-- Project Detail Bike -->
-        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="bike">
-                <ul class="project-list">
-        
-                </ul>
-             
-                
-                <div class="project-gallery">
-                 
-                  
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/BikeTrail/Image Sequence_001_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                        src="assets/images/game/BikeTrail/Image Sequence_002_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/BikeTrail/Image Sequence_003_0000.png"
-                          loading="lazy" alt=" screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-                  
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/BikeTrail/Image Sequence_004_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-                  
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/BikeTrail/Image Sequence_005_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/BikeTrail/Image Sequence_006_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/BikeTrail/Image Sequence_007_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-                  
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/BikeTrail/Image Sequence_008_0000.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/BikeTrail/BG.jpg"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-
-                  <!-- ... thêm ảnh khác tương tự -->
+              <a class="service-item" href="https://world.org/ecosystem/app_87ae73f8d0558b142fb9c5fc7811b8af">
+                <div class="service-icon-box">
+                  <img src="assets/images/AppStore-Icons.svg" alt="Demo" width="40" />
                 </div>
-      
-                <div class="title-wrapper">
-                  <div class="icon-box">
-                    <ion-icon name="book-outline"></ion-icon>
-                  </div>
-                  <h3 class="h3">Rise of trial bike</h3>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game IOS</h4>
                 </div>
-                <ul class="timeline-list">
-                  <li class="timeline-item">
-                    <span>2021 — 2022</span>
-                    <p class="timeline-text description">
-                      <strong>Rise of Trial Bike</strong> is a thrilling and physics-based motorbike stunt game where players ride across extreme terrains filled with obstacles, ramps, and gaps. The game challenges players to balance speed and precision to perform spectacular stunts while reaching the finish line.
-                    </p>
-                  </li>
-                
-                  <li class="timeline-item">
-                    <h1 class="h4 timeline-item-title">Key Features:</h1>
-                    <ul class="timeline-description-list">
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🏍️ <strong>Extreme Bike Stunts:</strong> Perform flips, wheelies, and airborne tricks across challenging courses.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🗺️ <strong>Dynamic Level Design:</strong> Navigate through a variety of handcrafted levels with increasing difficulty.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🎮 <strong>Responsive Controls:</strong> Smooth and intuitive touch-based controls for an immersive gameplay experience.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">📱 <strong>Optimized for Mobile:</strong> Designed to run smoothly on both iOS and Android devices.</p>
-                      </li>
-                    </ul>
-                  </li>
-                
-                  <li class="timeline-item">
-                    <h1 class="h4 timeline-item-title">My Role:</h1>
-                    <ul class="timeline-description-list">
-                      <li class="timeline-description">
-                        <p class="timeline-text description">👨‍💻 Solo developed the entire project including physics-based bike controller and level progression system.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🎨 Designed and implemented all UI/UX elements for menu navigation, gameplay HUD, and result screens.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🔧 Integrated realistic physics and particle effects for impactful gameplay feedback.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🚀 Published and maintained the game on multiple platforms, ensuring stability and performance updates.</p>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-                
-              
-                <section class="service">
-                  <ul class="service-list">
-       
-                    <a class="service-item" href="https://bike-trial.web.app/">
-                      <div class="service-icon-box">
-                        <img src="assets/images/game/BikeTrail/BG Game.jpg" alt="Demo" width="40" />
-                      </div>
-                      <div class="service-content-box">
-                        <h4 class="h4 service-item-title">Play Game (WebGL)</h4>
-                      </div>
-                    </a>
+              </a>
+            </ul>
+          </section>
 
-                    <a class="service-item" href="https://apps.apple.com/ca/app/trial-bike-extreme-stunts/id1546972713">
-                      <div class="service-icon-box">
-                        <img src="assets/images/AppStore-Icons.svg" alt="Demo" width="40" />
-                      </div>
-                      <div class="service-content-box">
-                        <h4 class="h4 service-item-title">Play Game IOS</h4>
-                      </div>
-                    </a>
-
-                  </ul>
-                </section>
-      
         </section>
-         <!--- end Project Bike --> 
+        <!--- end Project Dalgona -->
+
+
+        <!-- Project Detail Survivor -->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="surviver">
+
+          <div class="project-gallery">
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/SurvivorIO/Image Sequence_002_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/SurvivorIO/Image Sequence_003_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/SurvivorIO/Image Sequence_004_0000.png" loading="lazy"
+                    alt=" screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/SurvivorIO/Image Sequence_005_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/SurvivorIO/Image Sequence_006_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/SurvivorIO/Image Sequence_007_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <!-- ... thêm ảnh khác tương tự -->
+          </div>
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Zombie Survivor: IO</h3>
+          </div>
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <span>2021 — 2022</span>
+              <p class="timeline-text description">
+                <strong>Zombie Survivor: IO</strong> is a fast-paced action-survival roguelike where players battle
+                endless hordes of zombies using auto-firing weapons and evolving skills. With intense bullet-hell
+                gameplay and randomly generated upgrades, each run delivers a thrilling fight for survival.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">Key Features:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">🧟 <strong>Zombie Horde Combat:</strong> Face thousands of
+                    zombies swarming in waves, with increasing difficulty over time.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🔫 <strong>Auto-Attack Mechanics:</strong> Focus on movement
+                    while your hero auto-fires with equipped weapons.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">⚡ <strong>Skill Evolution System:</strong> Combine random
+                    upgrades during battle to unlock powerful synergies.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🧬 <strong>Hero Progression:</strong> Level up your hero with
+                    gear, talents, and permanent stat boosts.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🌆 <strong>Dynamic Stages:</strong> Battle across different urban
+                    maps with unique obstacles and enemy types.</p>
+                </li>
+              </ul>
+            </li>
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">My Role:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">👨‍💻 Solo developed core game systems including auto-attack
+                    logic, enemy wave generation, and skill upgrade mechanics.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🧠 Designed random upgrade system with skill-tree synergy logic
+                    to support replayability.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🎮 Created multiple maps with dynamic spawn zones and
+                    environmental hazards.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📱 Implemented mobile-friendly UI and optimized controls for
+                    one-handed gameplay.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📊 Integrated analytics, ads, and in-app purchase systems for
+                    monetization and user tracking.</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+
+          <section class="service">
+            <ul class="service-list">
+
+              <a class="service-item" href="https://github.com/hoatv2211/Survivor.IO">
+                <div class="service-icon-box">
+                  <img src="assets/images/icon-dev.svg" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Template Git</h4>
+                </div>
+              </a>
+
+              <a class="service-item" href="https://hoatv2211.github.io/Survivor.IO/">
+                <div class="service-icon-box">
+                  <img src="assets/images/game/SurvivorIO/Mission_022.png" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game (WebGL)</h4>
+                </div>
+              </a>
+
+              <a class="service-item" href="https://apps.apple.com/us/app/survivor-io/id1528941310?l">
+                <div class="service-icon-box">
+                  <img src="assets/images/AppStore-Icons.svg" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game IOS</h4>
+                </div>
+              </a>
+            </ul>
+          </section>
+
+        </section>
+        <!--- end Project Survivor -->
+
+        <!-- Project Detail Candy -->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="tilecandy">
+          <ul class="project-list">
+
+          </ul>
+
+
+          <div class="project-gallery">
+
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/TileCandy/Image Sequence_001_0000.jpg" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/TileCandy/Image Sequence_002_0000.jpg" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/TileCandy/Image Sequence_004_0000.jpg" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/TileCandy/Image Sequence_005_0000.jpg" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/TileCandy/Image Sequence_007_0000.jpg" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/TileCandy/Image Sequence_008_0000.jpg" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+
+            <!-- ... thêm ảnh khác tương tự -->
+          </div>
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Tile Candy!</h3>
+          </div>
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <span>2020 — 2021</span>
+              <p class="timeline-text description">
+                <strong>Tiles Candy!</strong> is a sweet and addictive tile-matching puzzle game where players must
+                match 3 identical candy tiles to clear them from the board. With hundreds of levels and colorful
+                visuals, the game delivers a relaxing yet challenging experience perfect for casual players.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">Key Features:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">🍬 <strong>Match 3 Gameplay:</strong> Match 3 identical tiles to
+                    remove them and progress through candy-themed levels.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🧠 <strong>Strategic Tile Stacking:</strong> Think ahead to
+                    manage your tile slots and avoid a game over.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🎨 <strong>Colorful Candy Graphics:</strong> Eye-catching UI with
+                    vibrant candy visuals and animations.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📱 <strong>Casual Friendly:</strong> Easy to pick up, with
+                    increasing difficulty to keep players engaged.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">💡 <strong>Level Progression:</strong> Hundreds of hand-crafted
+                    levels with unique tile layouts.</p>
+                </li>
+              </ul>
+            </li>
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">My Role:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">👨‍💻 Solo integrated full game logic including tile matching,
+                    slot management, and level progression system.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🎨 Customized UI layout and animations to improve game feel and
+                    visual feedback.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📈 Implemented daily reward system and hint boosters to enhance
+                    player retention.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🔧 Optimized game performance and tested compatibility across a
+                    wide range of Android/iOS devices.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🚀 Handled full publishing pipeline from build to app store
+                    submission and live updates.</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+
+
+          <section class="service">
+            <ul class="service-list">
+
+              <a class="service-item" href="Games/TileCandy/index.html">
+                <div class="service-icon-box">
+                  <img src="assets/images/game/TileCandy/candy_logo.png" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game (WebGL)</h4>
+                </div>
+              </a>
+
+
+            </ul>
+          </section>
+
+        </section>
+        <!--- end Project Candy -->
+
+
+        <!-- Project Detail Bike -->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="bike">
+          <ul class="project-list">
+
+          </ul>
+
+
+          <div class="project-gallery">
+
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/BikeTrail/Image Sequence_001_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/BikeTrail/Image Sequence_002_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/BikeTrail/Image Sequence_003_0000.png" loading="lazy"
+                    alt=" screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/BikeTrail/Image Sequence_004_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/BikeTrail/Image Sequence_005_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/BikeTrail/Image Sequence_006_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/BikeTrail/Image Sequence_007_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/BikeTrail/Image Sequence_008_0000.png" loading="lazy"
+                    alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/BikeTrail/BG.jpg" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <!-- ... thêm ảnh khác tương tự -->
+          </div>
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Rise of trial bike</h3>
+          </div>
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <span>2021 — 2022</span>
+              <p class="timeline-text description">
+                <strong>Rise of Trial Bike</strong> is a thrilling and physics-based motorbike stunt game where players
+                ride across extreme terrains filled with obstacles, ramps, and gaps. The game challenges players to
+                balance speed and precision to perform spectacular stunts while reaching the finish line.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">Key Features:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">🏍️ <strong>Extreme Bike Stunts:</strong> Perform flips,
+                    wheelies, and airborne tricks across challenging courses.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🗺️ <strong>Dynamic Level Design:</strong> Navigate through a
+                    variety of handcrafted levels with increasing difficulty.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🎮 <strong>Responsive Controls:</strong> Smooth and intuitive
+                    touch-based controls for an immersive gameplay experience.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📱 <strong>Optimized for Mobile:</strong> Designed to run
+                    smoothly on both iOS and Android devices.</p>
+                </li>
+              </ul>
+            </li>
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">My Role:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">👨‍💻 Solo developed the entire project including physics-based
+                    bike controller and level progression system.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🎨 Designed and implemented all UI/UX elements for menu
+                    navigation, gameplay HUD, and result screens.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🔧 Integrated realistic physics and particle effects for
+                    impactful gameplay feedback.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🚀 Published and maintained the game on multiple platforms,
+                    ensuring stability and performance updates.</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+
+          <section class="service">
+            <ul class="service-list">
+
+              <a class="service-item" href="https://bike-trial.web.app/">
+                <div class="service-icon-box">
+                  <img src="assets/images/game/BikeTrail/BG Game.jpg" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game (WebGL)</h4>
+                </div>
+              </a>
+
+              <a class="service-item" href="https://apps.apple.com/ca/app/trial-bike-extreme-stunts/id1546972713">
+                <div class="service-icon-box">
+                  <img src="assets/images/AppStore-Icons.svg" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game IOS</h4>
+                </div>
+              </a>
+
+            </ul>
+          </section>
+
+        </section>
+        <!--- end Project Bike -->
 
 
         <!-- Project Detail Archero -->
-        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="archero">
-                <ul class="project-list">
-        
-                </ul>
-                <section class="video-demo">
-                  <h4 class="h4">🎥 Gameplay Trailer</h4>
-                  <div style="display: flex; justify-content: center; align-items: center">
-                 
-                    <video width="50%" controls autoplay muted loop style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" max-width: 960px;>
-                      <source src="assets/images/game/Archero/Movie_003.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                </section>
-                
-                <div class="project-gallery">
-                 
-                  
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/Archero/1.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                        src="assets/images/game/Archero/2.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/Archero/3.png"
-                          loading="lazy" alt=" screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-                  
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/Archero/4.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-                  
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/Archero/5.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/Archero/6.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="archero">
+          <ul class="project-list">
 
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/Archero/7.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-                  
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/Archero/8.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
-      
-                  <div class="project-item active" >
-                    <a onclick="expandImage(this)">
-                      <figure class="project-img">
-                        <img
-                          src="assets/images/game/Archero/9.png"
-                          loading="lazy" alt="screenshot 1"/>
-                      </figure>
-                    </a>
-                  </div>
+          </ul>
+          <section class="video-demo">
+            <h4 class="h4">🎥 Gameplay Trailer</h4>
+            <div style="display: flex; justify-content: center; align-items: center">
 
-                  <!-- ... thêm ảnh khác tương tự -->
-                </div>
-      
-                <div class="title-wrapper">
-                  <div class="icon-box">
-                    <ion-icon name="book-outline"></ion-icon>
-                  </div>
-                  <h3 class="h3">Archero</h3>
-                </div>
-                <ul class="timeline-list">
-                  <li class="timeline-item">
-                    <span>2020 — 2021</span>
-                    <p class="timeline-text description">
-                      <strong>Arrow Survival: Hero's Quest</strong> is a fast-paced action roguelike where players take on the role of a lone archer battling through waves of enemies across procedurally generated stages. With intuitive one-touch controls and an arsenal of unique skills and upgrades, the game delivers an intense survival experience.
-                    </p>
-                  </li>
-                
-                  <li class="timeline-item">
-                    <h1 class="h4 timeline-item-title">Key Features:</h1>
-                    <ul class="timeline-description-list">
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🏹 <strong>One-Finger Archery Combat:</strong> Move to dodge and release to fire—simple yet deeply strategic controls.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🧿 <strong>Randomized Skill System:</strong> Gain random power-ups after each room for endless combinations.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🌍 <strong>Procedurally Generated Levels:</strong> Each run offers fresh layouts and enemy encounters.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">👹 <strong>Challenging Boss Battles:</strong> Face epic bosses with unique mechanics and attacks.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🧙 <strong>Hero & Gear Progression:</strong> Unlock new heroes and upgrade weapons, armor, and abilities.</p>
-                      </li>
-                    </ul>
-                  </li>
-                
-                  <li class="timeline-item">
-                    <h1 class="h4 timeline-item-title">My Role:</h1>
-                    <ul class="timeline-description-list">
-                      <li class="timeline-description">
-                        <p class="timeline-text description">👨‍💻 Solo developed the entire game including combat system, level generation, and enemy AI.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🎮 Designed intuitive touch control mechanics optimized for mobile gameplay.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🧠 Implemented random skill selection system with synergies for roguelike experience.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">📊 Integrated player progression systems including hero unlocks, gear upgrades, and monetization flow.</p>
-                      </li>
-                      <li class="timeline-description">
-                        <p class="timeline-text description">🚀 Deployed and maintained the game with analytics, ads integration, and performance optimization.</p>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-                
-              
-                <section class="service">
-                  <ul class="service-list">
-       
-                    <a class="service-item" href="Games/Archero/index.html">
-                      <div class="service-icon-box">
-                        <img src="assets/images/game/Archero/icon.png" alt="Demo" width="40" />
-                      </div>
-                      <div class="service-content-box">
-                        <h4 class="h4 service-item-title">Play Game (WebGL)</h4>
-                      </div>
-                    </a>
-                  </ul>
-                </section>
-      
-        </section>
-         <!--- end Project ARCHERO --> 
-
-
-
-         <!-- Project Detail MEOW FLOW  -->
-        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="MeowFlow">
-            <ul class="project-list">
-    
-            </ul>
-            <section class="video-demo">
-              <h4 class="h4">🎥 Gameplay Trailer</h4>
-              <div class="video-wrapper" style="margin-top: 12px;">
-               
-                <iframe 
-                  width="100%" 
-                  height="480" 
-                  src="https://www.youtube.com/embed/WXV-iMqmcpc" 
-                  title="Meow flow - Android Gameplay" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen>
-                </iframe>
-              </div>
-            </section>
-            
-            <div class="project-gallery">
-             
-              
-  
-              <div class="project-item active" >
-                <a onclick="expandImage(this)">
-                  <figure class="project-img">
-                    <img
-                      src="assets/images/game/MeowFlow/1.webp"
-                      loading="lazy" alt="screenshot 1"/>
-                  </figure>
-                </a>
-              </div>
-  
-  
-              <div class="project-item active" >
-                <a onclick="expandImage(this)">
-                  <figure class="project-img">
-                    <img
-                    src="assets/images/game/MeowFlow/2.webp"
-                      loading="lazy" alt="screenshot 1"/>
-                  </figure>
-                </a>
-              </div>
-  
-  
-              <div class="project-item active" >
-                <a onclick="expandImage(this)">
-                  <figure class="project-img">
-                    <img
-                      src="assets/images/game/MeowFlow/3.webp"
-                      loading="lazy" alt=" screenshot 1"/>
-                  </figure>
-                </a>
-              </div>
-  
-              
-              <div class="project-item active" >
-                <a onclick="expandImage(this)">
-                  <figure class="project-img">
-                    <img
-                      src="assets/images/game/MeowFlow/4.webp"
-                      loading="lazy" alt="screenshot 1"/>
-                  </figure>
-                </a>
-              </div>
-  
-              
-              <div class="project-item active" >
-                <a onclick="expandImage(this)">
-                  <figure class="project-img">
-                    <img
-                      src="assets/images/game/MeowFlow/5.webp"
-                      loading="lazy" alt="screenshot 1"/>
-                  </figure>
-                </a>
-              </div>
-  
-              <div class="project-item active" >
-                <a onclick="expandImage(this)">
-                  <figure class="project-img">
-                    <img
-                      src="assets/images/game/MeowFlow/6.webp"
-                      loading="lazy" alt="screenshot 1"/>
-                  </figure>
-                </a>
-              </div>
-  
-  
-              <!-- ... thêm ảnh khác tương tự -->
+              <video width="50%" controls autoplay muted loop
+                style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" max-width: 960px;>
+                <source src="assets/images/game/Archero/Movie_003.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-  
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-              <h3 class="h3">Meow flow : Cute Cat Games</h3>
+          </section>
+
+          <div class="project-gallery">
+
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Archero/1.png" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
             </div>
-            <ul class="timeline-list">
-              <li class="timeline-item">
-                <span>2021 — 2022</span>
-                <p class="timeline-text description">
-                  <strong>Meow Flow</strong> is a charming and relaxing puzzle game where players connect matching cat-themed tiles to clear the board. With its cute visuals and soothing music, the game offers a delightful experience for players of all ages.
-                </p>
-              </li>
-          
-              <li class="timeline-item">
-                <h1 class="h4 timeline-item-title">Key Features:</h1>
-                <ul class="timeline-description-list">
-                  <li class="timeline-description">
-                    <p class="timeline-text description">🐾 <strong>Adorable Cat Themes:</strong> Enjoy a variety of cat-inspired tiles and backgrounds.</p>
-                  </li>
-                  <li class="timeline-description">
-                    <p class="timeline-text description">🧩 <strong>Challenging Puzzles:</strong> Connect matching tiles without overlapping paths to solve each level.</p>
-                  </li>
-                  <li class="timeline-description">
-                    <p class="timeline-text description">🎵 <strong>Relaxing Soundtrack:</strong> Soothing music enhances the calming gameplay experience.</p>
-                  </li>
-                  <li class="timeline-description">
-                    <p class="timeline-text description">📱 <strong>Accessible Gameplay:</strong> Simple mechanics suitable for players of all skill levels.</p>
-                  </li>
-                </ul>
-              </li>
-          
-              <li class="timeline-item">
-                <h1 class="h4 timeline-item-title">My Role:</h1>
-                <ul class="timeline-description-list">
-                  <li class="timeline-description">
-                    <p class="timeline-text description">👨‍💻 Developed core puzzle mechanics and implemented level progression system.</p>
-                  </li>
-                  <li class="timeline-description">
-                    <p class="timeline-text description">🎨 Designed and integrated user interface elements for a seamless user experience.</p>
-                  </li>
-                  <li class="timeline-description">
-                    <p class="timeline-text description">🔧 Optimized game performance across various devices to ensure smooth gameplay.</p>
-                  </li>
-                  <li class="timeline-description">
-                    <p class="timeline-text description">📈 Integrated analytics tools to monitor player engagement and inform future updates.</p>
-                  </li>
-                </ul>
-              </li>
-        
-            </ul>
-            
-          
-            <section class="service">
-              <ul class="service-list">
-   
-                <a class="service-item" href="https://play.google.com/store/apps/details?&id=com.falcon.p.blameo.meow.flow">
-                  <div class="service-icon-box">
-                    <img src="assets/images/GooglePlay-Icon.svg" alt="Demo" width="40" />
-                  </div>
-                  <div class="service-content-box">
-                    <h4 class="h4 service-item-title">Play Game Android</h4>
-                  </div>
-                </a>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Archero/2.png" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Archero/3.png" loading="lazy" alt=" screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Archero/4.png" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Archero/5.png" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Archero/6.png" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Archero/7.png" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Archero/8.png" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Archero/9.png" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <!-- ... thêm ảnh khác tương tự -->
+          </div>
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Archero</h3>
+          </div>
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <span>2020 — 2021</span>
+              <p class="timeline-text description">
+                <strong>Arrow Survival: Hero's Quest</strong> is a fast-paced action roguelike where players take on the
+                role of a lone archer battling through waves of enemies across procedurally generated stages. With
+                intuitive one-touch controls and an arsenal of unique skills and upgrades, the game delivers an intense
+                survival experience.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">Key Features:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">🏹 <strong>One-Finger Archery Combat:</strong> Move to dodge and
+                    release to fire—simple yet deeply strategic controls.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🧿 <strong>Randomized Skill System:</strong> Gain random
+                    power-ups after each room for endless combinations.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🌍 <strong>Procedurally Generated Levels:</strong> Each run
+                    offers fresh layouts and enemy encounters.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">👹 <strong>Challenging Boss Battles:</strong> Face epic bosses
+                    with unique mechanics and attacks.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🧙 <strong>Hero & Gear Progression:</strong> Unlock new heroes
+                    and upgrade weapons, armor, and abilities.</p>
+                </li>
               </ul>
-            </section>
-  
+            </li>
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">My Role:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">👨‍💻 Solo developed the entire game including combat system,
+                    level generation, and enemy AI.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🎮 Designed intuitive touch control mechanics optimized for
+                    mobile gameplay.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🧠 Implemented random skill selection system with synergies for
+                    roguelike experience.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📊 Integrated player progression systems including hero unlocks,
+                    gear upgrades, and monetization flow.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🚀 Deployed and maintained the game with analytics, ads
+                    integration, and performance optimization.</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+
+          <section class="service">
+            <ul class="service-list">
+
+              <a class="service-item" href="Games/Archero/index.html">
+                <div class="service-icon-box">
+                  <img src="assets/images/game/Archero/icon.png" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game (WebGL)</h4>
+                </div>
+              </a>
+            </ul>
+          </section>
+
         </section>
-        <!--- end Project MEOWFLOW --> 
+        <!--- end Project ARCHERO -->
 
 
 
-       <!-- Project Detail Sandwich please -->
-        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="sandwich">
+        <!-- Project Detail MEOW FLOW  -->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="MeowFlow">
+          <ul class="project-list">
+
+          </ul>
+          <section class="video-demo">
+            <h4 class="h4">🎥 Gameplay Trailer</h4>
+            <div class="video-wrapper" style="margin-top: 12px;">
+
+              <iframe width="100%" height="480" src="https://www.youtube.com/embed/WXV-iMqmcpc"
+                title="Meow flow - Android Gameplay" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </section>
+
+          <div class="project-gallery">
+
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/MeowFlow/1.webp" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/MeowFlow/2.webp" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/MeowFlow/3.webp" loading="lazy" alt=" screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/MeowFlow/4.webp" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/MeowFlow/5.webp" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/MeowFlow/6.webp" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+
+            <!-- ... thêm ảnh khác tương tự -->
+          </div>
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Meow flow : Cute Cat Games</h3>
+          </div>
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <span>2021 — 2022</span>
+              <p class="timeline-text description">
+                <strong>Meow Flow</strong> is a charming and relaxing puzzle game where players connect matching
+                cat-themed tiles to clear the board. With its cute visuals and soothing music, the game offers a
+                delightful experience for players of all ages.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">Key Features:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">🐾 <strong>Adorable Cat Themes:</strong> Enjoy a variety of
+                    cat-inspired tiles and backgrounds.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🧩 <strong>Challenging Puzzles:</strong> Connect matching tiles
+                    without overlapping paths to solve each level.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🎵 <strong>Relaxing Soundtrack:</strong> Soothing music enhances
+                    the calming gameplay experience.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📱 <strong>Accessible Gameplay:</strong> Simple mechanics
+                    suitable for players of all skill levels.</p>
+                </li>
+              </ul>
+            </li>
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">My Role:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">👨‍💻 Developed core puzzle mechanics and implemented level
+                    progression system.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🎨 Designed and integrated user interface elements for a seamless
+                    user experience.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🔧 Optimized game performance across various devices to ensure
+                    smooth gameplay.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📈 Integrated analytics tools to monitor player engagement and
+                    inform future updates.</p>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+
+
+          <section class="service">
+            <ul class="service-list">
+
+              <a class="service-item"
+                href="https://play.google.com/store/apps/details?&id=com.falcon.p.blameo.meow.flow">
+                <div class="service-icon-box">
+                  <img src="assets/images/GooglePlay-Icon.svg" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game Android</h4>
+                </div>
+              </a>
+            </ul>
+          </section>
+
+        </section>
+        <!--- end Project MEOWFLOW -->
+
+
+
+        <!-- Project Detail Sandwich please -->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="sandwich">
           <ul class="project-list">
           </ul>
           <section class="video-demo">
             <h4 class="h4">🎥 Gameplay Trailer</h4>
             <div class="video-wrapper" style="margin-top: 12px;">
-             
-              <iframe 
-                width="100%" 
-                height="480" 
-                src="https://www.youtube.com/embed/LoYwMs8mFsc" 
-                title="Sandwich Please! Game Gameplay Video for Android" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+
+              <iframe width="100%" height="480" src="https://www.youtube.com/embed/LoYwMs8mFsc"
+                title="Sandwich Please! Game Gameplay Video for Android" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
               </iframe>
             </div>
           </section>
-          
+
           <div class="project-gallery">
-           
-            
 
-            <div class="project-item active" >
+
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Sanwitch/1.webp"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/Sanwitch/1.webp" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
 
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                  src="assets/images/game/Sanwitch/2.webp"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/Sanwitch/2.webp" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
 
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Sanwitch/3.webp"
-                    loading="lazy" alt=" screenshot 1"/>
+                  <img src="assets/images/game/Sanwitch/3.webp" loading="lazy" alt=" screenshot 1" />
                 </figure>
               </a>
             </div>
 
-            
-            <div class="project-item active" >
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Sanwitch/4.webp"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/Sanwitch/4.webp" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
 
-            
-            <div class="project-item active" >
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Sanwitch/5.webp"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/Sanwitch/5.webp" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Sanwitch/6.webp"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/Sanwitch/6.webp" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
@@ -2046,52 +2234,63 @@
             <li class="timeline-item">
               <span>2023 — 2024</span>
               <p class="timeline-text description">
-                <strong>Sandwich Please!</strong> is a delightful idle simulation game where players manage a bustling sandwich shop. Starting with basic ingredients like bread and cheese, players can expand their menu, upgrade their shop, and serve a growing number of customers. The game offers a casual yet engaging experience, perfect for fans of time-management and tycoon games.
+                <strong>Sandwich Please!</strong> is a delightful idle simulation game where players manage a bustling
+                sandwich shop. Starting with basic ingredients like bread and cheese, players can expand their menu,
+                upgrade their shop, and serve a growing number of customers. The game offers a casual yet engaging
+                experience, perfect for fans of time-management and tycoon games.
               </p>
             </li>
-        
+
             <li class="timeline-item">
               <h1 class="h4 timeline-item-title">Key Features:</h1>
               <ul class="timeline-description-list">
                 <li class="timeline-description">
-                  <p class="timeline-text description">🥪 <strong>Idle Gameplay:</strong> Earn income even when offline, allowing continuous progress.</p>
+                  <p class="timeline-text description">🥪 <strong>Idle Gameplay:</strong> Earn income even when offline,
+                    allowing continuous progress.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🍳 <strong>Menu Expansion:</strong> Unlock a variety of ingredients to create diverse sandwiches.</p>
+                  <p class="timeline-text description">🍳 <strong>Menu Expansion:</strong> Unlock a variety of
+                    ingredients to create diverse sandwiches.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🏪 <strong>Shop Upgrades:</strong> Enhance your shop's equipment and decor to attract more customers.</p>
+                  <p class="timeline-text description">🏪 <strong>Shop Upgrades:</strong> Enhance your shop's equipment
+                    and decor to attract more customers.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">👥 <strong>Customer Management:</strong> Serve a variety of customers with unique preferences and increase satisfaction.</p>
+                  <p class="timeline-text description">👥 <strong>Customer Management:</strong> Serve a variety of
+                    customers with unique preferences and increase satisfaction.</p>
                 </li>
               </ul>
             </li>
-        
+
             <li class="timeline-item">
               <h1 class="h4 timeline-item-title">My Role:</h1>
               <ul class="timeline-description-list">
                 <li class="timeline-description">
-                  <p class="timeline-text description">👨‍💻 Developed core gameplay mechanics, including sandwich assembly and customer service systems.</p>
+                  <p class="timeline-text description">👨‍💻 Developed core gameplay mechanics, including sandwich
+                    assembly and customer service systems.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🎨 Implemented user interface elements and ensured a smooth user experience.</p>
+                  <p class="timeline-text description">🎨 Implemented user interface elements and ensured a smooth user
+                    experience.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🔧 Optimized game performance across various devices to ensure stability and responsiveness.</p>
+                  <p class="timeline-text description">🔧 Optimized game performance across various devices to ensure
+                    stability and responsiveness.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">📈 Integrated analytics tools to monitor player engagement and inform future updates.</p>
+                  <p class="timeline-text description">📈 Integrated analytics tools to monitor player engagement and
+                    inform future updates.</p>
                 </li>
               </ul>
             </li>
-      
+
           </ul>
-          
-        
+
+
           <section class="service">
             <ul class="service-list">
-        
+
               <a class="service-item" href="https://apps.apple.com/us/app/sandwich-please/id6475763350?l">
                 <div class="service-icon-box">
                   <img src="assets/images/AppStore-Icons.svg" alt="Demo" width="40" />
@@ -2101,7 +2300,8 @@
                 </div>
               </a>
 
-              <a class="service-item" href="https://play.google.com/store/apps/details?id=com.gb.sandwichidle.burgerplease.pizza.coffee&hl">
+              <a class="service-item"
+                href="https://play.google.com/store/apps/details?id=com.gb.sandwichidle.burgerplease.pizza.coffee&hl">
                 <div class="service-icon-box">
                   <img src="assets/images/GooglePlay-Icon.svg" alt="Demo" width="40" />
                 </div>
@@ -2113,81 +2313,68 @@
           </section>
 
         </section>
-        <!--- end Project Sandwitch --> 
+        <!--- end Project Sandwitch -->
 
-       <!-- Project Detail Nekoverse  -->
-        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="nekoverse">
+        <!-- Project Detail Nekoverse  -->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="nekoverse">
           <ul class="project-list">
 
           </ul>
           <section class="video-demo">
             <h4 class="h4">🎥 Gameplay Trailer</h4>
             <div class="video-wrapper" style="margin-top: 12px;">
-              <iframe 
-                width="100%" 
-                height="480" 
-                src="https://www.youtube.com/embed/4FiWVHmdfig" 
-                title="What is Nekoverse?" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              <iframe width="100%" height="480" src="https://www.youtube.com/embed/4FiWVHmdfig"
+                title="What is Nekoverse?" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
               </iframe>
             </div>
           </section>
-          
+
           <div class="project-gallery">
-          
 
-            <div class="project-item active" >
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Nekoverse/2.jpg"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/Nekoverse/2.jpg" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
 
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                  src="assets/images/game/Nekoverse/3.webp"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/Nekoverse/3.webp" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
 
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Nekoverse/5.jpg"
-                    loading="lazy" alt=" screenshot 1"/>
+                  <img src="assets/images/game/Nekoverse/5.jpg" loading="lazy" alt=" screenshot 1" />
                 </figure>
               </a>
             </div>
 
-            
-            <div class="project-item active" >
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Nekoverse/6.webp"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/Nekoverse/6.webp" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
 
-            
-            <div class="project-item active" >
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Nekoverse/7.jpg"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/Nekoverse/7.jpg" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
@@ -2197,7 +2384,7 @@
           </div>
 
 
- 
+
           <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
@@ -2208,49 +2395,60 @@
             <li class="timeline-item">
               <span>2022 — 2023</span>
               <p class="timeline-text description">
-                <strong>Nekoverse</strong> is a Play-to-Earn MMORPG built on blockchain technology, offering players a decentralized in-game economy and a Guild system utilizing DAO governance. Players can engage in PvE and PvP battles, explore the world, farm resources, and craft items.
+                <strong>Nekoverse</strong> is a Play-to-Earn MMORPG built on blockchain technology, offering players a
+                decentralized in-game economy and a Guild system utilizing DAO governance. Players can engage in PvE and
+                PvP battles, explore the world, farm resources, and craft items.
               </p>
             </li>
-        
+
             <li class="timeline-item">
               <h1 class="h4 timeline-item-title">Key Features:</h1>
               <ul class="timeline-description-list">
                 <li class="timeline-description">
-                  <p class="timeline-text description">⚔️ <strong>Real-time Skill-based Battles:</strong> Engage in various modes like 1v1, 3v3, Tournaments, and Boss Raids, utilizing elements, skills, and equipment.</p>
+                  <p class="timeline-text description">⚔️ <strong>Real-time Skill-based Battles:</strong> Engage in
+                    various modes like 1v1, 3v3, Tournaments, and Boss Raids, utilizing elements, skills, and equipment.
+                  </p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🌍 <strong>Exploration & Resource Farming:</strong> Discover hidden areas, harvest resources like ores and wood, and sell them in the marketplace.</p>
+                  <p class="timeline-text description">🌍 <strong>Exploration & Resource Farming:</strong> Discover
+                    hidden areas, harvest resources like ores and wood, and sell them in the marketplace.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🛠️ <strong>Comprehensive Crafting System:</strong> Craft items that drive game progression and impact battle prowess.</p>
+                  <p class="timeline-text description">🛠️ <strong>Comprehensive Crafting System:</strong> Craft items
+                    that drive game progression and impact battle prowess.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🏛️ <strong>Neko Temple:</strong> Stake in-game currencies to earn governance tokens and passive income, enhancing community engagement.</p>
+                  <p class="timeline-text description">🏛️ <strong>Neko Temple:</strong> Stake in-game currencies to
+                    earn governance tokens and passive income, enhancing community engagement.</p>
                 </li>
               </ul>
             </li>
-        
+
             <li class="timeline-item">
               <h1 class="h4 timeline-item-title">My Role:</h1>
               <ul class="timeline-description-list">
                 <li class="timeline-description">
-                  <p class="timeline-text description">👨‍💻 Served as a <strong>Senior Unity Developer</strong>, collaborating with a team to implement core gameplay mechanics and optimize performance.</p>
+                  <p class="timeline-text description">👨‍💻 Served as a <strong>Senior Unity Developer</strong>,
+                    collaborating with a team to implement core gameplay mechanics and optimize performance.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🔧 Developed real-time battle systems, including skill mechanics and elemental interactions.</p>
+                  <p class="timeline-text description">🔧 Developed real-time battle systems, including skill mechanics
+                    and elemental interactions.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🌐 Integrated blockchain features, such as NFT assets and staking mechanisms, into the Unity environment.</p>
+                  <p class="timeline-text description">🌐 Integrated blockchain features, such as NFT assets and staking
+                    mechanisms, into the Unity environment.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">📊 Conducted performance profiling and optimization to ensure smooth gameplay on various devices.</p>
+                  <p class="timeline-text description">📊 Conducted performance profiling and optimization to ensure
+                    smooth gameplay on various devices.</p>
                 </li>
               </ul>
             </li>
-      
+
           </ul>
-          
-        
+
+
           <section class="service">
             <ul class="service-list">
               <a class="service-item" href="https://gam3s.gg/nekoverse/">
@@ -2266,93 +2464,78 @@
           </section>
 
         </section>
-        <!--- end Project Nekoverse --> 
+        <!--- end Project Nekoverse -->
 
-        
+
         <!-- Project Detail MU loren -->
-        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="muloren">
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="muloren">
           <ul class="project-list">
 
           </ul>
           <section class="video-demo">
             <h4 class="h4">🎥 Gameplay Trailer</h4>
             <div class="video-wrapper" style="margin-top: 12px;">
-              <iframe 
-                width="100%" 
-                height="480" 
-                src="https://www.youtube.com/embed/UTqN9xl2pBM" 
-                title="MU Loren Gameplay" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              <iframe width="100%" height="480" src="https://www.youtube.com/embed/UTqN9xl2pBM"
+                title="MU Loren Gameplay" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
               </iframe>
             </div>
           </section>
-          
+
           <div class="project-gallery">
-           
-            
 
-            <div class="project-item active" >
+
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/MuLoren/banner-1.jpg"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/MuLoren/banner-1.jpg" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
 
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                  src="assets/images/game/MuLoren/banner-2.jpg"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/MuLoren/banner-2.jpg" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
 
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/MuLoren/banner-3.jpg"
-                    loading="lazy" alt=" screenshot 1"/>
+                  <img src="assets/images/game/MuLoren/banner-3.jpg" loading="lazy" alt=" screenshot 1" />
                 </figure>
               </a>
             </div>
 
-            
-            <div class="project-item active" >
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/MuLoren/1.jpg"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/MuLoren/1.jpg" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
 
-            
-            <div class="project-item active" >
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/MuLoren/2.jpg"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/MuLoren/2.jpg" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/MuLoren/3.jpg"
-                    loading="lazy" alt="screenshot 1"/>
+                  <img src="assets/images/game/MuLoren/3.jpg" loading="lazy" alt="screenshot 1" />
                 </figure>
               </a>
             </div>
@@ -2362,7 +2545,7 @@
           </div>
 
 
- 
+
           <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
@@ -2373,24 +2556,30 @@
             <li class="timeline-item">
               <span>2024 — 2025</span>
               <p class="timeline-text description">
-                <strong>MU: Loren Mobile</strong> is a mobile MMORPG inspired by the legendary MU Online. It brings the classic gameplay, iconic character classes, and intense PvE/PvP content to life with stunning 3D graphics optimized for mobile.
+                <strong>MU: Loren Mobile</strong> is a mobile MMORPG inspired by the legendary MU Online. It brings the
+                classic gameplay, iconic character classes, and intense PvE/PvP content to life with stunning 3D
+                graphics optimized for mobile.
               </p>
             </li>
-        
+
             <li class="timeline-item">
               <h1 class="h4 timeline-item-title">My Role:</h1>
               <ul class="timeline-description-list">
                 <li class="timeline-description">
-                  <p class="timeline-text description">👨‍💻 Worked as a <strong>Senior Unity Developer</strong> in a collaborative team, contributing to core gameplay implementation and system optimization.</p>
+                  <p class="timeline-text description">👨‍💻 Worked as a <strong>Senior Unity Developer</strong> in a
+                    collaborative team, contributing to core gameplay implementation and system optimization.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">⚙️ Developed and maintained key gameplay systems including quest system, class mechanics, and monster spawning logic.</p>
+                  <p class="timeline-text description">⚙️ Developed and maintained key gameplay systems including quest
+                    system, class mechanics, and monster spawning logic.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">📈 Handled performance profiling and optimization for smooth gameplay on mobile devices.</p>
+                  <p class="timeline-text description">📈 Handled performance profiling and optimization for smooth
+                    gameplay on mobile devices.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🎨 Integrated UI/UX elements and implemented several in-game events and battle systems.</p>
+                  <p class="timeline-text description">🎨 Integrated UI/UX elements and implemented several in-game
+                    events and battle systems.</p>
                 </li>
               </ul>
             </li>
@@ -2399,24 +2588,30 @@
               <h1 class="h4 timeline-item-title">Key Features:</h1>
               <ul class="timeline-description-list">
                 <li class="timeline-description">
-                  <p class="timeline-text description">🧙 <strong>Diverse Character Classes:</strong> Choose from 5 iconic classes: Dark Wizard, Dark Knight, Fairy Elf, Magic Gladiator, and Dark Lord — each with unique abilities and styles.</p>
+                  <p class="timeline-text description">🧙 <strong>Diverse Character Classes:</strong> Choose from 5
+                    iconic classes: Dark Wizard, Dark Knight, Fairy Elf, Magic Gladiator, and Dark Lord — each with
+                    unique abilities and styles.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">📜 <strong>Extensive Quest System:</strong> Includes daily, weekly, party, and guild missions to enhance exploration and engagement.</p>
+                  <p class="timeline-text description">📜 <strong>Extensive Quest System:</strong> Includes daily,
+                    weekly, party, and guild missions to enhance exploration and engagement.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🛡️ <strong>Classic MU Features:</strong> Stat allocation, Loren Market free trade, Chaos System gear crafting, and signature events like Blood Castle, Devil Square, Chaos Castle, and Arena.</p>
+                  <p class="timeline-text description">🛡️ <strong>Classic MU Features:</strong> Stat allocation, Loren
+                    Market free trade, Chaos System gear crafting, and signature events like Blood Castle, Devil Square,
+                    Chaos Castle, and Arena.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🎮 <strong>Immersive 3D Graphics:</strong> High-quality visuals recreate the legendary MU world in vivid detail for mobile devices.</p>
+                  <p class="timeline-text description">🎮 <strong>Immersive 3D Graphics:</strong> High-quality visuals
+                    recreate the legendary MU world in vivid detail for mobile devices.</p>
                 </li>
               </ul>
             </li>
-        
-      
+
+
           </ul>
-          
-        
+
+
           <section class="service">
             <ul class="service-list">
               <a class="service-item" href="https://lucdia.adnxgames.vn/trang-chu">
@@ -2448,80 +2643,72 @@
             </ul>
           </section>
 
-          
+
           <section class="service">
             <ul class="service-list">
-            
+
             </ul>
           </section>
         </section>
-        <!--- end Project MU loren --> 
+        <!--- end Project MU loren -->
 
 
-         <!-- Project Detail Idle Cyber-->
-        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="idleCyber">
+        <!-- Project Detail Idle Cyber-->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="idleCyber">
           <ul class="project-list">
             <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img src="assets/images/game/Idle_cyber/thumbnai.png"  style="width: 1040px; height: 500px;" loading="lazy" alt="Idle Cyber Banner" />
+                  <img src="assets/images/game/Idle_cyber/thumbnai.png" style="width: 1040px; height: 500px;"
+                    loading="lazy" alt="Idle Cyber Banner" />
                 </figure>
               </a>
             </div>
 
           </ul>
-     
+
           <div class="project-gallery">
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Idle_cyber/1.png"
-                    loading="lazy" alt="Idle Cyber screenshot 1"/>
+                  <img src="assets/images/game/Idle_cyber/1.png" loading="lazy" alt="Idle Cyber screenshot 1" />
                 </figure>
               </a>
             </div>
 
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Idle_cyber/2.png"
-                    loading="lazy" alt="Idle Cyber screenshot 1"/>
+                  <img src="assets/images/game/Idle_cyber/2.png" loading="lazy" alt="Idle Cyber screenshot 1" />
                 </figure>
               </a>
             </div>
 
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Idle_cyber/5.png"
-                    loading="lazy" alt="Idle Cyber screenshot 5"/>
+                  <img src="assets/images/game/Idle_cyber/5.png" loading="lazy" alt="Idle Cyber screenshot 5" />
                 </figure>
               </a>
             </div>
 
-            
-            <div class="project-item active" >
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Idle_cyber/3.png"
-                    loading="lazy" alt="Idle Cyber screenshot 3"/>
+                  <img src="assets/images/game/Idle_cyber/3.png" loading="lazy" alt="Idle Cyber screenshot 3" />
                 </figure>
               </a>
             </div>
 
-            
-            <div class="project-item active" >
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Idle_cyber/4.png"
-                    loading="lazy" alt="Idle Cyber screenshot 4"/>
+                  <img src="assets/images/game/Idle_cyber/4.png" loading="lazy" alt="Idle Cyber screenshot 4" />
                 </figure>
               </a>
             </div>
@@ -2530,7 +2717,7 @@
           </div>
 
 
- 
+
           <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
@@ -2541,33 +2728,38 @@
             <li class="timeline-item">
               <span>2021 — 2022</span>
               <p class="timeline-text description">
-                <strong>Idle Cyber</strong> is a cyberpunk idle tower defense game set in a post-apocalyptic 2077 world.  
+                <strong>Idle Cyber</strong> is a cyberpunk idle tower defense game set in a post-apocalyptic 2077 world.
               </p>
               <p class="timeline-text description">
-                Players defend the Earth from alien invaders by strategically deploying legendary heroes, upgrading powerful weapons, and customizing gear to survive endless enemy waves and boss battles.
+                Players defend the Earth from alien invaders by strategically deploying legendary heroes, upgrading
+                powerful weapons, and customizing gear to survive endless enemy waves and boss battles.
               </p>
             </li>
-          
+
             <li class="timeline-item">
               <h1 class="h4 timeline-item-title">My Roles:</h1>
               <ul class="timeline-description-list">
                 <li class="timeline-description">
-                  <p class="timeline-text description">Solo-developed full gameplay loop including stages, upgrades, rewards, and ad integration.</p>
+                  <p class="timeline-text description">Solo-developed full gameplay loop including stages, upgrades,
+                    rewards, and ad integration.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">Implemented idle mechanics with strategic tower defense combat.</p>
+                  <p class="timeline-text description">Implemented idle mechanics with strategic tower defense combat.
+                  </p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">Built a basic NFT marketplace with wallet and testnet blockchain integration.</p>
+                  <p class="timeline-text description">Built a basic NFT marketplace with wallet and testnet blockchain
+                    integration.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">Handled UI/UX, animation integration, and performance optimization for mobile devices.</p>
+                  <p class="timeline-text description">Handled UI/UX, animation integration, and performance
+                    optimization for mobile devices.</p>
                 </li>
               </ul>
             </li>
           </ul>
-          
-        
+
+
           <section class="service">
             <ul class="service-list">
               <a class="service-item" href="https://o0-mad-0o.itch.io/cyber-war">
@@ -2579,7 +2771,8 @@
                 </div>
               </a>
 
-              <a class="service-item" href="https://apps.apple.com/us/app/cyber-war-idle-defense-heroes/id1563690159?l=vi">
+              <a class="service-item"
+                href="https://apps.apple.com/us/app/cyber-war-idle-defense-heroes/id1563690159?l=vi">
                 <div class="service-icon-box">
                   <img src="assets/images/AppStore-Icons.svg" alt="Demo" width="40" />
                 </div>
@@ -2599,10 +2792,10 @@
             </ul>
           </section>
 
-          
+
           <section class="service">
             <ul class="service-list">
-            
+
             </ul>
           </section>
         </section>
@@ -2611,71 +2804,60 @@
 
 
         <!-- Project Detail Sudoku -->
-        <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="sudoku">
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="sudoku">
           <ul class="project-list">
           </ul>
-     
+
           <div class="project-gallery">
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Sudoku/1.png"
-                    loading="lazy" alt="Sudoku screenshot 1"/>
+                  <img src="assets/images/game/Sudoku/1.png" loading="lazy" alt="Sudoku screenshot 1" />
                 </figure>
               </a>
             </div>
 
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Sudoku/2.png"
-                    loading="lazy" alt="Sudoku screenshot 1"/>
+                  <img src="assets/images/game/Sudoku/2.png" loading="lazy" alt="Sudoku screenshot 1" />
                 </figure>
               </a>
             </div>
 
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Sudoku/3.png"
-                    loading="lazy" alt="Sudoku screenshot 1"/>
+                  <img src="assets/images/game/Sudoku/3.png" loading="lazy" alt="Sudoku screenshot 1" />
                 </figure>
               </a>
             </div>
 
-            
-            <div class="project-item active" >
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Sudoku/4.png"
-                    loading="lazy" alt="Sudoku screenshot 1"/>
+                  <img src="assets/images/game/Sudoku/4.png" loading="lazy" alt="Sudoku screenshot 1" />
                 </figure>
               </a>
             </div>
 
-            
-            <div class="project-item active" >
+
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Sudoku/5.png"
-                    loading="lazy" alt="Sudoku screenshot 1"/>
+                  <img src="assets/images/game/Sudoku/5.png" loading="lazy" alt="Sudoku screenshot 1" />
                 </figure>
               </a>
             </div>
 
-            <div class="project-item active" >
+            <div class="project-item active">
               <a onclick="expandImage(this)">
                 <figure class="project-img">
-                  <img
-                    src="assets/images/game/Sudoku/6.png"
-                    loading="lazy" alt="Sudoku screenshot 1"/>
+                  <img src="assets/images/game/Sudoku/6.png" loading="lazy" alt="Sudoku screenshot 1" />
                 </figure>
               </a>
             </div>
@@ -2685,7 +2867,7 @@
           </div>
 
 
- 
+
           <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
@@ -2696,27 +2878,31 @@
             <li class="timeline-item">
               <span>2024 — 2025</span>
               <p class="timeline-text description">
-                <strong>Sudoku - Classic Brain Puzzle</strong> is the perfect game for puzzle lovers! Whether you're a beginner or a Sudoku master, enjoy endless fun with thousands of levels and daily challenges.
+                <strong>Sudoku - Classic Brain Puzzle</strong> is the perfect game for puzzle lovers! Whether you're a
+                beginner or a Sudoku master, enjoy endless fun with thousands of levels and daily challenges.
               </p>
             </li>
-          
+
             <li class="timeline-item">
               <h1 class="h4 timeline-item-title">My Role:</h1>
-              <p class="timeline-text description">Solo developer – handled all aspects from game design to publishing.</p>
+              <p class="timeline-text description">Solo developer – handled all aspects from game design to publishing.
+              </p>
             </li>
-            
+
 
             <li class="timeline-item">
               <h1 class="h4 timeline-item-title">Key Features:</h1>
               <ul class="timeline-description-list">
                 <li class="timeline-description">
-                  <p class="timeline-text description">🧠 Train your brain: Each puzzle sharpens logic and concentration.</p>
+                  <p class="timeline-text description">🧠 Train your brain: Each puzzle sharpens logic and
+                    concentration.</p>
                 </li>
                 <li class="timeline-description">
                   <p class="timeline-text description">📶 Play offline anytime, anywhere.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🌟 Thousands of classic Sudoku puzzles with 4 difficulty levels: Easy to Expert.</p>
+                  <p class="timeline-text description">🌟 Thousands of classic Sudoku puzzles with 4 difficulty levels:
+                    Easy to Expert.</p>
                 </li>
                 <li class="timeline-description">
                   <p class="timeline-text description">🗓️ Daily challenge mode with new puzzles each day.</p>
@@ -2725,13 +2911,14 @@
                   <p class="timeline-text description">💡 Hints & Undo options for flexible gameplay.</p>
                 </li>
                 <li class="timeline-description">
-                  <p class="timeline-text description">🌙 Minimalist and user-friendly interface with dark mode for night play.</p>
+                  <p class="timeline-text description">🌙 Minimalist and user-friendly interface with dark mode for
+                    night play.</p>
                 </li>
               </ul>
             </li>
           </ul>
-          
-        
+
+
           <section class="service">
             <ul class="service-list">
               <a class="service-item" href="Games/Sudoku/index.html">
@@ -2754,127 +2941,130 @@
             </ul>
           </section>
 
-          
+
           <section class="service">
             <ul class="service-list">
-            
+
             </ul>
           </section>
         </section>
         <!--- end Project Detail Sudoku -->
 
 
-          <!-- Project Detail TileMatch 3 -->
-          <section class="timeline project-item" data-filter-item data-deactive-item project-detail data-detail-category="tilesmatch3">
-            <ul class="project-list">
-              <div class="project-item active">
-                <a onclick="expandImage(this)">
-                  <figure class="project-img">
-                    <img src="assets/images/game/Tilesmatch3/thumbnail.png"  style="width: 1024px; height: 500px;" loading="lazy" alt="tilesmatch3 Banner" />
-                  </figure>
-                </a>
-              </div>
-  
-            </ul>
-       
-            <div class="project-gallery">
-              <div class="project-item active" >
-                <a onclick="expandImage(this)">
-                  <figure class="project-img">
-                    <img
-                      src="assets/images/game/Tilesmatch3/1.png"
-                      loading="lazy" alt="screenshot 1"/>
-                  </figure>
-                </a>
-              </div>
-  
-  
-              <div class="project-item active" >
-                <a onclick="expandImage(this)">
-                  <figure class="project-img">
-                    <img
-                      src="assets/images/game/Tilesmatch3/2.png"
-                      loading="lazy" alt="screenshot 1"/>
-                  </figure>
-                </a>
-              </div>
-
-              <!-- ... thêm ảnh khác tương tự -->
+        <!-- Project Detail TileMatch 3 -->
+        <section class="timeline project-item" data-filter-item data-deactive-item project-detail
+          data-detail-category="tilesmatch3">
+          <ul class="project-list">
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Tilesmatch3/thumbnail.png" style="width: 1024px; height: 500px;"
+                    loading="lazy" alt="tilesmatch3 Banner" />
+                </figure>
+              </a>
             </div>
-  
-  
-   
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-              <h3 class="h3">Tiles Match 3: Mahjong</h3>
+
+          </ul>
+
+          <div class="project-gallery">
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Tilesmatch3/1.png" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
             </div>
-            <ul class="timeline-list">
-              <li class="timeline-item">
-                <span>2023 — 2024</span>
-                <p class="timeline-text description">
-                  <strong>Tiles Match 3: Mahjong</strong> is a relaxing yet challenging tile-matching puzzle game. Inspired by the traditional Mahjong gameplay, it introduces a triple-tile matching mechanic that’s both fun and engaging.
-                </p>
-              </li>
 
-              <li class="timeline-item">
-                <h1 class="h4 timeline-item-title">My Role:</h1>
-                <p class="timeline-text description">Solo developer – handled all aspects from game design to publishing.</p>
-              </li>
-              
-            
-              <li class="timeline-item">
-                <h1 class="h4 timeline-item-title">Key Features:</h1>
-                <ul class="timeline-description-list">
-                  <li class="timeline-description">
-                    <p class="timeline-text description">🧩 Match 3 tiles with the same pattern to clear the board.</p>
-                  </li>
-                  <li class="timeline-description">
-                    <p class="timeline-text description">🎯 Hundreds of handcrafted levels with increasing difficulty.</p>
-                  </li>
-                  <li class="timeline-description">
-                    <p class="timeline-text description">🌸 Beautiful themes and tile sets to unlock as you progress.</p>
-                  </li>
-                  <li class="timeline-description">
-                    <p class="timeline-text description">🧘 Soothing music and calming visuals for stress-free gameplay.</p>
-                  </li>
-                  <li class="timeline-description">
-                    <p class="timeline-text description">📱 Designed for all ages, playable offline without internet.</p>
-                  </li>
-                  <li class="timeline-description">
-                    <p class="timeline-text description">🏆 Earn rewards and climb the leaderboard by completing levels quickly.</p>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            
 
-            <section class="service">
-              <ul class="service-list">
-                <a class="service-item" href="Games/Tilesmatch3/index.html">
-                  <div class="service-icon-box">
-                    <img src="assets/images/game/Tilesmatch3/icon.png" alt="Demo" width="40" />
-                  </div>
-                  <div class="service-content-box">
-                    <h4 class="h4 service-item-title">Play Game (WebGL)</h4>
-                  </div>
-                </a>
-  
-                <a class="service-item" href="https://play.google.com/store/apps/details?id=com.mad.tilesmatch.mahjong">
-                  <div class="service-icon-box">
-                    <img src="assets/images/GooglePlay-Icon.svg" alt="Demo" width="40" />
-                  </div>
-                  <div class="service-content-box">
-                    <h4 class="h4 service-item-title">Play Game Android</h4>
-                  </div>
-                </a>
+            <div class="project-item active">
+              <a onclick="expandImage(this)">
+                <figure class="project-img">
+                  <img src="assets/images/game/Tilesmatch3/2.png" loading="lazy" alt="screenshot 1" />
+                </figure>
+              </a>
+            </div>
+
+            <!-- ... thêm ảnh khác tương tự -->
+          </div>
+
+
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Tiles Match 3: Mahjong</h3>
+          </div>
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <span>2023 — 2024</span>
+              <p class="timeline-text description">
+                <strong>Tiles Match 3: Mahjong</strong> is a relaxing yet challenging tile-matching puzzle game.
+                Inspired by the traditional Mahjong gameplay, it introduces a triple-tile matching mechanic that’s both
+                fun and engaging.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">My Role:</h1>
+              <p class="timeline-text description">Solo developer – handled all aspects from game design to publishing.
+              </p>
+            </li>
+
+
+            <li class="timeline-item">
+              <h1 class="h4 timeline-item-title">Key Features:</h1>
+              <ul class="timeline-description-list">
+                <li class="timeline-description">
+                  <p class="timeline-text description">🧩 Match 3 tiles with the same pattern to clear the board.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🎯 Hundreds of handcrafted levels with increasing difficulty.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🌸 Beautiful themes and tile sets to unlock as you progress.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🧘 Soothing music and calming visuals for stress-free gameplay.
+                  </p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">📱 Designed for all ages, playable offline without internet.</p>
+                </li>
+                <li class="timeline-description">
+                  <p class="timeline-text description">🏆 Earn rewards and climb the leaderboard by completing levels
+                    quickly.</p>
+                </li>
               </ul>
-            </section>
+            </li>
+          </ul>
 
-           
+
+          <section class="service">
+            <ul class="service-list">
+              <a class="service-item" href="Games/Tilesmatch3/index.html">
+                <div class="service-icon-box">
+                  <img src="assets/images/game/Tilesmatch3/icon.png" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game (WebGL)</h4>
+                </div>
+              </a>
+
+              <a class="service-item" href="https://play.google.com/store/apps/details?id=com.mad.tilesmatch.mahjong">
+                <div class="service-icon-box">
+                  <img src="assets/images/GooglePlay-Icon.svg" alt="Demo" width="40" />
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Play Game Android</h4>
+                </div>
+              </a>
+            </ul>
           </section>
-          <!--- end Project Detail TileMatch -->
+
+
+        </section>
+        <!--- end Project Detail TileMatch -->
 
 
 
@@ -3714,7 +3904,8 @@
                 <figure class="project-video">
                   <video muted="true" preload="none"
                     poster="https://github.com/Long18/long18.github.io/assets/28853225/2aa03da8-cdf0-4c39-857a-a53e6478a2ac">
-                    <source src="assets/videos/CryptoQuest.mp4" type="video/mp4"></video>
+                    <source src="assets/videos/CryptoQuest.mp4" type="video/mp4">
+                  </video>
                   <button class="play-button"></button>
                 </figure>
               </a>
@@ -4030,7 +4221,8 @@
                     poster="https://github.com/Long18/long18.github.io/assets/28853225/e6249069-79ce-49a2-973f-a732426deb21">
                     <source
                       src="https://github.com/Long18/long18.github.io/assets/28853225/2d8ea356-74db-4ce6-8c06-e205b4439fe4"
-                      type="video/mp4"></video>
+                      type="video/mp4">
+                  </video>
                   <button class="play-button"></button>
                 </figure>
               </a>
@@ -4219,7 +4411,8 @@
                     poster="https://github.com/Long18/long18.github.io/assets/28853225/5b55f3c9-d157-4781-97ce-e6746686aada">
                     <source
                       src="https://github.com/Long18/long18.github.io/assets/28853225/da68f79f-e05b-47e1-8dd2-8ebea3ad140f"
-                      type="video/mp4"></video>
+                      type="video/mp4">
+                  </video>
                   <button class="play-button"></button>
                 </figure>
               </a>
@@ -4379,7 +4572,8 @@
                     poster="https://github.com/Long18/long18.github.io/assets/28853225/5040792c-53d6-47ed-b25a-40534433fae9">
                     <source
                       src="https://github.com/Long18/long18.github.io/assets/28853225/78a30844-ad5b-48c9-be98-95a8840e6d02"
-                      type="video/mp4"></video>
+                      type="video/mp4">
+                  </video>
                   <button class="play-button"></button>
                 </figure>
               </a>
@@ -4788,7 +4982,7 @@
         </section>
         <!-- End Project Detail Mugen Horror -->
 
-   
+
 
       </article>
 
@@ -5008,15 +5202,17 @@
 
         <section class="contact-form">
           <h3 class="h3 form-title">Contact Form</h3>
-          <form action="php/contact.php" method="post" id="contactForm" data-toggle="valiator" class="form contactForm" data-form>
+          <form action="php/contact.php" method="post" id="contactForm" data-toggle="valiator" class="form contactForm"
+            data-form>
             <div class="input-wrapper">
               <!-- Add more form fields if needed -->
               <input type="text" name="name" class="form-input" placeholder="Full name" required data-form-input>
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
-            
-            <textarea name="comments" rows="4" class="form-input" placeholder="Your Message.." required data-form-input></textarea>
-            
+
+            <textarea name="comments" rows="4" class="form-input" placeholder="Your Message.." required
+              data-form-input></textarea>
+
             <button class="form-btn submitBnt" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
