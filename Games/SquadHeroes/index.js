@@ -36,11 +36,11 @@ function unityShowBanner(msg, type) {
 }
 
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/WebBuild.loader.js";
+var loaderUrl = buildUrl + "/SquadHeroes.loader.js";
 var config = {
-    dataUrl: buildUrl + "/WebBuild.data.gz",
-    frameworkUrl: buildUrl + "/WebBuild.framework.js.gz",
-    codeUrl: buildUrl + "/WebBuild.wasm.gz",
+    dataUrl: buildUrl + "/SquadHeroes.data",
+    frameworkUrl: buildUrl + "/SquadHeroes.framework.js",
+    codeUrl: buildUrl + "/SquadHeroes.wasm",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "ONEMAD",
     productName: "Squad Heroes",

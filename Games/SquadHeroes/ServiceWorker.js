@@ -1,9 +1,9 @@
 const cacheName = "ONEMAD-Squad Heroes-0.1";
 const contentToCache = [
-    "Build/WebBuild.loader.js",
-    "Build/WebBuild.framework.js.gz",
-    "Build/WebBuild.data.gz",
-    "Build/WebBuild.wasm.gz",
+    "Build/SquadHeroes.loader.js",
+    "Build/SquadHeroes.framework.js",
+    "Build/SquadHeroes.data",
+    "Build/SquadHeroes.wasm",
     "TemplateData/style.css"
 
 ];
