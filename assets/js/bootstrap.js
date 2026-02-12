@@ -8,10 +8,6 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
       navigator.serviceWorker.register('assets/js/service-worker.js');
-
-      fetch("https://n8n-f48v.onrender.com/webhook/f7b2b54e-c076-44f1-87cc-72f16e10167d", {
-        method: "GET"
-      });
     });
   }
 

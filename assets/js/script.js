@@ -123,25 +123,40 @@ document.addEventListener('DOMContentLoaded', function() {
   let filterItems = document.querySelectorAll("[data-filter-item]");
   const buttonBack = document.getElementById("portfolio-back-button");
 
+  let pendingDetailCategory = null;
+  let suppressDetailReset = false;
+
   function openProjectDetail(selectedType) {
     if (!selectedType) return;
 
+    suppressDetailReset = true;
     filterFunc("");
+    suppressDetailReset = false;
+
+    pendingDetailCategory = selectedType;
 
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
 
-    if (projectDetail && projectDetail.length > 0) {
-      projectDetail.forEach(project => {
-        if (project.dataset.detailCategory === selectedType) {
-          project.classList.add("active");
-          toggleBackButton(true);
-        } else {
-          project.classList.remove("active");
-        }
-      });
+    if (!projectDetail || projectDetail.length === 0) {
+      return;
+    }
+
+    let matched = false;
+    projectDetail.forEach(project => {
+      if (project.dataset.detailCategory === selectedType) {
+        project.classList.add("active");
+        toggleBackButton(true);
+        matched = true;
+      } else {
+        project.classList.remove("active");
+      }
+    });
+
+    if (!matched) {
+      pendingDetailCategory = selectedType;
     }
   }
 
@@ -166,7 +181,14 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   refreshPortfolioDetails();
-  document.addEventListener("portfolio:details-loaded", refreshPortfolioDetails);
+  document.addEventListener("portfolio:details-loaded", function () {
+    refreshPortfolioDetails();
+    if (pendingDetailCategory) {
+      const categoryToOpen = pendingDetailCategory;
+      pendingDetailCategory = null;
+      openProjectDetail(categoryToOpen);
+    }
+  });
   document.addEventListener("portfolio:list-rendered", refreshPortfolioDetails);
 
   document.addEventListener("click", function (event) {
@@ -320,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    if (removeActive && removeActive.length > 0) {
+    if (!suppressDetailReset && removeActive && removeActive.length > 0) {
       removeActive.forEach(item => {
         item.classList.remove("active");
       });
