@@ -154,6 +154,49 @@ article.portfolio [project-detail].active {
   display: block !important;
 }
 
+/* Portfolio details loading text (no spinner) */
+.portfolio-details-loading {
+  position: relative;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-details-loading-text {
+  color: var(--light-gray);
+  font-size: 0.95rem;
+  animation: loading-pulse 1.2s ease-in-out infinite;
+  text-align: center;
+}
+
+.portfolio-details-loading-text::after {
+  content: "...";
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  vertical-align: bottom;
+  animation: loading-ellipsis 1.2s steps(4, end) infinite;
+}
+
+@keyframes loading-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes loading-ellipsis {
+  to {
+    width: 1.2em;
+  }
+}
+
+
 @keyframes scaleIn {
   from {
     opacity: 0;
