@@ -38,6 +38,14 @@ img, video, iframe {
 }
 
 /* Project detail fixes */
+[project-detail] {
+  display: none;
+}
+
+[project-detail].active {
+  display: block;
+}
+
 .project-list {
   overflow: hidden;
 }

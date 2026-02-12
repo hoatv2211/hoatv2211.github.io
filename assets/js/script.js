@@ -115,40 +115,70 @@ document.addEventListener('DOMContentLoaded', function() {
   // custom select variables
   const select = document.querySelector("[data-select]");
   const selectItems = document.querySelectorAll("[data-select-item]");
-  const selectDetailItems = document.querySelectorAll("[data-detail-category]");
+  let selectDetailItems = document.querySelectorAll("[data-detail-category]");
   const selectValue = document.querySelector("[data-select-value]");
   const filterBtn = document.querySelectorAll("[data-filter-btn]");
   const removeActive = document.querySelectorAll("[data-deactive-item]");
-  const projectDetail = document.querySelectorAll("[project-detail]");
+  let projectDetail = document.querySelectorAll("[project-detail]");
+  let filterItems = document.querySelectorAll("[data-filter-item]");
   const buttonBack = document.getElementById("portfolio-back-button");
 
-  // improved detail category click handler with smoother scrolling
-  if (selectDetailItems && selectDetailItems.length > 0) {
-    selectDetailItems.forEach(item => {
-      item.addEventListener("click", function () {
-        const selectedType = this.dataset.detailCategory;
-        filterFunc("");
-        
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
+  function openProjectDetail(selectedType) {
+    if (!selectedType) return;
 
-        // find data-detail-category same type in projectDetail class
-        if (projectDetail && projectDetail.length > 0) {
-          projectDetail.forEach(project => {
-            if (project.dataset.detailCategory === selectedType) {
-              project.classList.add("active");
-              // Show back button when viewing a project detail
-              toggleBackButton(true);
-            } else {
-              project.classList.remove("active");
-            }
-          });
+    filterFunc("");
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+    if (projectDetail && projectDetail.length > 0) {
+      projectDetail.forEach(project => {
+        if (project.dataset.detailCategory === selectedType) {
+          project.classList.add("active");
+          toggleBackButton(true);
+        } else {
+          project.classList.remove("active");
         }
       });
-    });
+    }
   }
+
+  function refreshPortfolioDetails() {
+    selectDetailItems = document.querySelectorAll("[data-detail-category]");
+    projectDetail = document.querySelectorAll("[project-detail]");
+    filterItems = document.querySelectorAll("[data-filter-item]");
+
+    // improved detail category click handler with smoother scrolling
+    if (selectDetailItems && selectDetailItems.length > 0) {
+      selectDetailItems.forEach(item => {
+        if (item.dataset.detailBound === "true") return;
+
+        item.addEventListener("click", function () {
+          const selectedType = this.dataset.detailCategory;
+          openProjectDetail(selectedType);
+        });
+
+        item.dataset.detailBound = "true";
+      });
+    }
+  }
+
+  refreshPortfolioDetails();
+  document.addEventListener("portfolio:details-loaded", refreshPortfolioDetails);
+  document.addEventListener("portfolio:list-rendered", refreshPortfolioDetails);
+
+  document.addEventListener("click", function (event) {
+    const detailTarget = event.target.closest("[data-detail-category]");
+    if (!detailTarget) return;
+
+    const isInPortfolioList = detailTarget.closest('[data-render="portfolio-list"]');
+    if (!isInPortfolioList) return;
+
+    event.preventDefault();
+    openProjectDetail(detailTarget.dataset.detailCategory);
+  });
 
   // Back button functionality with smooth scrolling and improved visual feedback
   if (buttonBack) {
@@ -205,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // filter variables
-  const filterItems = document.querySelectorAll("[data-filter-item]");
+  // filterItems is initialized near the top and refreshed on-demand
 
   // Function to toggle back button visibility
   function toggleBackButton(visible) {
@@ -239,7 +269,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       filterItems.forEach(item => {
-        if (selectedValue === "all" || selectedValue === item.dataset.category) {
+        const isDetail = item.hasAttribute("project-detail");
+
+        if (selectedValue === "all") {
+          if (isDetail) {
+            toHide.push(item);
+          } else {
+            toShow.push(item);
+          }
+          return;
+        }
+
+        if (isDetail) {
+          toHide.push(item);
+          return;
+        }
+
+        if (selectedValue === item.dataset.category) {
           toShow.push(item);
         } else {
           toHide.push(item);
