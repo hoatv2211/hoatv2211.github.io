@@ -145,6 +145,15 @@
   }
 }
 
+/* Portfolio detail visibility control */
+article.portfolio [project-detail] {
+  display: none !important;
+}
+
+article.portfolio [project-detail].active {
+  display: block !important;
+}
+
 @keyframes scaleIn {
   from {
     opacity: 0;
