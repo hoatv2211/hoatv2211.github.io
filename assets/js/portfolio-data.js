@@ -1,5 +1,17 @@
 window.PORTFOLIO_DATA = [
   {
+    id: "citybuilder",
+    title: "City - Builder",
+    category: "unity",
+    detailCategory: "citybuilder",
+    image: {
+      src: "assets/images/game/Dalgona/logo.png",
+      alt: "citybuilder",
+      style: "width: 360px; height: 360px;"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+  {
     id: "dalgona",
     title: "Dalgona - Worldchain",
     category: "unity",
@@ -186,18 +198,6 @@ window.PORTFOLIO_DATA = [
     image: {
       src: "https://github.com/Long18/long18.github.io/assets/28853225/5f87b8cc-1f5d-4b41-a65b-edbf5aae5c8e",
       alt: "Crypto Quest",
-      style: "width: 360px; height: 360px;"
-    },
-    tag: { label: "Unity", className: "unity-icon" }
-  },
-  {
-    id: "fireFireFire",
-    title: "Fire Fire Fire",
-    category: "unity",
-    detailCategory: "fireFireFire",
-    image: {
-      src: "https://github.com/Long18/long18.github.io/assets/28853225/7cc38bed-a36c-40ea-8a3f-8323b1a939fc",
-      alt: "Fire Fire Fire",
       style: "width: 360px; height: 360px;"
     },
     tag: { label: "Unity", className: "unity-icon" }

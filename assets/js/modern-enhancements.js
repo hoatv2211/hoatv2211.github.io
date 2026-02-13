@@ -82,6 +82,68 @@ function initThemeToggle() {
     freshThemeToggle.style.pointerEvents = 'auto';
     freshThemeToggle.style.cursor = 'pointer';
     freshThemeToggle.style.zIndex = '10000';
+    freshThemeToggle.style.touchAction = 'none';
+
+    // Restore saved position if available
+    const savedPosRaw = localStorage.getItem('themeTogglePosition');
+    if (savedPosRaw) {
+      try {
+        const savedPos = JSON.parse(savedPosRaw);
+        if (typeof savedPos.x === 'number' && typeof savedPos.y === 'number') {
+          freshThemeToggle.style.left = `${savedPos.x}px`;
+          freshThemeToggle.style.top = `${savedPos.y}px`;
+          freshThemeToggle.style.right = 'auto';
+          freshThemeToggle.style.bottom = 'auto';
+        }
+      } catch (error) {
+        console.warn('Failed to restore theme toggle position', error);
+      }
+    }
+
+    // Drag handler
+    let isDragging = false;
+    let dragOffsetX = 0;
+    let dragOffsetY = 0;
+    let hasMoved = false;
+
+    const onPointerMove = (event) => {
+      if (!isDragging) return;
+      hasMoved = true;
+      const x = Math.max(0, Math.min(window.innerWidth - freshThemeToggle.offsetWidth, event.clientX - dragOffsetX));
+      const y = Math.max(0, Math.min(window.innerHeight - freshThemeToggle.offsetHeight, event.clientY - dragOffsetY));
+      freshThemeToggle.style.left = `${x}px`;
+      freshThemeToggle.style.top = `${y}px`;
+      freshThemeToggle.style.right = 'auto';
+      freshThemeToggle.style.bottom = 'auto';
+    };
+
+    const onPointerUp = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      document.removeEventListener('pointermove', onPointerMove);
+      document.removeEventListener('pointerup', onPointerUp);
+
+      if (hasMoved) {
+        const left = parseFloat(freshThemeToggle.style.left || '0');
+        const top = parseFloat(freshThemeToggle.style.top || '0');
+        localStorage.setItem('themeTogglePosition', JSON.stringify({ x: left, y: top }));
+      }
+
+      setTimeout(() => {
+        hasMoved = false;
+      }, 0);
+    };
+
+    freshThemeToggle.addEventListener('pointerdown', (event) => {
+      if (event.button !== 0) return;
+      isDragging = true;
+      hasMoved = false;
+      const rect = freshThemeToggle.getBoundingClientRect();
+      dragOffsetX = event.clientX - rect.left;
+      dragOffsetY = event.clientY - rect.top;
+      document.addEventListener('pointermove', onPointerMove);
+      document.addEventListener('pointerup', onPointerUp);
+    });
   } else {
     // Fallback in case the button doesn't exist in HTML
     console.warn('Theme toggle button not found in HTML');
