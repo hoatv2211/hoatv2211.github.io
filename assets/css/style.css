@@ -1154,6 +1154,14 @@ main {
   box-sizing: border-box;
 }
 
+[project-detail] {
+  display: none;
+}
+
+[project-detail].active {
+  display: block;
+}
+
 .project-item.active {
   display: block;
   animation: scaleUp 0.25s ease forwards;

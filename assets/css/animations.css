@@ -117,6 +117,24 @@
   animation: scaleIn 0.5s ease forwards;
 }
 
+/* Flash-UI style entrance */
+.flash-entrance {
+  opacity: 0;
+  filter: blur(16px);
+  transform: translateY(28px) scale(0.98);
+  animation: flashEntrance 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+.flash-entrance.fast {
+  animation-duration: 0.8s;
+}
+
+.flash-entrance.no-blur {
+  filter: none;
+  will-change: transform, opacity;
+}
+
 /* Animation Keyframes */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -145,6 +163,221 @@
   }
 }
 
+@keyframes flashEntrance {
+  0% {
+    opacity: 0;
+    filter: blur(18px);
+    transform: translateY(34px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Portfolio detail visibility control */
+article.portfolio [project-detail] {
+  display: none !important;
+}
+
+article.portfolio [project-detail].active {
+  display: block !important;
+}
+
+/* Portfolio details loading text (no spinner) */
+.portfolio-details-loading {
+  position: relative;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-details-loading-text {
+  color: var(--light-gray);
+  font-size: 0.95rem;
+  animation: loading-pulse 1.2s ease-in-out infinite;
+  text-align: center;
+}
+
+.portfolio-details-loading-text::after {
+  content: "...";
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  vertical-align: bottom;
+  animation: loading-ellipsis 1.2s steps(4, end) infinite;
+}
+
+/* Code-like loading effect (on project open) */
+.code-loading {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  margin: 16px 0 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(18, 18, 18, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+  animation: flashEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.code-loading-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.code-loading-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.code-loading-lines {
+  display: grid;
+  gap: 4px;
+  font-family: "JetBrains Mono", "Roboto Mono", "Fira Code", monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.1px;
+}
+
+.code-loading-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 16px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.code-loading-line.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.code-loading-line .code-loading-caret {
+  opacity: 0;
+}
+
+.code-loading-line.is-current .code-loading-caret {
+  opacity: 1;
+}
+
+.code-loading-line-number {
+  width: 18px;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 11px;
+  flex: 0 0 18px;
+}
+
+.code-loading-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.code-token.tag { color: #7dd3fc; }
+.code-token.attr { color: #f472b6; }
+.code-token.str { color: #a3e635; }
+.code-token.punc { color: rgba(255, 255, 255, 0.55); }
+.code-token.text { color: rgba(255, 255, 255, 0.7); }
+
+.code-loading-caret {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  margin-left: 2px;
+  background: rgba(255, 255, 255, 0.75);
+  animation: codeCaretBlink 0.9s step-start infinite;
+}
+
+.code-loading-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.code-loading-reveal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0)
+  );
+  transform: translateX(-120%);
+  animation: codeSweep 1.1s ease-in-out infinite;
+}
+
+@keyframes codeCaretBlink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+@keyframes codeSweep {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+
+.code-loading-line {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.08)
+  );
+  background-size: 200% 100%;
+  animation: codeShimmer 1.1s linear infinite;
+}
+
+.code-loading-line.dim {
+  opacity: 0.7;
+}
+
+@keyframes codeShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes loading-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes loading-ellipsis {
+  to {
+    width: 1.2em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-loading,
+  .code-loading-line {
+    animation: none;
+  }
+}
+
+
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -153,6 +386,15 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flash-entrance {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
   }
 }
 

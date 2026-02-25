@@ -115,40 +115,186 @@ document.addEventListener('DOMContentLoaded', function() {
   // custom select variables
   const select = document.querySelector("[data-select]");
   const selectItems = document.querySelectorAll("[data-select-item]");
-  const selectDetailItems = document.querySelectorAll("[data-detail-category]");
+  let selectDetailItems = document.querySelectorAll("[data-detail-category]");
   const selectValue = document.querySelector("[data-select-value]");
   const filterBtn = document.querySelectorAll("[data-filter-btn]");
   const removeActive = document.querySelectorAll("[data-deactive-item]");
-  const projectDetail = document.querySelectorAll("[project-detail]");
+  let projectDetail = document.querySelectorAll("[project-detail]");
+  let filterItems = document.querySelectorAll("[data-filter-item]");
   const buttonBack = document.getElementById("portfolio-back-button");
 
-  // improved detail category click handler with smoother scrolling
-  if (selectDetailItems && selectDetailItems.length > 0) {
-    selectDetailItems.forEach(item => {
-      item.addEventListener("click", function () {
-        const selectedType = this.dataset.detailCategory;
-        filterFunc("");
-        
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
+  let pendingDetailCategory = null;
+  let suppressDetailReset = false;
+
+  function openProjectDetail(selectedType) {
+    if (!selectedType) return;
+
+    suppressDetailReset = true;
+    filterFunc("");
+    suppressDetailReset = false;
+
+    pendingDetailCategory = selectedType;
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+    if (!projectDetail || projectDetail.length === 0) {
+      return;
+    }
+
+    let matched = false;
+    projectDetail.forEach(project => {
+      if (project.dataset.detailCategory === selectedType) {
+        project.classList.add("active");
+        // Re-trigger entrance animation for detail section
+        project.classList.remove("flash-entrance", "fast", "no-blur");
+        void project.offsetWidth;
+        project.classList.add("flash-entrance", "fast", "no-blur");
+
+        // Show code-like loading effect on open
+        showDetailLoadingEffect(project);
+        toggleBackButton(true);
+        matched = true;
+      } else {
+        project.classList.remove("active");
+      }
+    });
+
+    if (!matched) {
+      pendingDetailCategory = selectedType;
+    }
+  }
+
+  function showDetailLoadingEffect(project) {
+    if (!project) return;
+
+    const existing = project.querySelector(".code-loading");
+    if (existing) existing.remove();
+
+    const loading = document.createElement("div");
+    loading.className = "code-loading";
+    loading.innerHTML = `
+      <div class="code-loading-header">
+        <span class="code-loading-dot"></span>
+        <span class="code-loading-dot"></span>
+        <span class="code-loading-dot"></span>
+      </div>
+      <div class="code-loading-lines">
+        <div class="code-loading-line">
+          <span class="code-loading-line-number">1</span>
+          <span class="code-loading-code code-loading-reveal">
+            <span class="code-token.punc">&lt;</span><span class="code-token tag">section</span>
+            <span class="code-token attr"> class</span><span class="code-token.punc">=</span><span class="code-token str">"project"</span>
+            <span class="code-token.punc">&gt;</span>
+          </span>
+        </div>
+        <div class="code-loading-line">
+          <span class="code-loading-line-number">2</span>
+          <span class="code-loading-code code-loading-reveal">
+            <span class="code-token.punc">&lt;</span><span class="code-token tag">h3</span>
+            <span class="code-token attr"> class</span><span class="code-token.punc">=</span><span class="code-token str">"title"</span>
+            <span class="code-token.punc">&gt;</span>
+            <span class="code-token text">Loading detail</span>
+            <span class="code-token.punc">&lt;/</span><span class="code-token tag">h3</span><span class="code-token.punc">&gt;</span>
+          </span>
+        </div>
+        <div class="code-loading-line">
+          <span class="code-loading-line-number">3</span>
+          <span class="code-loading-code code-loading-reveal">
+            <span class="code-token.punc">&lt;</span><span class="code-token tag">div</span>
+            <span class="code-token attr"> class</span><span class="code-token.punc">=</span><span class="code-token str">"meta"</span>
+            <span class="code-token.punc">&gt;</span>
+          </span>
+        </div>
+        <div class="code-loading-line">
+          <span class="code-loading-line-number">4</span>
+          <span class="code-loading-code code-loading-reveal">
+            <span class="code-token.text">// parsing HTML…</span>
+          </span>
+        </div>
+        <div class="code-loading-line">
+          <span class="code-loading-line-number">5</span>
+          <span class="code-loading-code code-loading-reveal">
+            <span class="code-token.punc">&lt;/</span><span class="code-token tag">div</span><span class="code-token.punc">&gt;</span>
+            <span class="code-loading-caret"></span>
+          </span>
+        </div>
+      </div>
+    `;
+
+    project.prepend(loading);
+
+    const animate = () => {
+      const lines = Array.from(loading.querySelectorAll(".code-loading-line"));
+      if (lines.length === 0) return;
+      lines.forEach(line => {
+        line.classList.remove("is-visible", "is-current");
+      });
+
+      let index = 0;
+      const step = () => {
+        if (index > 0) lines[index - 1].classList.remove("is-current");
+        if (index < lines.length) {
+          lines[index].classList.add("is-visible", "is-current");
+          index += 1;
+          setTimeout(step, 120);
+        }
+      };
+
+      setTimeout(step, 80);
+    };
+
+    animate();
+
+    // Remove after a short, code-run-like burst
+    setTimeout(() => {
+      loading.remove();
+    }, 1100);
+  }
+
+  function refreshPortfolioDetails() {
+    selectDetailItems = document.querySelectorAll("[data-detail-category]");
+    projectDetail = document.querySelectorAll("[project-detail]");
+    filterItems = document.querySelectorAll("[data-filter-item]");
+
+    // improved detail category click handler with smoother scrolling
+    if (selectDetailItems && selectDetailItems.length > 0) {
+      selectDetailItems.forEach(item => {
+        if (item.dataset.detailBound === "true") return;
+
+        item.addEventListener("click", function () {
+          const selectedType = this.dataset.detailCategory;
+          openProjectDetail(selectedType);
         });
 
-        // find data-detail-category same type in projectDetail class
-        if (projectDetail && projectDetail.length > 0) {
-          projectDetail.forEach(project => {
-            if (project.dataset.detailCategory === selectedType) {
-              project.classList.add("active");
-              // Show back button when viewing a project detail
-              toggleBackButton(true);
-            } else {
-              project.classList.remove("active");
-            }
-          });
-        }
+        item.dataset.detailBound = "true";
       });
-    });
+    }
   }
+
+  refreshPortfolioDetails();
+  document.addEventListener("portfolio:details-loaded", function () {
+    refreshPortfolioDetails();
+    if (pendingDetailCategory) {
+      const categoryToOpen = pendingDetailCategory;
+      pendingDetailCategory = null;
+      openProjectDetail(categoryToOpen);
+    }
+  });
+  document.addEventListener("portfolio:list-rendered", refreshPortfolioDetails);
+
+  document.addEventListener("click", function (event) {
+    const detailTarget = event.target.closest("[data-detail-category]");
+    if (!detailTarget) return;
+
+    const isInPortfolioList = detailTarget.closest('[data-render="portfolio-list"]');
+    if (!isInPortfolioList) return;
+
+    event.preventDefault();
+    openProjectDetail(detailTarget.dataset.detailCategory);
+  });
 
   // Back button functionality with smooth scrolling and improved visual feedback
   if (buttonBack) {
@@ -205,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // filter variables
-  const filterItems = document.querySelectorAll("[data-filter-item]");
+  // filterItems is initialized near the top and refreshed on-demand
 
   // Function to toggle back button visibility
   function toggleBackButton(visible) {
@@ -239,7 +385,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       filterItems.forEach(item => {
-        if (selectedValue === "all" || selectedValue === item.dataset.category) {
+        const isDetail = item.hasAttribute("project-detail");
+
+        if (selectedValue === "all") {
+          if (isDetail) {
+            toHide.push(item);
+          } else {
+            toShow.push(item);
+          }
+          return;
+        }
+
+        if (isDetail) {
+          toHide.push(item);
+          return;
+        }
+
+        if (selectedValue === item.dataset.category) {
           toShow.push(item);
         } else {
           toHide.push(item);
@@ -274,7 +436,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    if (removeActive && removeActive.length > 0) {
+    if (!suppressDetailReset && removeActive && removeActive.length > 0) {
       removeActive.forEach(item => {
         item.classList.remove("active");
       });

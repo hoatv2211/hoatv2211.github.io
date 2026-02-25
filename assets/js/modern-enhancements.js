@@ -82,6 +82,68 @@ function initThemeToggle() {
     freshThemeToggle.style.pointerEvents = 'auto';
     freshThemeToggle.style.cursor = 'pointer';
     freshThemeToggle.style.zIndex = '10000';
+    freshThemeToggle.style.touchAction = 'none';
+
+    // Restore saved position if available
+    const savedPosRaw = localStorage.getItem('themeTogglePosition');
+    if (savedPosRaw) {
+      try {
+        const savedPos = JSON.parse(savedPosRaw);
+        if (typeof savedPos.x === 'number' && typeof savedPos.y === 'number') {
+          freshThemeToggle.style.left = `${savedPos.x}px`;
+          freshThemeToggle.style.top = `${savedPos.y}px`;
+          freshThemeToggle.style.right = 'auto';
+          freshThemeToggle.style.bottom = 'auto';
+        }
+      } catch (error) {
+        console.warn('Failed to restore theme toggle position', error);
+      }
+    }
+
+    // Drag handler
+    let isDragging = false;
+    let dragOffsetX = 0;
+    let dragOffsetY = 0;
+    let hasMoved = false;
+
+    const onPointerMove = (event) => {
+      if (!isDragging) return;
+      hasMoved = true;
+      const x = Math.max(0, Math.min(window.innerWidth - freshThemeToggle.offsetWidth, event.clientX - dragOffsetX));
+      const y = Math.max(0, Math.min(window.innerHeight - freshThemeToggle.offsetHeight, event.clientY - dragOffsetY));
+      freshThemeToggle.style.left = `${x}px`;
+      freshThemeToggle.style.top = `${y}px`;
+      freshThemeToggle.style.right = 'auto';
+      freshThemeToggle.style.bottom = 'auto';
+    };
+
+    const onPointerUp = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      document.removeEventListener('pointermove', onPointerMove);
+      document.removeEventListener('pointerup', onPointerUp);
+
+      if (hasMoved) {
+        const left = parseFloat(freshThemeToggle.style.left || '0');
+        const top = parseFloat(freshThemeToggle.style.top || '0');
+        localStorage.setItem('themeTogglePosition', JSON.stringify({ x: left, y: top }));
+      }
+
+      setTimeout(() => {
+        hasMoved = false;
+      }, 0);
+    };
+
+    freshThemeToggle.addEventListener('pointerdown', (event) => {
+      if (event.button !== 0) return;
+      isDragging = true;
+      hasMoved = false;
+      const rect = freshThemeToggle.getBoundingClientRect();
+      dragOffsetX = event.clientX - rect.left;
+      dragOffsetY = event.clientY - rect.top;
+      document.addEventListener('pointermove', onPointerMove);
+      document.addEventListener('pointerup', onPointerUp);
+    });
   } else {
     // Fallback in case the button doesn't exist in HTML
     console.warn('Theme toggle button not found in HTML');
@@ -184,21 +246,35 @@ function initSmoothScrolling() {
  * Initialize animations for UI elements
  */
 function initAnimations() {
-  // Add animation classes to elements
-  const animatedElements = document.querySelectorAll('.service-item, .timeline-item');
-  animatedElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.animation = 'fadeIn 0.8s ease forwards';
-  });
-  
-  // Stagger animation delays
-  document.querySelectorAll('.service-item').forEach((item, index) => {
-    item.style.animationDelay = `${0.1 * (index + 1)}s`;
-  });
-  
-  document.querySelectorAll('.timeline-item').forEach((item, index) => {
-    item.style.animationDelay = `${0.1 * (index + 1)}s`;
-  });
+  const applyFlashEntrance = (selector, baseDelay = 0.1, step = 0.06, maxDelay = 0.9, extraClass = "") => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((el, index) => {
+      if (el.classList.contains('flash-entrance')) return;
+      el.classList.add('flash-entrance');
+      if (extraClass) {
+        extraClass.split(" ").filter(Boolean).forEach(cls => el.classList.add(cls));
+      }
+      const delay = Math.min(baseDelay + index * step, maxDelay);
+      el.style.animationDelay = `${delay}s`;
+    });
+  };
+
+  // Core layout
+  applyFlashEntrance('.sidebar .avatar-box, .sidebar .info-content, .sidebar .info_more-btn', 0.08, 0.08, 0.5);
+  applyFlashEntrance('.navbar .navbar-item', 0.12, 0.05, 0.6);
+  applyFlashEntrance('.article-title', 0.15, 0.05, 0.6);
+
+  // Content blocks
+  applyFlashEntrance('.about-text p', 0.2, 0.04, 0.8);
+  applyFlashEntrance('.service-item', 0.2, 0.06, 0.9);
+  applyFlashEntrance('.timeline-item', 0.2, 0.06, 0.9);
+  applyFlashEntrance('.skills-categories > *', 0.2, 0.05, 0.9);
+  applyFlashEntrance('.contact-form .form-input, .contact-form .form-btn', 0.2, 0.05, 0.9);
+
+  // Portfolio list items (rendered dynamically)
+  const animatePortfolioItems = () => applyFlashEntrance('.project-item', 0.12, 0.05, 0.9, 'fast no-blur');
+  document.addEventListener('portfolio:list-rendered', animatePortfolioItems, { once: true });
+  animatePortfolioItems();
 }
 
 /**

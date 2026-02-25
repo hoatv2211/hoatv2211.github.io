@@ -1,12 +1,32 @@
+const CACHE_NAME = 'unity-webgl-cache-v2';
+
 self.addEventListener('install', function(e) {
   e.waitUntil(
-    caches.open('unity-webgl-cache').then(function(cache) {
+    caches.open(CACHE_NAME).then(function(cache) {
       return cache.addAll([
         '/',
         '/index.html',
       ]);
     })
   );
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', function(e) {
+  e.waitUntil(
+    caches.keys().then(function(keys) {
+      return Promise.all(
+        keys
+          .filter(function(key) {
+            return key !== CACHE_NAME;
+          })
+          .map(function(key) {
+            return caches.delete(key);
+          })
+      );
+    })
+  );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', function(e) {
