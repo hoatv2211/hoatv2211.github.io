@@ -175,14 +175,18 @@
         <header>
           <h2 class="h2 article-title"></h2>
           <h2></h2>
-          <p>
-          <div style="display: flex; justify-content: center; align-items: center; height: 60vh;">
-            <video width="90%" controls autoplay muted loop
-              style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" max-width: 960px;>
-              <source src="assets/videos/IMG_5960.MP4" type="video/mp4">
+          <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center; width: 100%; height: auto;">
+            <video controls autoplay muted loop
+              style="width: min(520px, 92vw); max-height: 60vh; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+              <source src="assets/vd1.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            </p>
+            <video controls autoplay muted loop
+              style="width: min(520px, 92vw); max-height: 60vh; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+              <source src="assets/vd2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </header>
 
         <section class="about-text">
@@ -202,7 +206,7 @@
           </p>
 
           <p>
-            🔧 <strong>Tech stack & Skills:</strong> Unity, C#, C++, Firebase, WebGL, AdMob, Game Optimization, Game
+            🔧 <strong>Tech stack & Skills:</strong> Unity, C#, C++,Lua, Firebase, WebGL, AdMob, Game Optimization, Game
             Design, Web3/NFT, N8N, Telegram App/Bot Automation
           </p>
 

@@ -134,11 +134,11 @@ window.SITE_CONFIG = {
   mainSkills: [
     {
       title: "Language",
-      items: ["C#", "Modern C/C++"]
+      items: ["C#", "Lua", "Modern C/C++"]
     },
     {
       title: "Engine",
-      items: ["Unity", "Unreal"]
+      items: ["Unity", "Unreal", "Cocos"]
     },
     {
       title: "Principle",
@@ -152,7 +152,7 @@ window.SITE_CONFIG = {
   skills: [
     {
       title: "Language",
-      items: ["Modern C/C++", "C#", "HTML5", "TypeScript", "JavaScript", "PHP", "Lua"]
+      items: ["Modern C/C++", "C#", "Lua", "HTML5", "TypeScript", "JavaScript", "PHP"]
     },
     {
       title: "Tools",
