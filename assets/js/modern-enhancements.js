@@ -246,21 +246,35 @@ function initSmoothScrolling() {
  * Initialize animations for UI elements
  */
 function initAnimations() {
-  // Add animation classes to elements
-  const animatedElements = document.querySelectorAll('.service-item, .timeline-item');
-  animatedElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.animation = 'fadeIn 0.8s ease forwards';
-  });
-  
-  // Stagger animation delays
-  document.querySelectorAll('.service-item').forEach((item, index) => {
-    item.style.animationDelay = `${0.1 * (index + 1)}s`;
-  });
-  
-  document.querySelectorAll('.timeline-item').forEach((item, index) => {
-    item.style.animationDelay = `${0.1 * (index + 1)}s`;
-  });
+  const applyFlashEntrance = (selector, baseDelay = 0.1, step = 0.06, maxDelay = 0.9, extraClass = "") => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((el, index) => {
+      if (el.classList.contains('flash-entrance')) return;
+      el.classList.add('flash-entrance');
+      if (extraClass) {
+        extraClass.split(" ").filter(Boolean).forEach(cls => el.classList.add(cls));
+      }
+      const delay = Math.min(baseDelay + index * step, maxDelay);
+      el.style.animationDelay = `${delay}s`;
+    });
+  };
+
+  // Core layout
+  applyFlashEntrance('.sidebar .avatar-box, .sidebar .info-content, .sidebar .info_more-btn', 0.08, 0.08, 0.5);
+  applyFlashEntrance('.navbar .navbar-item', 0.12, 0.05, 0.6);
+  applyFlashEntrance('.article-title', 0.15, 0.05, 0.6);
+
+  // Content blocks
+  applyFlashEntrance('.about-text p', 0.2, 0.04, 0.8);
+  applyFlashEntrance('.service-item', 0.2, 0.06, 0.9);
+  applyFlashEntrance('.timeline-item', 0.2, 0.06, 0.9);
+  applyFlashEntrance('.skills-categories > *', 0.2, 0.05, 0.9);
+  applyFlashEntrance('.contact-form .form-input, .contact-form .form-btn', 0.2, 0.05, 0.9);
+
+  // Portfolio list items (rendered dynamically)
+  const animatePortfolioItems = () => applyFlashEntrance('.project-item', 0.12, 0.05, 0.9, 'fast no-blur');
+  document.addEventListener('portfolio:list-rendered', animatePortfolioItems, { once: true });
+  animatePortfolioItems();
 }
 
 /**
