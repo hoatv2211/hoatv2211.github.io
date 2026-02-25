@@ -1,17 +1,5 @@
 window.PORTFOLIO_DATA = [
   {
-    id: "citybuilder",
-    title: "City - Builder",
-    category: "unity",
-    detailCategory: "citybuilder",
-    image: {
-      src: "assets/images/game/Dalgona/logo.png",
-      alt: "citybuilder",
-      style: "width: 360px; height: 360px;"
-    },
-    tag: { label: "Unity", className: "unity-icon" }
-  },
-  {
     id: "dalgona",
     title: "Dalgona - Worldchain",
     category: "unity",
