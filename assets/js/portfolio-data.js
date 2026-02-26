@@ -1,12 +1,12 @@
 window.PORTFOLIO_DATA = [
-  {
-    id: "dalgona",
-    title: "Dalgona - Worldchain",
+   {
+    id: "nekoverse",
+    title: "Nekoverse (NFT)",
     category: "unity",
-    detailCategory: "dalgona",
+    detailCategory: "nekoverse",
     image: {
-      src: "assets/images/game/Dalgona/logo.png",
-      alt: "dalgona",
+      src: "assets/images/game/Nekoverse/4.jpg",
+      alt: "nekoverse",
       style: "width: 360px; height: 360px;"
     },
     tag: { label: "Unity", className: "unity-icon" }
@@ -24,17 +24,6 @@ window.PORTFOLIO_DATA = [
     tag: { label: "Unity", className: "unity-icon" }
   },
   {
-    id: "archero",
-    title: "Archero (clone)",
-    category: "unity",
-    detailCategory: "archero",
-    image: {
-      src: "assets/images/game/Archero/icon.png",
-      alt: "archero"
-    },
-    tag: { label: "Unity", className: "unity-icon" }
-  },
-  {
     id: "idleCyber",
     title: "Idle Cyber (NFT)",
     category: "unity",
@@ -47,13 +36,14 @@ window.PORTFOLIO_DATA = [
     tag: { label: "Unity", className: "unity-icon" }
   },
   {
-    id: "bike",
-    title: "Rise of Trial Bike",
+    id: "dalgona",
+    title: "Dalgona - Worldchain",
     category: "unity",
-    detailCategory: "bike",
+    detailCategory: "dalgona",
     image: {
-      src: "assets/images/game/BikeTrail/BG Game.jpg",
-      alt: "bike"
+      src: "assets/images/game/Dalgona/logo.png",
+      alt: "dalgona",
+      style: "width: 360px; height: 360px;"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -66,6 +56,28 @@ window.PORTFOLIO_DATA = [
       src: "assets/images/game/Sanwitch/icon.webp",
       alt: "sandwich",
       style: "width: 360px; height: 360px;"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+  {
+    id: "archero",
+    title: "Archero (clone)",
+    category: "unity",
+    detailCategory: "archero",
+    image: {
+      src: "assets/images/game/Archero/icon.png",
+      alt: "archero"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+  {
+    id: "bike",
+    title: "Rise of Trial Bike",
+    category: "unity",
+    detailCategory: "bike",
+    image: {
+      src: "assets/images/game/BikeTrail/BG Game.jpg",
+      alt: "bike"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -88,18 +100,6 @@ window.PORTFOLIO_DATA = [
     image: {
       src: "assets/images/game/TileCandy/icon_6.png",
       alt: "tilecandy"
-    },
-    tag: { label: "Unity", className: "unity-icon" }
-  },
-  {
-    id: "nekoverse",
-    title: "Nekoverse (NFT)",
-    category: "unity",
-    detailCategory: "nekoverse",
-    image: {
-      src: "assets/images/game/Nekoverse/4.jpg",
-      alt: "nekoverse",
-      style: "width: 360px; height: 360px;"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
