@@ -48,6 +48,19 @@ window.PORTFOLIO_DATA = [
     tag: { label: "Unity", className: "unity-icon" }
   },
   {
+    id: "shibainu",
+    title: "Shiba Inu",
+    category: "unity",
+    detailCategory: "shibainu",
+    apiUrlAndroid: "https://app.sensortower.com/api/android/apps/jp.gamestart.Shibainu",
+    image: {
+      src: "assets/images/game/ShibaInu/9.webp",
+      alt: "Shiba Inu",
+      style: "width: 360px; height: 360px;"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+  {
     id: "sandwich",
     title: "Sandwich Please!",
     category: "unity",
