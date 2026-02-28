@@ -52,9 +52,8 @@ window.PORTFOLIO_DATA = [
     title: "Food Truck - Shiba Inu",
     category: "unity",
     detailCategory: "shibainu",
-    apiUrlAndroid: "https://app.sensortower.com/api/android/apps/jp.gamestart.Shibainu",
     image: {
-      src: "assets/images/game/ShibaInu/9.webp",
+      src: "assets/images/game/Shibainu/9.webp",
       alt: "Food Truck - Shiba Inu",
       style: "width: 360px; height: 360px;"
     },
