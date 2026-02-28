@@ -49,13 +49,13 @@ window.PORTFOLIO_DATA = [
   },
   {
     id: "shibainu",
-    title: "Shiba Inu",
+    title: "Food Truck - Shiba Inu",
     category: "unity",
     detailCategory: "shibainu",
     apiUrlAndroid: "https://app.sensortower.com/api/android/apps/jp.gamestart.Shibainu",
     image: {
       src: "assets/images/game/ShibaInu/9.webp",
-      alt: "Shiba Inu",
+      alt: "Food Truck - Shiba Inu",
       style: "width: 360px; height: 360px;"
     },
     tag: { label: "Unity", className: "unity-icon" }
@@ -102,6 +102,19 @@ window.PORTFOLIO_DATA = [
     image: {
       src: "assets/images/game/MeowFlow/icon.webp",
       alt: "MeowFlow"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+  {
+    id: "HomeDesign",
+    title: "Home Design",
+    category: "unity",
+    detailCategory: "homeDesign",
+    apiUrlAndroid: "https://app.sensortower.com/api/android/apps/com.giraffegames.ggm3",
+    image: {
+      src: "assets/images/game/HomeDesign/1.webp",
+      alt: "Home Design",
+      style: "width: 360px; height: 360px;"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
