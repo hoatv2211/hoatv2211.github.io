@@ -1,6 +1,5 @@
 (function () {
-  const TELEGRAM_TOKEN = "8034320397:AAH1FTGoE9mWfHIDWPmNkHME5SaQzMGXtQI";
-  const CHAT_ID = "859267157";
+  const PROXY_URL = "https://quiet-haze-970b.tranhoa-221194.workers.dev/";
   const IP_API_URL = "https://api.ipify.org?format=json";
   const COOLDOWN_MS = 5 * 60 * 1000;
   const STORAGE_KEY = "telegramVisitLastSent";
@@ -33,12 +32,10 @@
   }
 
   function sendTelegramMessage(text) {
-    const url = "https://api.telegram.org/bot" + TELEGRAM_TOKEN + "/sendMessage";
-    return fetch(url, {
+    return fetch(PROXY_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        chat_id: CHAT_ID,
         text: text
       })
     });
@@ -49,7 +46,7 @@
     const ua = navigator.userAgent || "unknown";
     const time = new Date().toISOString();
     return (
-      "Co nguoi da dang nhap vao portfolio cua ban." +
+      "Có người đã xem portfolio của bạn" +
       "\nIP: " + ip +
       "\nURL: " + url +
       "\nUA: " + ua +
@@ -57,7 +54,7 @@
     );
   }
 
-  if (!TELEGRAM_TOKEN || !CHAT_ID) return;
+  if (!PROXY_URL || PROXY_URL.includes("YOUR_WORKER_NAME")) return;
   if (!shouldSend()) return;
 
   getIpAddress()
