@@ -11,25 +11,21 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize loading overlay
   initLoadingOverlay();
-  
-  // Check for saved theme and apply it immediately before content is shown
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') {
-    document.documentElement.classList.add('light-mode');
-  }
-  
+
+  // Theme init is handled by bootstrap.js (single source of truth)
+
   // Add dark mode toggle and floating buttons
   initThemeToggle();
-  
+
   // Enhance images with lazy loading
   initLazyLoading();
-  
+
   // Add smooth scrolling to all internal links
   initSmoothScrolling();
-  
+
   // Add animation classes to elements
   initAnimations();
-  
+
   // Enhance accessibility
   improveAccessibility();
 });
@@ -54,35 +50,11 @@ function initLoadingOverlay() {
 function initThemeToggle() {
   // Get the existing theme toggle button
   const themeToggle = document.getElementById('theme-toggle');
-  
+
   if (themeToggle) {
-    console.log('Theme toggle button found:', themeToggle);
-    
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      document.documentElement.classList.add('light-mode');
-    }
-    
-    // Remove any existing click listeners
-    themeToggle.replaceWith(themeToggle.cloneNode(true));
-    
-    // Get the fresh reference after replacing
-    const freshThemeToggle = document.getElementById('theme-toggle');
-    
-    // Add event listener for theme toggle using onclick for direct binding
-    freshThemeToggle.onclick = function() {
-      document.documentElement.classList.toggle('light-mode');
-      const currentTheme = document.documentElement.classList.contains('light-mode') ? 'light' : 'dark';
-      localStorage.setItem('theme', currentTheme);
-      console.log('Theme toggled to:', currentTheme);
-    };
-    
-    // Ensure it's visible and clickable
-    freshThemeToggle.style.pointerEvents = 'auto';
-    freshThemeToggle.style.cursor = 'pointer';
-    freshThemeToggle.style.zIndex = '10000';
-    freshThemeToggle.style.touchAction = 'none';
+    // Toggle click is handled by bootstrap.js via window.toggleTheme
+    // This function only manages drag behavior and ensures interactivity
+    const freshThemeToggle = themeToggle;
 
     // Restore saved position if available
     const savedPosRaw = localStorage.getItem('themeTogglePosition');
@@ -158,7 +130,7 @@ function initThemeToggle() {
     backButton.setAttribute('title', 'Back to portfolio');
     backButton.innerHTML = '<ion-icon name="arrow-back-outline"></ion-icon>';
     document.body.appendChild(backButton);
-    
+
     // Add event listener for back button
     backButton.addEventListener('click', () => {
       window.history.back();
@@ -177,7 +149,7 @@ function initLazyLoading() {
     if (!img.dataset.src && img.src) {
       img.dataset.src = img.src;
       img.classList.add('lazy-load');
-      
+
       // Only set loading="lazy" for images not immediately visible
       const rect = img.getBoundingClientRect();
       const isVisible = (
@@ -186,7 +158,7 @@ function initLazyLoading() {
         rect.bottom <= window.innerHeight &&
         rect.right <= window.innerWidth
       );
-      
+
       if (!isVisible) {
         img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E';
         img.setAttribute('loading', 'lazy');
@@ -195,7 +167,7 @@ function initLazyLoading() {
       }
     }
   });
-  
+
   // Set up intersection observer for lazy loading
   const lazyImageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -209,7 +181,7 @@ function initLazyLoading() {
       }
     });
   });
-  
+
   // Observe all lazy-load images
   document.querySelectorAll('img.lazy-load').forEach(img => {
     lazyImageObserver.observe(img);
@@ -223,18 +195,18 @@ function initSmoothScrolling() {
   document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      
+
       // Get the target element
       const targetId = this.getAttribute('href');
       const targetElement = document.querySelector(targetId);
-      
+
       if (targetElement) {
         // Scroll smoothly to the target
         targetElement.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
-        
+
         // Update URL without page reload (for browser history)
         history.pushState(null, null, targetId);
       }
@@ -290,14 +262,14 @@ function improveAccessibility() {
       img.alt = 'Portfolio image';
     }
   });
-  
+
   // Ensure all interactive elements are focusable
   document.querySelectorAll('a, button').forEach(el => {
     if (!el.getAttribute('tabindex')) {
       el.setAttribute('tabindex', '0');
     }
   });
-  
+
   // Add ARIA labels to icons for screen readers
   document.querySelectorAll('ion-icon:not([aria-label])').forEach(icon => {
     const name = icon.getAttribute('name');
