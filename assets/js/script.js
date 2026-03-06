@@ -1,13 +1,13 @@
 "use strict";
 
 // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Performance optimization - track page load metrics
-  if (window.performance) {
-    const pageLoadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-    console.log('Page load time:', pageLoadTime + 'ms');
+document.addEventListener('DOMContentLoaded', function () {
+  // Performance optimization - track page load metrics (Navigation Timing Level 2)
+  const navEntries = performance.getEntriesByType('navigation');
+  if (navEntries.length > 0) {
+    console.log('Page load time:', Math.round(navEntries[0].domContentLoadedEventEnd) + 'ms');
   }
-  
+
   // Hide loading overlay once page is loaded with a smooth transition
   const loadingOverlay = document.getElementById('loading-overlay');
   if (loadingOverlay) {
@@ -21,41 +21,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 500); // Allow fade-out effect before hiding
     }, 300);
   }
-  
-  // Apply saved theme on page load for consistent experience
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') {
-    document.documentElement.classList.add('light-mode');
-  }
-  
-  // Direct implementation of theme toggle functionality
-  // This is now handled by the toggleTheme() function directly in the HTML
-  // to avoid multiple event handlers competing with each other
-  // Set theme on page load
-  window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded - initializing theme');
-    // If toggleTheme is not defined in global scope, define a backup here
-    if (typeof window.toggleTheme !== 'function') {
-      window.toggleTheme = function() {
-        console.log('Toggling theme from script.js function');
-        document.documentElement.classList.toggle('light-mode');
-        const currentTheme = document.documentElement.classList.contains('light-mode') ? 'light' : 'dark';
-        localStorage.setItem('theme', currentTheme);
-      };
-    }
-  });
-  
+
+  // Theme is initialized by bootstrap.js (single source of truth)
+
   // Add entrance animations to main sections
   animateEntrances();
 
   // element toggle function - more efficient implementation with animation support
   const elementToggleFunc = function (elem) {
     if (!elem) return;
-    
+
     // Add transition class before toggling active state
     elem.classList.add('with-transition');
     elem.classList.toggle('active');
-    
+
     // Trigger reflow to ensure transition applies
     void elem.offsetWidth;
   };
@@ -97,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const avatar = this.querySelector("[data-testimonials-avatar]");
         const title = this.querySelector("[data-testimonials-title]");
         const text = this.querySelector("[data-testimonials-text]");
-        
+
         if (modalImg && avatar) modalImg.src = avatar.src;
         if (modalImg && avatar) modalImg.alt = avatar.alt;
         if (modalTitle && title) modalTitle.innerHTML = title.innerHTML;
@@ -225,30 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
 
     project.prepend(loading);
+    window.animateCodeLoading(loading);
 
-    const animate = () => {
-      const lines = Array.from(loading.querySelectorAll(".code-loading-line"));
-      if (lines.length === 0) return;
-      lines.forEach(line => {
-        line.classList.remove("is-visible", "is-current");
-      });
-
-      let index = 0;
-      const step = () => {
-        if (index > 0) lines[index - 1].classList.remove("is-current");
-        if (index < lines.length) {
-          lines[index].classList.add("is-visible", "is-current");
-          index += 1;
-          setTimeout(step, 120);
-        }
-      };
-
-      setTimeout(step, 80);
-    };
-
-    animate();
-
-    // Remove after a short, code-run-like burst
     setTimeout(() => {
       loading.remove();
     }, 1100);
@@ -300,21 +257,21 @@ document.addEventListener('DOMContentLoaded', function() {
   if (buttonBack) {
     // Ensure back button has proper styling for floating button
     buttonBack.classList.add('button-floating');
-    
+
     // Hide back button initially when page loads
     toggleBackButton(false);
-    
+
     buttonBack.addEventListener("click", function () {
       // Add click animation
       this.classList.add('button-clicked');
       setTimeout(() => this.classList.remove('button-clicked'), 300);
-      
+
       // Smooth scroll with callback
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-      
+
       // After scrolling complete, apply filter and hide back button
       setTimeout(() => {
         filterFunc("all");
@@ -339,11 +296,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!clickEventAdded) {
           elementToggleFunc(select);
         }
-        
+
         let selectedValue = this.innerText.toLowerCase();
         if (selectValue) selectValue.innerText = this.innerText;
         if (select) elementToggleFunc(select);
-        
+
         filterFunc(selectedValue);
         clickEventAdded = false;
       });
@@ -373,17 +330,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const filterFunc = function (selectedValue, animate = false) {
     // Show the back button if not viewing "all" items (means we're viewing a project)
     toggleBackButton(selectedValue !== "all");
-    
+
     if (filterItems && filterItems.length > 0) {
       // Create array of visible and hidden items for animation
       const toShow = [];
       const toHide = [];
-      
+
       // If we're showing "all" items, we should hide the back button
       if (selectedValue === "all") {
         toggleBackButton(false);
       }
-      
+
       filterItems.forEach(item => {
         const isDetail = item.hasAttribute("project-detail");
 
@@ -407,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
           toHide.push(item);
         }
       });
-      
+
       // Apply transitions if animation requested
       if (animate) {
         // First hide items with transition
@@ -419,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function() {
             item.classList.remove("active");
           }, 300);
         });
-        
+
         // Then show items with staggered delay
         toShow.forEach((item, index) => {
           setTimeout(() => {
@@ -452,10 +409,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add tactile feedback with subtle scale animation
         this.style.transform = 'scale(0.95)';
         setTimeout(() => { this.style.transform = 'scale(1)'; }, 150);
-        
+
         let selectedValue = this.innerText.toLowerCase();
         if (selectValue) selectValue.innerText = this.innerText;
-        
+
         // Apply filter with staggered animation
         filterFunc(selectedValue, true);
 
@@ -495,9 +452,9 @@ document.addEventListener('DOMContentLoaded', function() {
       link.addEventListener("click", function () {
         filterFunc("all");
         if (selectValue) selectValue.innerText = "All";
-        
+
         const targetPage = this.innerHTML.toLowerCase();
-        
+
         pages.forEach((page, j) => {
           if (targetPage === page.dataset.page) {
             page.classList.add("active");
@@ -517,101 +474,80 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Improved image expansion function with better overlay and performance optimization
 
-// Helper function to animate entrances of main elements
-function animateEntrances() {
-  const animateElements = [
-    { selector: '.sidebar-info', delay: 100 },
-    { selector: '.article-title', delay: 200 },
-    { selector: '.service-list', delay: 400 },
-    { selector: '.filter-list', delay: 300 },
-    { selector: '.contact-list', delay: 500 }
-  ];
-  
-  animateElements.forEach(({ selector, delay }) => {
-    const elements = document.querySelectorAll(selector);
-    elements.forEach(el => {
-      setTimeout(() => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        
-        // Trigger reflow
-        void el.offsetWidth;
-        
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }, delay);
+  // Helper function to animate entrances of main elements
+  function animateEntrances() {
+    const animateElements = [
+      { selector: '.sidebar-info', delay: 100 },
+      { selector: '.article-title', delay: 200 },
+      { selector: '.service-list', delay: 400 },
+      { selector: '.filter-list', delay: 300 },
+      { selector: '.contact-list', delay: 500 }
+    ];
+
+    animateElements.forEach(({ selector, delay }) => {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach(el => {
+        setTimeout(() => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(20px)';
+          el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+          // Trigger reflow
+          void el.offsetWidth;
+
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, delay);
+      });
     });
-  });
-}
-  window.expandImage = function(clickedImage) {
+  }
+  window.expandImage = function (clickedImage) {
     if (!clickedImage || !clickedImage.querySelector("img")) return;
-    
+
     // Add tactile feedback with subtle scale animation on click
     const imgElement = clickedImage.querySelector("img");
     imgElement.style.transform = 'scale(0.95)';
     setTimeout(() => { imgElement.style.transform = 'scale(1)'; }, 150);
-    
+
     const imgSrc = imgElement.src;
     const imgAlt = imgElement.alt || 'Portfolio image';
     const expandedImg = document.createElement("img");
     const overlay = createOverlay(expandedImg);
-    
+
     // Add loading indicator while image loads
     const loadingSpinner = document.createElement('div');
     loadingSpinner.className = 'loading-spinner';
     overlay.appendChild(loadingSpinner);
 
-    // Create expanded image with improved styling
+    // Create expanded image with CSS class
     expandedImg.src = imgSrc;
-    expandedImg.style.maxHeight = "90%";
-    expandedImg.style.maxWidth = "90%";
-    expandedImg.style.objectFit = "contain";
-    expandedImg.style.position = "fixed";
-    expandedImg.style.top = "50%";
-    expandedImg.style.left = "50%";
-    expandedImg.style.transform = "translate(-50%, -50%)";
-    expandedImg.style.zIndex = "9999";
-    expandedImg.style.backgroundColor = "#fff0";
-    expandedImg.style.borderRadius = "10px";
-    expandedImg.style.cursor = "pointer";
-    expandedImg.style.boxShadow = "0 0 20px rgba(0,0,0,0.3)";
-    expandedImg.style.transition = "transform 0.3s ease";
-    
+    expandedImg.className = "expanded-media";
+
     expandedImg.onclick = function () {
       document.body.removeChild(overlay);
       document.body.removeChild(expandedImg);
     };
-    
+
     document.body.appendChild(expandedImg);
   }
 
   // Re-implement expandVideo with proper error checking
-  window.expandVideo = function(clickedVideo) {
-    if (!clickedVideo || !clickedVideo.querySelector("video") || 
-        !clickedVideo.querySelector("video").querySelector("source")) return;
-        
+  window.expandVideo = function (clickedVideo) {
+    if (!clickedVideo || !clickedVideo.querySelector("video") ||
+      !clickedVideo.querySelector("video").querySelector("source")) return;
+
     const videoFiled = clickedVideo.querySelector("video");
     const videoSrc = videoFiled.querySelector("source").src;
     const expandedVideo = document.createElement("video");
 
     const overlay = createOverlay(expandedVideo);
 
-    // Create expanded video
+    // Create expanded video with CSS class
     expandedVideo.src = videoSrc;
     expandedVideo.currentTime = 0;
     expandedVideo.autoplay = true;
     expandedVideo.controls = true;
-    expandedVideo.style.width = "100%";
-    expandedVideo.style.height = "100%";
-    expandedVideo.style.zIndex = "9999";
-    expandedVideo.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
-    expandedVideo.style.position = "fixed";
-    expandedVideo.style.top = "50%";
-    expandedVideo.style.left = "50%";
-    expandedVideo.style.transform = "translate(-50%, -50%)";
-    expandedVideo.style.borderRadius = "10px";
-    expandedVideo.style.cursor = "pointer";
+    expandedVideo.className = "expanded-media expanded-media--video";
 
     expandedVideo.onclick = function () {
       if (videoFiled) {
@@ -621,7 +557,7 @@ function animateEntrances() {
       document.body.removeChild(overlay);
       document.body.removeChild(expandedVideo);
     };
-    
+
     document.body.appendChild(expandedVideo);
   };
 
@@ -630,12 +566,12 @@ function animateEntrances() {
   if (skillsButton && pages) {
     skillsButton.addEventListener("click", function () {
       const skillsSection = document.getElementById("skills");
-      
+
       pages.forEach((page, i) => {
         if (page.dataset.page === "resume") {
           page.classList.add("active");
           if (navigationLinks && navigationLinks[i]) navigationLinks[i].classList.add("active");
-          
+
           if (skillsSection) {
             setTimeout(() => {
               skillsSection.scrollIntoView({
@@ -663,15 +599,8 @@ function animateEntrances() {
 // Helper function to create overlay
 function createOverlay(elementToRemove) {
   const overlay = document.createElement("div");
-  overlay.style.position = "fixed";
-  overlay.style.top = "0";
-  overlay.style.left = "0";
-  overlay.style.width = "100%";
-  overlay.style.height = "100%";
-  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
-  overlay.style.zIndex = "9998";
-  overlay.style.transition = "opacity 0.3s ease";
-  
+  overlay.className = "expanded-overlay";
+
   overlay.onclick = function () {
     overlay.style.opacity = "0";
     setTimeout(() => {
@@ -683,12 +612,12 @@ function createOverlay(elementToRemove) {
       }
     }, 300);
   };
-  
+
   document.body.appendChild(overlay);
-  
+
   // Force reflow to enable transition
   void overlay.offsetWidth;
   overlay.style.opacity = "1";
-  
+
   return overlay;
 }

@@ -1,3 +1,25 @@
+// Shared code-loading animation utility
+window.animateCodeLoading = function (container) {
+  if (!container) return;
+  const lines = Array.from(container.querySelectorAll(".code-loading-line"));
+  if (lines.length === 0) return;
+
+  lines.forEach(line => {
+    line.classList.remove("is-visible", "is-current");
+  });
+
+  let index = 0;
+  const step = () => {
+    if (index > 0) lines[index - 1].classList.remove("is-current");
+    if (index < lines.length) {
+      lines[index].classList.add("is-visible", "is-current");
+      index += 1;
+      setTimeout(step, 120);
+    }
+  };
+
+  setTimeout(step, 80);
+};
 
 (function () {
   const DETAILS_DIR = "assets/portfolio-details";
@@ -11,28 +33,6 @@
       }
       return response.text();
     });
-  }
-
-  function animateCodeLoading(container) {
-    if (!container) return;
-    const lines = Array.from(container.querySelectorAll(".code-loading-line"));
-    if (lines.length === 0) return;
-
-    lines.forEach(line => {
-      line.classList.remove("is-visible", "is-current");
-    });
-
-    let index = 0;
-    const step = () => {
-      if (index > 0) lines[index - 1].classList.remove("is-current");
-      if (index < lines.length) {
-        lines[index].classList.add("is-visible", "is-current");
-        index += 1;
-        setTimeout(step, 120);
-      }
-    };
-
-    setTimeout(step, 80);
   }
 
   function loadDetails(force = false) {
@@ -105,7 +105,7 @@
     `;
 
     const loadingBlock = target.querySelector(".code-loading");
-    animateCodeLoading(loadingBlock);
+    window.animateCodeLoading(loadingBlock);
 
     return detailFiles
       .reduce((chain, path) => {
