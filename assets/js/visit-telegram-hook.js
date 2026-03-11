@@ -1,18 +1,16 @@
 (function () {
   const PROXY_URL = "https://quiet-haze-970b.tranhoa-221194.workers.dev/";
-  /* [visit-hook] ip-api.com returns IP + geo location in one request (free, no key needed) */
-  const IP_API_URL = "http://ip-api.com/json/?fields=query,city,regionName,country,isp,timezone";
-  const COOLDOWN_MS = 5 * 60 * 1000;
-  const STORAGE_KEY = "telegramVisitLastSent";
+  var COOLDOWN_MS = 60 * 1000;
+  var STORAGE_KEY = "telegramVisitLastSent";
 
   function shouldSend() {
     try {
-      const lastSent = Number(localStorage.getItem(STORAGE_KEY) || 0);
+      var lastSent = Number(localStorage.getItem(STORAGE_KEY) || 0);
       if (Number.isFinite(lastSent) && Date.now() - lastSent < COOLDOWN_MS) {
         return false;
       }
       return true;
-    } catch (error) {
+    } catch (e) {
       return true;
     }
   }
@@ -20,27 +18,68 @@
   function markSent() {
     try {
       localStorage.setItem(STORAGE_KEY, String(Date.now()));
-    } catch (error) {
-      // Ignore storage errors
-    }
+    } catch (e) { /* ignore */ }
   }
 
-  /* [visit-hook] Fetch IP + location data from ip-api.com */
-  function getVisitorInfo() {
-    return fetch(IP_API_URL, { cache: "no-store" })
-      .then(function (response) { return response.json(); })
-      .then(function (data) {
+  /* [visit-hook] Fallback chain: try multiple geo APIs until one works */
+  var GEO_APIS = [
+    {
+      url: "https://ipwho.is/",
+      parse: function (d) {
         return {
-          ip: data.query || "unknown",
-          city: data.city || "unknown",
-          region: data.regionName || "",
-          country: data.country || "unknown",
-          isp: data.isp || "unknown",
-          timezone: data.timezone || "unknown"
+          ip: d.ip, city: d.city, region: d.region,
+          country: d.country,
+          isp: (d.connection && d.connection.isp) || "unknown",
+          timezone: (d.timezone && d.timezone.id) || "unknown"
         };
+      }
+    },
+    {
+      url: "http://ip-api.com/json/?fields=query,city,regionName,country,isp,timezone",
+      parse: function (d) {
+        return {
+          ip: d.query, city: d.city, region: d.regionName,
+          country: d.country,
+          isp: d.isp || "unknown",
+          timezone: d.timezone || "unknown"
+        };
+      }
+    },
+    {
+      url: "https://api.ipify.org?format=json",
+      parse: function (d) {
+        return {
+          ip: d.ip, city: "n/a", region: "",
+          country: "n/a", isp: "n/a", timezone: "n/a"
+        };
+      }
+    }
+  ];
+
+  function fetchWithTimeout(url, ms) {
+    var controller = new AbortController();
+    var timer = setTimeout(function () { controller.abort(); }, ms);
+    return fetch(url, { cache: "no-store", signal: controller.signal })
+      .then(function (r) { clearTimeout(timer); return r.json(); });
+  }
+
+  function getVisitorInfo(index) {
+    var i = index || 0;
+    if (i >= GEO_APIS.length) {
+      return Promise.resolve({ ip: "unknown", city: "unknown", region: "", country: "unknown", isp: "unknown", timezone: "unknown", _source: "none", _raw: "{}" });
+    }
+    var api = GEO_APIS[i];
+    return fetchWithTimeout(api.url, 5000)
+      .then(function (data) {
+        var info = api.parse(data);
+        if (!info.ip || info.ip === "unknown") throw new Error("no ip");
+        /* [visit-hook] Attach debug info */
+        info._source = api.url;
+        info._raw = JSON.stringify(data);
+        return info;
       })
       .catch(function () {
-        return { ip: "unknown", city: "unknown", region: "", country: "unknown", isp: "unknown", timezone: "unknown" };
+        return getVisitorInfo(i + 1); /* [visit-hook] fallback to next API */
       });
   }
 
@@ -54,7 +93,7 @@
     });
   }
 
-  /* [visit-hook] Build message with IP + location info */
+  /* [visit-hook] Build message with IP + location + raw JSON for debugging */
   function buildMessage(info) {
     var url = window.location.href;
     var ua = navigator.userAgent || "unknown";
@@ -68,7 +107,9 @@
       "\n🕐 Timezone: " + info.timezone +
       "\nURL: " + url +
       "\nUA: " + ua +
-      "\nTime: " + time
+      "\nTime: " + time +
+      "\n\n🔧 API: " + (info._source || "unknown") +
+      "\n📦 Raw: " + (info._raw || "{}")
     );
   }
 
