@@ -50,9 +50,11 @@
 
             order.forEach(function (type) {
                 if (groups[type].length === 0) return;
+                var count = groups[type].length;
                 var container = document.createElement('div');
                 container.className = 'project-gallery gallery--' + type;
                 container.dataset.gallerySorted = '1';
+                container.dataset.count = count; /* [gallery-sort] Expose count for CSS balancing */
                 groups[type].forEach(function (item) {
                     container.appendChild(item);
                 });
