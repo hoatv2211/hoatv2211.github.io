@@ -3145,6 +3145,34 @@ iframe {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
+/* [gallery-sort] UNIVERSAL SMART BALANCING 
+   Force balanced rows based on item count to prevent "orphaned" items on bottom rows.
+   Using max(min_px, max_percentage) dynamically enforces maximum columns per row.
+*/
+
+/* 1. Define base minimum widths for each orientation */
+.project-gallery[data-gallery-sorted].gallery--landscape { --min-w: 280px; }
+.project-gallery[data-gallery-sorted].gallery--square    { --min-w: 180px; }
+.project-gallery[data-gallery-sorted].gallery--portrait  { --min-w: 120px; }
+
+/* 2. Apply responsive limit (default 0% = no limit) */
+.project-gallery[data-gallery-sorted] {
+    --max-pct: 0%; 
+    grid-template-columns: repeat(auto-fit, minmax(max(var(--min-w), var(--max-pct)), 1fr));
+}
+
+/* 3. Assign limits based on exact item counts (up to 12 items) */
+.project-gallery[data-count="2"]  { --max-pct: 45%; } /* Max 2 cols: 2 */
+.project-gallery[data-count="4"]  { --max-pct: 45%; } /* Max 2 cols: 2x2 */
+.project-gallery[data-count="5"]  { --max-pct: 30%; } /* Max 3 cols: 3+2 */
+.project-gallery[data-count="6"]  { --max-pct: 30%; } /* Max 3 cols: 3x3 */
+.project-gallery[data-count="7"]  { --max-pct: 22%; } /* Max 4 cols: 4+3 */
+.project-gallery[data-count="8"]  { --max-pct: 22%; } /* Max 4 cols: 4x4 */
+.project-gallery[data-count="9"]  { --max-pct: 30%; } /* Max 3 cols: 3x3x3 */
+.project-gallery[data-count="10"] { --max-pct: 18%; } /* Max 5 cols: 5x5 */
+.project-gallery[data-count="11"] { --max-pct: 22%; } /* Max 4 cols: 4x4x3 */
+.project-gallery[data-count="12"] { --max-pct: 22%; } /* Max 4 cols: 4x4x4 */
+
 .project-gallery .project-item {
     min-width: 0;
 }
