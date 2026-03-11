@@ -143,6 +143,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!matched) {
       pendingDetailCategory = selectedType;
+    } else if (typeof window.refreshProjectMediaLayout === "function") {
+      window.requestAnimationFrame(() => window.refreshProjectMediaLayout());
     }
   }
 
