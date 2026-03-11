@@ -3043,6 +3043,8 @@ textarea.form-input::-webkit-resizer {
 .project-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 360px));
+    justify-content: center;
+    /* [gallery-sort] Center grid items instead of left-align */
     gap: 1.5rem;
     padding: 0;
     margin: 0;
@@ -3109,4 +3111,77 @@ iframe {
 .testimonials-modal {
     max-height: 80vh;
     overflow-y: auto;
+}
+
+/*-----------------------------------*\
+  #PROJECT GALLERY GRID (auto-sorted)
+\*-----------------------------------*/
+
+.project-gallery {
+    display: grid;
+    justify-content: center;
+    /* [gallery-sort] Center grid items instead of left-align */
+    justify-items: center;
+    /* [gallery-sort] Each child centers horizontally in its cell */
+    align-items: start;
+    /* [gallery-sort] Each child aligns to top of its cell */
+    gap: 12px;
+    margin: 16px 0;
+    width: 100%;
+}
+
+/* [gallery-sort] Landscape: wider cards, auto-fit collapses empty columns for centering */
+.project-gallery.gallery--landscape {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* [gallery-sort] Portrait: narrower cards, auto-fit collapses empty columns for centering */
+.project-gallery.gallery--portrait {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* [gallery-sort] Square: medium cards, auto-fit collapses empty columns for centering */
+.project-gallery.gallery--square {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.project-gallery .project-item {
+    min-width: 0;
+}
+
+.project-gallery .project-img {
+    height: auto;
+    margin-bottom: 0;
+}
+
+.project-gallery .project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+
+    object-position: center;
+}
+
+.project-gallery.gallery--landscape .project-img img {
+    aspect-ratio: 16 / 9;
+}
+
+.project-gallery.gallery--portrait .project-img img {
+    aspect-ratio: 9 / 16;
+}
+
+.project-gallery.gallery--square .project-img img {
+    aspect-ratio: 9 / 16;
+}
+
+.project-gallery .project-item a:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.project-gallery .project-item a:focus-visible {
+    outline: 2px solid var(--orange-yellow-crayola);
+    outline-offset: 2px;
 }
