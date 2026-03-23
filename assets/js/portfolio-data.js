@@ -1,4 +1,16 @@
 window.PORTFOLIO_DATA = [
+  {
+    id: "proxyapi-mad",
+    title: "ProxyAPI.MAD",
+    category: "agentic",
+    detailCategory: "proxyapi-mad",
+    image: {
+      src: "https://github.com/mad-agentic.png",
+      alt: "ProxyAPI.MAD",
+      style: "width: 360px; height: 360px; object-fit: contain; background: #111;"
+    },
+    tag: { label: "Agentic AI", className: "applications-icon" }
+  },
    {
     id: "nekoverse",
     title: "Nekoverse (NFT)",
