@@ -628,11 +628,18 @@ img.lazy-load.loaded {
 
   /* Ensure buttons have adequate touch targets */
   .btn,
-  button,
-  [role="button"],
-  .filter-item,
+  .filter-item button,
   .navbar-link,
-  .contact-link {
+  .contact-link,
+  .showcase-btn,
+  .showcase-control,
+  .skills-button,
+  .form-btn,
+  .info_more-btn,
+  .community-btn,
+  .community-link,
+  .theme-toggle,
+  #portfolio-back-button {
     min-height: 44px;
     min-width: 44px;
     padding: 10px 15px;
@@ -776,7 +783,7 @@ img.lazy-load.loaded {
 @media (max-width: 768px) {
 
   .btn,
-  button,
+  button:not(.showcase-dot),
   .service-item,
   .project-item a,
   .social-link {
@@ -1229,61 +1236,19 @@ article {
   border: 0;
   background: var(--light-gray-70);
   cursor: pointer;
-  transition: transform 0.25s ease, background-color 0.25s ease, opacity 0.25s ease, width 0.25s ease, height 0.25s ease;
+  transition: background-color 0.25s ease, opacity 0.25s ease;
   flex-shrink: 0;
 }
 
-/* sliding-window: hide dots beyond ±2 from active */
-.showcase-dot[data-dot-offset="-4"],
-.showcase-dot[data-dot-offset="-5"],
-.showcase-dot[data-dot-offset="-6"],
-.showcase-dot[data-dot-offset="-7"],
-.showcase-dot[data-dot-offset="-8"],
-.showcase-dot[data-dot-offset="-9"],
-.showcase-dot[data-dot-offset="-10"],
-.showcase-dot[data-dot-offset="-11"],
-.showcase-dot[data-dot-offset="-12"],
-.showcase-dot[data-dot-offset="-13"],
-.showcase-dot[data-dot-offset="-14"],
-.showcase-dot[data-dot-offset="-15"],
-.showcase-dot[data-dot-offset="-16"],
-.showcase-dot[data-dot-offset="-17"],
-.showcase-dot[data-dot-offset="-18"],
-.showcase-dot[data-dot-offset="-19"],
-.showcase-dot[data-dot-offset="-20"],
-.showcase-dot[data-dot-offset="4"],
-.showcase-dot[data-dot-offset="5"],
-.showcase-dot[data-dot-offset="6"],
-.showcase-dot[data-dot-offset="7"],
-.showcase-dot[data-dot-offset="8"],
-.showcase-dot[data-dot-offset="9"],
-.showcase-dot[data-dot-offset="10"],
-.showcase-dot[data-dot-offset="11"],
-.showcase-dot[data-dot-offset="12"],
-.showcase-dot[data-dot-offset="13"],
-.showcase-dot[data-dot-offset="14"],
-.showcase-dot[data-dot-offset="15"],
-.showcase-dot[data-dot-offset="16"],
-.showcase-dot[data-dot-offset="17"],
-.showcase-dot[data-dot-offset="18"],
-.showcase-dot[data-dot-offset="19"],
-.showcase-dot[data-dot-offset="20"] {
+.showcase-dot[data-dot-state="hidden"] {
   display: none;
 }
 
-/* edge dots (±2): small */
-.showcase-dot[data-dot-offset="-2"],
-.showcase-dot[data-dot-offset="2"] {
-  width: 6px;
-  height: 6px;
+.showcase-dot[data-dot-state="edge"] {
   opacity: 0.45;
 }
 
-/* near dots (±1): medium */
-.showcase-dot[data-dot-offset="-1"],
-.showcase-dot[data-dot-offset="1"] {
-  width: 8px;
-  height: 8px;
+.showcase-dot[data-dot-state="near"] {
   opacity: 0.7;
 }
 
@@ -1493,6 +1458,28 @@ article {
 
   .navbar {
     backdrop-filter: none;
+    padding: 10px 12px 12px;
+  }
+
+  .navbar-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .navbar-item {
+    width: 100%;
+  }
+
+  .navbar-link {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 8px;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .main-content {
@@ -1514,7 +1501,12 @@ article {
 
   .portfolio-showcase {
     margin-top: 14px;
-    padding: 12px;
+    margin-bottom: 16px;
+    padding: 14px;
+  }
+
+  .showcase-head {
+    margin-bottom: 12px;
   }
 
   .showcase-slide {
@@ -1523,19 +1515,58 @@ article {
     padding: 0;
   }
 
+  .showcase-carousel-wrap {
+    gap: 10px;
+    align-items: center;
+  }
+
   .showcase-media {
-    height: 220px;
+    width: min(100%, 240px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    align-self: center;
+  }
+
+  .showcase-media img {
+    object-position: center center;
+  }
+
+  .showcase-nav-row {
+    margin-top: 16px;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .showcase-dots {
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+  }
+
+  .showcase-counter {
+    min-width: auto;
+    flex-shrink: 0;
   }
 
   .showcase-copy {
     border-left: none;
     border-top: 1px solid rgba(124, 58, 237, 0.28);
     padding: 16px 14px;
+    gap: 12px;
   }
 
   .showcase-thumb {
     max-width: 100%;
     margin-bottom: 12px;
+  }
+
+  .showcase-links {
+    gap: 10px;
   }
 
   .community-download-grid {
@@ -1548,12 +1579,52 @@ article {
   }
 
   .projects {
-    margin-top: 8px;
+    display: grid;
+    gap: 14px;
+    margin-top: 0;
+  }
+
+  .filter-select-box {
+    margin-bottom: 0;
+  }
+
+  .filter-select {
+    min-height: 46px;
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+
+  .select-list {
+    top: calc(100% + 8px);
+    border-radius: 12px;
+  }
+
+  .select-item button {
+    min-height: 42px;
+    padding: 10px 12px;
   }
 
   .project-list {
+    grid-template-columns: 1fr;
     gap: 14px;
-    margin-top: 14px;
+    margin-top: 0;
+  }
+
+  .project-item {
+    margin-bottom: 0;
+  }
+
+  .project-item > a {
+    gap: 0;
+    padding: 10px;
+  }
+
+  .project-img {
+    margin-bottom: 10px;
+  }
+
+  .project-title {
+    margin-bottom: 4px;
   }
 }
 
@@ -1563,12 +1634,74 @@ article {
     height: 38px;
   }
 
+  .navbar {
+    padding: 8px 10px 10px;
+  }
+
+  .navbar-list {
+    gap: 6px;
+  }
+
+  .navbar-link {
+    font-size: 12px;
+    min-height: 40px;
+    padding: 8px 4px;
+  }
+
   .showcase-media {
-    height: 180px;
+    width: min(100%, 200px);
   }
 
   .showcase-copy {
     padding: 12px;
+    gap: 10px;
+  }
+
+  .showcase-dots {
+    gap: 8px;
+  }
+
+  .showcase-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .showcase-dot[data-dot-state="near"] {
+    opacity: 0.7;
+  }
+
+  .showcase-dot[data-dot-state="edge"] {
+    opacity: 0.45;
+  }
+
+  .showcase-counter {
+    font-size: 12px;
+  }
+
+  .projects {
+    gap: 12px;
+  }
+
+  .filter-select {
+    min-height: 44px;
+    padding: 11px 12px;
+  }
+
+  .select-item button {
+    min-height: 40px;
+    padding: 9px 10px;
+  }
+
+  .project-list {
+    gap: 12px;
+  }
+
+  .project-item > a {
+    padding: 8px;
+  }
+
+  .project-img {
+    margin-bottom: 8px;
   }
 
   .showcase-links {
