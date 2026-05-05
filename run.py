@@ -1,9 +1,10 @@
 import http.server
+import socket
 import socketserver
 import webbrowser
 from pathlib import Path
 
-PORT = 12000
+PORT = 8080
 ROOT = Path(__file__).resolve().parent
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -18,8 +19,17 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
 
+def is_port_in_use(port: int) -> bool:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        return s.connect_ex(("localhost", port)) == 0
+
+
 def main() -> None:
     url = f"http://localhost:{PORT}/index.html"
+    if is_port_in_use(PORT):
+        print(f"Port {PORT} is already open. Opening browser...")
+        webbrowser.open(url)
+        return
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
         print(f"Serving {ROOT} at {url}")
         try:

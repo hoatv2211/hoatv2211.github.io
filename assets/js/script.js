@@ -114,6 +114,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     pendingDetailCategory = selectedType;
 
+    // Hide showcase section when entering detail view
+    const showcase = document.querySelector(".portfolio-showcase");
+    if (showcase && showcase.dataset.showcaseHidden !== "1") {
+      showcase.dataset.showcaseHidden = "1";
+      showcase.style.transition = "opacity 0.25s ease";
+      showcase.style.opacity = "0";
+      setTimeout(function () {
+        showcase.style.display = "none";
+      }, 250);
+    }
+
     window.scrollTo({
       top: 0,
       behavior: 'smooth'

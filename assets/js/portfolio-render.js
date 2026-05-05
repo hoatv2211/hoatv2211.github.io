@@ -7,16 +7,25 @@
       const apiAndroid = project.apiUrlAndroid ? ` data-api-url-android="${project.apiUrlAndroid}"` : "";
       const apiIos = project.apiUrlIos ? ` data-api-url-ios="${project.apiUrlIos}"` : "";
 
+      const isExternal = Boolean(project.externalUrl);
+      const linkHref = isExternal ? project.externalUrl : "#";
+      const linkAttrs = isExternal
+        ? `href="${project.externalUrl}" target="_blank" rel="noopener noreferrer"`
+        : `href="#" data-detail-category="${project.detailCategory}"`;
+      const iconName = isExternal ? "open-outline" : "eye-outline";
+      const iconDataAttr = isExternal ? "" : ` data-detail-category="${project.detailCategory}"`;
+      const titleDataAttr = isExternal ? "" : ` data-detail-category="${project.detailCategory}"`;
+
       return `
         <li class="project-item active" data-filter-item data-category="${project.category}" data-detail-category="${project.detailCategory}"${apiAndroid}${apiIos}>
-          <a href="#" data-detail-category="${project.detailCategory}">
+          <a ${linkAttrs}>
             <figure class="project-img">
               <div class="project-item-icon-box">
-                <ion-icon name="eye-outline" data-detail-category="${project.detailCategory}"></ion-icon>
+                <ion-icon name="${iconName}"${iconDataAttr}></ion-icon>
               </div>
               <img src="${project.image.src}" alt="${project.image.alt}" loading="lazy">
             </figure>
-            <h3 class="project-title" data-detail-category="${project.detailCategory}">${project.title}</h3>
+            <h3 class="project-title"${titleDataAttr}>${project.title}</h3>
             <div class="${project.tag.className}">
               <p class="project-category tag">${project.tag.label}</p>
             </div>
