@@ -32,7 +32,7 @@
   <script src="assets/js/site-config.js" defer></script>
   <script src="assets/js/site-render.js" defer></script>
   <script src="assets/js/bootstrap.js" defer></script>
-  <script src="assets/js/portfolio-data.js?v=20260505" defer></script>
+  <script src="assets/js/portfolio-data.js?v=20260213" defer></script>
   <script src="assets/js/portfolio-render.js" defer></script>
   <script src="assets/js/portfolio-details.js" defer></script>
   <script src="assets/js/gallery-sort.js" defer></script>
@@ -47,6 +47,9 @@
       <h2 class="loading-text">Loading...</h2>
     </div>
   </div>
+
+  <!-- Add accessibility skip link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Back button - only visible when viewing a project -->
   <button class="button-floating hidden" id="portfolio-back-button" title="Go back to portfolio">
@@ -279,39 +282,6 @@
             <ion-icon name="open"></ion-icon>
             <span>Explore Resume</span>
           </button>
-        </section>
-
-        <section class="community-download" aria-label="Community and download call to action">
-          <header>
-            <h2 class="h2 article-title">Community & Download</h2>
-          </header>
-
-          <div class="community-download-grid">
-            <article class="community-card">
-              <div class="community-icon-box" aria-hidden="true">
-                <ion-icon name="people-outline"></ion-icon>
-              </div>
-              <h3 class="h3 community-title">Creator Community</h3>
-              <p class="community-text">
-                Connect with players, studios, and collaborators for gameplay feedback, reskin ideas, and launch support.
-              </p>
-              <a href="mailto:hoatv.mad@gmail.com" class="community-link">Join The Network</a>
-            </article>
-
-            <article class="community-card">
-              <div class="community-icon-box" aria-hidden="true">
-                <ion-icon name="rocket-outline"></ion-icon>
-              </div>
-              <h3 class="h3 community-title">Build Downloads</h3>
-              <p class="community-text">
-                Play selected demos instantly and review production quality across WebGL and multi-platform gameplay builds.
-              </p>
-              <div class="community-actions">
-                <a href="Games/Archero/index.html" class="community-btn">Play Heroic Defense</a>
-                <a href="Games/SurvivorIO/index.html" class="community-btn secondary">Play SurvivorIO</a>
-              </div>
-            </article>
-          </div>
         </section>
 
 
@@ -559,27 +529,6 @@
           <h2 class="h2 article-title">Portfolio</h2>
         </header>
 
-        <section class="portfolio-showcase" aria-label="Game showcase carousel">
-          <div class="showcase-head">
-            <h3 class="h3 showcase-title">Game Showcase</h3>
-          </div>
-
-          <div class="showcase-viewport" data-showcase-viewport>
-            <button class="showcase-control showcase-prev" type="button" data-showcase-prev aria-label="Previous showcase item">
-              <ion-icon name="chevron-back-outline"></ion-icon>
-            </button>
-            <button class="showcase-control showcase-next" type="button" data-showcase-next aria-label="Next showcase item">
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-            </button>
-            <ul class="showcase-track" data-showcase-track></ul>
-          </div>
-
-          <div class="showcase-nav-row">
-            <div class="showcase-dots" data-showcase-dots aria-label="Showcase pagination"></div>
-            <span class="showcase-counter" data-showcase-counter aria-live="polite">01 / 01</span>
-          </div>
-        </section>
-
         <section class="projects">
 
           <ul class="filter-list">
@@ -694,7 +643,6 @@
     - custom js link
   -->
   <script src="assets/js/modern-enhancements.js"></script>
-  <script src="assets/js/gaming-showcase.js"></script>
   <script src="assets/js/visit-telegram-hook.js"></script>
   <script src="assets/js/script.js"></script>
 

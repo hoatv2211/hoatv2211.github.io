@@ -4,14 +4,13 @@
     if (!list || !Array.isArray(projects)) return;
 
     list.innerHTML = projects.map(project => {
-      const imageStyle = project.image.style ? ` style="${project.image.style}"` : "";
       const apiAndroid = project.apiUrlAndroid ? ` data-api-url-android="${project.apiUrlAndroid}"` : "";
       const apiIos = project.apiUrlIos ? ` data-api-url-ios="${project.apiUrlIos}"` : "";
 
       return `
         <li class="project-item active" data-filter-item data-category="${project.category}" data-detail-category="${project.detailCategory}"${apiAndroid}${apiIos}>
           <a href="#" data-detail-category="${project.detailCategory}">
-            <figure class="project-img"${imageStyle}>
+            <figure class="project-img">
               <div class="project-item-icon-box">
                 <ion-icon name="eye-outline" data-detail-category="${project.detailCategory}"></ion-icon>
               </div>

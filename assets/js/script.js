@@ -148,6 +148,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Expose for external callers (e.g., gaming-showcase.js)
+  window.openProjectDetail = openProjectDetail;
+
   function showDetailLoadingEffect(project) {
     if (!project) return;
 
@@ -278,6 +281,20 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(() => {
         filterFunc("all");
         toggleBackButton(false);
+
+        // Restore showcase section if it was hidden
+        const showcase = document.querySelector(".portfolio-showcase");
+        if (showcase && showcase.dataset.showcaseHidden === "1") {
+          delete showcase.dataset.showcaseHidden;
+          showcase.style.display = "";
+          showcase.style.maxHeight = "";
+          showcase.style.overflow = "";
+          showcase.style.opacity = "0";
+          requestAnimationFrame(function () {
+            showcase.style.transition = "opacity 0.35s ease";
+            showcase.style.opacity = "1";
+          });
+        }
       }, 500); // Allow time for scroll to complete
     });
   }
@@ -465,6 +482,22 @@ document.addEventListener('DOMContentLoaded', function () {
               top: 0,
               behavior: 'smooth'
             });
+
+            // Restore showcase when navigating back to Portfolio tab
+            if (targetPage === "portfolio") {
+              const showcase = document.querySelector(".portfolio-showcase");
+              if (showcase && showcase.dataset.showcaseHidden === "1") {
+                delete showcase.dataset.showcaseHidden;
+                showcase.style.display = "";
+                showcase.style.maxHeight = "";
+                showcase.style.overflow = "";
+                showcase.style.opacity = "0";
+                requestAnimationFrame(function () {
+                  showcase.style.transition = "opacity 0.35s ease";
+                  showcase.style.opacity = "1";
+                });
+              }
+            }
           } else {
             page.classList.remove("active");
             navigationLinks[j].classList.remove("active");

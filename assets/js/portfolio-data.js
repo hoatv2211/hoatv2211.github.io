@@ -1,5 +1,17 @@
 window.PORTFOLIO_DATA = [
   {
+    id: "mad-game-hub",
+    title: "Mad Game Hub",
+    category: "hub",
+    detailCategory: "",
+    image: {
+      src: "assets/images/game/hubmad.png",
+      alt: "Mad Game Hub",
+      style: "width: 360px; height: 360px; object-fit: cover;"
+    },
+    tag: { label: "Game Hub", className: "unity-icon" }
+  },
+  {
     id: "proxyapi-mad",
     title: "ProxyAPI.MAD",
     category: "agentic",
@@ -173,6 +185,30 @@ window.PORTFOLIO_DATA = [
       src: "assets/images/game/SurvivorIO/Image Sequence_002_0000.png",
       alt: "surviver",
       style: "width: 360px; height: 360px;"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+   {
+    id: "share001-ludo",
+    title: "Ludo Game (Sample)",
+    category: "unity",
+    detailCategory: "share001-ludo",
+    image: {
+      src: "assets/images/game/ludo.jpg",
+      alt: "Share001 Ludo Game",
+      style: "width: 360px; height: 360px; object-fit: cover;"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+  {
+    id: "share002-pixelshooter3d",
+    title: "Pixel Shooter 3D (Sample)",
+    category: "unity",
+    detailCategory: "share002-pixelshooter3d",
+    image: {
+      src: "assets/images/game/pixcelshooter.png",
+      alt: "Share002 Pixel Shooter 3D",
+      style: "width: 360px; height: 360px; object-fit: cover;"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
