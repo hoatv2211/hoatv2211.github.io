@@ -859,19 +859,12 @@ img.lazy-load.loaded {
 }
 
 /* Retro-futuristic neon layer: visual upgrade without content changes */
-:root {
-  --neon-purple: #7c3aed;
-  --neon-violet: #a78bfa;
-  --neon-rose: #f43f5e;
-  --neon-cyan: #22d3ee;
-  --neon-deep: #0f0f23;
-}
 
 body {
   background:
     radial-gradient(circle at 12% 8%, rgba(124, 58, 237, 0.2), transparent 36%),
     radial-gradient(circle at 82% 14%, rgba(34, 211, 238, 0.14), transparent 34%),
-    linear-gradient(130deg, var(--neon-deep), var(--smoky-black) 55%, #111228);
+    linear-gradient(130deg, var(--neon-deep), var(--smoky-black) 55%, var(--neon-deep-soft));
   position: relative;
 }
 
@@ -957,7 +950,6 @@ article {
   border: 1px solid rgba(167, 139, 250, 0.28);
   background: linear-gradient(145deg, rgba(17, 17, 35, 0.92), rgba(9, 9, 20, 0.9));
   box-shadow: 0 0 18px rgba(124, 58, 237, 0.18);
-  overflow: hidden;
 }
 
 .showcase-head {
@@ -969,9 +961,14 @@ article {
   letter-spacing: 0.02em;
 }
 
+.showcase-carousel-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .showcase-control {
-  position: absolute;
-  top: 50%;
+  flex-shrink: 0;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -980,8 +977,7 @@ article {
   color: var(--neon-cyan);
   cursor: pointer;
   z-index: 6;
-  transform: translateY(-50%);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .showcase-control:hover {
@@ -990,14 +986,16 @@ article {
 }
 
 .showcase-prev {
-  left: 16px;
+  order: -1;
 }
 
 .showcase-next {
-  right: 16px;
+  order: 1;
 }
 
 .showcase-viewport {
+  flex: 1;
+  min-width: 0;
   position: relative;
   overflow: hidden;
   border-radius: 14px;
@@ -1225,13 +1223,68 @@ article {
 }
 
 .showcase-dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   border: 0;
   background: var(--light-gray-70);
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.25s ease, background-color 0.25s ease, opacity 0.25s ease, width 0.25s ease, height 0.25s ease;
+  flex-shrink: 0;
+}
+
+/* sliding-window: hide dots beyond ±2 from active */
+.showcase-dot[data-dot-offset="-4"],
+.showcase-dot[data-dot-offset="-5"],
+.showcase-dot[data-dot-offset="-6"],
+.showcase-dot[data-dot-offset="-7"],
+.showcase-dot[data-dot-offset="-8"],
+.showcase-dot[data-dot-offset="-9"],
+.showcase-dot[data-dot-offset="-10"],
+.showcase-dot[data-dot-offset="-11"],
+.showcase-dot[data-dot-offset="-12"],
+.showcase-dot[data-dot-offset="-13"],
+.showcase-dot[data-dot-offset="-14"],
+.showcase-dot[data-dot-offset="-15"],
+.showcase-dot[data-dot-offset="-16"],
+.showcase-dot[data-dot-offset="-17"],
+.showcase-dot[data-dot-offset="-18"],
+.showcase-dot[data-dot-offset="-19"],
+.showcase-dot[data-dot-offset="-20"],
+.showcase-dot[data-dot-offset="4"],
+.showcase-dot[data-dot-offset="5"],
+.showcase-dot[data-dot-offset="6"],
+.showcase-dot[data-dot-offset="7"],
+.showcase-dot[data-dot-offset="8"],
+.showcase-dot[data-dot-offset="9"],
+.showcase-dot[data-dot-offset="10"],
+.showcase-dot[data-dot-offset="11"],
+.showcase-dot[data-dot-offset="12"],
+.showcase-dot[data-dot-offset="13"],
+.showcase-dot[data-dot-offset="14"],
+.showcase-dot[data-dot-offset="15"],
+.showcase-dot[data-dot-offset="16"],
+.showcase-dot[data-dot-offset="17"],
+.showcase-dot[data-dot-offset="18"],
+.showcase-dot[data-dot-offset="19"],
+.showcase-dot[data-dot-offset="20"] {
+  display: none;
+}
+
+/* edge dots (±2): small */
+.showcase-dot[data-dot-offset="-2"],
+.showcase-dot[data-dot-offset="2"] {
+  width: 6px;
+  height: 6px;
+  opacity: 0.45;
+}
+
+/* near dots (±1): medium */
+.showcase-dot[data-dot-offset="-1"],
+.showcase-dot[data-dot-offset="1"] {
+  width: 8px;
+  height: 8px;
+  opacity: 0.7;
 }
 
 .showcase-dot.is-active {
@@ -1306,6 +1359,101 @@ article {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.detail-title-spaced {
+  margin-top: 30px;
+}
+
+.detail-section-gap {
+  margin-top: 24px;
+}
+
+.detail-note-card {
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--detail-info-bg);
+  border-radius: 12px;
+  border: 1px solid var(--detail-info-border);
+}
+
+.detail-note-title {
+  margin-bottom: 8px;
+}
+
+.detail-note-text {
+  color: var(--light-gray);
+  line-height: 1.65;
+}
+
+.detail-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.detail-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.detail-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.detail-action-btn.is-primary {
+  background: var(--orange-yellow-crayola);
+  color: var(--detail-cta-text-dark);
+  border: 1px solid var(--orange-yellow-crayola);
+}
+
+.detail-action-btn.is-outline {
+  background: transparent;
+  color: var(--orange-yellow-crayola);
+  border: 1px solid var(--orange-yellow-crayola);
+}
+
+.detail-link-accent {
+  color: var(--vegas-gold);
+}
+
+.detail-service {
+  margin-top: 20px;
+}
+
+.detail-service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.detail-service-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.detail-service-link ion-icon {
+  font-size: 36px;
+  color: var(--vegas-gold);
+  margin: 0;
+}
+
+.detail-service-link .h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .community-btn.secondary {
@@ -1411,16 +1559,8 @@ article {
 
 @media (max-width: 480px) {
   .showcase-control {
-    width: 42px;
-    height: 42px;
-  }
-
-  .showcase-prev {
-    left: 8px;
-  }
-
-  .showcase-next {
-    right: 8px;
+    width: 38px;
+    height: 38px;
   }
 
   .showcase-media {
@@ -1449,14 +1589,6 @@ article {
    DIM/SLATE MODE — neon & component overrides
    Backgrounds are medium slate-blue, neon stays vibrant on dark surface
    ────────────────────────────────────────────────────────────────────────────── */
-
-/* Keep neon palette identical to dark mode */
-.light-mode {
-  --neon-cyan:   #22d3ee;
-  --neon-violet: #a78bfa;
-  --neon-rose:   #f43f5e;
-  --neon-purple: #7c3aed;
-}
 
 /* Body: mid-tone slate instead of near-black */
 .light-mode body {

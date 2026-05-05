@@ -201,6 +201,8 @@
       dots.forEach((dot, dotIndex) => {
         dot.classList.toggle("is-active", dotIndex === current);
         dot.setAttribute("aria-current", dotIndex === current ? "true" : "false");
+        const offset = dotIndex - current;
+        dot.setAttribute("data-dot-offset", String(offset));
       });
 
       if (counterEl) {

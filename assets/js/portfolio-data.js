@@ -1,17 +1,5 @@
 window.PORTFOLIO_DATA = [
   {
-    id: "mad-game-hub",
-    title: "Mad Game Hub",
-    category: "hub",
-    detailCategory: "",
-    image: {
-      src: "assets/images/game/hubmad.png",
-      alt: "Mad Game Hub",
-      style: "width: 360px; height: 360px; object-fit: cover;"
-    },
-    tag: { label: "Game Hub", className: "unity-icon" }
-  },
-  {
     id: "proxyapi-mad",
     title: "ProxyAPI.MAD",
     category: "agentic",
