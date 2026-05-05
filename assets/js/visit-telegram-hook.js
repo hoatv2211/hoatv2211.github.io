@@ -114,6 +114,7 @@
   }
 
   if (!PROXY_URL || PROXY_URL.includes("YOUR_WORKER_NAME")) return;
+  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") return;
   if (!shouldSend()) return;
 
   getVisitorInfo()
