@@ -203,6 +203,16 @@
         dot.setAttribute("aria-current", dotIndex === current ? "true" : "false");
         const offset = dotIndex - current;
         dot.setAttribute("data-dot-offset", String(offset));
+        const absoluteOffset = Math.abs(offset);
+        let dotState = "hidden";
+        if (absoluteOffset === 0) {
+          dotState = "active";
+        } else if (absoluteOffset === 1) {
+          dotState = "near";
+        } else if (absoluteOffset === 2) {
+          dotState = "edge";
+        }
+        dot.setAttribute("data-dot-state", dotState);
       });
 
       if (counterEl) {
