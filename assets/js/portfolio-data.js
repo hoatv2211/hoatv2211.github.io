@@ -189,6 +189,18 @@ window.PORTFOLIO_DATA = [
     tag: { label: "Unity", className: "unity-icon" }
   },
   {
+    id: "ageofbattle",
+    title: "Age of Battle",
+    category: "unity",
+    detailCategory: "ageofbattle",
+    image: {
+      src: "assets/images/game/AgeOfBattle/icon.png",
+      alt: "Age of Battle",
+      style: "width: 360px; height: 360px;"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+  {
     id: "surviver",
     title: "Survivor.IO (template)",
     category: "unity",
@@ -251,4 +263,5 @@ window.PORTFOLIO_DATA = [
     },
     tag: { label: "Unity", className: "unity-icon" }
   }
+  
 ];
