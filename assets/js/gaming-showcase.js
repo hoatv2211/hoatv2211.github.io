@@ -42,6 +42,7 @@
 
   function getDemoUrl(project) {
     if (!project) return "";
+    if (project.demoUrl) return project.demoUrl;
     const id = project.id || "";
     const detail = project.detailCategory || "";
     const idLower = id.toLowerCase();

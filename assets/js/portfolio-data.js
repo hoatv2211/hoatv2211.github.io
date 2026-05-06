@@ -85,7 +85,7 @@ window.PORTFOLIO_DATA = [
   },
   {
     id: "archero",
-    title: "Archero (clone)",
+    title: "Archero",
     category: "unity",
     detailCategory: "archero",
     image: {
@@ -193,8 +193,9 @@ window.PORTFOLIO_DATA = [
     title: "Age of Battle",
     category: "unity",
     detailCategory: "ageofbattle",
+    demoUrl: "https://hoatv2211.github.io/Share003_AgeOfBattle/",
     image: {
-      src: "assets/images/game/AgeOfBattle/icon.png",
+      src: "assets/images/game/ageofbattle.png",
       alt: "Age of Battle",
       style: "width: 360px; height: 360px;"
     },
