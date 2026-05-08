@@ -12,18 +12,6 @@ window.PORTFOLIO_DATA = [
     tag: { label: "Agentic AI", className: "applications-icon" }
   },
    {
-    id: "nekoverse",
-    title: "Nekoverse (NFT)",
-    category: "unity",
-    detailCategory: "nekoverse",
-    image: {
-      src: "assets/images/game/Nekoverse/4.jpg",
-      alt: "nekoverse",
-      style: "width: 360px; height: 360px;"
-    },
-    tag: { label: "Unity", className: "unity-icon" }
-  },
-  {
     id: "muloren",
     title: "MU Loren Mobile",
     category: "unity",
@@ -35,19 +23,7 @@ window.PORTFOLIO_DATA = [
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
-  {
-    id: "idleCyber",
-    title: "Idle Cyber (NFT)",
-    category: "unity",
-    detailCategory: "idleCyber",
-    image: {
-      src: "assets/images/game/Idle_cyber/icon_idle_cyber.png",
-      alt: "Idle Cyber",
-      style: "width: 360px; height: 360px;"
-    },
-    tag: { label: "Unity", className: "unity-icon" }
-  },
-  {
+   {
     id: "dalgona",
     title: "Dalgona - Worldchain",
     category: "unity",
@@ -67,6 +43,30 @@ window.PORTFOLIO_DATA = [
     image: {
       src: "assets/images/game/Shibainu/9.webp",
       alt: "Food Truck - Shiba Inu",
+      style: "width: 360px; height: 360px;"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+  {
+    id: "idleCyber",
+    title: "Idle Cyber (NFT)",
+    category: "unity",
+    detailCategory: "idleCyber",
+    image: {
+      src: "assets/images/game/Idle_cyber/icon_idle_cyber.png",
+      alt: "Idle Cyber",
+      style: "width: 360px; height: 360px;"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+  {
+    id: "nekoverse",
+    title: "Nekoverse (NFT)",
+    category: "unity",
+    detailCategory: "nekoverse",
+    image: {
+      src: "assets/images/game/Nekoverse/4.jpg",
+      alt: "nekoverse",
       style: "width: 360px; height: 360px;"
     },
     tag: { label: "Unity", className: "unity-icon" }
@@ -261,6 +261,18 @@ window.PORTFOLIO_DATA = [
       src: "https://github.com/Long18/long18.github.io/assets/28853225/5f87b8cc-1f5d-4b41-a65b-edbf5aae5c8e",
       alt: "Crypto Quest",
       style: "width: 360px; height: 360px;"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+  {
+    id: "galaxiga",
+    title: "Galaxiga",
+    category: "unity",
+    detailCategory: "galaxiga",
+    image: {
+      src: "https://raw.githubusercontent.com/hoatv2211/Share004_Galaxiga/main/Galaxiga/Recordings/Image%20Sequence_004_0000.jpg",
+      alt: "Galaxiga",
+      style: "width: 360px; height: 360px; object-fit: cover;"
     },
     tag: { label: "Unity", className: "unity-icon" }
   }
