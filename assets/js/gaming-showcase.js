@@ -91,7 +91,7 @@
         const safeTitle = escapeHtml(project.title || "Untitled Project");
         const safeAlt = escapeHtml((project.image && project.image.alt) || project.title || "Game showcase item");
         const safeSrc = escapeHtml(project.image.src);
-        const safeSummary = escapeHtml(summarizeProject(project));
+        const safeSummary = escapeHtml(project.description || project.desc || summarizeProject(project));
         const safeDemoUrl = escapeHtml(project.demoUrl || "");
         const safeDetailUrl = escapeHtml(project.detailUrl || "#");
         const safeTagLabel = escapeHtml((project.tag && project.tag.label) || "Project");

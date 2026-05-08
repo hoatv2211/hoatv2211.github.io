@@ -4,6 +4,7 @@ window.PORTFOLIO_DATA = [
     title: "ProxyAPI.MAD",
     category: "agentic",
     detailCategory: "proxyapi-mad",
+    description: "AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.",
     image: {
       src: "https://github.com/mad-agentic.png",
       alt: "ProxyAPI.MAD",
@@ -16,6 +17,7 @@ window.PORTFOLIO_DATA = [
     title: "MU Loren Mobile",
     category: "unity",
     detailCategory: "muloren",
+    description: "Mobile MMORPG inspired by MU Online, featuring classic character classes, quest systems, PvE/PvP content, and optimized 3D gameplay.",
     image: {
       src: "assets/images/game/MuLoren/banner-1.jpg",
       alt: "muloren",
@@ -28,6 +30,7 @@ window.PORTFOLIO_DATA = [
     title: "Dalgona - Worldchain",
     category: "unity",
     detailCategory: "dalgona",
+    description: "World App mini-game based on the sugar candy challenge, built in Unity WebGL with rankings, fast sessions, and Web3-ready publishing.",
     image: {
       src: "assets/images/game/Dalgona/logo.png",
       alt: "dalgona",
@@ -40,6 +43,7 @@ window.PORTFOLIO_DATA = [
     title: "Food Truck - Shiba Inu",
     category: "unity",
     detailCategory: "shibainu",
+    description: "Casual food truck simulation where players serve customers, upgrade stations, and grow a playful Shiba-themed mobile business.",
     image: {
       src: "assets/images/game/Shibainu/9.webp",
       alt: "Food Truck - Shiba Inu",
@@ -52,6 +56,7 @@ window.PORTFOLIO_DATA = [
     title: "Idle Cyber (NFT)",
     category: "unity",
     detailCategory: "idleCyber",
+    description: "Cyberpunk idle tower defense with hero collection, weapon upgrades, endless waves, ad monetization, and early NFT marketplace integration.",
     image: {
       src: "assets/images/game/Idle_cyber/icon_idle_cyber.png",
       alt: "Idle Cyber",
@@ -64,6 +69,7 @@ window.PORTFOLIO_DATA = [
     title: "Nekoverse (NFT)",
     category: "unity",
     detailCategory: "nekoverse",
+    description: "GameFi MMORPG with real-time battles, resource farming, crafting, NFT assets, staking features, and blockchain economy integration.",
     image: {
       src: "assets/images/game/Nekoverse/4.jpg",
       alt: "nekoverse",
@@ -76,6 +82,7 @@ window.PORTFOLIO_DATA = [
     title: "Sandwich Please!",
     category: "unity",
     detailCategory: "sandwich",
+    description: "Idle tycoon game about running a sandwich shop, expanding menus, upgrading equipment, and serving growing customer demand.",
     image: {
       src: "assets/images/game/Sanwitch/icon.webp",
       alt: "sandwich",
@@ -88,6 +95,7 @@ window.PORTFOLIO_DATA = [
     title: "Archero",
     category: "unity",
     detailCategory: "archero",
+    description: "Action roguelite prototype with room-based combat, enemy waves, character progression, skill choices, and mobile-friendly controls.",
     image: {
       src: "assets/images/game/Archero/icon.png",
       alt: "archero"
@@ -99,6 +107,7 @@ window.PORTFOLIO_DATA = [
     title: "Rise of Trial Bike",
     category: "unity",
     detailCategory: "bike",
+    description: "Physics-based bike stunt game with challenging obstacle tracks, flips, responsive controls, and mobile performance tuning.",
     image: {
       src: "assets/images/game/BikeTrail/BG Game.jpg",
       alt: "bike"
@@ -110,6 +119,7 @@ window.PORTFOLIO_DATA = [
     title: "Meow flow",
     category: "unity",
     detailCategory: "MeowFlow",
+    description: "Relaxing cat-themed puzzle game focused on flow-style path solving, clean level progression, and casual mobile play.",
     image: {
       src: "assets/images/game/MeowFlow/icon.webp",
       alt: "MeowFlow"
@@ -121,6 +131,7 @@ window.PORTFOLIO_DATA = [
     title: "Ludo Game (Sample)",
     category: "unity",
     detailCategory: "share001-ludo",
+    description: "Playable Unity Ludo sample with classic board rules, local turn flow, polished UI, and WebGL demo support.",
     image: {
       src: "assets/images/game/ludo.jpg",
       alt: "Share001 Ludo Game",
@@ -133,6 +144,7 @@ window.PORTFOLIO_DATA = [
     title: "Pixel Shooter 3D (Sample)",
     category: "unity",
     detailCategory: "share002-pixelshooter3d",
+    description: "3D pixel shooter sample featuring fast arena combat, enemy encounters, weapon handling, and browser-playable WebGL delivery.",
     image: {
       src: "assets/images/game/pixcelshooter.png",
       alt: "Share002 Pixel Shooter 3D",
@@ -141,11 +153,25 @@ window.PORTFOLIO_DATA = [
     tag: { label: "Unity", className: "unity-icon" }
   },
   {
+    id: "galaxiga",
+    title: "Galaxiga",
+    category: "unity",
+    detailCategory: "galaxiga",
+    description: "Classic space shooter sample with arcade waves, responsive shooting, enemy patterns, power-up pacing, and WebGL showcase delivery.",
+    image: {
+      src: "https://raw.githubusercontent.com/hoatv2211/Share004_Galaxiga/main/Galaxiga/Recordings/Image%20Sequence_004_0000.jpg",
+      alt: "Galaxiga",
+      style: "width: 360px; height: 360px; object-fit: cover;"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  }, 
+  {
     id: "HomeDesign",
     title: "Home Design",
     category: "unity",
     detailCategory: "homeDesign",
     apiUrlAndroid: "https://app.sensortower.com/api/android/apps/com.giraffegames.ggm3",
+    description: "Casual home makeover game combining room decoration, match-style progression, reward loops, and mobile publishing support.",
     image: {
       src: "assets/images/game/HomeDesign/1.webp",
       alt: "Home Design",
@@ -158,6 +184,7 @@ window.PORTFOLIO_DATA = [
     title: "Tile Candy!",
     category: "unity",
     detailCategory: "tilecandy",
+    description: "Colorful tile-matching puzzle game with candy visuals, simple touch controls, level progression, and WebGL/mobile optimization.",
     image: {
       src: "assets/images/game/TileCandy/icon_6.png",
       alt: "tilecandy"
@@ -169,6 +196,7 @@ window.PORTFOLIO_DATA = [
     title: "Tiles Match 3: Mahjong",
     category: "unity",
     detailCategory: "tilesmatch3",
+    description: "Mahjong-inspired tile match puzzle with layered boards, quick sessions, satisfying clears, and cross-platform Unity WebGL support.",
     image: {
       src: "assets/images/game/Tilesmatch3/icon.png",
       alt: "tilesmatch3",
@@ -181,6 +209,7 @@ window.PORTFOLIO_DATA = [
     title: "Sudoku Universe - Modern",
     category: "unity",
     detailCategory: "sudoku",
+    description: "Modern Sudoku game with clean UI, puzzle progression, hint-friendly interaction, and polished mobile/WebGL presentation.",
     image: {
       src: "assets/images/game/Sudoku/icon.png",
       alt: "sudoku",
@@ -194,6 +223,7 @@ window.PORTFOLIO_DATA = [
     category: "unity",
     detailCategory: "ageofbattle",
     demoUrl: "https://hoatv2211.github.io/Share003_AgeOfBattle/",
+    description: "Era-based strategy battler with unit deployment, tower pressure, wave combat, upgrades, cards, and a playable WebGL demo.",
     image: {
       src: "assets/images/game/ageofbattle.png",
       alt: "Age of Battle",
@@ -206,6 +236,7 @@ window.PORTFOLIO_DATA = [
     title: "Survivor.IO (template)",
     category: "unity",
     detailCategory: "surviver",
+    description: "Survivor-style action template with enemy spawning, roguelite upgrades, character progression, and mobile-focused gameplay systems.",
     image: {
       src: "assets/images/game/SurvivorIO/Image Sequence_002_0000.png",
       alt: "surviver",
@@ -220,6 +251,7 @@ window.PORTFOLIO_DATA = [
     detailCategory: "heroicDefense",
     apiUrlAndroid: "https://app.sensortower.com/api/android/apps/com.hd.heroic.defense",
     apiUrlIos: "https://app.sensortower.com/api/ios/apps?app_ids=6742034673",
+    description: "Mobile tower defense game with diverse enemies, special weapons, passive skills, gacha rewards, IAP, and global store release.",
     image: {
       src: "https://github.com/user-attachments/assets/80ad6adb-8497-4416-8a0e-cdd0bda4c0e2",
       alt: "Heroic Defense",
@@ -233,6 +265,7 @@ window.PORTFOLIO_DATA = [
     category: "unity",
     detailCategory: "iceBreakingBattle",
     apiUrlAndroid: "https://app.sensortower.com/api/android/apps/com.ibb.ice.breaking.battle",
+    description: "Casual action game focused on ice-breaking combat, quick progression, mobile controls, and Android publishing integration.",
     image: {
       src: "https://github.com/user-attachments/assets/b45f3c89-d0ca-4e6a-a540-85f2ac8cc764",
       alt: "Ice Breaking Battle",
@@ -245,6 +278,7 @@ window.PORTFOLIO_DATA = [
     title: "Metame Amusement Park",
     category: "unreal",
     detailCategory: "metameAmusementPark",
+    description: "Unreal Engine metaverse-style amusement park experience with virtual exploration, high-fidelity visuals, and interactive attraction spaces.",
     image: {
       src: "https://github.com/Long18/long18.github.io/assets/28853225/d78990f0-2b48-4635-bf33-7ed637940f63",
       alt: "Metame Amusement Park",
@@ -257,22 +291,11 @@ window.PORTFOLIO_DATA = [
     title: "Crypto Quest",
     category: "unity",
     detailCategory: "cryptoquest",
+    description: "Turn-based GameFi RPG with quests, character systems, items, localization, backend integration, and live-ops development support.",
     image: {
       src: "https://github.com/Long18/long18.github.io/assets/28853225/5f87b8cc-1f5d-4b41-a65b-edbf5aae5c8e",
       alt: "Crypto Quest",
       style: "width: 360px; height: 360px;"
-    },
-    tag: { label: "Unity", className: "unity-icon" }
-  },
-  {
-    id: "galaxiga",
-    title: "Galaxiga",
-    category: "unity",
-    detailCategory: "galaxiga",
-    image: {
-      src: "https://raw.githubusercontent.com/hoatv2211/Share004_Galaxiga/main/Galaxiga/Recordings/Image%20Sequence_004_0000.jpg",
-      alt: "Galaxiga",
-      style: "width: 360px; height: 360px; object-fit: cover;"
     },
     tag: { label: "Unity", className: "unity-icon" }
   }
