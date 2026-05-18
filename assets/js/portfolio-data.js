@@ -17,7 +17,7 @@ window.PORTFOLIO_DATA = [
     title: "MU Loren Mobile",
     category: "unity",
     detailCategory: "muloren",
-    description: "Mobile MMORPG inspired by MU Online, featuring classic character classes, quest systems, PvE/PvP content, and optimized 3D gameplay.",
+    description: "Licensed-style mobile MMORPG work covering quests, class mechanics, monster spawning, events, PvE/PvP loops, UI flows, and 3D mobile optimization.",
     image: {
       src: "assets/images/game/MuLoren/banner-1.jpg",
       alt: "muloren",
@@ -56,7 +56,7 @@ window.PORTFOLIO_DATA = [
     title: "Idle Cyber (NFT)",
     category: "unity",
     detailCategory: "idleCyber",
-    description: "Cyberpunk idle tower defense with hero collection, weapon upgrades, endless waves, ad monetization, and early NFT marketplace integration.",
+    description: "Technical leadership on a funded cyberpunk idle tower defense/GameFi title with hero collection, stage progression, ads, WebGL/mobile release, and NFT marketplace prototype.",
     image: {
       src: "assets/images/game/Idle_cyber/icon_idle_cyber.png",
       alt: "Idle Cyber",
@@ -69,7 +69,7 @@ window.PORTFOLIO_DATA = [
     title: "Nekoverse (NFT)",
     category: "unity",
     detailCategory: "nekoverse",
-    description: "GameFi MMORPG with real-time battles, resource farming, crafting, NFT assets, staking features, and blockchain economy integration.",
+    description: "Funded GameFi MMORPG work across real-time PvE/PvP battles, elemental skills, resource farming, crafting, NFT assets, staking, DAO economy, and mobile profiling.",
     image: {
       src: "assets/images/game/Nekoverse/4.jpg",
       alt: "nekoverse",
@@ -240,35 +240,6 @@ window.PORTFOLIO_DATA = [
     image: {
       src: "assets/images/game/SurvivorIO/Image Sequence_002_0000.png",
       alt: "surviver",
-      style: "width: 360px; height: 360px;"
-    },
-    tag: { label: "Unity", className: "unity-icon" }
-  }, 
-  {
-    id: "heroicDefense",
-    title: "Heroic Defense",
-    category: "unity",
-    detailCategory: "heroicDefense",
-    apiUrlAndroid: "https://app.sensortower.com/api/android/apps/com.hd.heroic.defense",
-    apiUrlIos: "https://app.sensortower.com/api/ios/apps?app_ids=6742034673",
-    description: "Mobile tower defense game with diverse enemies, special weapons, passive skills, gacha rewards, IAP, and global store release.",
-    image: {
-      src: "https://github.com/user-attachments/assets/80ad6adb-8497-4416-8a0e-cdd0bda4c0e2",
-      alt: "Heroic Defense",
-      style: "width: 360px; height: 360px;"
-    },
-    tag: { label: "Unity", className: "unity-icon" }
-  },
-  {
-    id: "iceBreakingBattle",
-    title: "Ice Breaking Battle",
-    category: "unity",
-    detailCategory: "iceBreakingBattle",
-    apiUrlAndroid: "https://app.sensortower.com/api/android/apps/com.ibb.ice.breaking.battle",
-    description: "Casual action game focused on ice-breaking combat, quick progression, mobile controls, and Android publishing integration.",
-    image: {
-      src: "https://github.com/user-attachments/assets/b45f3c89-d0ca-4e6a-a540-85f2ac8cc764",
-      alt: "Ice Breaking Battle",
       style: "width: 360px; height: 360px;"
     },
     tag: { label: "Unity", className: "unity-icon" }

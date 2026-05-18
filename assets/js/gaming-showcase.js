@@ -30,7 +30,6 @@
     "share001-ludo": "https://hoatv2211.github.io/Share001_Ludo/",
     "share002-pixelshooter3d": "https://hoatv2211.github.io/Share002_PixelShooter3D/",
     archero: "Games/Archero/index.html",
-    heroicDefense: "Games/Archero/index.html",
     shibainu: "Games/FoodTruck/index.html",
     sandwich: "Games/FoodTruck/index.html",
     homeDesign: "Games/HomeDesign/index.html",

@@ -15,13 +15,6 @@ window.SITE_CONFIG = {
       label: "+84 374 639 758"
     },
     {
-      icon: "calendar-outline",
-      title: "Birthday",
-      type: "time",
-      datetime: "1994-11-22",
-      label: "Nov 22, 1994"
-    },
-    {
       icon: "location-outline",
       title: "Location",
       type: "text",
@@ -29,14 +22,6 @@ window.SITE_CONFIG = {
     }
   ],
   socials: [
-    {
-      type: "img",
-      href: "https://play.google.com/store/apps/dev?id=4917555335442358774",
-      src: "assets/images/GooglePlay-Icon.svg",
-      alt: "hoatv",
-      width: 20,
-      height: 20
-    },
     {
       type: "img",
       href: "https://t.me/o0_MaD_0o",
@@ -57,13 +42,6 @@ window.SITE_CONFIG = {
       type: "ion",
       href: "https://github.com/hoatv2211",
       icon: "logo-github",
-      width: 20,
-      height: 20
-    },
-    {
-      type: "ion",
-      href: "https://www.facebook.com/GG.GameOver",
-      icon: "logo-facebook",
       width: 20,
       height: 20
     },
@@ -109,8 +87,8 @@ window.SITE_CONFIG = {
         alt: "n8n Automation",
         width: 40
       },
-      title: "n8n Automation",
-      description: "Automate workflows, AI agents, and cross-platform integrations with n8n."
+      title: "Agentic AI & Automation",
+      description: "Build agentic systems, n8n workflows, AI assistants, internal tools, proxy APIs, dashboards, logs, and integrations."
     },
     {
       icon: {
@@ -118,8 +96,8 @@ window.SITE_CONFIG = {
         alt: "Telegram Bot",
         width: 40
       },
-      title: "Telegram Game & Bot",
-      description: "Build interactive Telegram games, AI bots, and mini-apps for global audiences."
+      title: "Telegram Mini App & Bot",
+      description: "Build Telegram games, bots, mini-apps, notifications, payment flows, and automation for communities."
     },
     {
       icon: {

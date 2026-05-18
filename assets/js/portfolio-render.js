@@ -23,7 +23,7 @@
               <div class="project-item-icon-box">
                 <ion-icon name="${iconName}"${iconDataAttr}></ion-icon>
               </div>
-              <img src="${project.image.src}" alt="${project.image.alt}" loading="lazy">
+              <img src="${project.image.src}" alt="${project.image.alt}" loading="lazy" decoding="async">
             </figure>
             <h3 class="project-title"${titleDataAttr}>${project.title}</h3>
             <div class="${project.tag.className}">

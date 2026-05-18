@@ -33,7 +33,7 @@
 
     container.innerHTML = socials.map(item => {
       const icon = item.type === "img"
-        ? `<img src="${item.src}" alt="${item.alt}" height="${item.height}" width="${item.width}" />`
+        ? `<img src="${item.src}" alt="${item.alt}" height="${item.height}" width="${item.width}" loading="lazy" decoding="async" />`
         : `<ion-icon name="${item.icon}"></ion-icon>`;
 
       return `
@@ -54,7 +54,7 @@
       return `
         <li class="service-item-box2">
           <div class="service-icon-box">
-            <img src="${service.icon.src}" alt="${service.icon.alt}" width="${service.icon.width}">
+            <img src="${service.icon.src}" alt="${service.icon.alt}" width="${service.icon.width}" loading="lazy" decoding="async">
           </div>
           <div class="service-content-box">
             <h4 class="h4 service-item-title">${service.title}</h4>
