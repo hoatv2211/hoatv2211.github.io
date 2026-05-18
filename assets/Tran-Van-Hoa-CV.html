@@ -1,234 +1,327 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tran Van Hoa - Senior Unity Developer CV</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --ink: #161616;
-      --muted: #5f6368;
-      --line: #d9dee7;
-      --accent: #9a6b00;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tran Van Hoa — Senior Unity Developer</title>
+<style>
+  /* ── Reset ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    * {
-      box-sizing: border-box;
-    }
+  /* ── Print: suppress browser header/footer, clean margins ── */
+  @page {
+    size: A4;
+    margin: 14mm 14mm 14mm 14mm;
+  }
+  @media print {
+    html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .no-print { display: none !important; }
+    a { color: inherit; text-decoration: none; }
+    .page-break { page-break-before: always; }
+  }
 
-    body {
-      margin: 0;
-      color: var(--ink);
-      font: 14px/1.55 Arial, Helvetica, sans-serif;
-      background: #f4f6f8;
-    }
+  /* ── Base ── */
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    color: #1a1a1a;
+    background: #fff;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 20px 28px;
+  }
 
-    main {
-      width: min(900px, 100%);
-      margin: 0 auto;
-      padding: 32px;
-      background: #fff;
-    }
+  /* ── Header ── */
+  .header { border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; margin-bottom: 14px; }
+  .header h1 { font-size: 20pt; font-weight: 700; letter-spacing: -.3px; color: #0f0f0f; }
+  .header .role { font-size: 11pt; font-weight: 400; color: #444; margin-top: 2px; }
+  .contact-row {
+    display: flex; flex-wrap: wrap; gap: 4px 16px;
+    margin-top: 8px; font-size: 8.5pt; color: #555;
+  }
+  .contact-row a { color: #1a56db; text-decoration: none; }
+  .contact-sep { color: #ccc; }
 
-    h1,
-    h2,
-    h3,
-    p {
-      margin: 0;
-    }
+  /* ── Section ── */
+  .section { margin-bottom: 13px; }
+  .section-title {
+    font-size: 9pt; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #0f0f0f;
+    border-bottom: 1px solid #d0d0d0;
+    padding-bottom: 2px; margin-bottom: 8px;
+  }
 
-    h1 {
-      font-size: 30px;
-      line-height: 1.1;
-    }
+  /* ── Profile ── */
+  .profile { font-size: 9.5pt; line-height: 1.6; color: #222; }
 
-    h2 {
-      margin-top: 22px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--line);
-      color: var(--accent);
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
+  /* ── Results grid ── */
+  .results-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3px 20px; list-style: none;
+  }
+  .results-grid li { font-size: 9pt; padding-left: 10px; position: relative; color: #222; }
+  .results-grid li::before { content: '▸'; position: absolute; left: 0; color: #1a56db; font-size: 8pt; top: 1px; }
 
-    h3 {
-      margin-top: 12px;
-      font-size: 15px;
-    }
+  /* ── Experience ── */
+  .job { margin-bottom: 10px; }
+  .job-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-company { font-size: 10pt; font-weight: 700; color: #0f0f0f; }
+  .job-date { font-size: 8.5pt; color: #666; white-space: nowrap; margin-left: 8px; }
+  .job-title { font-size: 9pt; color: #1a56db; font-weight: 600; margin-bottom: 3px; }
+  .job-bullets { list-style: none; padding: 0; }
+  .job-bullets li {
+    font-size: 9pt; padding-left: 12px; position: relative;
+    color: #222; margin-bottom: 2px; line-height: 1.5;
+  }
+  .job-bullets li::before { content: '•'; position: absolute; left: 2px; color: #555; }
 
-    ul {
-      margin: 8px 0 0;
-      padding-left: 18px;
-    }
+  /* ── Skills two-column ── */
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; }
+  .skill-row { font-size: 9pt; color: #222; }
+  .skill-cat { font-weight: 600; color: #0f0f0f; }
 
-    li {
-      margin-bottom: 4px;
-    }
+  /* ── Education ── */
+  .edu { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+  .edu-name { font-size: 9pt; font-weight: 600; color: #0f0f0f; }
+  .edu-degree { font-size: 9pt; color: #444; }
+  .edu-date { font-size: 8.5pt; color: #666; white-space: nowrap; margin-left: 8px; }
 
-    .subtitle,
-    .meta {
-      color: var(--muted);
-    }
+  /* ── Projects ── */
+  .project { margin-bottom: 7px; }
+  .project-name { font-size: 9pt; font-weight: 700; color: #0f0f0f; display: inline; }
+  .project-role { font-size: 8.5pt; color: #666; display: inline; margin-left: 6px; }
+  .project-desc { font-size: 9pt; color: #333; line-height: 1.5; }
 
-    .header {
-      display: grid;
-      gap: 8px;
-      padding-bottom: 18px;
-      border-bottom: 2px solid var(--line);
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 14px;
-      font-size: 13px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 28px;
-    }
-
-    .item {
-      break-inside: avoid;
-    }
-
-    @media print {
-      body {
-        background: #fff;
-      }
-
-      main {
-        width: auto;
-        padding: 0;
-      }
-    }
-
-    @media (max-width: 720px) {
-      main {
-        padding: 22px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  /* ── Print preview hint (web only) ── */
+  .print-hint {
+    background: #f0f4ff; border: 1px solid #b3c6f7; border-radius: 6px;
+    padding: 10px 14px; margin-bottom: 18px; font-size: 9pt; color: #1a3a8f;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .print-hint strong { font-weight: 600; }
+</style>
 </head>
 <body>
-  <main>
-    <header class="header">
-      <h1>Tran Van Hoa</h1>
-      <p class="subtitle">Senior Unity Game Developer / Lead Developer</p>
-      <p class="meta">
-        <span>Ha Noi, Vietnam (UTC+7)</span>
-        <span>hoatv.mad@gmail.com</span>
-        <span>+84 374 639 758</span>
-        <span>github.com/hoatv2211</span>
-        <span>linkedin.com/in/hoatv</span>
-      </p>
-    </header>
 
-    <div class="grid">
-      <section>
-        <h2>Profile</h2>
-        <p>
-          Senior Unity Developer with 8+ years shipping mobile, WebGL, GameFi, Telegram, and AI-assisted products.
-          Full-cycle delivery experience from prototype and gameplay systems to SDKs, ads, IAP, optimization,
-          publishing, and live support.
-        </p>
+<!-- Web-only hint — hidden in print -->
+<div class="print-hint no-print">
+  <span>💡</span>
+  <span><strong>Để xuất PDF đúng chuẩn:</strong> Ctrl+P (hoặc Cmd+P) → Destination: Save as PDF → More settings → Uncheck "Headers and footers" → Save. File path sẽ không xuất hiện trong PDF.</span>
+</div>
 
-        <h2>Selected Results</h2>
-        <ul>
-          <li>50+ published games across App Store, Google Play, and WebGL.</li>
-          <li>Technical Leader for Idle Cyber, an idle defense/GameFi title that successfully raised million-dollar funding.</li>
-          <li>Delivered Nekoverse GameFi systems for a product that successfully raised million-dollar funding.</li>
-          <li>Contributed to MU: Loren Mobile MMORPG systems including quests, class mechanics, monster spawning, events, and 3D mobile optimization.</li>
-          <li>Top 1 World App game ranking for Dalgona during launch period.</li>
-          <li>Led and mentored teams up to 15 developers, artists, designers, and QA.</li>
-        </ul>
+<!-- ═══════════════ HEADER ═══════════════ -->
+<div class="header">
+  <h1>TRAN VAN HOA</h1>
+  <div class="role">Senior Unity Developer &amp; Technical Lead · 8+ Years · Mobile · WebGL · GameFi · AI Automation</div>
+  <div class="contact-row">
+    <span>Ha Noi, Vietnam (UTC+7)</span>
+    <span class="contact-sep">·</span>
+    <a href="mailto:hoatv.mad@gmail.com">hoatv.mad@gmail.com</a>
+    <span class="contact-sep">·</span>
+    <span>+84 374 639 758</span>
+    <span class="contact-sep">·</span>
+    <a href="https://linkedin.com/in/hoatv">linkedin.com/in/hoatv</a>
+    <span class="contact-sep">·</span>
+    <a href="https://github.com/hoatv2211">github.com/hoatv2211</a>
+    <span class="contact-sep">·</span>
+    <a href="https://hoatv2211.github.io">hoatv2211.github.io</a>
+  </div>
+</div>
 
-        <h2>Experience</h2>
-        <div class="item">
-          <h3>Lead Developer / Freelancer - Remote</h3>
-          <p class="meta">Jan 2025 - Present</p>
-          <ul>
-            <li>Deliver Unity projects for global clients across casual, mid-core, GameFi, and Web3 games.</li>
-            <li>Lead distributed teams, CI/CD workflows, technical planning, and release support.</li>
-          </ul>
-        </div>
-        <div class="item">
-          <h3>Senior Unity Developer - Gamota / Gabros Team</h3>
-          <p class="meta">Jul 2023 - Jun 2024</p>
-          <ul>
-            <li>Developed and maintained casual and idle games including Sandwich Please.</li>
-            <li>Handled gameplay, UI, analytics, SDKs, optimization, and team support.</li>
-          </ul>
-        </div>
-        <div class="item">
-          <h3>Project Manager / Senior Unity Developer - Neko Global</h3>
-          <p class="meta">Jul 2022 - May 2023</p>
-          <ul>
-            <li>Built and maintained GameFi/MMORPG systems for Nekoverse.</li>
-            <li>Managed tasks, supported teammates, and integrated blockchain gameplay features.</li>
-          </ul>
-        </div>
-        <div class="item">
-          <h3>Project Manager / Technical Leader - BLAMEO Technology</h3>
-          <p class="meta">Jun 2021 - May 2022</p>
-          <ul>
-            <li>Built the game team and helped move production from casual titles toward mid-core games.</li>
-            <li>Led Age of Sail multiplayer work, planning, mentoring, and cross-discipline delivery.</li>
-          </ul>
-        </div>
-        <div class="item">
-          <h3>Unity Developer / Technical Leader on Idle Cyber - BEEMOB Studio</h3>
-          <p class="meta">Mar 2021 - Jun 2021</p>
-          <ul>
-            <li>Led idle defense/GameFi systems for Idle Cyber, a title that raised million-dollar funding.</li>
-            <li>Owned progression, combat, rewards, ads, NFT prototype flows, and cross-platform delivery.</li>
-          </ul>
-        </div>
-      </section>
+<!-- ═══════════════ PROFILE ═══════════════ -->
+<div class="section">
+  <div class="section-title">Profile</div>
+  <p class="profile">
+    Senior Unity Developer with 8+ years shipping production-grade mobile, WebGL, GameFi, and Telegram mini-app titles across casual, idle, tower defense, and MMORPG genres. Proven full-cycle delivery: from prototype and core gameplay through SDK integration, ads/IAP monetization, performance profiling, store publishing, and live-ops support. Experienced technical leader (teams up to 15) with hands-on engineering depth — recently expanding into agentic AI systems, n8n automation pipelines, and proxy API tooling. Best fit for studios or funded founders needing a senior individual contributor who can also own architecture and delivery risk.
+  </p>
+</div>
 
-      <section>
-        <h2>Core Skills</h2>
-        <ul>
-          <li>Unity, C#, C++, Lua</li>
-          <li>Mobile, WebGL, iOS, Android</li>
-          <li>Gameplay systems, UI/UX, game economy</li>
-          <li>Firebase, Supabase, AWS, Docker</li>
-          <li>Ads, IAP, analytics, ASO, publishing</li>
-          <li>Web3, NFT, wallet integration, GameFi</li>
-          <li>Agentic AI systems, automation workflows, internal tools, proxy APIs, Telegram Mini App, bot automation, n8n</li>
-        </ul>
+<!-- ═══════════════ SELECTED RESULTS ═══════════════ -->
+<div class="section">
+  <div class="section-title">Selected Results</div>
+  <ul class="results-grid">
+    <li>50+ games shipped on App Store, Google Play, and WebGL</li>
+    <li>Technical Lead on Idle Cyber — raised million-dollar GameFi funding</li>
+    <li>Delivered Nekoverse GameFi MMORPG — raised million-dollar funding</li>
+    <li>Top 1 World App ranking for Dalgona (Worldchain) at launch</li>
+    <li>Led and mentored teams of up to 15 developers, artists, and QA</li>
+    <li>Full-cycle cross-platform delivery: iOS, Android, WebGL, Telegram Mini App</li>
+  </ul>
+</div>
 
-        <h2>Flagship Projects</h2>
-        <div class="item">
-          <h3>Idle Cyber (NFT)</h3>
-          <p>Idle tower defense / GameFi title. Role: Technical Leader. Led stages, hero progression, rewards, ads, WebGL/mobile publishing, NFT marketplace prototype, and supported successful million-dollar fundraising.</p>
-        </div>
-        <div class="item">
-          <h3>Nekoverse</h3>
-          <p>Play-to-Earn MMORPG. Role: Senior Unity Developer. Built battle systems, NFT integrations, staking, crafting, and performance optimizations for a product that successfully raised million-dollar funding.</p>
-        </div>
-        <div class="item">
-          <h3>MU: Loren Mobile</h3>
-          <p>Licensed mobile MMORPG. Role: Senior Unity Developer. Developed quest systems, class mechanics, monster spawning, events, UI flows, and mobile 3D performance work.</p>
-        </div>
-        <div class="item">
-          <h3>Dalgona - Worldchain</h3>
-          <p>World App Web3 mini-game. Role: Solo Developer. Outcome: Top 1 World App game ranking during launch.</p>
-        </div>
+<!-- ═══════════════ EXPERIENCE ═══════════════ -->
+<div class="section">
+  <div class="section-title">Experience</div>
 
-        <h2>Education</h2>
-        <p>University of Transport and Communications - Bachelor's Degree in Information Technology</p>
-        <p>ITPlus Academy - Advanced Game Development & Unity Certification</p>
-      </section>
+  <div class="job">
+    <div class="job-header">
+      <span class="job-company">Freelancer / Remote Lead</span>
+      <span class="job-date">Jan 2025 — Present</span>
     </div>
-  </main>
+    <div class="job-title">Lead Unity Developer &amp; Technical Consultant</div>
+    <ul class="job-bullets">
+      <li>Lead distributed teams of 5–10 across time zones, scoping features, breaking down tasks, and owning release readiness for global clients in casual, mid-core, and Web3 game segments.</li>
+      <li>Deliver full-cycle Unity work: gameplay systems, UI/UX, SDK/analytics integration, performance profiling, and store submission for iOS, Android, and WebGL targets.</li>
+      <li>Build and maintain agentic AI tooling, proxy APIs, internal dashboards, and n8n automation workflows to reduce manual overhead for game teams.</li>
+      <li>Bridge engineering, client communication, and delivery ownership — mentoring junior devs and ensuring technical decisions map to product and business constraints.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-company">Gamota — Gabros Team</span>
+      <span class="job-date">Jul 2023 — Jun 2024</span>
+    </div>
+    <div class="job-title">Senior Unity Developer</div>
+    <ul class="job-bullets">
+      <li>Developed and shipped casual and idle titles — Sandwich Please, DOP, DIY, and puzzle variants — for publisher-backed mobile release on App Store and Google Play.</li>
+      <li>Owned gameplay systems, UI flow, SDK integration (analytics, ads, IAP), and mobile performance optimization from feature implementation through store deployment.</li>
+      <li>Supported post-launch: crash triage, performance profiling, content iteration, and live-ops stability monitoring.</li>
+      <li>Contributed system design documentation and knowledge transfer to junior teammates, accelerating onboarding and reducing rework cycles.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-company">Neko Global</span>
+      <span class="job-date">Jul 2022 — May 2023</span>
+    </div>
+    <div class="job-title">Project Manager / Senior Unity Developer</div>
+    <ul class="job-bullets">
+      <li>Delivered core gameplay for Nekoverse — a Play-to-Earn MMORPG that successfully raised million-dollar funding — including real-time PvE/PvP combat, elemental skill interactions, resource farming, and crafting systems.</li>
+      <li>Integrated NFT asset pipelines, staking mechanics, and on-chain reward flows, connecting blockchain product requirements with Unity gameplay implementation.</li>
+      <li>Managed task breakdown and team coordination across 8–10 developers and designers while remaining hands-on in critical system delivery.</li>
+      <li>Ran performance profiling and device-tier optimization to hit stable frame rates across mid-range Android and iOS targets.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-company">BLAMEO Technology</span>
+      <span class="job-date">Jun 2021 — May 2022</span>
+    </div>
+    <div class="job-title">Project Manager / Technical Leader</div>
+    <ul class="job-bullets">
+      <li>Built the game development team from scratch — hiring, onboarding, establishing delivery standards, and evolving the studio's scope from casual mobile titles toward mid-core and multiplayer production.</li>
+      <li>Led technical execution for Age of Sail — a real-time multiplayer strategy title — owning architecture, network-aware feature design, and synchronization across clients.</li>
+      <li>Balanced hands-on engineering with planning, mentoring, and cross-discipline coordination between design, QA, and backend teams.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-company">BEEMOB Studio</span>
+      <span class="job-date">Mar 2021 — Jun 2021</span>
+    </div>
+    <div class="job-title">Unity Developer / Technical Leader — Idle Cyber</div>
+    <ul class="job-bullets">
+      <li>Served as Technical Leader for Idle Cyber — an idle tower-defense/GameFi title that successfully raised million-dollar funding — owning idle progression, combat systems, rewards, ad integration, and NFT marketplace prototype.</li>
+      <li>Delivered a cross-platform build spanning iOS, Android, and WebGL within a compact production timeline, supporting fundraising milestones with stable release candidates.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-company">Techies Studio</span>
+      <span class="job-date">Nov 2019 — Jun 2020</span>
+    </div>
+    <div class="job-title">Technical Leader</div>
+    <ul class="job-bullets">
+      <li>Owned technical architecture and hands-on feature delivery while coordinating task assignment, code review, and mentoring for the team.</li>
+      <li>Designed system architecture for new projects, supported releases, and established development standards that reduced bug-reopen rate.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-company">2NF Office Solutions</span>
+      <span class="job-date">Mar 2019 — Aug 2019</span>
+    </div>
+    <div class="job-title">Unity Developer</div>
+    <ul class="job-bullets">
+      <li>Delivered Unity features, bug fixes, and maintenance across active products; expanded responsibilities into deployment support and system design beyond core gameplay code.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-company">CSCMobi Studio</span>
+      <span class="job-date">Nov 2017 — Jun 2018</span>
+    </div>
+    <div class="job-title">Unity Developer</div>
+    <ul class="job-bullets">
+      <li>Built gameplay features, handled maintenance, and resolved live-product bugs on shipped Unity titles. Developed core production discipline around release support and system thinking.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════ FLAGSHIP PROJECTS ═══════════════ -->
+<div class="section">
+  <div class="section-title">Flagship Projects</div>
+
+  <div class="project">
+    <span class="project-name">Idle Cyber (NFT)</span>
+    <span class="project-role">— Technical Leader · BEEMOB Studio</span>
+    <p class="project-desc">Idle tower-defense / GameFi title. Led idle progression, combat, reward systems, ads, WebGL/mobile cross-platform publishing, and NFT marketplace prototype. Supported successful million-dollar fundraising. Playable demo: o0-mad-0o.itch.io/cyber-war</p>
+  </div>
+
+  <div class="project">
+    <span class="project-name">Nekoverse</span>
+    <span class="project-role">— Senior Unity Developer · Neko Global</span>
+    <p class="project-desc">Play-to-Earn MMORPG. Built PvE/PvP battle systems, NFT integrations, staking, crafting, and device-tier performance optimizations. Product raised million-dollar funding.</p>
+  </div>
+
+  <div class="project">
+    <span class="project-name">MU: Loren Mobile</span>
+    <span class="project-role">— Senior Unity Developer · Gamota</span>
+    <p class="project-desc">Licensed 3D mobile MMORPG. Delivered quest systems, 5 character classes, monster spawning, in-game events, UI flows, PvE/PvP battle systems, and mobile 3D performance optimization.</p>
+  </div>
+
+  <div class="project">
+    <span class="project-name">Dalgona — Worldchain</span>
+    <span class="project-role">— Solo Developer</span>
+    <p class="project-desc">Web3 mini-game for World App ecosystem. Solo-developed and shipped; achieved Top 1 World App game ranking during launch period.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ CORE SKILLS ═══════════════ -->
+<div class="section">
+  <div class="section-title">Core Skills</div>
+  <div class="skills-grid">
+    <div class="skill-row"><span class="skill-cat">Engine &amp; Language:</span> Unity, C#, C++, Lua</div>
+    <div class="skill-row"><span class="skill-cat">Platforms:</span> iOS, Android, WebGL, Telegram Mini App, World App</div>
+    <div class="skill-row"><span class="skill-cat">Gameplay:</span> Idle, tower defense, MMORPG, casual, GameFi, multiplayer</div>
+    <div class="skill-row"><span class="skill-cat">Monetization:</span> AdMob, MAX, IronSource, IAP, ASO, store publishing</div>
+    <div class="skill-row"><span class="skill-cat">Backend / Infra:</span> Firebase, Supabase, AWS, Docker, CI/CD</div>
+    <div class="skill-row"><span class="skill-cat">Analytics:</span> Firebase Analytics, AppsFlyer, GameAnalytics</div>
+    <div class="skill-row"><span class="skill-cat">Web3:</span> NFT pipeline, staking, MetaMask, TON wallet, World App</div>
+    <div class="skill-row"><span class="skill-cat">AI / Automation:</span> Agentic workflows, n8n, proxy APIs, Telegram bots</div>
+    <div class="skill-row"><span class="skill-cat">Leadership:</span> Agile/Scrum, task breakdown, mentoring, remote teams</div>
+    <div class="skill-row"><span class="skill-cat">Tools:</span> Git, Figma, Postman, Unity Profiler, Unity Cloud Build</div>
+  </div>
+</div>
+
+<!-- ═══════════════ EDUCATION ═══════════════ -->
+<div class="section">
+  <div class="section-title">Education</div>
+
+  <div class="edu">
+    <div>
+      <span class="edu-name">University of Transport and Communications</span>
+      <br><span class="edu-degree">Bachelor's Degree in Information Technology</span>
+    </div>
+    <span class="edu-date">Oct 2013 — May 2017</span>
+  </div>
+
+  <div class="edu" style="margin-top:5px">
+    <div>
+      <span class="edu-name">ITPlus Academy</span>
+      <br><span class="edu-degree">Advanced Game Development &amp; Unity Certification</span>
+    </div>
+    <span class="edu-date">Oct 2016 — May 2017</span>
+  </div>
+</div>
+
 </body>
 </html>
