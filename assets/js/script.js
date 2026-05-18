@@ -261,6 +261,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (item.dataset.detailBound === "true") return;
 
         item.addEventListener("click", function (event) {
+          const isInPortfolioList = this.closest('[data-render="portfolio-list"]');
+          if (!isInPortfolioList) {
+            return;
+          }
+
           event.preventDefault();
           const selectedType = this.dataset.detailCategory;
           openProjectDetail(selectedType);
