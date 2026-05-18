@@ -12,7 +12,7 @@ window.PORTFOLIO_DATA = [
     },
     tag: { label: "Agentic AI", className: "applications-icon" }
   },
-   {
+  {
     id: "muloren",
     title: "MU Loren Mobile",
     category: "unity",
@@ -22,6 +22,19 @@ window.PORTFOLIO_DATA = [
       src: "assets/images/game/MuLoren/banner-1.jpg",
       alt: "muloren",
       style: "width: 360px; height: 360px;"
+    },
+    tag: { label: "Unity", className: "unity-icon" }
+  },
+  {
+    id: "jx1",
+    title: "Tinh Thien Ha 1 (JX1)",
+    category: "unity",
+    detailCategory: "jx1",
+    description: "Mobile MMORPG work on ADNX's JX1 title, covering classic martial-arts progression, faction systems, large-scale multiplayer content, mobile optimization, and publisher delivery.",
+    image: {
+      src: "https://cdn-img.adnx.vn/tth1/Th%C6%B0%20vi%E1%BB%87n%20%E1%BA%A3nh/img_v3_02nj_8af250fa-afaa-43fd-9fc3-8355a46deahu.png",
+      alt: "Tinh Thien Ha 1",
+      style: "width: 360px; height: 360px; object-fit: cover;"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },

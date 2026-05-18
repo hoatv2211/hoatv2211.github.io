@@ -290,6 +290,35 @@
       }
     },
     {
+      "id": "tinh-thien-ha-jx1",
+      "title": "Tinh Thien Ha 1 (JX1)",
+      "category": "Unity",
+      "genre": "MMORPG",
+      "platform": ["Android", "iOS", "PC"],
+      "period": "2023 - 2024",
+      "engine": "Unity",
+      "role": "Senior Unity Developer",
+      "description": "Publisher-backed martial-arts MMORPG from ADNX Games, built around classic JX-style faction progression, open-world activities, and large-scale PvP content.",
+      "myContributions": [
+        "Contributed to gameplay implementation, mobile optimization, and production delivery for an MMORPG title",
+        "Supported multiplayer systems, resource loading, SDK integration, and broad device coverage",
+        "Worked on production concerns for faction-based progression and large-scale PvP content"
+      ],
+      "technicalHighlights": [
+        "10 martial sect identities with differentiated combat styles and progression expectations",
+        "Large-scale multiplayer content including Phong Lang Do and Tong Kim battlefield features",
+        "Cross-device delivery across smartphones, tablets, and PC"
+      ],
+      "caseStudy": {
+        "problem": "Bring a culturally familiar martial-arts MMORPG experience to modern mobile and PC targets without losing large-scale multiplayer expectations.",
+        "solution": "Support scalable gameplay systems, resource loading, SDK integration, and optimization work around faction progression and PvP-heavy content.",
+        "outcome": "Helped deliver a publisher-backed MMORPG with broad device support, 10 sect identities, and signature multiplayer content."
+      },
+      "links": {
+        "website": "https://tinhthienha1.adnxgames.vn/"
+      }
+    },
+    {
       "id": "proxyapi-mad",
       "title": "ProxyAPI.MAD",
       "category": "Agentic AI",
