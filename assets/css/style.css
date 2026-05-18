@@ -2986,10 +2986,37 @@ textarea.form-input::-webkit-resizer {
 \*-----------------------------------*/
 
 @media (max-width: 768px) {
+    main {
+        margin-bottom: calc(168px + env(safe-area-inset-bottom));
+    }
+
+    .result-grid,
+    .process-list,
+    .proof-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .proof-card,
+    .case-study-card {
+        min-width: 0;
+    }
+
+    .proof-card .hero-cta-group {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .proof-card .portfolio-cta,
+    .case-study-card .portfolio-cta {
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+
     .sticky-contact-cta {
         left: 12px;
         right: 12px;
-        bottom: 74px;
+        bottom: calc(120px + env(safe-area-inset-bottom));
         justify-content: center;
     }
 
