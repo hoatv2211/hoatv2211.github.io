@@ -61,6 +61,29 @@
   letter-spacing: 0;
 }
 
+.portfolio-chatbot-pet {
+  --pet-row-y: 0%;
+  width: 66px;
+  height: 72px;
+  display: block;
+  background-image: url("../pets/worker-meow/spritesheet.webp");
+  background-repeat: no-repeat;
+  background-size: 800% 900%;
+  background-position: 0 var(--pet-row-y);
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.35));
+  transform: translateY(1px);
+  animation: chatbotPetLoop 0.92s steps(7) infinite;
+}
+
+.portfolio-chatbot-button.active .portfolio-chatbot-pet {
+  --pet-row-y: 100%;
+}
+
+.portfolio-chatbot-button.is-thinking .portfolio-chatbot-pet {
+  --pet-row-y: 87.5%;
+  animation-duration: 0.68s;
+}
+
 .portfolio-chatbot-antenna {
   position: absolute;
   top: 7px;
@@ -479,6 +502,11 @@ body.portfolio-chatbot-studio {
   50% { opacity: 0.5; }
 }
 
+@keyframes chatbotPetLoop {
+  from { background-position: 0 var(--pet-row-y); }
+  to { background-position: 100% var(--pet-row-y); }
+}
+
 @media (max-width: 768px) {
   .portfolio-chatbot-button {
     right: 18px;
@@ -514,6 +542,7 @@ body.portfolio-chatbot-studio {
 
 @media (prefers-reduced-motion: reduce) {
   .portfolio-chatbot-button,
+  .portfolio-chatbot-pet,
   .portfolio-chatbot-panel,
   .portfolio-chatbot-eye,
   .portfolio-chatbot-ping,

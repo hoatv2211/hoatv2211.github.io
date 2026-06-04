@@ -99,12 +99,7 @@
     button.setAttribute("aria-label", "Open portfolio assistant");
     button.setAttribute("title", "Open portfolio assistant");
     button.innerHTML = [
-      '<span class="portfolio-chatbot-antenna" aria-hidden="true"></span>',
-      '<span class="portfolio-chatbot-robot" aria-hidden="true">',
-      '<span class="portfolio-chatbot-eye left"></span>',
-      '<span class="portfolio-chatbot-eye right"></span>',
-      '<span class="portfolio-chatbot-mouth"></span>',
-      '</span>',
+      '<span class="portfolio-chatbot-pet" aria-hidden="true"></span>',
       '<span class="portfolio-chatbot-ping" aria-hidden="true"></span>'
     ].join("");
     return button;

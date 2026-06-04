@@ -75,6 +75,18 @@
     --detail-info-bg: hsla(217, 82%, 53%, 0.08);
     --detail-info-border: hsla(217, 82%, 53%, 0.3);
     --detail-cta-text-dark: hsl(220, 30%, 6%);
+    --site-bg-image: url("../bg.jpg");
+    --site-bg-overlay: linear-gradient(180deg,
+            hsla(220, 28%, 5%, 0.5) 0%,
+            hsla(220, 26%, 4%, 0.5) 52%,
+            hsla(220, 28%, 3%, 0.5) 100%);
+    --site-bg-vignette: radial-gradient(circle at 20% 12%,
+            hsla(190, 95%, 58%, 0.07) 0,
+            hsla(190, 95%, 58%, 0) 30rem),
+        radial-gradient(circle at 86% 18%,
+            hsla(45, 100%, 72%, 0.06) 0,
+            hsla(45, 100%, 72%, 0) 24rem);
+    --surface-panel-bg: hsla(240, 2%, 10%, 0.74);
 
     /**
    * typography
@@ -474,7 +486,12 @@ html {
 }
 
 body {
-    background: var(--smoky-black);
+    min-height: 100vh;
+    background:
+        var(--site-bg-vignette),
+        var(--site-bg-overlay),
+        var(--site-bg-image) center / cover fixed no-repeat,
+        var(--smoky-black);
 }
 
 /*-----------------------------------*\
@@ -483,7 +500,11 @@ body {
 
 .sidebar,
 article {
-    background: var(--eerie-black-2);
+    background:
+        linear-gradient(135deg, hsla(0, 0%, 100%, 0.035), hsla(0, 0%, 100%, 0)),
+        var(--surface-panel-bg);
+    backdrop-filter: blur(14px) saturate(115%);
+    -webkit-backdrop-filter: blur(14px) saturate(115%);
     border: 1px solid var(--jet);
     border-radius: 20px;
     padding: 15px;
@@ -731,6 +752,14 @@ main {
     font-style: normal;
 }
 
+.contact-title {
+    color: var(--light-gray-70);
+}
+
+.contact-info :is(.contact-link, time, address) {
+    color: var(--light-gray);
+}
+
 .social-list {
     display: flex;
     justify-content: flex-start;
@@ -763,7 +792,7 @@ main {
     border: 1px solid var(--jet);
     border-radius: 12px 12px 0 0;
     box-shadow: var(--shadow-2);
-    z-index: 5;
+    z-index: 9000;
 }
 
 .navbar-list {
@@ -856,7 +885,7 @@ main {
     position: fixed;
     right: 18px;
     bottom: 82px;
-    z-index: 8;
+    z-index: 8999;
     padding: 8px;
     border: 1px solid var(--jet);
     border-radius: 16px;
@@ -3206,6 +3235,14 @@ textarea.form-input::-webkit-resizer {
 \*-----------------------------------*/
 
 @media (max-width: 768px) {
+    body {
+        background:
+            var(--site-bg-vignette),
+            var(--site-bg-overlay),
+            var(--site-bg-image) center top / cover scroll no-repeat,
+            var(--smoky-black);
+    }
+
     main {
         margin-bottom: calc(168px + env(safe-area-inset-bottom));
     }
@@ -3236,8 +3273,9 @@ textarea.form-input::-webkit-resizer {
     .sticky-contact-cta {
         left: 12px;
         right: 12px;
-        bottom: calc(120px + env(safe-area-inset-bottom));
+        bottom: calc(172px + env(safe-area-inset-bottom));
         justify-content: center;
+        z-index: 8999;
     }
 
     .sticky-contact-cta a {
@@ -3712,14 +3750,23 @@ iframe {
 \*-----------------------------------*/
 
 .backup-style-toggle {
+    position: fixed !important;
     top: 98px;
     right: 15px;
+    bottom: auto !important;
     width: 42px;
     height: 42px;
     touch-action: none;
     color: var(--orange-yellow-crayola);
     background: radial-gradient(circle at 30% 20%, hsla(45, 100%, 72%, 0.18), transparent 34%), var(--bg-gradient-jet);
     border: 1px solid hsla(45, 100%, 72%, 0.34);
+}
+
+.backup-style-toggle:not(.has-custom-position) {
+    left: auto !important;
+    right: 15px !important;
+    top: 98px !important;
+    bottom: auto !important;
 }
 
 .backup-style-toggle.is-dragging {
@@ -3945,8 +3992,45 @@ body.backup-style-open {
 }
 
 @media (max-width: 768px) {
+    .navbar-list {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 0;
+        justify-items: stretch;
+        padding: 0 14px 8px;
+    }
+
+    .navbar-item {
+        grid-column: span 2;
+        min-width: 0;
+    }
+
+    .navbar-item:nth-last-child(2) {
+        grid-column: 2 / span 2;
+    }
+
+    .navbar-item:last-child {
+        grid-column: 4 / span 2;
+    }
+
+    .navbar-link {
+        width: 100%;
+        padding: 13px 6px;
+        text-align: center;
+    }
+
     .backup-style-toggle {
+        position: fixed !important;
         top: 148px;
+        right: 15px;
+        bottom: auto !important;
+        z-index: 10000;
+    }
+
+    .backup-style-toggle:not(.has-custom-position) {
+        left: auto !important;
+        right: 15px !important;
+        top: 148px !important;
     }
 
     .backup-style-grid {

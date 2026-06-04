@@ -176,7 +176,10 @@ function initThemeToggle() {
   }
 
   if (backupStyleToggle) {
-    makeFloatingButtonDraggable(backupStyleToggle, 'backupStyleTogglePosition');
+    localStorage.removeItem('backupStyleTogglePosition');
+    localStorage.removeItem('backupStyleTogglePositionV2');
+    localStorage.removeItem('backupStyleTogglePositionV3');
+    makeFloatingButtonDraggable(backupStyleToggle, 'backupStyleTogglePositionV4');
   }
 
   // Create back button for portfolio if on a detail page
@@ -200,18 +203,35 @@ function makeFloatingButtonDraggable(button, storageKey) {
   if (!button) return;
 
   const savedPosRaw = localStorage.getItem(storageKey);
+  let restoredPosition = false;
   if (savedPosRaw) {
     try {
       const savedPos = JSON.parse(savedPosRaw);
       if (typeof savedPos.x === 'number' && typeof savedPos.y === 'number') {
-        button.style.left = `${savedPos.x}px`;
-        button.style.top = `${savedPos.y}px`;
-        button.style.right = 'auto';
-        button.style.bottom = 'auto';
+        if (storageKey.includes('backupStyleToggle') && savedPos.x < window.innerWidth / 2) {
+          localStorage.removeItem(storageKey);
+        } else {
+          const x = Math.max(0, Math.min(window.innerWidth - button.offsetWidth, savedPos.x));
+          const y = Math.max(0, Math.min(window.innerHeight - button.offsetHeight, savedPos.y));
+          button.style.left = `${x}px`;
+          button.style.top = `${y}px`;
+          button.style.right = 'auto';
+          button.style.bottom = 'auto';
+          button.classList.add('has-custom-position');
+          restoredPosition = true;
+        }
       }
     } catch (error) {
       console.warn(`Failed to restore ${storageKey}`, error);
     }
+  }
+
+  if (storageKey.includes('backupStyleToggle') && !restoredPosition) {
+    button.style.left = 'auto';
+    button.style.right = '15px';
+    button.style.top = window.innerWidth <= 768 ? '148px' : '98px';
+    button.style.bottom = 'auto';
+    button.classList.remove('has-custom-position');
   }
 
   let isDragging = false;
@@ -228,12 +248,22 @@ function makeFloatingButtonDraggable(button, storageKey) {
     button.style.top = `${y}px`;
     button.style.right = 'auto';
     button.style.bottom = 'auto';
+    button.classList.add('has-custom-position');
   };
 
   const savePosition = () => {
     const left = parseFloat(button.style.left || '0');
     const top = parseFloat(button.style.top || '0');
     localStorage.setItem(storageKey, JSON.stringify({ x: left, y: top }));
+  };
+
+  const keepInsideViewport = () => {
+    if (!button.style.left || !button.style.top) return;
+    const x = Math.max(0, Math.min(window.innerWidth - button.offsetWidth, parseFloat(button.style.left)));
+    const y = Math.max(0, Math.min(window.innerHeight - button.offsetHeight, parseFloat(button.style.top)));
+    button.style.left = `${x}px`;
+    button.style.top = `${y}px`;
+    savePosition();
   };
 
   const onPointerMove = (event) => {
@@ -284,6 +314,8 @@ function makeFloatingButtonDraggable(button, storageKey) {
       suppressClick = false;
     }, 0);
   }, true);
+
+  window.addEventListener('resize', keepInsideViewport);
 }
 
 /**

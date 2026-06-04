@@ -431,11 +431,13 @@ a:not(.btn):not(.service-item):not(.project-img):hover {
 #portfolio-back-button.hidden {
   opacity: 0;
   visibility: hidden;
+  display: none !important;
 }
 
 #portfolio-back-button:not(.hidden) {
   opacity: 1;
   visibility: visible;
+  display: flex;
 }
 
 #portfolio-back-button:hover {
@@ -499,6 +501,17 @@ a:not(.btn):not(.service-item):not(.project-img):hover {
   --unity-tag:        hsl(197, 78%, 64%);
   --unreal-tag:       hsl(99, 41%, 52%);
   --application-tag:  hsl(9, 68%, 58%);
+  --site-bg-overlay: linear-gradient(180deg,
+      hsla(220, 26%, 12%, 0.5) 0%,
+      hsla(220, 22%, 11%, 0.5) 58%,
+      hsla(220, 24%, 9%, 0.5) 100%);
+  --site-bg-vignette: radial-gradient(circle at 20% 12%,
+      hsla(190, 95%, 58%, 0.07) 0,
+      hsla(190, 95%, 58%, 0) 30rem),
+    radial-gradient(circle at 86% 18%,
+      hsla(45, 100%, 72%, 0.06) 0,
+      hsla(45, 100%, 72%, 0) 24rem);
+  --surface-panel-bg: hsla(220, 16%, 18%, 0.72);
 }
 
 /* Fix for filter select dropdown in light mode */
@@ -916,9 +929,10 @@ img.lazy-load.loaded {
 
 body {
   background:
-    radial-gradient(circle at 12% 8%, rgba(124, 58, 237, 0.2), transparent 36%),
-    radial-gradient(circle at 82% 14%, rgba(34, 211, 238, 0.14), transparent 34%),
-    linear-gradient(130deg, var(--neon-deep), var(--smoky-black) 55%, var(--neon-deep-soft));
+    var(--site-bg-vignette),
+    var(--site-bg-overlay),
+    var(--site-bg-image) center / cover fixed no-repeat,
+    var(--smoky-black);
   position: relative;
 }
 
@@ -1504,6 +1518,15 @@ article {
 }
 
 @media (max-width: 768px) {
+  body,
+  .light-mode body {
+    background:
+      var(--site-bg-vignette),
+      var(--site-bg-overlay),
+      var(--site-bg-image) center top / cover scroll no-repeat,
+      var(--smoky-black);
+  }
+
   body::after {
     opacity: 0.16;
   }
@@ -1778,9 +1801,10 @@ article {
 /* Body: mid-tone slate instead of near-black */
 .light-mode body {
   background:
-    radial-gradient(circle at 12% 8%,  rgba(124, 58, 237, 0.18), transparent 36%),
-    radial-gradient(circle at 82% 14%, rgba(34, 211, 238, 0.12), transparent 34%),
-    linear-gradient(130deg, hsl(220, 22%, 18%), hsl(220, 18%, 22%) 55%, hsl(220, 20%, 17%));
+    var(--site-bg-vignette),
+    var(--site-bg-overlay),
+    var(--site-bg-image) center / cover fixed no-repeat,
+    var(--smoky-black);
 }
 
 /* Keep scanline — looks fine on slate */
