@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/modern-enhancements.css">
   <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/portfolio-chatbot.css">
   <link rel="manifest" href="assets/js/manifest.json" />
   <script src="assets/js/site-config.js" defer></script>
   <script src="assets/js/site-render.js" defer></script>
@@ -88,7 +89,7 @@
           <span></span>
           <span></span>
           <span></span>
-          <strong>MAD.dev</strong>
+          <strong>MAD-DEV</strong>
         </div>
         <div class="loading-terminal-body">
           <p><span class="loading-prompt">&gt;</span> boot portfolio</p>
@@ -998,9 +999,16 @@
   <script src="assets/js/modern-enhancements.js"></script>
   <script src="assets/js/gaming-showcase.js"></script>
   <script src="assets/js/media-orientation.js" defer></script>
-  <script src="assets/js/visit-telegram-hook.js"></script>
+  <!--<script src="assets/js/visit-telegram-hook.js"></script>-->
   <script src="assets/js/github-share.js"></script>
   <script src="assets/js/script.js"></script>
+  <script>
+    window.PORTFOLIO_CHATBOT_CONFIG = {
+      endpoint: "https://quiet-haze-970b.tranhoa-221194.workers.dev/chat",
+      telegramUrl: "https://t.me/o0_MaD_0o"
+    };
+  </script>
+  <script src="assets/js/portfolio-chatbot.js"></script>
 
   <!--
     - ionicon link
