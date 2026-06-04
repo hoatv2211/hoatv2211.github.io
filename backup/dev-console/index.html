@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HoaTV - Dev Console Portfolio</title>
+  <meta name="description" content="Terminal-style backup portfolio for HoaTV, Senior Unity Game Developer.">
+  <link rel="icon" href="../../assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../assets/js/portfolio-data.js?v=20260505" defer></script>
+  <script src="../shared/backup-data-adapter.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <header class="console-nav">
+    <a href="../../index.html">~/MAD</a>
+    <nav aria-label="Console sections">
+      <a href="#runtime">runtime</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="terminal-window">
+        <div class="terminal-header"><span></span><span></span><span></span><strong>portfolio.boot</strong></div>
+        <div class="terminal-body">
+          <p><b>$</b> whoami</p>
+          <h1 id="hero-title">Tran Van Hoa<span>Senior Unity / WebGL / GameFi Developer</span></h1>
+          <p><b>$</b> load capabilities --production</p>
+          <ul>
+            <li>gameplay systems, economy loops, UI flows</li>
+            <li>mobile optimization, ads, IAP, Firebase</li>
+            <li>WebGL publishing, Telegram mini apps, agentic tools</li>
+          </ul>
+          <p><b>$</b> status <em>ready_for_scope</em><i></i></p>
+        </div>
+      </div>
+      <aside class="repo-panel" aria-label="Portfolio repo map">
+        <p class="label">repo tree</p>
+        <pre>portfolio/
+  unity-projects/
+  webgl-demos/
+  gamefi-systems/
+  telegram-mini-apps/
+  agentic-tools/</pre>
+      </aside>
+    </section>
+
+    <section class="runtime" id="runtime" aria-label="Runtime stats"></section>
+
+    <section class="command-block" aria-labelledby="projects-title" id="projects">
+      <p class="label">command output</p>
+      <h2 id="projects-title">$ list featured_projects --with-proof</h2>
+      <div class="project-list" id="project-list"></div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div>
+        <p class="label">handoff</p>
+        <h2 id="contact-title">$ open channel</h2>
+      </div>
+      <div class="contact-links" id="contact-links"></div>
+    </section>
+  </main>
+</body>
+</html>

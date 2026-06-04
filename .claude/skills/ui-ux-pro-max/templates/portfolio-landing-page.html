@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{PROJECT_TITLE}} - {{PROJECT_TYPE}}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding:0; box-sizing: border-box; }
+
+        :root {
+            --primary: #18181B;
+            --secondary: #3F3F46;
+            --cta: #2563EB;
+            --bg: #FAFAFA;
+            --text: #09090B;
+            --card-bg: #FFFFFF;
+            --border: #E5E7EB;
+            --feature-bg: #EFF6FF;
+            --tech-section-bg: #F9FAFB;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        [data-theme="dark"] {
+            --primary: #FAFAFA;
+            --secondary: #A1A1AA;
+            --cta: #3B82F6;
+            --bg: #09090B;
+            --text: #FAFAFA;
+            --card-bg: #18181B;
+            --border: #27272A;
+            --feature-bg: #1E1B4B;
+            --tech-section-bg: #0F0F0F;
+            --nav-bg: rgba(24, 24, 27, 0.9);
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 200ms, color 200ms;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Archivo', sans-serif; font-weight: 600; }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            right: 16px;
+            z-index: 50;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--primary);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--secondary);
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 200ms;
+        }
+
+        .nav-links a:hover { color: var(--cta); }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 6px 10px;
+            cursor: pointer;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            transition: border-color 200ms, color 200ms;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--cta);
+            color: var(--cta);
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 200ms;
+        }
+
+        .btn-back:hover { opacity: 0.9; }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 24px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-content { max-width: 560px; }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--feature-bg);
+            color: var(--cta);
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--secondary);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: var(--cta);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: opacity 200ms;
+        }
+
+        .btn-primary:hover { opacity: 0.9; }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: var(--card-bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: border-color 200ms;
+        }
+
+        .btn-secondary:hover { border-color: var(--secondary); }
+
+        /* Preview Frame */
+        .hero-preview {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+
+        .preview-header {
+            padding: 12px 16px;
+            background: var(--tech-section-bg);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .preview-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .preview-dot:nth-child(1) { background: #EF4444; }
+        .preview-dot:nth-child(2) { background: #F59E0B; }
+        .preview-dot:nth-child(3) { background: #10B981; }
+
+        .preview-body {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+        }
+
+        .preview-body iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: var(--secondary);
+            max-width: 600px;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: border-color 200ms, box-shadow 200ms;
+        }
+
+        .feature-card:hover {
+            border-color: var(--cta);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--feature-bg);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: background 200ms;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        /* Tech Stack */
+        .tech-section { background: var(--tech-section-bg); }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .tech-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: border-color 200ms;
+        }
+
+        .tech-item:hover { border-color: var(--cta); }
+
+        .tech-logo {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .tech-item h3 { font-size: 16px; margin-bottom: 4px; }
+        .tech-item p { font-size: 13px; color: var(--secondary); }
+
+        /* Project Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .info-card h3 {
+            font-size: 13px;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 100px 24px;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            color: var(--secondary);
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: var(--secondary);
+        }
+
+        footer a {
+            color: var(--cta);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        footer a:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; gap: 48px; }
+            .hero-content { max-width: 100%; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .info-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding-top: 140px; }
+            .hero h1 { font-size: 32px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .tech-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: repeat(2, 1fr); }
+            .nav-links a:not(.btn-back) { display: none; }
+        }
+
+        @media (max-width: 375px) {
+            .hero h1 { font-size: 28px; }
+            .hero-actions { flex-direction: column; }
+            .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { transition-duration: 0ms !important; }
+        }
+
+        /* SVG Icons */
+        .icon { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .icon-sm { width: 16px; height: 16px; }
+        .icon-lg { width: 24px; height: 24px; }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="{{PORTFOLIO_URL}}" class="nav-brand">Portfolio</a>
+    <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#tech">Tech Stack</a>
+        <a href="#info">Details</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon icon-sm" id="sunIcon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon icon-sm" id="moonIcon" viewBox="0 0 24 24" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="{{PORTFOLIO_URL}}" class="btn-back">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Portfolio
+        </a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">{{PROJECT_BADGE}}</div>
+        <h1>{{PROJECT_TITLE}}</h1>
+        <p>{{PROJECT_DESCRIPTION}}</p>
+        <div class="hero-actions">
+            <a href="{{LIVE_DEMO_URL}}" class="btn-primary" target="_blank">
+                <svg class="icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Play Live Demo
+            </a>
+            <a href="{{SOURCE_URL}}" class="btn-secondary" target="_blank">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                View Source
+            </a>
+        </div>
+    </div>
+    <div class="hero-preview">
+        <div class="preview-header">
+            <span class="preview-dot"></span>
+            <span class="preview-dot"></span>
+            <span class="preview-dot"></span>
+        </div>
+        <div class="preview-body">
+            <iframe src="{{LIVE_DEMO_URL}}" title="{{PROJECT_TITLE}} Live Demo" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features">
+    <div class="section-header">
+        <h2>Game Features</h2>
+        <p>{{FEATURES_DESCRIPTION}}</p>
+    </div>
+    <div class="features-grid">
+        {{FEATURE_CARDS}}
+    </div>
+</section>
+
+<!-- Tech Stack Section -->
+<section id="tech" class="tech-section">
+    <div class="section-header">
+        <h2>Technology Stack</h2>
+        <p>{{TECH_DESCRIPTION}}</p>
+    </div>
+    <div class="tech-grid">
+        {{TECH_CARDS}}
+    </div>
+</section>
+
+<!-- Project Info Section -->
+<section id="info">
+    <div class="section-header">
+        <h2>Project Details</h2>
+        <p>{{INFO_DESCRIPTION}}</p>
+    </div>
+    <div class="info-grid">
+        {{INFO_CARDS}}
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <h2>Ready to Play?</h2>
+    <p>Try the live demo in your browser or explore the source code on GitHub.</p>
+    <div class="cta-buttons">
+        <a href="{{LIVE_DEMO_URL}}" class="btn-primary" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Play Live Demo
+        </a>
+        <a href="{{SOURCE_URL}}" class="btn-secondary" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View Source Code
+        </a>
+        <a href="{{PORTFOLIO_URL}}" class="btn-secondary">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Portfolio
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>Part of <a href="{{GITHUB_REPO_URL}}">{{REPO_NAME}}</a> — {{REPO_DESCRIPTION}}</p>
+    <p style="margin-top: 8px;">© {{YEAR}} <a href="{{PORTFOLIO_URL}}">{{AUTHOR}}</a></p>
+</footer>
+
+<script>
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        if (theme === 'dark') {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        } else {
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setTheme('dark');
+    }
+</script>
+
+</body>
+</html>
