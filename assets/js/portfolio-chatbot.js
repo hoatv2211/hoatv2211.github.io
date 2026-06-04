@@ -1,5 +1,6 @@
 (function () {
   var STORAGE_PREFIX = "portfolioChatbot";
+  var scrollLockY = 0;
   var DEFAULT_CONFIG = {
     endpoint: "",
     telegramUrl: "https://t.me/o0_MaD_0o",
@@ -94,7 +95,7 @@
     button.style.position = "fixed";
     button.style.right = "88px";
     button.style.bottom = "244px";
-    button.style.zIndex = "10000";
+    button.style.zIndex = "10002";
     button.style.display = "grid";
     button.setAttribute("aria-label", "Open portfolio assistant");
     button.setAttribute("title", "Open portfolio assistant");
@@ -111,7 +112,7 @@
     panel.style.position = "fixed";
     panel.style.right = "18px";
     panel.style.bottom = "320px";
-    panel.style.zIndex = "10000";
+    panel.style.zIndex = "10001";
     panel.setAttribute("aria-label", "Portfolio assistant chat");
     panel.setAttribute("aria-hidden", "true");
     panel.innerHTML = [
@@ -214,6 +215,7 @@
     button.classList.toggle("active", open);
     panel.setAttribute("aria-hidden", open ? "false" : "true");
     safeStorageSet("Open", open ? "1" : "0");
+    updateScrollLock(panel);
   }
 
   function setExpanded(panel, expandButton, expanded) {
@@ -224,9 +226,51 @@
       expandButton.setAttribute("aria-label", expanded ? "Shrink chat" : "Expand chat");
       expandButton.setAttribute("title", expanded ? "Shrink chat" : "Expand chat");
     }
+
+    updateScrollLock(panel);
+  }
+
+  function isMobileViewport() {
+    return window.matchMedia && window.matchMedia("(max-width: 768px)").matches;
+  }
+
+  function shouldLockScroll(panel) {
+    return isMobileViewport() && panel.classList.contains("active") && panel.classList.contains("is-expanded");
+  }
+
+  function lockPageScroll() {
+    if (document.body.classList.contains("portfolio-chatbot-scroll-locked")) return;
+
+    scrollLockY = window.scrollY || document.documentElement.scrollTop || 0;
+    document.body.classList.add("portfolio-chatbot-scroll-locked");
+    document.body.style.position = "fixed";
+    document.body.style.top = "-" + scrollLockY + "px";
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+  }
+
+  function unlockPageScroll() {
+    if (!document.body.classList.contains("portfolio-chatbot-scroll-locked")) return;
+
+    document.body.classList.remove("portfolio-chatbot-scroll-locked");
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    window.scrollTo(0, scrollLockY);
+  }
+
+  function updateScrollLock(panel) {
+    if (shouldLockScroll(panel)) {
+      lockPageScroll();
+      return;
+    }
+    unlockPageScroll();
   }
 
   function restorePosition(button) {
+    if (isMobileViewport()) return;
+
     var saved = safeStorageGet("PositionV1");
     if (!saved) return;
 
@@ -243,6 +287,15 @@
     } catch (error) {
       /* ignore invalid position */
     }
+  }
+
+  function resetMobilePosition(button) {
+    if (!isMobileViewport()) return;
+
+    button.style.left = "";
+    button.style.top = "";
+    button.style.right = "";
+    button.style.bottom = "";
   }
 
   function makeDraggable(button) {
@@ -265,6 +318,8 @@
     }
 
     function savePosition() {
+      if (isMobileViewport()) return;
+
       safeStorageSet("PositionV1", JSON.stringify({
         x: parseFloat(button.style.left || "0"),
         y: parseFloat(button.style.top || "0")
@@ -289,6 +344,7 @@
     }
 
     button.addEventListener("pointerdown", function (event) {
+      if (isMobileViewport()) return;
       if (event.button !== 0) return;
       var rect = button.getBoundingClientRect();
       dragging = true;
@@ -342,6 +398,7 @@
 
     document.body.appendChild(button);
     document.body.appendChild(panel);
+    resetMobilePosition(button);
     renderMessages(log, messages);
     renderPrompts(prompts, config.quickPrompts, function (prompt) {
       input.value = prompt;
@@ -381,6 +438,11 @@
       if (event.key === "Escape" && panel.classList.contains("active")) {
         setOpen(panel, button, false);
       }
+    });
+
+    window.addEventListener("resize", function () {
+      resetMobilePosition(button);
+      updateScrollLock(panel);
     });
 
     form.addEventListener("submit", function (event) {

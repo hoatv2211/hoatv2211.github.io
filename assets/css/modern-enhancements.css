@@ -1820,6 +1820,52 @@ article {
   background: hsl(220, 14%, 32%);
 }
 
+@media (max-width: 768px) {
+  .navbar-list {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px 10px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    justify-items: stretch !important;
+    align-items: stretch !important;
+  }
+
+  .navbar-item,
+  .navbar-item:nth-last-child(2),
+  .navbar-item:last-child {
+    grid-column: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .navbar-link {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 46px;
+    padding: 11px 8px !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px !important;
+    font-weight: 600;
+    line-height: 1.15;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-list {
+    gap: 6px !important;
+  }
+
+  .navbar-link {
+    min-height: 44px;
+    padding: 9px 4px !important;
+    font-size: 13px !important;
+  }
+}
+
 /* Print styles for better resume printing */
 @media print {
   body {

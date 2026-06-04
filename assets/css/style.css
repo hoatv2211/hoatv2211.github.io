@@ -3273,7 +3273,7 @@ textarea.form-input::-webkit-resizer {
     .sticky-contact-cta {
         left: 12px;
         right: 12px;
-        bottom: calc(172px + env(safe-area-inset-bottom));
+        bottom: calc(142px + env(safe-area-inset-bottom));
         justify-content: center;
         z-index: 8999;
     }
