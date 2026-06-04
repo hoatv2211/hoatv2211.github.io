@@ -164,75 +164,19 @@ function initLoadingOverlay() {
 function initThemeToggle() {
   // Get the existing theme toggle button
   const themeToggle = document.getElementById('theme-toggle');
+  const backupStyleToggle = document.getElementById('backup-style-toggle');
 
   if (themeToggle) {
     // Toggle click is handled by bootstrap.js via window.toggleTheme
     // This function only manages drag behavior and ensures interactivity
-    const freshThemeToggle = themeToggle;
-
-    // Restore saved position if available
-    const savedPosRaw = localStorage.getItem('themeTogglePosition');
-    if (savedPosRaw) {
-      try {
-        const savedPos = JSON.parse(savedPosRaw);
-        if (typeof savedPos.x === 'number' && typeof savedPos.y === 'number') {
-          freshThemeToggle.style.left = `${savedPos.x}px`;
-          freshThemeToggle.style.top = `${savedPos.y}px`;
-          freshThemeToggle.style.right = 'auto';
-          freshThemeToggle.style.bottom = 'auto';
-        }
-      } catch (error) {
-        console.warn('Failed to restore theme toggle position', error);
-      }
-    }
-
-    // Drag handler
-    let isDragging = false;
-    let dragOffsetX = 0;
-    let dragOffsetY = 0;
-    let hasMoved = false;
-
-    const onPointerMove = (event) => {
-      if (!isDragging) return;
-      hasMoved = true;
-      const x = Math.max(0, Math.min(window.innerWidth - freshThemeToggle.offsetWidth, event.clientX - dragOffsetX));
-      const y = Math.max(0, Math.min(window.innerHeight - freshThemeToggle.offsetHeight, event.clientY - dragOffsetY));
-      freshThemeToggle.style.left = `${x}px`;
-      freshThemeToggle.style.top = `${y}px`;
-      freshThemeToggle.style.right = 'auto';
-      freshThemeToggle.style.bottom = 'auto';
-    };
-
-    const onPointerUp = () => {
-      if (!isDragging) return;
-      isDragging = false;
-      document.removeEventListener('pointermove', onPointerMove);
-      document.removeEventListener('pointerup', onPointerUp);
-
-      if (hasMoved) {
-        const left = parseFloat(freshThemeToggle.style.left || '0');
-        const top = parseFloat(freshThemeToggle.style.top || '0');
-        localStorage.setItem('themeTogglePosition', JSON.stringify({ x: left, y: top }));
-      }
-
-      setTimeout(() => {
-        hasMoved = false;
-      }, 0);
-    };
-
-    freshThemeToggle.addEventListener('pointerdown', (event) => {
-      if (event.button !== 0) return;
-      isDragging = true;
-      hasMoved = false;
-      const rect = freshThemeToggle.getBoundingClientRect();
-      dragOffsetX = event.clientX - rect.left;
-      dragOffsetY = event.clientY - rect.top;
-      document.addEventListener('pointermove', onPointerMove);
-      document.addEventListener('pointerup', onPointerUp);
-    });
+    makeFloatingButtonDraggable(themeToggle, 'themeTogglePosition');
   } else {
     // Fallback in case the button doesn't exist in HTML
     console.warn('Theme toggle button not found in HTML');
+  }
+
+  if (backupStyleToggle) {
+    makeFloatingButtonDraggable(backupStyleToggle, 'backupStyleTogglePosition');
   }
 
   // Create back button for portfolio if on a detail page
@@ -250,6 +194,96 @@ function initThemeToggle() {
       window.history.back();
     });
   }
+}
+
+function makeFloatingButtonDraggable(button, storageKey) {
+  if (!button) return;
+
+  const savedPosRaw = localStorage.getItem(storageKey);
+  if (savedPosRaw) {
+    try {
+      const savedPos = JSON.parse(savedPosRaw);
+      if (typeof savedPos.x === 'number' && typeof savedPos.y === 'number') {
+        button.style.left = `${savedPos.x}px`;
+        button.style.top = `${savedPos.y}px`;
+        button.style.right = 'auto';
+        button.style.bottom = 'auto';
+      }
+    } catch (error) {
+      console.warn(`Failed to restore ${storageKey}`, error);
+    }
+  }
+
+  let isDragging = false;
+  let dragOffsetX = 0;
+  let dragOffsetY = 0;
+  let startX = 0;
+  let startY = 0;
+  let suppressClick = false;
+
+  const clampToViewport = (clientX, clientY) => {
+    const x = Math.max(0, Math.min(window.innerWidth - button.offsetWidth, clientX - dragOffsetX));
+    const y = Math.max(0, Math.min(window.innerHeight - button.offsetHeight, clientY - dragOffsetY));
+    button.style.left = `${x}px`;
+    button.style.top = `${y}px`;
+    button.style.right = 'auto';
+    button.style.bottom = 'auto';
+  };
+
+  const savePosition = () => {
+    const left = parseFloat(button.style.left || '0');
+    const top = parseFloat(button.style.top || '0');
+    localStorage.setItem(storageKey, JSON.stringify({ x: left, y: top }));
+  };
+
+  const onPointerMove = (event) => {
+    if (!isDragging) return;
+
+    const distance = Math.hypot(event.clientX - startX, event.clientY - startY);
+    if (distance > 4) {
+      suppressClick = true;
+    }
+
+    clampToViewport(event.clientX, event.clientY);
+  };
+
+  const onPointerUp = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    button.classList.remove('is-dragging');
+    document.removeEventListener('pointermove', onPointerMove);
+    document.removeEventListener('pointerup', onPointerUp);
+
+    if (suppressClick) {
+      savePosition();
+    }
+  };
+
+  button.addEventListener('pointerdown', (event) => {
+    if (event.button !== 0) return;
+
+    isDragging = true;
+    suppressClick = false;
+    startX = event.clientX;
+    startY = event.clientY;
+
+    const rect = button.getBoundingClientRect();
+    dragOffsetX = event.clientX - rect.left;
+    dragOffsetY = event.clientY - rect.top;
+    button.classList.add('is-dragging');
+    document.addEventListener('pointermove', onPointerMove);
+    document.addEventListener('pointerup', onPointerUp);
+  });
+
+  button.addEventListener('click', (event) => {
+    if (!suppressClick) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    window.setTimeout(() => {
+      suppressClick = false;
+    }, 0);
+  }, true);
 }
 
 /**

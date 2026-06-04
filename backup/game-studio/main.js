@@ -64,9 +64,40 @@
     )).join("");
   }
 
+  function renderRepos() {
+    const target = document.getElementById("repo-grid");
+    if (!target || typeof backup.loadGitShareRepos !== "function") return;
+
+    target.innerHTML = '<p class="repo-status">Loading public GitHub repos...</p>';
+
+    backup.loadGitShareRepos().then(repos => {
+      target.innerHTML = repos.slice(0, 8).map(repo => {
+        const escape = backup.escapeHtml || (value => String(value));
+        const preview = repo.previewUrl || `https://opengraph.githubassets.com/backup-gitshare/${repo.fullName}`;
+        const topics = repo.topics && repo.topics.length ? repo.topics.slice(0, 3) : [repo.language];
+        const demo = repo.demoUrl ? `<a href="${escape(repo.demoUrl)}" target="_blank" rel="noopener noreferrer">Demo</a>` : "";
+
+        return `<article class="repo-card">
+          <img src="${escape(preview)}" alt="GitHub preview for ${escape(repo.fullName)}" loading="lazy" decoding="async">
+          <div>
+            <p class="eyebrow">${escape(repo.owner)}</p>
+            <h3>${escape(repo.name)}</h3>
+            <p>${escape(repo.description)}</p>
+            <div class="repo-topics">${topics.map(topic => `<span>${escape(topic)}</span>`).join("")}</div>
+            <div class="repo-actions">
+              <a href="${escape(repo.url)}" target="_blank" rel="noopener noreferrer">Source</a>
+              ${demo}
+            </div>
+          </div>
+        </article>`;
+      }).join("");
+    });
+  }
+
   renderHero();
   renderProof();
   renderCases();
   renderArchive();
+  renderRepos();
   renderContact();
 })();

@@ -539,6 +539,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       });
     });
+
+    const initialPage = window.location.hash.replace("#", "").toLowerCase();
+    if (initialPage) {
+      const initialLink = Array.from(navigationLinks).find(link => link.textContent.trim().toLowerCase() === initialPage);
+      if (initialLink) initialLink.click();
+    }
   }
 
   // Improved image expansion function with better overlay and performance optimization
@@ -661,6 +667,43 @@ document.addEventListener('DOMContentLoaded', function () {
   if (backToOldVersion) {
     backToOldVersion.addEventListener("click", function () {
       window.location.href = "../v1.0";
+    });
+  }
+
+  const backupStyleToggle = document.getElementById("backup-style-toggle");
+  const backupStyleOverlay = document.getElementById("backup-style-overlay");
+  const backupStyleClose = document.getElementById("backup-style-close");
+
+  function setBackupStyleSelector(open) {
+    if (!backupStyleOverlay || !backupStyleToggle) return;
+
+    backupStyleOverlay.classList.toggle("active", open);
+    backupStyleOverlay.setAttribute("aria-hidden", open ? "false" : "true");
+    backupStyleToggle.classList.toggle("is-open", open);
+    document.body.classList.toggle("backup-style-open", open);
+  }
+
+  if (backupStyleToggle && backupStyleOverlay) {
+    backupStyleToggle.addEventListener("click", function () {
+      setBackupStyleSelector(!backupStyleOverlay.classList.contains("active"));
+    });
+
+    if (backupStyleClose) {
+      backupStyleClose.addEventListener("click", function () {
+        setBackupStyleSelector(false);
+      });
+    }
+
+    backupStyleOverlay.addEventListener("click", function (event) {
+      if (event.target === backupStyleOverlay) {
+        setBackupStyleSelector(false);
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        setBackupStyleSelector(false);
+      }
     });
   }
 });

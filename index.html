@@ -114,6 +114,11 @@
     <ion-icon name="contrast-outline"></ion-icon>
   </button>
 
+  <button class="backup-style-toggle button-floating" id="backup-style-toggle" aria-label="Open backup style selector"
+    title="Backup style selector" type="button">
+    <ion-icon name="albums-outline"></ion-icon>
+  </button>
+
   <div class="sticky-contact-cta" aria-label="Quick contact actions">
     <a href="mailto:hoatv.mad@gmail.com?subject=Unity%20project%20inquiry">Hire Me</a>
     <a href="https://t.me/o0_MaD_0o" target="_blank" rel="noopener noreferrer">Book Call</a>
@@ -201,12 +206,14 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" onclick="window.open('https://hoatv2211.github.io/mad-game-hub-shared/','_blank','noopener,noreferrer')">Mad Hub</button>
+            <button class="navbar-link" data-nav-link>GitShare</button>
           </li>
 
+          <!--  
           <li class="navbar-item">
             <button class="navbar-link" onclick="window.location.href='agentic/index.html'">Agentic</button>
           </li>
+          -->
 
           <!-- <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
@@ -875,6 +882,35 @@
       </article>
 
       <!--
+        - #GITSHARE
+      -->
+
+      <article class="gitshare" data-page="gitshare">
+
+        <header>
+          <h2 class="h2 article-title">GitShare</h2>
+        </header>
+
+        <section class="gitshare-section" aria-label="GitHub repositories">
+          <div class="gitshare-toolbar">
+            <div class="gitshare-filters" data-gitshare-filters aria-label="Filter repositories by owner">
+              <button class="active" type="button" data-gitshare-owner="all">All</button>
+              <button type="button" data-gitshare-owner="hoatv2211">hoatv2211</button>
+              <button type="button" data-gitshare-owner="mad-agentic">mad-agentic</button>
+            </div>
+            <p class="gitshare-status" data-gitshare-status>Loading public repos...</p>
+          </div>
+
+          <div class="gitshare-grid" data-gitshare-grid aria-live="polite">
+            <article class="gitshare-skeleton" aria-label="Loading repository card"></article>
+            <article class="gitshare-skeleton" aria-label="Loading repository card"></article>
+            <article class="gitshare-skeleton" aria-label="Loading repository card"></article>
+          </div>
+        </section>
+
+      </article>
+
+      <!--
         - #CONTACT
       -->
 
@@ -921,6 +957,41 @@
   </main>
 
 
+  <div class="backup-style-overlay" id="backup-style-overlay" aria-hidden="true">
+    <div class="backup-style-panel" role="dialog" aria-modal="true" aria-labelledby="backup-style-title">
+      <div class="backup-style-head">
+        <div>
+          <p class="backup-style-kicker">Backup Styles</p>
+          <h2 id="backup-style-title">Select portfolio loadout</h2>
+        </div>
+        <button class="backup-style-close" id="backup-style-close" type="button" aria-label="Close backup style selector">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+
+      <div class="backup-style-grid" aria-label="Backup portfolio style choices">
+        <a class="backup-style-card recruiter" href="backup/recruiter-clean/index.html">
+          <span class="backup-style-orbit" aria-hidden="true"></span>
+          <strong>Recruiter Clean</strong>
+          <small>Fast scan CV layout</small>
+          <em>Open build</em>
+        </a>
+        <a class="backup-style-card console" href="backup/dev-console/index.html">
+          <span class="backup-style-orbit" aria-hidden="true"></span>
+          <strong>Dev Console</strong>
+          <small>Terminal proof mode</small>
+          <em>Open build</em>
+        </a>
+        <a class="backup-style-card studio" href="backup/game-studio/index.html">
+          <span class="backup-style-orbit" aria-hidden="true"></span>
+          <strong>Game Studio</strong>
+          <small>Media-led casebook</small>
+          <em>Open build</em>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!--
     - custom js link
   -->
@@ -928,6 +999,7 @@
   <script src="assets/js/gaming-showcase.js"></script>
   <script src="assets/js/media-orientation.js" defer></script>
   <script src="assets/js/visit-telegram-hook.js"></script>
+  <script src="assets/js/github-share.js"></script>
   <script src="assets/js/script.js"></script>
 
   <!--
