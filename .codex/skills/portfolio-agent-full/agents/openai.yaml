@@ -1,0 +1,5 @@
+interface:
+  display_name: "Portfolio Agent Full"
+  short_description: "Project-aware portfolio writing and QA"
+  default_prompt: "Use $portfolio-agent-full to add or improve a portfolio project in hoatv2211.github.io."
+

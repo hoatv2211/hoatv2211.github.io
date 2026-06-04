@@ -82,9 +82,24 @@
 <body>
   <!-- Loading Overlay -->
   <div id="loading-overlay" class="loading-overlay">
-    <div class="loading-content">
-      <div class="loading-spinner"></div>
-      <h2 class="loading-text">Loading...</h2>
+    <div class="loading-content" role="status" aria-live="polite">
+      <div class="loading-terminal" aria-hidden="true">
+        <div class="loading-terminal-header">
+          <span></span>
+          <span></span>
+          <span></span>
+          <strong>MAD.dev</strong>
+        </div>
+        <div class="loading-terminal-body">
+          <p><span class="loading-prompt">&gt;</span> boot portfolio</p>
+          <p><span class="loading-prompt">&gt;</span> load unity_projects <span class="loading-ok">[ok]</span></p>
+          <p><span class="loading-prompt">&gt;</span> mount webgl_demos <span class="loading-ok">[ok]</span></p>
+          <p><span class="loading-prompt">&gt;</span> initialize agentic_tools <span class="loading-ok">[ok]</span></p>
+          <p class="loading-ready"><span class="loading-prompt">&gt;</span> ready<span class="loading-caret"></span></p>
+        </div>
+        <div class="loading-progress" aria-hidden="true"><span></span></div>
+      </div>
+      <span class="loading-text">Loading portfolio runtime</span>
     </div>
   </div>
 
@@ -911,6 +926,7 @@
   -->
   <script src="assets/js/modern-enhancements.js"></script>
   <script src="assets/js/gaming-showcase.js"></script>
+  <script src="assets/js/media-orientation.js" defer></script>
   <script src="assets/js/visit-telegram-hook.js"></script>
   <script src="assets/js/script.js"></script>
 
@@ -923,52 +939,6 @@
 
 
   <script src="assets/js/fetchdownloadcount.js"></script>
-
-  <script>
-    // Auto-detect portrait images in project-gallery and add 'portrait' class
-    function detectPortraitImages() {
-      const galleryImages = document.querySelectorAll('.project-gallery .project-img img');
-
-      galleryImages.forEach(function (img) {
-        // Skip if already processed
-        if (img.dataset.portraitChecked) return;
-        img.dataset.portraitChecked = 'true';
-
-        if (img.complete) {
-          checkAspectRatio(img);
-        } else {
-          img.addEventListener('load', function () {
-            checkAspectRatio(img);
-          });
-        }
-      });
-
-      function checkAspectRatio(img) {
-        const container = img.closest('.project-img');
-        if (!container) return;
-
-        // Portrait if height > width
-        if (img.naturalHeight > img.naturalWidth) {
-          container.classList.add('portrait');
-        }
-      }
-    }
-
-    // Run on page load
-    document.addEventListener('DOMContentLoaded', detectPortraitImages);
-
-    // Also run when DOM changes (for dynamically loaded content)
-    const observer = new MutationObserver(function (mutations) {
-      detectPortraitImages();
-    });
-
-    // Observe the main content area for changes
-    const mainContent = document.querySelector('.main-content');
-    if (mainContent) {
-      observer.observe(mainContent, { childList: true, subtree: true });
-    }
-  </script>
-
 </body>
 
 </html>

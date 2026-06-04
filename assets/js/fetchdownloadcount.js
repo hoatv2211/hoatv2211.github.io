@@ -7,7 +7,6 @@ function fetchDownloadCounts() {
     const projectItems = document.querySelectorAll('.project-item[data-api-url-android], .project-item[data-api-url-ios]');
     
     if (projectItems.length === 0) {
-        console.log("No project items with API URLs found");
         return;
     }
     
@@ -23,7 +22,6 @@ async function fetchDownloadCount(projectItem) {
     const apiUrlIos = projectItem.getAttribute('data-api-url-ios');
 
     if (!apiUrlAndroid && !apiUrlIos) {
-        console.log('No API URLs provided for project item');
         return;
     }
 

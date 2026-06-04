@@ -7,8 +7,7 @@ window.PORTFOLIO_DATA = [
     description: "AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.",
     image: {
       src: "https://github.com/mad-agentic.png",
-      alt: "ProxyAPI.MAD",
-      style: "width: 360px; height: 360px; object-fit: contain; background: #111;"
+      alt: "ProxyAPI.MAD"
     },
     tag: { label: "Agentic AI", className: "applications-icon" }
   },
@@ -20,8 +19,7 @@ window.PORTFOLIO_DATA = [
     description: "Licensed-style mobile MMORPG work covering quests, class mechanics, monster spawning, events, PvE/PvP loops, UI flows, and 3D mobile optimization.",
     image: {
       src: "assets/images/game/MuLoren/banner-1.jpg",
-      alt: "muloren",
-      style: "width: 360px; height: 360px;"
+      alt: "muloren"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -33,8 +31,7 @@ window.PORTFOLIO_DATA = [
     description: "Mobile MMORPG work on ADNX's JX1 title, covering classic martial-arts progression, faction systems, large-scale multiplayer content, mobile optimization, and publisher delivery.",
     image: {
       src: "https://cdn-img.adnx.vn/tth1/Th%C6%B0%20vi%E1%BB%87n%20%E1%BA%A3nh/img_v3_02nj_8af250fa-afaa-43fd-9fc3-8355a46deahu.png",
-      alt: "Tinh Thien Ha 1",
-      style: "width: 360px; height: 360px; object-fit: cover;"
+      alt: "Tinh Thien Ha 1"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -46,8 +43,7 @@ window.PORTFOLIO_DATA = [
     description: "World App mini-game based on the sugar candy challenge, built in Unity WebGL with rankings, fast sessions, and Web3-ready publishing.",
     image: {
       src: "assets/images/game/Dalgona/logo.png",
-      alt: "dalgona",
-      style: "width: 360px; height: 360px;"
+      alt: "dalgona"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -59,8 +55,7 @@ window.PORTFOLIO_DATA = [
     description: "Casual food truck simulation where players serve customers, upgrade stations, and grow a playful Shiba-themed mobile business.",
     image: {
       src: "assets/images/game/Shibainu/9.webp",
-      alt: "Food Truck - Shiba Inu",
-      style: "width: 360px; height: 360px;"
+      alt: "Food Truck - Shiba Inu"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -72,8 +67,7 @@ window.PORTFOLIO_DATA = [
     description: "Technical leadership on a funded cyberpunk idle tower defense/GameFi title with hero collection, stage progression, ads, WebGL/mobile release, and NFT marketplace prototype.",
     image: {
       src: "assets/images/game/Idle_cyber/icon_idle_cyber.png",
-      alt: "Idle Cyber",
-      style: "width: 360px; height: 360px;"
+      alt: "Idle Cyber"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -85,8 +79,7 @@ window.PORTFOLIO_DATA = [
     description: "Funded GameFi MMORPG work across real-time PvE/PvP battles, elemental skills, resource farming, crafting, NFT assets, staking, DAO economy, and mobile profiling.",
     image: {
       src: "assets/images/game/Nekoverse/4.jpg",
-      alt: "nekoverse",
-      style: "width: 360px; height: 360px;"
+      alt: "nekoverse"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -98,8 +91,7 @@ window.PORTFOLIO_DATA = [
     description: "Idle tycoon game about running a sandwich shop, expanding menus, upgrading equipment, and serving growing customer demand.",
     image: {
       src: "assets/images/game/Sanwitch/icon.webp",
-      alt: "sandwich",
-      style: "width: 360px; height: 360px;"
+      alt: "sandwich"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -147,8 +139,7 @@ window.PORTFOLIO_DATA = [
     description: "Playable Unity Ludo sample with classic board rules, local turn flow, polished UI, and WebGL demo support.",
     image: {
       src: "assets/images/game/ludo.jpg",
-      alt: "Share001 Ludo Game",
-      style: "width: 360px; height: 360px; object-fit: cover;"
+      alt: "Share001 Ludo Game"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -160,8 +151,7 @@ window.PORTFOLIO_DATA = [
     description: "3D pixel shooter sample featuring fast arena combat, enemy encounters, weapon handling, and browser-playable WebGL delivery.",
     image: {
       src: "assets/images/game/pixcelshooter.png",
-      alt: "Share002 Pixel Shooter 3D",
-      style: "width: 360px; height: 360px; object-fit: cover;"
+      alt: "Share002 Pixel Shooter 3D"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -173,8 +163,7 @@ window.PORTFOLIO_DATA = [
     description: "Classic space shooter sample with arcade waves, responsive shooting, enemy patterns, power-up pacing, and WebGL showcase delivery.",
     image: {
       src: "https://raw.githubusercontent.com/hoatv2211/Share004_Galaxiga/main/Galaxiga/Recordings/Image%20Sequence_004_0000.jpg",
-      alt: "Galaxiga",
-      style: "width: 360px; height: 360px; object-fit: cover;"
+      alt: "Galaxiga"
     },
     tag: { label: "Unity", className: "unity-icon" }
   }, 
@@ -187,8 +176,7 @@ window.PORTFOLIO_DATA = [
     description: "Casual home makeover game combining room decoration, match-style progression, reward loops, and mobile publishing support.",
     image: {
       src: "assets/images/game/HomeDesign/1.webp",
-      alt: "Home Design",
-      style: "width: 360px; height: 360px;"
+      alt: "Home Design"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -212,8 +200,7 @@ window.PORTFOLIO_DATA = [
     description: "Mahjong-inspired tile match puzzle with layered boards, quick sessions, satisfying clears, and cross-platform Unity WebGL support.",
     image: {
       src: "assets/images/game/Tilesmatch3/icon.png",
-      alt: "tilesmatch3",
-      style: "width: 360px; height: 360px;"
+      alt: "tilesmatch3"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -225,8 +212,7 @@ window.PORTFOLIO_DATA = [
     description: "Modern Sudoku game with clean UI, puzzle progression, hint-friendly interaction, and polished mobile/WebGL presentation.",
     image: {
       src: "assets/images/game/Sudoku/icon.png",
-      alt: "sudoku",
-      style: "width: 360px; height: 360px;"
+      alt: "sudoku"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -239,8 +225,7 @@ window.PORTFOLIO_DATA = [
     description: "Era-based strategy battler with unit deployment, tower pressure, wave combat, upgrades, cards, and a playable WebGL demo.",
     image: {
       src: "assets/images/game/ageofbattle.png",
-      alt: "Age of Battle",
-      style: "width: 360px; height: 360px;"
+      alt: "Age of Battle"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -252,8 +237,7 @@ window.PORTFOLIO_DATA = [
     description: "Survivor-style action template with enemy spawning, roguelite upgrades, character progression, and mobile-focused gameplay systems.",
     image: {
       src: "assets/images/game/SurvivorIO/Image Sequence_002_0000.png",
-      alt: "surviver",
-      style: "width: 360px; height: 360px;"
+      alt: "surviver"
     },
     tag: { label: "Unity", className: "unity-icon" }
   },
@@ -265,8 +249,7 @@ window.PORTFOLIO_DATA = [
     description: "Unreal Engine metaverse-style amusement park experience with virtual exploration, high-fidelity visuals, and interactive attraction spaces.",
     image: {
       src: "https://github.com/Long18/long18.github.io/assets/28853225/d78990f0-2b48-4635-bf33-7ed637940f63",
-      alt: "Metame Amusement Park",
-      style: "width: 360px; height: 360px;"
+      alt: "Metame Amusement Park"
     },
     tag: { label: "Unreal Engine", className: "unreal-icon" }
   },
@@ -278,8 +261,7 @@ window.PORTFOLIO_DATA = [
     description: "Turn-based GameFi RPG with quests, character systems, items, localization, backend integration, and live-ops development support.",
     image: {
       src: "https://github.com/Long18/long18.github.io/assets/28853225/5f87b8cc-1f5d-4b41-a65b-edbf5aae5c8e",
-      alt: "Crypto Quest",
-      style: "width: 360px; height: 360px;"
+      alt: "Crypto Quest"
     },
     tag: { label: "Unity", className: "unity-icon" }
   }

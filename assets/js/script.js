@@ -2,12 +2,6 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-  // Performance optimization - track page load metrics (Navigation Timing Level 2)
-  const navEntries = performance.getEntriesByType('navigation');
-  if (navEntries.length > 0) {
-    console.log('Page load time:', Math.round(navEntries[0].domContentLoadedEventEnd) + 'ms');
-  }
-
   // Hide loading overlay once page is loaded with a smooth transition
   const loadingOverlay = document.getElementById('loading-overlay');
   if (loadingOverlay) {
