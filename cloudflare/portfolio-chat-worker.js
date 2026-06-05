@@ -10,6 +10,8 @@ var DEFAULT_ALLOWED_ORIGINS = [
 
 var MAX_MESSAGES = 12;
 var MAX_MESSAGE_CHARS = 1200;
+var PORTFOLIO_REFERENCE_URL = "https://raw.githubusercontent.com/hoatv2211/hoatv2211.github.io/main/docs/portfolio-bot-reference.md";
+var PORTFOLIO_REFERENCE_MAX_CHARS = 24000;
 
 export default {
   async fetch(request, env) {
@@ -165,6 +167,7 @@ async function call9Router(env, messages, lead, debug) {
   requireEnv(env, ["NINEROUTER_URL", "NINEROUTER_KEY", "NINEROUTER_MODEL"]);
 
   var chatUrl = buildChatCompletionsUrl(env.NINEROUTER_URL);
+  var referenceText = await getPortfolioReference(env);
 
   var response = await fetch(chatUrl, {
     method: "POST",
@@ -177,7 +180,7 @@ async function call9Router(env, messages, lead, debug) {
       temperature: 0.35,
       max_tokens: 650,
       messages: [
-        { role: "system", content: buildSystemPrompt(lead) }
+        { role: "system", content: buildSystemPrompt(lead, referenceText) }
       ].concat(messages)
     })
   });
@@ -195,16 +198,38 @@ async function call9Router(env, messages, lead, debug) {
   return String(reply).trim();
 }
 
-function buildSystemPrompt(lead) {
+async function getPortfolioReference(env) {
+  var url = env && env.PORTFOLIO_REFERENCE_URL ? env.PORTFOLIO_REFERENCE_URL : PORTFOLIO_REFERENCE_URL;
+
+  try {
+    var response = await fetch(url, {
+      cf: {
+        cacheEverything: true,
+        cacheTtl: Number(env && env.PORTFOLIO_REFERENCE_CACHE_TTL || 3600)
+      }
+    });
+
+    if (!response.ok) return "";
+
+    return String(await response.text()).slice(0, PORTFOLIO_REFERENCE_MAX_CHARS);
+  } catch (error) {
+    return "";
+  }
+}
+
+function buildSystemPrompt(lead, referenceText) {
   return [
     "You are HoaTV/MAD's portfolio assistant.",
     "Answer in the visitor's language. If unclear, answer in English.",
     "Keep answers concise, technical, and useful.",
-    "Hoa is a Senior Unity Game Developer in Ha Noi, Viet Nam with 8+ years shipping mobile, WebGL, GameFi, Telegram mini app/bot, and AI automation products.",
-    "Mention strengths only from public portfolio context: Unity C#, gameplay systems, UI/UX, ads, IAP, Firebase, WebGL, GameFi, Telegram bots, n8n/agentic automation, proxy APIs, dashboards, team leadership, full-cycle delivery.",
+    "Use the portfolio reference below as the main source of truth.",
+    "If the reference does not contain the answer, say the portfolio does not include that detail and suggest contacting Hoa directly.",
     "Do not invent private availability, exact pricing, confidential clients, or guaranteed timelines.",
     "If visitor shows hiring, collaboration, or interview intent, ask for contact if missing.",
-    lead.qualified ? "The visitor provided contact and lead intent. Say clearly that you will pass this to Hoa on Telegram." : "Do not claim a Telegram handoff unless contact and lead intent are present."
+    lead.qualified ? "The visitor provided contact and lead intent. Say clearly that you will pass this to Hoa on Telegram." : "Do not claim a Telegram handoff unless contact and lead intent are present.",
+    "",
+    "PORTFOLIO REFERENCE:",
+    referenceText || "Reference fetch failed. Use only the short public context already stated in this system prompt and direct detailed questions to Hoa."
   ].join("\n");
 }
 

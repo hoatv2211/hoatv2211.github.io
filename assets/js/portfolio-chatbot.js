@@ -269,9 +269,7 @@
   }
 
   function restorePosition(button) {
-    if (isMobileViewport()) return;
-
-    var saved = safeStorageGet("PositionV1");
+    var saved = safeStorageGet("PositionV2");
     if (!saved) return;
 
     try {
@@ -279,23 +277,25 @@
       if (typeof pos.x === "number" && typeof pos.y === "number") {
         var x = Math.max(0, Math.min(window.innerWidth - button.offsetWidth, pos.x));
         var y = Math.max(0, Math.min(window.innerHeight - button.offsetHeight, pos.y));
-        button.style.left = x + "px";
-        button.style.top = y + "px";
-        button.style.right = "auto";
-        button.style.bottom = "auto";
+        setFloatingPosition(button, x, y);
       }
     } catch (error) {
       /* ignore invalid position */
     }
   }
 
-  function resetMobilePosition(button) {
-    if (!isMobileViewport()) return;
+  function setFloatingPosition(button, x, y) {
+    button.style.setProperty("left", x + "px", "important");
+    button.style.setProperty("top", y + "px", "important");
+    button.style.setProperty("right", "auto", "important");
+    button.style.setProperty("bottom", "auto", "important");
+  }
 
-    button.style.left = "";
-    button.style.top = "";
-    button.style.right = "";
-    button.style.bottom = "";
+  function clampPosition(button) {
+    var rect = button.getBoundingClientRect();
+    var x = Math.max(0, Math.min(window.innerWidth - button.offsetWidth, rect.left));
+    var y = Math.max(0, Math.min(window.innerHeight - button.offsetHeight, rect.top));
+    setFloatingPosition(button, x, y);
   }
 
   function makeDraggable(button) {
@@ -311,16 +311,15 @@
     function moveTo(clientX, clientY) {
       var x = Math.max(0, Math.min(window.innerWidth - button.offsetWidth, clientX - offsetX));
       var y = Math.max(0, Math.min(window.innerHeight - button.offsetHeight, clientY - offsetY));
-      button.style.left = x + "px";
-      button.style.top = y + "px";
-      button.style.right = "auto";
-      button.style.bottom = "auto";
+      setFloatingPosition(button, x, y);
     }
 
     function savePosition() {
-      if (isMobileViewport()) return;
-
       safeStorageSet("PositionV1", JSON.stringify({
+        x: parseFloat(button.style.left || "0"),
+        y: parseFloat(button.style.top || "0")
+      }));
+      safeStorageSet("PositionV2", JSON.stringify({
         x: parseFloat(button.style.left || "0"),
         y: parseFloat(button.style.top || "0")
       }));
@@ -334,18 +333,23 @@
       moveTo(event.clientX, event.clientY);
     }
 
-    function onUp() {
+    function onUp(event) {
       if (!dragging) return;
       dragging = false;
       button.classList.remove("is-dragging");
+      try {
+        button.releasePointerCapture(event.pointerId);
+      } catch (error) {
+        /* pointer capture may already be released */
+      }
       document.removeEventListener("pointermove", onMove);
       document.removeEventListener("pointerup", onUp);
+      document.removeEventListener("pointercancel", onUp);
       if (suppressClick) savePosition();
     }
 
     button.addEventListener("pointerdown", function (event) {
-      if (isMobileViewport()) return;
-      if (event.button !== 0) return;
+      if (typeof event.button === "number" && event.button !== 0) return;
       var rect = button.getBoundingClientRect();
       dragging = true;
       suppressClick = false;
@@ -354,8 +358,14 @@
       offsetX = event.clientX - rect.left;
       offsetY = event.clientY - rect.top;
       button.classList.add("is-dragging");
+      try {
+        button.setPointerCapture(event.pointerId);
+      } catch (error) {
+        /* pointer capture unavailable */
+      }
       document.addEventListener("pointermove", onMove);
       document.addEventListener("pointerup", onUp);
+      document.addEventListener("pointercancel", onUp);
     });
 
     button.addEventListener("click", function (event) {
@@ -398,7 +408,6 @@
 
     document.body.appendChild(button);
     document.body.appendChild(panel);
-    resetMobilePosition(button);
     renderMessages(log, messages);
     renderPrompts(prompts, config.quickPrompts, function (prompt) {
       input.value = prompt;
@@ -441,7 +450,7 @@
     });
 
     window.addEventListener("resize", function () {
-      resetMobilePosition(button);
+      clampPosition(button);
       updateScrollLock(panel);
     });
 
