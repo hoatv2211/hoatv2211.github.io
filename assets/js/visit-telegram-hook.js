@@ -1,16 +1,36 @@
 (function () {
-  const PROXY_URL = "https://quiet-haze-970b.tranhoa-221194.workers.dev/";
-  var COOLDOWN_MS = 60 * 1000;
+  var PROXY_URL = "https://quiet-haze-970b.tranhoa-221194.workers.dev/";
+  var COOLDOWN_MS = 2 * 60 * 1000;
   var STORAGE_KEY = "telegramVisitLastSent";
+  var VISITOR_KEY = "portfolioVisitorId";
+  var SESSION_KEY = "portfolioVisitSessionId";
+
+  function isLocalHost() {
+    return window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  }
+
+  function randomId(prefix) {
+    return prefix + "-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+  }
+
+  function getStoredId(key, prefix, storage) {
+    try {
+      var value = storage.getItem(key);
+      if (value) return value;
+      value = randomId(prefix);
+      storage.setItem(key, value);
+      return value;
+    } catch (error) {
+      return randomId(prefix);
+    }
+  }
 
   function shouldSend() {
     try {
+      if (sessionStorage.getItem(SESSION_KEY + ":sent") === "1") return false;
       var lastSent = Number(localStorage.getItem(STORAGE_KEY) || 0);
-      if (Number.isFinite(lastSent) && Date.now() - lastSent < COOLDOWN_MS) {
-        return false;
-      }
-      return true;
-    } catch (e) {
+      return !(Number.isFinite(lastSent) && Date.now() - lastSent < COOLDOWN_MS);
+    } catch (error) {
       return true;
     }
   }
@@ -18,109 +38,93 @@
   function markSent() {
     try {
       localStorage.setItem(STORAGE_KEY, String(Date.now()));
-    } catch (e) { /* ignore */ }
+      sessionStorage.setItem(SESSION_KEY + ":sent", "1");
+    } catch (error) { /* ignore */ }
   }
 
-  /* [visit-hook] Fallback chain: try multiple geo APIs until one works */
-  var GEO_APIS = [
-    {
-      url: "https://ipwho.is/",
-      parse: function (d) {
-        return {
-          ip: d.ip, city: d.city, region: d.region,
-          country: d.country,
-          isp: (d.connection && d.connection.isp) || "unknown",
-          timezone: (d.timezone && d.timezone.id) || "unknown"
-        };
-      }
-    },
-    {
-      url: "http://ip-api.com/json/?fields=query,city,regionName,country,isp,timezone",
-      parse: function (d) {
-        return {
-          ip: d.query, city: d.city, region: d.regionName,
-          country: d.country,
-          isp: d.isp || "unknown",
-          timezone: d.timezone || "unknown"
-        };
-      }
-    },
-    {
-      url: "https://api.ipify.org?format=json",
-      parse: function (d) {
-        return {
-          ip: d.ip, city: "n/a", region: "",
-          country: "n/a", isp: "n/a", timezone: "n/a"
-        };
-      }
+  function getTimezone() {
+    try {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone || "unknown";
+    } catch (error) {
+      return "unknown";
     }
-  ];
-
-  function fetchWithTimeout(url, ms) {
-    var controller = new AbortController();
-    var timer = setTimeout(function () { controller.abort(); }, ms);
-    return fetch(url, { cache: "no-store", signal: controller.signal })
-      .then(function (r) { clearTimeout(timer); return r.json(); });
   }
 
-  function getVisitorInfo(index) {
-    var i = index || 0;
-    if (i >= GEO_APIS.length) {
-      return Promise.resolve({ ip: "unknown", city: "unknown", region: "", country: "unknown", isp: "unknown", timezone: "unknown", _source: "none", _raw: "{}" });
+  function getConnectionInfo() {
+    var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (!connection) return null;
+    return {
+      effectiveType: connection.effectiveType || "unknown",
+      downlink: connection.downlink || null,
+      rtt: connection.rtt || null,
+      saveData: Boolean(connection.saveData)
+    };
+  }
+
+  function getVisitorMeta() {
+    return {
+      event: "portfolio_visit",
+      visitorId: getStoredId(VISITOR_KEY, "visitor", localStorage),
+      sessionId: getStoredId(SESSION_KEY, "session", sessionStorage),
+      pageUrl: window.location.href,
+      pageTitle: document.title || "",
+      referrer: document.referrer || "",
+      language: navigator.language || "unknown",
+      languages: Array.prototype.slice.call(navigator.languages || []),
+      timezone: getTimezone(),
+      userAgent: navigator.userAgent || "unknown",
+      platform: navigator.platform || "unknown",
+      vendor: navigator.vendor || "unknown",
+      hardwareConcurrency: navigator.hardwareConcurrency || null,
+      deviceMemory: navigator.deviceMemory || null,
+      maxTouchPoints: navigator.maxTouchPoints || 0,
+      cookieEnabled: navigator.cookieEnabled,
+      doNotTrack: navigator.doNotTrack || window.doNotTrack || "unknown",
+      screen: {
+        width: window.screen && window.screen.width,
+        height: window.screen && window.screen.height,
+        colorDepth: window.screen && window.screen.colorDepth,
+        pixelRatio: window.devicePixelRatio || 1
+      },
+      viewport: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      },
+      connection: getConnectionInfo(),
+      sentAt: new Date().toISOString()
+    };
+  }
+
+  function sendVisit(payload) {
+    var body = JSON.stringify(payload);
+
+    if (navigator.sendBeacon) {
+      try {
+        var blob = new Blob([body], { type: "text/plain;charset=UTF-8" });
+        if (navigator.sendBeacon(PROXY_URL, blob)) {
+          markSent();
+          return Promise.resolve();
+        }
+      } catch (error) { /* fallback to fetch */ }
     }
-    var api = GEO_APIS[i];
-    return fetchWithTimeout(api.url, 5000)
-      .then(function (data) {
-        var info = api.parse(data);
-        if (!info.ip || info.ip === "unknown") throw new Error("no ip");
-        /* [visit-hook] Attach debug info */
-        info._source = api.url;
-        info._raw = JSON.stringify(data);
-        return info;
-      })
-      .catch(function () {
-        return getVisitorInfo(i + 1); /* [visit-hook] fallback to next API */
-      });
-  }
 
-  function sendTelegramMessage(text) {
     return fetch(PROXY_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        text: text
-      })
+      body: body,
+      keepalive: true
+    }).then(function () {
+      markSent();
     });
   }
 
-  /* [visit-hook] Build message with IP + location + raw JSON for debugging */
-  function buildMessage(info) {
-    var url = window.location.href;
-    var ua = navigator.userAgent || "unknown";
-    var time = new Date().toISOString();
-    var location = info.city + (info.region ? ", " + info.region : "") + ", " + info.country;
-    return (
-      "Có người đã xem portfolio của bạn" +
-      "\nIP: " + info.ip +
-      "\n📍 Location: " + location +
-      "\n🌐 ISP: " + info.isp +
-      "\n🕐 Timezone: " + info.timezone +
-      "\nURL: " + url +
-      "\nUA: " + ua +
-      "\nTime: " + time +
-      "\n\n🔧 API: " + (info._source || "unknown") +
-      "\n📦 Raw: " + (info._raw || "{}")
-    );
-  }
-
-  if (!PROXY_URL || PROXY_URL.includes("YOUR_WORKER_NAME")) return;
-  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") return;
+  if (!PROXY_URL || PROXY_URL.indexOf("YOUR_WORKER_NAME") !== -1) return;
+  if (isLocalHost() && window.location.search.indexOf("visit_debug=1") === -1) return;
   if (!shouldSend()) return;
 
-  getVisitorInfo()
-    .then(function (info) { return sendTelegramMessage(buildMessage(info)); })
-    .then(function () { return markSent(); })
-    .catch(function () {
-      // Ignore failures to avoid blocking page load
+  window.setTimeout(function () {
+    sendVisit(getVisitorMeta()).catch(function () {
+      // Ignore failures to avoid blocking page load.
     });
+  }, 600);
 })();

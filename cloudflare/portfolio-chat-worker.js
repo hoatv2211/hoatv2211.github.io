@@ -12,6 +12,7 @@ var MAX_MESSAGES = 12;
 var MAX_MESSAGE_CHARS = 1200;
 var PORTFOLIO_REFERENCE_URL = "https://raw.githubusercontent.com/hoatv2211/hoatv2211.github.io/main/docs/portfolio-bot-reference.md";
 var PORTFOLIO_REFERENCE_MAX_CHARS = 24000;
+var VISIT_GEO_TIMEOUT_MS = 1200;
 
 export default {
   async fetch(request, env) {
@@ -119,22 +120,144 @@ async function handleVisitHook(body, env, corsHeaders, request) {
     return json({ error: "Telegram env missing" }, 500, corsHeaders);
   }
 
-  var text = String(body.text || "New visit");
-  var ip = request.headers.get("CF-Connecting-IP") || request.headers.get("X-Forwarded-For") || "unknown";
-  var country = request.headers.get("CF-IPCountry") || "unknown";
-  var userAgent = request.headers.get("User-Agent") || "unknown";
+  var visit = await buildVisitDetails(body, request);
+  var text = buildVisitTelegramText(body, visit);
 
   var response = await fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       chat_id: chatId,
-      text: [text, "IP: " + ip, "Country: " + country, "UA: " + userAgent].join("\n").slice(0, 3900),
+      text: text.slice(0, 3900),
       disable_web_page_preview: true
     })
   });
 
   return json({ ok: response.ok }, response.ok ? 200 : 500, corsHeaders);
+}
+
+async function buildVisitDetails(body, request) {
+  var cf = request.cf || {};
+  var headers = request.headers;
+  var ip = headers.get("CF-Connecting-IP") || headers.get("X-Forwarded-For") || "unknown";
+  var fallback = await fetchVisitGeoFallback(ip, cf);
+
+  return {
+    ip: ip,
+    userAgent: headers.get("User-Agent") || body.userAgent || "unknown",
+    cfRay: headers.get("CF-Ray") || "unknown",
+    country: firstValue(cf.country, headers.get("CF-IPCountry"), fallback.country, "unknown"),
+    city: firstValue(cf.city, fallback.city, "unknown"),
+    region: firstValue(cf.region, fallback.region, ""),
+    timezone: firstValue(cf.timezone, fallback.timezone, body.timezone, "unknown"),
+    latitude: firstValue(cf.latitude, fallback.latitude, ""),
+    longitude: firstValue(cf.longitude, fallback.longitude, ""),
+    asn: firstValue(cf.asn, fallback.asn, "unknown"),
+    asOrganization: firstValue(cf.asOrganization, fallback.isp, "unknown"),
+    colo: firstValue(cf.colo, "unknown"),
+    httpProtocol: firstValue(cf.httpProtocol, "unknown"),
+    tlsVersion: firstValue(cf.tlsVersion, "unknown"),
+    clientTcpRtt: firstValue(cf.clientTcpRtt, "unknown"),
+    fallbackSource: fallback.source || "none"
+  };
+}
+
+async function fetchVisitGeoFallback(ip, cf) {
+  if (!ip || ip === "unknown") return {};
+  if (cf && cf.city && cf.asOrganization && cf.timezone) return {};
+
+  try {
+    var controller = new AbortController();
+    var timer = setTimeout(function () { controller.abort(); }, VISIT_GEO_TIMEOUT_MS);
+    var response = await fetch("https://ipwho.is/" + encodeURIComponent(ip), {
+      signal: controller.signal,
+      cf: { cacheEverything: true, cacheTtl: 21600 }
+    });
+    clearTimeout(timer);
+
+    if (!response.ok) return {};
+
+    var data = await response.json();
+    if (data && data.success === false) return {};
+
+    return {
+      source: "ipwho.is",
+      country: data.country || "",
+      city: data.city || "",
+      region: data.region || "",
+      timezone: data.timezone && data.timezone.id,
+      latitude: data.latitude,
+      longitude: data.longitude,
+      isp: data.connection && data.connection.isp,
+      asn: data.connection && data.connection.asn
+    };
+  } catch (error) {
+    return {};
+  }
+}
+
+function buildVisitTelegramText(body, visit) {
+  var location = [visit.city, visit.region, visit.country].filter(Boolean).join(", ") || "unknown";
+  var browser = buildBrowserSummary(body);
+  var legacyText = body.text ? String(body.text) + "\n\n" : "";
+
+  return legacyText + [
+    "Co nguoi da xem portfolio cua ban",
+    "IP: " + visit.ip,
+    "Location: " + location,
+    "Coordinates: " + firstValue(visit.latitude, "?") + ", " + firstValue(visit.longitude, "?"),
+    "ISP/Org: " + visit.asOrganization,
+    "ASN: " + visit.asn,
+    "IP Timezone: " + visit.timezone,
+    "URL: " + firstValue(body.pageUrl, "unknown"),
+    "Referrer: " + firstValue(body.referrer, "direct"),
+    "UA: " + visit.userAgent,
+    "Time: " + new Date().toISOString(),
+    "",
+    "Cloudflare:",
+    "Country: " + visit.country,
+    "Colo: " + visit.colo,
+    "HTTP: " + visit.httpProtocol,
+    "TLS: " + visit.tlsVersion,
+    "RTT: " + visit.clientTcpRtt,
+    "CF-Ray: " + visit.cfRay,
+    "Geo fallback: " + visit.fallbackSource,
+    "",
+    "Browser:",
+    browser
+  ].join("\n");
+}
+
+function buildBrowserSummary(body) {
+  var screen = body.screen || {};
+  var viewport = body.viewport || {};
+  var connection = body.connection || {};
+
+  return [
+    "Visitor ID: " + firstValue(body.visitorId, "unknown"),
+    "Session ID: " + firstValue(body.sessionId, "unknown"),
+    "Language: " + firstValue(body.language, "unknown"),
+    "Languages: " + (Array.isArray(body.languages) ? body.languages.join(", ") : "unknown"),
+    "Browser Timezone: " + firstValue(body.timezone, "unknown"),
+    "Platform: " + firstValue(body.platform, "unknown"),
+    "Vendor: " + firstValue(body.vendor, "unknown"),
+    "Screen: " + firstValue(screen.width, "?") + "x" + firstValue(screen.height, "?") + " @" + firstValue(screen.pixelRatio, "?"),
+    "Viewport: " + firstValue(viewport.width, "?") + "x" + firstValue(viewport.height, "?"),
+    "CPU cores: " + firstValue(body.hardwareConcurrency, "unknown"),
+    "Memory GB: " + firstValue(body.deviceMemory, "unknown"),
+    "Touch points: " + firstValue(body.maxTouchPoints, "unknown"),
+    "Cookies: " + firstValue(body.cookieEnabled, "unknown"),
+    "DNT: " + firstValue(body.doNotTrack, "unknown"),
+    "Connection: " + firstValue(connection.effectiveType, "unknown") + " / downlink " + firstValue(connection.downlink, "?") + " / rtt " + firstValue(connection.rtt, "?") + " / saveData " + firstValue(connection.saveData, "?")
+  ].join("\n");
+}
+
+function firstValue() {
+  for (var i = 0; i < arguments.length; i += 1) {
+    var value = arguments[i];
+    if (value !== undefined && value !== null && value !== "") return value;
+  }
+  return "";
 }
 
 function validateBody(body) {
