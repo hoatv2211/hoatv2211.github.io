@@ -98,6 +98,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let pendingDetailCategory = null;
   let suppressDetailReset = false;
+  let portfolioTouchStartX = 0;
+  let portfolioTouchStartY = 0;
+  let portfolioTouchMoved = false;
+  let ignorePortfolioDetailClicksUntil = 0;
+
+  function isInsidePortfolioList(target) {
+    return Boolean(target && target.closest && target.closest('[data-render="portfolio-list"]'));
+  }
+
+  function shouldIgnorePortfolioDetailClick() {
+    return Date.now() < ignorePortfolioDetailClicksUntil;
+  }
+
+  document.addEventListener("touchstart", function (event) {
+    if (!isInsidePortfolioList(event.target)) return;
+
+    const touch = event.changedTouches[0];
+    portfolioTouchStartX = touch.clientX;
+    portfolioTouchStartY = touch.clientY;
+    portfolioTouchMoved = false;
+  }, { passive: true });
+
+  document.addEventListener("touchmove", function (event) {
+    if (!portfolioTouchStartX || !isInsidePortfolioList(event.target)) return;
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - portfolioTouchStartX;
+    const deltaY = touch.clientY - portfolioTouchStartY;
+
+    if (Math.abs(deltaX) > 8 || Math.abs(deltaY) > 8) {
+      portfolioTouchMoved = true;
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchend", function () {
+    if (portfolioTouchMoved) {
+      ignorePortfolioDetailClicksUntil = Date.now() + 450;
+    }
+
+    portfolioTouchStartX = 0;
+    portfolioTouchStartY = 0;
+    portfolioTouchMoved = false;
+  }, { passive: true });
 
   function activatePortfolioPage() {
     const navigationLinks = document.querySelectorAll("[data-nav-link]");
@@ -261,6 +304,12 @@ document.addEventListener('DOMContentLoaded', function () {
           }
 
           event.preventDefault();
+          event.stopPropagation();
+
+          if (shouldIgnorePortfolioDetailClick()) {
+            return;
+          }
+
           const selectedType = this.dataset.detailCategory;
           openProjectDetail(selectedType);
         });
@@ -289,6 +338,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!isInPortfolioList) return;
 
     event.preventDefault();
+
+    if (shouldIgnorePortfolioDetailClick()) {
+      return;
+    }
+
     openProjectDetail(detailTarget.dataset.detailCategory);
   });
 
