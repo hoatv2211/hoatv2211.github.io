@@ -1,0 +1,189 @@
+:root {
+    --idle-tg-viewport-height: 100vh;
+    --idle-tg-viewport-stable-height: 100vh;
+    --idle-tg-portrait-width: 56.25vh;
+    --idle-tg-safe-area-inset-top: 0px;
+    --idle-tg-safe-area-inset-right: 0px;
+    --idle-tg-safe-area-inset-bottom: 0px;
+    --idle-tg-safe-area-inset-left: 0px;
+    --idle-tg-content-safe-area-inset-top: 0px;
+    --idle-tg-content-safe-area-inset-right: 0px;
+    --idle-tg-content-safe-area-inset-bottom: 0px;
+    --idle-tg-content-safe-area-inset-left: 0px;
+    --idle-tg-bg-color: #17212b;
+    --idle-tg-header-color: #17212b;
+    --idle-tg-bottom-bar-color: #17212b;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
+    background: var(--tg-theme-bg-color, var(--idle-tg-bg-color));
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    min-height: var(--tg-viewport-stable-height, var(--idle-tg-viewport-stable-height));
+    padding-top: max(env(safe-area-inset-top), var(--tg-content-safe-area-inset-top, var(--idle-tg-content-safe-area-inset-top)));
+    padding-right: max(env(safe-area-inset-right), var(--tg-content-safe-area-inset-right, var(--idle-tg-content-safe-area-inset-right)));
+    padding-bottom: max(env(safe-area-inset-bottom), var(--tg-content-safe-area-inset-bottom, var(--idle-tg-content-safe-area-inset-bottom)));
+    padding-left: max(env(safe-area-inset-left), var(--tg-content-safe-area-inset-left, var(--idle-tg-content-safe-area-inset-left)));
+}
+
+body.bg-loaded {
+    background: url('BG.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#unity-container {
+    width: min(100%, var(--idle-tg-portrait-width), 720px);
+    height: auto;
+    max-height: 1280px;
+    aspect-ratio: 9 / 16;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+#unity-canvas {
+    width: 100%;
+    height: 100%;
+    background: #231f20;
+    display: block;
+}
+
+#unity-loading-bar {
+    position: absolute;
+    inset: 0;
+    background: url('logo_mad.png') no-repeat center/50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+#unity-logo {
+    width: 100%;
+    height: 100%;
+    background: url('logo_mad.png') no-repeat center/100% 100%;
+}
+
+#unity-progress-bar-empty {
+    width: 100%;
+    height: 25px;
+    background-color: #3d393a;
+    border-radius: 20px;
+}
+
+#unity-progress-bar-full {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transition: width 0.3s ease-out;
+    border-radius: 20px;
+    background-color: white;
+    will-change: width;
+}
+
+#unity-warning {
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    transform: translate(-50%);
+    display: none;
+    max-width: 90%;
+    z-index: 20;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.box__full {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.progress__wrap {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+}
+
+.loading-spinner {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.unity-banner {
+    padding: 12px 14px;
+    border-radius: 6px;
+    margin: 8px;
+    line-height: 1.4;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+}
+
+.unity-banner-error {
+    background: #d83a3a;
+    color: #fff;
+}
+
+.unity-banner-warning {
+    background: #ffd166;
+    color: #151515;
+}
+
+.unity-banner-info {
+    background: #e8f1ff;
+    color: #17212b;
+}
+
+#telegram-debug-overlay {
+    display: none;
+    position: fixed;
+    left: max(8px, env(safe-area-inset-left));
+    right: max(8px, env(safe-area-inset-right));
+    bottom: max(8px, env(safe-area-inset-bottom));
+    max-height: 34vh;
+    overflow: auto;
+    z-index: 50;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 6px;
+    background: rgba(15, 23, 32, 0.88);
+    color: #d7e8f7;
+    font: 11px/1.45 Consolas, Monaco, monospace;
+    white-space: pre-wrap;
+    pointer-events: auto;
+}
+
+#telegram-debug-overlay:not(:empty) {
+    display: block;
+}

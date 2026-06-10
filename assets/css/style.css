@@ -819,6 +819,10 @@ main {
     color: var(--orange-yellow-crayola);
 }
 
+.navbar-link.navbar-playable-hub {
+    color: var(--orange-yellow-crayola);
+}
+
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/

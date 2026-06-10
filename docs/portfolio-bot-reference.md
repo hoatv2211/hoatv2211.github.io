@@ -93,7 +93,7 @@ Hoa is a strong fit for:
 
 - Idle Cyber: Technical Leader on idle defense / GameFi title that raised million-dollar funding.
 - Nekoverse: GameFi MMORPG with million-dollar fundraising and production blockchain systems.
-- MU Loren Mobile and Tinh Thien Ha 1: MMORPG work covering quests, class mechanics, monster spawning, events, PvE/PvP loops, UI, and mobile 3D optimization.
+- MU Loren Mobile and Jx Mobie: MMORPG work covering quests, class mechanics, monster spawning, events, PvE/PvP loops, UI, and mobile 3D optimization.
 - Public releases across App Store, Google Play, WebGL, Telegram Mini App, and World App ecosystems.
 - Dalgona - Worldchain reached Top 1 in World App context according to portfolio copy.
 
@@ -101,7 +101,7 @@ Hoa is a strong fit for:
 
 1. ProxyAPI.MAD - Agentic AI. AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.
 2. MU Loren Mobile - Unity. Licensed-style mobile MMORPG work covering quests, class mechanics, monster spawning, events, PvE/PvP loops, UI flows, and 3D mobile optimization.
-3. Tinh Thien Ha 1 (JX1) - Unity. Mobile MMORPG work on ADNX's JX1 title, covering classic martial-arts progression, faction systems, large-scale multiplayer content, mobile optimization, and publisher delivery.
+3. Jx Mobie(JX1) - Unity. Mobile MMORPG work on ADNX's JX1 title, covering classic martial-arts progression, faction systems, large-scale multiplayer content, mobile optimization, and publisher delivery.
 4. Dalgona - Worldchain - Unity. World App mini-game based on the sugar candy challenge, built in Unity WebGL with rankings, fast sessions, and Web3-ready publishing.
 5. Food Truck - Shiba Inu - Unity. Casual food truck simulation where players serve customers, upgrade stations, and grow a Shiba-themed mobile business.
 6. Idle Cyber (NFT) - Unity. Technical leadership on a funded cyberpunk idle tower defense/GameFi title with hero collection, stage progression, ads, WebGL/mobile release, and NFT marketplace prototype.

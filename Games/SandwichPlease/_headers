@@ -1,0 +1,26 @@
+# Cloudflare Pages headers for Unity WebGL build
+
+/Build/*.loader.js
+  Content-Type: application/javascript; charset=utf-8
+
+/Build/*.framework.js.br
+  Content-Type: application/javascript; charset=utf-8
+  Content-Encoding: br
+
+/Build/*.data.br
+  Content-Type: application/octet-stream
+  Content-Encoding: br
+
+/Build/*.wasm
+  Content-Type: application/wasm
+
+/Build/*.wasm.br
+  Content-Type: application/wasm
+  Content-Encoding: br
+
+/Build/*.symbols.json.br
+  Content-Type: application/json; charset=utf-8
+  Content-Encoding: br
+
+/TemplateData/*.css
+  Content-Type: text/css; charset=utf-8
