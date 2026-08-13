@@ -4,16 +4,16 @@ Purpose: expose the VPS-hosted 9Router proxy to the portfolio Cloudflare Worker 
 
 ## Current Working Quick Tunnel
 
-Quick Tunnel URL created on 2026-06-04:
+Quick Tunnel URL observed on 2026-06-20 after container restart:
 
 ```txt
-https://intellectual-tactics-temp-boats.trycloudflare.com
+https://significantly-ministries-food-site.trycloudflare.com
 ```
 
 Worker env should use:
 
 ```txt
-NINEROUTER_URL=https://intellectual-tactics-temp-boats.trycloudflare.com
+NINEROUTER_URL=https://significantly-ministries-food-site.trycloudflare.com
 NINEROUTER_MODEL=cx/gpt-5.5
 NINEROUTER_KEY=<rotate-and-store-as-secret>
 ```
@@ -68,7 +68,84 @@ docker restart cloudflared-9router-quick
 docker logs cloudflared-9router-quick | grep trycloudflare
 ```
 
-Note: quick tunnel URLs have no uptime guarantee and may change. If the URL changes, update `NINEROUTER_URL` in the Cloudflare Worker env and deploy again.
+Note: quick tunnel URLs have no uptime guarantee and may change after restart. If the URL changes, update `NINEROUTER_URL` in the Cloudflare Worker env and deploy again.
+
+## Health Checks And Troubleshooting
+
+Check local 9Router first. If this fails, the tunnel is not the root problem:
+
+```bash
+curl http://localhost:20128/api/health
+```
+
+Expected:
+
+```json
+{"ok":true}
+```
+
+Check the active quick tunnel URL after every `docker restart`:
+
+```bash
+docker logs --tail 80 cloudflared-9router-quick
+```
+
+Look for:
+
+```txt
+Your quick Tunnel has been created! Visit it at
+https://<current-name>.trycloudflare.com
+Registered tunnel connection
+SUMMARY: Environment is healthy
+```
+
+Follow logs live while waiting for a new URL:
+
+```bash
+docker logs -f cloudflared-9router-quick
+```
+
+Check tunnel health with the current URL:
+
+```bash
+export NINEROUTER_URL="https://significantly-ministries-food-site.trycloudflare.com"
+curl "$NINEROUTER_URL/api/health"
+```
+
+Expected:
+
+```json
+{"ok":true}
+```
+
+Check models with auth enabled:
+
+```bash
+export NINEROUTER_KEY="<NINEROUTER_KEY>"
+curl "$NINEROUTER_URL/v1/models" \
+  -H "Authorization: Bearer $NINEROUTER_KEY"
+```
+
+Keep `NINEROUTER_KEY` on one line. This is wrong and can trigger curl/auth issues:
+
+```bash
+export NINEROUTER_KEY="
+sk-..."
+```
+
+This is correct:
+
+```bash
+export NINEROUTER_KEY="sk-..."
+```
+
+Common checks:
+
+- `Cloudflare Tunnel error 1033`: quick tunnel URL is stale or `cloudflared` is not connected. Read `docker logs --tail 80 cloudflared-9router-quick` and use the newest URL.
+- `curl: (43) Failed sending HTTP request`: check shell quoting and ensure `NINEROUTER_KEY` has no newline.
+- `401`: wrong/missing `NINEROUTER_KEY`, disabled key, or `Require API key` setting mismatch.
+- Local `/api/health` works but tunnel `/api/health` fails: tunnel URL changed, container stopped, or Cloudflare quick tunnel is temporarily unavailable.
+- Warnings about ICMP proxy or UDP receive buffer are usually not blockers for HTTP traffic if the tunnel shows `Registered tunnel connection` and pre-checks pass.
 
 ## 9Router Security
 
@@ -89,7 +166,7 @@ http://187.77.149.230:20128/dashboard/endpoint
 Use the current tunnel URL:
 
 ```bash
-curl https://intellectual-tactics-temp-boats.trycloudflare.com/v1/models \
+curl https://significantly-ministries-food-site.trycloudflare.com/v1/models \
   -H "Authorization: Bearer <NINEROUTER_KEY>"
 ```
 
@@ -102,7 +179,7 @@ cx/gpt-5.5
 Test chat completions:
 
 ```bash
-curl -X POST https://intellectual-tactics-temp-boats.trycloudflare.com/v1/chat/completions \
+curl -X POST https://significantly-ministries-food-site.trycloudflare.com/v1/chat/completions \
   -H "Authorization: Bearer <NINEROUTER_KEY>" \
   -H "Content-Type: application/json" \
   -d '{"model":"cx/gpt-5.5","messages":[{"role":"user","content":"hello"}],"max_tokens":80,"temperature":0.3}'
@@ -116,7 +193,7 @@ Set these in the portfolio Worker:
 
 ```txt
 ALLOWED_ORIGINS=https://hoatv2211.github.io,http://localhost:8080,http://127.0.0.1:8080,http://localhost:8790,http://127.0.0.1:8790
-NINEROUTER_URL=https://intellectual-tactics-temp-boats.trycloudflare.com
+NINEROUTER_URL=https://significantly-ministries-food-site.trycloudflare.com
 NINEROUTER_MODEL=cx/gpt-5.5
 NINEROUTER_KEY=<NINEROUTER_KEY_SECRET>
 TELEGRAM_CHAT_ID=859267157
@@ -183,4 +260,3 @@ Then update Worker env:
 ```txt
 NINEROUTER_URL=https://9router.<your-domain>
 ```
-
