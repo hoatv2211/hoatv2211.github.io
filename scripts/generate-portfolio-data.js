@@ -97,6 +97,15 @@ function serialize(projects) {
   return `// Generated from portfolio.json. Do not edit manually.\nwindow.PORTFOLIO_DATA = ${body};\n`;
 }
 
+// Compare content independent of platform line endings. Git's core.autocrlf
+// rewrites the checked-out file to CRLF on Windows, so a byte-exact compare
+// would report a false "out of sync" on every Windows machine.
+const CR = String.fromCharCode(13);
+
+function normalizeEol(text) {
+  return text.split(CR + "\n").join("\n");
+}
+
 function generate() {
   const canonical = loadCanonical();
   const active = validateCanonical(canonical)
@@ -109,7 +118,7 @@ function main() {
   const generated = generate();
   if (process.argv.includes("--check")) {
     const current = fs.existsSync(OUTPUT) ? fs.readFileSync(OUTPUT, "utf8") : "";
-    if (current !== generated) {
+    if (normalizeEol(current) !== normalizeEol(generated)) {
       console.error("portfolio generated data is out of sync; run npm run generate:portfolio");
       process.exit(1);
     }
@@ -125,4 +134,4 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { generate, loadCanonical, toRuntimeProject, validateCanonical };
+module.exports = { generate, loadCanonical, toRuntimeProject, validateCanonical, normalizeEol };
