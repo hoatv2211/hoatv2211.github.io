@@ -14,7 +14,8 @@ For tiny one-file edits, keep process lightweight but still verify outcomes.
 
 ## Project Structure Quick Notes
 - Root page: `index.html`
-- Portfolio data: `assets/js/portfolio-data.js`
+- Canonical portfolio data: `portfolio.json`
+- Generated runtime data: `assets/js/portfolio-data.js`
 - Portfolio detail pages: `assets/portfolio-details/`
 - Portfolio backup styles: `backup/recruiter-clean/`, `backup/dev-console/`, `backup/game-studio/`
 - Backup data adapter: `backup/shared/backup-data-adapter.js`
@@ -22,7 +23,7 @@ For tiny one-file edits, keep process lightweight but still verify outcomes.
 - UI/UX prompt pack: `.github/prompts/ui-ux-pro-max/`
 
 ## Portfolio Backup Sync Rule
-- Treat `assets/js/portfolio-data.js` as the single source of truth for portfolio projects.
+- Treat `portfolio.json` as the single source of truth. Generate `assets/js/portfolio-data.js` with `npm run generate:portfolio`; never edit generated records manually.
 - When adding a game, changing project info, changing contact/profile content, or editing the main `index.html` portfolio surface, check whether the three backup styles also need to reflect the change.
 - Do not duplicate project data inside backup pages. Update `backup/shared/backup-data-adapter.js` if the backup variants need new derived fields, labels, grouping, or links.
 - Verify these routes after portfolio data or main portfolio information changes:

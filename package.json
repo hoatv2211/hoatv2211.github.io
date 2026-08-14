@@ -6,7 +6,7 @@
   "scripts": {
     "generate:portfolio": "node scripts/generate-portfolio-data.js",
     "check:portfolio-sync": "node scripts/generate-portfolio-data.js --check",
-    "test": "npm run validate:portfolio && npm run validate:project-routes && npm run check:portfolio-sync && node scripts/test-portfolio-compatibility.js && node scripts/test-detail-loader.js && node scripts/test-detail-animation-contract.js && node scripts/test-download-count-contract.js && node scripts/test-site-metadata.js && node scripts/test-portfolio-worker-security.js && node scripts/test-chatbot-security-contract.js",
+    "test": "npm run validate:portfolio && npm run validate:project-routes && npm run check:portfolio-sync && node scripts/test-portfolio-compatibility.js && node scripts/test-detail-loader.js && node scripts/test-detail-animation-contract.js && node scripts/test-download-count-contract.js && node scripts/test-site-metadata.js && node scripts/test-portfolio-worker-security.js && node scripts/test-chatbot-security-contract.js && node scripts/test-visit-hook-security-contract.js",
     "validate:portfolio": "node scripts/validate-portfolio.js",
     "validate:project-routes": "node scripts/validate-project-routes.js",
     "release": "standard-version"

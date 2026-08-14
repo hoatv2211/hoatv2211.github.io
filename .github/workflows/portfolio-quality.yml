@@ -84,9 +84,15 @@ jobs:
 
           routes=(
             /index.html
+            /404.html
             /backup/recruiter-clean/index.html
             /backup/dev-console/index.html
             /backup/game-studio/index.html
+            /projects/dalgona-worldchain/
+            /projects/idle-cyber/
+            /projects/mu-loren-mobile/
+            /projects/nekoverse/
+            /projects/tinh-thien-ha-jx1/
           )
           for route in "${routes[@]}"; do
             curl --fail --silent --show-error "http://127.0.0.1:4173${route}" >/dev/null
