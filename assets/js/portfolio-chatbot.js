@@ -180,6 +180,11 @@
       return Promise.resolve({ reply: makeFallbackReply(config), leadSent: false, leadReason: "endpoint not configured" });
     }
 
+    var turnstileToken = typeof config.getTurnstileToken === "function" ? config.getTurnstileToken() : "";
+    if (!turnstileToken) {
+      return Promise.resolve({ reply: makeFallbackReply(config), leadSent: false, leadReason: "challenge not configured" });
+    }
+
     return fetch(config.endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -187,7 +192,7 @@
         sessionId: sessionId,
         messages: messages.slice(-config.maxMessages),
         pageUrl: window.location.href,
-        visitorMeta: { language: "auto" }
+        turnstileToken: turnstileToken
       })
     }).then(function (response) {
       if (!response.ok) throw new Error("chat request failed");
@@ -214,6 +219,7 @@
     panel.classList.toggle("active", open);
     button.classList.toggle("active", open);
     panel.setAttribute("aria-hidden", open ? "false" : "true");
+    panel.inert = !open;
     safeStorageSet("Open", open ? "1" : "0");
     updateScrollLock(panel);
   }

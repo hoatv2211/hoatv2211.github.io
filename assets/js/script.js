@@ -2,6 +2,20 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function () {
+  const heroVideoFacade = document.querySelector('[data-hero-video]');
+  if (heroVideoFacade) {
+    heroVideoFacade.addEventListener('click', function () {
+      const video = document.createElement('video');
+      video.className = 'hero-video';
+      video.controls = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+      video.src = this.dataset.heroVideo;
+      this.replaceWith(video);
+    }, { once: true });
+  }
+
   // Hide loading overlay once page is loaded with a smooth transition
   const loadingOverlay = document.getElementById('loading-overlay');
   if (loadingOverlay) {
@@ -97,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const buttonBack = document.getElementById("portfolio-back-button");
 
   let pendingDetailCategory = null;
+  let portfolioReturnScrollY = 0;
   let suppressDetailReset = false;
   let portfolioTouchStartX = 0;
   let portfolioTouchStartY = 0;
@@ -167,56 +182,55 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  function openProjectDetail(selectedType) {
-    if (!selectedType) return;
+  async function openProjectDetail(selectedType) {
+    if (!selectedType || typeof window.loadProjectDetail !== "function") return null;
 
     activatePortfolioPage();
+    pendingDetailCategory = selectedType;
+    portfolioReturnScrollY = window.scrollY;
+
+    let loadedProject;
+    try {
+      loadedProject = await window.loadProjectDetail(selectedType);
+    } catch (error) {
+      pendingDetailCategory = null;
+      console.error(error);
+      return null;
+    }
+    if (!loadedProject) return null;
 
     suppressDetailReset = true;
     filterFunc("");
     suppressDetailReset = false;
+    pendingDetailCategory = null;
 
-    pendingDetailCategory = selectedType;
-
-    // Hide showcase section when entering detail view
     const showcase = document.querySelector(".portfolio-showcase");
     if (showcase && showcase.dataset.showcaseHidden !== "1") {
       showcase.dataset.showcaseHidden = "1";
       showcase.style.transition = "opacity 0.25s ease";
       showcase.style.opacity = "0";
-      setTimeout(function () {
-        showcase.style.display = "none";
-      }, 250);
+      setTimeout(function () { showcase.style.display = "none"; }, 250);
     }
 
-    if (!projectDetail || projectDetail.length === 0) {
-      return;
-    }
-
-    let matched = false;
+    projectDetail = document.querySelectorAll("[project-detail]");
+    filterItems = document.querySelectorAll("[data-filter-item]");
     projectDetail.forEach(project => {
-      if (project.dataset.detailCategory === selectedType) {
-        project.classList.add("active");
-        // Re-trigger entrance animation for detail section
+      const active = project.dataset.detailCategory === selectedType;
+      project.classList.toggle("active", active);
+      if (active) {
         project.classList.remove("flash-entrance", "fast", "no-blur");
         void project.offsetWidth;
         project.classList.add("flash-entrance", "fast", "no-blur");
-
-        // Show code-like loading effect on open
         showDetailLoadingEffect(project);
         toggleBackButton(true);
         scrollToProjectDetail(project);
-        matched = true;
-      } else {
-        project.classList.remove("active");
       }
     });
 
-    if (!matched) {
-      pendingDetailCategory = selectedType;
-    } else if (typeof window.refreshProjectMediaLayout === "function") {
+    if (typeof window.refreshProjectMediaLayout === "function") {
       window.requestAnimationFrame(() => window.refreshProjectMediaLayout());
     }
+    return loadedProject;
   }
 
   // Expose for external callers (e.g., gaming-showcase.js)
@@ -280,7 +294,9 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
 
     project.prepend(loading);
-    window.animateCodeLoading(loading);
+    if (typeof window.animateCodeLoading === "function") {
+      window.animateCodeLoading(loading);
+    }
 
     setTimeout(() => {
       loading.remove();
@@ -320,22 +336,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   refreshPortfolioDetails();
-  document.addEventListener("portfolio:details-loaded", function () {
-    refreshPortfolioDetails();
-    if (pendingDetailCategory) {
-      const categoryToOpen = pendingDetailCategory;
-      pendingDetailCategory = null;
-      openProjectDetail(categoryToOpen);
-    }
-  });
+  document.addEventListener("portfolio:details-loaded", refreshPortfolioDetails);
   document.addEventListener("portfolio:list-rendered", refreshPortfolioDetails);
 
   document.addEventListener("click", function (event) {
     const detailTarget = event.target.closest("[data-detail-category]");
     if (!detailTarget) return;
 
-    const isInPortfolioList = detailTarget.closest('[data-render="portfolio-list"]');
-    if (!isInPortfolioList) return;
+    if (detailTarget.closest('[data-render="portfolio-details"]')) return;
 
     event.preventDefault();
 
@@ -361,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Smooth scroll with callback
       window.scrollTo({
-        top: 0,
+        top: portfolioReturnScrollY,
         behavior: 'smooth'
       });
 

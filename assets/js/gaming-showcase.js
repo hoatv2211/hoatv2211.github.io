@@ -30,8 +30,8 @@
     "share001-ludo": "https://hoatv2211.github.io/Share001_Ludo/",
     "share002-pixelshooter3d": "https://hoatv2211.github.io/Share002_PixelShooter3D/",
     archero: "Games/Archero/index.html",
-    shibainu: "Games/FoodTruck/index.html",
-    sandwich: "Games/FoodTruck/index.html",
+    shibainu: "https://hoatv2211.github.io/mad-game-hub-shared/portfolio-games/FoodTruck/index.html",
+    sandwich: "Games/SandwichPlease/index.html",
     homeDesign: "Games/HomeDesign/index.html",
     sudoku: "Games/Sudoku/index.html",
     surviver: "Games/SurvivorIO/index.html",
@@ -338,36 +338,13 @@
       event.preventDefault();
       stopAutoplay();
 
-      // Collapse showcase with smooth transition
-      showcaseSection.style.transition = "opacity 0.3s ease, max-height 0.4s ease";
-      showcaseSection.style.overflow = "hidden";
-      showcaseSection.style.opacity = "0";
-      showcaseSection.style.maxHeight = showcaseSection.offsetHeight + "px";
-      requestAnimationFrame(function () {
-        showcaseSection.style.maxHeight = "0";
+      if (typeof window.openProjectDetail !== "function") return;
+      btn.disabled = true;
+      btn.setAttribute("aria-busy", "true");
+      Promise.resolve(window.openProjectDetail(detailCategory)).finally(function () {
+        btn.disabled = false;
+        btn.removeAttribute("aria-busy");
       });
-
-      // After collapse, open the project detail
-      setTimeout(function () {
-        showcaseSection.style.display = "none";
-        showcaseSection.dataset.showcaseHidden = "1"; // marker for restore
-
-        // Show back button directly
-        const backBtn = document.getElementById("portfolio-back-button");
-        if (backBtn) {
-          backBtn.classList.remove("hidden");
-          backBtn.style.visibility = "visible";
-          backBtn.style.opacity = "1";
-        }
-
-        if (typeof window.openProjectDetail === "function") {
-          window.openProjectDetail(detailCategory);
-        } else {
-          // Fallback: trigger click on matching [data-detail-category] item
-          const target = document.querySelector(`[data-detail-category="${CSS.escape(detailCategory)}"]`);
-          if (target) target.click();
-        }
-      }, 380);
     });
 
     render(0);

@@ -1,0 +1,96 @@
+---
+name: Portfolio Quality
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  static-data:
+    name: Static and data quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Sparse checkout static site sources
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /index.html
+            /404.html
+            /robots.txt
+            /sitemap.xml
+            /portfolio.json
+            /package.json
+            /package-lock.json
+            /assets/
+            /backup/
+            /scripts/
+            /projects/
+            /cloudflare/
+            /docs/portfolio-claims.md
+            /docs/playable-build-inventory.md
+            /.github/workflows/portfolio-quality.yml
+            !/Games/
+          sparse-checkout-cone-mode: false
+
+      - name: Verify Games are not materialized
+        shell: bash
+        run: |
+          if [ -d Games ]; then
+            echo "Games/ must not be materialized in the static/data job." >&2
+            exit 1
+          fi
+          git sparse-checkout list
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate portfolio data and verify sync
+        shell: bash
+        run: |
+          npm run generate:portfolio
+          git diff --exit-code -- assets/js/portfolio-data.js
+
+      - name: Run tests
+        run: npm test
+
+      - name: Smoke-test static routes over HTTP
+        shell: bash
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/portfolio-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+
+          for attempt in {1..20}; do
+            if curl --fail --silent --show-error http://127.0.0.1:4173/index.html >/dev/null; then
+              break
+            fi
+            if ! kill -0 "$server_pid" 2>/dev/null; then
+              cat /tmp/portfolio-http.log
+              exit 1
+            fi
+            sleep 0.25
+          done
+
+          routes=(
+            /index.html
+            /backup/recruiter-clean/index.html
+            /backup/dev-console/index.html
+            /backup/game-studio/index.html
+          )
+          for route in "${routes[@]}"; do
+            curl --fail --silent --show-error "http://127.0.0.1:4173${route}" >/dev/null
+          done
+
+      - name: Check patch whitespace
+        run: git diff --check

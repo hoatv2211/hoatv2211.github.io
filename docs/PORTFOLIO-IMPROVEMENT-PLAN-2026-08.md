@@ -1,12 +1,12 @@
 # Portfolio Improvement Implementation Plan
 
-> **Trạng thái:** Bản tổng hợp để review, chưa triển khai
+> **Trạng thái:** Đã khóa quyết định chủ sở hữu; sẵn sàng triển khai theo phase trên `feature/performance`
 >
 > **Nguồn:** `docs/PORTFOLIO-AUDIT-2026-08.md`, kết quả review source, render desktop/mobile, static audit và Lighthouse ngày 13/08/2026
 >
-> **For Hermes:** Khi kế hoạch được duyệt, dùng `software-development/subagent-driven-development` để triển khai theo từng phase. Không commit, push, publish, xóa build hoặc rewrite Git history nếu chưa có yêu cầu rõ ràng từ người dùng.
+> **For Hermes:** Dùng `software-development/subagent-driven-development` để triển khai theo từng phase trên branch hiện tại `feature/performance`. Được phép copy/upload sang `mad-game-hub-shared`, đổi references, xóa working-tree originals sau verification và push branch. Không merge `main`, không publish production và không rewrite Git history.
 
-**Goal:** Nâng portfolio từ mức 68-70/100 lên một website Senior Unity Developer nhanh, đáng tin, dễ kiểm chứng và có conversion rõ ràng, trong khi vẫn giữ playable WebGL và visual identity hiện tại.
+**Goal:** Nâng portfolio từ mức 68-70/100 lên một website **Senior Game Developer** nhanh, đáng tin, dễ kiểm chứng và có conversion rõ ràng, trong khi giữ bố cục, visual identity và playable WebGL hiện tại.
 
 **Architecture:** Thực hiện emergency containment trước mọi phase để đưa published set về dưới ngưỡng an toàn của GitHub Pages. Sau đó giữ mô hình static trong giai đoạn đầu, sửa critical loading path, dữ liệu và conversion trước khi refactor frontend. Project data sẽ được hợp nhất thành một nguồn chuẩn, sau đó generate các định dạng phục vụ main site, backup variants và chatbot. Playable builds được tách khỏi initial page load trước, rồi di chuyển khỏi repo chính theo migration có rollback.
 
@@ -14,35 +14,39 @@
 
 ---
 
-## 1. Tóm tắt quyết định đề xuất
+## 1. Quyết định chủ sở hữu đã khóa
 
-Đây là các quyết định cần duyệt trước khi triển khai.
+Các quyết định dưới đây được chủ sở hữu xác nhận ngày 13/08/2026.
 
 | ID | Quyết định đề xuất | Lý do | Trạng thái review |
 |---|---|---|---|
-| D1 | Giữ định vị chính là **Senior Unity Game Developer**, AI/automation là năng lực bổ trợ | Tránh portfolio bị phân tán giữa game, AI, Web3 và automation | [ ] Duyệt |
-| D2 | Dùng information architecture của `backup/recruiter-clean/` làm khung, kết hợp visual identity của trang chính | Recruiter Clean dễ scan hơn, main site có cá tính game mạnh hơn | [ ] Duyệt |
-| D3 | Chọn 6 flagship projects: Dalgona, Idle Cyber, MU Loren, Nekoverse, Sandwich Please, JX1 | Bao phủ solo delivery, technical leadership, MMORPG, commercial mobile và WebGL | [ ] Duyệt |
-| D4 | CTA chính thống nhất là **Hire Me**; CTA phụ là **View Selected Work**; CV là utility action | Loại bỏ cạnh tranh giữa Hire Me, Book Call, Schedule Call và chatbot | [ ] Duyệt |
-| D5 | Chỉ dùng **Book a Call** khi có URL đặt lịch thật; trong thời gian chưa có thì dùng **Message on Telegram** | Telegram hiện không phải lịch đặt cuộc gọi | [ ] Duyệt |
-| D6 | Chọn `portfolio.json` làm nguồn dữ liệu giàu thông tin, generate `assets/js/portfolio-data.js` cho runtime | `portfolio.json` có role, contributions, achievements, team size và links; cần cập nhật `AGENTS.md` sau migration | [ ] Duyệt |
-| D7 | Tách playable builds sang `mad-game-hub-shared` hoặc Cloudflare R2/Pages sau khi link migration đã được kiểm chứng | Giảm repo size, deployment risk và initial payload | [ ] Duyệt |
-| D8 | Hoãn blog, bản tiếng Việt và testimonial đến sau khi performance, content proof và QA đạt gate | Tránh mở rộng scope trước khi sửa critical defects | [ ] Duyệt |
-| D9 | Đặt hard gate published set tối đa **900 MiB** trước Phase 0 | Chỉ xuống sát 1 GiB không tạo đủ headroom cho deploy tiếp theo | [ ] Duyệt |
-| D10 | Bảo vệ Worker theo abuse model, không coi URL public là secret | CORS không thay thế rate limit, bot protection hoặc request validation | [ ] Duyệt |
+| D1 | Định vị chính là **Senior Game Developer**; AI/automation là năng lực bổ trợ | Tránh portfolio bị phân tán | [x] Duyệt |
+| D2 | Giữ nguyên bố cục và visual trang chính; chỉ rút gọn nội dung và sửa CTA | Không redesign/recompose IA trong scope này | [x] Duyệt |
+| D3 | Chọn 5 flagship: Dalgona, Idle Cyber, MU Loren, Nekoverse, JX1 | Loại Sandwich Please khỏi flagship, vẫn giữ trong portfolio/playable khi hợp lệ | [x] Duyệt |
+| D4 | CTA chính **Hire Me**; CTA phụ **View Selected Work**; CV là utility action | CTA rõ và thống nhất | [x] Duyệt |
+| D5 | Không dùng **Book a Call**; dùng **Message on Telegram** | Chưa có scheduling URL | [x] Duyệt |
+| D6 | `portfolio.json` là canonical source; đưa generator và sync check lên Phase 0 | Tránh drift trong Phase 1-3 | [x] Duyệt |
+| D7 | Emergency dùng `mad-game-hub-shared`; Cloudflare R2/Pages là migration sau | Có quyền copy/upload và xóa bản cũ sau verification | [x] Duyệt |
+| D8 | Hoãn blog, bản tiếng Việt và testimonial | Tránh mở rộng scope | [x] Duyệt |
+| D9 | Hard gate tracked set tối đa **900 MiB** | Tạo headroom cho GitHub Pages | [x] Duyệt |
+| D10 | Worker dùng Turnstile + rate limit; visit payload tối thiểu | URL public không phải secret | [x] Duyệt |
+| D11 | Production publish từ root của `main`; chỉ push `feature/performance`, chưa merge/publish | Tách approval triển khai khỏi production deployment | [x] Duyệt |
+| D12 | Không rewrite Git history | Không dùng `git filter-repo` hoặc force-push trong kế hoạch | [x] Duyệt |
 
-### Câu hỏi dữ liệu cần chủ sở hữu xác nhận
+### Claim và disclosure đã xác nhận
 
-- [ ] Số chính thức là **50+** hay **100+ published games**?
-- [ ] Claim “Top 1 World App” có URL hoặc screenshot chứng minh theo thời điểm không?
-- [ ] Claim fundraising của Idle Cyber và Nekoverse có public source nào được phép dẫn không?
-- [ ] Tên thương hiệu hiển thị chính: **HoaTV**, **MAD**, **MAD Game Works** hay **ONEMAD STUDIO**?
-- [ ] Có được công khai team size, tên công ty và contribution cụ thể của từng project không?
-- [ ] Nền tảng ưu tiên cho playable build: `mad-game-hub-shared` hay Cloudflare R2/Pages?
-- [ ] Còn Unity source buildable cho từng playable game nào? Ai giữ source và Unity version tương ứng?
-- [ ] Có quyền deploy/configure cả hai Worker `quiet-haze...` và `portfolio.thanhlong-worker...` không?
+- Brand public: **HoaTV**.
+- Claim được phép: **“100+ games delivered/published, including private outsource work.”** Không biến claim này thành danh sách 100 public titles.
+- Dalgona Top 1 dùng `assets/images/game/Dalgona/top.jpg` và World App detail link làm **Snapshot evidence**; wording phải kèm thời điểm launch.
+- Fundraising của Idle Cyber/Nekoverse chỉ có evidence private: dùng wording thận trọng, không nêu số tiền cụ thể và không quy thành direct personal outcome.
+- Đọc role/contribution đã public trong detail trước; chỉ hỏi owner khi có mâu thuẫn. Owner đã override Idle Cyber thành **Senior Unity Developer**, team 10.
+- Dalgona: **Tech Dev Leader**, team 15, ẩn tên công ty.
+- MU Loren: team 10; role/contribution lấy từ detail.
+- Ba orphan `citybuilder`, `iceBreakingBattle`, `neighborhood`: archive, không hiển thị.
+- Unity source còn phần lớn hoặc tất cả; E0 vẫn phải ghi source path và version từng build.
+- Owner có quyền deploy/configure các Worker liên quan.
 
-Không đưa claim chưa xác nhận vào metadata, case study headline hoặc result cards.
+Không đưa claim chưa xác minh hoặc chưa được phép vào metadata, headline hoặc result cards.
 
 ---
 
@@ -72,6 +76,15 @@ Các số dưới đây là baseline dùng cho kế hoạch. Chúng thay thế s
 | Detail fragments | 25 files, 22 được data tham chiếu, **3 orphan** |
 | Orphan fragments | `citybuilder.html`, `iceBreakingBattle.html`, `neighborhood.html` |
 | Cloudflare Worker protection | Chat Worker có origin allowlist một phần, nhưng cho phép request thiếu `Origin`; chưa có rate limit/Turnstile trong source |
+
+### Lighthouse baseline protocol trước implementation
+
+Baseline score/LCP hiện là **Snapshot, chưa đủ tái lập** cho đến khi chạy lại theo protocol này:
+
+- Lưu mobile và desktop reports cùng network resource list và audit IDs.
+- Ghi Lighthouse/Chrome version, exact command, throttling profile, viewport, local/production URL, timestamp và commit SHA.
+- Chạy ba lần cho mỗi profile từ clean Chrome state; dùng median, không chọn best run.
+- Không dùng tổng score làm bằng chứng duy nhất; acceptance phải trace về audit ID và resource/request regression.
 
 ### Rủi ro tồn vong của hosting
 
@@ -117,7 +130,7 @@ Năm candidate trên đưa tracked set về khoảng **943.8 MiB**, vẫn chưa 
 3. **Một nguồn dữ liệu:** không cập nhật thủ công main, JSON, backup và chatbot ở nhiều nơi.
 4. **Static-first:** giữ GitHub Pages friendly; không thêm framework nếu chưa có lợi ích đo được.
 5. **Không phá URL:** giữ route cũ hoặc redirect rõ ràng khi di chuyển playable builds.
-6. **An toàn dữ liệu:** tách build và cleanup working tree trước; rewrite history là phase riêng cần backup và phê duyệt.
+6. **An toàn dữ liệu:** copy, verify và đổi URL trước khi cleanup working tree; không rewrite Git history.
 7. **Mỗi phase có gate:** chỉ sang phase tiếp theo khi acceptance criteria của phase hiện tại đạt.
 8. **Không dùng số liệu ước đoán làm proof:** mọi metric public phải có nguồn hoặc được chủ sở hữu xác nhận.
 9. **Hosting survival trước Lighthouse:** tracked published set và bandwidth pressure được xử lý trước cosmetic/performance work.
@@ -129,7 +142,7 @@ Năm candidate trên đưa tracked set về khoảng **943.8 MiB**, vẫn chưa 
 
 ### Tổng effort
 
-Kế hoạch thực tế khoảng **20-30 ngày công**, tương đương **4-6 tuần** cho một người nếu có đầy đủ quyền deploy và Unity source. Estimate chưa gồm thời gian rebuild Unity khi source/version bị thiếu, review của chủ sở hữu hoặc thời gian chờ DNS/CDN.
+Kế hoạch thực tế khoảng **23-37 ngày công**, chưa gồm thời gian chờ external dependencies, owner review hoặc rebuild Unity khi source/version cần khôi phục.
 
 | Workstream | Task | Estimate | Dependency chính |
 |---|---|---:|---|
@@ -148,29 +161,19 @@ Kế hoạch thực tế khoảng **20-30 ngày công**, tương đương **4-6 
 | SEO/a11y | 3.1-3.5 SEO, routes, semantics, Best Practices, CV | 4-6 ngày | Phase 2 |
 | Data/CI | 4.1-4.3 generator, validator, CI | 2-3 ngày | Canonical model |
 | WebGL/repo | 5.1-5.4 rebuild/migrate/cleanup | 3-8 ngày | Source availability và D7 |
-| Git history | 5.5 history rewrite | 0.5-1 ngày + coordination | Approval riêng |
+
 
 ### Branch và rollback áp dụng cho mọi phase
 
-Mỗi phase dùng một branch riêng từ base đã được chủ sở hữu duyệt:
-
-| Phase | Branch đề xuất | Pre-merge tag trên base | Rollback |
-|---|---|---|---|
-| Emergency | `hotfix/pages-size-relief` | `portfolio-pre-size-relief-2026-08` | Revert merge hoặc redeploy tag |
-| Phase 0 | `plan/data-claims` | `portfolio-pre-phase-0` | Revert docs/data-only merge |
-| Phase 1 | `perf/runtime-demand-load` | `portfolio-pre-phase-1` | Revert merge; restore prior static assets |
-| Phase 2 | `feat/recruiter-conversion` | `portfolio-pre-phase-2` | Revert merge; preserve route aliases |
-| Phase 3 | `feat/seo-a11y-cv` | `portfolio-pre-phase-3` | Revert merge; keep old URLs live |
-| Phase 4 | `chore/data-ci-gates` | `portfolio-pre-phase-4` | Revert generator/CI merge together |
-| Phase 5 | `infra/webgl-hosting` | `portfolio-pre-phase-5` | Switch canonical URLs to rollback map |
+Toàn bộ kế hoạch dùng branch hiện tại **`feature/performance`**. Mỗi phase là một commit/commit group độc lập để dễ review và revert; chỉ push branch, không merge `main` trong scope đã duyệt.
 
 Rules:
 
-- Không merge phase khi gate chưa pass.
-- Tag chỉ được tạo ngay trước merge/deploy, không tạo trong lượt review plan.
-- Mỗi phase có một merge commit hoặc PR độc lập để revert nguyên phase.
+- Không bắt đầu phase phụ thuộc khi gate trước chưa pass.
+- Không tạo production tag, merge hoặc deploy `main` khi chưa có approval mới.
+- Mỗi phase có commit group độc lập để revert nguyên phase trên branch.
 - Không trộn user-authored changes hiện có vào branch/commit của phase.
-- Phase 5.5 vẫn cần backup mirror và explicit force-push approval riêng.
+- Push `feature/performance` được phép sau khi verification pass.
 
 ---
 
@@ -178,23 +181,15 @@ Rules:
 
 ### First viewport desktop
 
-1. `Senior Unity Game Developer`
+1. `Senior Game Developer`
 2. Một câu value proposition tối đa 20 từ
 3. Hai CTA: `Hire Me`, `View Selected Work`
 4. Một visual/gameplay poster nhẹ, không autoplay
 5. Ba proof points đã xác minh
 
-### Thứ tự trang chính
+### Bố cục trang chính
 
-1. Hero và CTA
-2. Selected proof
-3. Flagship case studies
-4. Playable demos
-5. Technical capabilities
-6. Experience rút gọn
-7. Process/engagement gộp chung
-8. Additional work và GitHub
-9. Contact
+Giữ nguyên thứ tự section và visual/layout hiện tại. Chỉ rút gọn copy, chuẩn hóa CTA, làm nổi bật 5 flagship trong các surface sẵn có và sửa loading/UX defects; không áp dụng information architecture của Recruiter Clean cho main page.
 
 ### Cấu trúc mỗi flagship case study
 
@@ -210,7 +205,7 @@ Rules:
 
 ### Content grouping
 
-- **Flagship Work:** 6 projects đã chọn
+- **Flagship Work:** 5 projects đã chọn
 - **Playable Demos:** chỉ project có URL hoạt động và load budget đạt
 - **Additional Projects:** archive/filter
 - **Beyond Unity:** ProxyAPI.MAD và agentic tooling, không trộn vào hero positioning
@@ -234,6 +229,9 @@ Rules:
 
 **Thực hiện:**
 
+- Xác minh và ghi Pages model: production publish từ root của `main`, production commit SHA, deploy trigger thực tế, Pages source setting, environment protection và quyền push/deploy.
+- Ghi preview strategy cho `feature/performance`: local HTTP + CI smoke/artifact; không coi tag là deployment hoặc rollback.
+- Ghi rollback command thực tế: revert commit/merge trên `main` rồi kích hoạt lại deploy; không chạy rollback production trong scope hiện tại.
 - Ghi current URL, size, loader-selected files, source owner, Unity version, rebuildability, destination URL và rollback URL cho từng playable build.
 - Xác minh source availability **trước Phase 0**. Game mất source chuyển sang hướng host nguyên build hiện tại hoặc retire có chủ đích; không giả định có thể rebuild compression.
 - Phân loại 25 detail fragments thành 22 active và 3 orphan.
@@ -241,7 +239,8 @@ Rules:
 
 **Acceptance criteria:**
 
-- [ ] 11 thư mục trong `Games/` được phân loại; BikeTrial không được tính là playable nếu vẫn chỉ là thư mục rỗng/hỏng.
+- [ ] Toàn bộ tracked top-level game directories và mọi local-only candidate được owner xác nhận đều được phân loại; thư mục rỗng không được dùng làm fresh-clone inventory.
+- [ ] Pages source/deploy trigger, production SHA, protection, quyền và rollback command được ghi bằng evidence thực tế.
 - [ ] Mỗi build thực sự playable có trạng thái source: available, missing hoặc unknown.
 - [ ] Mỗi candidate remove/relocate có reference map và rollback URL.
 - [ ] Xác nhận loader Sudoku dùng `Sudoku.*`, không dùng `Build_Webgl.*`.
@@ -282,7 +281,7 @@ Rules:
 - [ ] Sudoku playable load đúng bộ `Sudoku.*`.
 - [ ] Không có broken local asset hoặc route sau removal.
 
-## Task E2: Deploy verification và rollback rehearsal
+## Task E2: Branch verification và production handoff
 
 **Estimate:** 0.5 ngày
 
@@ -292,10 +291,10 @@ Rules:
 
 **Acceptance criteria:**
 
-- [ ] GitHub Pages deployment hoàn tất trong giới hạn thời gian.
-- [ ] Published routes trả 200 và external media/build URLs hoạt động.
+- [ ] `feature/performance` được push sau khi test pass; chưa merge hoặc production deploy.
+- [ ] Local/CI preview routes trả 200 và external media/build URLs hoạt động.
 - [ ] Đo lại tracked bytes được ghi vào tài liệu.
-- [ ] Revert branch/tag hoặc URL rollback được diễn tập ít nhất ở local/staging.
+- [ ] URL rollback được diễn tập local; production revert/deploy command được ghi để owner duyệt khi merge.
 
 ## Emergency gate
 
@@ -320,10 +319,10 @@ Rules:
 
 **Thực hiện:**
 
-Tạo bảng gồm `claim`, `value`, `source URL/file`, `allowed wording`, `last verified`, `owner approval`. Đưa các claim sau vào trạng thái pending cho đến khi được xác nhận:
+Tạo bảng gồm `claim`, `value`, `evidence status`, `source URL/file`, `allowed wording`, `last verified`, `owner approval`. Khởi tạo theo quyết định đã khóa:
 
-- 50+ hoặc 100+ published games
-- Top 1 World App
+- “100+ games delivered/published, including private outsource work” — owner-approved, không public-verifiable toàn bộ.
+- Top 1 World App — Snapshot evidence từ Dalgona detail/screenshot, phải ghi thời điểm.
 - Hundreds of thousands of users
 - Million-dollar funding
 - Team leadership 5-15 người
@@ -339,28 +338,39 @@ Tạo bảng gồm `claim`, `value`, `source URL/file`, `allowed wording`, `last
 
 **Files:**
 - Modify: `portfolio.json`
-- Modify later: `AGENTS.md`
-- Create later: `scripts/generate-portfolio-data.js`
+- Create: `scripts/generate-portfolio-data.js`
+- Modify: `scripts/validate-portfolio.js`
+- Generate: `assets/js/portfolio-data.js`
+- Modify after verification: `AGENTS.md`
+- Modify: `package.json`
 
 **Đề xuất schema project tối thiểu:**
 
 ```text
-id, slug, title, type, featured, category, genre, period,
+id, slug, title, status, type, featured, featuredOrder, category, genre, period,
 role, teamSize, engine, platforms, summary, problem,
 contributions[], outcomes[], evidence[], image, playableUrl,
 storeUrls, sourceUrl, detailRoute, ndaNote
 ```
 
+**Implementation:**
+
+- Thêm `status: active | archived | retired`; renderer chỉ hiển thị `active`, validator vẫn quản lý lịch sử.
+- Chốt `detailRoute` và tạo route shell/alias cho 5 flagship ngay trong Phase 0 để backup links có target trước Phase 2.
+- `npm run generate:portfolio` phải validate schema rồi tạo deterministic `assets/js/portfolio-data.js`.
+- `npm run check:portfolio-sync` fail nếu generated output khác canonical JSON.
+
 **Acceptance criteria:**
 
-- [ ] Có đúng 22 project records hoặc danh sách loại bỏ được ghi rõ.
+- [ ] Toàn bộ canonical active/archived/retired records được quản lý từ một nguồn; không dùng số 22 làm invariant vĩnh viễn.
 - [ ] ID và slug duy nhất.
-- [ ] Mỗi flagship project có role, contributions và evidence.
-- [ ] Không thay `AGENTS.md` sang nguồn mới trước khi generator và validator hoạt động.
-- [ ] Orphan fragments `citybuilder`, `iceBreakingBattle`, `neighborhood` có quyết định rõ: remove, archive hoặc restore-to-data.
+- [ ] 5 flagship có role, contributions, evidence và `detailRoute`.
+- [ ] Generator chạy hai lần không tạo diff; sync check phát hiện drift.
+- [ ] Chỉ đổi `AGENTS.md` sau khi generator, validator và sync check pass.
+- [ ] `citybuilder`, `iceBreakingBattle`, `neighborhood` được ghi `archived` và không render.
 - [ ] Không còn detail file trên disk ngoài canonical project set trừ khi được ghi trong inventory với lý do giữ lại.
 
-**Gate Phase 0:** D1-D10 và các câu hỏi dữ liệu đã được duyệt.
+**Gate Phase 0:** D1-D12 đã được duyệt; canonical generator, validator, sync check và 5 route shells pass. Unity/Worker claim còn thiếu evidence không được phép chặn các technical fixes độc lập.
 
 ---
 
@@ -517,21 +527,29 @@ storeUrls, sourceUrl, detailRoute, ndaNote
 
 **Implementation direction:**
 
-- Thêm rate limit theo IP/CF connecting IP, route và session key ở edge.
-- Thêm Turnstile cho chat/lead flow nếu UX cho phép; nếu không, yêu cầu server-issued short-lived challenge cho các action có side effect.
-- Giới hạn body size, request frequency, message count và total characters phía Worker; không chỉ validate shape hiện tại.
-- Tách visit hook khỏi chat route nếu có thể; chỉ cho phép payload fields cần thiết.
+- Inventory topology/source ownership trước khi sửa: Chat Worker source/account/deployment, visit route, download-count Worker source repo/upstream, secrets owner và fallback. Nếu source download Worker chưa được đưa vào quyền kiểm soát của dự án, tắt client feature thay vì tuyên bố đã harden.
+- Ưu tiên hợp nhất route vào một Worker do dự án kiểm soát, nhưng tách handler, quota và side effects theo route.
+- Dùng Cloudflare Rate Limiting binding hoặc Durable Object làm state; không dùng biến process trong stateless Worker. Quyết định cụ thể phải được ghi trong deployment docs.
+- Bắt buộc Turnstile cho chat và visit side effects.
+- Chat: tối đa **20 request/5 phút/IP**, message tối đa **1.000 ký tự**.
+- Visit: tối đa **1 lần/5 phút/IP rút gọn**; chỉ gửi IP rút gọn, quốc gia và trang vào; không gửi full IP, city, referrer hoặc fingerprint.
+- Tắt visit route nếu Turnstile/rate-limit state unavailable; không fail-open với Telegram side effect.
+- Giới hạn body byte size, content type, method, upstream timeout, concurrency và daily cost quota; trả `Retry-After` khi 429.
+- Ghi behavior định lượng cho 400/404/413/415/429, idempotency TTL và fail-open/fail-closed theo từng route.
 - Chặn request không có `Origin` cho các browser-only route nếu không cần hỗ trợ server-to-server. Nếu giữ hỗ trợ beacon, dùng signed nonce hoặc challenge riêng.
-- Với download-count proxy, allowlist upstream host/path và cache response; không forward arbitrary `?url=`.
+- Download proxy không nhận arbitrary `?url=`; client chỉ gửi project/platform ID, Worker map sang fixed upstream URL và cache response.
 - Thêm logging/alert cho 403, 429, Telegram send burst và upstream failure. Không log token hoặc dữ liệu nhạy cảm.
 - Giữ token, chat ID và 9Router key trong Worker secrets/env; không đưa vào static client.
+- Không tạo staging riêng theo quyết định owner: test mock/local trước, sau đó production canary có quota nhỏ và payload test không tạo Telegram/model spam.
 
 **Acceptance criteria:**
 
-- [ ] Burst test từ cùng IP/session nhận 429 theo policy đã ghi.
+- [ ] Request chat thứ 21 trong 5 phút từ cùng key nhận 429 và `Retry-After`; request sau window được chấp nhận.
+- [ ] Tin chat trên 1.000 ký tự nhận 413 hoặc 400 theo contract đã ghi.
+- [ ] Visit thứ hai trong 5 phút từ cùng IP rút gọn không tạo Telegram side effect.
 - [ ] Request không có Origin không thể gọi side-effect route ngoài policy đã duyệt.
-- [ ] Origin check, rate limit và Turnstile/challenge được test ở production Worker.
-- [ ] Download proxy từ chối target ngoài allowlist.
+- [ ] Origin, Turnstile và rate-limit được test bằng local/mock rồi production canary giới hạn.
+- [ ] Download proxy chỉ nhận known ID; unknown ID nhận 404 và không fetch upstream.
 - [ ] Visit hook không gửi Telegram lặp vô hạn khi reload/bot flood.
 - [ ] Có rollback config và runbook rotate secret.
 
@@ -547,7 +565,7 @@ storeUrls, sourceUrl, detailRoute, ndaNote
 
 ---
 
-# Phase 2: Recompose portfolio cho recruiter/client conversion
+# Phase 2: Rút gọn content và tăng conversion trong layout hiện tại
 
 **Mục tiêu:** Người xem hiểu giá trị, thấy proof và có đường liên hệ rõ trong 30-60 giây.
 
@@ -573,7 +591,7 @@ storeUrls, sourceUrl, detailRoute, ndaNote
 - `View Selected Work`: anchor/route tới flagship projects
 - `Download CV`: utility action
 - `Message on Telegram`: contact channel
-- `Book a Call`: chỉ dùng khi có scheduling URL thật
+- Không render `Book a Call` trong scope này.
 
 **Acceptance criteria:**
 
@@ -581,7 +599,7 @@ storeUrls, sourceUrl, detailRoute, ndaNote
 - [ ] Không còn “Book Call” trỏ thẳng Telegram.
 - [ ] Không có hai label khác nhau cho cùng một intent.
 
-## Task 2.2: Đưa flagship proof lên trước services/process
+## Task 2.2: Làm nổi bật flagship trong các surface hiện tại
 
 **Files:**
 - Modify: `index.html`
@@ -589,18 +607,17 @@ storeUrls, sourceUrl, detailRoute, ndaNote
 - Modify: `assets/js/gaming-showcase.js`
 - Modify: canonical project data
 
-**Featured order đề xuất:**
+**Featured order đã duyệt:**
 
 1. Dalgona - Worldchain
 2. Idle Cyber
 3. MU Loren Mobile
 4. Nekoverse
-5. Sandwich Please
-6. JX1 Mobile
+5. JX1 Mobile
 
 **Acceptance criteria:**
 
-- [ ] Flagship section xuất hiện ngay sau hero/proof strip.
+- [ ] Năm flagship nổi bật rõ trong layout hiện tại, không đổi thứ tự section toàn trang.
 - [ ] Mỗi card có role, 1 outcome, platform và đúng CTA.
 - [ ] Sample/template không đứng ngang hàng với commercial flagship.
 - [ ] Agentic work nằm trong section “Beyond Unity” hoặc GitShare.
@@ -612,13 +629,12 @@ storeUrls, sourceUrl, detailRoute, ndaNote
 - Modify: `assets/portfolio-details/idleCyber.html`
 - Modify: `assets/portfolio-details/muloren.html`
 - Modify: `assets/portfolio-details/nekoverse.html`
-- Modify: `assets/portfolio-details/sandwich.html`
 - Modify: `assets/portfolio-details/jx1.html`
-- Later create: standalone project routes in Phase 3
+- Enrich: 5 route shells đã tạo trong Phase 0
 
 **Acceptance criteria:**
 
-- [ ] Sáu case studies theo cùng domain model nhưng không copy-paste generic text.
+- [ ] Năm case studies theo cùng domain model nhưng không copy-paste generic text.
 - [ ] Phân biệt rõ game description với contribution của Hoa.
 - [ ] Có evidence link hoạt động.
 - [ ] Không dùng fundraising/user count như direct personal result nếu không có attribution.
@@ -630,18 +646,18 @@ storeUrls, sourceUrl, detailRoute, ndaNote
 - Modify: `index.html`
 - Modify: `assets/js/site-config.js`
 
-**Gộp:**
+**Rút gọn trong section hiện tại, không đổi layout/order:**
 
-- `How I Work` + `Engagement Model` thành một section ngắn.
-- `Public Proof` + `Selected Results` thành proof strip và evidence links.
-- `What I'm Doing` + service-more list thành capability groups.
+- Loại copy trùng giữa `How I Work` và `Engagement Model` nhưng giữ placement hiện tại.
+- Chuẩn hóa wording giữa `Public Proof` và `Selected Results`.
+- Rút gọn `What I'm Doing` và service-more list.
 - Resume đầy đủ giữ ở CV/detail route, homepage chỉ hiện recent/strongest experience.
 
 **Acceptance criteria:**
 
 - [ ] Homepage giảm ít nhất 25% visible copy so với baseline mà không mất proof chính.
 - [ ] Không có section nào lặp cùng message hoặc cùng CTA intent.
-- [ ] First flagship project xuất hiện sớm hơn baseline.
+- [ ] Flagship cards rõ hơn baseline mà không thay bố cục tổng thể.
 
 ## Task 2.5: Đồng bộ ba backup variants
 
@@ -664,7 +680,7 @@ storeUrls, sourceUrl, detailRoute, ndaNote
 ## Gate Phase 2
 
 - [ ] Recruiter có thể xác định role, seniority, 3 flagship proofs và contact path trong 30 giây.
-- [ ] 6 flagship projects có case study usable.
+- [ ] 5 flagship projects có case study usable.
 - [ ] Main và backups hiển thị cùng dữ liệu cốt lõi.
 - [ ] Visual QA desktop 1440px và mobile 390px pass.
 
@@ -703,7 +719,7 @@ storeUrls, sourceUrl, detailRoute, ndaNote
 ## Task 3.2: Standalone project routes
 
 **Files:**
-- Create: `projects/<slug>/index.html` cho 6 flagship projects
+- Enrich: `projects/<slug>/index.html` route shells của 5 flagship từ Phase 0
 - Modify: canonical project data
 - Modify: `sitemap.xml`
 - Modify: `assets/js/portfolio-render.js`
@@ -783,7 +799,7 @@ storeUrls, sourceUrl, detailRoute, ndaNote
 - [ ] Accessibility tối thiểu **98**.
 - [ ] Best Practices tối thiểu **90**.
 - [ ] Social preview được test bằng public URL sau publish.
-- [ ] Sáu flagship routes có trong sitemap.
+- [ ] Năm flagship routes có trong sitemap.
 
 ---
 
@@ -791,11 +807,11 @@ storeUrls, sourceUrl, detailRoute, ndaNote
 
 **Mục tiêu:** Một lần cập nhật project tự đồng bộ main site, backup variants, chatbot reference và validation.
 
-## Task 4.1: Generate runtime data từ canonical JSON
+## Task 4.1: Mở rộng canonical outputs (generator nền tảng đã ở Phase 0)
 
 **Files:**
 - Modify: `portfolio.json`
-- Create: `scripts/generate-portfolio-data.js`
+- Modify: `scripts/generate-portfolio-data.js`
 - Generate: `assets/js/portfolio-data.js`
 - Modify: `AGENTS.md`
 - Modify: `package.json`
@@ -812,8 +828,7 @@ portfolio.json
 
 **Acceptance criteria:**
 
-- [ ] `npm run generate:portfolio` tạo deterministic output.
-- [ ] Chạy generator hai lần không tạo diff.
+- [ ] Generator tiếp tục deterministic sau khi thêm compact/chatbot outputs.
 - [ ] `AGENTS.md` chỉ đổi single source of truth sau khi workflow pass.
 - [ ] Không còn cập nhật thủ công 5 nơi cho một project.
 
@@ -840,6 +855,13 @@ portfolio.json
 **Files:**
 - Create: `.github/workflows/portfolio-quality.yml`
 
+**Trigger và checkout:**
+
+- Chạy trên mọi `push` branch và mọi `pull_request`.
+- Job static/data dùng `actions/checkout` sparse checkout cho `index.html`, `assets/`, `backup/`, `scripts/`, `portfolio.json`, `package*.json`, `projects/`, `cloudflare/` và config cần thiết.
+- Không materialize toàn bộ `Games/` cho job static/data. Playable validation dùng inventory manifest, URL contract và HTTP smoke test.
+- Job cần build cụ thể chỉ checkout/download đúng artifact theo matrix.
+
 **Pipeline:**
 
 1. Install Node dependencies.
@@ -854,7 +876,8 @@ portfolio.json
 **Acceptance criteria:**
 
 - [ ] CI fail khi link, asset, schema, generated data hoặc budgets regress.
-- [ ] CI không download/play toàn bộ WebGL builds.
+- [ ] Static/data jobs không materialize toàn bộ `Games/`; workflow log chứng minh sparse checkout.
+- [ ] Workflow chạy trên push branch và pull request.
 - [ ] Local và CI dùng cùng commands.
 
 ## Gate Phase 4
@@ -874,9 +897,9 @@ portfolio.json
 Phase này chia thành hai phần:
 
 1. **Migration không phá hủy:** copy/upload builds, đổi links, verify, giữ source cũ để rollback.
-2. **Cleanup phá hủy:** xóa build cũ và rewrite history chỉ sau khi migration production đã ổn định và người dùng duyệt riêng.
+2. **Working-tree cleanup đã duyệt:** xóa build/media cũ chỉ sau verification; không rewrite history.
 
-Không chạy `git filter-repo`, force-push hoặc xóa build theo kế hoạch này nếu chưa có backup và explicit approval.
+Không chạy `git filter-repo` hoặc force-push. Cleanup phải giữ rollback map và chỉ xóa file đã được chứng minh không còn được loader/route dùng.
 
 ## Task 5.1: Inventory playable builds
 
@@ -896,6 +919,10 @@ Không chạy `git filter-repo`, force-push hoặc xóa build theo kế hoạch 
 - Owner/source project available
 - Destination URL
 - Rollback URL
+- Loader-selected relative files
+- Service Worker/precache behavior
+- Manifest/cache version/offline policy
+- Host-specific header requirements
 
 **Acceptance criteria:**
 
@@ -932,11 +959,20 @@ Không chạy `git filter-repo`, force-push hoặc xóa build theo kế hoạch 
 - Modify: `README.md`
 - Modify: `.gitignore`
 - Do not delete yet: `Games/`, `assets/videos/`
+- Audit: `Games/*/index.html`, `Games/*/index.js`, `Games/*/ServiceWorker.js`, `Games/*/manifest.webmanifest`, `Games/*/_headers`, `Games/*/Build/*`
 
 **Destination options:**
 
-1. `mad-game-hub-shared`, đơn giản và sẵn có.
-2. Cloudflare R2/Pages, kiểm soát headers/cache tốt hơn.
+1. Emergency/current target: `mad-game-hub-shared`.
+2. Future option: Cloudflare R2/Pages nếu cần kiểm soát headers/cache tốt hơn.
+
+**Loader/cache migration policy:**
+
+- Reconcile loader relative paths khi shell và binary khác origin.
+- Không precache toàn bộ `.data/.wasm` trừ khi offline là requirement đã duyệt.
+- Version cache có rollback mapping; xóa stale cache không làm loader loop hoặc duplicate download.
+- `_headers` không có tác dụng trên GitHub Pages; chỉ dùng khi destination hỗ trợ convention này, ví dụ Cloudflare Pages.
+- Verify CORS, CSP và MIME tại host thực, không suy luận từ file `_headers`.
 
 **Acceptance criteria:**
 
@@ -944,6 +980,8 @@ Không chạy `git filter-repo`, force-push hoặc xóa build theo kế hoạch 
 - [ ] Main portfolio không phụ thuộc relative `Games/...` links.
 - [ ] CORS, MIME types, compression và cache verified.
 - [ ] Rollback mapping được lưu trước khi cleanup.
+- [ ] Cold-cache và repeat-load được đo riêng; không download duplicate do HTTP cache + Service Worker.
+- [ ] Loader, Service Worker, manifest và cache version hoạt động sau split-origin migration.
 
 ## Task 5.4: Working-tree cleanup
 
@@ -977,22 +1015,6 @@ UserSettings/
 - [ ] README mô tả portfolio, local run, validation, publishing và data workflow.
 - [ ] Main + backups + playable links pass sau cleanup.
 
-## Task 5.5: Git history rewrite, yêu cầu approval riêng
-
-**Preconditions:**
-
-- [ ] Remote build migration chạy ổn định.
-- [ ] Repo mirror/backup đầy đủ.
-- [ ] Danh sách collaborators và branch protection đã được xem xét.
-- [ ] User duyệt downtime/force-push plan.
-
-**Acceptance criteria:**
-
-- [ ] Fresh clone hoạt động.
-- [ ] Repo history size mục tiêu dưới 100 MB hoặc budget đã duyệt.
-- [ ] GitHub Pages deployment pass từ fresh clone.
-- [ ] Không mất user-authored docs, source hoặc release tags cần giữ.
-
 ## Gate Phase 5
 
 - [ ] Portfolio repo không còn là nơi lưu binary distribution chính.
@@ -1022,8 +1044,8 @@ Không bật blog chỉ để có menu. Chỉ publish khi có ít nhất ba bài
 
 ### Functional
 
-- [ ] 22 project records được quản lý từ một nguồn.
-- [ ] 6 flagship case studies có route riêng và evidence hoạt động.
+- [ ] Toàn bộ canonical active/archived/retired project records được quản lý từ một nguồn.
+- [ ] 5 flagship case studies có route riêng và evidence hoạt động.
 - [ ] Mọi playable CTA mở đúng game.
 - [ ] Main và ba backup routes render đúng.
 - [ ] Contact, CV, Telegram, GitHub và store links hoạt động.
@@ -1066,7 +1088,7 @@ Không bật blog chỉ để có menu. Chỉ publish khi có ít nhất ba bài
 - [ ] Binary builds không còn được cập nhật trong portfolio repo.
 - [ ] Tracked/published set tối đa **900 MiB** từ Emergency Phase và tiếp tục giảm sau migration.
 - [ ] Fresh clone có kích thước và thời gian hợp lý theo budget đã duyệt.
-- [ ] History rewrite, nếu làm, có backup và approval riêng.
+- [ ] Không có history rewrite hoặc force-push.
 
 ---
 
@@ -1120,8 +1142,8 @@ Kiểm tra:
 - `http://127.0.0.1:8765/backup/recruiter-clean/index.html`
 - `http://127.0.0.1:8765/backup/dev-console/index.html`
 - `http://127.0.0.1:8765/backup/game-studio/index.html`
-- Sáu standalone flagship routes
-- Sáu playable URLs
+- Năm standalone flagship routes
+- Các playable URLs active trong canonical data
 
 Network assertions:
 
@@ -1142,8 +1164,7 @@ Network assertions:
 | 5 | Phase 3 | SEO, a11y, Best Practices, project routes và CV PDF | Thấp-Trung bình |
 | 6 | Phase 4 | Single source of truth và CI | Trung bình |
 | 7 | Phase 5.1-5.4 | Build delivery dài hạn và repo cleanup an toàn | Cao |
-| 8 | Phase 5.5 | Rewrite Git history | Rất cao, approval riêng |
-| 9 | Phase 6 | Growth/SEO content | Theo nhu cầu |
+| 8 | Phase 6 | Growth/SEO content | Theo nhu cầu |
 
 ### Milestone score kỳ vọng
 
@@ -1159,11 +1180,11 @@ Network assertions:
 
 ### Duyệt scope
 
-- [ ] Duyệt Emergency Phase E0-E2
-- [ ] Duyệt toàn bộ Phase 0-4
-- [ ] Duyệt migration build Phase 5.1-5.4
-- [ ] Chưa duyệt rewrite history Phase 5.5
-- [ ] Duyệt backlog Phase 6
+- [x] Duyệt Emergency inventory + migration trên `feature/performance`; production deploy cần approval mới
+- [x] Duyệt toàn bộ Phase 0-4 trên `feature/performance`
+- [x] Duyệt migration/cleanup Phase 5.1-5.4 sau verification
+- [x] Không thực hiện rewrite history/force-push
+- [ ] Backlog Phase 6 chưa nằm trong implementation scope
 
 ### Yêu cầu chỉnh trước khi triển khai
 
@@ -1178,7 +1199,7 @@ Ghi chú của chủ sở hữu:
 
 Sau khi review, bắt đầu bằng **Emergency Phase**, sau đó mới tới **Phase 0 + Phase 1**. Không redesign toàn trang và không rewrite history trong lượt đầu. Deliverable đầu tiên phải chứng minh:
 
-1. Tracked/published candidate set tối đa 900 MiB và Pages deploy pass.
+1. Tracked/published candidate set tối đa 900 MiB; branch/local/CI pass và production handoff rõ (chưa merge/deploy).
 2. Source availability của từng playable build đã được phân loại.
 3. Homepage không tải 22 detail fragments và media nặng.
 4. Sandwich Please và toàn bộ project links đúng.

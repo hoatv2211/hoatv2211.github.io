@@ -4,9 +4,9 @@
     "source": "hoatv2211.github.io",
     "purpose": "Comprehensive portfolio profile — who is HoaTV (MAD)?",
     "version": "1.1.0",
-    "lastUpdated": "2026-04-01"
+    "lastUpdated": "2026-08-14",
+    "canonicalSchemaVersion": 2
   },
-
   "identity": {
     "fullName": "TRAN VAN HOA",
     "displayName": "HoaTV",
@@ -22,13 +22,11 @@
     "avatar": "assets/avt.jpg",
     "portfolioUrl": "https://hoatv2211.github.io"
   },
-
   "contact": {
     "email": "hoatv.mad@gmail.com",
     "phone": "+84 374 639 758",
     "formspree": "https://formspree.io/f/xkgqjkpy"
   },
-
   "social": {
     "github": "https://github.com/hoatv2211",
     "githubOrg": "https://github.com/mad-agentic",
@@ -36,11 +34,26 @@
     "telegram": "https://t.me/o0_MaD_0o",
     "itchIo": "https://o0-mad-0o.itch.io/"
   },
-
   "about": {
     "summary": "A highly experienced Senior Unity Developer with 8+ years in the game industry, specializing in high-quality 2D/3D games, funded GameFi/Web3 products, agentic systems, automation workflows, and internal tools.",
     "pitch": "I deliver cross-platform Unity experiences and automation systems with custom game mechanics, clean UI/UX, optimized performance, scalable design systems, agentic workflows, proxy APIs, Telegram/n8n pipelines, and production support.",
-    "techStack": ["Unity", "C#", "C++", "Firebase", "WebGL", "AdMob", "Game Optimization", "Game Design", "Web3/NFT", "N8N", "Telegram App/Bot Automation", "Agentic AI", "Automation Tools", "Proxy API", "Internal Tools"],
+    "techStack": [
+      "Unity",
+      "C#",
+      "C++",
+      "Firebase",
+      "WebGL",
+      "AdMob",
+      "Game Optimization",
+      "Game Design",
+      "Web3/NFT",
+      "N8N",
+      "Telegram App/Bot Automation",
+      "Agentic AI",
+      "Automation Tools",
+      "Proxy API",
+      "Internal Tools"
+    ],
     "whyMe": [
       "Passionate & Reliable — From concept to release",
       "Fast & Professional — Delivery with high quality",
@@ -48,7 +61,6 @@
       "Long-Term Support — Helping you scale your product"
     ]
   },
-
   "careerHighlights": [
     "50+ published games on App Store, Google Play, and WebGL",
     "Full-cycle developer: concept → gameplay core → UI/UX → performance optimization → publishing & live ops",
@@ -57,7 +69,6 @@
     "Cross-platform: Unity WebGL, iOS, Android, Telegram Mini App, World App, with self-deployed backend (Docker, Firebase, AWS, Supabase)",
     "Agentic systems: building automation workflows, AI tools, proxy APIs, dashboards, and Telegram/n8n integrations"
   ],
-
   "services": [
     {
       "title": "Unity Game Development",
@@ -93,27 +104,95 @@
     "Google Ads, SDK Integration, and Analytics",
     "Reskin, Rapid Prototyping, and Maintenance"
   ],
-
   "skills": {
     "mainSkills": {
-      "languages": ["C#", "Lua", "Modern C/C++"],
-      "engines": ["Unity", "Unreal", "Cocos"],
-      "principles": ["OOP", "SOLID", "TDD"]
+      "languages": [
+        "C#",
+        "Lua",
+        "Modern C/C++"
+      ],
+      "engines": [
+        "Unity",
+        "Unreal",
+        "Cocos"
+      ],
+      "principles": [
+        "OOP",
+        "SOLID",
+        "TDD"
+      ]
     },
     "fullSkillset": {
-      "languages": ["Modern C/C++", "C#", "Lua", "HTML5", "TypeScript", "JavaScript", "PHP"],
-      "tools": ["Git", "Github Project", "AI Agent", "Notion", "Blender", "Jira", "Photoshop"],
-      "principles": ["OOP", "Design Patterns", "SOLID", "TDD", "DRY", "KISS", "YAGNI"],
-      "softSkills": ["Agile", "Communication", "Teamwork", "Self-planning", "RnD", "Critical Thinking", "Problem Solving"],
-      "ide": ["Rider", "Visual Studio Code", "Visual Studio"],
-      "devops": ["Github Action", "Docker"],
-      "engines": ["Unity", "Unreal", "Cocos"],
-      "backend": ["Firebase", "Supabase", "AWS", "Docker"],
-      "blockchain": ["MetaMask", "TON Wallet", "World App", "NFT Marketplace", "Smart Contracts (integration)"],
-      "automation": ["N8N", "Telegram Bot API", "CI/CD Pipelines"]
+      "languages": [
+        "Modern C/C++",
+        "C#",
+        "Lua",
+        "HTML5",
+        "TypeScript",
+        "JavaScript",
+        "PHP"
+      ],
+      "tools": [
+        "Git",
+        "Github Project",
+        "AI Agent",
+        "Notion",
+        "Blender",
+        "Jira",
+        "Photoshop"
+      ],
+      "principles": [
+        "OOP",
+        "Design Patterns",
+        "SOLID",
+        "TDD",
+        "DRY",
+        "KISS",
+        "YAGNI"
+      ],
+      "softSkills": [
+        "Agile",
+        "Communication",
+        "Teamwork",
+        "Self-planning",
+        "RnD",
+        "Critical Thinking",
+        "Problem Solving"
+      ],
+      "ide": [
+        "Rider",
+        "Visual Studio Code",
+        "Visual Studio"
+      ],
+      "devops": [
+        "Github Action",
+        "Docker"
+      ],
+      "engines": [
+        "Unity",
+        "Unreal",
+        "Cocos"
+      ],
+      "backend": [
+        "Firebase",
+        "Supabase",
+        "AWS",
+        "Docker"
+      ],
+      "blockchain": [
+        "MetaMask",
+        "TON Wallet",
+        "World App",
+        "NFT Marketplace",
+        "Smart Contracts (integration)"
+      ],
+      "automation": [
+        "N8N",
+        "Telegram Bot API",
+        "CI/CD Pipelines"
+      ]
     }
   },
-
   "education": [
     {
       "institution": "University of Transport and Communications",
@@ -126,7 +205,6 @@
       "period": "October 2016 — May 2017"
     }
   ],
-
   "experience": [
     {
       "company": "Freelancer / Remote Team Developer",
@@ -222,40 +300,55 @@
       ]
     }
   ],
-
   "projects": [
     {
-      "id": "dalgona-worldchain",
-      "title": "Dalgona - Worldchain",
-      "category": "Unity",
-      "genre": "Mini-game / Casual",
-      "platform": ["World App (Web3 Mini App)"],
-      "period": "Jun 2025 — Aug 2025",
-      "engine": "Unity + WebGL",
-      "teamSize": 1,
-      "role": "Solo Developer",
-      "description": "A fun and addictive mini-game integrated on World App. Inspired by the famous 'sugar candy challenge' (Dalgona), bringing a nostalgic yet thrilling experience to a global audience.",
-      "myContributions": [
-        "Solo-developed the entire mini-game including core mechanics, difficulty progression, and win/lose logic",
-        "Designed and implemented UI/UX with playful animations",
-        "Optimized performance for Web3 Mini App integration within World App",
-        "Integrated leaderboard and ranking system",
-        "Published and maintained the game with continuous updates"
-      ],
-      "achievements": [
-        "🏆 Reached Top 1 on the World App game ranking during launch period",
-        "Engaged hundreds of thousands of users within the Worldcoin ecosystem"
+      "id": "proxyapi-mad",
+      "title": "ProxyAPI.MAD",
+      "category": "agentic",
+      "genre": "Developer Tool / AI Infrastructure",
+      "period": "2024 — Present",
+      "role": "Founder / Solo Developer",
+      "description": "Part of the mad-agentic ecosystem. An AI proxy infrastructure that enables flexible API proxy solutions, supporting advanced AI automation systems and multi-provider integration.",
+      "keyFeatures": [
+        "🤖 Agentic AI Integration: Intelligent automation flows and pipelines via AI Agents",
+        "⚡ Seamless Proxying: Granular control over incoming/outgoing AI API requests and responses",
+        "🛠️ Flexible Architecture: Easily extendable and ready for new Agents",
+        "Dashboard, API Keys management, Providers panel, Chat Interface, Logs, Settings"
       ],
       "links": {
-        "worldApp": "https://world.org/ecosystem/app_87ae73f8d0558b142fb9c5fc7811b8af"
-      }
+        "github": "https://github.com/mad-agentic/ProxyAPI.MAD",
+        "githubOrg": "https://github.com/mad-agentic",
+        "website": "https://mad-agentic.github.io/ProxyAPI.MAD"
+      },
+      "slug": "proxyapi-mad",
+      "legacyId": "proxyapi-mad",
+      "detailKey": "proxyapi-mad",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Web"
+      ],
+      "summary": "AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.",
+      "image": {
+        "src": "https://github.com/mad-agentic.png",
+        "alt": "ProxyAPI.MAD"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 1
     },
     {
       "id": "mu-loren-mobile",
-      "title": "MU: Loren Mobile",
-      "category": "Unity",
+      "title": "MU Loren Mobile",
+      "category": "unity",
       "genre": "MMORPG",
-      "platform": ["Android", "iOS"],
       "period": "2024 — 2025",
       "engine": "Unity",
       "role": "Senior Unity Developer",
@@ -287,14 +380,37 @@
         "appStore": "https://lucdia.adnxgames.vn/ios",
         "googlePlay": "https://play.google.com/store/apps/details?id=com.mobi.ldlorencia",
         "youtubeTrailer": "https://www.youtube.com/embed/UTqN9xl2pBM"
-      }
+      },
+      "slug": "mu-loren-mobile",
+      "legacyId": "muloren",
+      "detailKey": "muloren",
+      "status": "active",
+      "type": "commercial",
+      "featured": true,
+      "featuredOrder": 3,
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "summary": "Licensed-style mobile MMORPG work covering quests, class mechanics, monster spawning, events, PvE/PvP loops, UI flows, and 3D mobile optimization.",
+      "image": {
+        "src": "assets/images/game/MuLoren/banner-1.jpg",
+        "alt": "muloren"
+      },
+      "detailRoute": "projects/mu-loren-mobile/",
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 2
     },
     {
       "id": "tinh-thien-ha-jx1",
-      "title": "Jx Mobie(JX1)",
-      "category": "Unity",
+      "title": "Jx Mobie (JX1)",
+      "category": "unity",
       "genre": "MMORPG",
-      "platform": ["Android", "iOS", "PC"],
       "period": "2023 - 2024",
       "engine": "Unity",
       "role": "Senior Unity Developer",
@@ -316,35 +432,178 @@
       },
       "links": {
         "website": "https://tinhthienha1.adnxgames.vn/"
-      }
+      },
+      "slug": "tinh-thien-ha-jx1",
+      "legacyId": "jx1",
+      "detailKey": "jx1",
+      "status": "active",
+      "type": "commercial",
+      "featured": true,
+      "featuredOrder": 5,
+      "platforms": [
+        "Android",
+        "iOS",
+        "PC"
+      ],
+      "summary": "Mobile MMORPG work on ADNX's JX1 title, covering classic martial-arts progression, faction systems, large-scale multiplayer content, mobile optimization, and publisher delivery.",
+      "image": {
+        "src": "https://cdn-img.adnx.vn/tth1/Th%C6%B0%20vi%E1%BB%87n%20%E1%BA%A3nh/img_v3_02nj_8af250fa-afaa-43fd-9fc3-8355a46deahu.png",
+        "alt": "Jx Mobie"
+      },
+      "detailRoute": "projects/tinh-thien-ha-jx1/",
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 3
     },
     {
-      "id": "proxyapi-mad",
-      "title": "ProxyAPI.MAD",
-      "category": "Agentic AI",
-      "genre": "Developer Tool / AI Infrastructure",
-      "platform": ["Web"],
-      "period": "2024 — Present",
-      "role": "Founder / Solo Developer",
-      "description": "Part of the mad-agentic ecosystem. An AI proxy infrastructure that enables flexible API proxy solutions, supporting advanced AI automation systems and multi-provider integration.",
-      "keyFeatures": [
-        "🤖 Agentic AI Integration: Intelligent automation flows and pipelines via AI Agents",
-        "⚡ Seamless Proxying: Granular control over incoming/outgoing AI API requests and responses",
-        "🛠️ Flexible Architecture: Easily extendable and ready for new Agents",
-        "Dashboard, API Keys management, Providers panel, Chat Interface, Logs, Settings"
+      "id": "dalgona-worldchain",
+      "title": "Dalgona - Worldchain",
+      "category": "unity",
+      "genre": "Mini-game / Casual",
+      "period": "Jun 2025 — Aug 2025",
+      "engine": "Unity + WebGL",
+      "teamSize": 1,
+      "role": "Solo Developer",
+      "description": "A fun and addictive mini-game integrated on World App. Inspired by the famous 'sugar candy challenge' (Dalgona), bringing a nostalgic yet thrilling experience to a global audience.",
+      "myContributions": [
+        "Solo-developed the entire mini-game including core mechanics, difficulty progression, and win/lose logic",
+        "Designed and implemented UI/UX with playful animations",
+        "Optimized performance for Web3 Mini App integration within World App",
+        "Integrated leaderboard and ranking system",
+        "Published and maintained the game with continuous updates"
+      ],
+      "achievements": [
+        "🏆 Reached Top 1 on the World App game ranking during launch period",
+        "Engaged hundreds of thousands of users within the Worldcoin ecosystem"
       ],
       "links": {
-        "github": "https://github.com/mad-agentic/ProxyAPI.MAD",
-        "githubOrg": "https://github.com/mad-agentic",
-        "website": "https://mad-agentic.github.io/ProxyAPI.MAD"
-      }
+        "worldApp": "https://world.org/ecosystem/app_87ae73f8d0558b142fb9c5fc7811b8af"
+      },
+      "slug": "dalgona-worldchain",
+      "legacyId": "dalgona",
+      "detailKey": "dalgona",
+      "status": "active",
+      "type": "commercial",
+      "featured": true,
+      "featuredOrder": 1,
+      "platforms": [
+        "World App (Web3 Mini App)"
+      ],
+      "summary": "World App mini-game based on the sugar candy challenge, built in Unity WebGL with rankings, fast sessions, and Web3-ready publishing.",
+      "image": {
+        "src": "assets/images/game/Dalgona/logo.png",
+        "alt": "dalgona"
+      },
+      "detailRoute": "projects/dalgona-worldchain/",
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 4
+    },
+    {
+      "id": "food-truck-shiba-inu",
+      "title": "Food Truck - Shiba Inu",
+      "category": "unity",
+      "genre": "Casual / Simulation",
+      "engine": "Unity",
+      "role": "Developer",
+      "slug": "food-truck-shiba-inu",
+      "legacyId": "shibainu",
+      "detailKey": "shibainu",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Mobile"
+      ],
+      "summary": "Casual food truck simulation where players serve customers, upgrade stations, and grow a playful Shiba-themed mobile business.",
+      "image": {
+        "src": "assets/images/game/Shibainu/9.webp",
+        "alt": "Food Truck - Shiba Inu"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 5
+    },
+    {
+      "id": "idle-cyber",
+      "title": "Idle Cyber (NFT)",
+      "category": "unity",
+      "genre": "Idle Tower Defense / GameFi",
+      "period": "2021 — 2022",
+      "engine": "Unity",
+      "role": "Technical Leader",
+      "description": "Cyberpunk idle tower defense game set in a post-apocalyptic 2077 world. Players defend Earth from alien invaders by strategically deploying legendary heroes, upgrading powerful weapons, and customizing gear to survive endless enemy waves and boss battles.",
+      "myContributions": [
+        "Led technical delivery for gameplay loop, stages, upgrades, rewards, and ad integration",
+        "Implemented idle mechanics with strategic tower defense combat",
+        "Built a basic NFT marketplace with wallet and testnet blockchain integration",
+        "Handled UI/UX, animation integration, and performance optimization for mobile"
+      ],
+      "achievements": [
+        "Successfully raised million-dollar funding for the idle defense/GameFi product",
+        "Published on iOS, Android, and WebGL",
+        "Built a complete idle tower defense and NFT marketplace proof-of-concept"
+      ],
+      "technicalHighlights": [
+        "Technical leadership from scope and gameplay implementation to release support",
+        "Hero collection, stage progression, tower-defense combat, boss waves, offline-style rewards, and upgrade economy",
+        "Android, iOS, and WebGL delivery with mobile UI, input, performance, ads, wallet flow, and NFT marketplace prototype"
+      ],
+      "caseStudy": {
+        "problem": "Create a fundable idle tower defense product with monetization and early GameFi proof-of-concept.",
+        "solution": "Separated economy data from presentation, tuned idle rewards against combat pacing, and built wallet/NFT prototype flows alongside normal gameplay.",
+        "outcome": "Helped the product reach successful million-dollar fundraising and published a playable cross-platform title on iOS, Android, and WebGL."
+      },
+      "links": {
+        "webgl": "https://o0-mad-0o.itch.io/cyber-war",
+        "appStore": "https://apps.apple.com/us/app/cyber-war-idle-defense-heroes/id1563690159",
+        "googlePlay": "https://play.google.com/store/apps/details?id=com.mad.idlecyberdefense"
+      },
+      "slug": "idle-cyber",
+      "legacyId": "idleCyber",
+      "detailKey": "idleCyber",
+      "status": "active",
+      "type": "commercial",
+      "featured": true,
+      "featuredOrder": 2,
+      "platforms": [
+        "Android",
+        "iOS",
+        "WebGL"
+      ],
+      "summary": "Technical leadership on a funded cyberpunk idle tower defense/GameFi title with hero collection, stage progression, ads, WebGL/mobile release, and NFT marketplace prototype.",
+      "image": {
+        "src": "assets/images/game/Idle_cyber/icon_idle_cyber.png",
+        "alt": "Idle Cyber"
+      },
+      "detailRoute": "projects/idle-cyber/",
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 6
     },
     {
       "id": "nekoverse",
-      "title": "Nekoverse (NFT) — GameFi",
-      "category": "Unity",
+      "title": "Nekoverse (NFT)",
+      "category": "unity",
       "genre": "Play-to-Earn MMORPG / GameFi",
-      "platform": ["Mobile", "Web3"],
       "period": "2022 — 2023",
       "engine": "Unity",
       "role": "Senior Unity Developer",
@@ -379,51 +638,37 @@
       "links": {
         "website": "https://gam3s.gg/nekoverse/",
         "youtubeTrailer": "https://www.youtube.com/embed/4FiWVHmdfig"
-      }
-    },
-    {
-      "id": "idle-cyber",
-      "title": "Idle Cyber (NFT)",
-      "category": "Unity",
-      "genre": "Idle Tower Defense / GameFi",
-      "platform": ["Android", "iOS", "WebGL"],
-      "period": "2021 — 2022",
-      "engine": "Unity",
-      "role": "Technical Leader",
-      "description": "Cyberpunk idle tower defense game set in a post-apocalyptic 2077 world. Players defend Earth from alien invaders by strategically deploying legendary heroes, upgrading powerful weapons, and customizing gear to survive endless enemy waves and boss battles.",
-      "myContributions": [
-        "Led technical delivery for gameplay loop, stages, upgrades, rewards, and ad integration",
-        "Implemented idle mechanics with strategic tower defense combat",
-        "Built a basic NFT marketplace with wallet and testnet blockchain integration",
-        "Handled UI/UX, animation integration, and performance optimization for mobile"
-      ],
-      "achievements": [
-        "Successfully raised million-dollar funding for the idle defense/GameFi product",
-        "Published on iOS, Android, and WebGL",
-        "Built a complete idle tower defense and NFT marketplace proof-of-concept"
-      ],
-      "technicalHighlights": [
-        "Technical leadership from scope and gameplay implementation to release support",
-        "Hero collection, stage progression, tower-defense combat, boss waves, offline-style rewards, and upgrade economy",
-        "Android, iOS, and WebGL delivery with mobile UI, input, performance, ads, wallet flow, and NFT marketplace prototype"
-      ],
-      "caseStudy": {
-        "problem": "Create a fundable idle tower defense product with monetization and early GameFi proof-of-concept.",
-        "solution": "Separated economy data from presentation, tuned idle rewards against combat pacing, and built wallet/NFT prototype flows alongside normal gameplay.",
-        "outcome": "Helped the product reach successful million-dollar fundraising and published a playable cross-platform title on iOS, Android, and WebGL."
       },
-      "links": {
-        "webgl": "https://o0-mad-0o.itch.io/cyber-war",
-        "appStore": "https://apps.apple.com/us/app/cyber-war-idle-defense-heroes/id1563690159",
-        "googlePlay": "https://play.google.com/store/apps/details?id=com.mad.idlecyberdefense"
-      }
+      "slug": "nekoverse",
+      "legacyId": "nekoverse",
+      "detailKey": "nekoverse",
+      "status": "active",
+      "type": "commercial",
+      "featured": true,
+      "featuredOrder": 4,
+      "platforms": [
+        "Mobile",
+        "Web3"
+      ],
+      "summary": "Funded GameFi MMORPG work across real-time PvE/PvP battles, elemental skills, resource farming, crafting, NFT assets, staking, DAO economy, and mobile profiling.",
+      "image": {
+        "src": "assets/images/game/Nekoverse/4.jpg",
+        "alt": "nekoverse"
+      },
+      "detailRoute": "projects/nekoverse/",
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 7
     },
     {
       "id": "sandwich-please",
       "title": "Sandwich Please!",
-      "category": "Unity",
+      "category": "unity",
       "genre": "Idle Simulation / Tycoon",
-      "platform": ["Android", "iOS"],
       "period": "2023 — 2024",
       "engine": "Unity",
       "company": "Gamota - Gabros Team",
@@ -445,14 +690,426 @@
         "appStore": "https://apps.apple.com/us/app/sandwich-please/id6475763350",
         "googlePlay": "https://play.google.com/store/apps/details?id=com.gb.sandwichidle.burgerplease.pizza.coffee",
         "youtubeTrailer": "https://www.youtube.com/embed/LoYwMs8mFsc"
-      }
+      },
+      "slug": "sandwich-please",
+      "legacyId": "sandwich",
+      "detailKey": "sandwich",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "summary": "Idle tycoon game about running a sandwich shop, expanding menus, upgrading equipment, and serving growing customer demand.",
+      "image": {
+        "src": "assets/images/game/Sanwitch/icon.webp",
+        "alt": "sandwich"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 8
+    },
+    {
+      "id": "archero-clone",
+      "title": "Archero",
+      "category": "unity",
+      "genre": "Action Roguelite",
+      "engine": "Unity",
+      "role": "Developer",
+      "description": "A feature-complete clone of Archero built in Unity as a learning/prototype project.",
+      "slug": "archero-clone",
+      "legacyId": "archero",
+      "detailKey": "archero",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Mobile"
+      ],
+      "summary": "Action roguelite prototype with room-based combat, enemy waves, character progression, skill choices, and mobile-friendly controls.",
+      "image": {
+        "src": "assets/images/game/Archero/icon.png",
+        "alt": "archero"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 9
+    },
+    {
+      "id": "rise-of-trial-bike",
+      "title": "Rise of Trial Bike",
+      "category": "unity",
+      "genre": "Racing / Physics",
+      "engine": "Unity",
+      "role": "Developer",
+      "slug": "rise-of-trial-bike",
+      "legacyId": "bike",
+      "detailKey": "bike",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Mobile"
+      ],
+      "summary": "Physics-based bike stunt game with challenging obstacle tracks, flips, responsive controls, and mobile performance tuning.",
+      "image": {
+        "src": "assets/images/game/BikeTrail/BG Game.jpg",
+        "alt": "bike"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 10
+    },
+    {
+      "id": "meow-flow",
+      "title": "Meow flow",
+      "category": "unity",
+      "genre": "Puzzle / Casual",
+      "engine": "Unity",
+      "role": "Developer",
+      "slug": "meow-flow",
+      "legacyId": "MeowFlow",
+      "detailKey": "MeowFlow",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Mobile"
+      ],
+      "summary": "Relaxing cat-themed puzzle game focused on flow-style path solving, clean level progression, and casual mobile play.",
+      "image": {
+        "src": "assets/images/game/MeowFlow/icon.webp",
+        "alt": "MeowFlow"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 11
+    },
+    {
+      "id": "share001-ludo",
+      "slug": "share001-ludo",
+      "legacyId": "share001-ludo",
+      "detailKey": "share001-ludo",
+      "status": "active",
+      "type": "sample",
+      "featured": false,
+      "featuredOrder": null,
+      "title": "Ludo Game (Sample)",
+      "category": "unity",
+      "platforms": [],
+      "summary": "Playable Unity Ludo sample with classic board rules, local turn flow, polished UI, and WebGL demo support.",
+      "image": {
+        "src": "assets/images/game/ludo.jpg",
+        "alt": "Share001 Ludo Game"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 12
+    },
+    {
+      "id": "share002-pixelshooter3d",
+      "slug": "share002-pixelshooter3d",
+      "legacyId": "share002-pixelshooter3d",
+      "detailKey": "share002-pixelshooter3d",
+      "status": "active",
+      "type": "sample",
+      "featured": false,
+      "featuredOrder": null,
+      "title": "Pixel Shooter 3D (Sample)",
+      "category": "unity",
+      "platforms": [],
+      "summary": "3D pixel shooter sample featuring fast arena combat, enemy encounters, weapon handling, and browser-playable WebGL delivery.",
+      "image": {
+        "src": "assets/images/game/pixcelshooter.png",
+        "alt": "Share002 Pixel Shooter 3D"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 13
+    },
+    {
+      "id": "galaxiga",
+      "slug": "galaxiga",
+      "legacyId": "galaxiga",
+      "detailKey": "galaxiga",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "title": "Galaxiga",
+      "category": "unity",
+      "platforms": [],
+      "summary": "Classic space shooter sample with arcade waves, responsive shooting, enemy patterns, power-up pacing, and WebGL showcase delivery.",
+      "image": {
+        "src": "https://raw.githubusercontent.com/hoatv2211/Share004_Galaxiga/main/Galaxiga/Recordings/Image%20Sequence_004_0000.jpg",
+        "alt": "Galaxiga"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 14
+    },
+    {
+      "id": "home-design",
+      "title": "Home Design",
+      "category": "unity",
+      "genre": "Casual / Design",
+      "engine": "Unity",
+      "role": "Developer",
+      "links": {
+        "sensorTowerAndroid": "https://app.sensortower.com/api/android/apps/com.giraffegames.ggm3"
+      },
+      "slug": "home-design",
+      "legacyId": "HomeDesign",
+      "detailKey": "homeDesign",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Mobile"
+      ],
+      "summary": "Casual home makeover game combining room decoration, match-style progression, reward loops, and mobile publishing support.",
+      "image": {
+        "src": "assets/images/game/HomeDesign/1.webp",
+        "alt": "Home Design"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": "https://app.sensortower.com/api/android/apps/com.giraffegames.ggm3",
+        "apiUrlIos": null
+      },
+      "displayOrder": 15
+    },
+    {
+      "id": "tile-candy",
+      "title": "Tile Candy!",
+      "category": "unity",
+      "genre": "Puzzle / Match",
+      "engine": "Unity",
+      "role": "Developer",
+      "slug": "tile-candy",
+      "legacyId": "tilecandy",
+      "detailKey": "tilecandy",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Mobile"
+      ],
+      "summary": "Colorful tile-matching puzzle game with candy visuals, simple touch controls, level progression, and WebGL/mobile optimization.",
+      "image": {
+        "src": "assets/images/game/TileCandy/icon_6.png",
+        "alt": "tilecandy"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 16
+    },
+    {
+      "id": "tiles-match3-mahjong",
+      "title": "Tiles Match 3: Mahjong",
+      "category": "unity",
+      "genre": "Puzzle / Mahjong",
+      "engine": "Unity",
+      "role": "Developer",
+      "slug": "tiles-match3-mahjong",
+      "legacyId": "tilesmatch3",
+      "detailKey": "tilesmatch3",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Mobile"
+      ],
+      "summary": "Mahjong-inspired tile match puzzle with layered boards, quick sessions, satisfying clears, and cross-platform Unity WebGL support.",
+      "image": {
+        "src": "assets/images/game/Tilesmatch3/icon.png",
+        "alt": "tilesmatch3"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 17
+    },
+    {
+      "id": "sudoku-universe",
+      "title": "Sudoku Universe - Modern",
+      "category": "unity",
+      "genre": "Puzzle",
+      "engine": "Unity",
+      "role": "Developer",
+      "slug": "sudoku-universe",
+      "legacyId": "sudoku",
+      "detailKey": "sudoku",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Mobile"
+      ],
+      "summary": "Modern Sudoku game with clean UI, puzzle progression, hint-friendly interaction, and polished mobile/WebGL presentation.",
+      "image": {
+        "src": "assets/images/game/Sudoku/icon.png",
+        "alt": "sudoku"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 18
+    },
+    {
+      "id": "ageofbattle",
+      "slug": "ageofbattle",
+      "legacyId": "ageofbattle",
+      "detailKey": "ageofbattle",
+      "status": "active",
+      "type": "sample",
+      "featured": false,
+      "featuredOrder": null,
+      "title": "Age of Battle",
+      "category": "unity",
+      "platforms": [],
+      "summary": "Era-based strategy battler with unit deployment, tower pressure, wave combat, upgrades, cards, and a playable WebGL demo.",
+      "image": {
+        "src": "assets/images/game/ageofbattle.png",
+        "alt": "Age of Battle"
+      },
+      "detailRoute": null,
+      "playableUrl": "https://hoatv2211.github.io/Share003_AgeOfBattle/",
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 19
+    },
+    {
+      "id": "surviver-io-template",
+      "title": "Survivor.IO (template)",
+      "category": "unity",
+      "genre": "Action Roguelite / Template",
+      "engine": "Unity",
+      "role": "Developer",
+      "description": "A Survivor.IO-inspired template project showcasing roguelite gameplay mechanics, character progression, and enemy spawning systems for mobile.",
+      "slug": "surviver-io-template",
+      "legacyId": "surviver",
+      "detailKey": "surviver",
+      "status": "active",
+      "type": "sample",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Mobile"
+      ],
+      "summary": "Survivor-style action template with enemy spawning, roguelite upgrades, character progression, and mobile-focused gameplay systems.",
+      "image": {
+        "src": "assets/images/game/SurvivorIO/Image Sequence_002_0000.png",
+        "alt": "surviver"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 20
+    },
+    {
+      "id": "metame-amusement-park",
+      "title": "Metame Amusement Park",
+      "category": "unreal",
+      "genre": "Virtual Experience / Metaverse",
+      "engine": "Unreal Engine",
+      "role": "Developer",
+      "description": "A metaverse-style amusement park experience built with Unreal Engine.",
+      "slug": "metame-amusement-park",
+      "legacyId": "metameAmusementPark",
+      "detailKey": "metameAmusementPark",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "PC / Web"
+      ],
+      "summary": "Unreal Engine metaverse-style amusement park experience with virtual exploration, high-fidelity visuals, and interactive attraction spaces.",
+      "image": {
+        "src": "https://github.com/Long18/long18.github.io/assets/28853225/d78990f0-2b48-4635-bf33-7ed637940f63",
+        "alt": "Metame Amusement Park"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 21
     },
     {
       "id": "cryptoquest",
       "title": "Crypto Quest",
-      "category": "Unity",
+      "category": "unity",
       "genre": "Turn-based RPG / GameFi",
-      "platform": ["Web (WebGL)"],
       "period": "May 2023 — Feb 2024",
       "engine": "Unity",
       "teamSize": 14,
@@ -470,122 +1127,95 @@
       "links": {
         "website": "https://crypto-quest.org/",
         "demo": "https://games.indigames.link/crypto-quest/stg/"
-      }
-    },
-    {
-      "id": "surviver-io-template",
-      "title": "Survivor.IO (Template)",
-      "category": "Unity",
-      "genre": "Action Roguelite / Template",
-      "platform": ["Mobile"],
-      "engine": "Unity",
-      "role": "Developer",
-      "description": "A Survivor.IO-inspired template project showcasing roguelite gameplay mechanics, character progression, and enemy spawning systems for mobile."
+      },
+      "slug": "cryptoquest",
+      "legacyId": "cryptoquest",
+      "detailKey": "cryptoquest",
+      "status": "active",
+      "type": "commercial",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Web (WebGL)"
+      ],
+      "summary": "Turn-based GameFi RPG with quests, character systems, items, localization, backend integration, and live-ops development support.",
+      "image": {
+        "src": "https://github.com/Long18/long18.github.io/assets/28853225/5f87b8cc-1f5d-4b41-a65b-edbf5aae5c8e",
+        "alt": "Crypto Quest"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 22
     },
     {
       "id": "ice-breaking-battle",
       "title": "Ice Breaking Battle",
-      "category": "Unity",
+      "category": "unity",
       "genre": "Action / Casual",
-      "platform": ["Android"],
       "engine": "Unity",
       "role": "Developer",
       "links": {
         "sensorTower": "https://app.sensortower.com/overview/com.ibb.ice.breaking.battle"
-      }
+      },
+      "slug": "ice-breaking-battle",
+      "legacyId": "iceBreakingBattle",
+      "detailKey": "iceBreakingBattle",
+      "status": "archived",
+      "type": "archived",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Android"
+      ],
+      "summary": "Archived project.",
+      "detailRoute": null,
+      "displayOrder": 23
     },
     {
-      "id": "metame-amusement-park",
-      "title": "Metame Amusement Park",
-      "category": "Unreal Engine",
-      "genre": "Virtual Experience / Metaverse",
-      "platform": ["PC / Web"],
-      "engine": "Unreal Engine",
-      "role": "Developer",
-      "description": "A metaverse-style amusement park experience built with Unreal Engine."
+      "id": "citybuilder",
+      "slug": "citybuilder",
+      "legacyId": "citybuilder",
+      "detailKey": "citybuilder",
+      "status": "archived",
+      "type": "archived",
+      "featured": false,
+      "featuredOrder": null,
+      "title": "citybuilder",
+      "category": "unity",
+      "platforms": [],
+      "summary": "Archived project.",
+      "detailRoute": null,
+      "displayOrder": 24
     },
     {
-      "id": "meow-flow",
-      "title": "Meow Flow",
-      "category": "Unity",
-      "genre": "Puzzle / Casual",
-      "platform": ["Mobile"],
-      "engine": "Unity",
-      "role": "Developer"
-    },
-    {
-      "id": "archero-clone",
-      "title": "Archero (Clone)",
-      "category": "Unity",
-      "genre": "Action Roguelite",
-      "platform": ["Mobile"],
-      "engine": "Unity",
-      "role": "Developer",
-      "description": "A feature-complete clone of Archero built in Unity as a learning/prototype project."
-    },
-    {
-      "id": "rise-of-trial-bike",
-      "title": "Rise of Trial Bike",
-      "category": "Unity",
-      "genre": "Racing / Physics",
-      "platform": ["Mobile"],
-      "engine": "Unity",
-      "role": "Developer"
-    },
-    {
-      "id": "home-design",
-      "title": "Home Design",
-      "category": "Unity",
-      "genre": "Casual / Design",
-      "platform": ["Mobile"],
-      "engine": "Unity",
-      "role": "Developer",
-      "links": {
-        "sensorTowerAndroid": "https://app.sensortower.com/api/android/apps/com.giraffegames.ggm3"
-      }
-    },
-    {
-      "id": "tile-candy",
-      "title": "Tile Candy!",
-      "category": "Unity",
-      "genre": "Puzzle / Match",
-      "platform": ["Mobile"],
-      "engine": "Unity",
-      "role": "Developer"
-    },
-    {
-      "id": "tiles-match3-mahjong",
-      "title": "Tiles Match 3: Mahjong",
-      "category": "Unity",
-      "genre": "Puzzle / Mahjong",
-      "platform": ["Mobile"],
-      "engine": "Unity",
-      "role": "Developer"
-    },
-    {
-      "id": "sudoku-universe",
-      "title": "Sudoku Universe - Modern",
-      "category": "Unity",
-      "genre": "Puzzle",
-      "platform": ["Mobile"],
-      "engine": "Unity",
-      "role": "Developer"
-    },
-    {
-      "id": "food-truck-shiba-inu",
-      "title": "Food Truck - Shiba Inu",
-      "category": "Unity",
-      "genre": "Casual / Simulation",
-      "platform": ["Mobile"],
-      "engine": "Unity",
-      "role": "Developer"
+      "id": "neighborhood",
+      "slug": "neighborhood",
+      "legacyId": "neighborhood",
+      "detailKey": "neighborhood",
+      "status": "archived",
+      "type": "archived",
+      "featured": false,
+      "featuredOrder": null,
+      "title": "neighborhood",
+      "category": "unity",
+      "platforms": [],
+      "summary": "Archived project.",
+      "detailRoute": null,
+      "displayOrder": 25
     }
   ],
-
   "specializations": {
     "gameDevelopment": {
       "primaryEngine": "Unity",
-      "secondaryEngines": ["Unreal Engine", "Cocos"],
+      "secondaryEngines": [
+        "Unreal Engine",
+        "Cocos"
+      ],
       "genres": [
         "Idle Games",
         "Tower Defense",
@@ -598,26 +1228,66 @@
         "Racing / Physics",
         "Mini-Games"
       ],
-      "platforms": ["Android", "iOS", "WebGL", "Telegram Mini App", "World App (Web3)"]
+      "platforms": [
+        "Android",
+        "iOS",
+        "WebGL",
+        "Telegram Mini App",
+        "World App (Web3)"
+      ]
     },
     "blockchain": {
-      "wallets": ["MetaMask", "TON Wallet", "World App"],
-      "concepts": ["NFT", "Play-to-Earn", "Staking", "DAO Governance", "On-chain Marketplace"],
-      "chains": ["Ethereum testnet (for NFT prototype)", "TON", "WorldID/Worldchain"]
+      "wallets": [
+        "MetaMask",
+        "TON Wallet",
+        "World App"
+      ],
+      "concepts": [
+        "NFT",
+        "Play-to-Earn",
+        "Staking",
+        "DAO Governance",
+        "On-chain Marketplace"
+      ],
+      "chains": [
+        "Ethereum testnet (for NFT prototype)",
+        "TON",
+        "WorldID/Worldchain"
+      ]
     },
     "aiAndAutomation": {
-      "projects": ["ProxyAPI.MAD (multi-provider AI proxy)", "Agentic chat UI"],
-      "tools": ["N8N (workflow automation)", "Telegram Bot API", "AI Agents"],
+      "projects": [
+        "ProxyAPI.MAD (multi-provider AI proxy)",
+        "Agentic chat UI"
+      ],
+      "tools": [
+        "N8N (workflow automation)",
+        "Telegram Bot API",
+        "AI Agents"
+      ],
       "githubOrg": "https://github.com/mad-agentic"
     },
     "leadership": {
       "maxTeamSize": 15,
-      "roles": ["Senior Unity Developer", "Technical Leader", "Project Manager"],
-      "methodologies": ["Agile", "Scrum", "CI/CD"],
-      "companies": ["Gamota", "Neko Global", "BLAMEO Technology", "BEEMOB Studio", "Techies Studio"]
+      "roles": [
+        "Senior Unity Developer",
+        "Technical Leader",
+        "Project Manager"
+      ],
+      "methodologies": [
+        "Agile",
+        "Scrum",
+        "CI/CD"
+      ],
+      "companies": [
+        "Gamota",
+        "Neko Global",
+        "BLAMEO Technology",
+        "BEEMOB Studio",
+        "Techies Studio"
+      ]
     }
   },
-
   "personalityProfile": {
     "workStyle": "Full-cycle developer who thrives from concept to shipping. Combines deep technical skill with product-minded leadership.",
     "strengths": [
@@ -634,16 +1304,20 @@
       "Blockchain/Web3 gaming experiences"
     ]
   },
-
   "statistics": {
     "yearsOfExperience": "8+",
     "publishedGames": "50+",
     "companies": 8,
     "maxTeamLed": 15,
-    "platforms": ["App Store", "Google Play", "WebGL", "Telegram Mini App", "World App"],
+    "platforms": [
+      "App Store",
+      "Google Play",
+      "WebGL",
+      "Telegram Mini App",
+      "World App"
+    ],
     "notableMilestones": {
       "_note": "Milestones grouped by project type for clarity",
-
       "gameFiProjects": {
         "label": "GameFi / Blockchain Games",
         "description": "Play-to-Earn and NFT-integrated games built from concept to on-chain deployment",
@@ -661,7 +1335,15 @@
               "First personal GameFi title — proof of concept for Play-to-Earn mechanics with wallet integration",
               "Implemented staking-like upgrade systems and hero collection economy"
             ],
-            "tags": ["NFT", "Idle", "Tower Defense", "Technical Leader", "Funded", "Mobile", "WebGL"]
+            "tags": [
+              "NFT",
+              "Idle",
+              "Tower Defense",
+              "Technical Leader",
+              "Funded",
+              "Mobile",
+              "WebGL"
+            ]
           },
           {
             "project": "Nekoverse",
@@ -677,18 +1359,31 @@
               "Part of a distributed team; handled performance profiling across low-end devices"
             ],
             "blockchain": {
-              "wallets": ["MetaMask"],
-              "features": ["NFT assets", "Staking (Neko Temple)", "DAO governance tokens", "In-game P2P marketplace"]
+              "wallets": [
+                "MetaMask"
+              ],
+              "features": [
+                "NFT assets",
+                "Staking (Neko Temple)",
+                "DAO governance tokens",
+                "In-game P2P marketplace"
+              ]
             },
             "links": {
               "website": "https://gam3s.gg/nekoverse/",
               "youtubeTrailer": "https://www.youtube.com/embed/4FiWVHmdfig"
             },
-            "tags": ["NFT", "MMORPG", "Play-to-Earn", "DAO", "Blockchain", "Mobile"]
+            "tags": [
+              "NFT",
+              "MMORPG",
+              "Play-to-Earn",
+              "DAO",
+              "Blockchain",
+              "Mobile"
+            ]
           }
         ]
       },
-
       "publisherProjects": {
         "label": "Publisher / Studio-backed Games",
         "description": "Projects developed under game publishers or as part of studio teams, covering MMORPG, casual, puzzle, and idle genres",
@@ -712,7 +1407,14 @@
               "googlePlay": "https://play.google.com/store/apps/details?id=com.mobi.ldlorencia",
               "youtubeTrailer": "https://www.youtube.com/embed/UTqN9xl2pBM"
             },
-            "tags": ["MMORPG", "Publisher", "Licensed IP", "3D", "Mobile", "Vietnam"]
+            "tags": [
+              "MMORPG",
+              "Publisher",
+              "Licensed IP",
+              "3D",
+              "Mobile",
+              "Vietnam"
+            ]
           },
           {
             "project": "Tình Thiên Hạ (JX Mobile)",
@@ -732,7 +1434,14 @@
             "links": {
               "website": "https://tinhthienha1.adnxgames.vn/"
             },
-            "tags": ["MMORPG", "Publisher", "Licensed IP", "Vietnam", "Iconic", "Mobile"]
+            "tags": [
+              "MMORPG",
+              "Publisher",
+              "Licensed IP",
+              "Vietnam",
+              "Iconic",
+              "Mobile"
+            ]
           },
           {
             "project": "Sandwich Please!",
@@ -750,11 +1459,16 @@
               "appStore": "https://apps.apple.com/us/app/sandwich-please/id6475763350",
               "googlePlay": "https://play.google.com/store/apps/details?id=com.gb.sandwichidle.burgerplease.pizza.coffee"
             },
-            "tags": ["Casual", "Idle", "Tycoon", "Publisher", "Mobile"]
+            "tags": [
+              "Casual",
+              "Idle",
+              "Tycoon",
+              "Publisher",
+              "Mobile"
+            ]
           }
         ]
       },
-
       "web3MiniApps": {
         "label": "Web3 Mini Apps & Telegram Games",
         "description": "Lightweight games and tools built natively for blockchain ecosystems (World App, Telegram)",
@@ -774,11 +1488,17 @@
             "links": {
               "worldApp": "https://world.org/ecosystem/app_87ae73f8d0558b142fb9c5fc7811b8af"
             },
-            "tags": ["Web3", "Mini App", "World App", "Solo", "Top 1", "Casual"]
+            "tags": [
+              "Web3",
+              "Mini App",
+              "World App",
+              "Solo",
+              "Top 1",
+              "Casual"
+            ]
           }
         ]
       },
-
       "agenticAndTools": {
         "label": "AI & Agentic Projects",
         "description": "Personal projects exploring AI agent architectures and developer tooling",
@@ -798,7 +1518,13 @@
               "githubOrg": "https://github.com/mad-agentic",
               "website": "https://mad-agentic.github.io/ProxyAPI.MAD"
             },
-            "tags": ["AI", "Agentic", "Open Source", "Developer Tool", "API Proxy"]
+            "tags": [
+              "AI",
+              "Agentic",
+              "Open Source",
+              "Developer Tool",
+              "API Proxy"
+            ]
           }
         ]
       }

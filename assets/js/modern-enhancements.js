@@ -34,9 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initProjectMediaLayout() {
-  const galleries = Array.from(document.querySelectorAll('.project-gallery, [project-detail] > .project-list'));
-  if (galleries.length === 0) return;
-
   const updateGallery = (gallery) => {
     const items = Array.from(gallery.querySelectorAll('.project-item'));
 
@@ -66,7 +63,10 @@ function initProjectMediaLayout() {
     updateOrphanCenter(gallery);
   };
 
-  const updateAll = () => galleries.forEach(updateGallery);
+  const updateAll = () => {
+    const galleries = Array.from(document.querySelectorAll('.project-gallery, [project-detail] > .project-list'));
+    galleries.forEach(updateGallery);
+  };
 
   window.refreshProjectMediaLayout = updateAll;
 

@@ -1,9 +1,9 @@
- <p align="center">
-  <img src="https://github.com/hoatv2211/hoatv2211.github.io/blob/main/assets/videos/intro.gif?raw=true" width="600"/>
+<p align="center">
+  <img src="assets/images/logo.png" width="160" alt="HoaTV portfolio logo" />
 </p>
 
-<h1 align="center">Hi 👋, I'm MAD</h1>
-<h3 align="center">A Senior Unity Developer</h3>
+<h1 align="center">HoaTV Portfolio</h1>
+<h3 align="center">Senior Game Developer</h3>
 
 - 🌱 I’m currently working **Unity - C#**
 

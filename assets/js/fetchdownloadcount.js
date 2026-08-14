@@ -1,146 +1,47 @@
 /**
- * Download Count Fetcher
- * Fetches and displays app download counts from SensorTower API
+ * Safe download count client.
+ * The Worker owns upstream URLs; the browser sends only canonical project/platform IDs.
  */
+(function () {
+  "use strict";
 
-function fetchDownloadCounts() {
-    const projectItems = document.querySelectorAll('.project-item[data-api-url-android], .project-item[data-api-url-ios]');
-    
-    if (projectItems.length === 0) {
-        return;
-    }
-    
-    projectItems.forEach(projectItem => {
-        fetchDownloadCount(projectItem);
-    });
-}
+  var workerUrl = "https://portfolio.thanhlong-worker.workers.dev/download-count";
+  var allowedPlatforms = new Set(["android", "ios"]);
 
-async function fetchDownloadCount(projectItem) {
-    const downloadCountElementAndroid = projectItem.querySelector('.project-download-count-android');
-    const downloadCountElementIos = projectItem.querySelector('.project-download-count-ios');
-    const apiUrlAndroid = projectItem.getAttribute('data-api-url-android');
-    const apiUrlIos = projectItem.getAttribute('data-api-url-ios');
+  function fetchDownloadCounts() {
+    document.querySelectorAll("[data-project-id][data-platform]").forEach(fetchDownloadCount);
+  }
 
-    if (!apiUrlAndroid && !apiUrlIos) {
-        return;
-    }
+  async function fetchDownloadCount(element) {
+    var projectId = element.getAttribute("data-project-id");
+    var platform = element.getAttribute("data-platform");
+    if (!projectId || !allowedPlatforms.has(platform)) return;
 
-    // Set loading state
-    if (downloadCountElementAndroid) {
-        downloadCountElementAndroid.textContent = "Loading...";
-        downloadCountElementAndroid.classList.add("loading");
-    }
-    if (downloadCountElementIos) {
-        downloadCountElementIos.textContent = "Loading...";
-        downloadCountElementIos.classList.add("loading");
-    }
-
+    element.textContent = "Loading...";
+    element.classList.add("loading");
     try {
-        const proxyUrl = "https://portfolio.thanhlong-worker.workers.dev/?url=";
-        const fetchPromises = [];
-        const urlTypes = [];
-        
-        if (apiUrlAndroid) {
-            fetchPromises.push(
-                fetch(proxyUrl + encodeURIComponent(apiUrlAndroid))
-                    .then(response => {
-                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                        return response.json();
-                    })
-            );
-            urlTypes.push('android');
-        }
-        
-        if (apiUrlIos) {
-            fetchPromises.push(
-                fetch(proxyUrl + encodeURIComponent(apiUrlIos))
-                    .then(response => {
-                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                        return response.json();
-                    })
-            );
-            urlTypes.push('ios');
-        }
-
-        const results = await Promise.allSettled(fetchPromises);
-        
-        results.forEach((result, index) => {
-            const platform = urlTypes[index];
-            const element = platform === 'android' ? downloadCountElementAndroid : downloadCountElementIos;
-            
-            if (!element) return;
-            
-            element.classList.remove("loading");
-            
-            if (result.status === 'fulfilled') {
-                const data = result.value;
-                if (data && typeof data.installs !== 'undefined') {
-                    const downloadCount = formatDownloadCount(data.installs || 0);
-                    element.textContent = `${downloadCount} downloads`;
-                    element.title = `Last updated: ${new Date().toLocaleString()}`;
-                } else {
-                    element.textContent = "N/A";
-                    element.title = "No data available";
-                }
-            } else {
-                console.error(`Error fetching ${platform} data:`, result.reason);
-                element.textContent = "N/A";
-                element.title = "Could not fetch download count";
-            }
-        });
-
+      var response = await fetch(workerUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ projectId: projectId, platform: platform })
+      });
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      var data = await response.json();
+      element.textContent = typeof data.installs === "number" ? formatDownloadCount(data.installs) + " downloads" : "N/A";
     } catch (error) {
-        console.error("Error while fetching download count:", error);
-        
-        if (downloadCountElementAndroid) {
-            downloadCountElementAndroid.classList.remove("loading");
-            downloadCountElementAndroid.textContent = "N/A";
-        }
-        if (downloadCountElementIos) {
-            downloadCountElementIos.classList.remove("loading");
-            downloadCountElementIos.textContent = "N/A";
-        }
+      console.error("Download count unavailable:", error);
+      element.textContent = "N/A";
+    } finally {
+      element.classList.remove("loading");
     }
-}
+  }
 
-// Format large numbers for better readability
-function formatDownloadCount(count) {
-    if (count >= 1000000) {
-        return (count / 1000000).toFixed(1) + 'M';
-    } else if (count >= 1000) {
-        return (count / 1000).toFixed(1) + 'K';
-    }
-    return count.toString();
-}
+  function formatDownloadCount(count) {
+    if (count >= 1000000) return (count / 1000000).toFixed(1) + "M";
+    if (count >= 1000) return (count / 1000).toFixed(1) + "K";
+    return String(count);
+  }
 
-// Run once DOM is loaded
-document.addEventListener("DOMContentLoaded", fetchDownloadCounts);
-
-// Retry failed requests every 5 minutes but only if page is still open
-let retryInterval;
-document.addEventListener("DOMContentLoaded", function() {
-    retryInterval = setInterval(() => {
-        const failedElements = document.querySelectorAll('.project-download-count-android, .project-download-count-ios');
-        let hasFailedElements = false;
-        
-        failedElements.forEach(element => {
-            if (element.textContent === "N/A") {
-                hasFailedElements = true;
-                const projectItem = element.closest('.project-item');
-                if (projectItem) fetchDownloadCount(projectItem);
-            }
-        });
-        
-        // Stop retrying if no failed elements remain
-        if (!hasFailedElements) {
-            clearInterval(retryInterval);
-        }
-    }, 300000); // 5 minutes
-});
-
-// Clean up interval when page is unloaded
-window.addEventListener('beforeunload', function() {
-    if (retryInterval) {
-        clearInterval(retryInterval);
-    }
-});
+  window.fetchDownloadCounts = fetchDownloadCounts;
+  document.addEventListener("DOMContentLoaded", fetchDownloadCounts);
+})();
