@@ -64,6 +64,9 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Validate HTML surfaces
+        run: npx --yes html-validate 404.html backup/recruiter-clean/index.html backup/dev-console/index.html backup/game-studio/index.html projects/*/index.html
+
       - name: Smoke-test static routes over HTTP
         shell: bash
         run: |

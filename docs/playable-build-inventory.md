@@ -1,6 +1,6 @@
 # Playable Build & Publish Inventory
 
-> Status: Emergency E0 complete; E1 migrated set verified
+> Status: E1 migration and size gate verified; E0 source/version evidence remains BLOCKED where marked unknown
 > Branch: `feature/performance`
 > Baseline commit: `68de90b8839e5b4e0f489fb9f5deff3f1032acd0`
 > Production commit observed: `7034af23633e31866648c4bae5b44064684d323d`
@@ -36,6 +36,8 @@ Production rollback handoff (documented, not executed): revert the production me
 | Tracked MiB after staged removals | **881.95** |
 | `Games/` tracked MiB | 934.0 approximately |
 | Emergency gate | <= 900 MiB |
+
+E2 evidence: commits `cc34b06`, `1b439bf`, and `7978d0c` were pushed to `feature/performance`; GitHub Actions Portfolio Quality runs `31766099150`, `31766289093`, and `31766626275` passed. Production `main` was not merged or deployed.
 
 ## Tracked game directories
 
@@ -102,7 +104,7 @@ The initial five quick-relief candidates alone would have left approximately 943
 6. Do not rewrite Git history or force-push.
 7. Do not merge/deploy `main` without a new approval.
 
-## Pending evidence before E0 PASS
+## BLOCKED evidence preventing a full E0 PASS
 
 - Exact loader-selected files, compression and Service Worker/precache behavior for every tracked game.
 - Source path/owner and Unity version for each Unity build; current status is `unknown`, never implied PASS.
