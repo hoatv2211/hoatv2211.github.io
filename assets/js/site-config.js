@@ -25,16 +25,16 @@ window.SITE_CONFIG = {
     {
       type: "img",
       href: "https://t.me/o0_MaD_0o",
-      src: "https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg",
-      alt: "hoatv",
+      src: "assets/images/icon-telegram.svg",
+      alt: "Telegram",
       width: 20,
       height: 20
     },
     {
       type: "img",
       href: "https://o0-mad-0o.itch.io/",
-      src: "https://www.giantbomb.com/a/uploads/square_medium/23/236982/3210085-itchio-logo-textless-white.png",
-      alt: "hoatv",
+      src: "assets/images/icon-itchio.svg",
+      alt: "itch.io",
       width: 20,
       height: 20
     },
