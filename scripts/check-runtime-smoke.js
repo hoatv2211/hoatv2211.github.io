@@ -40,7 +40,11 @@ server.listen(0, "127.0.0.1", async () => {
     }
     const home = fs.readFileSync(path.join(root, "index.html"), "utf8");
     if (/assets\/portfolio-details\/[^"']+\.html/i.test(home)) throw new Error("homepage statically embeds a detail fragment URL");
-    if (/<video[^>]*\sautoplay(?:\s|=|>)/i.test(home)) throw new Error("homepage contains autoplay video");
+    const autoplayVideos = home.match(/<video\b[^>]*\sautoplay(?:\s|=|>)[^>]*>/gi) || [];
+    for (const video of autoplayVideos) {
+      const safeAutoplay = /\smuted(?:\s|=|>)/i.test(video) && /\splaysinline(?:\s|=|>)/i.test(video);
+      if (!safeAutoplay) throw new Error("homepage contains an autoplay video without muted and playsinline");
+    }
     console.log(`Runtime smoke passed for ${routes.length} routes.`);
   } catch (error) {
     console.error(`Runtime smoke failed: ${error.message}`);

@@ -147,15 +147,22 @@ function updateOrphanCenter(gallery) {
 /**
  * Initialize loading overlay
  */
+const LOADING_OVERLAY_DELAY_MS = 500;
+
 function initLoadingOverlay() {
   const overlay = document.getElementById('loading-overlay');
-  if (overlay) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        overlay.classList.add('hidden');
-      }, 500);
-    });
-  }
+  if (!overlay) return;
+
+  let hidden = false;
+  const hideOverlay = () => {
+    if (hidden) return;
+    hidden = true;
+    overlay.classList.add('hidden');
+    window.setTimeout(() => overlay.remove(), 500);
+  };
+
+  window.setTimeout(hideOverlay, LOADING_OVERLAY_DELAY_MS);
+  window.addEventListener('load', hideOverlay, { once: true });
 }
 
 /**

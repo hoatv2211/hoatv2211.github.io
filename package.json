@@ -6,7 +6,7 @@
   "scripts": {
     "generate:portfolio": "node scripts/generate-portfolio-data.js",
     "check:portfolio-sync": "node scripts/generate-portfolio-data.js --check",
-    "test": "npm run validate:portfolio && npm run validate:links && npm run validate:project-routes && npm run check:portfolio-sync && npm run test:smoke && node scripts/test-portfolio-compatibility.js && node scripts/test-detail-loader.js && node scripts/test-detail-animation-contract.js && node scripts/test-download-count-contract.js && node scripts/test-site-metadata.js && node scripts/test-portfolio-worker-security.js && node scripts/test-chatbot-security-contract.js && node scripts/test-visit-hook-security-contract.js",
+    "test": "npm run validate:portfolio && npm run validate:links && npm run validate:project-routes && npm run check:portfolio-sync && npm run test:smoke && node scripts/test-portfolio-compatibility.js && node scripts/test-detail-loader.js && node scripts/test-detail-animation-contract.js && node scripts/test-home-experience-contract.js && node scripts/test-download-count-contract.js && node scripts/test-site-metadata.js && node scripts/test-portfolio-worker-security.js && node scripts/test-chatbot-security-contract.js && node scripts/test-visit-hook-security-contract.js",
     "validate:portfolio": "node scripts/validate-portfolio.js",
     "validate:links": "node scripts/validate-links.js",
     "validate:project-routes": "node scripts/validate-project-routes.js",

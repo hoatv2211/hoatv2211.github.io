@@ -2,33 +2,7 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-  const heroVideoFacade = document.querySelector('[data-hero-video]');
-  if (heroVideoFacade) {
-    heroVideoFacade.addEventListener('click', function () {
-      const video = document.createElement('video');
-      video.className = 'hero-video';
-      video.controls = true;
-      video.autoplay = true;
-      video.playsInline = true;
-      video.preload = 'metadata';
-      video.src = this.dataset.heroVideo;
-      this.replaceWith(video);
-    }, { once: true });
-  }
-
-  // Hide loading overlay once page is loaded with a smooth transition
-  const loadingOverlay = document.getElementById('loading-overlay');
-  if (loadingOverlay) {
-    // Give a slight delay to ensure resources are properly loaded
-    setTimeout(() => {
-      loadingOverlay.style.opacity = "0";
-      loadingOverlay.style.transition = "opacity 0.5s ease, visibility 0.5s ease";
-      loadingOverlay.style.visibility = "hidden";
-      setTimeout(() => {
-        loadingOverlay.style.display = "none";
-      }, 500); // Allow fade-out effect before hiding
-    }, 300);
-  }
+  // Loading overlay and hero video behavior are handled declaratively/bootstrap-side.
 
   // Theme is initialized by bootstrap.js (single source of truth)
 

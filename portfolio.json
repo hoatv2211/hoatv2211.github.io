@@ -62,7 +62,7 @@
     ]
   },
   "careerHighlights": [
-    "50+ published games on App Store, Google Play, and WebGL",
+    "100+ games delivered/published, including private outsource work",
     "Full-cycle developer: concept → gameplay core → UI/UX → performance optimization → publishing & live ops",
     "Blockchain/GameFi Integration: hands-on experience with NFT marketplace, staking, wallets (MetaMask, TON, World App), and Play-to-Earn economy",
     "Team Leadership: managed and mentored 5–15 devs/artists/designers, applying Agile/Scrum and CI/CD pipelines",
@@ -466,19 +466,18 @@
       "genre": "Mini-game / Casual",
       "period": "Jun 2025 — Aug 2025",
       "engine": "Unity + WebGL",
-      "teamSize": 1,
-      "role": "Solo Developer",
-      "description": "A fun and addictive mini-game integrated on World App. Inspired by the famous 'sugar candy challenge' (Dalgona), bringing a nostalgic yet thrilling experience to a global audience.",
+      "teamSize": 15,
+      "role": "Tech Dev Leader",
+      "description": "A fast-session mini-game integrated on World App, inspired by the sugar candy challenge and delivered for a global mobile audience.",
       "myContributions": [
-        "Solo-developed the entire mini-game including core mechanics, difficulty progression, and win/lose logic",
+        "Led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15",
         "Designed and implemented UI/UX with playful animations",
         "Optimized performance for Web3 Mini App integration within World App",
         "Integrated leaderboard and ranking system",
         "Published and maintained the game with continuous updates"
       ],
       "achievements": [
-        "🏆 Reached Top 1 on the World App game ranking during launch period",
-        "Engaged hundreds of thousands of users within the Worldcoin ecosystem"
+        "🏆 Reached Top 1 on the World App game ranking during launch period"
       ],
       "links": {
         "worldApp": "https://world.org/ecosystem/app_87ae73f8d0558b142fb9c5fc7811b8af"
@@ -545,7 +544,8 @@
       "genre": "Idle Tower Defense / GameFi",
       "period": "2021 — 2022",
       "engine": "Unity",
-      "role": "Technical Leader",
+      "teamSize": 10,
+      "role": "Senior Unity Developer",
       "description": "Cyberpunk idle tower defense game set in a post-apocalyptic 2077 world. Players defend Earth from alien invaders by strategically deploying legendary heroes, upgrading powerful weapons, and customizing gear to survive endless enemy waves and boss battles.",
       "myContributions": [
         "Led technical delivery for gameplay loop, stages, upgrades, rewards, and ad integration",
@@ -554,7 +554,7 @@
         "Handled UI/UX, animation integration, and performance optimization for mobile"
       ],
       "achievements": [
-        "Successfully raised million-dollar funding for the idle defense/GameFi product",
+        "Contributed to a funded GameFi product",
         "Published on iOS, Android, and WebGL",
         "Built a complete idle tower defense and NFT marketplace proof-of-concept"
       ],
@@ -1481,8 +1481,7 @@
             "platform": "World App (WorldID/Worldchain)",
             "achievements": [
               "🏆 Top 1 on World App game ranking during launch period",
-              "Engaged hundreds of thousands of users in the Worldcoin ecosystem",
-              "Solo-built entire game: mechanics, difficulty curve, UI/UX, leaderboard, publishing",
+              "Led technical delivery with a team of 15 across mechanics, difficulty, UI/UX, leaderboard, and publishing",
               "Optimized WebGL build for seamless Web3 Mini App performance"
             ],
             "links": {
