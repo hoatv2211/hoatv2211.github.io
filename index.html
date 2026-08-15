@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,8 +12,14 @@
   <meta name="theme-color" content="#000">
   <meta property="og:title" content="HoaTV (MAD) - Senior Unity Game Developer">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/logo.png">
-  <meta property="og:description" content="8+ years building mobile, WebGL, GameFi, Telegram, and AI automation products. 100+ shipped games across App Store, Google Play, and WebGL.">
+  <meta property="og:image" content="https://hoatv2211.github.io/assets/logo.png">
+  <meta property="og:image:alt" content="HoaTV (MAD) - Senior Unity Game Developer">
+  <link rel="canonical" href="https://hoatv2211.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HoaTV (MAD) - Senior Unity Game Developer">
+  <meta name="twitter:description" content="8+ years building mobile, WebGL, GameFi, Telegram, and AI automation products. 100+ games delivered/published, including private outsource work.">
+  <meta name="twitter:image" content="https://hoatv2211.github.io/assets/logo.png">
+  <meta property="og:description" content="8+ years building mobile, WebGL, GameFi, Telegram, and AI automation products. 100+ games delivered/published, including private outsource work.">
   <meta property="og:url" content="https://hoatv2211.github.io">
   <meta name="author" content="Trần Văn Hòa - MAD">
   <meta property="og:locale" content="vi_VN">
@@ -27,6 +34,7 @@
   <link rel="preload" href="assets/css/animations.css" as="style">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/modern-enhancements.css">
+  <link rel="stylesheet" href="assets/css/portfolio-details.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/portfolio-chatbot.css">
   <link rel="manifest" href="assets/js/manifest.json" />
@@ -34,6 +42,9 @@
   <script src="assets/js/site-render.js" defer></script>
   <script src="assets/js/bootstrap.js" defer></script>
   <script src="assets/js/portfolio-data.js?v=20260505" defer></script>
+  <script src="assets/js/portfolio-detail-index.js" defer></script>
+  <script src="assets/js/portfolio-detail-renderer.js" defer></script>
+  <script src="assets/js/portfolio-detail-interactions.js" defer></script>
   <script src="assets/js/portfolio-render.js" defer></script>
   <script src="assets/js/portfolio-details.js" defer></script>
   <script src="assets/js/gallery-sort.js" defer></script>
@@ -107,6 +118,7 @@
   <!-- Back button - only visible when viewing a project -->
   <button class="button-floating hidden" id="portfolio-back-button" title="Go back to portfolio">
     <ion-icon name="home-outline" aria-label="Go back to portfolio"></ion-icon>
+    <span>Back to projects</span>
   </button>
 
   <!-- Theme toggle button positioned at top-right -->
@@ -115,14 +127,14 @@
     <ion-icon name="contrast-outline"></ion-icon>
   </button>
 
-  <button class="backup-style-toggle button-floating" id="backup-style-toggle" aria-label="Open backup style selector"
+  <button class="backup-style-toggle button-floating" id="backup-style-toggle" aria-label="Open backup style selector" hidden
     title="Backup style selector" type="button">
     <ion-icon name="albums-outline"></ion-icon>
   </button>
 
   <div class="sticky-contact-cta" aria-label="Quick contact actions">
     <a href="mailto:hoatv.mad@gmail.com?subject=Unity%20project%20inquiry">Hire Me</a>
-    <a href="https://t.me/o0_MaD_0o" target="_blank" rel="noopener noreferrer">Book Call</a>
+    <a href="https://t.me/o0_MaD_0o" target="_blank" rel="noopener noreferrer">Telegram</a>
   </div>
 
   <!-- toggleTheme() is defined in bootstrap.js -->
@@ -226,7 +238,7 @@
           </li>
 
           <li class="navbar-item navbar-book-call-item">
-            <a class="navbar-link navbar-book-call" href="https://t.me/o0_MaD_0o" target="_blank" rel="noopener noreferrer">Book Call</a>
+          <a class="navbar-link navbar-book-call" href="https://t.me/o0_MaD_0o" target="_blank" rel="noopener noreferrer">Telegram</a>
           </li>
           
 
@@ -245,24 +257,11 @@
         <header>
           <h2 class="h2 article-title"></h2>
           <div class="hero-video-container">
-            <video controls autoplay muted loop playsinline preload="metadata" class="hero-video">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+              poster="assets/thumbnail_2.webp" aria-label="HoaTV gameplay reel">
               <source src="assets/vd1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
             </video>
 
-            <!--
-            <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center; width: 100%; height: auto;">
-            <video controls autoplay muted loop
-              style="width: min(520px, 92vw); max-height: 60vh; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-              <source src="assets/vd1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <video controls autoplay muted loop
-              style="width: min(520px, 92vw); max-height: 60vh; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-              <source src="assets/vd2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            -->
 
           </div>
         </header>
@@ -278,37 +277,48 @@
 
           <p>
             My strongest fit is full-cycle delivery for casual, idle, tower defense, MMORPG, Web3, and automation
-            products where the work needs both hands-on engineering and product judgment. I have shipped 100+ games,
-            led teams up to 15 people, helped GameFi products raise million-dollar funding, and now build agentic AI
+            products where the work needs both hands-on engineering and product judgment. I have delivered/published 100+ games, including private outsource work,
+            led teams up to 15 people, contributed to funded GameFi products, and now build agentic AI
             systems, automation workflows, internal tools, proxy APIs, and Telegram/n8n pipelines.
           </p>
 
           <div class="hero-cta-group" aria-label="Primary contact actions">
             <a class="portfolio-cta portfolio-cta-primary" href="mailto:hoatv.mad@gmail.com?subject=Unity%20project%20inquiry">Hire Me</a>
-            <a class="portfolio-cta" href="https://t.me/o0_MaD_0o" target="_blank" rel="noopener noreferrer">Schedule Call</a>
-            <a class="portfolio-cta" href="assets/Tran-Van-Hoa-CV.html" target="_blank" rel="noopener noreferrer">Download CV</a>
+            <a class="portfolio-cta" href="https://t.me/o0_MaD_0o" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a class="portfolio-cta" href="assets/Tran-Van-Hoa-CV.pdf" target="_blank" rel="noopener noreferrer" download>Download CV</a>
             <a class="portfolio-cta portfolio-cta-secondary" href="#case-study-sample">View Case Study</a>
           </div>
         </section>
+
+        <figure class="about-editorial about-editorial-identity">
+          <img src="assets/images/about-editorial/production-identity.webp"
+            alt="Hand-drawn game production map connecting gameplay, systems, profiling, and release ownership"
+            width="1200" height="720" loading="lazy" decoding="async">
+          <figcaption class="about-editorial-legend">
+            <span>Gameplay &amp; Player Experience</span>
+            <span>Production Systems</span>
+            <span>Optimize &amp; Ship</span>
+          </figcaption>
+        </figure>
 
         <section class="selected-results" aria-labelledby="selected-results-title">
           <h2 class="h2 article-title" id="selected-results-title">Selected Results</h2>
           <ul class="result-grid">
             <li class="result-card">
               <span class="result-value">100+</span>
-              <span class="result-label">published games across App Store, Google Play, and WebGL</span>
+              <span class="result-label">games delivered/published, including private outsource work</span>
             </li>
             <li class="result-card">
               <span class="result-value">3</span>
               <span class="result-label">flagship production tracks: idle defense, GameFi MMORPG, licensed mobile MMORPG</span>
             </li>
             <li class="result-card">
-              <span class="result-value">$1M+</span>
-              <span class="result-label">Idle Cyber: Technical Leader on an idle defense/GameFi title that successfully raised million-dollar funding</span>
+              <span class="result-value">FUNDED</span>
+              <span class="result-label">Idle Cyber: Senior Unity Developer on a funded idle defense/GameFi title</span>
             </li>
             <li class="result-card">
-              <span class="result-value">$1M+</span>
-              <span class="result-label">Nekoverse: GameFi MMORPG with successful million-dollar fundraising and production blockchain systems</span>
+              <span class="result-value">FUNDED</span>
+              <span class="result-label">Nekoverse: contributed production gameplay and blockchain systems to a funded GameFi MMORPG</span>
             </li>
             <li class="result-card">
               <span class="result-value">MMORPG</span>
@@ -319,6 +329,11 @@
 
         <section class="work-process" aria-labelledby="work-process-title">
           <h2 class="h2 article-title" id="work-process-title">How I Work</h2>
+          <figure class="about-editorial about-editorial-workflow">
+            <img src="assets/images/about-editorial/how-i-work.webp"
+              alt="Hand-drawn workflow connecting project scope, playable prototyping, production release, and iteration"
+              width="1200" height="720" loading="lazy" decoding="async">
+          </figure>
           <ol class="process-list">
             <li>
               <strong>Scope</strong>
@@ -390,16 +405,16 @@
           <div class="case-study-card">
             <div>
               <p class="case-study-kicker">Idle Cyber - Idle Tower Defense / GameFi</p>
-              <h3 class="h3">Technical leadership for a funded idle defense/GameFi product</h3>
+              <h3 class="h3">Unity gameplay delivery for a funded idle defense/GameFi product</h3>
               <p>
-                Led technical delivery for an idle tower defense/GameFi title that successfully raised million-dollar
-                funding, covering gameplay systems, mobile/WebGL delivery, monetization, and NFT marketplace prototype work.
+                Contributed Unity gameplay delivery to a funded idle tower defense/GameFi title, covering gameplay
+                systems, mobile/WebGL delivery, monetization, and NFT marketplace prototype work.
               </p>
             </div>
             <dl class="case-study-facts">
               <div>
                 <dt>Role</dt>
-                <dd>Technical Leader</dd>
+                <dd>Senior Unity Developer · team of 10</dd>
               </div>
               <div>
                 <dt>Stack</dt>
@@ -407,7 +422,7 @@
               </div>
               <div>
                 <dt>Business Impact</dt>
-                <dd>Successful million-dollar fundraising</dd>
+                <dd>Contributed to a funded GameFi product.</dd>
               </div>
             </dl>
             <a class="portfolio-cta portfolio-cta-primary" href="#" data-detail-category="idleCyber">Open Idle Cyber</a>
@@ -418,7 +433,7 @@
               <p class="case-study-kicker">Nekoverse - Play-to-Earn MMORPG</p>
               <h3 class="h3">Funded blockchain RPG systems with real-time PvE/PvP combat</h3>
               <p>
-                Delivered gameplay features for a GameFi MMORPG that successfully raised million-dollar funding,
+                Delivered gameplay features for a funded GameFi MMORPG,
                 including elemental skill interactions, resource farming, crafting, NFT integration, staking mechanics,
                 and performance profiling across devices.
               </p>
@@ -434,7 +449,7 @@
               </div>
               <div>
                 <dt>Business Impact</dt>
-                <dd>Successful million-dollar fundraising</dd>
+                <dd>Contributed to a funded GameFi MMORPG.</dd>
               </div>
             </dl>
             <a class="portfolio-cta portfolio-cta-primary" href="#" data-detail-category="nekoverse">Open Nekoverse</a>
@@ -637,7 +652,7 @@
                 Combined delivery leadership with hands-on development for Nekoverse, a funded GameFi MMORPG product.
               </p>
               <ul class="timeline-text">
-                <li>Contributed to Nekoverse, a GameFi MMORPG that successfully raised million-dollar funding.</li>
+                <li>Contributed production gameplay and blockchain systems to a funded GameFi MMORPG.</li>
                 <li>Built PvE / PvP gameplay, NFT-related systems, staking / crafting flows, and mobile optimizations.</li>
                 <li>Managed task breakdown, team coordination, and delivery support while staying hands-on in development.</li>
                 <li>Connected product, blockchain, and gameplay concerns into one production workflow.</li>
@@ -665,10 +680,10 @@
               <h4 class="h4 timeline-item-position">Unity Developer</h4>
               <span>March 2021 — June 2021</span>
               <p class="timeline-text description">
-                Worked on Idle Cyber, a funded idle defense / GameFi title, combining technical leadership with hands-on Unity delivery.
+                Worked on Idle Cyber as a Senior Unity Developer in a team of 10, contributing hands-on Unity delivery to a funded GameFi product.
               </p>
               <ul class="timeline-text">
-                <li>Served as Technical Leader for a product that successfully raised million-dollar funding.</li>
+                <li>Worked as Senior Unity Developer in a team of 10 on a funded GameFi product.</li>
                 <li>Owned idle progression, tower-defense combat, rewards, ads, and NFT marketplace prototype flows.</li>
                 <li>Delivered a cross-platform title spanning iOS, Android, and WebGL.</li>
                 <li>Combined gameplay implementation, release support, and system design in a compact production cycle.</li>
@@ -731,8 +746,8 @@
 
           <ul class="timeline-list">
             <li class="timeline-item">
-              <p class="timeline-text description">🎮 <strong>100+ published games</strong> on App Store, Google Play,
-                and WebGL.</p>
+              <p class="timeline-text description">🎮 <strong>100+ games delivered/published</strong>, including private
+                outsource work across App Store, Google Play, and WebGL.</p>
             </li>
             <li class="timeline-item">
               <p class="timeline-text description">🛠️ <strong>Full-cycle developer</strong>: from concept → gameplay

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /backup/
+Disallow: /cloudflare/
+
+Sitemap: https://hoatv2211.github.io/sitemap.xml

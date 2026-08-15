@@ -5,7 +5,7 @@
 Senior Unity Game Developer / Technical Leader with 8+ years shipping mobile, WebGL, GameFi, MMORPG, casual, and automation products.
 
 Selected work:
-- Technical Leader for Idle Cyber, an idle defense / GameFi title that successfully raised million-dollar funding.
+- Senior Unity Developer on Idle Cyber in a team of 10, contributing to a funded GameFi product.
 - Senior Unity Developer on Nekoverse, a funded GameFi MMORPG with PvE / PvP combat, NFT assets, staking, crafting, and mobile optimization.
 - Contributor to MU: Loren Mobile systems including quests, classes, monster spawning, events, UI flows, and 3D mobile performance.
 - Solo developer of Dalgona - Worldchain, which reached Top 1 on the World App game ranking during launch.

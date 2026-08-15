@@ -1,136 +1,149 @@
-// Shared code-loading animation utility
-window.animateCodeLoading = function (container) {
-  if (!container) return;
-  const lines = Array.from(container.querySelectorAll(".code-loading-line"));
-  if (lines.length === 0) return;
+(function () {
+  "use strict";
 
-  lines.forEach(line => {
-    line.classList.remove("is-visible", "is-current");
+  const htmlCache = new Map();
+  const inFlight = new Map();
+  let detailDataCache = null;
+  let detailDataRequest = null;
+  let currentRequest = 0;
+  let currentDetailCategory = null;
+
+  function detailsHost() {
+    return document.querySelector('[data-render="portfolio-details"]');
+  }
+
+  function knownDetailKeys() {
+    return new Set(
+      (window.PORTFOLIO_DETAIL_INDEX || [])
+        .map((project) => project.detailKey)
+        .filter(Boolean)
+    );
+  }
+
+  async function fetchDetail(detailCategory) {
+    if (htmlCache.has(detailCategory)) {
+      return { html: htmlCache.get(detailCategory), fromCache: true };
+    }
+    if (inFlight.has(detailCategory)) {
+      return inFlight.get(detailCategory);
+    }
+
+    const request = fetch(`assets/portfolio-details/${detailCategory}.html`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Unable to load ${detailCategory} (${response.status})`);
+        }
+        return response.text();
+      })
+      .then((html) => {
+        htmlCache.set(detailCategory, html);
+        return { html, fromCache: false };
+      })
+      .finally(() => inFlight.delete(detailCategory));
+
+    inFlight.set(detailCategory, request);
+    return request;
+  }
+
+  async function fetchDetailData() {
+    if (detailDataCache) return { projects: detailDataCache, fromCache: true };
+    if (detailDataRequest) return detailDataRequest;
+
+    detailDataRequest = fetch("assets/data/portfolio-details.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Unable to load portfolio detail data (${response.status})`);
+        }
+        return response.json();
+      })
+      .then((payload) => {
+        if (!payload || !Array.isArray(payload.projects)) {
+          throw new Error("Portfolio detail data has no projects array");
+        }
+        detailDataCache = payload.projects;
+        return { projects: detailDataCache, fromCache: false };
+      })
+      .finally(() => {
+        detailDataRequest = null;
+      });
+
+    return detailDataRequest;
+  }
+
+  function renderError(target, detailCategory, error) {
+    target.innerHTML = `
+      <section class="portfolio-detail-error" role="alert">
+        <h3>Project detail unavailable</h3>
+        <p>${error.message}</p>
+        <button type="button" data-detail-retry="${detailCategory}">Retry</button>
+        <a href="#portfolio">Back to projects</a>
+      </section>`;
+  }
+
+  async function loadProjectDetail(detailCategory) {
+    if (!knownDetailKeys().has(detailCategory)) {
+      throw new Error(`Unknown portfolio detail: ${detailCategory}`);
+    }
+
+    const target = detailsHost();
+    if (!target) throw new Error("Portfolio detail host was not found");
+
+    if (currentDetailCategory !== detailCategory) {
+      currentDetailCategory = detailCategory;
+      currentRequest += 1;
+    }
+    const requestId = currentRequest;
+    target.setAttribute?.("aria-busy", "true");
+    target.classList?.add("portfolio-details-loading");
+
+    try {
+      const [fragment, detailData] = await Promise.all([
+        fetchDetail(detailCategory),
+        fetchDetailData(),
+      ]);
+      if (requestId !== currentRequest) return null;
+
+      const project = detailData.projects.find((candidate) => candidate.detailKey === detailCategory);
+      if (!project) {
+        throw new Error(`Portfolio detail data has no record for ${detailCategory}`);
+      }
+
+      const html = window.PortfolioDetailRenderer?.render
+        ? window.PortfolioDetailRenderer.render(project, fragment.html)
+        : fragment.html;
+
+      target.innerHTML = "";
+      target.insertAdjacentHTML("beforeend", html);
+      const element = target.querySelector(`[project-detail][data-detail-category="${detailCategory}"]`);
+      if (!element) {
+        throw new Error(`Detail fragment ${detailCategory} has no matching project root`);
+      }
+
+      document.dispatchEvent(new CustomEvent("portfolio:details-loaded", {
+        detail: {
+          detailCategory,
+          project,
+          element,
+          fromCache: fragment.fromCache && detailData.fromCache,
+        },
+      }));
+      return element;
+    } catch (error) {
+      if (requestId === currentRequest) renderError(target, detailCategory, error);
+      throw error;
+    } finally {
+      if (requestId === currentRequest) {
+        target.removeAttribute?.("aria-busy");
+        target.classList?.remove("portfolio-details-loading");
+      }
+    }
+  }
+
+  document.addEventListener?.("click", (event) => {
+    const retry = event.target.closest?.("[data-detail-retry]");
+    if (!retry) return;
+    loadProjectDetail(retry.dataset.detailRetry).catch(() => {});
   });
 
-  let index = 0;
-  const step = () => {
-    if (index > 0) lines[index - 1].classList.remove("is-current");
-    if (index < lines.length) {
-      lines[index].classList.add("is-visible", "is-current");
-      index += 1;
-      setTimeout(step, 120);
-    }
-  };
-
-  setTimeout(step, 80);
-};
-
-(function () {
-  const DETAILS_DIR = "assets/portfolio-details";
-  let hasLoaded = false;
-  let pendingLoad = false;
-
-  function fetchHtml(path) {
-    return fetch(path, { cache: "no-cache" }).then((response) => {
-      if (!response.ok) {
-        throw new Error(`Failed to load ${path}`);
-      }
-      return response.text();
-    });
-  }
-
-  function loadDetails(force = false) {
-    if (hasLoaded && !force) {
-      return Promise.resolve();
-    }
-
-    const projects = Array.isArray(window.PORTFOLIO_DATA) ? window.PORTFOLIO_DATA : [];
-    const detailFiles = projects
-      .map((project) => project.detailCategory)
-      .filter(Boolean)
-      .map((slug) => `${DETAILS_DIR}/${slug}.html`);
-
-    if (detailFiles.length === 0) {
-      if (!pendingLoad) {
-        pendingLoad = true;
-        document.addEventListener("portfolio:list-rendered", () => {
-          pendingLoad = false;
-          loadDetails(true);
-        }, { once: true });
-      }
-      return Promise.resolve();
-    }
-
-    const target = document.querySelector('[data-render="portfolio-details"]');
-    if (!target) {
-      return Promise.resolve();
-    }
-
-    target.classList.add("portfolio-details-loading");
-    target.innerHTML = `
-      <div class="code-loading">
-        <div class="code-loading-header">
-          <span class="code-loading-dot"></span>
-          <span class="code-loading-dot"></span>
-          <span class="code-loading-dot"></span>
-        </div>
-        <div class="code-loading-lines">
-          <div class="code-loading-line">
-            <span class="code-loading-line-number">1</span>
-            <span class="code-loading-code code-loading-reveal">
-              <span class="code-token.punc">&lt;</span><span class="code-token tag">section</span>
-              <span class="code-token attr"> class</span><span class="code-token.punc">=</span><span class="code-token str">"portfolio"</span>
-              <span class="code-token.punc">&gt;</span>
-            </span>
-          </div>
-          <div class="code-loading-line">
-            <span class="code-loading-line-number">2</span>
-            <span class="code-loading-code code-loading-reveal">
-              <span class="code-token.punc">&lt;</span><span class="code-token tag">div</span>
-              <span class="code-token attr"> class</span><span class="code-token.punc">=</span><span class="code-token str">"details"</span>
-              <span class="code-token.punc">&gt;</span>
-            </span>
-          </div>
-          <div class="code-loading-line">
-            <span class="code-loading-line-number">3</span>
-            <span class="code-loading-code code-loading-reveal">
-              <span class="code-token.text">Loading project details…</span>
-            </span>
-          </div>
-          <div class="code-loading-line">
-            <span class="code-loading-line-number">4</span>
-            <span class="code-loading-code code-loading-reveal">
-              <span class="code-token.punc">&lt;/</span><span class="code-token tag">div</span><span class="code-token.punc">&gt;</span>
-              <span class="code-loading-caret"></span>
-            </span>
-          </div>
-        </div>
-      </div>
-    `;
-
-    const loadingBlock = target.querySelector(".code-loading");
-    window.animateCodeLoading(loadingBlock);
-
-    return detailFiles
-      .reduce((chain, path) => {
-        return chain.then(() =>
-          fetchHtml(path)
-            .then((html) => {
-              target.insertAdjacentHTML("beforeend", html);
-            })
-            .catch((error) => {
-              console.warn("Portfolio details load failed:", error);
-            })
-        );
-      }, Promise.resolve())
-      .then(() => {
-        const loadingBlock = target.querySelector(".code-loading");
-        if (loadingBlock) loadingBlock.remove();
-        target.classList.remove("portfolio-details-loading");
-        hasLoaded = true;
-        document.dispatchEvent(new CustomEvent("portfolio:details-loaded"));
-      });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", loadDetails);
-  } else {
-    loadDetails();
-  }
+  window.loadProjectDetail = loadProjectDetail;
 })();

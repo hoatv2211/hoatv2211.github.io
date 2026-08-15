@@ -399,6 +399,9 @@ article.portfolio [project-detail].active {
 .code-loading {
   position: relative;
   display: grid;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
   gap: 6px;
   margin: 16px 0 20px;
   padding: 14px 16px;

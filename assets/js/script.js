@@ -2,19 +2,7 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-  // Hide loading overlay once page is loaded with a smooth transition
-  const loadingOverlay = document.getElementById('loading-overlay');
-  if (loadingOverlay) {
-    // Give a slight delay to ensure resources are properly loaded
-    setTimeout(() => {
-      loadingOverlay.style.opacity = "0";
-      loadingOverlay.style.transition = "opacity 0.5s ease, visibility 0.5s ease";
-      loadingOverlay.style.visibility = "hidden";
-      setTimeout(() => {
-        loadingOverlay.style.display = "none";
-      }, 500); // Allow fade-out effect before hiding
-    }, 300);
-  }
+  // Loading overlay and hero video behavior are handled declaratively/bootstrap-side.
 
   // Theme is initialized by bootstrap.js (single source of truth)
 
@@ -97,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const buttonBack = document.getElementById("portfolio-back-button");
 
   let pendingDetailCategory = null;
+  let portfolioReturnScrollY = 0;
   let suppressDetailReset = false;
   let portfolioTouchStartX = 0;
   let portfolioTouchStartY = 0;
@@ -167,56 +156,61 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  function openProjectDetail(selectedType) {
-    if (!selectedType) return;
+  async function openProjectDetail(selectedType) {
+    if (!selectedType || typeof window.loadProjectDetail !== "function") return null;
 
     activatePortfolioPage();
+    pendingDetailCategory = selectedType;
+    portfolioReturnScrollY = window.scrollY;
+
+    let loadedProject;
+    try {
+      loadedProject = await window.loadProjectDetail(selectedType);
+    } catch (error) {
+      pendingDetailCategory = null;
+      console.error(error);
+      return null;
+    }
+    if (!loadedProject) return null;
+
+    document.body.classList.add("portfolio-detail-open");
 
     suppressDetailReset = true;
     filterFunc("");
     suppressDetailReset = false;
+    pendingDetailCategory = null;
 
-    pendingDetailCategory = selectedType;
-
-    // Hide showcase section when entering detail view
     const showcase = document.querySelector(".portfolio-showcase");
     if (showcase && showcase.dataset.showcaseHidden !== "1") {
       showcase.dataset.showcaseHidden = "1";
       showcase.style.transition = "opacity 0.25s ease";
       showcase.style.opacity = "0";
-      setTimeout(function () {
-        showcase.style.display = "none";
-      }, 250);
+      setTimeout(function () { showcase.style.display = "none"; }, 250);
     }
 
-    if (!projectDetail || projectDetail.length === 0) {
-      return;
-    }
-
-    let matched = false;
+    projectDetail = document.querySelectorAll("[project-detail]");
+    filterItems = document.querySelectorAll("[data-filter-item]");
     projectDetail.forEach(project => {
-      if (project.dataset.detailCategory === selectedType) {
-        project.classList.add("active");
-        // Re-trigger entrance animation for detail section
+      const active = project.dataset.detailCategory === selectedType;
+      project.classList.toggle("active", active);
+      if (active) {
         project.classList.remove("flash-entrance", "fast", "no-blur");
         void project.offsetWidth;
         project.classList.add("flash-entrance", "fast", "no-blur");
-
-        // Show code-like loading effect on open
         showDetailLoadingEffect(project);
         toggleBackButton(true);
         scrollToProjectDetail(project);
-        matched = true;
-      } else {
-        project.classList.remove("active");
       }
     });
 
-    if (!matched) {
-      pendingDetailCategory = selectedType;
-    } else if (typeof window.refreshProjectMediaLayout === "function") {
+    document.dispatchEvent(new CustomEvent("portfolio:detail-opened", {
+      detail: { detailKey: selectedType }
+    }));
+
+    if (typeof window.refreshProjectMediaLayout === "function") {
       window.requestAnimationFrame(() => window.refreshProjectMediaLayout());
     }
+    return loadedProject;
   }
 
   // Expose for external callers (e.g., gaming-showcase.js)
@@ -280,7 +274,9 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
 
     project.prepend(loading);
-    window.animateCodeLoading(loading);
+    if (typeof window.animateCodeLoading === "function") {
+      window.animateCodeLoading(loading);
+    }
 
     setTimeout(() => {
       loading.remove();
@@ -320,22 +316,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   refreshPortfolioDetails();
-  document.addEventListener("portfolio:details-loaded", function () {
-    refreshPortfolioDetails();
-    if (pendingDetailCategory) {
-      const categoryToOpen = pendingDetailCategory;
-      pendingDetailCategory = null;
-      openProjectDetail(categoryToOpen);
-    }
-  });
+  document.addEventListener("portfolio:details-loaded", refreshPortfolioDetails);
   document.addEventListener("portfolio:list-rendered", refreshPortfolioDetails);
 
   document.addEventListener("click", function (event) {
     const detailTarget = event.target.closest("[data-detail-category]");
     if (!detailTarget) return;
 
-    const isInPortfolioList = detailTarget.closest('[data-render="portfolio-list"]');
-    if (!isInPortfolioList) return;
+    if (detailTarget.closest('[data-render="portfolio-details"]')) return;
 
     event.preventDefault();
 
@@ -355,13 +343,14 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleBackButton(false);
 
     buttonBack.addEventListener("click", function () {
+      document.body.classList.remove("portfolio-detail-open");
       // Add click animation
       this.classList.add('button-clicked');
       setTimeout(() => this.classList.remove('button-clicked'), 300);
 
       // Smooth scroll with callback
       window.scrollTo({
-        top: 0,
+        top: portfolioReturnScrollY,
         behavior: 'smooth'
       });
 
@@ -557,15 +546,19 @@ document.addEventListener('DOMContentLoaded', function () {
   if (navigationLinks && navigationLinks.length > 0 && pages) {
     navigationLinks.forEach((link, i) => {
       link.addEventListener("click", function () {
+        document.body.classList.remove("portfolio-detail-open");
         filterFunc("all");
         if (selectValue) selectValue.innerText = "All";
 
         const targetPage = this.innerHTML.toLowerCase();
 
-        pages.forEach((page, j) => {
+        navigationLinks.forEach(navLink => {
+          navLink.classList.toggle("active", navLink.textContent.trim().toLowerCase() === targetPage);
+        });
+
+        pages.forEach(page => {
           if (targetPage === page.dataset.page) {
             page.classList.add("active");
-            navigationLinks[j].classList.add("active");
             window.scrollTo({
               top: 0,
               behavior: 'smooth'
@@ -588,7 +581,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
           } else {
             page.classList.remove("active");
-            navigationLinks[j].classList.remove("active");
           }
         });
       });
@@ -630,65 +622,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-  window.expandImage = function (clickedImage) {
-    if (!clickedImage || !clickedImage.querySelector("img")) return;
-
-    // Add tactile feedback with subtle scale animation on click
-    const imgElement = clickedImage.querySelector("img");
-    imgElement.style.transform = 'scale(0.95)';
-    setTimeout(() => { imgElement.style.transform = 'scale(1)'; }, 150);
-
-    const imgSrc = imgElement.src;
-    const imgAlt = imgElement.alt || 'Portfolio image';
-    const expandedImg = document.createElement("img");
-    const overlay = createOverlay(expandedImg);
-
-    // Add loading indicator while image loads
-    const loadingSpinner = document.createElement('div');
-    loadingSpinner.className = 'loading-spinner';
-    overlay.appendChild(loadingSpinner);
-
-    // Create expanded image with CSS class
-    expandedImg.src = imgSrc;
-    expandedImg.className = "expanded-media";
-
-    expandedImg.onclick = function () {
-      document.body.removeChild(overlay);
-      document.body.removeChild(expandedImg);
-    };
-
-    document.body.appendChild(expandedImg);
-  }
-
-  // Re-implement expandVideo with proper error checking
-  window.expandVideo = function (clickedVideo) {
-    if (!clickedVideo || !clickedVideo.querySelector("video") ||
-      !clickedVideo.querySelector("video").querySelector("source")) return;
-
-    const videoFiled = clickedVideo.querySelector("video");
-    const videoSrc = videoFiled.querySelector("source").src;
-    const expandedVideo = document.createElement("video");
-
-    const overlay = createOverlay(expandedVideo);
-
-    // Create expanded video with CSS class
-    expandedVideo.src = videoSrc;
-    expandedVideo.currentTime = 0;
-    expandedVideo.autoplay = true;
-    expandedVideo.controls = true;
-    expandedVideo.className = "expanded-media expanded-media--video";
-
-    expandedVideo.onclick = function () {
-      if (videoFiled) {
-        videoFiled.currentTime = 0;
-        videoFiled.pause();
-      }
-      document.body.removeChild(overlay);
-      document.body.removeChild(expandedVideo);
-    };
-
-    document.body.appendChild(expandedVideo);
-  };
 
   // Skills button handler
   const skillsButton = document.getElementById("skills-button");
@@ -727,6 +660,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const backupStyleToggle = document.getElementById("backup-style-toggle");
   const backupStyleOverlay = document.getElementById("backup-style-overlay");
   const backupStyleClose = document.getElementById("backup-style-close");
+  const backupStyleEnabled = new URLSearchParams(window.location.search).get("backups") === "1";
+
+  if (backupStyleToggle) {
+    backupStyleToggle.hidden = !backupStyleEnabled;
+  }
 
   function setBackupStyleSelector(open) {
     if (!backupStyleOverlay || !backupStyleToggle) return;
@@ -737,7 +675,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.toggle("backup-style-open", open);
   }
 
-  if (backupStyleToggle && backupStyleOverlay) {
+  if (backupStyleEnabled && backupStyleToggle && backupStyleOverlay) {
     backupStyleToggle.addEventListener("click", function () {
       setBackupStyleSelector(!backupStyleOverlay.classList.contains("active"));
     });
@@ -761,29 +699,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-
-// Helper function to create overlay
-function createOverlay(elementToRemove) {
-  const overlay = document.createElement("div");
-  overlay.className = "expanded-overlay";
-
-  overlay.onclick = function () {
-    overlay.style.opacity = "0";
-    setTimeout(() => {
-      if (document.body.contains(overlay)) {
-        document.body.removeChild(overlay);
-      }
-      if (document.body.contains(elementToRemove)) {
-        document.body.removeChild(elementToRemove);
-      }
-    }, 300);
-  };
-
-  document.body.appendChild(overlay);
-
-  // Force reflow to enable transition
-  void overlay.offsetWidth;
-  overlay.style.opacity = "1";
-
-  return overlay;
-}

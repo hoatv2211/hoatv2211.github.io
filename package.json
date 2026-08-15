@@ -1,30 +1,38 @@
 {
-  "name": "hoatv2211.github.io",
-  "version": "1.0.0",
-  "description": "Website Personal (Portfolio)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "validate:portfolio": "node scripts/validate-portfolio.js",
-    "release": "standard-version"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hoatv2211/hoatv2211.github.io.git"
-  },
-  "keywords": [
-    "website",
-    "protfolio",
-    "cv",
-    "resume"
-  ],
-  "author": "MAD",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hoatv2211/hoatv2211.github.io/issues"
-  },
-  "homepage": "https://github.com/hoatv2211/hoatv2211.github.io#readme",
-  "devDependencies": {
-    "standard-version": "^9.5.0"
-  }
+    "name":  "hoatv2211.github.io",
+    "version":  "1.0.0",
+    "description":  "Website Personal (Portfolio)",
+    "main":  "index.js",
+    "scripts":  {
+                    "generate:portfolio":  "node scripts/generate-portfolio-data.js",
+                    "check:portfolio-sync":  "node scripts/generate-portfolio-data.js --check",
+                    "test":  "npm run validate:portfolio \u0026\u0026 npm run validate:links \u0026\u0026 npm run validate:project-routes \u0026\u0026 npm run check:portfolio-sync \u0026\u0026 node scripts/test-portfolio-detail-data.js \u0026\u0026 node scripts/test-portfolio-detail-validation.js \u0026\u0026 node scripts/test-portfolio-quality-contract.js \u0026\u0026 npm run test:smoke \u0026\u0026 node scripts/test-portfolio-compatibility.js \u0026\u0026 node scripts/test-detail-loader.js \u0026\u0026 node scripts/test-detail-renderer.js \u0026\u0026 node scripts/test-detail-style-contract.js \u0026\u0026 node scripts/test-game-production-showcase-skill.js \u0026\u0026 node scripts/test-portfolio-detail-contract.js \u0026\u0026 node scripts/test-detail-content-contract.js \u0026\u0026 node scripts/test-detail-interaction.js \u0026\u0026 node scripts/test-media-inventory.js \u0026\u0026 node scripts/test-backup-portfolio-contract.js \u0026\u0026 node scripts/test-detail-audit-contract.js \u0026\u0026 node scripts/test-detail-animation-contract.js \u0026\u0026 node scripts/test-home-experience-contract.js \u0026\u0026 node scripts/test-download-count-contract.js \u0026\u0026 node scripts/test-site-metadata.js \u0026\u0026 node scripts/test-portfolio-worker-security.js \u0026\u0026 node scripts/test-chatbot-security-contract.js \u0026\u0026 node scripts/test-chatbot-proactive-contract.js \u0026\u0026 node scripts/test-visit-hook-security-contract.js",
+                    "validate:portfolio":  "node scripts/validate-portfolio.js",
+                    "validate:links":  "node scripts/validate-links.js",
+                    "validate:project-routes":  "node scripts/validate-project-routes.js",
+                    "test:smoke":  "node scripts/check-runtime-smoke.js",
+                    "release":  "standard-version",
+                    "audit:portfolio-details":  "node scripts/audit-portfolio-details.js --base-url http://127.0.0.1:8080"
+                },
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/hoatv2211/hoatv2211.github.io.git"
+                   },
+    "keywords":  [
+                     "website",
+                     "protfolio",
+                     "cv",
+                     "resume"
+                 ],
+    "author":  "MAD",
+    "license":  "ISC",
+    "bugs":  {
+                 "url":  "https://github.com/hoatv2211/hoatv2211.github.io/issues"
+             },
+    "homepage":  "https://github.com/hoatv2211/hoatv2211.github.io#readme",
+    "devDependencies":  {
+                            "image-size":  "^2.0.2",
+                            "playwright-core":  "^1.62.1",
+                            "standard-version":  "^9.5.0"
+                        }
 }

@@ -34,9 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initProjectMediaLayout() {
-  const galleries = Array.from(document.querySelectorAll('.project-gallery, [project-detail] > .project-list'));
-  if (galleries.length === 0) return;
-
   const updateGallery = (gallery) => {
     const items = Array.from(gallery.querySelectorAll('.project-item'));
 
@@ -66,7 +63,10 @@ function initProjectMediaLayout() {
     updateOrphanCenter(gallery);
   };
 
-  const updateAll = () => galleries.forEach(updateGallery);
+  const updateAll = () => {
+    const galleries = Array.from(document.querySelectorAll('.project-gallery, [project-detail] > .project-list'));
+    galleries.forEach(updateGallery);
+  };
 
   window.refreshProjectMediaLayout = updateAll;
 
@@ -147,15 +147,22 @@ function updateOrphanCenter(gallery) {
 /**
  * Initialize loading overlay
  */
+const LOADING_OVERLAY_DELAY_MS = 500;
+
 function initLoadingOverlay() {
   const overlay = document.getElementById('loading-overlay');
-  if (overlay) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        overlay.classList.add('hidden');
-      }, 500);
-    });
-  }
+  if (!overlay) return;
+
+  let hidden = false;
+  const hideOverlay = () => {
+    if (hidden) return;
+    hidden = true;
+    overlay.classList.add('hidden');
+    window.setTimeout(() => overlay.remove(), 500);
+  };
+
+  window.setTimeout(hideOverlay, LOADING_OVERLAY_DELAY_MS);
+  window.addEventListener('load', hideOverlay, { once: true });
 }
 
 /**
@@ -165,6 +172,7 @@ function initThemeToggle() {
   // Get the existing theme toggle button
   const themeToggle = document.getElementById('theme-toggle');
   const backupStyleToggle = document.getElementById('backup-style-toggle');
+  const backupStyleEnabled = new URLSearchParams(window.location.search).get('backups') === '1';
 
   if (themeToggle) {
     // Toggle click is handled by bootstrap.js via window.toggleTheme
@@ -176,6 +184,10 @@ function initThemeToggle() {
   }
 
   if (backupStyleToggle) {
+    backupStyleToggle.hidden = !backupStyleEnabled;
+  }
+
+  if (backupStyleEnabled && backupStyleToggle) {
     localStorage.removeItem('backupStyleTogglePosition');
     localStorage.removeItem('backupStyleTogglePositionV2');
     localStorage.removeItem('backupStyleTogglePositionV3');

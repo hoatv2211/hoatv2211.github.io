@@ -67,7 +67,7 @@
       },
       tag: project.tag || { label: formatCategory(category), className: "" },
       demoUrl: project.demoUrl || "",
-      detailUrl: project.demoUrl || `${ROOT_PREFIX}index.html`,
+      detailUrl: project.detailUrl ? asset(project.detailUrl) : (project.demoUrl || `${ROOT_PREFIX}index.html`),
       hasStoreMetrics: Boolean(project.apiUrlAndroid || project.apiUrlIos),
       rank: index + 1
     };

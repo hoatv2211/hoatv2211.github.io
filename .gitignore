@@ -1,2 +1,21 @@
 ﻿node_modules/
 /.vscode
+
+# Large binaries must never re-enter git history.
+# These bloated .git to 1.9GB before (APKs, videos, WebGL builds).
+# Host playable builds and heavy media externally (R2/CDN) instead.
+*.apk
+*.aab
+*.ipa
+*.psd
+*.zip
+*.7z
+*.rar
+
+# Scratch/temp
+.tmp-*
+*.tmp
+
+# Generated audit reports and screenshots
+/audits/
+.env
