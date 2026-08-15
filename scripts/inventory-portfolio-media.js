@@ -3,6 +3,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
 const { imageSize } = require("image-size");
 
 function isExternal(src) {
@@ -40,9 +41,24 @@ function inspectFile(root, src) {
   }
 }
 
+function listSparseFiles(root) {
+  try {
+    return new Set(execFileSync("git", ["ls-files", "-v", "-z"], {
+      cwd: root,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).split("\0")
+      .filter((entry) => entry.startsWith("S "))
+      .map((entry) => entry.slice(2)));
+  } catch {
+    return new Set();
+  }
+}
+
 function buildInventory(root) {
   const canonical = JSON.parse(fs.readFileSync(path.join(root, "portfolio.json"), "utf8"));
   const bySource = new Map();
+  const sparseFiles = listSparseFiles(root);
 
   for (const project of canonical.projects) {
     const media = [
@@ -52,7 +68,7 @@ function buildInventory(root) {
     for (const item of media) {
       if (!item?.src || isExternal(item.src)) continue;
       const src = item.src.replace(/&amp;/g, "&").replace(/^\/+/, "");
-      if (!bySource.has(src)) bySource.set(src, { projects: new Set(), usages: [] });
+      if (!bySource.has(src)) bySource.set(src, { projects: new Set(), usages: [], width: item.width, height: item.height });
       const entry = bySource.get(src);
       entry.projects.add(project.detailKey);
       entry.usages.push({
@@ -64,17 +80,39 @@ function buildInventory(root) {
   }
 
   const media = [...bySource.entries()]
-    .map(([src, entry]) => ({
-      ...inspectFile(root, src),
-      projects: [...entry.projects].sort(),
-      usages: entry.usages,
-    }))
+    .map(([src, entry]) => {
+      const inspected = inspectFile(root, src);
+      if (!inspected.exists && sparseFiles.has(src)) {
+        const hasDimensions = Number.isFinite(entry.width) && Number.isFinite(entry.height);
+        return {
+          ...inspected,
+          exists: true,
+          materialized: false,
+          sparse: true,
+          width: hasDimensions ? entry.width : null,
+          height: hasDimensions ? entry.height : null,
+          bytes: null,
+          orientation: hasDimensions ? orientation(entry.width, entry.height) : null,
+          format: path.extname(src).slice(1).toLowerCase(),
+          error: null,
+          projects: [...entry.projects].sort(),
+          usages: entry.usages,
+        };
+      }
+      return {
+        ...inspected,
+        materialized: inspected.exists,
+        sparse: false,
+        projects: [...entry.projects].sort(),
+        usages: entry.usages,
+      };
+    })
     .sort((left, right) => left.src.localeCompare(right.src));
   const missing = media.filter((item) => !item.exists || item.error);
   const budgetViolations = media.flatMap((item) => item.usages
     .map((usage) => {
       const limitBytes = (usage.featured ? 500 : 250) * 1024;
-      if (item.bytes <= limitBytes) return null;
+      if (!Number.isFinite(item.bytes) || item.bytes <= limitBytes) return null;
       return {
         project: usage.project,
         src: item.src,
@@ -90,7 +128,7 @@ function buildInventory(root) {
     generatedAt: new Date().toISOString(),
     projectCount: canonical.projects.length,
     localMediaCount: media.length,
-    totalBytes: media.reduce((sum, item) => sum + item.bytes, 0),
+    totalBytes: media.reduce((sum, item) => sum + (Number.isFinite(item.bytes) ? item.bytes : 0), 0),
     media,
     missing,
     budgetViolations,
@@ -123,4 +161,4 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { buildInventory, inspectFile, isExternal, orientation };
+module.exports = { buildInventory, inspectFile, isExternal, listSparseFiles, orientation };

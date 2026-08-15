@@ -2114,3 +2114,104 @@ article {
     page-break-inside: avoid;
   }
 }
+/* About editorial illustrations */
+.about-editorial {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin: 6px 0 35px;
+  border: 1px solid var(--jet);
+  border-radius: 18px;
+  background: var(--eerie-black-1);
+  box-shadow:
+    inset 0 1px 0 hsla(45, 100%, 72%, 0.08),
+    0 18px 44px hsla(0, 0%, 0%, 0.28);
+  animation: aboutEditorialReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.about-editorial::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, hsla(45, 100%, 72%, 0.05), transparent 18%),
+    radial-gradient(circle at 72% 0%, hsla(45, 54%, 58%, 0.08), transparent 34%);
+  pointer-events: none;
+}
+
+.about-editorial img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--eerie-black-1);
+  filter: brightness(1.08) contrast(1.04);
+}
+
+.about-editorial-workflow {
+  margin: 18px 0 22px;
+}
+
+.about-editorial-legend {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 14px 14px;
+  border-top: 1px solid var(--jet);
+  background: linear-gradient(180deg, var(--eerie-black-1), var(--eerie-black-2));
+}
+
+.about-editorial-legend span {
+  padding: 7px 10px;
+  border: 1px solid hsla(45, 54%, 58%, 0.34);
+  border-radius: 999px;
+  color: var(--light-gray);
+  background: hsla(240, 2%, 18%, 0.82);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-600);
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+@keyframes aboutEditorialReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-editorial {
+    margin-bottom: 28px;
+    border-radius: 14px;
+  }
+
+  .about-editorial-workflow {
+    margin: 14px 0 18px;
+  }
+
+  .about-editorial-legend {
+    gap: 6px;
+    padding: 10px;
+  }
+
+  .about-editorial-legend span {
+    padding: 6px 8px;
+    font-size: 0.66rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-editorial {
+    animation: none;
+  }
+}

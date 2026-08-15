@@ -27,6 +27,28 @@ expect(/aria-label="HoaTV gameplay reel"/i.test(videoTag), "Hero video must have
 expect(!/hero-video-facade|>\s*Play reel\s*<|data-hero-video/i.test(html), "Play Reel facade must be removed from HTML.");
 expect(!/data-hero-video|hero-video-facade/i.test(enhancements), "Play Reel facade activation code must be removed.");
 
+const identityFigure = html.match(/<figure\b[^>]*class="[^"]*about-editorial-identity[^"]*"[^>]*>[\s\S]*?<\/figure>/i)?.[0] || "";
+const workflowFigure = html.match(/<figure\b[^>]*class="[^"]*about-editorial-workflow[^"]*"[^>]*>[\s\S]*?<\/figure>/i)?.[0] || "";
+expect(/<\/section>\s*<figure\b[^>]*about-editorial-identity[\s\S]*?<section\b[^>]*class="selected-results"/i.test(html), "Production Identity illustration must sit between About copy and Selected Results.");
+expect(/<section\b[^>]*class="work-process"[\s\S]*?How I Work<\/h2>\s*<figure\b[^>]*about-editorial-workflow/i.test(html), "Workflow illustration must sit after the How I Work heading.");
+expect(/src="assets\/images\/about-editorial\/production-identity\.webp"/i.test(identityFigure), "Production Identity figure must use the optimized local WebP asset.");
+expect(/src="assets\/images\/about-editorial\/how-i-work\.webp"/i.test(workflowFigure), "Workflow figure must use the optimized local WebP asset.");
+for (const [name, figure] of [["Production Identity", identityFigure], ["Workflow", workflowFigure]]) {
+  expect(/alt="[^"]{20,}"/i.test(figure), `${name} illustration must have meaningful alt text.`);
+  expect(/width="1200"/i.test(figure) && /height="720"/i.test(figure), `${name} illustration must declare intrinsic dimensions.`);
+  expect(/loading="lazy"/i.test(figure) && /decoding="async"/i.test(figure), `${name} illustration must use lazy async image loading.`);
+}
+expect(/class="about-editorial-legend"/i.test(identityFigure), "Production Identity figure must include the approved HTML legend.");
+for (const label of ["Gameplay &amp; Player Experience", "Production Systems", "Optimize &amp; Ship"]) {
+  expect(identityFigure.includes(label), `Production Identity legend must include ${label}.`);
+}
+expect(fs.existsSync(path.join(root, "assets/images/about-editorial/production-identity.webp")), "Production Identity WebP asset must exist.");
+expect(fs.existsSync(path.join(root, "assets/images/about-editorial/how-i-work.webp")), "Workflow WebP asset must exist.");
+expect(/\.about-editorial\s*\{[^}]*overflow:\s*hidden/s.test(modernCss), "About editorial component must clip artwork within its frame.");
+expect(/\.about-editorial\s+img\s*\{[^}]*width:\s*100%[^}]*height:\s*auto/s.test(modernCss), "About editorial images must scale responsively.");
+expect(/@media \(max-width:\s*480px\)[\s\S]*\.about-editorial/.test(modernCss), "About editorial component must include a narrow-mobile rule.");
+expect(/@media \(prefers-reduced-motion:\s*reduce\)[\s\S]*\.about-editorial/.test(modernCss), "About editorial component must disable non-essential motion when requested.");
+
 expect(/\.loading-terminal\s*\{[^}]*width:\s*min\(100%\s*-\s*32px,\s*560px\)/s.test(css), "Loading terminal must have viewport-safe responsive width.");
 expect(/\.loading-terminal-body\s+p\s*\{[^}]*overflow-wrap:\s*anywhere/s.test(css), "Loading commands must wrap on narrow screens.");
 expect(/const\s+LOADING_OVERLAY_DELAY_MS\s*=\s*(?:[0-7]?\d{1,2}|800)\s*;/m.test(enhancements), "Loading overlay delay must be at most 800ms.");
