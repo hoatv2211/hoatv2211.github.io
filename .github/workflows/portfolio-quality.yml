@@ -33,6 +33,8 @@ jobs:
             /cloudflare/
             /docs/portfolio-claims.md
             /docs/playable-build-inventory.md
+            /.codex/skills/game-production-showcase/
+            /.github/agents/game-production-showcase.agent.md
             /.github/workflows/portfolio-quality.yml
             !/Games/
           sparse-checkout-cone-mode: false

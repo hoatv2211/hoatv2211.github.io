@@ -18,3 +18,4 @@
 
 # Generated audit reports and screenshots
 /audits/
+.env
