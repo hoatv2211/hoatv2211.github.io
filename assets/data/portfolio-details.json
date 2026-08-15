@@ -323,7 +323,7 @@
               "id": "progression",
               "kicker": "Systems delivered",
               "title": "Battle events carried through production delivery",
-              "body": "Worked as Senior Unity Developer in a collaborative team Developed and maintained quest system, class mechanics, and monster spawning logic",
+              "body": "Worked as Senior Unity Developer in a collaborative team. Developed and maintained quest systems, class mechanics, and monster-spawning logic.",
               "mediaKeys": [
                 "screen-5"
               ],
@@ -333,7 +333,7 @@
               "id": "delivery",
               "kicker": "Engineering decisions",
               "title": "Mobile 3D performance across repeated combat",
-              "body": "Quest flows, class mechanics, monster spawning, event logic, battle interactions, and UI integration",
+              "body": "Quest flows, class mechanics, monster spawning, event logic, battle interactions, and UI integration.",
               "mediaKeys": [
                 "screen-6"
               ],
@@ -467,7 +467,7 @@
               "id": "progression",
               "kicker": "Systems delivered",
               "title": "Production systems supporting progression and delivery",
-              "body": "Contributed to gameplay implementation, mobile optimization, and production delivery for an MMORPG title Supported multiplayer systems, resource loading, SDK integration, and broad device coverage",
+              "body": "Contributed to gameplay implementation, mobile optimization, and production delivery for an MMORPG title. Supported multiplayer systems, resource loading, SDK integration, and broad device coverage.",
               "mediaKeys": [
                 "screen-3"
               ],
@@ -601,7 +601,7 @@
               "id": "progression",
               "kicker": "Systems delivered",
               "title": "World App delivery backed by rankings and live updates",
-              "body": "Led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15 Designed and implemented UI/UX with playful animations",
+              "body": "Led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15. Designed and implemented UI/UX with playful animations.",
               "mediaKeys": [
                 "screen-3"
               ],
@@ -618,6 +618,7 @@
       "status": "active",
       "type": "commercial",
       "role": "Developer",
+      "period": "2024 — 2025",
       "platforms": [
         "Mobile"
       ],
@@ -739,7 +740,19 @@
               "layout": "offset"
             }
           ]
-        }
+        },
+        "evidence": [
+          {
+            "label": "Demo",
+            "url": "https://hoatv2211.github.io/mad-game-hub-shared/portfolio-games/FoodTruck/index.html",
+            "status": "public"
+          },
+          {
+            "label": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=jp.gamestart.Shibainu&hl=vi",
+            "status": "public"
+          }
+        ]
       }
     },
     {
@@ -932,7 +945,7 @@
               "id": "delivery",
               "kicker": "Engineering decisions",
               "title": "GameFi concepts prototyped around the core game",
-              "body": "Hands-on Unity delivery from gameplay implementation through release support",
+              "body": "Hands-on Unity delivery from gameplay implementation through release support.",
               "mediaKeys": [
                 "screen-7"
               ],
@@ -1091,7 +1104,7 @@
               "id": "progression",
               "kicker": "Systems delivered",
               "title": "Resources, crafting, NFTs, and staking in one loop",
-              "body": "Implemented core gameplay mechanics and optimized performance Developed real-time battle systems including skill mechanics and elemental interactions",
+              "body": "Implemented core gameplay mechanics and optimized performance. Developed real-time battle systems including skill mechanics and elemental interactions.",
               "mediaKeys": [
                 "screen-4"
               ],
@@ -1101,7 +1114,7 @@
               "id": "delivery",
               "kicker": "Engineering decisions",
               "title": "Performance profiling across production devices",
-              "body": "Real-time PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback",
+              "body": "Real-time PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback.",
               "mediaKeys": [
                 "screen-5"
               ],
@@ -1268,6 +1281,7 @@
       "status": "active",
       "type": "commercial",
       "role": "Developer",
+      "period": "2020 — 2021",
       "platforms": [
         "Mobile"
       ],
@@ -1390,7 +1404,14 @@
               "layout": "rail"
             }
           ]
-        }
+        },
+        "evidence": [
+          {
+            "label": "Demo",
+            "url": "Games/Archero/index.html",
+            "status": "public"
+          }
+        ]
       }
     },
     {
@@ -1400,6 +1421,7 @@
       "status": "active",
       "type": "commercial",
       "role": "Developer",
+      "period": "2021 — 2022",
       "platforms": [
         "Mobile"
       ],
@@ -1522,16 +1544,24 @@
               "layout": "offset"
             }
           ]
-        }
+        },
+        "evidence": [
+          {
+            "label": "App Store",
+            "url": "https://apps.apple.com/ca/app/trial-bike-extreme-stunts/id1546972713",
+            "status": "public"
+          }
+        ]
       }
     },
     {
       "id": "meow-flow",
-      "title": "Meow flow",
+      "title": "Meow Flow",
       "detailKey": "MeowFlow",
       "status": "active",
       "type": "commercial",
       "role": "Developer",
+      "period": "2021 — 2022",
       "platforms": [
         "Mobile"
       ],
@@ -1653,7 +1683,14 @@
               "layout": "rail"
             }
           ]
-        }
+        },
+        "evidence": [
+          {
+            "label": "Google Play",
+            "url": "https://play.google.com/store/apps/details?&id=com.falcon.p.blameo.meow.flow",
+            "status": "public"
+          }
+        ]
       }
     },
     {
@@ -1680,7 +1717,8 @@
             "fit": "cover",
             "featured": true,
             "title": "Ludo Game (Sample) gameplay video",
-            "key": "trailer"
+            "key": "trailer",
+            "poster": "assets/images/game/ludo.jpg"
           }
         ],
         "presentation": {
@@ -1697,7 +1735,14 @@
             "muted": "#b7bfd4"
           },
           "storyBeats": []
-        }
+        },
+        "evidence": [
+          {
+            "label": "Demo",
+            "url": "https://hoatv2211.github.io/Share001_Ludo/",
+            "status": "public"
+          }
+        ]
       }
     },
     {
@@ -1724,7 +1769,8 @@
             "fit": "cover",
             "featured": true,
             "title": "Pixel Shooter 3D (Sample) gameplay video",
-            "key": "trailer"
+            "key": "trailer",
+            "poster": "assets/images/game/pixcelshooter.png"
           }
         ],
         "presentation": {
@@ -1741,7 +1787,14 @@
             "muted": "#b7bfd4"
           },
           "storyBeats": []
-        }
+        },
+        "evidence": [
+          {
+            "label": "Demo",
+            "url": "https://hoatv2211.github.io/Share002_PixelShooter3D/",
+            "status": "public"
+          }
+        ]
       }
     },
     {
@@ -1870,7 +1923,14 @@
               "layout": "rail"
             }
           ]
-        }
+        },
+        "evidence": [
+          {
+            "label": "Demo",
+            "url": "https://hoatv2211.github.io/Share004_Galaxiga/",
+            "status": "public"
+          }
+        ]
       }
     },
     {
@@ -1880,6 +1940,7 @@
       "status": "active",
       "type": "commercial",
       "role": "Developer",
+      "period": "2021 — 2022",
       "platforms": [
         "Mobile"
       ],
@@ -1956,6 +2017,16 @@
         ],
         "evidence": [
           {
+            "label": "Demo",
+            "url": "Games/HomeDesign/index.html",
+            "status": "public"
+          },
+          {
+            "label": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.giraffegames.ggm3",
+            "status": "public"
+          },
+          {
             "label": "Sensor Tower Android",
             "url": "https://app.sensortower.com/api/android/apps/com.giraffegames.ggm3",
             "status": "public"
@@ -2018,6 +2089,7 @@
       "status": "active",
       "type": "commercial",
       "role": "Developer",
+      "period": "2020 — 2021",
       "platforms": [
         "Mobile"
       ],
@@ -2140,7 +2212,14 @@
               "layout": "rail"
             }
           ]
-        }
+        },
+        "evidence": [
+          {
+            "label": "Demo",
+            "url": "Games/TileCandy/index.html",
+            "status": "public"
+          }
+        ]
       }
     },
     {
@@ -2150,6 +2229,7 @@
       "status": "active",
       "type": "commercial",
       "role": "Developer",
+      "period": "2023 — 2024",
       "platforms": [
         "Mobile"
       ],
@@ -2250,7 +2330,19 @@
               "layout": "offset"
             }
           ]
-        }
+        },
+        "evidence": [
+          {
+            "label": "Demo",
+            "url": "Games/Tilesmatch3/index.html",
+            "status": "public"
+          },
+          {
+            "label": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.mad.tilesmatch.mahjong",
+            "status": "public"
+          }
+        ]
       }
     },
     {
@@ -2260,6 +2352,7 @@
       "status": "active",
       "type": "commercial",
       "role": "Developer",
+      "period": "2024 — 2025",
       "platforms": [
         "Mobile"
       ],
@@ -2382,7 +2475,19 @@
               "layout": "rail"
             }
           ]
-        }
+        },
+        "evidence": [
+          {
+            "label": "Demo",
+            "url": "Games/Sudoku/index.html",
+            "status": "public"
+          },
+          {
+            "label": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.mad.sudoku",
+            "status": "public"
+          }
+        ]
       }
     },
     {
@@ -2511,7 +2616,14 @@
               "layout": "rail"
             }
           ]
-        }
+        },
+        "evidence": [
+          {
+            "label": "Demo",
+            "url": "https://hoatv2211.github.io/Share003_AgeOfBattle/",
+            "status": "public"
+          }
+        ]
       }
     },
     {
@@ -2521,6 +2633,7 @@
       "status": "active",
       "type": "sample",
       "role": "Developer",
+      "period": "2021 — 2022",
       "platforms": [
         "Mobile"
       ],
@@ -2643,7 +2756,14 @@
               "layout": "rail"
             }
           ]
-        }
+        },
+        "evidence": [
+          {
+            "label": "Demo",
+            "url": "Games/SurvivorIO/index.html",
+            "status": "public"
+          }
+        ]
       }
     },
     {
@@ -2676,16 +2796,6 @@
             "width": 960,
             "height": 540,
             "key": "hero"
-          },
-          {
-            "type": "image",
-            "src": "assets/images/portfolio-details/metameAmusementPark/3c577a133a46.detail.webp",
-            "alt": "Metame Amusement Park",
-            "fit": "cover",
-            "featured": false,
-            "width": 960,
-            "height": 540,
-            "key": "screen-1"
           }
         ],
         "presentation": {
@@ -2707,9 +2817,7 @@
               "kicker": "Player experience",
               "title": "Quest guidance supports virtual exploration",
               "body": "Integrated the Dynomega quest flow and supporting accept, hint, and icon interactions.",
-              "mediaKeys": [
-                "screen-1"
-              ],
+              "mediaKeys": [],
               "layout": "wide"
             }
           ]
@@ -2969,12 +3077,24 @@
             "muted": "#b7bfd4"
           },
           "storyBeats": []
-        }
+        },
+        "evidence": [
+          {
+            "label": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.ibb.ice.breaking.battle",
+            "status": "public"
+          },
+          {
+            "label": "Sensor Tower Android",
+            "url": "https://app.sensortower.com/overview/com.ibb.ice.breaking.battle",
+            "status": "public"
+          }
+        ]
       }
     },
     {
       "id": "citybuilder",
-      "title": "citybuilder",
+      "title": "City Builder",
       "detailKey": "citybuilder",
       "status": "archived",
       "type": "archived",
@@ -2984,80 +3104,13 @@
         "tier": "C",
         "mode": "archived",
         "statusLabel": "Archived / legacy work",
-        "archiveReason": "Archived and excluded from the primary portfolio while preserving the legacy detail URL.",
-        "technicalNotes": [
-          "2020 — 2021 Arrow Survival: Hero's Quest is a fast-paced action roguelike where players take on the role of a lone archer battling through waves of enemies across procedurally generated stages. With intuitive one-touch controls and an arsenal of unique skills and upgrades, the game delivers an intense survival experience.",
-          "Key Features: 🏹 One-Finger Archery Combat: Move to dodge and release to fire—simple yet deeply strategic controls.",
-          "🧿 Randomized Skill System: Gain random power-ups after each room for endless combinations.",
-          "🌍 Procedurally Generated Levels: Each run offers fresh layouts and enemy encounters."
-        ],
-        "media": [
-          {
-            "type": "image",
-            "src": "assets/images/game/Archero/1.detail.webp",
-            "alt": "citybuilder featured view",
-            "fit": "portrait",
-            "featured": true,
-            "width": 900,
-            "height": 1600,
-            "key": "hero"
-          },
-          {
-            "type": "image",
-            "src": "assets/images/game/Archero/2.detail.webp",
-            "alt": "citybuilder screenshot 2",
-            "fit": "portrait",
-            "featured": false,
-            "width": 900,
-            "height": 1600,
-            "key": "screen-1"
-          },
-          {
-            "type": "image",
-            "src": "assets/images/game/Archero/3.detail.webp",
-            "alt": "citybuilder screenshot 3",
-            "fit": "portrait",
-            "featured": false,
-            "width": 900,
-            "height": 1600,
-            "key": "screen-2"
-          },
-          {
-            "type": "image",
-            "src": "assets/images/game/Archero/4.detail.webp",
-            "alt": "citybuilder screenshot 4",
-            "fit": "portrait",
-            "featured": false,
-            "width": 900,
-            "height": 1600,
-            "key": "screen-3"
-          },
-          {
-            "type": "image",
-            "src": "assets/images/game/Archero/5.detail.webp",
-            "alt": "citybuilder screenshot 5",
-            "fit": "portrait",
-            "featured": false,
-            "width": 900,
-            "height": 1600,
-            "key": "screen-4"
-          },
-          {
-            "type": "image",
-            "src": "assets/images/game/Archero/6.detail.webp",
-            "alt": "citybuilder screenshot 6",
-            "fit": "portrait",
-            "featured": false,
-            "width": 900,
-            "height": 1600,
-            "key": "screen-5"
-          }
-        ],
+        "archiveReason": "Original project media and verified production notes are unavailable in the current portfolio archive.",
+        "technicalNotes": [],
+        "media": [],
         "presentation": {
           "layoutVariant": "compact-proof",
           "theme": "citybuilder",
           "eyebrow": "Archived game project",
-          "heroMediaKey": "hero",
           "palette": {
             "ink": "#100d0b",
             "panel": "#28201a",
@@ -3072,7 +3125,7 @@
     },
     {
       "id": "neighborhood",
-      "title": "neighborhood",
+      "title": "Neighborhood Defense",
       "detailKey": "neighborhood",
       "status": "archived",
       "type": "archived",
@@ -3145,7 +3198,14 @@
             "muted": "#b7bfd4"
           },
           "storyBeats": []
-        }
+        },
+        "evidence": [
+          {
+            "label": "Demo",
+            "url": "Games/Neighborhood/index.html",
+            "status": "public"
+          }
+        ]
       }
     }
   ]

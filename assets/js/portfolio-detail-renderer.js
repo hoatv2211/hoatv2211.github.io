@@ -115,13 +115,14 @@
     "compact-proof",
   ]);
 
-  function renderShowcaseActions(detail, limit) {
+  function renderShowcaseActions(detail, limit, offset = 0) {
     const evidence = Array.isArray(detail.evidence) ? detail.evidence : [];
     const actions = SHOWCASE_ACTIONS.map(([evidenceLabel, label]) => {
       const item = evidence.find((candidate) => candidate.label === evidenceLabel);
       return item ? { item, label } : null;
     }).filter(Boolean);
-    return actions.slice(0, limit || actions.length).map(({ item, label }, index) => `<a class="detail-showcase-action detail-showcase-action--${index === 0 ? "primary" : "secondary"}" href="${escapeHtml(item.url)}"${externalAttributes(item.url)}>${escapeHtml(label)}</a>`).join("");
+    const visibleActions = actions.slice(offset, limit ? offset + limit : actions.length);
+    return visibleActions.map(({ item, label }, index) => `<a class="detail-showcase-action detail-showcase-action--${index === 0 ? "primary" : "secondary"}" href="${escapeHtml(item.url)}"${externalAttributes(item.url)}>${escapeHtml(label)}</a>`).join("");
   }
 
   function renderPaletteStyle(palette) {
@@ -165,7 +166,7 @@
   }
 
   function renderShowcaseClosing(project) {
-    const actions = renderShowcaseActions(project.detail);
+    const actions = renderShowcaseActions(project.detail, undefined, 2);
     if (!actions) return "";
     return `<footer class="detail-showcase-closing"><p class="detail-story-kicker">Explore the project</p><h3>See ${escapeHtml(project.title)} in motion.</h3><p>Review the public build and project presence for a closer look at the shipped experience.</p><div class="detail-showcase-actions">${actions}</div></footer>`;
   }
@@ -190,7 +191,7 @@
     const heroMedia = mediaMap.get(presentation.heroMediaKey);
     const supporting = (detail.media || []).filter((media) => media.key !== presentation.heroMediaKey);
     const actions = renderShowcaseActions(detail);
-    return `<div class="detail-compact-proof"><header class="detail-compact-proof-hero"><div class="detail-compact-proof-copy"><span class="detail-status">${escapeHtml(detail.statusLabel)}</span><p class="detail-showcase-eyebrow">${escapeHtml(presentation.eyebrow)}</p><h2 class="detail-title">${escapeHtml(project.title)}</h2>${project.summary ? `<p class="detail-showcase-summary">${escapeHtml(project.summary)}</p>` : ""}</div><div class="detail-compact-proof-media">${heroMedia ? renderMediaItem(heroMedia, true) : ""}</div></header>${renderProductionStrip(project)}${textSection("Purpose", detail.purpose || project.summary, "detail-purpose")}${supporting.length ? `<section class="detail-section detail-compact-gallery" aria-label="Project proof gallery"><div class="detail-gallery detail-gallery--mixed">${supporting.map((media) => renderMediaItem(media, false)).join("")}</div></section>` : ""}${listSection("Technical notes", detail.technicalNotes, "detail-technical-notes")}${textSection("Archive reason", detail.archiveReason, "detail-archive-reason")}${actions ? `<div class="detail-showcase-actions">${actions}</div>` : ""}</div>`;
+    return `<div class="detail-compact-proof"><header class="detail-compact-proof-hero"><div class="detail-compact-proof-copy"><span class="detail-status">${escapeHtml(detail.statusLabel)}</span><p class="detail-showcase-eyebrow">${escapeHtml(presentation.eyebrow)}</p><h2 class="detail-title">${escapeHtml(project.title)}</h2>${project.summary ? `<p class="detail-showcase-summary">${escapeHtml(project.summary)}</p>` : ""}</div>${heroMedia ? `<div class="detail-compact-proof-media">${renderMediaItem(heroMedia, true)}</div>` : ""}</header>${renderProductionStrip(project)}${textSection("Purpose", detail.purpose || project.summary, "detail-purpose")}${supporting.length ? `<section class="detail-section detail-compact-gallery" aria-label="Project proof gallery"><div class="detail-gallery detail-gallery--mixed">${supporting.map((media) => renderMediaItem(media, false)).join("")}</div></section>` : ""}${listSection("Technical notes", detail.technicalNotes, "detail-technical-notes")}${textSection("Archive reason", detail.archiveReason, "detail-archive-reason")}${actions ? `<div class="detail-showcase-actions">${actions}</div>` : ""}</div>`;
   }
 
   function renderShowcase(project, bespoke) {
@@ -268,7 +269,8 @@
     const defaultHeader = isShowcase ? "" : `<header class="detail-header"><span class="detail-status">${escapeHtml(detail.statusLabel)}</span><h2 class="detail-title">${escapeHtml(project.title)}</h2>${renderFacts(project)}</header>`;
 
     const paletteStyle = isShowcase ? renderPaletteStyle(presentation.palette) : "";
-    return `<section class="timeline project-item detail-case-study detail-case-study--tier-${detail.tier.toLowerCase()}${variantClass}"${paletteStyle} data-filter-item data-deactive-item project-detail data-detail-category="${escapeHtml(project.detailKey)}">${defaultHeader}${body}</section>`;
+    const projectContext = ` data-project-title="${escapeHtml(project.title)}" data-project-role="${escapeHtml(project.role || "")}" data-showcase-family="${escapeHtml(presentation?.layoutVariant || "")}"`;
+    return `<section class="timeline project-item detail-case-study detail-case-study--tier-${detail.tier.toLowerCase()}${variantClass}"${paletteStyle} data-filter-item data-deactive-item project-detail data-detail-category="${escapeHtml(project.detailKey)}"${projectContext}>${defaultHeader}${body}</section>`;
   }
 
   window.PortfolioDetailRenderer = { render };

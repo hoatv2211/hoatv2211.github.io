@@ -56,7 +56,8 @@ assert.deepStrictEqual(
 
 for (const item of data.projects.filter((candidate) => candidate.detail.tier === "B")) {
   assert.ok(item.detail.contribution.length >= 3, `${item.detailKey} needs three contribution bullets`);
-  assert.ok(item.detail.media.length >= 2 && item.detail.media.length <= 6, `${item.detailKey} needs two to six primary media records`);
+  const minimumMedia = item.detail.presentation.layoutVariant === "gameplay-editorial" ? 1 : 2;
+  assert.ok(item.detail.media.length >= minimumMedia && item.detail.media.length <= 6, `${item.detailKey} needs ${minimumMedia} to six primary media records`);
 }
 
 for (const key of ["share001-ludo", "share002-pixelshooter3d"]) {

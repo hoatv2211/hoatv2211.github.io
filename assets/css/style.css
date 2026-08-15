@@ -1851,6 +1851,8 @@ main {
 
 .gitshare-card {
     display: block;
+    min-width: 0;
+    width: 100%;
     transition: transform var(--transition-1), border-color var(--transition-1), box-shadow var(--transition-1);
 }
 
@@ -3785,6 +3787,36 @@ iframe {
     color: var(--orange-yellow-crayola);
     background: radial-gradient(circle at 30% 20%, hsla(45, 100%, 72%, 0.18), transparent 34%), var(--bg-gradient-jet);
     border: 1px solid hsla(45, 100%, 72%, 0.34);
+}
+
+.backup-style-toggle[hidden] {
+    display: none !important;
+}
+
+body.portfolio-detail-open .portfolio > header,
+body.portfolio-detail-open .portfolio-showcase,
+body.portfolio-detail-open .portfolio > .projects {
+    display: none !important;
+}
+
+body.portfolio-detail-open #portfolio-back-button {
+    top: max(14px, env(safe-area-inset-top));
+    right: 18px;
+    bottom: auto;
+    display: inline-flex;
+    width: auto;
+    min-width: 0;
+    height: 42px;
+    gap: 8px;
+    padding: 0 14px;
+    border-radius: 999px;
+    visibility: visible;
+}
+
+#portfolio-back-button span {
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .backup-style-toggle:not(.has-custom-position) {

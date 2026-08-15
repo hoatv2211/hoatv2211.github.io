@@ -162,7 +162,7 @@ window.PORTFOLIO_DATA = [
   },
   {
     "id": "MeowFlow",
-    "title": "Meow flow",
+    "title": "Meow Flow",
     "category": "unity",
     "detailCategory": "MeowFlow",
     "detailUrl": "",

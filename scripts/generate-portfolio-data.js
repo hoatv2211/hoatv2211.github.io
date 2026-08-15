@@ -59,7 +59,11 @@ function validatePresentation(project, detail) {
   }
   requireString(project, "detail.presentation.theme", presentation.theme);
   requireString(project, "detail.presentation.eyebrow", presentation.eyebrow);
-  requireString(project, "detail.presentation.heroMediaKey", presentation.heroMediaKey);
+  const compact = presentation.layoutVariant === "compact-proof";
+  const textOnlyArchive = compact && project.status === "archived" && (!Array.isArray(detail.media) || detail.media.length === 0);
+  if (!textOnlyArchive) {
+    requireString(project, "detail.presentation.heroMediaKey", presentation.heroMediaKey);
+  }
   if (!presentation.palette || typeof presentation.palette !== "object") {
     throw new Error(`${project.detailKey}: missing detail.presentation.palette`);
   }
@@ -68,7 +72,6 @@ function validatePresentation(project, detail) {
       throw new Error(`${project.detailKey}: invalid presentation palette ${paletteKey}`);
     }
   }
-  const compact = presentation.layoutVariant === "compact-proof";
   requireArray(project, "detail.presentation.storyBeats", presentation.storyBeats, compact ? 0 : 1);
 
   const mediaKeys = new Set();
@@ -78,17 +81,17 @@ function validatePresentation(project, detail) {
     mediaKeys.add(media.key);
   }
 
-  if (!mediaKeys.has(presentation.heroMediaKey)) {
+  if (!textOnlyArchive && !mediaKeys.has(presentation.heroMediaKey)) {
     throw new Error(`${project.detailKey}: unknown presentation media key ${presentation.heroMediaKey}`);
   }
 
-  const usedMediaKeys = new Set([presentation.heroMediaKey]);
+  const usedMediaKeys = new Set(textOnlyArchive ? [] : [presentation.heroMediaKey]);
   for (const beat of presentation.storyBeats) {
     requireString(project, "detail.presentation.storyBeat.id", beat.id);
     requireString(project, "detail.presentation.storyBeat.kicker", beat.kicker);
     requireString(project, "detail.presentation.storyBeat.title", beat.title);
     requireString(project, "detail.presentation.storyBeat.body", beat.body);
-    requireArray(project, "detail.presentation.storyBeat.mediaKeys", beat.mediaKeys, 1);
+    requireArray(project, "detail.presentation.storyBeat.mediaKeys", beat.mediaKeys, 0);
     if (!SHOWCASE_LAYOUTS.has(beat.layout)) {
       throw new Error(`${project.detailKey}: unsupported story beat layout ${beat.layout}`);
     }
@@ -137,7 +140,8 @@ function validateDetail(project) {
   if (detail.tier === "B") {
     requireArray(project, "platforms", project.platforms, 0);
     requireArray(project, "detail.contribution", detail.contribution, 3);
-    requireArray(project, "detail.media", detail.media, 2);
+    const minimumMedia = detail.presentation?.layoutVariant === "gameplay-editorial" ? 1 : 2;
+    requireArray(project, "detail.media", detail.media, minimumMedia);
     return;
   }
 

@@ -43,6 +43,53 @@
   transition: none;
 }
 
+.portfolio-chatbot-invitation {
+  position: fixed;
+  z-index: 10003;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px;
+  max-width: 280px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--chatbot-accent) 44%, var(--chatbot-line));
+  border-radius: 12px 12px 4px 12px;
+  background: color-mix(in srgb, var(--chatbot-panel) 96%, transparent);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.42);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.portfolio-chatbot-invitation.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.portfolio-chatbot-invitation-message {
+  min-width: 0;
+  padding: 12px 10px 12px 13px;
+  color: var(--chatbot-text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.portfolio-chatbot-invitation-close {
+  align-self: start;
+  width: 28px;
+  height: 32px;
+  color: var(--chatbot-muted);
+  font-size: 15px;
+}
+
+.portfolio-chatbot-invitation-message:focus-visible,
+.portfolio-chatbot-invitation-close:focus-visible {
+  outline: 2px solid var(--chatbot-accent-2);
+  outline-offset: -3px;
+}
+
 .portfolio-chatbot-button::after {
   content: "AI";
   position: absolute;
@@ -515,16 +562,36 @@ body.portfolio-chatbot-studio {
 @media (max-width: 768px) {
   .portfolio-chatbot-button {
     top: auto !important;
-    right: 18px !important;
-    bottom: calc(214px + env(safe-area-inset-bottom)) !important;
+    right: 12px !important;
+    bottom: calc(104px + env(safe-area-inset-bottom)) !important;
     left: auto !important;
+    width: 58px;
+    height: 58px;
+    border-radius: 12px;
+  }
+
+  .portfolio-chatbot-pet {
+    width: 50px;
+    height: 54px;
+  }
+
+  .portfolio-chatbot-button::after {
+    right: -5px;
+    bottom: -5px;
+    width: 23px;
+    height: 19px;
+    font-size: 9px;
+  }
+
+  .portfolio-chatbot-invitation {
+    max-width: 220px;
   }
 
   .portfolio-chatbot-panel {
     top: 12px !important;
     left: 10px;
     right: 10px;
-    bottom: calc(188px + env(safe-area-inset-bottom)) !important;
+    bottom: calc(90px + env(safe-area-inset-bottom)) !important;
     width: auto;
     max-height: none;
     grid-template-rows: auto minmax(0, 1fr) auto auto auto;
@@ -573,6 +640,7 @@ body.portfolio-chatbot-studio {
   .portfolio-chatbot-button,
   .portfolio-chatbot-pet,
   .portfolio-chatbot-panel,
+  .portfolio-chatbot-invitation,
   .portfolio-chatbot-eye,
   .portfolio-chatbot-ping,
   .portfolio-chatbot-button.is-thinking .portfolio-chatbot-mouth {

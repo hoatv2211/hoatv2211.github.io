@@ -173,6 +173,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (!loadedProject) return null;
 
+    document.body.classList.add("portfolio-detail-open");
+
     suppressDetailReset = true;
     filterFunc("");
     suppressDetailReset = false;
@@ -200,6 +202,10 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollToProjectDetail(project);
       }
     });
+
+    document.dispatchEvent(new CustomEvent("portfolio:detail-opened", {
+      detail: { detailKey: selectedType }
+    }));
 
     if (typeof window.refreshProjectMediaLayout === "function") {
       window.requestAnimationFrame(() => window.refreshProjectMediaLayout());
@@ -337,6 +343,7 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleBackButton(false);
 
     buttonBack.addEventListener("click", function () {
+      document.body.classList.remove("portfolio-detail-open");
       // Add click animation
       this.classList.add('button-clicked');
       setTimeout(() => this.classList.remove('button-clicked'), 300);
@@ -539,15 +546,19 @@ document.addEventListener('DOMContentLoaded', function () {
   if (navigationLinks && navigationLinks.length > 0 && pages) {
     navigationLinks.forEach((link, i) => {
       link.addEventListener("click", function () {
+        document.body.classList.remove("portfolio-detail-open");
         filterFunc("all");
         if (selectValue) selectValue.innerText = "All";
 
         const targetPage = this.innerHTML.toLowerCase();
 
-        pages.forEach((page, j) => {
+        navigationLinks.forEach(navLink => {
+          navLink.classList.toggle("active", navLink.textContent.trim().toLowerCase() === targetPage);
+        });
+
+        pages.forEach(page => {
           if (targetPage === page.dataset.page) {
             page.classList.add("active");
-            navigationLinks[j].classList.add("active");
             window.scrollTo({
               top: 0,
               behavior: 'smooth'
@@ -570,7 +581,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
           } else {
             page.classList.remove("active");
-            navigationLinks[j].classList.remove("active");
           }
         });
       });
@@ -650,6 +660,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const backupStyleToggle = document.getElementById("backup-style-toggle");
   const backupStyleOverlay = document.getElementById("backup-style-overlay");
   const backupStyleClose = document.getElementById("backup-style-close");
+  const backupStyleEnabled = new URLSearchParams(window.location.search).get("backups") === "1";
+
+  if (backupStyleToggle) {
+    backupStyleToggle.hidden = !backupStyleEnabled;
+  }
 
   function setBackupStyleSelector(open) {
     if (!backupStyleOverlay || !backupStyleToggle) return;
@@ -660,7 +675,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.toggle("backup-style-open", open);
   }
 
-  if (backupStyleToggle && backupStyleOverlay) {
+  if (backupStyleEnabled && backupStyleToggle && backupStyleOverlay) {
     backupStyleToggle.addEventListener("click", function () {
       setBackupStyleSelector(!backupStyleOverlay.classList.contains("active"));
     });

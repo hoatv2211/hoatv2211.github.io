@@ -129,7 +129,7 @@
               ${platformsHtml}
               <div class="showcase-links">
                 ${primaryCta}
-                ${project.detailCategory
+                ${project.detailCategory && project.demoUrl
                   ? `<button type="button" class="showcase-btn showcase-btn-source" data-open-detail="${escapeHtml(project.detailCategory)}">DETAIL</button>`
                   : ""}
               </div>

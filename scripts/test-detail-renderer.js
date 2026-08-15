@@ -107,7 +107,7 @@ assert.match(showcaseHtml, /data-story-beat="quests"/);
 assert.ok(showcaseHtml.indexOf("World and gameplay") < showcaseHtml.indexOf("Quest pipeline"));
 assert.match(showcaseHtml, />Play Demo</);
 assert.match(showcaseHtml, />Visit Website</);
-assert.match(showcaseHtml, /See Showcase Project in motion/);
+assert.doesNotMatch(showcaseHtml, /See Showcase Project in motion/);
 assert.strictEqual((showcaseHtml.match(/src="quest\.jpg"/g) || []).length, 1);
 assert.strictEqual((showcaseHtml.match(/class="detail-story-beat/g) || []).length, 4);
 
@@ -150,6 +150,9 @@ assert.match(editorialHtml, /detail-showcase--gameplay-editorial/);
 assert.match(editorialHtml, />App Store</);
 assert.match(editorialHtml, />Google Play</);
 assert.match(editorialHtml, />Watch Trailer</);
+assert.strictEqual((editorialHtml.match(/>App Store</g) || []).length, 1);
+assert.strictEqual((editorialHtml.match(/>Google Play</g) || []).length, 1);
+assert.strictEqual((editorialHtml.match(/>Watch Trailer</g) || []).length, 1);
 
 const consoleHtml = renderFamily("product-console");
 assert.match(consoleHtml, /detail-showcase--product-console/);
@@ -218,6 +221,20 @@ assert.match(archivedHtml, /Archived \/ legacy work/);
 assert.match(archivedHtml, /No longer displayed in the primary portfolio/);
 assert.doesNotMatch(archivedHtml, /detail-gallery/);
 assert.doesNotMatch(archivedHtml, /<section[^>]*>\s*<h3[^>]*>Technical notes<\/h3>\s*<\/section>/);
+
+const archivedCompact = structuredClone(compactProject);
+archivedCompact.title = "Text-only Archive";
+archivedCompact.detailKey = "text-only-archive";
+archivedCompact.status = "archived";
+archivedCompact.detail.mode = "archived";
+archivedCompact.detail.statusLabel = "Archived / legacy work";
+archivedCompact.detail.archiveReason = "Verified project media is unavailable.";
+archivedCompact.detail.media = [];
+delete archivedCompact.detail.presentation.heroMediaKey;
+const archivedCompactHtml = renderer.render(archivedCompact, '<section project-detail data-detail-category="text-only-archive"></section>');
+assert.match(archivedCompactHtml, /detail-case-study--compact-proof/);
+assert.match(archivedCompactHtml, /Verified project media is unavailable/);
+assert.doesNotMatch(archivedCompactHtml, /detail-compact-proof-media/);
 
 assert.throws(
   () => renderer.render(flagship, '<section project-detail data-detail-category="wrong"></section>'),

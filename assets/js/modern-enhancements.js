@@ -172,6 +172,7 @@ function initThemeToggle() {
   // Get the existing theme toggle button
   const themeToggle = document.getElementById('theme-toggle');
   const backupStyleToggle = document.getElementById('backup-style-toggle');
+  const backupStyleEnabled = new URLSearchParams(window.location.search).get('backups') === '1';
 
   if (themeToggle) {
     // Toggle click is handled by bootstrap.js via window.toggleTheme
@@ -183,6 +184,10 @@ function initThemeToggle() {
   }
 
   if (backupStyleToggle) {
+    backupStyleToggle.hidden = !backupStyleEnabled;
+  }
+
+  if (backupStyleEnabled && backupStyleToggle) {
     localStorage.removeItem('backupStyleTogglePosition');
     localStorage.removeItem('backupStyleTogglePositionV2');
     localStorage.removeItem('backupStyleTogglePositionV3');

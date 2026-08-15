@@ -52,6 +52,8 @@ for (const token of [
   assert.ok(css.includes(token), `showcase CSS must consume palette token ${token}`);
 }
 assert.ok(css.includes("@media (max-width: 600px)"), "detail CSS must include a mobile breakpoint");
+assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.detail-showcase--mobile-campaign \.detail-showcase-hero\s*\{[^}]*grid-template-columns:\s*minmax\(0, 1fr\)/, "Mobile Campaign hero must collapse with a family-specific selector");
+assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.detail-showcase--product-console \.detail-showcase-hero\s*\{[^}]*grid-template-columns:\s*minmax\(0, 1fr\)/, "Product Console hero must collapse with a family-specific selector");
 const viewerCloseRule = css.match(/\.detail-media-viewer-close\s*\{([\s\S]*?)\}/)?.[1] || "";
 assert.match(viewerCloseRule, /z-index:\s*10000/, "viewer close control must stay above expanded media");
 assert.ok(!css.includes(".project-list"), "detail CSS must not own legacy card selectors");

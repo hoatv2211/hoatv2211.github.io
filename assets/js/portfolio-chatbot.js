@@ -9,6 +9,28 @@
     greeting: "Hi, I am Hoa's portfolio assistant. Ask about Unity projects, WebGL, GameFi, Telegram bots, or hiring availability.",
     maxMessages: 12,
     maxInputLength: 900,
+    proactiveEnabled: true,
+    proactiveDelayMs: 5000,
+    proactiveDetailDelayMs: 8000,
+    proactiveDetailScrollThreshold: 0.3,
+    proactiveVisibleMs: 4000,
+    proactiveMaxPerSession: 4,
+    proactiveMessages: [
+      "Hi! Looking for a Game developer?",
+      "Need a Unity developer who can take a game from prototype to release?",
+      "Have a game idea that needs a playable prototype?",
+      "Looking for someone who can lead Unity production?",
+      "Building a mobile, WebGL, GameFi, or Telegram game?",
+      "Need help with gameplay, optimization, ads, IAP, or publishing?"
+    ],
+    proactiveContextMessages: {
+      about: "Want a quick summary of Hoa's strongest experience?",
+      resume: "Want me to highlight the experience most relevant to your team?",
+      portfolio: "Need help choosing which projects to review first?",
+      detail: "Planning something similar? Ask me how Hoa can help.",
+      gitshare: "Looking for public code samples or playable demos?",
+      hiring: "Have a project in mind? I can help you contact Hoa on Telegram."
+    },
     quickPrompts: [
       "What Unity projects should I review first?",
       "Can Hoa build a Telegram mini app?",
@@ -30,6 +52,17 @@
     if (!Array.isArray(config.quickPrompts) || config.quickPrompts.length === 0) {
       config.quickPrompts = DEFAULT_CONFIG.quickPrompts;
     }
+    if (!Array.isArray(config.proactiveMessages) || config.proactiveMessages.length === 0) {
+      config.proactiveMessages = DEFAULT_CONFIG.proactiveMessages;
+    }
+    if (!config.proactiveContextMessages || typeof config.proactiveContextMessages !== "object") {
+      config.proactiveContextMessages = DEFAULT_CONFIG.proactiveContextMessages;
+    }
+    config.proactiveDelayMs = Math.max(1000, Number(config.proactiveDelayMs) || DEFAULT_CONFIG.proactiveDelayMs);
+    config.proactiveDetailDelayMs = Math.max(1000, Number(config.proactiveDetailDelayMs) || DEFAULT_CONFIG.proactiveDetailDelayMs);
+    config.proactiveDetailScrollThreshold = Math.min(0.9, Math.max(0.1, Number(config.proactiveDetailScrollThreshold) || DEFAULT_CONFIG.proactiveDetailScrollThreshold));
+    config.proactiveVisibleMs = Math.max(1000, Number(config.proactiveVisibleMs) || DEFAULT_CONFIG.proactiveVisibleMs);
+    config.proactiveMaxPerSession = Math.max(1, Number(config.proactiveMaxPerSession) || DEFAULT_CONFIG.proactiveMaxPerSession);
     return config;
   }
 
@@ -46,6 +79,22 @@
       localStorage.setItem(STORAGE_PREFIX + key, value);
     } catch (error) {
       /* storage unavailable */
+    }
+  }
+
+  function safeSessionGet(key) {
+    try {
+      return sessionStorage.getItem(STORAGE_PREFIX + key);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function safeSessionSet(key, value) {
+    try {
+      sessionStorage.setItem(STORAGE_PREFIX + key, value);
+    } catch (error) {
+      /* session storage unavailable */
     }
   }
 
@@ -136,6 +185,20 @@
       '<a class="portfolio-chatbot-fallback" href="' + escapeAttr(config.telegramUrl) + '" target="_blank" rel="noopener noreferrer">Open Telegram direct</a>'
     ].join("");
     return panel;
+  }
+
+  function createInvitation() {
+    var invitation = document.createElement("aside");
+    invitation.className = "portfolio-chatbot-invitation";
+    invitation.setAttribute("role", "status");
+    invitation.setAttribute("aria-live", "polite");
+    invitation.setAttribute("aria-hidden", "true");
+    invitation.inert = true;
+    invitation.innerHTML = [
+      '<button class="portfolio-chatbot-invitation-message" type="button"></button>',
+      '<button class="portfolio-chatbot-invitation-close" type="button" aria-label="Dismiss assistant invitation">x</button>'
+    ].join("");
+    return invitation;
   }
 
   function escapeHtml(value) {
@@ -304,7 +367,17 @@
     setFloatingPosition(button, x, y);
   }
 
+  function resetMobilePosition(button) {
+    ["left", "top", "right", "bottom"].forEach(function (property) {
+      button.style.removeProperty(property);
+    });
+  }
+
   function makeDraggable(button) {
+    if (isMobileViewport()) {
+      resetMobilePosition(button);
+      return;
+    }
     restorePosition(button);
 
     var dragging = false;
@@ -382,6 +455,226 @@
     }, true);
   }
 
+  function shuffle(items) {
+    var result = items.slice();
+    for (var index = result.length - 1; index > 0; index -= 1) {
+      var swapIndex = Math.floor(Math.random() * (index + 1));
+      var current = result[index];
+      result[index] = result[swapIndex];
+      result[swapIndex] = current;
+    }
+    return result;
+  }
+
+  function activeInvitationContext() {
+    if (document.body.classList.contains("portfolio-detail-open") || document.querySelector("[project-detail].active")) return "detail";
+    var activePage = document.querySelector("[data-page].active");
+    return activePage && activePage.dataset ? activePage.dataset.page : "about";
+  }
+
+  function activeDetailProject() {
+    var detail = document.querySelector("[project-detail].active");
+    if (!detail || !document.body.classList.contains("portfolio-detail-open")) return null;
+    return {
+      element: detail,
+      key: detail.dataset.detailCategory || "",
+      title: detail.dataset.projectTitle || "this project",
+      role: detail.dataset.projectRole || "",
+      family: detail.dataset.showcaseFamily || ""
+    };
+  }
+
+  function detailInvitationFor(project) {
+    var title = project.title;
+    var messages = {
+      "flagship-worlds": "Want Hoa's production highlights for " + title + "?",
+      "mobile-campaign": "Want the mobile delivery highlights for " + title + "?",
+      "gameplay-editorial": "Want the gameplay highlights for " + title + "?",
+      "product-console": "Want the product architecture behind " + title + "?",
+      "compact-proof": "Want a quick role summary for " + title + "?",
+      "production-showcase": "Want the production story behind " + title + "?"
+    };
+    return messages[project.family] || "Want a quick project summary for " + title + "?";
+  }
+
+  function detailPromptFor(project) {
+    return "Summarize Hoa's role and strongest production contributions on " + project.title + ".";
+  }
+
+  function detailScrollProgress(project) {
+    var top = project.element.getBoundingClientRect().top + window.scrollY;
+    var distance = Math.max(project.element.offsetHeight - window.innerHeight, 1);
+    return Math.max(0, Math.min(1, (window.scrollY - top) / distance));
+  }
+
+  function createProactiveController(config, button, panel, input, form, newChat) {
+    var invitation = createInvitation();
+    var messageButton = invitation.querySelector(".portfolio-chatbot-invitation-message");
+    var closeButton = invitation.querySelector(".portfolio-chatbot-invitation-close");
+    var scheduleTimer = 0;
+    var dismissalTimer = 0;
+    var detailArmTimer = 0;
+    var detailScrollArmed = false;
+    var queue = shuffle(config.proactiveMessages);
+    var state = { stopped: false, count: 0, used: [], detailSeen: [] };
+    var pendingDetailPrompt = "";
+    var saved = safeSessionGet("ProactiveState");
+
+    if (saved) {
+      try {
+        state = Object.assign(state, JSON.parse(saved));
+      } catch (error) {
+        state = { stopped: false, count: 0, used: [], detailSeen: [] };
+      }
+    }
+    if (!Array.isArray(state.used)) state.used = [];
+    if (!Array.isArray(state.detailSeen)) state.detailSeen = [];
+
+    document.body.appendChild(invitation);
+
+    function persist() {
+      safeSessionSet("ProactiveState", JSON.stringify(state));
+    }
+
+    function clearTimers() {
+      window.clearTimeout(scheduleTimer);
+      window.clearTimeout(dismissalTimer);
+      window.clearTimeout(detailArmTimer);
+      scheduleTimer = 0;
+      dismissalTimer = 0;
+      detailArmTimer = 0;
+      detailScrollArmed = false;
+    }
+
+    function hide() {
+      window.clearTimeout(dismissalTimer);
+      dismissalTimer = 0;
+      invitation.classList.remove("active");
+      invitation.setAttribute("aria-hidden", "true");
+      invitation.inert = true;
+      pendingDetailPrompt = "";
+    }
+
+    function position() {
+      if (!invitation.classList.contains("active")) return;
+      var buttonRect = button.getBoundingClientRect();
+      var invitationRect = invitation.getBoundingClientRect();
+      var left = Math.max(10, Math.min(window.innerWidth - invitationRect.width - 10, buttonRect.right - invitationRect.width));
+      var top = Math.max(10, buttonRect.top - invitationRect.height - 12);
+      invitation.style.left = left + "px";
+      invitation.style.top = top + "px";
+    }
+
+    function stop() {
+      if (!state.stopped) {
+        state.stopped = true;
+        persist();
+      }
+      clearTimers();
+      hide();
+    }
+
+    function nextMessage() {
+      var project = activeDetailProject();
+      if (project) {
+        if (!project.key || state.detailSeen.indexOf(project.key) !== -1) return "";
+        state.detailSeen.push(project.key);
+        pendingDetailPrompt = detailPromptFor(project);
+        return detailInvitationFor(project);
+      }
+      var contextMessage = config.proactiveContextMessages[activeInvitationContext()];
+      if (contextMessage && state.used.indexOf(contextMessage) === -1) return contextMessage;
+      while (queue.length) {
+        var candidate = queue.shift();
+        if (state.used.indexOf(candidate) === -1) return candidate;
+      }
+      var hiringMessage = config.proactiveContextMessages.hiring;
+      return hiringMessage && state.used.indexOf(hiringMessage) === -1 ? hiringMessage : "";
+    }
+
+    function schedule() {
+      window.clearTimeout(scheduleTimer);
+      if (!config.proactiveEnabled || state.stopped || document.hidden || state.count >= config.proactiveMaxPerSession) return;
+      var project = activeDetailProject();
+      if (project && state.detailSeen.indexOf(project.key) !== -1) return;
+      scheduleTimer = window.setTimeout(show, project ? config.proactiveDetailDelayMs : config.proactiveDelayMs);
+    }
+
+    function armDetailScroll() {
+      window.clearTimeout(detailArmTimer);
+      detailScrollArmed = false;
+      if (!activeDetailProject()) return;
+      detailArmTimer = window.setTimeout(function () {
+        detailArmTimer = 0;
+        detailScrollArmed = true;
+      }, 1200);
+    }
+
+    function show() {
+      window.clearTimeout(scheduleTimer);
+      scheduleTimer = 0;
+      if (state.stopped || document.hidden || panel.classList.contains("active")) return;
+      var message = nextMessage();
+      if (!message) return;
+      state.used.push(message);
+      state.count += 1;
+      if (state.count >= config.proactiveMaxPerSession) state.stopped = true;
+      persist();
+      messageButton.textContent = message;
+      invitation.classList.add("active");
+      invitation.setAttribute("aria-hidden", "false");
+      invitation.inert = false;
+      window.requestAnimationFrame(position);
+      dismissalTimer = window.setTimeout(hide, config.proactiveVisibleMs);
+      if (!state.stopped) schedule();
+    }
+
+    function onDetailScroll() {
+      if (!detailScrollArmed || state.stopped || document.hidden || panel.classList.contains("active")) return;
+      var project = activeDetailProject();
+      if (!project || state.detailSeen.indexOf(project.key) !== -1) return;
+      if (detailScrollProgress(project) >= config.proactiveDetailScrollThreshold) show();
+    }
+
+    messageButton.addEventListener("click", function () {
+      var detailPrompt = pendingDetailPrompt;
+      stop();
+      setOpen(panel, button, true);
+      if (detailPrompt) input.value = detailPrompt;
+      input.focus();
+    });
+    closeButton.addEventListener("click", stop);
+    button.addEventListener("click", stop);
+    input.addEventListener("input", stop, { once: true });
+    form.addEventListener("submit", stop);
+    newChat.addEventListener("click", stop);
+    document.addEventListener("visibilitychange", function () {
+      clearTimers();
+      hide();
+      if (!document.hidden) {
+        schedule();
+        armDetailScroll();
+      }
+    });
+    document.addEventListener("portfolio:detail-opened", function () {
+      clearTimers();
+      hide();
+      schedule();
+      armDetailScroll();
+    });
+    window.addEventListener("scroll", onDetailScroll, { passive: true });
+    window.addEventListener("resize", position);
+    window.addEventListener("beforeunload", clearTimers, { once: true });
+
+    if (panel.classList.contains("active")) stop();
+    else {
+      schedule();
+      armDetailScroll();
+    }
+
+    return { stop: stop, position: position };
+  }
+
   function applyThemeClass() {
     if (document.querySelector(".topbar")) {
       document.body.classList.add("portfolio-chatbot-clean");
@@ -423,6 +716,7 @@
 
     setOpen(panel, button, safeStorageGet("Open") === "1");
     setExpanded(panel, expand, safeStorageGet("Expanded") === "1");
+    var proactive = createProactiveController(config, button, panel, input, form, newChat);
 
     button.addEventListener("click", function () {
       setOpen(panel, button, !panel.classList.contains("active"));
@@ -456,7 +750,9 @@
     });
 
     window.addEventListener("resize", function () {
-      clampPosition(button);
+      if (isMobileViewport()) resetMobilePosition(button);
+      else clampPosition(button);
+      proactive.position();
       updateScrollLock(panel);
     });
 
