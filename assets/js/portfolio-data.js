@@ -8,7 +8,7 @@ window.PORTFOLIO_DATA = [
     "detailUrl": "",
     "description": "AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.",
     "image": {
-      "src": "https://github.com/mad-agentic.png",
+      "src": "assets/images/portfolio-details/proxyapi-mad/323915db83ec.detail.webp",
       "alt": "ProxyAPI.MAD"
     },
     "tag": {
@@ -34,13 +34,13 @@ window.PORTFOLIO_DATA = [
   },
   {
     "id": "jx1",
-    "title": "Jx Mobie (JX1)",
+    "title": "JX1 Mobile / Tình Thiên Hạ",
     "category": "unity",
     "detailCategory": "jx1",
     "detailUrl": "projects/tinh-thien-ha-jx1/",
     "description": "Mobile MMORPG work on ADNX's JX1 title, covering classic martial-arts progression, faction systems, large-scale multiplayer content, mobile optimization, and publisher delivery.",
     "image": {
-      "src": "https://cdn-img.adnx.vn/tth1/Th%C6%B0%20vi%E1%BB%87n%20%E1%BA%A3nh/img_v3_02nj_8af250fa-afaa-43fd-9fc3-8355a46deahu.png",
+      "src": "assets/images/portfolio-details/jx1/db1603cfe8f8.detail.webp",
       "alt": "Jx Mobie"
     },
     "tag": {
@@ -86,7 +86,7 @@ window.PORTFOLIO_DATA = [
     "category": "unity",
     "detailCategory": "idleCyber",
     "detailUrl": "projects/idle-cyber/",
-    "description": "Technical leadership on a funded cyberpunk idle tower defense/GameFi title with hero collection, stage progression, ads, WebGL/mobile release, and NFT marketplace prototype.",
+    "description": "Senior Unity Developer contribution to a funded cyberpunk idle tower defense/GameFi title with hero collection, stage progression, ads, WebGL/mobile release, and an NFT marketplace prototype.",
     "image": {
       "src": "assets/images/game/Idle_cyber/icon_idle_cyber.png",
       "alt": "Idle Cyber"
@@ -216,7 +216,7 @@ window.PORTFOLIO_DATA = [
     "detailUrl": "",
     "description": "Classic space shooter sample with arcade waves, responsive shooting, enemy patterns, power-up pacing, and WebGL showcase delivery.",
     "image": {
-      "src": "https://raw.githubusercontent.com/hoatv2211/Share004_Galaxiga/main/Galaxiga/Recordings/Image%20Sequence_004_0000.jpg",
+      "src": "assets/images/portfolio-details/galaxiga/195ccc1d1634.detail.webp",
       "alt": "Galaxiga"
     },
     "tag": {
@@ -308,7 +308,7 @@ window.PORTFOLIO_DATA = [
   },
   {
     "id": "surviver",
-    "title": "Survivor.IO (template)",
+    "title": "Survivor.IO",
     "category": "unity",
     "detailCategory": "surviver",
     "detailUrl": "",
@@ -330,7 +330,7 @@ window.PORTFOLIO_DATA = [
     "detailUrl": "",
     "description": "Unreal Engine metaverse-style amusement park experience with virtual exploration, high-fidelity visuals, and interactive attraction spaces.",
     "image": {
-      "src": "https://github.com/Long18/long18.github.io/assets/28853225/d78990f0-2b48-4635-bf33-7ed637940f63",
+      "src": "assets/images/portfolio-details/metameAmusementPark/3c577a133a46.detail.webp",
       "alt": "Metame Amusement Park"
     },
     "tag": {
@@ -346,7 +346,7 @@ window.PORTFOLIO_DATA = [
     "detailUrl": "",
     "description": "Turn-based GameFi RPG with quests, character systems, items, localization, backend integration, and live-ops development support.",
     "image": {
-      "src": "https://github.com/Long18/long18.github.io/assets/28853225/5f87b8cc-1f5d-4b41-a65b-edbf5aae5c8e",
+      "src": "assets/images/portfolio-details/cryptoquest/7ff5f7d41e04.detail.webp",
       "alt": "Crypto Quest"
     },
     "tag": {

@@ -3,6 +3,8 @@
 
   const htmlCache = new Map();
   const inFlight = new Map();
+  let detailDataCache = null;
+  let detailDataRequest = null;
   let currentRequest = 0;
   let currentDetailCategory = null;
 
@@ -12,8 +14,8 @@
 
   function knownDetailKeys() {
     return new Set(
-      (window.PORTFOLIO_DATA || [])
-        .map((project) => project.detailCategory)
+      (window.PORTFOLIO_DETAIL_INDEX || [])
+        .map((project) => project.detailKey)
         .filter(Boolean)
     );
   }
@@ -43,6 +45,31 @@
     return request;
   }
 
+  async function fetchDetailData() {
+    if (detailDataCache) return { projects: detailDataCache, fromCache: true };
+    if (detailDataRequest) return detailDataRequest;
+
+    detailDataRequest = fetch("assets/data/portfolio-details.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Unable to load portfolio detail data (${response.status})`);
+        }
+        return response.json();
+      })
+      .then((payload) => {
+        if (!payload || !Array.isArray(payload.projects)) {
+          throw new Error("Portfolio detail data has no projects array");
+        }
+        detailDataCache = payload.projects;
+        return { projects: detailDataCache, fromCache: false };
+      })
+      .finally(() => {
+        detailDataRequest = null;
+      });
+
+    return detailDataRequest;
+  }
+
   function renderError(target, detailCategory, error) {
     target.innerHTML = `
       <section class="portfolio-detail-error" role="alert">
@@ -70,18 +97,35 @@
     target.classList?.add("portfolio-details-loading");
 
     try {
-      const result = await fetchDetail(detailCategory);
+      const [fragment, detailData] = await Promise.all([
+        fetchDetail(detailCategory),
+        fetchDetailData(),
+      ]);
       if (requestId !== currentRequest) return null;
 
+      const project = detailData.projects.find((candidate) => candidate.detailKey === detailCategory);
+      if (!project) {
+        throw new Error(`Portfolio detail data has no record for ${detailCategory}`);
+      }
+
+      const html = window.PortfolioDetailRenderer?.render
+        ? window.PortfolioDetailRenderer.render(project, fragment.html)
+        : fragment.html;
+
       target.innerHTML = "";
-      target.insertAdjacentHTML("beforeend", result.html);
+      target.insertAdjacentHTML("beforeend", html);
       const element = target.querySelector(`[project-detail][data-detail-category="${detailCategory}"]`);
       if (!element) {
         throw new Error(`Detail fragment ${detailCategory} has no matching project root`);
       }
 
       document.dispatchEvent(new CustomEvent("portfolio:details-loaded", {
-        detail: { detailCategory, element, fromCache: result.fromCache },
+        detail: {
+          detailCategory,
+          project,
+          element,
+          fromCache: fragment.fromCache && detailData.fromCache,
+        },
       }));
       return element;
     } catch (error) {

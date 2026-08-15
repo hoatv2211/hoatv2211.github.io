@@ -15,3 +15,6 @@
 # Scratch/temp
 .tmp-*
 *.tmp
+
+# Generated audit reports and screenshots
+/audits/

@@ -612,65 +612,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-  window.expandImage = function (clickedImage) {
-    if (!clickedImage || !clickedImage.querySelector("img")) return;
-
-    // Add tactile feedback with subtle scale animation on click
-    const imgElement = clickedImage.querySelector("img");
-    imgElement.style.transform = 'scale(0.95)';
-    setTimeout(() => { imgElement.style.transform = 'scale(1)'; }, 150);
-
-    const imgSrc = imgElement.src;
-    const imgAlt = imgElement.alt || 'Portfolio image';
-    const expandedImg = document.createElement("img");
-    const overlay = createOverlay(expandedImg);
-
-    // Add loading indicator while image loads
-    const loadingSpinner = document.createElement('div');
-    loadingSpinner.className = 'loading-spinner';
-    overlay.appendChild(loadingSpinner);
-
-    // Create expanded image with CSS class
-    expandedImg.src = imgSrc;
-    expandedImg.className = "expanded-media";
-
-    expandedImg.onclick = function () {
-      document.body.removeChild(overlay);
-      document.body.removeChild(expandedImg);
-    };
-
-    document.body.appendChild(expandedImg);
-  }
-
-  // Re-implement expandVideo with proper error checking
-  window.expandVideo = function (clickedVideo) {
-    if (!clickedVideo || !clickedVideo.querySelector("video") ||
-      !clickedVideo.querySelector("video").querySelector("source")) return;
-
-    const videoFiled = clickedVideo.querySelector("video");
-    const videoSrc = videoFiled.querySelector("source").src;
-    const expandedVideo = document.createElement("video");
-
-    const overlay = createOverlay(expandedVideo);
-
-    // Create expanded video with CSS class
-    expandedVideo.src = videoSrc;
-    expandedVideo.currentTime = 0;
-    expandedVideo.autoplay = true;
-    expandedVideo.controls = true;
-    expandedVideo.className = "expanded-media expanded-media--video";
-
-    expandedVideo.onclick = function () {
-      if (videoFiled) {
-        videoFiled.currentTime = 0;
-        videoFiled.pause();
-      }
-      document.body.removeChild(overlay);
-      document.body.removeChild(expandedVideo);
-    };
-
-    document.body.appendChild(expandedVideo);
-  };
 
   // Skills button handler
   const skillsButton = document.getElementById("skills-button");
@@ -743,29 +684,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-
-// Helper function to create overlay
-function createOverlay(elementToRemove) {
-  const overlay = document.createElement("div");
-  overlay.className = "expanded-overlay";
-
-  overlay.onclick = function () {
-    overlay.style.opacity = "0";
-    setTimeout(() => {
-      if (document.body.contains(overlay)) {
-        document.body.removeChild(overlay);
-      }
-      if (document.body.contains(elementToRemove)) {
-        document.body.removeChild(elementToRemove);
-      }
-    }, 300);
-  };
-
-  document.body.appendChild(overlay);
-
-  // Force reflow to enable transition
-  void overlay.offsetWidth;
-  overlay.style.opacity = "1";
-
-  return overlay;
-}

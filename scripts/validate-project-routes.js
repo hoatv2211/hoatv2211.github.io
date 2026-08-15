@@ -58,6 +58,33 @@ for (const project of routeProjects) {
     seen[`${kind}s`].add(value);
   }
 
+  const claimContracts = {
+    dalgona: {
+      required: ["Tech Dev Leader", "team of 15", "Reached Top 1 on the World App game ranking during the launch period."],
+      forbidden: [/Solo Developer/i, /hundreds of thousands/i],
+    },
+    idleCyber: {
+      required: ["Senior Unity Developer", "team of 10", "Contributed to a funded GameFi product."],
+      forbidden: [/Technical Leader/i, /million-dollar/i],
+    },
+    muloren: {
+      required: ["Senior Unity Developer", "team of 10"],
+      forbidden: [],
+    },
+    nekoverse: {
+      required: ["Senior Unity Developer", "Contributed to a funded GameFi MMORPG."],
+      forbidden: [/million-dollar/i],
+    },
+    jx1: {
+      required: ["JX1 Mobile / Tình Thiên Hạ", "Senior Unity Developer"],
+      forbidden: [/Jx Mobie/i],
+    },
+  };
+  const claimContract = claimContracts[project.detailKey];
+  if (claimContract) {
+    for (const wording of claimContract.required) if (!html.includes(wording)) fail(route, `missing approved claim wording: ${wording}`);
+    for (const pattern of claimContract.forbidden) if (pattern.test(html)) fail(route, `contains blocked claim wording: ${pattern}`);
+  }
   for (const match of html.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)) {
     const ref = decodeHtml(match[1]);
     if (!ref || /^(?:https?:|mailto:|tel:|#|data:|javascript:)/i.test(ref)) continue;

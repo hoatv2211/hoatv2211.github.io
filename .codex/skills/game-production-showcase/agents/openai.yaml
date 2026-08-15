@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game Production Showcase"
+  short_description: "Turn portfolio details into shipped-game showcases"
+  default_prompt: "Use $game-production-showcase to redesign or audit portfolio project details as production showcases."

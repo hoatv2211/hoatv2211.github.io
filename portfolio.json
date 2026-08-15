@@ -236,7 +236,7 @@
       "period": "July 2022 — May 2023",
       "description": "Combined delivery leadership with hands-on Unity development for Nekoverse, a funded GameFi MMORPG product.",
       "highlights": [
-        "Contributed to Nekoverse, a GameFi MMORPG that successfully raised million-dollar funding",
+        "Contributed to Nekoverse, a funded GameFi MMORPG",
         "Built real-time PvE/PvP gameplay, NFT-related systems, staking/crafting flows, and mobile performance improvements",
         "Managed task breakdown, team coordination, and delivery support while remaining hands-on in development",
         "Connected product, blockchain, and gameplay concerns into one production workflow"
@@ -258,9 +258,9 @@
       "company": "BEEMOB Studio",
       "position": "Unity Developer",
       "period": "March 2021 — June 2021",
-      "description": "Worked on Idle Cyber, a funded idle defense/GameFi title, combining technical leadership with hands-on Unity delivery.",
+      "description": "Worked on Idle Cyber, a funded idle defense/GameFi title, as a Senior Unity Developer delivering hands-on Unity systems.",
       "highlights": [
-        "Served as Technical Leader for Idle Cyber, a product that successfully raised million-dollar funding",
+        "Contributed to a funded GameFi product as Senior Unity Developer",
         "Owned idle progression, tower-defense combat, rewards, ads, and NFT marketplace prototype flows",
         "Delivered a cross-platform title spanning iOS, Android, and WebGL",
         "Combined gameplay implementation, release support, and system design inside a compact production cycle"
@@ -332,7 +332,7 @@
       ],
       "summary": "AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.",
       "image": {
-        "src": "https://github.com/mad-agentic.png",
+        "src": "assets/images/portfolio-details/proxyapi-mad/323915db83ec.detail.webp",
         "alt": "ProxyAPI.MAD"
       },
       "detailRoute": null,
@@ -342,7 +342,145 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "detail": {
+        "tier": "B",
+        "mode": "rendered",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Designed and implemented a multi-provider API proxy layer for agentic automation workflows.",
+          "Built dashboard flows for API keys, providers, chat requests, logs, and runtime settings.",
+          "Added request/response observability and configuration controls for safer provider operations.",
+          "Structured the proxy so additional providers and agents can be integrated without rewriting the core flow."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/proxyapi-mad/323915db83ec.detail.webp",
+            "alt": "Dashboard",
+            "fit": "contain",
+            "featured": true,
+            "width": 1280,
+            "height": 800,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/proxyapi-mad/68a3cb33914e.detail.webp",
+            "alt": "API Keys",
+            "fit": "contain",
+            "featured": false,
+            "width": 1280,
+            "height": 800,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/proxyapi-mad/d9250de684b2.detail.webp",
+            "alt": "Providers",
+            "fit": "contain",
+            "featured": false,
+            "width": 1280,
+            "height": 800,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/proxyapi-mad/a07125c3ea76.detail.webp",
+            "alt": "Chat Interface",
+            "fit": "contain",
+            "featured": false,
+            "width": 1280,
+            "height": 800,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/proxyapi-mad/29df253ce6e7.detail.webp",
+            "alt": "Logs",
+            "fit": "contain",
+            "featured": false,
+            "width": 1280,
+            "height": 800,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/proxyapi-mad/08f993ce9d99.detail.webp",
+            "alt": "Settings",
+            "fit": "contain",
+            "featured": false,
+            "width": 1280,
+            "height": 800,
+            "key": "screen-5"
+          }
+        ],
+        "evidence": [
+          {
+            "label": "Github",
+            "url": "https://github.com/mad-agentic/ProxyAPI.MAD",
+            "status": "public"
+          },
+          {
+            "label": "Github Org",
+            "url": "https://github.com/mad-agentic",
+            "status": "public"
+          },
+          {
+            "label": "Website",
+            "url": "https://mad-agentic.github.io/ProxyAPI.MAD",
+            "status": "public"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "product-console",
+          "theme": "proxyapi-mad",
+          "eyebrow": "Developer Tool / AI Infrastructure",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#071018",
+            "panel": "#102331",
+            "accent": "#55d5e8",
+            "accentAlt": "#7ee787",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Proxy foundation",
+              "title": "One proxy layer across multiple AI providers",
+              "body": "Designed and implemented a multi-provider API proxy layer for agentic automation workflows.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "console"
+            },
+            {
+              "id": "systems",
+              "kicker": "Operational workflow",
+              "title": "Dashboard workflows make operations observable",
+              "body": "Built dashboard flows for API keys, providers, chat requests, logs, and runtime settings.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Extensible delivery",
+              "title": "Extensible routing supports new providers and agents",
+              "body": "Added request/response observability and configuration controls for safer provider operations. Structured the proxy so additional providers and agents can be integrated without rewriting the core flow.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "console"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "mu-loren-mobile",
@@ -404,11 +542,189 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "detail": {
+        "tier": "A",
+        "mode": "hybrid",
+        "statusLabel": "Flagship case study",
+        "context": "Mobile MMORPG inspired by the legendary MU Online, bringing classic character classes and intense PvE/PvP content with stunning 3D graphics optimized for mobile.",
+        "problem": "Adapt classic MMORPG systems to mobile while preserving familiar MU-style progression and combat.",
+        "contribution": [
+          "Worked as Senior Unity Developer in a collaborative team",
+          "Developed and maintained quest system, class mechanics, and monster spawning logic",
+          "Handled performance profiling and optimization for smooth mobile gameplay",
+          "Integrated UI/UX elements and implemented in-game events and battle systems"
+        ],
+        "technicalDecisions": [
+          "Quest flows, class mechanics, monster spawning, event logic, battle interactions, and UI integration",
+          "Mobile 3D profiling across rendering, loading, and repeated combat hotspots",
+          "Feature delivery inside a production pipeline coordinated with content, design, QA, and publishing"
+        ],
+        "personalOutcome": [
+          "Developed and maintained quest system, class mechanics, and monster spawning logic",
+          "Handled performance profiling and optimization for smooth mobile gameplay",
+          "Integrated UI/UX elements and implemented in-game events and battle systems"
+        ],
+        "productContext": [
+          "Supported a production MMORPG feature set across 5 classes, daily/weekly quests, PvE/PvP events, and mobile release targets."
+        ],
+        "evidence": [
+          {
+            "label": "Website",
+            "url": "https://lucdia.adnxgames.vn/trang-chu",
+            "status": "public"
+          },
+          {
+            "label": "App Store",
+            "url": "https://lucdia.adnxgames.vn/ios",
+            "status": "public"
+          },
+          {
+            "label": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.mobi.ldlorencia",
+            "status": "public"
+          },
+          {
+            "label": "Youtube Trailer",
+            "url": "https://www.youtube.com/embed/UTqN9xl2pBM",
+            "status": "public"
+          }
+        ],
+        "media": [
+          {
+            "type": "embed",
+            "src": "https://www.youtube.com/embed/UTqN9xl2pBM",
+            "alt": "MU Loren Gameplay",
+            "fit": "cover",
+            "featured": true,
+            "title": "MU Loren Mobile gameplay video",
+            "key": "trailer"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/MuLoren/banner-1.detail.webp",
+            "alt": "MU Loren Mobile screenshot 2",
+            "fit": "cover",
+            "featured": false,
+            "width": 1600,
+            "height": 1010,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/MuLoren/banner-2.detail.webp",
+            "alt": "MU Loren Mobile screenshot 3",
+            "fit": "cover",
+            "featured": false,
+            "width": 1600,
+            "height": 1010,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/MuLoren/banner-3.detail.webp",
+            "alt": "MU Loren Mobile screenshot 4",
+            "fit": "cover",
+            "featured": false,
+            "width": 1600,
+            "height": 1010,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/MuLoren/1.detail.webp",
+            "alt": "MU Loren Mobile screenshot 5",
+            "fit": "cover",
+            "featured": false,
+            "width": 1330,
+            "height": 772,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/MuLoren/2.detail.webp",
+            "alt": "MU Loren Mobile screenshot 6",
+            "fit": "cover",
+            "featured": false,
+            "width": 1330,
+            "height": 772,
+            "key": "screen-5"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/MuLoren/3.detail.webp",
+            "alt": "MU Loren Mobile screenshot 7",
+            "fit": "cover",
+            "featured": false,
+            "width": 1330,
+            "height": 772,
+            "key": "screen-6"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "flagship-worlds",
+          "theme": "muloren",
+          "eyebrow": "MMORPG",
+          "heroMediaKey": "trailer",
+          "palette": {
+            "ink": "#100b0b",
+            "panel": "#251515",
+            "accent": "#d8a646",
+            "accentAlt": "#a93434",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Product world",
+              "title": "Classic MMORPG systems adapted for mobile",
+              "body": "Mobile MMORPG inspired by the legendary MU Online, bringing classic character classes and intense PvE/PvP content with stunning 3D graphics optimized for mobile.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "systems",
+              "kicker": "Production challenge",
+              "title": "Quests, classes, and monsters working as one world",
+              "body": "Adapt classic MMORPG systems to mobile while preserving familiar MU-style progression and combat.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Systems delivered",
+              "title": "Battle events carried through production delivery",
+              "body": "Worked as Senior Unity Developer in a collaborative team Developed and maintained quest system, class mechanics, and monster spawning logic",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "offset"
+            },
+            {
+              "id": "delivery",
+              "kicker": "Engineering decisions",
+              "title": "Mobile 3D performance across repeated combat",
+              "body": "Quest flows, class mechanics, monster spawning, event logic, battle interactions, and UI integration",
+              "mediaKeys": [
+                "screen-6"
+              ],
+              "layout": "split"
+            }
+          ]
+        }
+      },
+      "teamSize": 10
     },
     {
       "id": "tinh-thien-ha-jx1",
-      "title": "Jx Mobie (JX1)",
+      "title": "JX1 Mobile / Tình Thiên Hạ",
       "category": "unity",
       "genre": "MMORPG",
       "period": "2023 - 2024",
@@ -447,7 +763,7 @@
       ],
       "summary": "Mobile MMORPG work on ADNX's JX1 title, covering classic martial-arts progression, faction systems, large-scale multiplayer content, mobile optimization, and publisher delivery.",
       "image": {
-        "src": "https://cdn-img.adnx.vn/tth1/Th%C6%B0%20vi%E1%BB%87n%20%E1%BA%A3nh/img_v3_02nj_8af250fa-afaa-43fd-9fc3-8355a46deahu.png",
+        "src": "assets/images/portfolio-details/jx1/db1603cfe8f8.detail.webp",
         "alt": "Jx Mobie"
       },
       "detailRoute": "projects/tinh-thien-ha-jx1/",
@@ -457,7 +773,126 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 3
+      "displayOrder": 3,
+      "detail": {
+        "tier": "A",
+        "mode": "hybrid",
+        "statusLabel": "Flagship case study",
+        "context": "Publisher-backed martial-arts MMORPG from ADNX Games, built around classic JX-style faction progression, open-world activities, and large-scale PvP content.",
+        "problem": "Bring a culturally familiar martial-arts MMORPG experience to modern mobile and PC targets without losing large-scale multiplayer expectations.",
+        "contribution": [
+          "Contributed to gameplay implementation, mobile optimization, and production delivery for an MMORPG title",
+          "Supported multiplayer systems, resource loading, SDK integration, and broad device coverage",
+          "Worked on production concerns for faction-based progression and large-scale PvP content"
+        ],
+        "technicalDecisions": [
+          "10 martial sect identities with differentiated combat styles and progression expectations",
+          "Large-scale multiplayer content including Phong Lang Do and Tong Kim battlefield features",
+          "Cross-device delivery across smartphones, tablets, and PC"
+        ],
+        "personalOutcome": [
+          "Contributed to gameplay implementation, mobile optimization, and production delivery for an MMORPG title",
+          "Supported multiplayer systems, resource loading, SDK integration, and broad device coverage"
+        ],
+        "productContext": [
+          "Helped deliver a publisher-backed MMORPG with broad device support, 10 sect identities, and signature multiplayer content."
+        ],
+        "evidence": [
+          {
+            "label": "Website",
+            "url": "https://tinhthienha1.adnxgames.vn/",
+            "status": "public"
+          }
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/jx1/db1603cfe8f8.detail.webp",
+            "alt": "Jx Mobiehero banner",
+            "fit": "cover",
+            "featured": true,
+            "width": 1600,
+            "height": 1010,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/jx1/61d21af2fce9.detail.webp",
+            "alt": "Jx Mobiescreenshot 1",
+            "fit": "cover",
+            "featured": false,
+            "width": 1600,
+            "height": 900,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/jx1/7473fe49c188.detail.webp",
+            "alt": "Jx Mobiescreenshot 2",
+            "fit": "cover",
+            "featured": false,
+            "width": 1364,
+            "height": 764,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/jx1/0cbcf04bc7bd.detail.webp",
+            "alt": "Jx Mobiescreenshot 3",
+            "fit": "cover",
+            "featured": false,
+            "width": 1203,
+            "height": 672,
+            "key": "screen-3"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "flagship-worlds",
+          "theme": "jx1",
+          "eyebrow": "MMORPG",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#100b10",
+            "panel": "#291522",
+            "accent": "#d6ad5c",
+            "accentAlt": "#4f9f78",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Product world",
+              "title": "A martial-arts world shaped by faction identity",
+              "body": "Publisher-backed martial-arts MMORPG from ADNX Games, built around classic JX-style faction progression, open-world activities, and large-scale PvP content.",
+              "mediaKeys": [
+                "screen-1"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "systems",
+              "kicker": "Production challenge",
+              "title": "Large-scale multiplayer expectations across devices",
+              "body": "Bring a culturally familiar martial-arts MMORPG experience to modern mobile and PC targets without losing large-scale multiplayer expectations.",
+              "mediaKeys": [
+                "screen-2"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Systems delivered",
+              "title": "Production systems supporting progression and delivery",
+              "body": "Contributed to gameplay implementation, mobile optimization, and production delivery for an MMORPG title Supported multiplayer systems, resource loading, SDK integration, and broad device coverage",
+              "mediaKeys": [
+                "screen-3"
+              ],
+              "layout": "offset"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "dalgona-worldchain",
@@ -477,7 +912,7 @@
         "Published and maintained the game with continuous updates"
       ],
       "achievements": [
-        "🏆 Reached Top 1 on the World App game ranking during launch period"
+        "Reached Top 1 on the World App game ranking during the launch period."
       ],
       "links": {
         "worldApp": "https://world.org/ecosystem/app_87ae73f8d0558b142fb9c5fc7811b8af"
@@ -504,7 +939,127 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 4
+      "displayOrder": 4,
+      "detail": {
+        "tier": "A",
+        "mode": "hybrid",
+        "statusLabel": "Flagship case study",
+        "context": "A fast-session mini-game integrated on World App, inspired by the sugar candy challenge and delivered for a global mobile audience.",
+        "problem": "A fast-session mini-game integrated on World App, inspired by the sugar candy challenge and delivered for a global mobile audience.",
+        "contribution": [
+          "Led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15",
+          "Designed and implemented UI/UX with playful animations",
+          "Optimized performance for Web3 Mini App integration within World App",
+          "Integrated leaderboard and ranking system",
+          "Published and maintained the game with continuous updates"
+        ],
+        "technicalDecisions": [
+          "A fast-session mini-game integrated on World App, inspired by the sugar candy challenge and delivered for a global mobile audience."
+        ],
+        "personalOutcome": [
+          "Led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15",
+          "Designed and implemented UI/UX with playful animations",
+          "Optimized performance for Web3 Mini App integration within World App"
+        ],
+        "productContext": [
+          "Reached Top 1 on the World App game ranking during the launch period."
+        ],
+        "evidence": [
+          {
+            "label": "World App",
+            "url": "https://world.org/ecosystem/app_87ae73f8d0558b142fb9c5fc7811b8af",
+            "status": "public"
+          }
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/game/Dalgona/1.jpg",
+            "alt": "Dalgona - Worldchain featured view",
+            "fit": "cover",
+            "featured": true,
+            "width": 600,
+            "height": 600,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Dalgona/2.detail.webp",
+            "alt": "Dalgona - Worldchain screenshot 2",
+            "fit": "cover",
+            "featured": false,
+            "width": 600,
+            "height": 600,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Dalgona/3.detail.webp",
+            "alt": "Dalgona - Worldchain screenshot 3",
+            "fit": "cover",
+            "featured": false,
+            "width": 601,
+            "height": 600,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Dalgona/top.jpg",
+            "alt": "Dalgona - Worldchain screenshot 4",
+            "fit": "portrait",
+            "featured": false,
+            "width": 590,
+            "height": 1280,
+            "key": "screen-3"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "flagship-worlds",
+          "theme": "dalgona",
+          "eyebrow": "Mini-game / Casual",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#140e0a",
+            "panel": "#2d1d13",
+            "accent": "#e6b45a",
+            "accentAlt": "#ef735b",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Product world",
+              "title": "A sugar challenge designed for instant understanding",
+              "body": "A fast-session mini-game integrated on World App, inspired by the sugar candy challenge and delivered for a global mobile audience.",
+              "mediaKeys": [
+                "screen-1"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "systems",
+              "kicker": "Production challenge",
+              "title": "Difficulty and feedback tuned for fast sessions",
+              "body": "A fast-session mini-game integrated on World App, inspired by the sugar candy challenge and delivered for a global mobile audience.",
+              "mediaKeys": [
+                "screen-2"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Systems delivered",
+              "title": "World App delivery backed by rankings and live updates",
+              "body": "Led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15 Designed and implemented UI/UX with playful animations",
+              "mediaKeys": [
+                "screen-3"
+              ],
+              "layout": "offset"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "food-truck-shiba-inu",
@@ -535,7 +1090,126 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 5
+      "displayOrder": 5,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Implemented the core food-truck service loop and responsive mobile interactions.",
+          "Built gameplay UI, progression feedback, and reward flows for short casual sessions.",
+          "Optimized runtime performance and supported Android release delivery."
+        ],
+        "media": [
+          {
+            "type": "embed",
+            "src": "https://www.youtube.com/embed/dapvlSnC1rw",
+            "alt": "Shiba Inu Gameplay",
+            "fit": "cover",
+            "featured": true,
+            "title": "Food Truck - Shiba Inu gameplay video",
+            "key": "trailer"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/shibainu/e1af8716120a.detail.webp",
+            "alt": "Shiba Inu screenshot 6",
+            "fit": "cover",
+            "featured": false,
+            "width": 526,
+            "height": 296,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/shibainu/6be5d18575d8.detail.webp",
+            "alt": "Shiba Inu screenshot 7",
+            "fit": "cover",
+            "featured": false,
+            "width": 526,
+            "height": 296,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/shibainu/4a8ffdcc7914.detail.webp",
+            "alt": "Shiba Inu screenshot 8",
+            "fit": "cover",
+            "featured": false,
+            "width": 526,
+            "height": 296,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/shibainu/7a8caaeed8e9.detail.webp",
+            "alt": "Shiba Inu screenshot 5",
+            "fit": "portrait",
+            "featured": false,
+            "width": 166,
+            "height": 296,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/shibainu/cf09b33e6250.detail.webp",
+            "alt": "Shiba Inu screenshot 1",
+            "fit": "portrait",
+            "featured": false,
+            "width": 166,
+            "height": 296,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "gameplay-editorial",
+          "theme": "shibainu",
+          "eyebrow": "Casual / Simulation",
+          "heroMediaKey": "trailer",
+          "palette": {
+            "ink": "#120d08",
+            "panel": "#2b1d13",
+            "accent": "#f0aa4a",
+            "accentAlt": "#6abf69",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Player experience",
+              "title": "A food-truck loop built for fast service",
+              "body": "Implemented the core food-truck service loop and responsive mobile interactions.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "systems",
+              "kicker": "Systems in motion",
+              "title": "Progression feedback keeps short sessions moving",
+              "body": "Built gameplay UI, progression feedback, and reward flows for short casual sessions.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Production delivery",
+              "title": "Android delivery backed by runtime optimization",
+              "body": "Optimized runtime performance and supported Android release delivery.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "offset"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "idle-cyber",
@@ -548,25 +1222,25 @@
       "role": "Senior Unity Developer",
       "description": "Cyberpunk idle tower defense game set in a post-apocalyptic 2077 world. Players defend Earth from alien invaders by strategically deploying legendary heroes, upgrading powerful weapons, and customizing gear to survive endless enemy waves and boss battles.",
       "myContributions": [
-        "Led technical delivery for gameplay loop, stages, upgrades, rewards, and ad integration",
-        "Implemented idle mechanics with strategic tower defense combat",
-        "Built a basic NFT marketplace with wallet and testnet blockchain integration",
-        "Handled UI/UX, animation integration, and performance optimization for mobile"
+        "Implemented the gameplay loop, stages, upgrades, rewards, and ad integration.",
+        "Built idle progression and strategic tower-defense combat systems.",
+        "Created wallet, testnet, and basic NFT marketplace proof-of-concept flows.",
+        "Integrated UI, animation, and mobile performance improvements."
       ],
       "achievements": [
-        "Contributed to a funded GameFi product",
-        "Published on iOS, Android, and WebGL",
-        "Built a complete idle tower defense and NFT marketplace proof-of-concept"
+        "Contributed to a funded GameFi product.",
+        "Supported delivery across iOS, Android, and WebGL.",
+        "Built idle tower-defense and NFT marketplace proof-of-concept systems."
       ],
       "technicalHighlights": [
-        "Technical leadership from scope and gameplay implementation to release support",
+        "Hands-on Unity delivery from gameplay implementation through release support",
         "Hero collection, stage progression, tower-defense combat, boss waves, offline-style rewards, and upgrade economy",
         "Android, iOS, and WebGL delivery with mobile UI, input, performance, ads, wallet flow, and NFT marketplace prototype"
       ],
       "caseStudy": {
         "problem": "Create a fundable idle tower defense product with monetization and early GameFi proof-of-concept.",
         "solution": "Separated economy data from presentation, tuned idle rewards against combat pacing, and built wallet/NFT prototype flows alongside normal gameplay.",
-        "outcome": "Helped the product reach successful million-dollar fundraising and published a playable cross-platform title on iOS, Android, and WebGL."
+        "outcome": "Contributed to a funded GameFi product and supported delivery across iOS, Android, and WebGL."
       },
       "links": {
         "webgl": "https://o0-mad-0o.itch.io/cyber-war",
@@ -585,7 +1259,7 @@
         "iOS",
         "WebGL"
       ],
-      "summary": "Technical leadership on a funded cyberpunk idle tower defense/GameFi title with hero collection, stage progression, ads, WebGL/mobile release, and NFT marketplace prototype.",
+      "summary": "Senior Unity Developer contribution to a funded cyberpunk idle tower defense/GameFi title with hero collection, stage progression, ads, WebGL/mobile release, and an NFT marketplace prototype.",
       "image": {
         "src": "assets/images/game/Idle_cyber/icon_idle_cyber.png",
         "alt": "Idle Cyber"
@@ -597,7 +1271,191 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 6
+      "displayOrder": 6,
+      "detail": {
+        "tier": "A",
+        "mode": "hybrid",
+        "statusLabel": "Flagship case study",
+        "context": "Cyberpunk idle tower defense game set in a post-apocalyptic 2077 world. Players defend Earth from alien invaders by strategically deploying legendary heroes, upgrading powerful weapons, and customizing gear to survive endless enemy waves and boss battles.",
+        "problem": "Create a fundable idle tower defense product with monetization and early GameFi proof-of-concept.",
+        "contribution": [
+          "Implemented the gameplay loop, stages, upgrades, rewards, and ad integration.",
+          "Built idle progression and strategic tower-defense combat systems.",
+          "Created wallet, testnet, and basic NFT marketplace proof-of-concept flows.",
+          "Integrated UI, animation, and mobile performance improvements."
+        ],
+        "technicalDecisions": [
+          "Hands-on Unity delivery from gameplay implementation through release support",
+          "Hero collection, stage progression, tower-defense combat, boss waves, offline-style rewards, and upgrade economy",
+          "Android, iOS, and WebGL delivery with mobile UI, input, performance, ads, wallet flow, and NFT marketplace prototype"
+        ],
+        "personalOutcome": [
+          "Implemented the gameplay loop, stages, upgrades, rewards, and ad integration.",
+          "Built idle progression and strategic tower-defense combat systems.",
+          "Created wallet, testnet, and basic NFT marketplace proof-of-concept flows.",
+          "Integrated UI, animation, and mobile performance improvements."
+        ],
+        "productContext": [
+          "Contributed to a funded GameFi product."
+        ],
+        "evidence": [
+          {
+            "label": "Webgl",
+            "url": "https://o0-mad-0o.itch.io/cyber-war",
+            "status": "public"
+          },
+          {
+            "label": "App Store",
+            "url": "https://apps.apple.com/us/app/cyber-war-idle-defense-heroes/id1563690159",
+            "status": "public"
+          },
+          {
+            "label": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.mad.idlecyberdefense",
+            "status": "public"
+          }
+        ],
+        "media": [
+          {
+            "type": "embed",
+            "src": "https://www.youtube.com/embed/BJhcS5oCh0M",
+            "alt": "Idle Cyber Intro",
+            "fit": "cover",
+            "featured": true,
+            "title": "Idle Cyber (NFT) gameplay video",
+            "key": "trailer"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/idleCyber/8987fdb85d81.detail.webp",
+            "alt": "Idle Cyber banner",
+            "fit": "portrait",
+            "featured": false,
+            "width": 898,
+            "height": 1600,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Idle_cyber/1.png",
+            "alt": "Idle Cyber screenshot 1",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Idle_cyber/2.png",
+            "alt": "Idle Cyber screenshot 1",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Idle_cyber/5.png",
+            "alt": "Idle Cyber screenshot 5",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Idle_cyber/3.png",
+            "alt": "Idle Cyber screenshot 3",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-5"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Idle_cyber/4.png",
+            "alt": "Idle Cyber screenshot 4",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-6"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Idle_cyber/icon_idle_cyber.detail.webp",
+            "alt": "Idle Cyber (NFT) screenshot 8",
+            "fit": "cover",
+            "featured": false,
+            "width": 1024,
+            "height": 1024,
+            "key": "screen-7"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "flagship-worlds",
+          "theme": "idleCyber",
+          "eyebrow": "Idle Tower Defense / GameFi",
+          "heroMediaKey": "trailer",
+          "palette": {
+            "ink": "#070a14",
+            "panel": "#121b39",
+            "accent": "#f05ad5",
+            "accentAlt": "#4ee5e1",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Product world",
+              "title": "Cyberpunk defense built around collectible heroes",
+              "body": "Cyberpunk idle tower defense game set in a post-apocalyptic 2077 world. Players defend Earth from alien invaders by strategically deploying legendary heroes, upgrading powerful weapons, and customizing gear to survive endless enemy waves and boss battles.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "systems",
+              "kicker": "Production challenge",
+              "title": "Idle progression meets strategic tower defense",
+              "body": "Create a fundable idle tower defense product with monetization and early GameFi proof-of-concept.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Systems delivered",
+              "title": "Mobile, WebGL, ads, and rewards shipped together",
+              "body": "Implemented the gameplay loop, stages, upgrades, rewards, and ad integration. Built idle progression and strategic tower-defense combat systems.",
+              "mediaKeys": [
+                "screen-5",
+                "screen-6"
+              ],
+              "layout": "offset"
+            },
+            {
+              "id": "delivery",
+              "kicker": "Engineering decisions",
+              "title": "GameFi concepts prototyped around the core game",
+              "body": "Hands-on Unity delivery from gameplay implementation through release support",
+              "mediaKeys": [
+                "screen-7"
+              ],
+              "layout": "split"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "nekoverse",
@@ -621,9 +1479,9 @@
         "Conducted performance profiling and optimization for various devices"
       ],
       "achievements": [
-        "Successfully raised million-dollar funding for the GameFi MMORPG product",
-        "Delivered production blockchain gameplay systems spanning NFT assets, staking, crafting, and DAO economy loops",
-        "Supported real-time PvE/PvP gameplay and mobile performance optimization"
+        "Contributed to a funded GameFi MMORPG.",
+        "Delivered NFT, staking, crafting, and economy integrations.",
+        "Supported PvE/PvP gameplay and mobile performance optimization."
       ],
       "technicalHighlights": [
         "Real-time PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback",
@@ -633,7 +1491,7 @@
       "caseStudy": {
         "problem": "Bring blockchain ownership and economy features into an MMORPG without making gameplay feel wallet-first.",
         "solution": "Connected NFT, staking, crafting, and resource systems to normal RPG progression while keeping battle rules extensible for balance changes.",
-        "outcome": "Helped the product reach successful million-dollar fundraising while delivering production GameFi gameplay systems spanning combat, economy, blockchain features, and mobile optimization."
+        "outcome": "Contributed to a funded GameFi MMORPG while delivering combat, economy, blockchain, and mobile optimization systems."
       },
       "links": {
         "website": "https://gam3s.gg/nekoverse/",
@@ -662,7 +1520,162 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 7
+      "displayOrder": 7,
+      "detail": {
+        "tier": "A",
+        "mode": "hybrid",
+        "statusLabel": "Flagship case study",
+        "context": "Play-to-Earn MMORPG built on blockchain technology, offering players a decentralized in-game economy and a Guild system utilizing DAO governance. Players engage in PvE/PvP battles, explore the world, farm resources, and craft items.",
+        "problem": "Bring blockchain ownership and economy features into an MMORPG without making gameplay feel wallet-first.",
+        "contribution": [
+          "Implemented core gameplay mechanics and optimized performance",
+          "Developed real-time battle systems including skill mechanics and elemental interactions",
+          "Integrated blockchain features (NFT assets, staking mechanisms) into Unity",
+          "Conducted performance profiling and optimization for various devices"
+        ],
+        "technicalDecisions": [
+          "Real-time PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback",
+          "Unity gameplay integration for NFT assets, staking concepts, resource farming, crafting, and marketplace value loops",
+          "Performance profiling for mobile gameplay scenes inside a distributed GameFi production workflow"
+        ],
+        "personalOutcome": [
+          "Implemented core gameplay mechanics and optimized performance",
+          "Developed real-time battle systems including skill mechanics and elemental interactions"
+        ],
+        "productContext": [
+          "Contributed to a funded GameFi MMORPG."
+        ],
+        "evidence": [
+          {
+            "label": "Website",
+            "url": "https://gam3s.gg/nekoverse/",
+            "status": "public"
+          },
+          {
+            "label": "Youtube Trailer",
+            "url": "https://www.youtube.com/embed/4FiWVHmdfig",
+            "status": "public"
+          }
+        ],
+        "media": [
+          {
+            "type": "embed",
+            "src": "https://www.youtube.com/embed/4FiWVHmdfig",
+            "alt": "What is Nekoverse?",
+            "fit": "cover",
+            "featured": true,
+            "title": "Nekoverse (NFT) gameplay video",
+            "key": "trailer"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Nekoverse/2.jpg",
+            "alt": "Nekoverse (NFT) screenshot 2",
+            "fit": "cover",
+            "featured": false,
+            "width": 1200,
+            "height": 1200,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Nekoverse/3.webp",
+            "alt": "Nekoverse (NFT) screenshot 3",
+            "fit": "cover",
+            "featured": false,
+            "width": 1920,
+            "height": 1080,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Nekoverse/5.jpg",
+            "alt": "Nekoverse (NFT) screenshot 4",
+            "fit": "cover",
+            "featured": false,
+            "width": 1761,
+            "height": 1110,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Nekoverse/6.webp",
+            "alt": "Nekoverse (NFT) screenshot 5",
+            "fit": "cover",
+            "featured": false,
+            "width": 1920,
+            "height": 1080,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Nekoverse/7.jpg",
+            "alt": "Nekoverse (NFT) screenshot 6",
+            "fit": "cover",
+            "featured": false,
+            "width": 1024,
+            "height": 633,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "flagship-worlds",
+          "theme": "nekoverse",
+          "eyebrow": "Play-to-Earn MMORPG / GameFi",
+          "heroMediaKey": "trailer",
+          "palette": {
+            "ink": "#090713",
+            "panel": "#1b1434",
+            "accent": "#ad7cff",
+            "accentAlt": "#3fd0b4",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Product world",
+              "title": "An MMORPG world with a player-owned economy",
+              "body": "Play-to-Earn MMORPG built on blockchain technology, offering players a decentralized in-game economy and a Guild system utilizing DAO governance. Players engage in PvE/PvP battles, explore the world, farm resources, and craft items.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "systems",
+              "kicker": "Production challenge",
+              "title": "Real-time combat driven by elemental interactions",
+              "body": "Bring blockchain ownership and economy features into an MMORPG without making gameplay feel wallet-first.",
+              "mediaKeys": [
+                "screen-3"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Systems delivered",
+              "title": "Resources, crafting, NFTs, and staking in one loop",
+              "body": "Implemented core gameplay mechanics and optimized performance Developed real-time battle systems including skill mechanics and elemental interactions",
+              "mediaKeys": [
+                "screen-4"
+              ],
+              "layout": "offset"
+            },
+            {
+              "id": "delivery",
+              "kicker": "Engineering decisions",
+              "title": "Performance profiling across production devices",
+              "body": "Real-time PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "split"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "sandwich-please",
@@ -714,7 +1727,143 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 8
+      "displayOrder": 8,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Developed sandwich assembly, order handling, and customer service gameplay systems.",
+          "Implemented gameplay UI and feedback flows for fast mobile sessions.",
+          "Optimized performance across target devices and integrated player analytics."
+        ],
+        "media": [
+          {
+            "type": "embed",
+            "src": "https://www.youtube.com/embed/LoYwMs8mFsc",
+            "alt": "Sandwich Please! Game Gameplay Video for Android",
+            "fit": "cover",
+            "featured": true,
+            "title": "Sandwich Please! gameplay video",
+            "key": "trailer"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Sanwitch/1.webp",
+            "alt": "Sandwich Please! screenshot 2",
+            "fit": "portrait",
+            "featured": false,
+            "width": 166,
+            "height": 296,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Sanwitch/2.webp",
+            "alt": "Sandwich Please! screenshot 3",
+            "fit": "portrait",
+            "featured": false,
+            "width": 166,
+            "height": 296,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Sanwitch/3.webp",
+            "alt": "Sandwich Please! screenshot 4",
+            "fit": "portrait",
+            "featured": false,
+            "width": 166,
+            "height": 296,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Sanwitch/4.webp",
+            "alt": "Sandwich Please! screenshot 5",
+            "fit": "cover",
+            "featured": false,
+            "width": 526,
+            "height": 296,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Sanwitch/5.webp",
+            "alt": "Sandwich Please! screenshot 6",
+            "fit": "cover",
+            "featured": false,
+            "width": 526,
+            "height": 296,
+            "key": "screen-5"
+          }
+        ],
+        "evidence": [
+          {
+            "label": "App Store",
+            "url": "https://apps.apple.com/us/app/sandwich-please/id6475763350",
+            "status": "public"
+          },
+          {
+            "label": "Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.gb.sandwichidle.burgerplease.pizza.coffee",
+            "status": "public"
+          },
+          {
+            "label": "Youtube Trailer",
+            "url": "https://www.youtube.com/embed/LoYwMs8mFsc",
+            "status": "public"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "gameplay-editorial",
+          "theme": "sandwich",
+          "eyebrow": "Idle Simulation / Tycoon",
+          "heroMediaKey": "trailer",
+          "palette": {
+            "ink": "#120d08",
+            "panel": "#302015",
+            "accent": "#e7b84f",
+            "accentAlt": "#78b95a",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Player experience",
+              "title": "Orders and assembly drive the shop floor",
+              "body": "Developed sandwich assembly, order handling, and customer service gameplay systems.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "systems",
+              "kicker": "Systems in motion",
+              "title": "Fast feedback supports growing customer demand",
+              "body": "Implemented gameplay UI and feedback flows for fast mobile sessions.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Production delivery",
+              "title": "Analytics and optimization prepare mobile delivery",
+              "body": "Optimized performance across target devices and integrated player analytics.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "offset"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "archero-clone",
@@ -746,7 +1895,127 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 9
+      "displayOrder": 9,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Implemented one-touch movement and attack behavior for the action-roguelike combat loop.",
+          "Built enemy AI, room progression, bosses, and randomized skill selection systems.",
+          "Integrated hero/gear progression and optimized controls and effects for mobile devices."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/1.detail.webp",
+            "alt": "Archero featured view",
+            "fit": "portrait",
+            "featured": true,
+            "width": 900,
+            "height": 1600,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/2.detail.webp",
+            "alt": "Archero screenshot 2",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/3.detail.webp",
+            "alt": "Archero screenshot 3",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/4.detail.webp",
+            "alt": "Archero screenshot 4",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/5.detail.webp",
+            "alt": "Archero screenshot 5",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/6.detail.webp",
+            "alt": "Archero screenshot 6",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "mobile-campaign",
+          "theme": "archero",
+          "eyebrow": "Action Roguelite",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#090d18",
+            "panel": "#17213a",
+            "accent": "#df5d5d",
+            "accentAlt": "#6699e8",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Core loop",
+              "title": "One-touch combat built for readable decisions",
+              "body": "Implemented one-touch movement and attack behavior for the action-roguelike combat loop.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "rail"
+            },
+            {
+              "id": "systems",
+              "kicker": "Progression and content",
+              "title": "Rooms, bosses, and random skills shape every run",
+              "body": "Built enemy AI, room progression, bosses, and randomized skill selection systems.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "stack"
+            },
+            {
+              "id": "progression",
+              "kicker": "Mobile delivery",
+              "title": "Hero progression tuned for mobile play",
+              "body": "Integrated hero/gear progression and optimized controls and effects for mobile devices.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "rail"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "rise-of-trial-bike",
@@ -777,7 +2046,127 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 10
+      "displayOrder": 10,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Implemented the physics-based bike controller, stunt handling, and level progression.",
+          "Built menu, gameplay HUD, results, particles, and moment-to-moment feedback.",
+          "Optimized and maintained mobile builds across release targets."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/game/BikeTrail/Image Sequence_001_0000.detail.webp",
+            "alt": "Rise of Trial Bike featured view",
+            "fit": "cover",
+            "featured": true,
+            "width": 900,
+            "height": 562,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/BikeTrail/Image Sequence_002_0000.detail.webp",
+            "alt": "Rise of Trial Bike screenshot 2",
+            "fit": "cover",
+            "featured": false,
+            "width": 900,
+            "height": 562,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/BikeTrail/Image Sequence_003_0000.detail.webp",
+            "alt": "Rise of Trial Bike screenshot 3",
+            "fit": "cover",
+            "featured": false,
+            "width": 900,
+            "height": 562,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/BikeTrail/Image Sequence_004_0000.detail.webp",
+            "alt": "Rise of Trial Bike screenshot 4",
+            "fit": "cover",
+            "featured": false,
+            "width": 900,
+            "height": 562,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/BikeTrail/Image Sequence_005_0000.detail.webp",
+            "alt": "Rise of Trial Bike screenshot 5",
+            "fit": "cover",
+            "featured": false,
+            "width": 900,
+            "height": 562,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/BikeTrail/Image Sequence_006_0000.detail.webp",
+            "alt": "Rise of Trial Bike screenshot 6",
+            "fit": "cover",
+            "featured": false,
+            "width": 900,
+            "height": 562,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "gameplay-editorial",
+          "theme": "bike",
+          "eyebrow": "Racing / Physics",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#0d0d0d",
+            "panel": "#232323",
+            "accent": "#ef7444",
+            "accentAlt": "#d6b04f",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Player experience",
+              "title": "Physics and stunt handling define every attempt",
+              "body": "Implemented the physics-based bike controller, stunt handling, and level progression.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "systems",
+              "kicker": "Systems in motion",
+              "title": "HUD, particles, and results sharpen rider feedback",
+              "body": "Built menu, gameplay HUD, results, particles, and moment-to-moment feedback.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Production delivery",
+              "title": "Mobile builds stay stable across release targets",
+              "body": "Optimized and maintained mobile builds across release targets.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "offset"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "meow-flow",
@@ -808,7 +2197,126 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 11
+      "displayOrder": 11,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Developed the path-connection puzzle rules and level progression system.",
+          "Implemented the gameplay UI and feedback needed for clear puzzle interactions.",
+          "Optimized performance and integrated analytics for mobile delivery."
+        ],
+        "media": [
+          {
+            "type": "embed",
+            "src": "https://www.youtube.com/embed/WXV-iMqmcpc",
+            "alt": "Meow flow - Android Gameplay",
+            "fit": "cover",
+            "featured": true,
+            "title": "Meow flow gameplay video",
+            "key": "trailer"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/MeowFlow/1.webp",
+            "alt": "Meow flow screenshot 2",
+            "fit": "portrait",
+            "featured": false,
+            "width": 185,
+            "height": 296,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/MeowFlow/2.webp",
+            "alt": "Meow flow screenshot 3",
+            "fit": "portrait",
+            "featured": false,
+            "width": 185,
+            "height": 296,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/MeowFlow/3.webp",
+            "alt": "Meow flow screenshot 4",
+            "fit": "portrait",
+            "featured": false,
+            "width": 185,
+            "height": 296,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/MeowFlow/4.webp",
+            "alt": "Meow flow screenshot 5",
+            "fit": "portrait",
+            "featured": false,
+            "width": 185,
+            "height": 296,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/MeowFlow/5.webp",
+            "alt": "Meow flow screenshot 6",
+            "fit": "portrait",
+            "featured": false,
+            "width": 185,
+            "height": 296,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "mobile-campaign",
+          "theme": "MeowFlow",
+          "eyebrow": "Puzzle / Casual",
+          "heroMediaKey": "trailer",
+          "palette": {
+            "ink": "#120b17",
+            "panel": "#2a1730",
+            "accent": "#ef82bf",
+            "accentAlt": "#67cbb9",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Core loop",
+              "title": "Path solving designed to feel calm and immediate",
+              "body": "Developed the path-connection puzzle rules and level progression system.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "rail"
+            },
+            {
+              "id": "systems",
+              "kicker": "Progression and content",
+              "title": "Clear feedback supports every puzzle decision",
+              "body": "Implemented the gameplay UI and feedback needed for clear puzzle interactions.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "stack"
+            },
+            {
+              "id": "progression",
+              "kicker": "Mobile delivery",
+              "title": "Analytics and optimization prepare the mobile build",
+              "body": "Optimized performance and integrated analytics for mobile delivery.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "rail"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "share001-ludo",
@@ -834,7 +2342,42 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 12
+      "displayOrder": 12,
+      "detail": {
+        "tier": "C",
+        "mode": "rendered",
+        "statusLabel": "Sample",
+        "purpose": "Playable Unity Ludo sample with classic board rules, local turn flow, polished UI, and WebGL demo support.",
+        "technicalNotes": [
+          "Playable Unity Ludo sample with classic board rules, local turn flow, polished UI, and WebGL demo support."
+        ],
+        "media": [
+          {
+            "type": "embed",
+            "src": "https://hoatv2211.github.io/Share001_Ludo/",
+            "alt": "Share001 Ludo Live Demo",
+            "fit": "cover",
+            "featured": true,
+            "title": "Ludo Game (Sample) gameplay video",
+            "key": "trailer"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "compact-proof",
+          "theme": "share001-ludo",
+          "eyebrow": "Sample",
+          "heroMediaKey": "trailer",
+          "palette": {
+            "ink": "#0b1020",
+            "panel": "#18213a",
+            "accent": "#f2b84b",
+            "accentAlt": "#4fc18a",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": []
+        }
+      }
     },
     {
       "id": "share002-pixelshooter3d",
@@ -860,7 +2403,42 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 13
+      "displayOrder": 13,
+      "detail": {
+        "tier": "C",
+        "mode": "rendered",
+        "statusLabel": "Sample",
+        "purpose": "3D pixel shooter sample featuring fast arena combat, enemy encounters, weapon handling, and browser-playable WebGL delivery.",
+        "technicalNotes": [
+          "3D pixel shooter sample featuring fast arena combat, enemy encounters, weapon handling, and browser-playable WebGL delivery."
+        ],
+        "media": [
+          {
+            "type": "embed",
+            "src": "https://hoatv2211.github.io/Share002_PixelShooter3D/",
+            "alt": "Share002 Pixel Shooter 3D Live Demo",
+            "fit": "cover",
+            "featured": true,
+            "title": "Pixel Shooter 3D (Sample) gameplay video",
+            "key": "trailer"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "compact-proof",
+          "theme": "share002-pixelshooter3d",
+          "eyebrow": "Sample",
+          "heroMediaKey": "trailer",
+          "palette": {
+            "ink": "#090e17",
+            "panel": "#17273a",
+            "accent": "#65c7ff",
+            "accentAlt": "#f0b34b",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": []
+        }
+      }
     },
     {
       "id": "galaxiga",
@@ -876,7 +2454,7 @@
       "platforms": [],
       "summary": "Classic space shooter sample with arcade waves, responsive shooting, enemy patterns, power-up pacing, and WebGL showcase delivery.",
       "image": {
-        "src": "https://raw.githubusercontent.com/hoatv2211/Share004_Galaxiga/main/Galaxiga/Recordings/Image%20Sequence_004_0000.jpg",
+        "src": "assets/images/portfolio-details/galaxiga/195ccc1d1634.detail.webp",
         "alt": "Galaxiga"
       },
       "detailRoute": null,
@@ -886,7 +2464,127 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 14
+      "displayOrder": 14,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Implemented campaign progression, endless mode, player ships, wingmen, and boss encounters.",
+          "Built bullet-pattern gameplay and integrated content for staged difficulty progression.",
+          "Integrated localization and push-notification support for release and re-engagement workflows."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/galaxiga/195ccc1d1634.detail.webp",
+            "alt": "Galaxiga featured view",
+            "fit": "portrait",
+            "featured": true,
+            "width": 900,
+            "height": 1600,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/galaxiga/a9e447dbe0d0.detail.webp",
+            "alt": "Galaxiga screenshot 2",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/galaxiga/fe55da8c4eab.detail.webp",
+            "alt": "Galaxiga screenshot 3",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/galaxiga/ecc32ae54e60.detail.webp",
+            "alt": "Galaxiga screenshot 4",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/galaxiga/f38793badc7f.detail.webp",
+            "alt": "Galaxiga screenshot 5",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/galaxiga/9199e5f0d546.detail.webp",
+            "alt": "Galaxiga screenshot 6",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "mobile-campaign",
+          "theme": "galaxiga",
+          "eyebrow": "Project case study",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#050b18",
+            "panel": "#111f3d",
+            "accent": "#55d8ff",
+            "accentAlt": "#df62d9",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Core loop",
+              "title": "Arcade waves built around ships and wingmen",
+              "body": "Implemented campaign progression, endless mode, player ships, wingmen, and boss encounters.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "rail"
+            },
+            {
+              "id": "systems",
+              "kicker": "Progression and content",
+              "title": "Bullet patterns carry staged difficulty progression",
+              "body": "Built bullet-pattern gameplay and integrated content for staged difficulty progression.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "stack"
+            },
+            {
+              "id": "progression",
+              "kicker": "Mobile delivery",
+              "title": "Release systems support localization and re-engagement",
+              "body": "Integrated localization and push-notification support for release and re-engagement workflows.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "rail"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "home-design",
@@ -920,7 +2618,133 @@
         "apiUrlAndroid": "https://app.sensortower.com/api/android/apps/com.giraffegames.ggm3",
         "apiUrlIos": null
       },
-      "displayOrder": 15
+      "displayOrder": 15,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Implemented the renovation gameplay flow and supporting casual puzzle progression.",
+          "Built mobile UI, reward feedback, and progression-oriented player flows.",
+          "Optimized Android performance and supported release delivery."
+        ],
+        "media": [
+          {
+            "type": "embed",
+            "src": "https://www.youtube.com/embed/t3bdUR1i7jQ",
+            "alt": "Home Design Gameplay",
+            "fit": "cover",
+            "featured": true,
+            "title": "Home Design gameplay video",
+            "key": "trailer"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/homeDesign/6425272437a4.detail.webp",
+            "alt": "Home Design screenshot 1",
+            "fit": "cover",
+            "featured": false,
+            "width": 526,
+            "height": 296,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/homeDesign/f0ad5fc63ede.detail.webp",
+            "alt": "Home Design screenshot 2",
+            "fit": "cover",
+            "featured": false,
+            "width": 526,
+            "height": 296,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/homeDesign/08e171e41cf3.detail.webp",
+            "alt": "Home Design screenshot 3",
+            "fit": "cover",
+            "featured": false,
+            "width": 526,
+            "height": 296,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/homeDesign/710a6727030e.detail.webp",
+            "alt": "Home Design screenshot 4",
+            "fit": "cover",
+            "featured": false,
+            "width": 526,
+            "height": 296,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/homeDesign/28afeed04f1c.detail.webp",
+            "alt": "Home Design screenshot 5",
+            "fit": "cover",
+            "featured": false,
+            "width": 526,
+            "height": 296,
+            "key": "screen-5"
+          }
+        ],
+        "evidence": [
+          {
+            "label": "Sensor Tower Android",
+            "url": "https://app.sensortower.com/api/android/apps/com.giraffegames.ggm3",
+            "status": "public"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "gameplay-editorial",
+          "theme": "homeDesign",
+          "eyebrow": "Casual / Design",
+          "heroMediaKey": "trailer",
+          "palette": {
+            "ink": "#130f12",
+            "panel": "#2b2028",
+            "accent": "#e39bba",
+            "accentAlt": "#d9b66f",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Player experience",
+              "title": "Renovation and puzzle progression reinforce each other",
+              "body": "Implemented the renovation gameplay flow and supporting casual puzzle progression.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "systems",
+              "kicker": "Systems in motion",
+              "title": "Rewards and mobile UI guide the makeover journey",
+              "body": "Built mobile UI, reward feedback, and progression-oriented player flows.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Production delivery",
+              "title": "Android optimization supports release delivery",
+              "body": "Optimized Android performance and supported release delivery.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "offset"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "tile-candy",
@@ -951,7 +2775,127 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 16
+      "displayOrder": 16,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Implemented tile matching, slot management, and level progression systems.",
+          "Customized UI layout, animation, and gameplay feedback for the candy theme.",
+          "Added daily rewards and hint boosters and optimized the mobile runtime."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/game/TileCandy/Image Sequence_001_0000.jpg",
+            "alt": "Tile Candy! featured view",
+            "fit": "portrait",
+            "featured": true,
+            "width": 720,
+            "height": 1280,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/TileCandy/Image Sequence_002_0000.jpg",
+            "alt": "Tile Candy! screenshot 2",
+            "fit": "portrait",
+            "featured": false,
+            "width": 720,
+            "height": 1280,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/TileCandy/Image Sequence_004_0000.jpg",
+            "alt": "Tile Candy! screenshot 3",
+            "fit": "portrait",
+            "featured": false,
+            "width": 720,
+            "height": 1280,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/TileCandy/Image Sequence_005_0000.jpg",
+            "alt": "Tile Candy! screenshot 4",
+            "fit": "portrait",
+            "featured": false,
+            "width": 720,
+            "height": 1280,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/TileCandy/Image Sequence_007_0000.jpg",
+            "alt": "Tile Candy! screenshot 5",
+            "fit": "portrait",
+            "featured": false,
+            "width": 720,
+            "height": 1280,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/TileCandy/Image Sequence_008_0000.jpg",
+            "alt": "Tile Candy! screenshot 6",
+            "fit": "portrait",
+            "featured": false,
+            "width": 720,
+            "height": 1280,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "mobile-campaign",
+          "theme": "tilecandy",
+          "eyebrow": "Puzzle / Match",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#120a18",
+            "panel": "#2b1736",
+            "accent": "#f06ab8",
+            "accentAlt": "#63d5b0",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Core loop",
+              "title": "Tile matching built around clean slot decisions",
+              "body": "Implemented tile matching, slot management, and level progression systems.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "rail"
+            },
+            {
+              "id": "systems",
+              "kicker": "Progression and content",
+              "title": "Candy feedback gives the puzzle its identity",
+              "body": "Customized UI layout, animation, and gameplay feedback for the candy theme.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "stack"
+            },
+            {
+              "id": "progression",
+              "kicker": "Mobile delivery",
+              "title": "Rewards, hints, and optimization support return play",
+              "body": "Added daily rewards and hint boosters and optimized the mobile runtime.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "rail"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "tiles-match3-mahjong",
@@ -982,7 +2926,105 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 17
+      "displayOrder": 17,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Implemented the tile-matching rules, board-clear flow, and level progression.",
+          "Built theme, reward, and offline-friendly gameplay flows for mobile sessions.",
+          "Handled UI integration, balancing support, optimization, and publishing tasks."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/game/Tilesmatch3/thumbnail.png",
+            "alt": "tilesmatch3 Banner",
+            "fit": "cover",
+            "featured": true,
+            "width": 512,
+            "height": 250,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Tilesmatch3/1.detail.webp",
+            "alt": "Tiles Match 3: Mahjong screenshot 2",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Tilesmatch3/2.png",
+            "alt": "Tiles Match 3: Mahjong screenshot 3",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Tilesmatch3/icon.detail.webp",
+            "alt": "Tiles Match 3: Mahjong screenshot 4",
+            "fit": "cover",
+            "featured": false,
+            "width": 512,
+            "height": 512,
+            "key": "screen-3"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "gameplay-editorial",
+          "theme": "tilesmatch3",
+          "eyebrow": "Puzzle / Mahjong",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#0c1118",
+            "panel": "#1d2a36",
+            "accent": "#e0b657",
+            "accentAlt": "#55b8a5",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Player experience",
+              "title": "Layered tile rules create quick readable sessions",
+              "body": "Implemented the tile-matching rules, board-clear flow, and level progression.",
+              "mediaKeys": [
+                "screen-1"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "systems",
+              "kicker": "Systems in motion",
+              "title": "Themes and rewards support offline-friendly play",
+              "body": "Built theme, reward, and offline-friendly gameplay flows for mobile sessions.",
+              "mediaKeys": [
+                "screen-2"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Production delivery",
+              "title": "Balancing and publishing complete the delivery loop",
+              "body": "Handled UI integration, balancing support, optimization, and publishing tasks.",
+              "mediaKeys": [
+                "screen-3"
+              ],
+              "layout": "offset"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "sudoku-universe",
@@ -1013,7 +3055,127 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 18
+      "displayOrder": 18,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Implemented puzzle generation and validation across four difficulty levels.",
+          "Built daily challenges, hints, undo, progress tracking, and offline play.",
+          "Designed the mobile UI, dark mode, persistence, optimization, and publishing flow."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/game/Sudoku/1.png",
+            "alt": "Sudoku screenshot 1",
+            "fit": "portrait",
+            "featured": true,
+            "width": 288,
+            "height": 512,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Sudoku/2.png",
+            "alt": "Sudoku screenshot 1",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Sudoku/3.png",
+            "alt": "Sudoku screenshot 1",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Sudoku/4.png",
+            "alt": "Sudoku screenshot 1",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Sudoku/5.png",
+            "alt": "Sudoku screenshot 1",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Sudoku/6.png",
+            "alt": "Sudoku screenshot 1",
+            "fit": "portrait",
+            "featured": false,
+            "width": 288,
+            "height": 512,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "mobile-campaign",
+          "theme": "sudoku",
+          "eyebrow": "Puzzle",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#0c1118",
+            "panel": "#182536",
+            "accent": "#5ec7e8",
+            "accentAlt": "#e5bf57",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Core loop",
+              "title": "Generated puzzles validated across four difficulties",
+              "body": "Implemented puzzle generation and validation across four difficulty levels.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "rail"
+            },
+            {
+              "id": "systems",
+              "kicker": "Progression and content",
+              "title": "Daily play supported by hints, undo, and progress",
+              "body": "Built daily challenges, hints, undo, progress tracking, and offline play.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "stack"
+            },
+            {
+              "id": "progression",
+              "kicker": "Mobile delivery",
+              "title": "A modern mobile shell completes the experience",
+              "body": "Designed the mobile UI, dark mode, persistence, optimization, and publishing flow.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "rail"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "ageofbattle",
@@ -1039,11 +3201,131 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 19
+      "displayOrder": 19,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Implemented configurable melee and ranged units with distinct attack behaviors.",
+          "Built ScriptableObject-driven waves, progression, cards, upgrades, economy, and daily tasks.",
+          "Structured runtime responsibilities across game state, persistence, and UI orchestration."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/ageofbattle/956f771d6ff5.detail.webp",
+            "alt": "Age of Battle featured view",
+            "fit": "portrait",
+            "featured": true,
+            "width": 900,
+            "height": 1600,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/ageofbattle/675086774ca9.detail.webp",
+            "alt": "Age of Battle screenshot 2",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/ageofbattle/53817fb4c166.detail.webp",
+            "alt": "Age of Battle screenshot 3",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/ageofbattle/0ba4ee6b105c.detail.webp",
+            "alt": "Age of Battle screenshot 4",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/ageofbattle/10a4a23d1bbe.detail.webp",
+            "alt": "Age of Battle screenshot 5",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/ageofbattle/88d93ce0caf3.detail.webp",
+            "alt": "Age of Battle screenshot 6",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "mobile-campaign",
+          "theme": "ageofbattle",
+          "eyebrow": "Project case study",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#120c08",
+            "panel": "#2c1b12",
+            "accent": "#d95545",
+            "accentAlt": "#d6aa4f",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Core loop",
+              "title": "Distinct units create readable battlefield roles",
+              "body": "Implemented configurable melee and ranged units with distinct attack behaviors.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "rail"
+            },
+            {
+              "id": "systems",
+              "kicker": "Progression and content",
+              "title": "Data-driven waves connect cards, upgrades, and economy",
+              "body": "Built ScriptableObject-driven waves, progression, cards, upgrades, economy, and daily tasks.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "stack"
+            },
+            {
+              "id": "progression",
+              "kicker": "Mobile delivery",
+              "title": "Runtime responsibilities stay clear across game state and UI",
+              "body": "Structured runtime responsibilities across game state, persistence, and UI orchestration.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "rail"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "surviver-io-template",
-      "title": "Survivor.IO (template)",
+      "title": "Survivor.IO",
       "category": "unity",
       "genre": "Action Roguelite / Template",
       "engine": "Unity",
@@ -1071,7 +3353,127 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 20
+      "displayOrder": 20,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Implemented auto-attack combat, enemy wave generation, and skill upgrade mechanics.",
+          "Built randomized upgrade synergies and permanent hero progression systems.",
+          "Created stage spawn zones, environmental hazards, and mobile gameplay feedback."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/game/SurvivorIO/Image Sequence_002_0000.png",
+            "alt": "Survivor.IO featured view",
+            "fit": "portrait",
+            "featured": true,
+            "width": 720,
+            "height": 1280,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/SurvivorIO/Image Sequence_003_0000.detail.webp",
+            "alt": "Survivor.IO screenshot 2",
+            "fit": "portrait",
+            "featured": false,
+            "width": 720,
+            "height": 1280,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/SurvivorIO/Image Sequence_004_0000.detail.webp",
+            "alt": "Survivor.IO screenshot 3",
+            "fit": "portrait",
+            "featured": false,
+            "width": 720,
+            "height": 1280,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/SurvivorIO/Image Sequence_005_0000.detail.webp",
+            "alt": "Survivor.IO screenshot 4",
+            "fit": "portrait",
+            "featured": false,
+            "width": 720,
+            "height": 1280,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/SurvivorIO/Image Sequence_006_0000.png",
+            "alt": "Survivor.IO screenshot 5",
+            "fit": "portrait",
+            "featured": false,
+            "width": 720,
+            "height": 1280,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/SurvivorIO/Image Sequence_007_0000.png",
+            "alt": "Survivor.IO screenshot 6",
+            "fit": "portrait",
+            "featured": false,
+            "width": 720,
+            "height": 1280,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "mobile-campaign",
+          "theme": "surviver",
+          "eyebrow": "Action Roguelite / Template",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#0b100b",
+            "panel": "#18251a",
+            "accent": "#74c45d",
+            "accentAlt": "#e89a45",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Core loop",
+              "title": "Auto-attack combat carries the survival loop",
+              "body": "Implemented auto-attack combat, enemy wave generation, and skill upgrade mechanics.",
+              "mediaKeys": [
+                "screen-1",
+                "screen-2"
+              ],
+              "layout": "rail"
+            },
+            {
+              "id": "systems",
+              "kicker": "Progression and content",
+              "title": "Randomized synergies shape each upgrade path",
+              "body": "Built randomized upgrade synergies and permanent hero progression systems.",
+              "mediaKeys": [
+                "screen-3",
+                "screen-4"
+              ],
+              "layout": "stack"
+            },
+            {
+              "id": "progression",
+              "kicker": "Mobile delivery",
+              "title": "Spawn zones and hazards keep mobile stages active",
+              "body": "Created stage spawn zones, environmental hazards, and mobile gameplay feedback.",
+              "mediaKeys": [
+                "screen-5"
+              ],
+              "layout": "rail"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "metame-amusement-park",
@@ -1093,7 +3495,7 @@
       ],
       "summary": "Unreal Engine metaverse-style amusement park experience with virtual exploration, high-fidelity visuals, and interactive attraction spaces.",
       "image": {
-        "src": "https://github.com/Long18/long18.github.io/assets/28853225/d78990f0-2b48-4635-bf33-7ed637940f63",
+        "src": "assets/images/portfolio-details/metameAmusementPark/3c577a133a46.detail.webp",
         "alt": "Metame Amusement Park"
       },
       "detailRoute": null,
@@ -1103,7 +3505,65 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 21
+      "displayOrder": 21,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Integrated the Dynomega quest flow and supporting accept, hint, and icon interactions.",
+          "Implemented synchronized passcode, camera, sitting-animation, and amusement-ride interactions.",
+          "Configured scene audio and fixed SceneCapture field-of-view issues."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/metameAmusementPark/3c577a133a46.detail.webp",
+            "alt": "Metame Amusement Park featured view",
+            "fit": "cover",
+            "featured": true,
+            "width": 960,
+            "height": 540,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/metameAmusementPark/3c577a133a46.detail.webp",
+            "alt": "Metame Amusement Park",
+            "fit": "cover",
+            "featured": false,
+            "width": 960,
+            "height": 540,
+            "key": "screen-1"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "gameplay-editorial",
+          "theme": "metameAmusementPark",
+          "eyebrow": "Virtual Experience / Metaverse",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#080d18",
+            "panel": "#15233b",
+            "accent": "#5fd2eb",
+            "accentAlt": "#9f79e8",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "Player experience",
+              "title": "Quest guidance supports virtual exploration",
+              "body": "Integrated the Dynomega quest flow and supporting accept, hint, and icon interactions.",
+              "mediaKeys": [
+                "screen-1"
+              ],
+              "layout": "wide"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "cryptoquest",
@@ -1140,7 +3600,7 @@
       ],
       "summary": "Turn-based GameFi RPG with quests, character systems, items, localization, backend integration, and live-ops development support.",
       "image": {
-        "src": "https://github.com/Long18/long18.github.io/assets/28853225/5f87b8cc-1f5d-4b41-a65b-edbf5aae5c8e",
+        "src": "assets/images/portfolio-details/cryptoquest/7ff5f7d41e04.detail.webp",
         "alt": "Crypto Quest"
       },
       "detailRoute": null,
@@ -1150,7 +3610,148 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 22
+      "displayOrder": 22,
+      "detail": {
+        "tier": "B",
+        "mode": "hybrid",
+        "statusLabel": "Project case study",
+        "contribution": [
+          "Implemented dynamic quest creation and completion with backend actor-condition integration.",
+          "Built beast, equipment, skills, consumables, rarity, inventory, and localization flows.",
+          "Created internal account/cutscene/ScriptableObject tools and supported live-ops fixes and optimization."
+        ],
+        "media": [
+          {
+            "key": "revive",
+            "type": "image",
+            "src": "assets/images/portfolio-details/cryptoquest/7ff5f7d41e04.detail.webp",
+            "alt": "Crypto Quest revive and recovery interface",
+            "fit": "cover",
+            "featured": true,
+            "width": 1016,
+            "height": 858
+          },
+          {
+            "key": "quest",
+            "type": "image",
+            "src": "assets/images/portfolio-details/cryptoquest/7bd60c128f93.detail.webp",
+            "alt": "Crypto Quest objective and quest interface",
+            "fit": "cover",
+            "featured": false,
+            "width": 1023,
+            "height": 890
+          },
+          {
+            "key": "npc",
+            "type": "image",
+            "src": "assets/images/portfolio-details/cryptoquest/c905cbd09c7c.detail.webp",
+            "alt": "Crypto Quest NPC behaviour and dialogue flow",
+            "fit": "cover",
+            "featured": false,
+            "width": 1020,
+            "height": 886
+          },
+          {
+            "key": "home",
+            "type": "image",
+            "src": "assets/images/portfolio-details/cryptoquest/7833d53f8f0c.detail.webp",
+            "alt": "Crypto Quest home screen and world navigation",
+            "fit": "cover",
+            "featured": false,
+            "width": 1021,
+            "height": 894
+          },
+          {
+            "key": "equipment",
+            "type": "image",
+            "src": "assets/images/portfolio-details/cryptoquest/0329ae049d18.detail.webp",
+            "alt": "Crypto Quest equipment evolution system",
+            "fit": "cover",
+            "featured": false,
+            "width": 707,
+            "height": 630
+          },
+          {
+            "key": "tooling",
+            "type": "image",
+            "src": "assets/images/portfolio-details/cryptoquest/ad1560626088.detail.webp",
+            "alt": "Crypto Quest internal production tooling",
+            "fit": "cover",
+            "featured": false,
+            "width": 1025,
+            "height": 890
+          }
+        ],
+        "evidence": [
+          {
+            "label": "Website",
+            "url": "https://crypto-quest.org/",
+            "status": "public"
+          },
+          {
+            "label": "Demo",
+            "url": "https://games.indigames.link/crypto-quest/stg/",
+            "status": "public"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "production-showcase",
+          "theme": "cryptoquest",
+          "eyebrow": "Turn-based GameFi RPG",
+          "heroMediaKey": "revive",
+          "storyBeats": [
+            {
+              "id": "world",
+              "kicker": "World and gameplay",
+              "title": "A connected turn-based RPG loop",
+              "body": "Questing, combat, recovery, and progression meet in a browser-first GameFi experience.",
+              "mediaKeys": [
+                "home"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "quests",
+              "kicker": "Quest pipeline",
+              "title": "Dynamic objectives backed by game-state conditions",
+              "body": "Quest creation and completion connect player actions, NPC behaviour, and backend actor-condition logic.",
+              "mediaKeys": [
+                "quest",
+                "npc"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "progression",
+              "kicker": "Character progression",
+              "title": "Systems designed to reinforce one another",
+              "body": "Beasts, equipment, skills, consumables, rarity, inventory, and localization form a connected progression ecosystem.",
+              "mediaKeys": [
+                "equipment"
+              ],
+              "layout": "offset"
+            },
+            {
+              "id": "production",
+              "kicker": "Production contribution",
+              "title": "Gameplay delivery supported by practical tools",
+              "body": "Internal account, cutscene, and ScriptableObject tools supported content work alongside live-ops fixes and optimization.",
+              "mediaKeys": [
+                "tooling"
+              ],
+              "layout": "split"
+            }
+          ],
+          "palette": {
+            "ink": "#080a14",
+            "panel": "#111a35",
+            "accent": "#d9a84e",
+            "accentAlt": "#43bb79",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          }
+        }
+      }
     },
     {
       "id": "ice-breaking-battle",
@@ -1174,7 +3775,96 @@
       ],
       "summary": "Archived project.",
       "detailRoute": null,
-      "displayOrder": 23
+      "displayOrder": 23,
+      "detail": {
+        "tier": "C",
+        "mode": "archived",
+        "statusLabel": "Archived / legacy work",
+        "archiveReason": "Archived and excluded from the primary portfolio while preserving the legacy detail URL.",
+        "technicalNotes": [
+          "Jul/2024 — Sep/2024 Team composition includes a total of 2 members: 1 game developer and 1 game designer.",
+          "Main responsibility: Developed complex enemy behaviors, including intelligent movement and attack strategies.",
+          "Implemented power-up systems like bombs, special discs, and enhanced player abilities.",
+          "Designed and balanced multiple levels with distinct challenges and environments."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/iceBreakingBattle/5eac3ea2f482.detail.webp",
+            "alt": "Fun Gameplay",
+            "fit": "portrait",
+            "featured": true,
+            "width": 900,
+            "height": 1600,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/iceBreakingBattle/0b87fce7116f.detail.webp",
+            "alt": "Accurate Physical Environment Simulation",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/iceBreakingBattle/9d94ee6aabad.detail.webp",
+            "alt": "Environmental Change System",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/iceBreakingBattle/70362c506807.detail.webp",
+            "alt": "Environmental Change System Alternate",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/iceBreakingBattle/2a2f54ea5740.detail.webp",
+            "alt": "Diverse Skin System",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/iceBreakingBattle/183da141c3a9.detail.webp",
+            "alt": "Weapon Classification",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "compact-proof",
+          "theme": "iceBreakingBattle",
+          "eyebrow": "Action / Casual",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#091119",
+            "panel": "#172936",
+            "accent": "#75d5e8",
+            "accentAlt": "#e9b954",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": []
+        }
+      }
     },
     {
       "id": "citybuilder",
@@ -1190,7 +3880,96 @@
       "platforms": [],
       "summary": "Archived project.",
       "detailRoute": null,
-      "displayOrder": 24
+      "displayOrder": 24,
+      "detail": {
+        "tier": "C",
+        "mode": "archived",
+        "statusLabel": "Archived / legacy work",
+        "archiveReason": "Archived and excluded from the primary portfolio while preserving the legacy detail URL.",
+        "technicalNotes": [
+          "2020 — 2021 Arrow Survival: Hero's Quest is a fast-paced action roguelike where players take on the role of a lone archer battling through waves of enemies across procedurally generated stages. With intuitive one-touch controls and an arsenal of unique skills and upgrades, the game delivers an intense survival experience.",
+          "Key Features: 🏹 One-Finger Archery Combat: Move to dodge and release to fire—simple yet deeply strategic controls.",
+          "🧿 Randomized Skill System: Gain random power-ups after each room for endless combinations.",
+          "🌍 Procedurally Generated Levels: Each run offers fresh layouts and enemy encounters."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/1.detail.webp",
+            "alt": "citybuilder featured view",
+            "fit": "portrait",
+            "featured": true,
+            "width": 900,
+            "height": 1600,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/2.detail.webp",
+            "alt": "citybuilder screenshot 2",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/3.detail.webp",
+            "alt": "citybuilder screenshot 3",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/4.detail.webp",
+            "alt": "citybuilder screenshot 4",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-3"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/5.detail.webp",
+            "alt": "citybuilder screenshot 5",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-4"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/game/Archero/6.detail.webp",
+            "alt": "citybuilder screenshot 6",
+            "fit": "portrait",
+            "featured": false,
+            "width": 900,
+            "height": 1600,
+            "key": "screen-5"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "compact-proof",
+          "theme": "citybuilder",
+          "eyebrow": "Archived game project",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#100d0b",
+            "panel": "#28201a",
+            "accent": "#d89a4d",
+            "accentAlt": "#769e5d",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": []
+        }
+      }
     },
     {
       "id": "neighborhood",
@@ -1206,7 +3985,76 @@
       "platforms": [],
       "summary": "Archived project.",
       "detailRoute": null,
-      "displayOrder": 25
+      "displayOrder": 25,
+      "detail": {
+        "tier": "C",
+        "mode": "archived",
+        "statusLabel": "Archived / legacy work",
+        "archiveReason": "Archived and excluded from the primary portfolio while preserving the legacy detail URL.",
+        "technicalNotes": [
+          "Neighborhood Defense is an HTML5 tower defense game exported from Construct 3. Players defend the neighborhood against zombie waves by placing and upgrading different tower types, balancing resources, and reacting to enemy pressure in real time.",
+          "Key Features: 🧟 Wave Defense Gameplay: Survive incoming enemy waves and protect core structures.",
+          "🏹 Multiple Tower Types: Archer, bomb, electric, and sniper towers support different tactical playstyles.",
+          "🗺️ Level-Based Progression: Structured stage flow with level data and tower balancing files."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "Games/Neighborhood/screenshot.detail.webp",
+            "alt": "Neighborhood Defense screenshot",
+            "fit": "cover",
+            "featured": true,
+            "width": 1600,
+            "height": 898,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "Games/Neighborhood/images/house-sheet0.webp",
+            "alt": "Neighborhood Defense base",
+            "fit": "cover",
+            "featured": false,
+            "width": 1024,
+            "height": 512,
+            "key": "screen-1"
+          },
+          {
+            "type": "image",
+            "src": "Games/Neighborhood/images/towerbomber-sheet0.detail.webp",
+            "alt": "Neighborhood Defense tower",
+            "fit": "cover",
+            "featured": false,
+            "width": 1600,
+            "height": 1600,
+            "key": "screen-2"
+          },
+          {
+            "type": "image",
+            "src": "Games/Neighborhood/images/zombie3-sheet0.webp",
+            "alt": "Neighborhood Defense enemy",
+            "fit": "cover",
+            "featured": false,
+            "width": 2048,
+            "height": 1024,
+            "key": "screen-3"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "compact-proof",
+          "theme": "neighborhood",
+          "eyebrow": "Archived game project",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#0b1010",
+            "panel": "#182a27",
+            "accent": "#6fc36f",
+            "accentAlt": "#dc7658",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": []
+        }
+      }
     }
   ],
   "specializations": {
@@ -1326,11 +4174,11 @@
             "project": "Idle Cyber (NFT)",
             "id": "idle-cyber",
             "period": "2021 — 2022",
-            "role": "Technical Leader",
+            "role": "Senior Unity Developer",
             "company": "BEEMOB Studio",
             "achievements": [
-              "Technical leader for an idle tower defense/GameFi product that successfully raised million-dollar funding",
-              "Led development of a full idle tower defense game with integrated NFT marketplace (testnet)",
+              "Contributed to a funded GameFi product as Senior Unity Developer",
+              "Implemented core systems for a full idle tower defense game with integrated NFT marketplace (testnet)",
               "Published on iOS, Android, and WebGL (itch.io)",
               "First personal GameFi title — proof of concept for Play-to-Earn mechanics with wallet integration",
               "Implemented staking-like upgrade systems and hero collection economy"
@@ -1339,10 +4187,10 @@
               "NFT",
               "Idle",
               "Tower Defense",
-              "Technical Leader",
               "Funded",
               "Mobile",
-              "WebGL"
+              "WebGL",
+              "Senior Unity Developer"
             ]
           },
           {
@@ -1352,7 +4200,7 @@
             "role": "Senior Unity Developer",
             "company": "Neko Global",
             "achievements": [
-              "Contributed to a GameFi MMORPG that successfully raised million-dollar funding",
+              "Contributed to a funded GameFi MMORPG",
               "Contributed to a full-scale Play-to-Earn MMORPG with real blockchain token economy",
               "Integrated NFT assets, on-chain staking, and DAO governance systems into Unity",
               "Developed real-time PvP/PvE battle systems with elemental skill mechanics",
