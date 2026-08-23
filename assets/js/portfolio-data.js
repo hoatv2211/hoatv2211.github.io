@@ -1,20 +1,22 @@
 // Generated from portfolio.json. Do not edit manually.
 window.PORTFOLIO_DATA = [
   {
-    "id": "proxyapi-mad",
-    "title": "ProxyAPI.MAD",
-    "category": "agentic",
-    "detailCategory": "proxyapi-mad",
-    "detailUrl": "",
-    "description": "AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.",
+    "id": "flyingphoenix",
+    "title": "Flying Phoenix Chronicles",
+    "category": "unity",
+    "detailCategory": "flyingphoenix",
+    "detailUrl": "projects/flying-phoenix-chronicles/",
+    "description": "A personal Unity MMORPG project built around live combat, hero progression, companions, traversal, and interconnected feature systems for mobile play.",
     "image": {
-      "src": "assets/images/portfolio-details/proxyapi-mad/323915db83ec.detail.webp",
-      "alt": "ProxyAPI.MAD"
+      "src": "assets/images/portfolio-details/flying-phoenix-chronicles/01-combat-boss-mobs.webp",
+      "alt": "Flying Phoenix Chronicles combat showcase"
     },
     "tag": {
-      "label": "Agentic AI",
-      "className": "applications-icon"
-    }
+      "label": "Unity",
+      "className": "unity-icon"
+    },
+    "featured": true,
+    "featuredOrder": 5
   },
   {
     "id": "muloren",
@@ -30,7 +32,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": true,
+    "featuredOrder": 3
   },
   {
     "id": "jx1",
@@ -46,7 +50,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "dalgona",
@@ -62,7 +68,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": true,
+    "featuredOrder": 1
   },
   {
     "id": "shibainu",
@@ -78,7 +86,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "idleCyber",
@@ -94,7 +104,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": true,
+    "featuredOrder": 2
   },
   {
     "id": "nekoverse",
@@ -110,7 +122,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": true,
+    "featuredOrder": 4
   },
   {
     "id": "sandwich",
@@ -126,7 +140,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "archero",
@@ -142,7 +158,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "bike",
@@ -158,7 +176,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "MeowFlow",
@@ -174,7 +194,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "share001-ludo",
@@ -190,7 +212,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "share002-pixelshooter3d",
@@ -206,7 +230,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "galaxiga",
@@ -222,7 +248,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "HomeDesign",
@@ -239,6 +267,8 @@ window.PORTFOLIO_DATA = [
       "label": "Unity",
       "className": "unity-icon"
     },
+    "featured": false,
+    "featuredOrder": null,
     "apiUrlAndroid": "https://app.sensortower.com/api/android/apps/com.giraffegames.ggm3"
   },
   {
@@ -255,7 +285,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "tilesmatch3",
@@ -271,7 +303,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "sudoku",
@@ -287,7 +321,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "ageofbattle",
@@ -304,6 +340,8 @@ window.PORTFOLIO_DATA = [
       "label": "Unity",
       "className": "unity-icon"
     },
+    "featured": false,
+    "featuredOrder": null,
     "demoUrl": "https://hoatv2211.github.io/Share003_AgeOfBattle/"
   },
   {
@@ -320,7 +358,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "metameAmusementPark",
@@ -336,7 +376,9 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unreal Engine",
       "className": "unreal-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
   },
   {
     "id": "cryptoquest",
@@ -352,6 +394,26 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    }
+    },
+    "featured": false,
+    "featuredOrder": null
+  },
+   {
+    "id": "proxyapi-mad",
+    "title": "ProxyAPI.MAD",
+    "category": "agentic",
+    "detailCategory": "proxyapi-mad",
+    "detailUrl": "",
+    "description": "AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.",
+    "image": {
+      "src": "assets/images/portfolio-details/proxyapi-mad/323915db83ec.detail.webp",
+      "alt": "ProxyAPI.MAD"
+    },
+    "tag": {
+      "label": "Agentic AI",
+      "className": "applications-icon"
+    },
+    "featured": false,
+    "featuredOrder": null
   }
 ];

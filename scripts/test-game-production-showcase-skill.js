@@ -20,7 +20,7 @@ for (const relativePath of requiredFiles) {
 }
 
 const skill = fs.readFileSync(path.join(skillRoot, "SKILL.md"), "utf8");
-assert.match(skill, /^---\nname: game-production-showcase\ndescription:/);
+assert.match(skill, /^---\r?\nname: game-production-showcase\r?\ndescription:/);
 assert.match(skill, /portfolio\.json/);
 assert.match(skill, /references\/family-map\.md/);
 assert.match(skill, /npm test/);

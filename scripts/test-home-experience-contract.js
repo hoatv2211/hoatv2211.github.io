@@ -11,6 +11,7 @@ const modernCss = fs.readFileSync(path.join(root, "assets/css/modern-enhancement
 const enhancements = fs.readFileSync(path.join(root, "assets/js/modern-enhancements.js"), "utf8");
 const script = fs.readFileSync(path.join(root, "assets/js/script.js"), "utf8");
 const showcase = fs.readFileSync(path.join(root, "assets/js/gaming-showcase.js"), "utf8");
+const gitshare = fs.readFileSync(path.join(root, "assets/js/github-share.js"), "utf8");
 const portfolio = JSON.parse(fs.readFileSync(path.join(root, "portfolio.json"), "utf8"));
 
 const failures = [];
@@ -73,6 +74,9 @@ expect(/\.backup-style-toggle\[hidden\]/.test(css + modernCss), "Hidden backup s
 expect(/@media \(max-width: 768px\)[\s\S]*\.navbar-list\s*\{[^}]*grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\)/.test(modernCss), "Mobile navigation must show all six destinations across two rows.");
 expect(/@media \(max-width: 768px\)[\s\S]*\.navbar-book-call-item\s*\{[^}]*display:\s*block\s*!important/.test(modernCss), "Mobile navigation must keep the Telegram tab visible.");
 expect(/\.gitshare-card\s*\{[^}]*min-width:\s*0/.test(css + modernCss), "GitShare cards must be fluid and shrinkable.");
+expect(/gitshare-mini-link[\s\S]*?>Website<\/a>/.test(gitshare), "GitShare homepage links must use the Website label.");
+expect(!/gitshare-mini-link[\s\S]*?>Demo<\/a>/.test(gitshare), "GitShare homepage links must not be mislabeled as demos.");
+expect(/src="assets\/js\/github-share\.js\?v=20260823-website"/.test(html), "GitShare script must use a cache-busting URL for the Website label release.");
 expect(!/navigationLinks\[j\]\.classList/.test(script), "Navigation state must not assume page and nav indexes match.");
 
 if (failures.length) {

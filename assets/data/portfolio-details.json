@@ -3207,6 +3207,213 @@
           }
         ]
       }
+    },
+    {
+      "id": "flying-phoenix-chronicles",
+      "title": "Flying Phoenix Chronicles",
+      "detailKey": "flyingphoenix",
+      "status": "active",
+      "type": "personal",
+      "role": "Creator / Lead Developer",
+      "period": "2026 - Present",
+      "platforms": [
+        "Mobile"
+      ],
+      "summary": "A personal Unity MMORPG project built around live combat, hero progression, companions, traversal, and interconnected feature systems for mobile play.",
+      "detail": {
+        "tier": "B",
+        "mode": "rendered",
+        "statusLabel": "Personal project in development",
+        "contribution": [
+          "Designed and developed the Unity MMORPG project and its core gameplay presentation.",
+          "Built combat, skill, character, inventory, mount, and pet progression flows.",
+          "Integrated feature navigation, English presentation, and portrait mobile showcase delivery.",
+          "Maintained the local client and supporting development environment during production."
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/flying-phoenix-chronicles/01-combat-boss-mobs.webp",
+            "alt": "Flying Phoenix Chronicles hero fighting a boss and surrounding monsters",
+            "fit": "portrait",
+            "featured": true,
+            "width": 1080,
+            "height": 1920,
+            "key": "hero"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/flying-phoenix-chronicles/02-combat-skill-impact.webp",
+            "alt": "Flying Phoenix Chronicles combat skill impact during a live encounter",
+            "fit": "portrait",
+            "featured": false,
+            "width": 1080,
+            "height": 1920,
+            "key": "combat-impact"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/flying-phoenix-chronicles/03-hero-equipment.webp",
+            "alt": "Flying Phoenix Chronicles hero profile and equipped gear",
+            "fit": "portrait",
+            "featured": false,
+            "width": 1080,
+            "height": 1920,
+            "key": "hero-profile"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/flying-phoenix-chronicles/04-skill-build.webp",
+            "alt": "Flying Phoenix Chronicles skill build and ability selection",
+            "fit": "portrait",
+            "featured": false,
+            "width": 1080,
+            "height": 1920,
+            "key": "skill-build"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/flying-phoenix-chronicles/05-mount-advancement.webp",
+            "alt": "Flying Phoenix Chronicles mount advancement screen",
+            "fit": "portrait",
+            "featured": false,
+            "width": 1080,
+            "height": 1920,
+            "key": "mount"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/flying-phoenix-chronicles/06-inventory-gear.webp",
+            "alt": "Flying Phoenix Chronicles inventory and equipment management",
+            "fit": "portrait",
+            "featured": false,
+            "width": 1080,
+            "height": 1920,
+            "key": "inventory"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/flying-phoenix-chronicles/07-pet-collection.webp",
+            "alt": "Flying Phoenix Chronicles pet collection and companion roster",
+            "fit": "portrait",
+            "featured": false,
+            "width": 1080,
+            "height": 1920,
+            "key": "pets"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/flying-phoenix-chronicles/08-mounted-exploration.webp",
+            "alt": "Flying Phoenix Chronicles mounted traversal through the world",
+            "fit": "portrait",
+            "featured": false,
+            "width": 1080,
+            "height": 1920,
+            "key": "traversal"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/flying-phoenix-chronicles/09-world-exploration.webp",
+            "alt": "Flying Phoenix Chronicles world exploration and environment",
+            "fit": "portrait",
+            "featured": false,
+            "width": 1080,
+            "height": 1920,
+            "key": "world"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/flying-phoenix-chronicles/10-hero-pet-party.webp",
+            "alt": "Flying Phoenix Chronicles hero and pet party formation",
+            "fit": "portrait",
+            "featured": false,
+            "width": 1080,
+            "height": 1920,
+            "key": "party"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/flying-phoenix-chronicles/11-main-menu.webp",
+            "alt": "Flying Phoenix Chronicles main menu with connected feature navigation",
+            "fit": "portrait",
+            "featured": false,
+            "width": 1080,
+            "height": 1920,
+            "key": "main-menu"
+          }
+        ],
+        "presentation": {
+          "layoutVariant": "flagship-worlds",
+          "theme": "flying-phoenix-chronicles",
+          "eyebrow": "Personal mobile MMORPG",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#071426",
+            "panel": "#0b1d31",
+            "accent": "#efc86c",
+            "accentAlt": "#f5d98c",
+            "text": "#f5f2e9",
+            "muted": "#b9ccdc"
+          },
+          "storyBeats": [
+            {
+              "id": "combat",
+              "kicker": "Combat foundation",
+              "title": "Combat defines the first decision",
+              "body": "Live encounters and skill impact establish the immediate player experience, while the skill wheel exposes deliberate build choices.",
+              "mediaKeys": [
+                "combat-impact",
+                "skill-build"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "hero",
+              "kicker": "Hero construction",
+              "title": "Hero identity grows through connected systems",
+              "body": "Character presentation, equipment, inventory, and build decisions turn each reward into visible progression.",
+              "mediaKeys": [
+                "hero-profile",
+                "inventory"
+              ],
+              "layout": "split"
+            },
+            {
+              "id": "companions",
+              "kicker": "Companion progression",
+              "title": "Mounts and pets extend long-term progression",
+              "body": "Companion systems support collection, movement, formation choices, and a stronger sense of ownership across the journey.",
+              "mediaKeys": [
+                "mount",
+                "pets"
+              ],
+              "layout": "offset"
+            },
+            {
+              "id": "world",
+              "kicker": "World traversal",
+              "title": "Traversal connects arenas and encounters",
+              "body": "Floating platforms, forest paths, and combat spaces establish a readable world built for mobile exploration.",
+              "mediaKeys": [
+                "traversal",
+                "world"
+              ],
+              "layout": "wide"
+            },
+            {
+              "id": "systems",
+              "kicker": "Connected systems",
+              "title": "The feature set works as one MMORPG loop",
+              "body": "Hero, companions, progression, crafting access, and guild navigation converge in one connected player journey.",
+              "mediaKeys": [
+                "party",
+                "main-menu"
+              ],
+              "layout": "split"
+            }
+          ]
+        }
+      }
     }
   ]
 }

@@ -175,7 +175,9 @@
     const detail = project.detail;
     const mediaMap = mediaByKey(detail);
     const story = detail.presentation.storyBeats.map((beat) => renderStoryBeat(beat, mediaMap)).join("");
-    const familyClass = `detail-showcase--${classToken(family)}`;
+    const heroMedia = mediaMap.get(detail.presentation.heroMediaKey);
+    const portraitClass = heroMedia?.fit === "portrait" ? " detail-showcase--portrait-led" : "";
+    const familyClass = `detail-showcase--${classToken(family)}${portraitClass}`;
     const storyClass = family === "mobile-campaign"
       ? "detail-showcase-story detail-mobile-rail"
       : family === "product-console"

@@ -22,13 +22,13 @@ const runtimeCards = evaluateWindowAssignment(CARD_DATA, "PORTFOLIO_DATA");
 const detailIndex = evaluateWindowAssignment(DETAIL_INDEX, "PORTFOLIO_DETAIL_INDEX");
 const detailPayload = JSON.parse(fs.readFileSync(DETAIL_PAYLOAD, "utf8"));
 
-assert.strictEqual(runtimeCards.length, 22, "card runtime must contain 22 active records");
-assert.strictEqual(detailIndex.length, 25, "detail index must contain all 25 records");
+assert.strictEqual(runtimeCards.length, 23, "card runtime must contain 23 active records");
+assert.strictEqual(detailIndex.length, 26, "detail index must contain all 26 records");
 assert.ok(Array.isArray(detailPayload.projects), "detail payload must expose a projects array");
-assert.strictEqual(detailPayload.projects.length, 25, "detail payload must contain all 25 records");
+assert.strictEqual(detailPayload.projects.length, 26, "detail payload must contain all 26 records");
 
 const indexedKeys = detailIndex.map((project) => project.detailKey);
-assert.strictEqual(new Set(indexedKeys).size, 25, "detail index keys must be unique");
+assert.strictEqual(new Set(indexedKeys).size, 26, "detail index keys must be unique");
 assert.deepStrictEqual(
   detailIndex
     .filter((project) => project.status === "archived")
@@ -62,4 +62,4 @@ const detailLoaderPosition = indexHtml.indexOf("assets/js/portfolio-details.js")
 assert.ok(cardScriptPosition >= 0, "index must load portfolio card data");
 assert.ok(detailIndexPosition > cardScriptPosition, "detail index must load after card data");
 assert.ok(detailLoaderPosition > detailIndexPosition, "detail loader must load after detail index");
-console.log("Portfolio detail data contract passed for 22 cards and 25 details.");
+console.log("Portfolio detail data contract passed for 23 cards and 26 details.");

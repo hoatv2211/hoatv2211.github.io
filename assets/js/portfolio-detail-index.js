@@ -149,5 +149,11 @@ window.PORTFOLIO_DETAIL_INDEX = [
     "status": "archived",
     "type": "archived",
     "tier": "C"
+  },
+  {
+    "detailKey": "flyingphoenix",
+    "status": "active",
+    "type": "personal",
+    "tier": "B"
   }
 ];

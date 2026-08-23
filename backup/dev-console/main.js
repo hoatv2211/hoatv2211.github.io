@@ -49,7 +49,7 @@
       target.innerHTML = repos.slice(0, 10).map(repo => {
         const escape = backup.escapeHtml || (value => String(value));
         const topics = repo.topics && repo.topics.length ? repo.topics.slice(0, 3) : [repo.language];
-        const demo = repo.demoUrl ? `<a href="${escape(repo.demoUrl)}" target="_blank" rel="noopener noreferrer">demo</a>` : "";
+        const websiteLink = repo.demoUrl ? `<a href="${escape(repo.demoUrl)}" target="_blank" rel="noopener noreferrer">Website</a>` : "";
 
         return `<article class="repo-card">
           <code>${escape(repo.owner)}/${escape(repo.name)}</code>
@@ -57,7 +57,7 @@
           <div class="repo-topics">${topics.map(topic => `<span>${escape(topic)}</span>`).join("")}</div>
           <div class="repo-actions">
             <a href="${escape(repo.url)}" target="_blank" rel="noopener noreferrer">source</a>
-            ${demo}
+            ${websiteLink}
           </div>
         </article>`;
       }).join("");

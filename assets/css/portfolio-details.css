@@ -242,13 +242,34 @@
 .detail-media-viewer {
   display: grid;
   place-items: center;
-  padding: 56px 20px 20px;
+  padding: 20px;
 }
 
-.detail-media-viewer-close {
-  position: fixed;
-  top: 18px;
-  right: 18px;
+.detail-media-viewer-frame {
+  position: relative;
+  display: grid;
+  width: fit-content;
+  max-width: 100%;
+  max-height: 100%;
+  place-items: center;
+}
+
+.detail-media-viewer .expanded-media {
+  position: static;
+  top: auto;
+  left: auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 40px);
+  transform: none;
+}
+
+.detail-media-viewer .detail-media-viewer-frame > .detail-media-viewer-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
   z-index: 10000;
   width: 42px;
   height: 42px;
@@ -456,6 +477,49 @@
 
 .detail-showcase--flagship-worlds .detail-story-beat:nth-child(even) {
   padding-left: clamp(0px, 4vw, 54px);
+}
+
+.detail-showcase--portrait-led .detail-showcase-hero {
+  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+  min-height: 0;
+}
+
+.detail-showcase--portrait-led .detail-showcase-hero-media {
+  width: min(100%, 430px);
+  justify-self: center;
+  transform: none;
+}
+
+.detail-showcase--portrait-led .detail-showcase-hero-media .detail-media {
+  width: 100%;
+  max-width: 430px;
+}
+
+.detail-showcase--portrait-led .detail-showcase-hero-copy {
+  margin-left: clamp(-32px, -2vw, -16px);
+}
+
+.detail-showcase--portrait-led .detail-showcase-hero .detail-title {
+  max-width: 14ch;
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  line-height: 0.96;
+}
+
+.detail-showcase--portrait-led .detail-showcase-hero-media img,
+.detail-showcase--portrait-led .detail-story-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+}
+
+.detail-showcase--portrait-led .detail-story-media--count-2 {
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  align-items: start;
+}
+
+.detail-showcase--portrait-led .detail-showcase-contribution .detail-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .detail-showcase--mobile-campaign .detail-showcase-hero {
@@ -840,7 +904,78 @@
   }
 }
 
+body.portfolio-detail-open .portfolio-chatbot-button,
+body.portfolio-detail-open .portfolio-chatbot-panel,
+body.portfolio-detail-open .portfolio-chatbot-invitation {
+  display: none !important;
+}
+
+body.portfolio-detail-open .theme-toggle {
+  top: max(14px, env(safe-area-inset-top)) !important;
+  right: 180px !important;
+  bottom: auto !important;
+  left: auto !important;
+}
+
+@media (max-width: 767px) {
+  .detail-showcase--portrait-led .detail-showcase-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .detail-showcase--portrait-led .detail-story-beat,
+  .detail-showcase--portrait-led .detail-story-media--count-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body.portfolio-detail-open .detail-showcase--portrait-led .detail-showcase-hero-copy {
+    width: 100%;
+    margin: 0;
+    order: -1;
+  }
+
+  .detail-showcase--portrait-led .detail-showcase-hero-media,
+  .detail-showcase--portrait-led .detail-story-media {
+    width: 100%;
+    min-width: 0;
+  }
+
+  body.portfolio-detail-open .detail-showcase--portrait-led .detail-showcase-hero .detail-title {
+    max-width: none;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+    font-size: clamp(2rem, 9.5vw, 3.2rem);
+    line-height: 1.02;
+  }
+
+  .detail-showcase--portrait-led .detail-showcase-contribution .detail-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (max-width: 760px) {
+  body.portfolio-detail-open .sidebar,
+  body.portfolio-detail-open .navbar {
+    display: none !important;
+  }
+
+  body.portfolio-detail-open article.portfolio.active {
+    padding-inline: 10px;
+    padding-top: 58px;
+    padding-bottom: 24px;
+  }
+
+  body.portfolio-detail-open main {
+    margin-bottom: 0 !important;
+  }
+
+  body.portfolio-detail-open .theme-toggle {
+    top: max(8px, env(safe-area-inset-top)) !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 10px !important;
+  }
+
   .detail-showcase-shell {
     gap: 58px;
     padding: 0;

@@ -37,7 +37,11 @@
     expandedImage.src = image.currentSrc || image.src;
     expandedImage.alt = image.alt || "Expanded project image";
 
-    overlay.append(closeButton, expandedImage);
+    const frame = document.createElement("div");
+    frame.className = "detail-media-viewer-frame";
+    frame.append(expandedImage, closeButton);
+
+    overlay.append(frame);
     document.body.appendChild(overlay);
     document.body.classList.add("detail-media-viewer-open");
     activeOverlay = overlay;

@@ -11,6 +11,7 @@ const CANONICAL_ROUTES = [
   "projects/mu-loren-mobile/",
   "projects/tinh-thien-ha-jx1/",
   "projects/dalgona-worldchain/",
+  "projects/flying-phoenix-chronicles/",
   "projects/idle-cyber/",
   "projects/nekoverse/",
 ];

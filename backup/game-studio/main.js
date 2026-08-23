@@ -8,6 +8,12 @@
     return backup.getProjects().filter(project => project.category !== "agentic");
   }
 
+  function getFeaturedGameProjects() {
+    return getGameProjects()
+      .filter(project => project.featured)
+      .sort((a, b) => a.featuredOrder - b.featuredOrder);
+  }
+
   function renderHero() {
     const target = document.getElementById("hero-media");
     const project = getGameProjects()[0] || backup.getFeaturedProjects(1)[0];
@@ -29,7 +35,7 @@
     const target = document.getElementById("case-grid");
     if (!target) return;
 
-    target.innerHTML = getGameProjects().slice(0, 6).map(project => (
+    target.innerHTML = getFeaturedGameProjects().map(project => (
       `<article class="case-card">
         <img src="${project.image.src}" alt="${project.image.alt}" loading="lazy" decoding="async">
         <div>
@@ -75,7 +81,7 @@
         const escape = backup.escapeHtml || (value => String(value));
         const preview = repo.previewUrl || `https://opengraph.githubassets.com/backup-gitshare/${repo.fullName}`;
         const topics = repo.topics && repo.topics.length ? repo.topics.slice(0, 3) : [repo.language];
-        const demo = repo.demoUrl ? `<a href="${escape(repo.demoUrl)}" target="_blank" rel="noopener noreferrer">Demo</a>` : "";
+        const websiteLink = repo.demoUrl ? `<a href="${escape(repo.demoUrl)}" target="_blank" rel="noopener noreferrer">Website</a>` : "";
 
         return `<article class="repo-card">
           <img src="${escape(preview)}" alt="GitHub preview for ${escape(repo.fullName)}" loading="lazy" decoding="async">
@@ -86,7 +92,7 @@
             <div class="repo-topics">${topics.map(topic => `<span>${escape(topic)}</span>`).join("")}</div>
             <div class="repo-actions">
               <a href="${escape(repo.url)}" target="_blank" rel="noopener noreferrer">Source</a>
-              ${demo}
+              ${websiteLink}
             </div>
           </div>
         </article>`;

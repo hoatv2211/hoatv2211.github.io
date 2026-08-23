@@ -142,7 +142,7 @@
       ? repo.topics.map(function (topic) { return '<span>' + escapeHtml(topic) + '</span>'; }).join("")
       : '<span>' + escapeHtml(repo.language) + '</span>';
     const homepageLink = repo.homepage
-      ? '<a class="gitshare-mini-link" href="' + escapeAttribute(repo.homepage) + '" target="_blank" rel="noopener noreferrer">Demo</a>'
+      ? '<a class="gitshare-mini-link" href="' + escapeAttribute(repo.homepage) + '" target="_blank" rel="noopener noreferrer">Website</a>'
       : "";
 
     return `

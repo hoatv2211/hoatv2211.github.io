@@ -135,6 +135,18 @@ assert.match(flagshipFamilyHtml, /detail-case-study--flagship-worlds/);
 assert.match(flagshipFamilyHtml, /detail-showcase--flagship-worlds/);
 assert.match(flagshipFamilyHtml, /style="[^"]*--showcase-accent: #d9a84e/);
 
+const portraitFlagship = structuredClone(showcase);
+portraitFlagship.detailKey = "portrait-flagship";
+portraitFlagship.detail.presentation.layoutVariant = "flagship-worlds";
+portraitFlagship.detail.presentation.theme = "portrait-flagship";
+portraitFlagship.detail.presentation.heroMediaKey = "revive";
+portraitFlagship.detail.media[0].fit = "portrait";
+const portraitFlagshipHtml = renderer.render(
+  portraitFlagship,
+  '<section project-detail data-detail-category="portrait-flagship"></section>'
+);
+assert.match(portraitFlagshipHtml, /detail-showcase--portrait-led/);
+
 const mobileHtml = renderFamily("mobile-campaign");
 assert.match(mobileHtml, /detail-showcase--mobile-campaign/);
 assert.match(mobileHtml, /detail-mobile-rail/);

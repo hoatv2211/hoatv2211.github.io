@@ -25,9 +25,13 @@ assert.strictEqual(missing.width, null);
 assert.match(missing.error, /missing/i);
 
 const inventory = buildInventory(root);
-assert.strictEqual(inventory.projectCount, 25);
+assert.strictEqual(inventory.projectCount, 26);
 assert.ok(Array.isArray(inventory.media));
 assert.ok(inventory.media.some((item) => item.projects.includes("archero") && item.src.endsWith("Archero/1.detail.webp")));
+assert.ok(
+  inventory.media.some((item) => item.projects.includes("flyingphoenix") && item.src.endsWith("flying-phoenix-chronicles/01-combat-boss-mobs.webp")),
+  "Flying Phoenix hero media must be inventoried"
+);
 assert.strictEqual(inventory.missing.length, 0, `missing local media: ${inventory.missing.map((item) => item.src).join(", ")}`);
 
 for (const item of inventory.media) {

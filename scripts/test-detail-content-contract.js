@@ -54,10 +54,31 @@ assert.deepStrictEqual(
   ["revive", "quest", "npc", "home", "equipment", "tooling"]
 );
 
+const flyingPhoenix = project("flyingphoenix");
+assert.strictEqual(flyingPhoenix.role, "Creator / Lead Developer");
+assert.strictEqual(flyingPhoenix.detail.statusLabel, "Personal project in development");
+assert.strictEqual(flyingPhoenix.detail.presentation.layoutVariant, "flagship-worlds");
+assert.strictEqual(flyingPhoenix.detail.media.length, 11);
+assert.deepStrictEqual(
+  flyingPhoenix.detail.presentation.storyBeats.map((beat) => beat.id),
+  ["combat", "hero", "companions", "world", "systems"]
+);
+
 for (const item of data.projects.filter((candidate) => candidate.detail.tier === "B")) {
   assert.ok(item.detail.contribution.length >= 3, `${item.detailKey} needs three contribution bullets`);
   const minimumMedia = item.detail.presentation.layoutVariant === "gameplay-editorial" ? 1 : 2;
-  assert.ok(item.detail.media.length >= minimumMedia && item.detail.media.length <= 6, `${item.detailKey} needs ${minimumMedia} to six primary media records`);
+  assert.ok(item.detail.media.length >= minimumMedia, `${item.detailKey} needs at least ${minimumMedia} primary media records`);
+  const storyBeats = item.detail.presentation.storyBeats || [];
+  if (storyBeats.length) {
+    const referencedMedia = [
+      item.detail.presentation.heroMediaKey,
+      ...storyBeats.flatMap((beat) => beat.mediaKeys),
+    ];
+    assert.strictEqual(referencedMedia.length, item.detail.media.length, `${item.detailKey} narrative must reference every media record once`);
+    assert.strictEqual(new Set(referencedMedia).size, item.detail.media.length, `${item.detailKey} narrative must not duplicate media records`);
+  } else {
+    assert.ok(item.detail.media.length <= 6, `${item.detailKey} compact proof must keep at most six primary media records`);
+  }
 }
 
 for (const key of ["share001-ludo", "share002-pixelshooter3d"]) {

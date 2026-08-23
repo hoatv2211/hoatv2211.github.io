@@ -66,6 +66,8 @@
         alt: image.alt || project.title || "Portfolio project"
       },
       tag: project.tag || { label: formatCategory(category), className: "" },
+      featured: project.featured === true,
+      featuredOrder: Number.isInteger(project.featuredOrder) ? project.featuredOrder : null,
       demoUrl: project.demoUrl || "",
       detailUrl: project.detailUrl ? asset(project.detailUrl) : (project.demoUrl || `${ROOT_PREFIX}index.html`),
       hasStoreMetrics: Boolean(project.apiUrlAndroid || project.apiUrlIos),
@@ -80,10 +82,10 @@
   }
 
   function getFeaturedProjects(limit) {
-    const priority = ["proxyapi-mad", "muloren", "jx1", "idleCyber", "nekoverse", "dalgona", "HomeDesign", "ageofbattle"];
-    const byId = new Map(projects.map(project => [project.id, project]));
-    const featured = priority.map(id => byId.get(id)).filter(Boolean);
-    const rest = projects.filter(project => !priority.includes(project.id));
+    const featured = projects
+      .filter(project => project.featured)
+      .sort((a, b) => a.featuredOrder - b.featuredOrder);
+    const rest = projects.filter(project => !project.featured);
 
     return featured.concat(rest).slice(0, limit || 6);
   }

@@ -222,6 +222,8 @@ function toRuntimeProject(project) {
       alt: project.image.alt,
     },
     tag: CATEGORY_PRESENTATION[project.category],
+    featured: project.featured === true,
+    featuredOrder: project.featured === true ? project.featuredOrder : null,
   };
 
   const links = project.runtimeLinks || {};
