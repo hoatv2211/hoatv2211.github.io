@@ -238,25 +238,41 @@
     return "Assistant API is not connected yet. Message Hoa directly on Telegram: " + config.telegramUrl;
   }
 
+  function getTurnstileToken(config) {
+    var provider = typeof config.getTurnstileToken === "function"
+      ? config.getTurnstileToken
+      : window.getTurnstileToken;
+
+    if (typeof provider !== "function") {
+      return Promise.reject(new Error("Turnstile challenge not configured"));
+    }
+
+    return Promise.resolve().then(function () {
+      return provider();
+    }).then(function (token) {
+      if (typeof token !== "string" || !token.trim()) {
+        throw new Error("Turnstile challenge returned no token");
+      }
+      return token;
+    });
+  }
+
   function callWorker(config, sessionId, messages) {
     if (!endpointReady(config.endpoint)) {
       return Promise.resolve({ reply: makeFallbackReply(config), leadSent: false, leadReason: "endpoint not configured" });
     }
 
-    var turnstileToken = typeof config.getTurnstileToken === "function" ? config.getTurnstileToken() : "";
-    if (!turnstileToken) {
-      return Promise.resolve({ reply: makeFallbackReply(config), leadSent: false, leadReason: "challenge not configured" });
-    }
-
-    return fetch(config.endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        sessionId: sessionId,
-        messages: messages.slice(-config.maxMessages),
-        pageUrl: window.location.href,
-        turnstileToken: turnstileToken
-      })
+    return getTurnstileToken(config).then(function (turnstileToken) {
+      return fetch(config.endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sessionId: sessionId,
+          messages: messages.slice(-config.maxMessages),
+          pageUrl: window.location.href,
+          turnstileToken: turnstileToken
+        })
+      });
     }).then(function (response) {
       if (!response.ok) throw new Error("chat request failed");
       return response.json();

@@ -6,6 +6,8 @@ const source = fs.readFileSync(path.join(__dirname, "..", "assets/js/portfolio-c
 const failures = [];
 if (/visitorMeta\s*:/.test(source)) failures.push("chat client sends unsupported visitorMeta");
 if (!/turnstileToken/.test(source)) failures.push("chat client does not send Turnstile token");
+if (!/window\.getTurnstileToken/.test(source)) failures.push("chat client does not fall back to the shared Turnstile provider");
+if (!/Promise\.resolve\(\)\.then/.test(source)) failures.push("chat client does not await asynchronous Turnstile acquisition");
 if (!/panel\.inert\s*=/.test(source)) failures.push("hidden chat panel does not disable focus with inert");
 if (failures.length) {
   console.error(`Chatbot security contract failed:\n- ${failures.join("\n- ")}`);

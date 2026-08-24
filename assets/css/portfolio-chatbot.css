@@ -560,31 +560,10 @@ body.portfolio-chatbot-studio {
 }
 
 @media (max-width: 768px) {
-  .portfolio-chatbot-button {
-    top: auto !important;
-    right: 12px !important;
-    bottom: calc(104px + env(safe-area-inset-bottom)) !important;
-    left: auto !important;
-    width: 58px;
-    height: 58px;
-    border-radius: 12px;
-  }
-
-  .portfolio-chatbot-pet {
-    width: 50px;
-    height: 54px;
-  }
-
-  .portfolio-chatbot-button::after {
-    right: -5px;
-    bottom: -5px;
-    width: 23px;
-    height: 19px;
-    font-size: 9px;
-  }
-
+  .portfolio-chatbot-button,
+  .portfolio-chatbot-panel,
   .portfolio-chatbot-invitation {
-    max-width: 220px;
+    display: none !important;
   }
 
   .portfolio-chatbot-panel {

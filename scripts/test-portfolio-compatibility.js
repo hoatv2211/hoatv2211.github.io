@@ -24,13 +24,13 @@ assert.strictEqual(current.length, 23, "runtime compatibility set must contain 2
 assert.deepStrictEqual(
   current.map((project) => project.id),
   [
-    "proxyapi-mad", "muloren", "jx1", "dalgona", "shibainu", "idleCyber",
-    "nekoverse", "sandwich", "archero", "bike", "MeowFlow", "share001-ludo",
-    "share002-pixelshooter3d", "galaxiga", "HomeDesign", "tilecandy", "tilesmatch3",
-    "sudoku", "ageofbattle", "surviver", "metameAmusementPark", "cryptoquest",
-    "flyingphoenix",
+    "flyingphoenix", "muloren", "jx1", "dalgona", "shibainu", "idleCyber",
+    "nekoverse", "sandwich", "archero", "bike", "MeowFlow", "proxyapi-mad",
+    "share001-ludo", "share002-pixelshooter3d", "galaxiga", "HomeDesign", "tilecandy",
+    "tilesmatch3", "sudoku", "ageofbattle", "surviver", "metameAmusementPark",
+    "cryptoquest",
   ],
-  "legacy runtime IDs/order changed"
+  "runtime project order changed"
 );
 assert.strictEqual(current.find((project) => project.id === "HomeDesign").detailCategory, "homeDesign");
 assert.strictEqual(current.find((project) => project.id === "ageofbattle").demoUrl, "https://hoatv2211.github.io/Share003_AgeOfBattle/");

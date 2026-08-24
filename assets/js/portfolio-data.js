@@ -199,6 +199,24 @@ window.PORTFOLIO_DATA = [
     "featuredOrder": null
   },
   {
+    "id": "proxyapi-mad",
+    "title": "ProxyAPI.MAD",
+    "category": "agentic",
+    "detailCategory": "proxyapi-mad",
+    "detailUrl": "",
+    "description": "AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.",
+    "image": {
+      "src": "assets/images/portfolio-details/proxyapi-mad/323915db83ec.detail.webp",
+      "alt": "ProxyAPI.MAD"
+    },
+    "tag": {
+      "label": "Agentic AI",
+      "className": "applications-icon"
+    },
+    "featured": false,
+    "featuredOrder": null
+  },
+  {
     "id": "share001-ludo",
     "title": "Ludo Game (Sample)",
     "category": "unity",
@@ -394,24 +412,6 @@ window.PORTFOLIO_DATA = [
     "tag": {
       "label": "Unity",
       "className": "unity-icon"
-    },
-    "featured": false,
-    "featuredOrder": null
-  },
-   {
-    "id": "proxyapi-mad",
-    "title": "ProxyAPI.MAD",
-    "category": "agentic",
-    "detailCategory": "proxyapi-mad",
-    "detailUrl": "",
-    "description": "AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.",
-    "image": {
-      "src": "assets/images/portfolio-details/proxyapi-mad/323915db83ec.detail.webp",
-      "alt": "ProxyAPI.MAD"
-    },
-    "tag": {
-      "label": "Agentic AI",
-      "className": "applications-icon"
     },
     "featured": false,
     "featuredOrder": null

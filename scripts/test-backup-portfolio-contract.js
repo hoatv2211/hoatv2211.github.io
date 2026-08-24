@@ -17,6 +17,8 @@ vm.runInContext(fs.readFileSync("backup/shared/backup-data-adapter.js", "utf8"),
 
 const projects = JSON.parse(JSON.stringify(context.window.PortfolioBackup.getProjects()));
 assert.strictEqual(projects.length, 23, "backups must receive 23 active projects");
+assert.strictEqual(projects[0].id, "flyingphoenix", "backups must show Flying Phoenix Chronicles first");
+assert.strictEqual(projects[11].id, "proxyapi-mad", "backups must show ProxyAPI.MAD twelfth");
 assert.deepStrictEqual(
   JSON.parse(JSON.stringify(context.window.PortfolioBackup.getFeaturedProjects(5))).map((project) => project.id),
   ["dalgona", "idleCyber", "muloren", "nekoverse", "flyingphoenix"],

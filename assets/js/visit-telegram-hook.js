@@ -21,21 +21,31 @@
   }
 
   function getTurnstileToken() {
-    if (typeof window.getTurnstileToken === "function") return window.getTurnstileToken();
-    return "";
+    if (typeof window.getTurnstileToken !== "function") {
+      return Promise.reject(new Error("Turnstile challenge not configured"));
+    }
+
+    return Promise.resolve().then(function () {
+      return window.getTurnstileToken();
+    }).then(function (token) {
+      if (typeof token !== "string" || !token.trim()) {
+        throw new Error("Turnstile challenge returned no token");
+      }
+      return token;
+    });
   }
 
   function sendVisit() {
-    var turnstileToken = getTurnstileToken();
-    if (!turnstileToken) return Promise.resolve(false);
-    return fetch(VISIT_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        pageUrl: window.location.href.slice(0, 500),
-        turnstileToken: turnstileToken
-      }),
-      keepalive: true
+    return getTurnstileToken().then(function (turnstileToken) {
+      return fetch(VISIT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pageUrl: window.location.href.slice(0, 500),
+          turnstileToken: turnstileToken
+        }),
+        keepalive: true
+      });
     }).then(function (response) {
       if (!response.ok) throw new Error("visit request failed");
       markSent();

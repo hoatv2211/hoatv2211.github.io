@@ -39,7 +39,7 @@ assert.match(source, /input\.value\s*=\s*detailPrompt/);
 assert.match(source, /function makeDraggable\(button\)[\s\S]*isMobileViewport\(\)[\s\S]*resetMobilePosition\(button\)/);
 assert.doesNotMatch(source, /messages\.push\([^\n]*proactive/i, "Proactive invitations must not enter chat history");
 assert.match(css, /\.portfolio-chatbot-invitation\s*\{[^}]*max-width:\s*280px/s);
-assert.match(css, /@media \(max-width: 768px\)[\s\S]*\.portfolio-chatbot-invitation\s*\{[^}]*max-width:\s*220px/s);
+assert.match(css, /@media \(max-width: 768px\)[\s\S]*\.portfolio-chatbot-button\s*,[\s\S]*\.portfolio-chatbot-panel\s*,[\s\S]*\.portfolio-chatbot-invitation\s*\{[^}]*display:\s*none\s*!important/s);
 assert.match(css, /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.portfolio-chatbot-invitation/);
 assert.match(renderer, /data-project-title=/);
 assert.match(renderer, /data-project-role=/);

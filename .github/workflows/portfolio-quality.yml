@@ -20,6 +20,7 @@ jobs:
         with:
           sparse-checkout: |
             /index.html
+            /service-worker.js
             /404.html
             /robots.txt
             /sitemap.xml
@@ -61,7 +62,10 @@ jobs:
         shell: bash
         run: |
           npm run generate:portfolio
-          git diff --exit-code -- assets/js/portfolio-data.js
+          git diff --exit-code -- \
+            assets/js/portfolio-data.js \
+            assets/js/portfolio-detail-index.js \
+            assets/data/portfolio-details.json
 
       - name: Run tests
         run: npm test

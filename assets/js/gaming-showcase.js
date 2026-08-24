@@ -14,7 +14,7 @@
     const title = project && project.title ? project.title : "This project";
 
     if (category === "hub") {
-      return `${title} is a centralized game hub showcasing a curated collection of cross-platform titles — play directly in the browser, explore game details, and discover the full indie catalog.`;
+      return `${title} is a centralized game hub showcasing a curated collection of cross-platform titles - play directly in the browser, explore game details, and discover the full indie catalog.`;
     }
     if (category === "agentic" || category === "applications") {
       return `${title} is a production-grade agentic AI application built with modern cloud architecture, automated workflows, scalable API design, and seamless developer experience integrations.`;
@@ -59,7 +59,8 @@
   function getShowcaseSource() {
     const source = Array.isArray(window.PORTFOLIO_DATA) ? window.PORTFOLIO_DATA : [];
     return source
-      .filter((project) => project && project.image && project.image.src && project.category !== "agentic" && project.category !== "applications")
+      .filter((project) => project && project.featured === true && project.image && project.image.src && project.category !== "agentic" && project.category !== "applications")
+      .sort((left, right) => (left.featuredOrder ?? Number.MAX_SAFE_INTEGER) - (right.featuredOrder ?? Number.MAX_SAFE_INTEGER))
       .map((project) => {
         const demoUrl = getDemoUrl(project);
         const detailUrl = project.detailCategory ? `portfolio-details/${project.detailCategory}.html` : "#";
@@ -97,7 +98,7 @@
 
         const primaryCta = project.demoUrl
           ? `<a href="${safeDemoUrl}" target="_blank" rel="noopener noreferrer" class="showcase-btn showcase-btn-play">PLAY NOW</a>`
-          : `<button type="button" class="showcase-btn showcase-btn-play" data-open-detail="${escapeHtml(project.detailCategory || "")}">VIEW DETAIL</button>`;
+          : `<button type="button" class="showcase-btn showcase-btn-play" data-detail-category="${escapeHtml(project.detailCategory || "")}">VIEW DETAIL</button>`;
 
         const androidBadge = project.apiUrlAndroid
           ? `<a href="${escapeHtml(project.apiUrlAndroid)}" target="_blank" rel="noopener noreferrer" class="showcase-platform-badge">
@@ -130,7 +131,7 @@
               <div class="showcase-links">
                 ${primaryCta}
                 ${project.detailCategory && project.demoUrl
-                  ? `<button type="button" class="showcase-btn showcase-btn-source" data-open-detail="${escapeHtml(project.detailCategory)}">DETAIL</button>`
+                  ? `<button type="button" class="showcase-btn showcase-btn-source" data-detail-category="${escapeHtml(project.detailCategory)}">DETAIL</button>`
                   : ""}
               </div>
             </div>
@@ -327,25 +328,6 @@
       touchMoved = false;
       syncAutoplay();
     }, { passive: true });
-
-    // Open project detail and collapse showcase on DETAIL / VIEW DETAIL click
-    showcaseSection.addEventListener("click", function (event) {
-      const btn = event.target.closest("[data-open-detail]");
-      if (!btn) return;
-      const detailCategory = btn.getAttribute("data-open-detail");
-      if (!detailCategory) return;
-
-      event.preventDefault();
-      stopAutoplay();
-
-      if (typeof window.openProjectDetail !== "function") return;
-      btn.disabled = true;
-      btn.setAttribute("aria-busy", "true");
-      Promise.resolve(window.openProjectDetail(detailCategory)).finally(function () {
-        btn.disabled = false;
-        btn.removeAttribute("aria-busy");
-      });
-    });
 
     render(0);
     syncAutoplay();

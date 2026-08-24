@@ -26,15 +26,15 @@ for (const project of portfolio.projects) {
 }
 
 const expectedPeriods = new Map([
-  ["shibainu", "2024 — 2025"],
-  ["archero", "2020 — 2021"],
-  ["bike", "2021 — 2022"],
-  ["MeowFlow", "2021 — 2022"],
-  ["homeDesign", "2021 — 2022"],
-  ["tilecandy", "2020 — 2021"],
-  ["tilesmatch3", "2023 — 2024"],
-  ["sudoku", "2024 — 2025"],
-  ["surviver", "2021 — 2022"],
+  ["shibainu", "2024 - 2025"],
+  ["archero", "2020 - 2021"],
+  ["bike", "2021 - 2022"],
+  ["MeowFlow", "2021 - 2022"],
+  ["homeDesign", "2021 - 2022"],
+  ["tilecandy", "2020 - 2021"],
+  ["tilesmatch3", "2023 - 2024"],
+  ["sudoku", "2024 - 2025"],
+  ["surviver", "2021 - 2022"],
 ]);
 for (const [detailKey, period] of expectedPeriods) {
   assert.strictEqual(projects.get(detailKey).period, period, `${detailKey} must restore its verified period`);

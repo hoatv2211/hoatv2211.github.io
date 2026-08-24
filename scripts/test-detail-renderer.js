@@ -17,7 +17,7 @@ const flagship = {
   status: "active",
   role: "Senior Unity Developer",
   teamSize: 10,
-  period: "2022 — 2023",
+  period: "2022 - 2023",
   platforms: ["Android", "iOS"],
   summary: "Flagship summary.",
   detail: {

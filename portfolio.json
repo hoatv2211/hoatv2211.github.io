@@ -2,7 +2,7 @@
   "_meta": {
     "generated": "2026-04-01",
     "source": "hoatv2211.github.io",
-    "purpose": "Comprehensive portfolio profile — who is HoaTV (MAD)?",
+    "purpose": "Comprehensive portfolio profile - who is HoaTV (MAD)?",
     "version": "1.1.0",
     "lastUpdated": "2026-08-14",
     "canonicalSchemaVersion": 2
@@ -55,17 +55,17 @@
       "Internal Tools"
     ],
     "whyMe": [
-      "Passionate & Reliable — From concept to release",
-      "Fast & Professional — Delivery with high quality",
-      "Creative Problem Solver — Focused on gameplay and performance",
-      "Long-Term Support — Helping you scale your product"
+      "Passionate & Reliable - From concept to release",
+      "Fast & Professional - Delivery with high quality",
+      "Creative Problem Solver - Focused on gameplay and performance",
+      "Long-Term Support - Helping you scale your product"
     ]
   },
   "careerHighlights": [
     "100+ games delivered/published, including private outsource work",
     "Full-cycle developer: concept → gameplay core → UI/UX → performance optimization → publishing & live ops",
     "Blockchain/GameFi Integration: hands-on experience with NFT marketplace, staking, wallets (MetaMask, TON, World App), and Play-to-Earn economy",
-    "Team Leadership: managed and mentored 5–15 devs/artists/designers, applying Agile/Scrum and CI/CD pipelines",
+    "Team Leadership: managed and mentored 5-15 devs/artists/designers, applying Agile/Scrum and CI/CD pipelines",
     "Cross-platform: Unity WebGL, iOS, Android, Telegram Mini App, World App, with self-deployed backend (Docker, Firebase, AWS, Supabase)",
     "Agentic systems: building automation workflows, AI tools, proxy APIs, dashboards, and Telegram/n8n integrations"
   ],
@@ -197,22 +197,22 @@
     {
       "institution": "University of Transport and Communications",
       "degree": "Bachelor's Degree in Information Technology",
-      "period": "October 2013 — May 2017"
+      "period": "October 2013 - May 2017"
     },
     {
       "institution": "ITPlus Academy",
       "degree": "Advanced Game Development & Unity Certification",
-      "period": "October 2016 — May 2017"
+      "period": "October 2016 - May 2017"
     }
   ],
   "experience": [
     {
       "company": "Freelancer / Remote Team Developer",
       "position": "Lead Developer / Freelancer",
-      "period": "Jan 2025 — Present",
+      "period": "Jan 2025 - Present",
       "description": "Operating as an independent lead across Unity delivery, remote team coordination, and emerging agentic/automation work for global clients.",
       "highlights": [
-        "Lead distributed teams of 5–10 people across time zones, turning loose scopes into executable milestones",
+        "Lead distributed teams of 5-10 people across time zones, turning loose scopes into executable milestones",
         "Deliver Unity work across casual, mid-core, GameFi, and Web3 products while supporting release readiness",
         "Build CI/CD, automation, internal tools, proxy APIs, and agentic workflows to reduce repeated manual work",
         "Bridge hands-on engineering with client communication, team mentoring, and delivery ownership"
@@ -221,7 +221,7 @@
     {
       "company": "Gamota - Gabros Team",
       "position": "Senior Unity Developer",
-      "period": "July 2023 — June 2024",
+      "period": "July 2023 - June 2024",
       "description": "Worked on publisher-backed casual titles, with emphasis on shipping production gameplay and supporting live mobile releases.",
       "highlights": [
         "Developed and maintained casual and idle games including Sandwich Please, DOP, DIY, and puzzle titles",
@@ -233,7 +233,7 @@
     {
       "company": "Neko Global",
       "position": "Project Manager / Senior Unity Developer",
-      "period": "July 2022 — May 2023",
+      "period": "July 2022 - May 2023",
       "description": "Combined delivery leadership with hands-on Unity development for Nekoverse, a funded GameFi MMORPG product.",
       "highlights": [
         "Contributed to Nekoverse, a funded GameFi MMORPG",
@@ -245,7 +245,7 @@
     {
       "company": "BLAMEO Technology",
       "position": "Project Manager / Technical Leader",
-      "period": "June 2021 — May 2022",
+      "period": "June 2021 - May 2022",
       "description": "Built the game development team from the ground up and helped move the studio from casual titles toward more complex mid-core and multiplayer production.",
       "highlights": [
         "Built and shaped the game team, establishing delivery habits, task ownership, and technical standards",
@@ -257,7 +257,7 @@
     {
       "company": "BEEMOB Studio",
       "position": "Unity Developer",
-      "period": "March 2021 — June 2021",
+      "period": "March 2021 - June 2021",
       "description": "Worked on Idle Cyber, a funded idle defense/GameFi title, as a Senior Unity Developer delivering hands-on Unity systems.",
       "highlights": [
         "Contributed to a funded GameFi product as Senior Unity Developer",
@@ -269,7 +269,7 @@
     {
       "company": "Techies Studio",
       "position": "Technical Leader",
-      "period": "November 2019 — June 2020",
+      "period": "November 2019 - June 2020",
       "description": "Moved into technical leadership, adding team coordination and architecture ownership to hands-on Unity development.",
       "highlights": [
         "Led technical execution while continuing to develop and maintain Unity features directly",
@@ -280,7 +280,7 @@
     {
       "company": "2NF Office Solutions",
       "position": "Unity Developer",
-      "period": "March 2019 — August 2019",
+      "period": "March 2019 - August 2019",
       "description": "Expanded production experience across implementation, deployment, and maintainability of Unity systems.",
       "highlights": [
         "Delivered Unity features, maintenance work, and bug fixes in active products",
@@ -291,7 +291,7 @@
     {
       "company": "CSCMobi Studio",
       "position": "Unity Developer",
-      "period": "November 2017 — June 2018",
+      "period": "November 2017 - June 2018",
       "description": "Built an early production foundation in Unity development through hands-on feature work and live-project maintenance.",
       "highlights": [
         "Developed gameplay features, handled maintenance, and resolved bugs on shipped Unity work",
@@ -306,13 +306,13 @@
       "title": "ProxyAPI.MAD",
       "category": "agentic",
       "genre": "Developer Tool / AI Infrastructure",
-      "period": "2024 — Present",
+      "period": "2024 - Present",
       "role": "Founder / Solo Developer",
       "description": "Part of the mad-agentic ecosystem. An AI proxy infrastructure that enables flexible API proxy solutions, supporting advanced AI automation systems and multi-provider integration.",
       "keyFeatures": [
-        "🤖 Agentic AI Integration: Intelligent automation flows and pipelines via AI Agents",
-        "⚡ Seamless Proxying: Granular control over incoming/outgoing AI API requests and responses",
-        "🛠️ Flexible Architecture: Easily extendable and ready for new Agents",
+        "Agentic AI Integration: Intelligent automation flows and pipelines via AI Agents",
+        "Seamless Proxying: Granular control over incoming/outgoing AI API requests and responses",
+        "Flexible Architecture: Easily extendable and ready for new Agents",
         "Dashboard, API Keys management, Providers panel, Chat Interface, Logs, Settings"
       ],
       "links": {
@@ -342,7 +342,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 1,
+      "displayOrder": 12,
       "detail": {
         "tier": "B",
         "mode": "rendered",
@@ -487,7 +487,7 @@
       "title": "MU Loren Mobile",
       "category": "unity",
       "genre": "MMORPG",
-      "period": "2024 — 2025",
+      "period": "2024 - 2025",
       "engine": "Unity",
       "role": "Senior Unity Developer",
       "description": "Mobile MMORPG inspired by the legendary MU Online, bringing classic character classes and intense PvE/PvP content with stunning 3D graphics optimized for mobile.",
@@ -727,7 +727,7 @@
       "title": "JX1 Mobile / Tình Thiên Hạ",
       "category": "unity",
       "genre": "MMORPG",
-      "period": "2025 — 2026",
+      "period": "2025 - 2026",
       "engine": "Unity",
       "role": "Senior Unity Developer",
       "description": "Publisher-backed martial-arts MMORPG from ADNX Games, built around classic JX-style faction progression, open-world activities, and large-scale PvP content.",
@@ -899,7 +899,7 @@
       "title": "Dalgona - Worldchain",
       "category": "unity",
       "genre": "Mini-game / Casual",
-      "period": "Jun 2025 — Aug 2025",
+      "period": "Jun 2025 - Aug 2025",
       "engine": "Unity + WebGL",
       "teamSize": 15,
       "role": "Tech Dev Leader",
@@ -1222,14 +1222,14 @@
           }
         ]
       },
-      "period": "2024 — 2025"
+      "period": "2024 - 2025"
     },
     {
       "id": "idle-cyber",
       "title": "Idle Cyber (NFT)",
       "category": "unity",
       "genre": "Idle Tower Defense / GameFi",
-      "period": "2021 — 2022",
+      "period": "2021 - 2022",
       "engine": "Unity",
       "teamSize": 10,
       "role": "Senior Unity Developer",
@@ -1475,7 +1475,7 @@
       "title": "Nekoverse (NFT)",
       "category": "unity",
       "genre": "Play-to-Earn MMORPG / GameFi",
-      "period": "2022 — 2023",
+      "period": "2022 - 2023",
       "engine": "Unity",
       "role": "Senior Unity Developer",
       "description": "Play-to-Earn MMORPG built on blockchain technology, offering players a decentralized in-game economy and a Guild system utilizing DAO governance. Players engage in PvE/PvP battles, explore the world, farm resources, and craft items.",
@@ -1695,7 +1695,7 @@
       "title": "Sandwich Please!",
       "category": "unity",
       "genre": "Idle Simulation / Tycoon",
-      "period": "2023 — 2024",
+      "period": "2023 - 2024",
       "engine": "Unity",
       "company": "Gamota - Gabros Team",
       "role": "Senior Unity Developer",
@@ -2036,7 +2036,7 @@
           }
         ]
       },
-      "period": "2020 — 2021"
+      "period": "2020 - 2021"
     },
     {
       "id": "rise-of-trial-bike",
@@ -2195,7 +2195,7 @@
           }
         ]
       },
-      "period": "2021 — 2022"
+      "period": "2021 - 2022"
     },
     {
       "id": "meow-flow",
@@ -2353,7 +2353,7 @@
           }
         ]
       },
-      "period": "2021 — 2022"
+      "period": "2021 - 2022"
     },
     {
       "id": "share001-ludo",
@@ -2379,7 +2379,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 12,
+      "displayOrder": 13,
       "detail": {
         "tier": "C",
         "mode": "rendered",
@@ -2448,7 +2448,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 13,
+      "displayOrder": 14,
       "detail": {
         "tier": "C",
         "mode": "rendered",
@@ -2517,7 +2517,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 14,
+      "displayOrder": 15,
       "detail": {
         "tier": "B",
         "mode": "hybrid",
@@ -2678,7 +2678,7 @@
         "apiUrlAndroid": "https://app.sensortower.com/api/android/apps/com.giraffegames.ggm3",
         "apiUrlIos": null
       },
-      "displayOrder": 15,
+      "displayOrder": 16,
       "detail": {
         "tier": "B",
         "mode": "hybrid",
@@ -2815,7 +2815,7 @@
           ]
         }
       },
-      "period": "2021 — 2022"
+      "period": "2021 - 2022"
     },
     {
       "id": "tile-candy",
@@ -2846,7 +2846,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 16,
+      "displayOrder": 17,
       "detail": {
         "tier": "B",
         "mode": "hybrid",
@@ -2974,7 +2974,7 @@
           }
         ]
       },
-      "period": "2020 — 2021"
+      "period": "2020 - 2021"
     },
     {
       "id": "tiles-match3-mahjong",
@@ -3005,7 +3005,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 17,
+      "displayOrder": 18,
       "detail": {
         "tier": "B",
         "mode": "hybrid",
@@ -3116,7 +3116,7 @@
           }
         ]
       },
-      "period": "2023 — 2024"
+      "period": "2023 - 2024"
     },
     {
       "id": "sudoku-universe",
@@ -3147,7 +3147,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 18,
+      "displayOrder": 19,
       "detail": {
         "tier": "B",
         "mode": "hybrid",
@@ -3280,7 +3280,7 @@
           }
         ]
       },
-      "period": "2024 — 2025"
+      "period": "2024 - 2025"
     },
     {
       "id": "ageofbattle",
@@ -3306,7 +3306,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 19,
+      "displayOrder": 20,
       "detail": {
         "tier": "B",
         "mode": "hybrid",
@@ -3465,7 +3465,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 20,
+      "displayOrder": 21,
       "detail": {
         "tier": "B",
         "mode": "hybrid",
@@ -3593,7 +3593,7 @@
           }
         ]
       },
-      "period": "2021 — 2022"
+      "period": "2021 - 2022"
     },
     {
       "id": "metame-amusement-park",
@@ -3625,7 +3625,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 21,
+      "displayOrder": 22,
       "detail": {
         "tier": "B",
         "mode": "hybrid",
@@ -3678,7 +3678,7 @@
       "title": "Crypto Quest",
       "category": "unity",
       "genre": "Turn-based RPG / GameFi",
-      "period": "May 2023 — Feb 2024",
+      "period": "May 2023 - Feb 2024",
       "engine": "Unity",
       "teamSize": 14,
       "role": "Senior Unity Developer",
@@ -3718,7 +3718,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 22,
+      "displayOrder": 23,
       "detail": {
         "tier": "B",
         "mode": "hybrid",
@@ -3883,14 +3883,14 @@
       ],
       "summary": "Archived project.",
       "detailRoute": null,
-      "displayOrder": 23,
+      "displayOrder": 24,
       "detail": {
         "tier": "C",
         "mode": "archived",
         "statusLabel": "Archived / legacy work",
         "archiveReason": "Archived and excluded from the primary portfolio while preserving the legacy detail URL.",
         "technicalNotes": [
-          "Jul/2024 — Sep/2024 Team composition includes a total of 2 members: 1 game developer and 1 game designer.",
+          "Jul/2024 - Sep/2024 Team composition includes a total of 2 members: 1 game developer and 1 game designer.",
           "Main responsibility: Developed complex enemy behaviors, including intelligent movement and attack strategies.",
           "Implemented power-up systems like bombs, special discs, and enhanced player abilities.",
           "Designed and balanced multiple levels with distinct challenges and environments."
@@ -4000,7 +4000,7 @@
       "platforms": [],
       "summary": "Archived project.",
       "detailRoute": null,
-      "displayOrder": 24,
+      "displayOrder": 25,
       "detail": {
         "tier": "C",
         "mode": "archived",
@@ -4038,7 +4038,7 @@
       "platforms": [],
       "summary": "Archived project.",
       "detailRoute": null,
-      "displayOrder": 25,
+      "displayOrder": 26,
       "detail": {
         "tier": "C",
         "mode": "archived",
@@ -4046,9 +4046,9 @@
         "archiveReason": "Archived and excluded from the primary portfolio while preserving the legacy detail URL.",
         "technicalNotes": [
           "Neighborhood Defense is an HTML5 tower defense game exported from Construct 3. Players defend the neighborhood against zombie waves by placing and upgrading different tower types, balancing resources, and reacting to enemy pressure in real time.",
-          "Key Features: 🧟 Wave Defense Gameplay: Survive incoming enemy waves and protect core structures.",
-          "🏹 Multiple Tower Types: Archer, bomb, electric, and sniper towers support different tactical playstyles.",
-          "🗺️ Level-Based Progression: Structured stage flow with level data and tower balancing files."
+          "Wave Defense Gameplay: Survive incoming enemy waves and protect core structures.",
+          "Multiple Tower Types: Archer, bomb, electric, and sniper towers support different tactical playstyles.",
+          "Level-Based Progression: Structured stage flow with level data and tower balancing files."
         ],
         "media": [
           {
@@ -4147,7 +4147,7 @@
         "apiUrlAndroid": null,
         "apiUrlIos": null
       },
-      "displayOrder": 26,
+      "displayOrder": 1,
       "detail": {
         "tier": "B",
         "mode": "rendered",
@@ -4460,14 +4460,14 @@
           {
             "project": "Idle Cyber (NFT)",
             "id": "idle-cyber",
-            "period": "2021 — 2022",
+            "period": "2021 - 2022",
             "role": "Senior Unity Developer",
             "company": "BEEMOB Studio",
             "achievements": [
               "Contributed to a funded GameFi product as Senior Unity Developer",
               "Implemented core systems for a full idle tower defense game with integrated NFT marketplace (testnet)",
               "Published on iOS, Android, and WebGL (itch.io)",
-              "First personal GameFi title — proof of concept for Play-to-Earn mechanics with wallet integration",
+              "First personal GameFi title - proof of concept for Play-to-Earn mechanics with wallet integration",
               "Implemented staking-like upgrade systems and hero collection economy"
             ],
             "tags": [
@@ -4483,7 +4483,7 @@
           {
             "project": "Nekoverse",
             "id": "nekoverse",
-            "period": "2022 — 2023",
+            "period": "2022 - 2023",
             "role": "Senior Unity Developer",
             "company": "Neko Global",
             "achievements": [
@@ -4526,12 +4526,12 @@
           {
             "project": "MU: Loren Mobile",
             "id": "mu-loren-mobile",
-            "period": "2024 — 2025",
+            "period": "2024 - 2025",
             "role": "Senior Unity Developer",
             "publisher": "ADNX Games (Vietnam)",
             "genre": "MMORPG",
             "achievements": [
-              "Contributed to a major licensed MMORPG title — a mobile port of the legendary MU Online IP",
+              "Contributed to a major licensed MMORPG title - a mobile port of the legendary MU Online IP",
               "Developed quest system, class mechanics (5 classes), and monster spawning logic",
               "Optimized 3D rendering pipeline for smooth performance on mid-range mobile hardware",
               "Implemented in-game events: Blood Castle, Devil Square, Chaos Castle, Arena"
@@ -4554,7 +4554,7 @@
           {
             "project": "Tình Thiên Hạ (JX Mobile)",
             "id": "tinh-thien-ha-jx",
-            "period": "2025 — 2026",
+            "period": "2025 - 2026",
             "role": "Senior Unity Developer",
             "publisher": "ADNX Games (Vietnam)",
             "genre": "MMORPG",
@@ -4581,7 +4581,7 @@
           {
             "project": "Sandwich Please!",
             "id": "sandwich-please",
-            "period": "2023 — 2024",
+            "period": "2023 - 2024",
             "role": "Senior Unity Developer",
             "publisher": "Gamota (Gabros Team)",
             "genre": "Idle Simulation / Tycoon",
@@ -4611,11 +4611,11 @@
           {
             "project": "Dalgona - Worldchain",
             "id": "dalgona-worldchain",
-            "period": "Jun 2025 — Aug 2025",
+            "period": "Jun 2025 - Aug 2025",
             "role": "Solo Developer",
             "platform": "World App (WorldID/Worldchain)",
             "achievements": [
-              "🏆 Top 1 on World App game ranking during launch period",
+              "Top 1 on World App game ranking during launch period",
               "Led technical delivery with a team of 15 across mechanics, difficulty, UI/UX, leaderboard, and publishing",
               "Optimized WebGL build for seamless Web3 Mini App performance"
             ],
@@ -4640,7 +4640,7 @@
           {
             "project": "ProxyAPI.MAD",
             "id": "proxyapi-mad",
-            "period": "2024 — Present",
+            "period": "2024 - Present",
             "role": "Founder / Solo Developer",
             "achievements": [
               "Founded mad-agentic GitHub organization for AI tooling",

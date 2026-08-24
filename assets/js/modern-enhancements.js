@@ -1,7 +1,7 @@
 /**
  * Modern UI/UX enhancements for portfolio website
  * Features:
- * - Dark/Light mode toggle
+ * - Dark/slate mode toggle
  * - Smooth scrolling
  * - Lazy loading images
  * - Enhanced animations
@@ -166,7 +166,7 @@ function initLoadingOverlay() {
 }
 
 /**
- * Initialize theme toggle (dark/light mode)
+ * Initialize theme toggle (dark/slate mode)
  */
 function initThemeToggle() {
   // Get the existing theme toggle button

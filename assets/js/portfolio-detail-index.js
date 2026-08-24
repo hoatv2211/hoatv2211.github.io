@@ -1,9 +1,9 @@
 // Generated from portfolio.json. Do not edit manually.
 window.PORTFOLIO_DETAIL_INDEX = [
   {
-    "detailKey": "proxyapi-mad",
+    "detailKey": "flyingphoenix",
     "status": "active",
-    "type": "commercial",
+    "type": "personal",
     "tier": "B"
   },
   {
@@ -62,6 +62,12 @@ window.PORTFOLIO_DETAIL_INDEX = [
   },
   {
     "detailKey": "MeowFlow",
+    "status": "active",
+    "type": "commercial",
+    "tier": "B"
+  },
+  {
+    "detailKey": "proxyapi-mad",
     "status": "active",
     "type": "commercial",
     "tier": "B"
@@ -149,11 +155,5 @@ window.PORTFOLIO_DETAIL_INDEX = [
     "status": "archived",
     "type": "archived",
     "tier": "C"
-  },
-  {
-    "detailKey": "flyingphoenix",
-    "status": "active",
-    "type": "personal",
-    "tier": "B"
   }
 ];
