@@ -16,6 +16,7 @@ const flagship = {
   detailKey: "flagship",
   status: "active",
   role: "Senior Unity Developer",
+  ownership: "Primary Developer",
   teamSize: 10,
   period: "2022 - 2023",
   platforms: ["Android", "iOS"],
@@ -45,6 +46,7 @@ assert.strictEqual((flagshipHtml.match(/\bproject-detail\b/g) || []).length, 1, 
 assert.match(flagshipHtml, /data-detail-category="flagship"/);
 assert.match(flagshipHtml, /Flagship case study/);
 assert.match(flagshipHtml, /Senior Unity Developer/);
+assert.match(flagshipHtml, /<dt>Ownership<\/dt><dd>Primary Developer<\/dd>/);
 assert.match(flagshipHtml, /team of 10/);
 assert.match(flagshipHtml, /Unique narrative/);
 assert.ok(flagshipHtml.indexOf("Product context") < flagshipHtml.indexOf("My contribution"));

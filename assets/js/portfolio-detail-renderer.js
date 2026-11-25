@@ -27,6 +27,7 @@
   function renderFacts(project) {
     const facts = [];
     if (project.role) facts.push(["Role", project.role]);
+    if (project.ownership) facts.push(["Ownership", project.ownership]);
     if (project.teamSize) facts.push(["Team", `team of ${project.teamSize}`]);
     if (project.period) facts.push(["Period", project.period]);
     if (Array.isArray(project.platforms) && project.platforms.length) facts.push(["Platforms", project.platforms.join(" · ")]);
@@ -144,6 +145,7 @@
   function renderProductionStrip(project) {
     const facts = [
       ["Role", project.role],
+      ["Ownership", project.ownership],
       ["Team", project.teamSize ? `Team of ${project.teamSize}` : ""],
       ["Period", project.period],
       ["Platform", Array.isArray(project.platforms) ? project.platforms.join(" / ") : ""],

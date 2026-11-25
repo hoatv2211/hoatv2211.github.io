@@ -35,8 +35,8 @@
     "itchIo": "https://o0-mad-0o.itch.io/"
   },
   "about": {
-    "summary": "A highly experienced Senior Unity Developer with 8+ years in the game industry, specializing in high-quality 2D/3D games, funded GameFi/Web3 products, agentic systems, automation workflows, and internal tools.",
-    "pitch": "I deliver cross-platform Unity experiences and automation systems with custom game mechanics, clean UI/UX, optimized performance, scalable design systems, agentic workflows, proxy APIs, Telegram/n8n pipelines, and production support.",
+    "summary": "Senior Unity Developer with 8+ years in the game industry and primary hands-on development responsibility across the projects in this portfolio, including 2D/3D games, funded GameFi/Web3 products, agentic systems, automation workflows, and internal tools.",
+    "pitch": "As a primary developer, I build and deliver cross-platform Unity experiences and automation systems with custom game mechanics, clean UI/UX, optimized performance, scalable design systems, agentic workflows, proxy APIs, Telegram/n8n pipelines, and production support.",
     "techStack": [
       "Unity",
       "C#",
@@ -210,99 +210,95 @@
       "company": "Freelancer / Remote Team Developer",
       "position": "Lead Developer / Freelancer",
       "period": "Jan 2025 - Present",
-      "description": "Operating as an independent lead across Unity delivery, remote team coordination, and emerging agentic/automation work for global clients.",
+      "description": "Full-stack development across Unity clients, server-side systems, automation architecture, and AI workflows for companies and large-scale projects.",
       "highlights": [
-        "Lead distributed teams of 5-10 people across time zones, turning loose scopes into executable milestones",
-        "Deliver Unity work across casual, mid-core, GameFi, and Web3 products while supporting release readiness",
-        "Build CI/CD, automation, internal tools, proxy APIs, and agentic workflows to reduce repeated manual work",
-        "Bridge hands-on engineering with client communication, team mentoring, and delivery ownership"
+        "Build Unity client applications and server-side systems, connecting gameplay, backend services, and APIs",
+        "Design system architecture and automation workflows for company operations and large-scale project requirements",
+        "Develop AI skills and agent workflows, proxy APIs, internal tools, and Telegram/n8n integrations",
+        "Coordinate distributed teams of 5-10 people, translating client requirements into technical plans and delivery milestones"
       ]
     },
     {
       "company": "Gamota - Gabros Team",
       "position": "Senior Unity Developer",
       "period": "July 2023 - June 2024",
-      "description": "Worked on publisher-backed casual titles, with emphasis on shipping production gameplay and supporting live mobile releases.",
+      "description": "Casual and idle mobile game development for publisher-backed releases.",
       "highlights": [
-        "Developed and maintained casual and idle games including Sandwich Please, DOP, DIY, and puzzle titles",
-        "Owned gameplay systems, UI flows, SDK/analytics integration, and mobile optimization across live products",
-        "Supported deployment, monitoring, issue triage, and release follow-through after launch",
-        "Helped strengthen team execution through technical research, system design, and teammate support"
+        "Built and maintained gameplay for Sandwich Please, DOP, DIY, and puzzle titles",
+        "Owned gameplay systems, UI flows, SDK and analytics integration, and mobile optimization",
+        "Handled release support, monitoring, and issue triage after launch"
       ]
     },
     {
       "company": "Neko Global",
       "position": "Project Manager / Senior Unity Developer",
       "period": "July 2022 - May 2023",
-      "description": "Combined delivery leadership with hands-on Unity development for Nekoverse, a funded GameFi MMORPG product.",
+      "description": "Hands-on Unity development and project coordination for Nekoverse, a funded GameFi MMORPG.",
       "highlights": [
-        "Contributed to Nekoverse, a funded GameFi MMORPG",
-        "Built real-time PvE/PvP gameplay, NFT-related systems, staking/crafting flows, and mobile performance improvements",
-        "Managed task breakdown, team coordination, and delivery support while remaining hands-on in development",
-        "Connected product, blockchain, and gameplay concerns into one production workflow"
+        "Owned core Unity gameplay implementation for Nekoverse, including real-time PvE/PvP combat and elemental skill interactions",
+        "Integrated NFT assets, staking, resource farming, and crafting with gameplay systems",
+        "Profiled gameplay scenes and optimized performance across mobile devices",
+        "Managed task breakdown and team coordination while remaining hands-on in development"
       ]
     },
     {
       "company": "BLAMEO Technology",
       "position": "Project Manager / Technical Leader",
       "period": "June 2021 - May 2022",
-      "description": "Built the game development team from the ground up and helped move the studio from casual titles toward more complex mid-core and multiplayer production.",
+      "description": "Game team setup, technical planning, and hands-on multiplayer development.",
       "highlights": [
-        "Built and shaped the game team, establishing delivery habits, task ownership, and technical standards",
-        "Guided product evolution from casual games toward mid-core scope with deeper systems and higher execution demands",
-        "Led work on Age of Sail, a multiplayer title requiring synchronized gameplay and network-aware feature design",
-        "Balanced hands-on engineering with hiring support, mentoring, planning, and cross-discipline coordination"
+        "Built the game development team, including hiring, onboarding, task assignment, and technical standards",
+        "Led technical implementation for Age of Sail, covering synchronized gameplay and network-aware feature design",
+        "Coordinated implementation with design, QA, and backend teams while mentoring developers"
       ]
     },
     {
       "company": "BEEMOB Studio",
       "position": "Unity Developer",
       "period": "March 2021 - June 2021",
-      "description": "Worked on Idle Cyber, a funded idle defense/GameFi title, as a Senior Unity Developer delivering hands-on Unity systems.",
+      "description": "Hands-on Unity development for Idle Cyber, a funded idle tower-defense/GameFi title, within a team of 10.",
       "highlights": [
-        "Contributed to a funded GameFi product as Senior Unity Developer",
-        "Owned idle progression, tower-defense combat, rewards, ads, and NFT marketplace prototype flows",
-        "Delivered a cross-platform title spanning iOS, Android, and WebGL",
-        "Combined gameplay implementation, release support, and system design inside a compact production cycle"
+        "Owned core Unity implementation for Idle Cyber, including idle progression, tower-defense combat, upgrades, and rewards",
+        "Integrated ads, UI, and wallet/testnet flows, including an NFT marketplace proof of concept",
+        "Handled build delivery across iOS, Android, and WebGL, alongside mobile performance optimization"
       ]
     },
     {
       "company": "Techies Studio",
       "position": "Technical Leader",
       "period": "November 2019 - June 2020",
-      "description": "Moved into technical leadership, adding team coordination and architecture ownership to hands-on Unity development.",
+      "description": "Technical architecture, Unity implementation, and development team coordination.",
       "highlights": [
-        "Led technical execution while continuing to develop and maintain Unity features directly",
-        "Managed task assignment, teammate support, and delivery follow-through for the development team",
-        "Designed systems, supported releases, and trained team members to improve consistency across projects"
+        "Designed project architecture and developed Unity features directly",
+        "Managed task assignment and mentored developers through implementation",
+        "Handled release support and trained team members on project systems"
       ]
     },
     {
       "company": "2NF Office Solutions",
       "position": "Unity Developer",
       "period": "March 2019 - August 2019",
-      "description": "Expanded production experience across implementation, deployment, and maintainability of Unity systems.",
+      "description": "Unity feature development and maintenance across active products.",
       "highlights": [
-        "Delivered Unity features, maintenance work, and bug fixes in active products",
-        "Worked beyond gameplay code into deployment support, system design, and technical research",
-        "Built broader ownership across the full development-to-support lifecycle"
+        "Implemented Unity features, resolved bugs, and maintained active products",
+        "Handled deployment support, system design tasks, and technical research"
       ]
     },
     {
       "company": "CSCMobi Studio",
       "position": "Unity Developer",
       "period": "November 2017 - June 2018",
-      "description": "Built an early production foundation in Unity development through hands-on feature work and live-project maintenance.",
+      "description": "Gameplay implementation and maintenance for shipped Unity games.",
       "highlights": [
-        "Developed gameplay features, handled maintenance, and resolved bugs on shipped Unity work",
-        "Supported deployment and live-product stability while learning production discipline",
-        "Built core experience in system thinking, release support, and practical R&D"
+        "Built gameplay features and resolved bugs in shipped Unity games",
+        "Handled maintenance, deployment support, and live-product issues"
       ]
     }
   ],
   "projects": [
     {
       "id": "proxyapi-mad",
+      "ownership": "Primary Developer",
       "title": "ProxyAPI.MAD",
       "category": "agentic",
       "genre": "Developer Tool / AI Infrastructure",
@@ -348,7 +344,7 @@
         "mode": "rendered",
         "statusLabel": "Project case study",
         "contribution": [
-          "Designed and implemented a multi-provider API proxy layer for agentic automation workflows.",
+          "Primary developer: designed and implemented a multi-provider API proxy layer for agentic automation workflows.",
           "Built dashboard flows for API keys, providers, chat requests, logs, and runtime settings.",
           "Added request/response observability and configuration controls for safer provider operations.",
           "Structured the proxy so additional providers and agents can be integrated without rewriting the core flow."
@@ -450,7 +446,7 @@
               "id": "world",
               "kicker": "Proxy foundation",
               "title": "One proxy layer across multiple AI providers",
-              "body": "Designed and implemented a multi-provider API proxy layer for agentic automation workflows.",
+              "body": "Primary developer: designed and implemented a multi-provider API proxy layer for agentic automation workflows.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -484,6 +480,7 @@
     },
     {
       "id": "mu-loren-mobile",
+      "ownership": "Primary Developer",
       "title": "MU Loren Mobile",
       "category": "unity",
       "genre": "MMORPG",
@@ -492,7 +489,7 @@
       "role": "Senior Unity Developer",
       "description": "Mobile MMORPG inspired by the legendary MU Online, bringing classic character classes and intense PvE/PvP content with stunning 3D graphics optimized for mobile.",
       "myContributions": [
-        "Worked as Senior Unity Developer in a collaborative team",
+        "Primary developer and Senior Unity Developer in a collaborative team",
         "Developed and maintained quest system, class mechanics, and monster spawning logic",
         "Handled performance profiling and optimization for smooth mobile gameplay",
         "Integrated UI/UX elements and implemented in-game events and battle systems"
@@ -505,7 +502,7 @@
       "caseStudy": {
         "problem": "Adapt classic MMORPG systems to mobile while preserving familiar MU-style progression and combat.",
         "solution": "Built extensible gameplay systems for quests, classes, monsters, events, and battle flows, then profiled dense 3D scenes for mobile stability.",
-        "outcome": "Supported a production MMORPG feature set across 5 classes, daily/weekly quests, PvE/PvP events, and mobile release targets."
+        "outcome": "Developed a production MMORPG feature set across 5 classes, daily/weekly quests, PvE/PvP events, and mobile release targets."
       },
       "keyFeatures": [
         "5 iconic character classes: Dark Wizard, Dark Knight, Fairy Elf, Magic Gladiator, Dark Lord",
@@ -550,7 +547,7 @@
         "context": "Mobile MMORPG inspired by the legendary MU Online, bringing classic character classes and intense PvE/PvP content with stunning 3D graphics optimized for mobile.",
         "problem": "Adapt classic MMORPG systems to mobile while preserving familiar MU-style progression and combat.",
         "contribution": [
-          "Worked as Senior Unity Developer in a collaborative team",
+          "Primary developer and Senior Unity Developer in a collaborative team",
           "Developed and maintained quest system, class mechanics, and monster spawning logic",
           "Handled performance profiling and optimization for smooth mobile gameplay",
           "Integrated UI/UX elements and implemented in-game events and battle systems"
@@ -566,7 +563,7 @@
           "Integrated UI/UX elements and implemented in-game events and battle systems"
         ],
         "productContext": [
-          "Supported a production MMORPG feature set across 5 classes, daily/weekly quests, PvE/PvP events, and mobile release targets."
+          "Developed a production MMORPG feature set across 5 classes, daily/weekly quests, PvE/PvP events, and mobile release targets."
         ],
         "evidence": [
           {
@@ -701,7 +698,7 @@
               "id": "progression",
               "kicker": "Systems delivered",
               "title": "Battle events carried through production delivery",
-              "body": "Worked as Senior Unity Developer in a collaborative team. Developed and maintained quest systems, class mechanics, and monster-spawning logic.",
+              "body": "Primary developer and Senior Unity Developer in a collaborative team. Developed and maintained quest systems, class mechanics, and monster-spawning logic.",
               "mediaKeys": [
                 "screen-5"
               ],
@@ -724,6 +721,7 @@
     },
     {
       "id": "tinh-thien-ha-jx1",
+      "ownership": "Primary Developer",
       "title": "JX1 Mobile / Tình Thiên Hạ",
       "category": "unity",
       "genre": "MMORPG",
@@ -732,9 +730,9 @@
       "role": "Senior Unity Developer",
       "description": "Publisher-backed martial-arts MMORPG from ADNX Games, built around classic JX-style faction progression, open-world activities, and large-scale PvP content.",
       "myContributions": [
-        "Contributed to gameplay implementation, mobile optimization, and production delivery for an MMORPG title",
-        "Supported multiplayer systems, resource loading, SDK integration, and broad device coverage",
-        "Worked on production concerns for faction-based progression and large-scale PvP content"
+        "Primary developer for gameplay implementation, mobile optimization, and production delivery for an MMORPG title",
+        "Developed multiplayer systems, resource loading, and SDK integration, with optimization for broad device coverage",
+        "Implemented production systems for faction-based progression and large-scale PvP content"
       ],
       "technicalHighlights": [
         "10 martial sect identities with differentiated combat styles and progression expectations",
@@ -743,8 +741,8 @@
       ],
       "caseStudy": {
         "problem": "Bring a culturally familiar martial-arts MMORPG experience to modern mobile and PC targets without losing large-scale multiplayer expectations.",
-        "solution": "Support scalable gameplay systems, resource loading, SDK integration, and optimization work around faction progression and PvP-heavy content.",
-        "outcome": "Helped deliver a publisher-backed MMORPG with broad device support, 10 sect identities, and signature multiplayer content."
+        "solution": "Developed scalable gameplay systems, resource loading, and SDK integration, and optimized faction progression and PvP-heavy content.",
+        "outcome": "Delivered primary development work for a publisher-backed MMORPG with broad device support, 10 sect identities, and signature multiplayer content."
       },
       "links": {
         "website": "https://tinhthienha1.adnxgames.vn/"
@@ -761,7 +759,7 @@
         "iOS",
         "PC"
       ],
-      "summary": "Mobile MMORPG work on ADNX's JX1 title, covering classic martial-arts progression, faction systems, large-scale multiplayer content, mobile optimization, and publisher delivery.",
+      "summary": "Primary development on ADNX's JX1 mobile MMORPG, covering classic martial-arts progression, faction systems, large-scale multiplayer content, mobile optimization, and publisher delivery.",
       "image": {
         "src": "assets/images/portfolio-details/jx1/db1603cfe8f8.detail.webp",
         "alt": "Jx Mobie"
@@ -781,9 +779,9 @@
         "context": "Publisher-backed martial-arts MMORPG from ADNX Games, built around classic JX-style faction progression, open-world activities, and large-scale PvP content.",
         "problem": "Bring a culturally familiar martial-arts MMORPG experience to modern mobile and PC targets without losing large-scale multiplayer expectations.",
         "contribution": [
-          "Contributed to gameplay implementation, mobile optimization, and production delivery for an MMORPG title",
-          "Supported multiplayer systems, resource loading, SDK integration, and broad device coverage",
-          "Worked on production concerns for faction-based progression and large-scale PvP content"
+          "Primary developer for gameplay implementation, mobile optimization, and production delivery for an MMORPG title",
+          "Developed multiplayer systems, resource loading, and SDK integration, with optimization for broad device coverage",
+          "Implemented production systems for faction-based progression and large-scale PvP content"
         ],
         "technicalDecisions": [
           "10 martial sect identities with differentiated combat styles and progression expectations",
@@ -791,11 +789,11 @@
           "Cross-device delivery across smartphones, tablets, and PC"
         ],
         "personalOutcome": [
-          "Contributed to gameplay implementation, mobile optimization, and production delivery for an MMORPG title",
-          "Supported multiplayer systems, resource loading, SDK integration, and broad device coverage"
+          "Primary developer for gameplay implementation, mobile optimization, and production delivery for an MMORPG title",
+          "Developed multiplayer systems, resource loading, and SDK integration, with optimization for broad device coverage"
         ],
         "productContext": [
-          "Helped deliver a publisher-backed MMORPG with broad device support, 10 sect identities, and signature multiplayer content."
+          "Delivered primary development work for a publisher-backed MMORPG with broad device support, 10 sect identities, and signature multiplayer content."
         ],
         "evidence": [
           {
@@ -884,7 +882,7 @@
               "id": "progression",
               "kicker": "Systems delivered",
               "title": "Production systems supporting progression and delivery",
-              "body": "Contributed to gameplay implementation, mobile optimization, and production delivery for an MMORPG title. Supported multiplayer systems, resource loading, SDK integration, and broad device coverage.",
+              "body": "Primary developer for gameplay implementation, mobile optimization, and production delivery for an MMORPG title. Developed multiplayer systems, resource loading, and SDK integration, with optimization for broad device coverage.",
               "mediaKeys": [
                 "screen-3"
               ],
@@ -896,6 +894,7 @@
     },
     {
       "id": "dalgona-worldchain",
+      "ownership": "Primary Developer",
       "title": "Dalgona - Worldchain",
       "category": "unity",
       "genre": "Mini-game / Casual",
@@ -905,7 +904,7 @@
       "role": "Tech Dev Leader",
       "description": "A fast-session mini-game integrated on World App, inspired by the sugar candy challenge and delivered for a global mobile audience.",
       "myContributions": [
-        "Led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15",
+        "Primary developer: led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15",
         "Designed and implemented UI/UX with playful animations",
         "Optimized performance for Web3 Mini App integration within World App",
         "Integrated leaderboard and ranking system",
@@ -947,7 +946,7 @@
         "context": "A fast-session mini-game integrated on World App, inspired by the sugar candy challenge and delivered for a global mobile audience.",
         "problem": "A fast-session mini-game integrated on World App, inspired by the sugar candy challenge and delivered for a global mobile audience.",
         "contribution": [
-          "Led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15",
+          "Primary developer: led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15",
           "Designed and implemented UI/UX with playful animations",
           "Optimized performance for Web3 Mini App integration within World App",
           "Integrated leaderboard and ranking system",
@@ -957,7 +956,7 @@
           "A fast-session mini-game integrated on World App, inspired by the sugar candy challenge and delivered for a global mobile audience."
         ],
         "personalOutcome": [
-          "Led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15",
+          "Primary developer: led technical delivery for core mechanics, difficulty progression, and win/lose logic within a team of 15",
           "Designed and implemented UI/UX with playful animations",
           "Optimized performance for Web3 Mini App integration within World App"
         ],
@@ -1063,6 +1062,7 @@
     },
     {
       "id": "food-truck-shiba-inu",
+      "ownership": "Primary Developer",
       "title": "Food Truck - Shiba Inu",
       "category": "unity",
       "genre": "Casual / Simulation",
@@ -1096,9 +1096,9 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Implemented the core food-truck service loop and responsive mobile interactions.",
+          "Primary developer: implemented the core food-truck service loop and responsive mobile interactions.",
           "Built gameplay UI, progression feedback, and reward flows for short casual sessions.",
-          "Optimized runtime performance and supported Android release delivery."
+          "Optimized runtime performance and handled Android release delivery."
         ],
         "media": [
           {
@@ -1179,7 +1179,7 @@
               "id": "world",
               "kicker": "Player experience",
               "title": "A food-truck loop built for fast service",
-              "body": "Implemented the core food-truck service loop and responsive mobile interactions.",
+              "body": "Primary developer: implemented the core food-truck service loop and responsive mobile interactions.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -1201,7 +1201,7 @@
               "id": "progression",
               "kicker": "Production delivery",
               "title": "Android delivery backed by runtime optimization",
-              "body": "Optimized runtime performance and supported Android release delivery.",
+              "body": "Optimized runtime performance and handled Android release delivery.",
               "mediaKeys": [
                 "screen-5"
               ],
@@ -1226,6 +1226,7 @@
     },
     {
       "id": "idle-cyber",
+      "ownership": "Primary Developer",
       "title": "Idle Cyber (NFT)",
       "category": "unity",
       "genre": "Idle Tower Defense / GameFi",
@@ -1235,14 +1236,14 @@
       "role": "Senior Unity Developer",
       "description": "Cyberpunk idle tower defense game set in a post-apocalyptic 2077 world. Players defend Earth from alien invaders by strategically deploying legendary heroes, upgrading powerful weapons, and customizing gear to survive endless enemy waves and boss battles.",
       "myContributions": [
-        "Implemented the gameplay loop, stages, upgrades, rewards, and ad integration.",
+        "Primary developer: implemented the gameplay loop, stages, upgrades, rewards, and ad integration.",
         "Built idle progression and strategic tower-defense combat systems.",
         "Created wallet, testnet, and basic NFT marketplace proof-of-concept flows.",
         "Integrated UI, animation, and mobile performance improvements."
       ],
       "achievements": [
-        "Contributed to a funded GameFi product.",
-        "Supported delivery across iOS, Android, and WebGL.",
+        "Primary developer on a funded GameFi product.",
+        "Handled development and delivery across iOS, Android, and WebGL.",
         "Built idle tower-defense and NFT marketplace proof-of-concept systems."
       ],
       "technicalHighlights": [
@@ -1253,7 +1254,7 @@
       "caseStudy": {
         "problem": "Create a fundable idle tower defense product with monetization and early GameFi proof-of-concept.",
         "solution": "Separated economy data from presentation, tuned idle rewards against combat pacing, and built wallet/NFT prototype flows alongside normal gameplay.",
-        "outcome": "Contributed to a funded GameFi product and supported delivery across iOS, Android, and WebGL."
+        "outcome": "Primary developer on a funded GameFi product, handling development and delivery across iOS, Android, and WebGL."
       },
       "links": {
         "webgl": "https://o0-mad-0o.itch.io/cyber-war",
@@ -1292,7 +1293,7 @@
         "context": "Cyberpunk idle tower defense game set in a post-apocalyptic 2077 world. Players defend Earth from alien invaders by strategically deploying legendary heroes, upgrading powerful weapons, and customizing gear to survive endless enemy waves and boss battles.",
         "problem": "Create a fundable idle tower defense product with monetization and early GameFi proof-of-concept.",
         "contribution": [
-          "Implemented the gameplay loop, stages, upgrades, rewards, and ad integration.",
+          "Primary developer: implemented the gameplay loop, stages, upgrades, rewards, and ad integration.",
           "Built idle progression and strategic tower-defense combat systems.",
           "Created wallet, testnet, and basic NFT marketplace proof-of-concept flows.",
           "Integrated UI, animation, and mobile performance improvements."
@@ -1303,13 +1304,13 @@
           "Android, iOS, and WebGL delivery with mobile UI, input, performance, ads, wallet flow, and NFT marketplace prototype"
         ],
         "personalOutcome": [
-          "Implemented the gameplay loop, stages, upgrades, rewards, and ad integration.",
+          "Primary developer: implemented the gameplay loop, stages, upgrades, rewards, and ad integration.",
           "Built idle progression and strategic tower-defense combat systems.",
           "Created wallet, testnet, and basic NFT marketplace proof-of-concept flows.",
           "Integrated UI, animation, and mobile performance improvements."
         ],
         "productContext": [
-          "Contributed to a funded GameFi product."
+          "Primary developer on a funded GameFi product."
         ],
         "evidence": [
           {
@@ -1472,6 +1473,7 @@
     },
     {
       "id": "nekoverse",
+      "ownership": "Primary Developer",
       "title": "Nekoverse (NFT)",
       "category": "unity",
       "genre": "Play-to-Earn MMORPG / GameFi",
@@ -1486,15 +1488,15 @@
         "Neko Temple: stake in-game currencies to earn governance tokens and passive income"
       ],
       "myContributions": [
-        "Implemented core gameplay mechanics and optimized performance",
+        "Primary developer: implemented core gameplay mechanics and optimized performance",
         "Developed real-time battle systems including skill mechanics and elemental interactions",
         "Integrated blockchain features (NFT assets, staking mechanisms) into Unity",
         "Conducted performance profiling and optimization for various devices"
       ],
       "achievements": [
-        "Contributed to a funded GameFi MMORPG.",
+        "Primary developer on a funded GameFi MMORPG.",
         "Delivered NFT, staking, crafting, and economy integrations.",
-        "Supported PvE/PvP gameplay and mobile performance optimization."
+        "Developed PvE/PvP gameplay and optimized mobile performance."
       ],
       "technicalHighlights": [
         "Real-time PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback",
@@ -1504,7 +1506,7 @@
       "caseStudy": {
         "problem": "Bring blockchain ownership and economy features into an MMORPG without making gameplay feel wallet-first.",
         "solution": "Connected NFT, staking, crafting, and resource systems to normal RPG progression while keeping battle rules extensible for balance changes.",
-        "outcome": "Contributed to a funded GameFi MMORPG while delivering combat, economy, blockchain, and mobile optimization systems."
+        "outcome": "Primary developer on a funded GameFi MMORPG, delivering combat, economy, blockchain, and mobile optimization systems."
       },
       "links": {
         "website": "https://gam3s.gg/nekoverse/",
@@ -1541,7 +1543,7 @@
         "context": "Play-to-Earn MMORPG built on blockchain technology, offering players a decentralized in-game economy and a Guild system utilizing DAO governance. Players engage in PvE/PvP battles, explore the world, farm resources, and craft items.",
         "problem": "Bring blockchain ownership and economy features into an MMORPG without making gameplay feel wallet-first.",
         "contribution": [
-          "Implemented core gameplay mechanics and optimized performance",
+          "Primary developer: implemented core gameplay mechanics and optimized performance",
           "Developed real-time battle systems including skill mechanics and elemental interactions",
           "Integrated blockchain features (NFT assets, staking mechanisms) into Unity",
           "Conducted performance profiling and optimization for various devices"
@@ -1552,11 +1554,11 @@
           "Performance profiling for mobile gameplay scenes inside a distributed GameFi production workflow"
         ],
         "personalOutcome": [
-          "Implemented core gameplay mechanics and optimized performance",
+          "Primary developer: implemented core gameplay mechanics and optimized performance",
           "Developed real-time battle systems including skill mechanics and elemental interactions"
         ],
         "productContext": [
-          "Contributed to a funded GameFi MMORPG."
+          "Primary developer on a funded GameFi MMORPG."
         ],
         "evidence": [
           {
@@ -1692,6 +1694,7 @@
     },
     {
       "id": "sandwich-please",
+      "ownership": "Primary Developer",
       "title": "Sandwich Please!",
       "category": "unity",
       "genre": "Idle Simulation / Tycoon",
@@ -1707,7 +1710,7 @@
         "Customer Management: Serve customers with unique preferences"
       ],
       "myContributions": [
-        "Developed core gameplay mechanics including sandwich assembly and customer service systems",
+        "Primary developer: developed core gameplay mechanics including sandwich assembly and customer service systems",
         "Implemented user interface elements and ensured smooth UX",
         "Optimized game performance across various devices",
         "Integrated analytics tools to monitor player engagement"
@@ -1746,7 +1749,7 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Developed sandwich assembly, order handling, and customer service gameplay systems.",
+          "Primary developer: developed sandwich assembly, order handling, and customer service gameplay systems.",
           "Implemented gameplay UI and feedback flows for fast mobile sessions.",
           "Optimized performance across target devices and integrated player analytics."
         ],
@@ -1846,7 +1849,7 @@
               "id": "world",
               "kicker": "Player experience",
               "title": "Orders and assembly drive the shop floor",
-              "body": "Developed sandwich assembly, order handling, and customer service gameplay systems.",
+              "body": "Primary developer: developed sandwich assembly, order handling, and customer service gameplay systems.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -1880,6 +1883,7 @@
     },
     {
       "id": "archero-clone",
+      "ownership": "Primary Developer",
       "title": "Archero",
       "category": "unity",
       "genre": "Action Roguelite",
@@ -1914,7 +1918,7 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Implemented one-touch movement and attack behavior for the action-roguelike combat loop.",
+          "Primary developer: implemented one-touch movement and attack behavior for the action-roguelike combat loop.",
           "Built enemy AI, room progression, bosses, and randomized skill selection systems.",
           "Integrated hero/gear progression and optimized controls and effects for mobile devices."
         ],
@@ -1998,7 +2002,7 @@
               "id": "world",
               "kicker": "Core loop",
               "title": "One-touch combat built for readable decisions",
-              "body": "Implemented one-touch movement and attack behavior for the action-roguelike combat loop.",
+              "body": "Primary developer: implemented one-touch movement and attack behavior for the action-roguelike combat loop.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -2040,6 +2044,7 @@
     },
     {
       "id": "rise-of-trial-bike",
+      "ownership": "Primary Developer",
       "title": "Rise of Trial Bike",
       "category": "unity",
       "genre": "Racing / Physics",
@@ -2073,7 +2078,7 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Implemented the physics-based bike controller, stunt handling, and level progression.",
+          "Primary developer: implemented the physics-based bike controller, stunt handling, and level progression.",
           "Built menu, gameplay HUD, results, particles, and moment-to-moment feedback.",
           "Optimized and maintained mobile builds across release targets."
         ],
@@ -2157,7 +2162,7 @@
               "id": "world",
               "kicker": "Player experience",
               "title": "Physics and stunt handling define every attempt",
-              "body": "Implemented the physics-based bike controller, stunt handling, and level progression.",
+              "body": "Primary developer: implemented the physics-based bike controller, stunt handling, and level progression.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -2199,6 +2204,7 @@
     },
     {
       "id": "meow-flow",
+      "ownership": "Primary Developer",
       "title": "Meow Flow",
       "category": "unity",
       "genre": "Puzzle / Casual",
@@ -2232,7 +2238,7 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Developed the path-connection puzzle rules and level progression system.",
+          "Primary developer: developed the path-connection puzzle rules and level progression system.",
           "Implemented the gameplay UI and feedback needed for clear puzzle interactions.",
           "Optimized performance and integrated analytics for mobile delivery."
         ],
@@ -2315,7 +2321,7 @@
               "id": "world",
               "kicker": "Core loop",
               "title": "Path solving designed to feel calm and immediate",
-              "body": "Developed the path-connection puzzle rules and level progression system.",
+              "body": "Primary developer: developed the path-connection puzzle rules and level progression system.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -2357,6 +2363,11 @@
     },
     {
       "id": "share001-ludo",
+      "ownership": "Primary Developer",
+      "role": "Primary Developer",
+      "myContributions": [
+        "Primary developer for this project."
+      ],
       "slug": "share001-ludo",
       "legacyId": "share001-ludo",
       "detailKey": "share001-ludo",
@@ -2426,6 +2437,11 @@
     },
     {
       "id": "share002-pixelshooter3d",
+      "ownership": "Primary Developer",
+      "role": "Primary Developer",
+      "myContributions": [
+        "Primary developer for this project."
+      ],
       "slug": "share002-pixelshooter3d",
       "legacyId": "share002-pixelshooter3d",
       "detailKey": "share002-pixelshooter3d",
@@ -2495,6 +2511,8 @@
     },
     {
       "id": "galaxiga",
+      "ownership": "Primary Developer",
+      "role": "Primary Developer",
       "slug": "galaxiga",
       "legacyId": "galaxiga",
       "detailKey": "galaxiga",
@@ -2523,7 +2541,7 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Implemented campaign progression, endless mode, player ships, wingmen, and boss encounters.",
+          "Primary developer: implemented campaign progression, endless mode, player ships, wingmen, and boss encounters.",
           "Built bullet-pattern gameplay and integrated content for staged difficulty progression.",
           "Integrated localization and push-notification support for release and re-engagement workflows."
         ],
@@ -2607,7 +2625,7 @@
               "id": "world",
               "kicker": "Core loop",
               "title": "Arcade waves built around ships and wingmen",
-              "body": "Implemented campaign progression, endless mode, player ships, wingmen, and boss encounters.",
+              "body": "Primary developer: implemented campaign progression, endless mode, player ships, wingmen, and boss encounters.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -2648,6 +2666,7 @@
     },
     {
       "id": "home-design",
+      "ownership": "Primary Developer",
       "title": "Home Design",
       "category": "unity",
       "genre": "Casual / Design",
@@ -2684,9 +2703,9 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Implemented the renovation gameplay flow and supporting casual puzzle progression.",
+          "Primary developer: implemented the renovation gameplay flow and supporting casual puzzle progression.",
           "Built mobile UI, reward feedback, and progression-oriented player flows.",
-          "Optimized Android performance and supported release delivery."
+          "Optimized Android performance and handled release delivery."
         ],
         "media": [
           {
@@ -2784,7 +2803,7 @@
               "id": "world",
               "kicker": "Player experience",
               "title": "Renovation and puzzle progression reinforce each other",
-              "body": "Implemented the renovation gameplay flow and supporting casual puzzle progression.",
+              "body": "Primary developer: implemented the renovation gameplay flow and supporting casual puzzle progression.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -2806,7 +2825,7 @@
               "id": "progression",
               "kicker": "Production delivery",
               "title": "Android optimization supports release delivery",
-              "body": "Optimized Android performance and supported release delivery.",
+              "body": "Optimized Android performance and handled release delivery.",
               "mediaKeys": [
                 "screen-5"
               ],
@@ -2819,6 +2838,7 @@
     },
     {
       "id": "tile-candy",
+      "ownership": "Primary Developer",
       "title": "Tile Candy!",
       "category": "unity",
       "genre": "Puzzle / Match",
@@ -2852,7 +2872,7 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Implemented tile matching, slot management, and level progression systems.",
+          "Primary developer: implemented tile matching, slot management, and level progression systems.",
           "Customized UI layout, animation, and gameplay feedback for the candy theme.",
           "Added daily rewards and hint boosters and optimized the mobile runtime."
         ],
@@ -2936,7 +2956,7 @@
               "id": "world",
               "kicker": "Core loop",
               "title": "Tile matching built around clean slot decisions",
-              "body": "Implemented tile matching, slot management, and level progression systems.",
+              "body": "Primary developer: implemented tile matching, slot management, and level progression systems.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -2978,6 +2998,7 @@
     },
     {
       "id": "tiles-match3-mahjong",
+      "ownership": "Primary Developer",
       "title": "Tiles Match 3: Mahjong",
       "category": "unity",
       "genre": "Puzzle / Mahjong",
@@ -3011,9 +3032,9 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Implemented the tile-matching rules, board-clear flow, and level progression.",
+          "Primary developer: implemented the tile-matching rules, board-clear flow, and level progression.",
           "Built theme, reward, and offline-friendly gameplay flows for mobile sessions.",
-          "Handled UI integration, balancing support, optimization, and publishing tasks."
+          "Handled UI integration, balancing, optimization, and publishing tasks."
         ],
         "media": [
           {
@@ -3075,7 +3096,7 @@
               "id": "world",
               "kicker": "Player experience",
               "title": "Layered tile rules create quick readable sessions",
-              "body": "Implemented the tile-matching rules, board-clear flow, and level progression.",
+              "body": "Primary developer: implemented the tile-matching rules, board-clear flow, and level progression.",
               "mediaKeys": [
                 "screen-1"
               ],
@@ -3095,7 +3116,7 @@
               "id": "progression",
               "kicker": "Production delivery",
               "title": "Balancing and publishing complete the delivery loop",
-              "body": "Handled UI integration, balancing support, optimization, and publishing tasks.",
+              "body": "Handled UI integration, balancing, optimization, and publishing tasks.",
               "mediaKeys": [
                 "screen-3"
               ],
@@ -3120,6 +3141,7 @@
     },
     {
       "id": "sudoku-universe",
+      "ownership": "Primary Developer",
       "title": "Sudoku Universe - Modern",
       "category": "unity",
       "genre": "Puzzle",
@@ -3153,7 +3175,7 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Implemented puzzle generation and validation across four difficulty levels.",
+          "Primary developer: implemented puzzle generation and validation across four difficulty levels.",
           "Built daily challenges, hints, undo, progress tracking, and offline play.",
           "Designed the mobile UI, dark mode, persistence, optimization, and publishing flow."
         ],
@@ -3237,7 +3259,7 @@
               "id": "world",
               "kicker": "Core loop",
               "title": "Generated puzzles validated across four difficulties",
-              "body": "Implemented puzzle generation and validation across four difficulty levels.",
+              "body": "Primary developer: implemented puzzle generation and validation across four difficulty levels.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -3284,6 +3306,8 @@
     },
     {
       "id": "ageofbattle",
+      "ownership": "Primary Developer",
+      "role": "Primary Developer",
       "slug": "ageofbattle",
       "legacyId": "ageofbattle",
       "detailKey": "ageofbattle",
@@ -3312,7 +3336,7 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Implemented configurable melee and ranged units with distinct attack behaviors.",
+          "Primary developer: implemented configurable melee and ranged units with distinct attack behaviors.",
           "Built ScriptableObject-driven waves, progression, cards, upgrades, economy, and daily tasks.",
           "Structured runtime responsibilities across game state, persistence, and UI orchestration."
         ],
@@ -3396,7 +3420,7 @@
               "id": "world",
               "kicker": "Core loop",
               "title": "Distinct units create readable battlefield roles",
-              "body": "Implemented configurable melee and ranged units with distinct attack behaviors.",
+              "body": "Primary developer: implemented configurable melee and ranged units with distinct attack behaviors.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -3437,6 +3461,7 @@
     },
     {
       "id": "surviver-io-template",
+      "ownership": "Primary Developer",
       "title": "Survivor.IO",
       "category": "unity",
       "genre": "Action Roguelite / Template",
@@ -3471,7 +3496,7 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Implemented auto-attack combat, enemy wave generation, and skill upgrade mechanics.",
+          "Primary developer: implemented auto-attack combat, enemy wave generation, and skill upgrade mechanics.",
           "Built randomized upgrade synergies and permanent hero progression systems.",
           "Created stage spawn zones, environmental hazards, and mobile gameplay feedback."
         ],
@@ -3555,7 +3580,7 @@
               "id": "world",
               "kicker": "Core loop",
               "title": "Auto-attack combat carries the survival loop",
-              "body": "Implemented auto-attack combat, enemy wave generation, and skill upgrade mechanics.",
+              "body": "Primary developer: implemented auto-attack combat, enemy wave generation, and skill upgrade mechanics.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -3597,6 +3622,7 @@
     },
     {
       "id": "metame-amusement-park",
+      "ownership": "Primary Developer",
       "title": "Metame Amusement Park",
       "category": "unreal",
       "genre": "Virtual Experience / Metaverse",
@@ -3631,7 +3657,7 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Integrated the Dynomega quest flow and supporting accept, hint, and icon interactions.",
+          "Primary developer: integrated the Dynomega quest flow and supporting accept, hint, and icon interactions.",
           "Implemented synchronized passcode, camera, sitting-animation, and amusement-ride interactions.",
           "Configured scene audio and fixed SceneCapture field-of-view issues."
         ],
@@ -3665,7 +3691,7 @@
               "id": "world",
               "kicker": "Player experience",
               "title": "Quest guidance supports virtual exploration",
-              "body": "Integrated the Dynomega quest flow and supporting accept, hint, and icon interactions.",
+              "body": "Primary developer: integrated the Dynomega quest flow and supporting accept, hint, and icon interactions.",
               "mediaKeys": [],
               "layout": "wide"
             }
@@ -3675,6 +3701,7 @@
     },
     {
       "id": "cryptoquest",
+      "ownership": "Primary Developer",
       "title": "Crypto Quest",
       "category": "unity",
       "genre": "Turn-based RPG / GameFi",
@@ -3684,7 +3711,7 @@
       "role": "Senior Unity Developer",
       "description": "Turn-based RPG inspired by Dragon Quest, incorporating quests, abilities, characters, and networking features. Built with a team of 14 (9 frontend, 3 backend, 2 testers) using Agile Scrum.",
       "myContributions": [
-        "Quest System: dynamic quest creation, completion, integration with backend quest logic",
+        "Primary developer: implemented dynamic quest creation and completion with backend quest integration",
         "Audio System: Audio Manager for music, SFX, ambient sounds",
         "Beast System: Beast Management module, API integration, UI for beast management",
         "Game Mechanics: item usage, equipment management, skill integration, consumables, equipment rarity",
@@ -3724,9 +3751,9 @@
         "mode": "hybrid",
         "statusLabel": "Project case study",
         "contribution": [
-          "Implemented dynamic quest creation and completion with backend actor-condition integration.",
+          "Primary developer: implemented dynamic quest creation and completion with backend actor-condition integration.",
           "Built beast, equipment, skills, consumables, rarity, inventory, and localization flows.",
-          "Created internal account/cutscene/ScriptableObject tools and supported live-ops fixes and optimization."
+          "Created internal account/cutscene/ScriptableObject tools and implemented live-ops fixes and optimization."
         ],
         "media": [
           {
@@ -3863,6 +3890,10 @@
     },
     {
       "id": "ice-breaking-battle",
+      "ownership": "Primary Developer",
+      "myContributions": [
+        "Primary developer for this project."
+      ],
       "title": "Ice Breaking Battle",
       "category": "unity",
       "genre": "Action / Casual",
@@ -3988,6 +4019,11 @@
     },
     {
       "id": "citybuilder",
+      "ownership": "Primary Developer",
+      "role": "Primary Developer",
+      "myContributions": [
+        "Primary developer for this project."
+      ],
       "slug": "citybuilder",
       "legacyId": "citybuilder",
       "detailKey": "citybuilder",
@@ -4026,6 +4062,11 @@
     },
     {
       "id": "neighborhood",
+      "ownership": "Primary Developer",
+      "role": "Primary Developer",
+      "myContributions": [
+        "Primary developer for this project."
+      ],
       "slug": "neighborhood",
       "legacyId": "neighborhood",
       "detailKey": "neighborhood",
@@ -4118,6 +4159,7 @@
     },
     {
       "id": "flying-phoenix-chronicles",
+      "ownership": "Primary Developer",
       "title": "Flying Phoenix Chronicles",
       "category": "unity",
       "genre": "Mobile MMORPG",
@@ -4153,7 +4195,7 @@
         "mode": "rendered",
         "statusLabel": "Personal project in development",
         "contribution": [
-          "Designed and developed the Unity MMORPG project and its core gameplay presentation.",
+          "Primary developer: designed and developed the Unity MMORPG project and its core gameplay presentation.",
           "Built combat, skill, character, inventory, mount, and pet progression flows.",
           "Integrated feature navigation, English presentation, and portrait mobile showcase delivery.",
           "Maintained the local client and supporting development environment during production."
@@ -4464,7 +4506,7 @@
             "role": "Senior Unity Developer",
             "company": "BEEMOB Studio",
             "achievements": [
-              "Contributed to a funded GameFi product as Senior Unity Developer",
+              "Primary developer on a funded GameFi product as Senior Unity Developer",
               "Implemented core systems for a full idle tower defense game with integrated NFT marketplace (testnet)",
               "Published on iOS, Android, and WebGL (itch.io)",
               "First personal GameFi title - proof of concept for Play-to-Earn mechanics with wallet integration",

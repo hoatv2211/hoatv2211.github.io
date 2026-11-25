@@ -62,6 +62,11 @@ expect(!/\$1M\+/.test(html), "Public page must not expose funding amounts.");
 expect(!/>100\+<[^]*?published games/i.test(html), "Public page must not use unqualified 100+ published games wording.");
 expect(!/hundreds of thousands/i.test(JSON.stringify(portfolio)), "Unsupported Dalgona user-count wording must be removed.");
 
+for (const project of portfolio.projects) {
+  expect(project.ownership === "Primary Developer", `${project.id} must identify primary development ownership separately from the formal role.`);
+}
+expect(/primary developer/i.test(html.match(/<section class="about-text">[\s\S]*?<\/section>/i)?.[0] || ""), "About copy must state primary development ownership.");
+
 const dalgona = portfolio.projects.find((project) => project.id === "dalgona-worldchain");
 const idleCyber = portfolio.projects.find((project) => project.id === "idle-cyber");
 expect(dalgona?.role === "Tech Dev Leader" && dalgona?.teamSize === 15, "Dalgona role/team must match the claim registry.");

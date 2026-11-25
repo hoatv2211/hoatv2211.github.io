@@ -586,7 +586,12 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    const initialPage = window.location.hash.replace("#", "").toLowerCase();
+    const initialProject = new URLSearchParams(window.location.search).get("project");
+    if (initialProject) {
+      openProjectDetail(initialProject);
+    }
+
+    const initialPage = initialProject ? "" : window.location.hash.replace("#", "").toLowerCase();
     if (initialPage) {
       const initialLink = Array.from(navigationLinks).find(link => link.textContent.trim().toLowerCase() === initialPage);
       if (initialLink) initialLink.click();

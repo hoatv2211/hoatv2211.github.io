@@ -217,6 +217,7 @@ function toRuntimeProject(project) {
     detailCategory: project.detailKey,
     detailUrl: project.detailRoute || "",
     description: project.summary,
+    ownership: project.ownership,
     image: {
       src: project.image.src,
       alt: project.image.alt,
@@ -261,6 +262,7 @@ function toDetailPayload(project) {
     status: project.status,
     type: project.type,
     role: project.role,
+    ownership: project.ownership,
     teamSize: project.teamSize,
     period: project.period,
     platforms: project.platforms,

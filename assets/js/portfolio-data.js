@@ -7,6 +7,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "flyingphoenix",
     "detailUrl": "projects/flying-phoenix-chronicles/",
     "description": "A personal Unity MMORPG project built around live combat, hero progression, companions, traversal, and interconnected feature systems for mobile play.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/portfolio-details/flying-phoenix-chronicles/01-combat-boss-mobs.webp",
       "alt": "Flying Phoenix Chronicles combat showcase"
@@ -25,6 +26,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "muloren",
     "detailUrl": "projects/mu-loren-mobile/",
     "description": "Licensed-style mobile MMORPG work covering quests, class mechanics, monster spawning, events, PvE/PvP loops, UI flows, and 3D mobile optimization.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/MuLoren/banner-1.jpg",
       "alt": "muloren"
@@ -42,7 +44,8 @@ window.PORTFOLIO_DATA = [
     "category": "unity",
     "detailCategory": "jx1",
     "detailUrl": "projects/tinh-thien-ha-jx1/",
-    "description": "Mobile MMORPG work on ADNX's JX1 title, covering classic martial-arts progression, faction systems, large-scale multiplayer content, mobile optimization, and publisher delivery.",
+    "description": "Primary development on ADNX's JX1 mobile MMORPG, covering classic martial-arts progression, faction systems, large-scale multiplayer content, mobile optimization, and publisher delivery.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/portfolio-details/jx1/db1603cfe8f8.detail.webp",
       "alt": "Jx Mobie"
@@ -61,6 +64,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "dalgona",
     "detailUrl": "projects/dalgona-worldchain/",
     "description": "World App mini-game based on the sugar candy challenge, built in Unity WebGL with rankings, fast sessions, and Web3-ready publishing.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/Dalgona/logo.png",
       "alt": "dalgona"
@@ -79,6 +83,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "shibainu",
     "detailUrl": "",
     "description": "Casual food truck simulation where players serve customers, upgrade stations, and grow a playful Shiba-themed mobile business.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/Shibainu/9.webp",
       "alt": "Food Truck - Shiba Inu"
@@ -97,6 +102,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "idleCyber",
     "detailUrl": "projects/idle-cyber/",
     "description": "Senior Unity Developer contribution to a funded cyberpunk idle tower defense/GameFi title with hero collection, stage progression, ads, WebGL/mobile release, and an NFT marketplace prototype.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/Idle_cyber/icon_idle_cyber.png",
       "alt": "Idle Cyber"
@@ -115,6 +121,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "nekoverse",
     "detailUrl": "projects/nekoverse/",
     "description": "Funded GameFi MMORPG work across real-time PvE/PvP battles, elemental skills, resource farming, crafting, NFT assets, staking, DAO economy, and mobile profiling.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/Nekoverse/4.jpg",
       "alt": "nekoverse"
@@ -133,6 +140,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "sandwich",
     "detailUrl": "",
     "description": "Idle tycoon game about running a sandwich shop, expanding menus, upgrading equipment, and serving growing customer demand.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/Sanwitch/icon.webp",
       "alt": "sandwich"
@@ -151,6 +159,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "archero",
     "detailUrl": "",
     "description": "Action roguelite prototype with room-based combat, enemy waves, character progression, skill choices, and mobile-friendly controls.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/Archero/icon.png",
       "alt": "archero"
@@ -169,6 +178,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "bike",
     "detailUrl": "",
     "description": "Physics-based bike stunt game with challenging obstacle tracks, flips, responsive controls, and mobile performance tuning.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/BikeTrail/BG Game.jpg",
       "alt": "bike"
@@ -187,6 +197,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "MeowFlow",
     "detailUrl": "",
     "description": "Relaxing cat-themed puzzle game focused on flow-style path solving, clean level progression, and casual mobile play.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/MeowFlow/icon.webp",
       "alt": "MeowFlow"
@@ -205,6 +216,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "proxyapi-mad",
     "detailUrl": "",
     "description": "AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/portfolio-details/proxyapi-mad/323915db83ec.detail.webp",
       "alt": "ProxyAPI.MAD"
@@ -223,6 +235,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "share001-ludo",
     "detailUrl": "",
     "description": "Playable Unity Ludo sample with classic board rules, local turn flow, polished UI, and WebGL demo support.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/ludo.jpg",
       "alt": "Share001 Ludo Game"
@@ -241,6 +254,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "share002-pixelshooter3d",
     "detailUrl": "",
     "description": "3D pixel shooter sample featuring fast arena combat, enemy encounters, weapon handling, and browser-playable WebGL delivery.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/pixcelshooter.png",
       "alt": "Share002 Pixel Shooter 3D"
@@ -259,6 +273,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "galaxiga",
     "detailUrl": "",
     "description": "Classic space shooter sample with arcade waves, responsive shooting, enemy patterns, power-up pacing, and WebGL showcase delivery.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/portfolio-details/galaxiga/195ccc1d1634.detail.webp",
       "alt": "Galaxiga"
@@ -277,6 +292,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "homeDesign",
     "detailUrl": "",
     "description": "Casual home makeover game combining room decoration, match-style progression, reward loops, and mobile publishing support.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/HomeDesign/1.webp",
       "alt": "Home Design"
@@ -296,6 +312,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "tilecandy",
     "detailUrl": "",
     "description": "Colorful tile-matching puzzle game with candy visuals, simple touch controls, level progression, and WebGL/mobile optimization.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/TileCandy/icon_6.png",
       "alt": "tilecandy"
@@ -314,6 +331,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "tilesmatch3",
     "detailUrl": "",
     "description": "Mahjong-inspired tile match puzzle with layered boards, quick sessions, satisfying clears, and cross-platform Unity WebGL support.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/Tilesmatch3/icon.png",
       "alt": "tilesmatch3"
@@ -332,6 +350,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "sudoku",
     "detailUrl": "",
     "description": "Modern Sudoku game with clean UI, puzzle progression, hint-friendly interaction, and polished mobile/WebGL presentation.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/Sudoku/icon.png",
       "alt": "sudoku"
@@ -350,6 +369,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "ageofbattle",
     "detailUrl": "",
     "description": "Era-based strategy battler with unit deployment, tower pressure, wave combat, upgrades, cards, and a playable WebGL demo.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/ageofbattle.png",
       "alt": "Age of Battle"
@@ -369,6 +389,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "surviver",
     "detailUrl": "",
     "description": "Survivor-style action template with enemy spawning, roguelite upgrades, character progression, and mobile-focused gameplay systems.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/game/SurvivorIO/Image Sequence_002_0000.png",
       "alt": "surviver"
@@ -387,6 +408,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "metameAmusementPark",
     "detailUrl": "",
     "description": "Unreal Engine metaverse-style amusement park experience with virtual exploration, high-fidelity visuals, and interactive attraction spaces.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/portfolio-details/metameAmusementPark/3c577a133a46.detail.webp",
       "alt": "Metame Amusement Park"
@@ -405,6 +427,7 @@ window.PORTFOLIO_DATA = [
     "detailCategory": "cryptoquest",
     "detailUrl": "",
     "description": "Turn-based GameFi RPG with quests, character systems, items, localization, backend integration, and live-ops development support.",
+    "ownership": "Primary Developer",
     "image": {
       "src": "assets/images/portfolio-details/cryptoquest/7ff5f7d41e04.detail.webp",
       "alt": "Crypto Quest"

@@ -60,7 +60,7 @@
       category,
       categoryLabel: formatCategory(category),
       detailCategory: project.detailCategory || "",
-      description: project.description || "Portfolio project.",
+      description: [project.ownership, project.description || "Portfolio project."].filter(Boolean).join(" — "),
       image: {
         src: asset(image.src),
         alt: image.alt || project.title || "Portfolio project"
