@@ -21,7 +21,11 @@ async function main() {
   await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
   let browser;
   try {
-    browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", headless: true });
+    const launchOptions = { headless: true };
+    if (process.env.CHROME_PATH) {
+      launchOptions.executablePath = process.env.CHROME_PATH;
+    }
+    browser = await chromium.launch(launchOptions);
     const page = await browser.newPage({ reducedMotion: "reduce" });
     const origin = `http://127.0.0.1:${server.address().port}`;
     await page.route("**/*", route => route.request().url().startsWith(origin) ? route.continue() : route.abort());
