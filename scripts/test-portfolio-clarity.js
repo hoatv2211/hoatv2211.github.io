@@ -1,0 +1,14 @@
+"use strict";
+const assert = require("assert");
+const fs = require("fs");
+const html = fs.readFileSync("index.html", "utf8");
+const about = html.split('<article class="about active"')[1].split('<!--\n        - #RESUME')[0];
+assert(about.indexOf('about-text') < about.indexOf('case-study-preview'), 'Intro must precede work');
+assert(!/about-editorial|work-process|engagement-model|proof-pack|community-download/.test(about), 'Remove competing About sections');
+assert(about.includes('hero-video-container'), 'Portfolio must retain media presentation');
+assert(about.includes('data-render="services"'), 'Portfolio must show the full service offering');
+assert(about.indexOf('hero-video-container') < about.indexOf('about-text'), 'Keep Git baseline media placement');
+assert(about.includes('experience-contact'), 'About must end with experience/contact handoff');
+const controller = fs.readFileSync('assets/js/hiring-focus.js', 'utf8');
+assert(!controller.includes('<article class="focus-project-card"'), 'Nested cards must not inherit page article hiding');
+console.log('Portfolio clarity contract passed.');

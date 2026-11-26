@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Build the portfolio CV with ReportLab; run in the documents environment."""
+import argparse
+import importlib.util
 import json
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -12,7 +14,22 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "portfolio.json").read_text())
-OUT = ROOT / "assets/Tran-Van-Hoa-CV.pdf"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--profile', type=Path, help='Explicit company profile JSON')
+parser.add_argument('--output', type=Path, help='Override destination PDF')
+args = parser.parse_args()
+PROFILE = None
+if args.profile:
+    spec = importlib.util.spec_from_file_location('company_portfolio', ROOT / 'scripts/build-company-portfolio.py')
+    assert spec is not None and spec.loader is not None
+    company_builder = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(company_builder)
+    try:
+        PROFILE = company_builder.load_profile(args.profile, DATA)
+    except (ValueError, OSError) as error:
+        parser.error(str(error))
+OUT = args.output or (ROOT / f"assets/company-{PROFILE['slug']}-CV.pdf" if PROFILE else ROOT / 'assets/Tran-Van-Hoa-CV.pdf')
+OUT.parent.mkdir(parents=True, exist_ok=True)
 BLUE = colors.HexColor("#1764b1")
 GRAY = colors.HexColor("#526071")
 styles = {
@@ -55,7 +72,13 @@ def footer(canvas, doc):
     canvas.drawRightString(A4[0] - 50, 25, str(doc.page))
 
 
-story = [p("TRAN VAN HOA", "name"), p("Senior Unity Developer &amp; Technical Lead · 8+ Years · Mobile · WebGL · GameFi · AI Automation", "small"), Spacer(1, 7), p('Ha Noi, Vietnam (UTC+7) · <a href="mailto:hoatv.mad@gmail.com" color="#1764b1">hoatv.mad@gmail.com</a> · +84 374 639 758', "small"), p('<a href="https://linkedin.com/in/hoatv" color="#1764b1">linkedin.com/in/hoatv</a> · <a href="https://github.com/hoatv2211" color="#1764b1">github.com/hoatv2211</a> · <a href="https://hoatv2211.github.io" color="#1764b1">hoatv2211.github.io</a>', "small"), section("Profile"), p("Senior Unity Developer with 8+ years delivering mobile, WebGL, GameFi, and Telegram mini-app games. Primary developer across the projects in my portfolio, with hands-on ownership of core gameplay, production systems, SDK integration, ads/IAP, profiling, and release delivery. Experienced technical lead for teams of up to 15, combining architecture and implementation with mentoring and delivery coordination. Also builds agentic AI tools, n8n workflows, and proxy API infrastructure."), section("Selected results")]
+story = [p("TRAN VAN HOA", "name"), p("Senior Unity Developer &amp; Technical Lead · 8+ Years · Mobile · WebGL · GameFi · AI Automation", "small"), Spacer(1, 7), p('Ha Noi, Vietnam (UTC+7) · <a href="mailto:hoatv.mad@gmail.com" color="#1764b1">hoatv.mad@gmail.com</a> · +84 374 639 758', "small"), p('<a href="https://linkedin.com/in/hoatv" color="#1764b1">linkedin.com/in/hoatv</a> · <a href="https://github.com/hoatv2211" color="#1764b1">github.com/hoatv2211</a> · <a href="https://hoatv2211.github.io" color="#1764b1">hoatv2211.github.io</a>', "small"), section("Profile"), p(text(DATA["about"]["summary"]) + " " + text(DATA["about"]["pitch"])), section("Selected results")]
+if PROFILE:
+    story[1] = p(text(DATA['identity']['headline']), 'small')
+    story[6] = p(text(PROFILE['summary'] or DATA['about']['summary']) + ' ' + text(DATA['about']['pitch']))
+    story[4:4] = [p(text('Application: ' + PROFILE['company']) + '<br/>' + text('Target role: ' + PROFILE['role']), 'small')]
+    if PROFILE['headline']:
+        story.insert(5, p(text(PROFILE['headline'])))
 results = ["100+ games delivered/published, including private outsource work.", "Primary developer on Idle Cyber and Nekoverse, both externally funded GameFi products.", "Dalgona reached Top 1 on the World App game ranking during its launch period.", "Led and mentored teams of up to 15 developers, artists, and QA.", "Cross-platform delivery across iOS, Android, WebGL, Telegram Mini App, and World App."]
 for result in results:
     story.append(p("- " + text(result), "bullet"))
@@ -72,6 +95,13 @@ projects = [
     ("MU: Loren Mobile / JX1 Mobile", "Senior Unity Developer · Gameplay systems", "Built MMORPG systems spanning quests, classes, monsters, events, UI flows, progression, and PvE/PvP gameplay, with mobile optimization and production delivery.", "https://hoatv2211.github.io/?project=muloren"),
     ("Dalgona - Worldchain", "Tech Dev Leader · Gameplay and World App integration · team of 15", "Built core mechanics, difficulty progression, UI, leaderboard and ranking systems, and World App integration. Reached Top 1 on the World App game ranking during launch.", "https://hoatv2211.github.io/?project=dalgona"),
 ]
+if PROFILE and PROFILE['projectKeys']:
+    # The PDF is a selected-work CV, unlike the complete HTML catalog.
+    by_key = {project['detailKey']: project for project in DATA['projects']}
+    projects = [(by_key[key]['title'], by_key[key].get('role', ''),
+                 by_key[key].get('summary') or by_key[key].get('description', ''),
+                 DATA['identity']['portfolioUrl'].rstrip('/') + '/?project=' + key)
+                for key in PROFILE['projectKeys']]
 for title, role, description, link in projects:
     links = f'<a href="{link}" color="#1764b1">View project detail</a>'
     if title == "MU: Loren Mobile / JX1 Mobile":

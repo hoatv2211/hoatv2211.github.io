@@ -1,0 +1,14 @@
+{
+  "role": "Senior Unity Developer",
+  "summary": "Hands-on Unity development for casual and puzzle games: gameplay rules, mobile UI, progression, performance profiling, analytics, and release support.",
+  "projectKeys": ["sandwich", "MeowFlow", "tilesmatch3", "sudoku", "bike", "muloren"],
+  "experienceHighlights": [[0, 3], [0, 1, 2], [0, 2], [0, 1], [0, 2], [0], [0]],
+  "evidence": [
+    {"title": "C# · Unity · OOP · Design Patterns", "source": "skills.fullSkillset", "text": "Core development skills for gameplay systems, mobile interfaces, and maintainable Unity code."},
+    {"title": "Casual & puzzle gameplay", "projectKey": "sudoku", "contributionIndex": 0},
+    {"title": "UI animation & feedback", "projectKey": "tilecandy", "contributionIndex": 1},
+    {"title": "Physics & particles", "projectKey": "bike", "contributionIndex": 0, "extraContributionIndex": 1},
+    {"title": "3D mobile optimization", "projectKey": "muloren", "contributionIndex": 2},
+    {"title": "Core gameplay ownership", "projectKey": "sandwich", "contributionIndex": 0}
+  ]
+}

@@ -1,0 +1,11 @@
+"use strict";
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const html = fs.readFileSync("index.html", "utf8");
+const js = fs.readFileSync("assets/js/hiring-focus.js", "utf8");
+assert.doesNotMatch(html, /<dialog[^>]*data-hiring-focus/, "Public entry must not prompt for a hiring perspective");
+assert.doesNotMatch(html, /data-focus-(?:reopen|select|options)/, "Public portfolio has no perspective choice UI");
+assert.doesNotMatch(js, /showModal|focus-picker-open|searchParams\.set\("focus"/, "All Work must not open a picker or change focus URLs");
+assert.match(html, /id="backup-style-toggle"/, "Keep the optional backup style control");
+assert.match(html, /id="case-study-sample"/, "Keep Selected Work without a dialog dependency");
+console.log("Public All Work entry contract passed.");

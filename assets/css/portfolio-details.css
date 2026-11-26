@@ -821,6 +821,39 @@
   outline-offset: -4px;
 }
 
+.detail-project-logo { width: 64px; height: 64px; object-fit: contain; margin: 14px 0; border-radius: 12px; }
+
+/* Tool evidence stays readable rather than collaging UI over engineering copy. */
+.detail-theme--brproxies .detail-showcase-hero,
+.detail-theme--gamestudio-codexkit .detail-showcase-hero,
+.detail-theme--brproxies .detail-console-journey .detail-story-beat,
+.detail-theme--gamestudio-codexkit .detail-console-journey .detail-story-beat { grid-template-columns: minmax(0, 1fr); }
+.detail-theme--brproxies .detail-showcase-hero-copy,
+.detail-theme--gamestudio-codexkit .detail-showcase-hero-copy { margin: 0; min-width: 0; width: 100%; }
+.detail-theme--brproxies .detail-title,
+.detail-theme--gamestudio-codexkit .detail-title { overflow-wrap: anywhere; }
+.detail-theme--brproxies .detail-story-media,
+.detail-theme--gamestudio-codexkit .detail-story-media { min-width: 0; }
+.detail-theme--brproxies .detail-story-copy,
+.detail-theme--gamestudio-codexkit .detail-story-copy { max-width: 75ch; min-width: 0; }
+
+.detail-engineering {
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid var(--showcase-accent, #d9a84e);
+  border-radius: 18px;
+  background: var(--showcase-panel, #102331);
+  color: var(--showcase-text, #f7f6f1);
+}
+
+.detail-engineering > .detail-section-title {
+  color: var(--showcase-accent, #d9a84e);
+}
+
+.detail-engineering .detail-section {
+  margin-top: 24px;
+  max-width: 75ch;
+}
+
 .detail-showcase-contribution {
   margin: 0;
   padding: clamp(28px, 5vw, 56px);

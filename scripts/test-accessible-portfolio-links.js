@@ -1,0 +1,14 @@
+"use strict";
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+let html;
+const list = { set innerHTML(value) { html = value; } };
+const context = {window:{PORTFOLIO_DATA:[{title:'Test',category:'unity',detailCategory:'test-key',image:{src:'image.webp',alt:'Test'},tag:{className:'unity-icon',label:'Unity'}}]},document:{readyState:'complete',querySelector:()=>list,dispatchEvent:()=>{}},CustomEvent:class{}};
+vm.createContext(context);
+vm.runInContext(fs.readFileSync('assets/js/portfolio-render.js','utf8'),context);
+assert.match(html,/href="\?project=test-key"/);
+assert.doesNotMatch(html,/href="#"/);
+assert.match(fs.readFileSync('assets/js/site-render.js','utf8'),/<h3 class="h4 service-item-title">/);
+assert.doesNotMatch(fs.readFileSync('assets/css/style.css','utf8'),/background-image: url\("https:\/\/github.com[^\n]+blob/);
+console.log('Accessible project URLs, service headings and local icon sources passed.');

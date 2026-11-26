@@ -1,0 +1,13 @@
+"use strict";
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+const c={window:{}};vm.createContext(c);
+vm.runInContext(fs.readFileSync('assets/js/portfolio-detail-renderer.js','utf8'),c);
+const p={title:'Official Tool',detailKey:'tool',logo:{src:'assets/tool-logo.svg',alt:'Official tool logo'},detail:{tier:'B',mode:'rendered',contribution:[],media:[],presentation:{layoutVariant:'product-console',storyBeats:[]}}};
+const html=c.window.PortfolioDetailRenderer.render(p,'<section data-detail-category="tool"></section>');
+assert.match(html, /class="detail-project-logo"[^>]*src="assets\/tool-logo.svg"/);
+assert.match(html, /alt="Official tool logo"/);
+delete p.logo;
+assert.doesNotMatch(c.window.PortfolioDetailRenderer.render(p,'<section data-detail-category="tool"></section>'),/detail-project-logo/);
+console.log('Optional official project logo rendering passed.');

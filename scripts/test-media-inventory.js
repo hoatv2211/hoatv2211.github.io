@@ -25,7 +25,7 @@ assert.strictEqual(missing.width, null);
 assert.match(missing.error, /missing/i);
 
 const inventory = buildInventory(root);
-assert.strictEqual(inventory.projectCount, 26);
+assert.strictEqual(inventory.projectCount, 28);
 assert.ok(Array.isArray(inventory.media));
 assert.ok(inventory.media.some((item) => item.projects.includes("archero") && item.src.endsWith("Archero/1.detail.webp")));
 assert.ok(

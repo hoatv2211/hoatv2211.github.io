@@ -423,7 +423,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  let filterRevision = 0;
   const filterFunc = function (selectedValue, animate = false) {
+    const revision = ++filterRevision;
     // Show the back button if not viewing "all" items (means we're viewing a project)
     toggleBackButton(selectedValue !== "all");
 
@@ -469,6 +471,7 @@ document.addEventListener('DOMContentLoaded', function () {
           item.style.opacity = '0';
           item.style.transform = 'translateY(10px)';
           setTimeout(() => {
+            if (revision !== filterRevision) return;
             item.classList.remove("active");
           }, 300);
         });
@@ -476,6 +479,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Then show items with staggered delay
         toShow.forEach((item, index) => {
           setTimeout(() => {
+            if (revision !== filterRevision) return;
             item.classList.add("active");
             item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
             item.style.opacity = '1';

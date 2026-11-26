@@ -59,8 +59,9 @@
   function getShowcaseSource() {
     const source = Array.isArray(window.PORTFOLIO_DATA) ? window.PORTFOLIO_DATA : [];
     return source
-      .filter((project) => project && project.featured === true && project.image && project.image.src && project.category !== "agentic" && project.category !== "applications")
+      .filter((project) => project && project.image && project.image.src && project.category !== "agentic" && project.category !== "applications")
       .sort((left, right) => (left.featuredOrder ?? Number.MAX_SAFE_INTEGER) - (right.featuredOrder ?? Number.MAX_SAFE_INTEGER))
+      .slice(0, 10)
       .map((project) => {
         const demoUrl = getDemoUrl(project);
         const detailUrl = project.detailCategory ? `portfolio-details/${project.detailCategory}.html` : "#";

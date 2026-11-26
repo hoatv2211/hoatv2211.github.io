@@ -108,8 +108,11 @@
         throw new Error(`Portfolio detail data has no record for ${detailCategory}`);
       }
 
+      const focus = window.HiringFocusModel && window.HIRING_FOCUS_CONFIG
+        ? window.HiringFocusModel.resolve(window.HIRING_FOCUS_CONFIG, new URLSearchParams(window.location.search).get("focus")) : null;
+      const view = focus ? window.HiringFocusModel.projectView(project, focus) : project;
       const html = window.PortfolioDetailRenderer?.render
-        ? window.PortfolioDetailRenderer.render(project, fragment.html)
+        ? window.PortfolioDetailRenderer.render(view, fragment.html)
         : fragment.html;
 
       target.innerHTML = "";

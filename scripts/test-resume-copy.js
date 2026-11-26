@@ -5,6 +5,8 @@ const fs = require("fs");
 const portfolio = JSON.parse(fs.readFileSync("portfolio.json", "utf8"));
 const html = fs.readFileSync("index.html", "utf8");
 for (const entry of portfolio.experience) {
+  assert(/^\d{4}(?: - (?:\d{4}|Present))?$/.test(entry.period), `${entry.company}: display years only`);
+  assert.notEqual(entry.company, "Techies Studio", "Selected experience omits Techies");
   assert(entry.highlights.length >= 2 && entry.highlights.length <= 4, `${entry.company}: keep 2-4 concrete bullets`);
   for (const line of entry.highlights) {
     assert(!/Primary developer|broader ownership|production discipline|one production workflow|helped strengthen/i.test(line), `${entry.company}: avoid labels and vague self-assessment`);

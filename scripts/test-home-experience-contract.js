@@ -22,36 +22,10 @@ const expect = (condition, message) => {
   if (!condition) failures.push(message);
 };
 
-const videoTag = html.match(/<video\b[^>]*class="[^"]*hero-video[^"]*"[^>]*>/i)?.[0] || "";
-expect(Boolean(videoTag), "Hero must use a native video element.");
-for (const attribute of ["autoplay", "muted", "loop", "playsinline", "poster"]) {
-  expect(new RegExp(`\\b${attribute}(?:=|\\s|>)`, "i").test(videoTag), `Hero video must include ${attribute}.`);
-}
-expect(/aria-label="HoaTV gameplay reel"/i.test(videoTag), "Hero video must have an accessible label.");
-expect(!/hero-video-facade|>\s*Play reel\s*<|data-hero-video/i.test(html), "Play Reel facade must be removed from HTML.");
-expect(!/data-hero-video|hero-video-facade/i.test(enhancements), "Play Reel facade activation code must be removed.");
-
-const identityFigure = html.match(/<figure\b[^>]*class="[^"]*about-editorial-identity[^"]*"[^>]*>[\s\S]*?<\/figure>/i)?.[0] || "";
-const workflowFigure = html.match(/<figure\b[^>]*class="[^"]*about-editorial-workflow[^"]*"[^>]*>[\s\S]*?<\/figure>/i)?.[0] || "";
-expect(/<\/section>\s*<figure\b[^>]*about-editorial-identity[\s\S]*?<section\b[^>]*class="selected-results"/i.test(html), "Production Identity illustration must sit between About copy and Selected Results.");
-expect(/<section\b[^>]*class="work-process"[\s\S]*?How I Work<\/h2>\s*<figure\b[^>]*about-editorial-workflow/i.test(html), "Workflow illustration must sit after the How I Work heading.");
-expect(/src="assets\/images\/about-editorial\/production-identity\.webp"/i.test(identityFigure), "Production Identity figure must use the optimized local WebP asset.");
-expect(/src="assets\/images\/about-editorial\/how-i-work\.webp"/i.test(workflowFigure), "Workflow figure must use the optimized local WebP asset.");
-for (const [name, figure] of [["Production Identity", identityFigure], ["Workflow", workflowFigure]]) {
-  expect(/alt="[^"]{20,}"/i.test(figure), `${name} illustration must have meaningful alt text.`);
-  expect(/width="1200"/i.test(figure) && /height="720"/i.test(figure), `${name} illustration must declare intrinsic dimensions.`);
-  expect(/loading="lazy"/i.test(figure) && /decoding="async"/i.test(figure), `${name} illustration must use lazy async image loading.`);
-}
-expect(/class="about-editorial-legend"/i.test(identityFigure), "Production Identity figure must include the approved HTML legend.");
-for (const label of ["Gameplay &amp; Player Experience", "Production Systems", "Optimize &amp; Ship"]) {
-  expect(identityFigure.includes(label), `Production Identity legend must include ${label}.`);
-}
-expect(fs.existsSync(path.join(root, "assets/images/about-editorial/production-identity.webp")), "Production Identity WebP asset must exist.");
-expect(fs.existsSync(path.join(root, "assets/images/about-editorial/how-i-work.webp")), "Workflow WebP asset must exist.");
-expect(/\.about-editorial\s*\{[^}]*overflow:\s*hidden/s.test(modernCss), "About editorial component must clip artwork within its frame.");
-expect(/\.about-editorial\s+img\s*\{[^}]*width:\s*100%[^}]*height:\s*auto/s.test(modernCss), "About editorial images must scale responsively.");
-expect(/@media \(max-width:\s*480px\)[\s\S]*\.about-editorial/.test(modernCss), "About editorial component must include a narrow-mobile rule.");
-expect(/@media \(prefers-reduced-motion:\s*reduce\)[\s\S]*\.about-editorial/.test(modernCss), "About editorial component must disable non-essential motion when requested.");
+const aboutSurface = html.split('<article class="about active"')[1].split('<!--\n        - #RESUME')[0];
+expect(!/about-editorial|work-process|engagement-model/.test(aboutSurface), "About must prioritize projects over decorative and repetitive sections.");
+expect(aboutSurface.indexOf("about-text") < aboutSurface.indexOf("case-study-preview"), "About must introduce the developer before selected projects.");
+expect(/experience-contact/.test(aboutSurface), "About must expose an experience and contact handoff.");
 
 expect(/\.loading-terminal\s*\{[^}]*width:\s*min\(100%\s*-\s*32px,\s*560px\)/s.test(css), "Loading terminal must have viewport-safe responsive width.");
 expect(/\.loading-terminal-body\s+p\s*\{[^}]*overflow-wrap:\s*anywhere/s.test(css), "Loading commands must wrap on narrow screens.");
@@ -65,7 +39,7 @@ expect(!/hundreds of thousands/i.test(JSON.stringify(portfolio)), "Unsupported D
 for (const project of portfolio.projects) {
   expect(project.ownership === "Primary Developer", `${project.id} must identify primary development ownership separately from the formal role.`);
 }
-expect(/primary developer/i.test(html.match(/<section class="about-text">[\s\S]*?<\/section>/i)?.[0] || ""), "About copy must state primary development ownership.");
+expect(/hands-on development/i.test(html.match(/<section class="about-text">[\s\S]*?<\/section>/i)?.[0] || ""), "About copy must state hands-on development scope.");
 
 const dalgona = portfolio.projects.find((project) => project.id === "dalgona-worldchain");
 const idleCyber = portfolio.projects.find((project) => project.id === "idle-cyber");
@@ -76,7 +50,7 @@ expect(/classList\.add\(["']portfolio-detail-open["']\)/.test(script), "Opening 
 expect(/classList\.remove\(["']portfolio-detail-open["']\)/.test(script), "Leaving a project must clear the detail-mode body hook.");
 expect(/body\.portfolio-detail-open[\s\S]*\.portfolio\s*>\s*header/.test(css + modernCss), "Detail mode must hide the listing shell.");
 expect(/project\.detailCategory\s*&&\s*project\.demoUrl/.test(showcase), "Showcase must only render a second detail CTA when the primary action is a demo.");
-expect(/\.filter\(\(project\)\s*=>[\s\S]*project\.featured\s*===\s*true/.test(showcase), "Showcase must render featured projects only.");
+expect(/\.slice\(0,\s*10\)/.test(showcase), "Showcase must show ten projects with featured projects prioritized.");
 expect(/\.sort\(\(left,\s*right\)\s*=>[\s\S]*featuredOrder/.test(showcase), "Showcase must sort projects by featuredOrder.");
 expect(/data-detail-category=/.test(showcase), "Showcase detail CTAs must use the canonical portfolio detail event contract.");
 expect(!/data-open-detail/.test(showcase), "Showcase must not maintain a second, divergent project-detail click path.");

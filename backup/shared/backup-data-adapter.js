@@ -60,7 +60,7 @@
       category,
       categoryLabel: formatCategory(category),
       detailCategory: project.detailCategory || "",
-      description: [project.ownership, project.description || "Portfolio project."].filter(Boolean).join(" — "),
+      description: [project.ownership, focus ? window.HiringFocusModel.describe(project, focus) : (project.description || "Portfolio project.")].filter(Boolean).join(" — "),
       image: {
         src: asset(image.src),
         alt: image.alt || project.title || "Portfolio project"
@@ -75,7 +75,28 @@
     };
   }
 
-  const projects = DATA.map(normalizeProject);
+  const focusKey = null; // Public backups always present All Work.
+  const focus = window.HiringFocusModel && window.HIRING_FOCUS_CONFIG
+    ? window.HiringFocusModel.resolve(window.HIRING_FOCUS_CONFIG, focusKey || "all")
+    : null;
+  const source = focus ? window.HiringFocusModel.selectProjects(DATA, focus) : DATA;
+  const projects = source.map(normalizeProject);
+  if (focusKey && typeof URL !== "undefined" && window.location) {
+    projects.forEach(project => {
+      const url = new URL(`${ROOT_PREFIX}index.html`, window.location.href);
+      url.searchParams.set("focus", focus.id);
+      if (project.detailCategory) url.searchParams.set("project", project.detailCategory);
+      project.detailUrl = url.href;
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('a[href*="index.html"]').forEach(link => {
+        const url = new URL(link.href, window.location.href);
+        if (url.origin !== window.location.origin) return;
+        url.searchParams.set("focus", focus.id);
+        link.href = url.href;
+      });
+    });
+  }
 
   function getProjects() {
     return projects.slice();
@@ -102,7 +123,7 @@
   function getStats() {
     const groups = getProjectsByCategory();
     return [
-      { label: "Years", value: "8+", detail: "Unity delivery" },
+      { label: "Years", value: "8+", detail: "game development" },
       { label: "Projects", value: `${projects.length}+`, detail: "portfolio entries" },
       { label: "Specialties", value: Object.keys(groups).length.toString(), detail: "game/dev tracks" },
       { label: "Platforms", value: "5", detail: "Mobile, WebGL, GameFi, Telegram, AI" }
@@ -111,7 +132,7 @@
 
   function getContactLinks() {
     return [
-      { label: "Email", href: "mailto:hoatv.mad@gmail.com?subject=Unity%20project%20inquiry" },
+      { label: "Discuss technical work", href: "mailto:hoatv.mad@gmail.com?subject=Technical%20discussion%3A%20Unity%2C%20backend%2Fserver%2C%20AI%20automation" },
       { label: "Telegram", href: "https://t.me/o0_MaD_0o" },
       { label: "GitHub", href: "https://github.com/hoatv2211" },
       { label: "Agentic GitHub", href: "https://github.com/mad-agentic" },

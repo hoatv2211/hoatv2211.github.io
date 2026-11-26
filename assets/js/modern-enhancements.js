@@ -187,7 +187,7 @@ function initThemeToggle() {
     backupStyleToggle.hidden = !backupStyleEnabled;
   }
 
-  if (backupStyleEnabled && backupStyleToggle) {
+  if (backupStyleEnabled && backupStyleToggle && !backupStyleToggle.closest('.portfolio-view-dock')) {
     localStorage.removeItem('backupStyleTogglePosition');
     localStorage.removeItem('backupStyleTogglePositionV2');
     localStorage.removeItem('backupStyleTogglePositionV3');

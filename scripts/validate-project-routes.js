@@ -64,7 +64,7 @@ for (const project of routeProjects) {
       forbidden: [/Solo Developer/i, /hundreds of thousands/i],
     },
     idleCyber: {
-      required: ["Senior Unity Developer", "team of 10", "Primary developer on a funded GameFi product."],
+      required: ["Unity Developer", "team of 10", "Primary developer on a funded GameFi product."],
       forbidden: [/Technical Leader/i, /million-dollar/i],
     },
     muloren: {

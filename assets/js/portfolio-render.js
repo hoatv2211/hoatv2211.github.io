@@ -8,10 +8,10 @@
       const apiIos = project.apiUrlIos ? ` data-api-url-ios="${project.apiUrlIos}"` : "";
 
       const isExternal = Boolean(project.externalUrl);
-      const linkHref = isExternal ? project.externalUrl : "#";
+      const linkHref = isExternal ? project.externalUrl : `?project=${encodeURIComponent(project.detailCategory)}`;
       const linkAttrs = isExternal
         ? `href="${project.externalUrl}" target="_blank" rel="noopener noreferrer"`
-        : `href="#" data-detail-category="${project.detailCategory}"`;
+        : `href="${linkHref}" data-detail-category="${project.detailCategory}"`;
       const iconName = isExternal ? "open-outline" : "eye-outline";
       const iconDataAttr = isExternal ? "" : ` data-detail-category="${project.detailCategory}"`;
       const titleDataAttr = isExternal ? "" : ` data-detail-category="${project.detailCategory}"`;

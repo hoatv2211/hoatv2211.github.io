@@ -121,6 +121,15 @@ function validateDetail(project) {
   }
   requireString(project, "detail.statusLabel", detail.statusLabel);
   validatePresentation(project, detail);
+  if (detail.engineering !== undefined) {
+    requireString(project, "detail.engineering.challenge", detail.engineering?.challenge);
+    requireArray(project, "detail.engineering.implementation", detail.engineering?.implementation, 1);
+    for (const item of detail.engineering.implementation) {
+      requireString(project, "detail.engineering.implementation item", item);
+    }
+    requireString(project, "detail.engineering.outcome", detail.engineering?.outcome);
+    requireString(project, "detail.engineering.evidenceNote", detail.engineering?.evidenceNote);
+  }
 
   if (detail.tier === "A") {
     requireString(project, "role", project.role);
@@ -218,6 +227,8 @@ function toRuntimeProject(project) {
     detailUrl: project.detailRoute || "",
     description: project.summary,
     ownership: project.ownership,
+    logo: project.logo,
+    projectType: project.type === "sample" ? "Sample" : project.category === "agentic" ? "Developer Tool" : project.detailKey === "flyingphoenix" ? "Personal Project" : "Production Work",
     image: {
       src: project.image.src,
       alt: project.image.alt,
@@ -263,6 +274,7 @@ function toDetailPayload(project) {
     type: project.type,
     role: project.role,
     ownership: project.ownership,
+    logo: project.logo,
     teamSize: project.teamSize,
     period: project.period,
     platforms: project.platforms,
@@ -293,7 +305,7 @@ function generateOutputs() {
   const allProjects = canonical.projects.slice().sort((a, b) => a.displayOrder - b.displayOrder);
 
   return {
-    cards: serializeAssignment("PORTFOLIO_DATA", active.map(toRuntimeProject)),
+    cards: serializeAssignment("PORTFOLIO_DATA", active.map(toRuntimeProject)) + serializeAssignment("HIRING_FOCUS_CONFIG", canonical.hiringFocus),
     detailIndex: serializeAssignment("PORTFOLIO_DETAIL_INDEX", allProjects.map(toDetailIndex)),
     detailPayload: serializePayload(allProjects.map(toDetailPayload)),
   };

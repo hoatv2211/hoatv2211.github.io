@@ -16,7 +16,7 @@ vm.runInContext(fs.readFileSync("assets/js/portfolio-data.js", "utf8"), context)
 vm.runInContext(fs.readFileSync("backup/shared/backup-data-adapter.js", "utf8"), context);
 
 const projects = JSON.parse(JSON.stringify(context.window.PortfolioBackup.getProjects()));
-assert.strictEqual(projects.length, 23, "backups must receive 23 active projects");
+assert.strictEqual(projects.length, 25, "backups must receive 25 active projects");
 assert.strictEqual(projects[0].id, "flyingphoenix", "backups must show Flying Phoenix Chronicles first");
 assert.strictEqual(projects[11].id, "proxyapi-mad", "backups must show ProxyAPI.MAD twelfth");
 assert.deepStrictEqual(
@@ -51,4 +51,4 @@ for (const route of ["recruiter-clean", "dev-console", "game-studio"]) {
 const recruiterHtml = fs.readFileSync("backup/recruiter-clean/index.html", "utf8");
 assert.match(recruiterHtml, /source and website links first/i, "recruiter backup GitShare copy must describe website links");
 
-console.log("Backup portfolio contract passed for 3 routes and 23 projects.");
+console.log("Backup portfolio contract passed for 3 routes and 25 projects.");

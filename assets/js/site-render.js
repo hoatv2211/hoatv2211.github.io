@@ -57,7 +57,7 @@
             <img src="${service.icon.src}" alt="${service.icon.alt}" width="${service.icon.width}" loading="lazy" decoding="async">
           </div>
           <div class="service-content-box">
-            <h4 class="h4 service-item-title">${service.title}</h4>
+            <h3 class="h4 service-item-title">${service.title}</h3>
             <p>${service.description}</p>
           </div>
         </li>

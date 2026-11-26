@@ -20,7 +20,7 @@ function evaluate(source) {
 const current = evaluate(fs.readFileSync(GENERATED, "utf8"));
 const regenerated = evaluate(generate());
 assert.deepStrictEqual(regenerated, current, "generated runtime data changed semantically");
-assert.strictEqual(current.length, 23, "runtime compatibility set must contain 23 active records");
+assert.strictEqual(current.length, 25, "runtime compatibility set must contain 25 active records");
 assert.deepStrictEqual(
   current.map((project) => project.id),
   [
@@ -28,7 +28,7 @@ assert.deepStrictEqual(
     "nekoverse", "sandwich", "archero", "bike", "MeowFlow", "proxyapi-mad",
     "share001-ludo", "share002-pixelshooter3d", "galaxiga", "HomeDesign", "tilecandy",
     "tilesmatch3", "sudoku", "ageofbattle", "surviver", "metameAmusementPark",
-    "cryptoquest",
+    "cryptoquest", "brproxies", "gamestudio-codexkit",
   ],
   "runtime project order changed"
 );
@@ -45,4 +45,4 @@ assert.strictEqual(current.find((project) => project.id === "jx1").featuredOrder
 for (const project of current.filter((candidate) => ["muloren", "jx1", "dalgona", "idleCyber", "nekoverse", "flyingphoenix"].includes(candidate.id))) {
   assert.match(project.detailUrl || "", /^projects\/[a-z0-9-]+\/$/, `${project.id} must expose its canonical detail route`);
 }
-console.log("Portfolio compatibility passed for 23 active records.");
+console.log("Portfolio compatibility passed for 25 active records.");

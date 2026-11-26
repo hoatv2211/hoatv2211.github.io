@@ -164,13 +164,19 @@
     const presentation = detail.presentation;
     const heroMedia = mediaMap.get(presentation.heroMediaKey);
     const actions = renderShowcaseActions(detail, 2);
-    return `<header class="detail-showcase-hero"><div class="detail-showcase-hero-media">${heroMedia ? renderMediaItem(heroMedia, true) : ""}</div><div class="detail-showcase-hero-copy"><span class="detail-status">${escapeHtml(detail.statusLabel)}</span><p class="detail-showcase-eyebrow">${escapeHtml(presentation.eyebrow)}</p><h2 class="detail-title">${escapeHtml(project.title)}</h2>${project.summary ? `<p class="detail-showcase-summary">${escapeHtml(project.summary)}</p>` : ""}${actions ? `<div class="detail-showcase-actions">${actions}</div>` : ""}</div></header>`;
+    return `<header class="detail-showcase-hero"><div class="detail-showcase-hero-media">${heroMedia ? renderMediaItem(heroMedia, true) : ""}</div><div class="detail-showcase-hero-copy"><span class="detail-status">${escapeHtml(detail.statusLabel)}</span><p class="detail-showcase-eyebrow">${escapeHtml(presentation.eyebrow)}</p>${project.logo?.src ? `<img class="detail-project-logo" src="${escapeHtml(project.logo.src)}" alt="${escapeHtml(project.logo.alt || project.title)}" width="64" height="64" decoding="async">` : ""}<h2 class="detail-title">${escapeHtml(project.title)}</h2>${project.summary ? `<p class="detail-showcase-summary">${escapeHtml(project.summary)}</p>` : ""}${actions ? `<div class="detail-showcase-actions">${actions}</div>` : ""}</div></header>`;
+  }
+
+  function renderEngineering(detail) {
+    const engineering = detail.engineering;
+    if (!engineering) return "";
+    return `<section class="detail-section detail-engineering" aria-label="Engineering breakdown"><h3 class="detail-section-title">Engineering breakdown</h3>${textSection("Technical challenge", engineering.challenge, "detail-engineering-challenge")}${listSection("Implementation scope", engineering.implementation, "detail-engineering-implementation")}${textSection("Delivered scope", engineering.outcome, "detail-engineering-outcome")}${textSection("What the evidence shows", engineering.evidenceNote, "detail-engineering-evidence")}</section>`;
   }
 
   function renderShowcaseClosing(project) {
     const actions = renderShowcaseActions(project.detail, undefined, 2);
-    if (!actions) return "";
-    return `<footer class="detail-showcase-closing"><p class="detail-story-kicker">Explore the project</p><h3>See ${escapeHtml(project.title)} in motion.</h3><p>Review the public build and project presence for a closer look at the shipped experience.</p><div class="detail-showcase-actions">${actions}</div></footer>`;
+    const subject = encodeURIComponent(`Technical discussion: ${project.title}`);
+    return `<footer class="detail-showcase-closing"><p class="detail-story-kicker">Explore the project</p><h3>Discuss the technical scope</h3><p>Review the project evidence or get in touch to discuss implementation responsibilities and a relevant role.</p><div class="detail-showcase-actions">${actions}<a class="detail-showcase-action detail-showcase-action--primary" href="mailto:hoatv.mad@gmail.com?subject=${subject}">Discuss this project</a><a class="detail-showcase-action detail-showcase-action--secondary" href="assets/Tran-Van-Hoa-CV.pdf" target="_blank" rel="noopener noreferrer" download>Download CV</a></div></footer>`;
   }
 
   function renderNarrativeShowcase(project, bespoke, family) {
@@ -185,7 +191,7 @@
       : family === "product-console"
         ? "detail-showcase-story detail-console-journey"
         : "detail-showcase-story";
-    return `<div class="detail-showcase-shell ${familyClass}">${renderShowcaseHero(project, mediaMap)}${renderProductionStrip(project)}<div class="${storyClass}">${story}</div>${listSection("Production contribution", detail.contribution, "detail-showcase-contribution")}${bespoke}${renderShowcaseClosing(project)}</div>`;
+    return `<div class="detail-showcase-shell ${familyClass}">${renderShowcaseHero(project, mediaMap)}${renderProductionStrip(project)}<div class="${storyClass}">${story}</div>${renderEngineering(detail)}${listSection("Production contribution", detail.contribution, "detail-showcase-contribution")}${bespoke}${renderShowcaseClosing(project)}</div>`;
   }
 
   function renderCompactProof(project) {
@@ -195,7 +201,7 @@
     const heroMedia = mediaMap.get(presentation.heroMediaKey);
     const supporting = (detail.media || []).filter((media) => media.key !== presentation.heroMediaKey);
     const actions = renderShowcaseActions(detail);
-    return `<div class="detail-compact-proof"><header class="detail-compact-proof-hero"><div class="detail-compact-proof-copy"><span class="detail-status">${escapeHtml(detail.statusLabel)}</span><p class="detail-showcase-eyebrow">${escapeHtml(presentation.eyebrow)}</p><h2 class="detail-title">${escapeHtml(project.title)}</h2>${project.summary ? `<p class="detail-showcase-summary">${escapeHtml(project.summary)}</p>` : ""}</div>${heroMedia ? `<div class="detail-compact-proof-media">${renderMediaItem(heroMedia, true)}</div>` : ""}</header>${renderProductionStrip(project)}${textSection("Purpose", detail.purpose || project.summary, "detail-purpose")}${supporting.length ? `<section class="detail-section detail-compact-gallery" aria-label="Project proof gallery"><div class="detail-gallery detail-gallery--mixed">${supporting.map((media) => renderMediaItem(media, false)).join("")}</div></section>` : ""}${listSection("Technical notes", detail.technicalNotes, "detail-technical-notes")}${textSection("Archive reason", detail.archiveReason, "detail-archive-reason")}${actions ? `<div class="detail-showcase-actions">${actions}</div>` : ""}</div>`;
+    return `<div class="detail-compact-proof"><header class="detail-compact-proof-hero"><div class="detail-compact-proof-copy"><span class="detail-status">${escapeHtml(detail.statusLabel)}</span><p class="detail-showcase-eyebrow">${escapeHtml(presentation.eyebrow)}</p>${project.logo?.src ? `<img class="detail-project-logo" src="${escapeHtml(project.logo.src)}" alt="${escapeHtml(project.logo.alt || project.title)}" width="64" height="64" decoding="async">` : ""}<h2 class="detail-title">${escapeHtml(project.title)}</h2>${project.summary ? `<p class="detail-showcase-summary">${escapeHtml(project.summary)}</p>` : ""}</div>${heroMedia ? `<div class="detail-compact-proof-media">${renderMediaItem(heroMedia, true)}</div>` : ""}</header>${renderProductionStrip(project)}${textSection("Purpose", detail.purpose || project.summary, "detail-purpose")}${supporting.length ? `<section class="detail-section detail-compact-gallery" aria-label="Project proof gallery"><div class="detail-gallery detail-gallery--mixed">${supporting.map((media) => renderMediaItem(media, false)).join("")}</div></section>` : ""}${listSection("Technical notes", detail.technicalNotes, "detail-technical-notes")}${textSection("Archive reason", detail.archiveReason, "detail-archive-reason")}${actions ? `<div class="detail-showcase-actions">${actions}</div>` : ""}</div>`;
   }
 
   function renderShowcase(project, bespoke) {

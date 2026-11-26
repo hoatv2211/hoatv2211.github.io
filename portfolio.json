@@ -7,12 +7,280 @@
     "lastUpdated": "2026-08-14",
     "canonicalSchemaVersion": 2
   },
+  "hiringFocus": {
+    "default": "mobile",
+    "options": {
+      "mobile": {
+        "label": "Mobile / Casual",
+        "intro": "Hands-on Unity development for casual, idle, and puzzle games: core gameplay, responsive UI, mobile performance, analytics, and release support.",
+        "skills": [
+          "Unity",
+          "C#",
+          "Casual Gameplay",
+          "UI/UX",
+          "Mobile Optimization",
+          "Ads & Analytics"
+        ],
+        "cta": "Discuss a mobile game role",
+        "projectKeys": [
+          "sandwich",
+          "shibainu",
+          "MeowFlow",
+          "homeDesign",
+          "tilecandy",
+          "tilesmatch3",
+          "sudoku",
+          "bike",
+          "archero",
+          "surviver",
+          "idleCyber"
+        ],
+        "projectDescriptions": {
+          "brproxies": "Cross-platform browser profile and proxy management launcher for macOS, Windows, and Linux, with local HTTP automation, MCP, and Python/Node SDKs.",
+          "gamestudio-codexkit": "MOStudio Kit: a beta evidence-first operating toolkit for Codex and Hermes, spanning Unity clients, C++/Lua MMORPG services, MySQL, player data, content pipelines, release gates, and live operations.",
+          "proxyapi-mad": "Independent full-stack integration and adaptation of CLIProxyAPI, connecting multi-provider AI proxy operations with API key management, dashboards, request logs, and agent workflows.",
+          "muloren": "Mobile MMORPG engineering covering 3D performance profiling, quest and battle systems, monster spawning, and UI integration within a collaborative Unity team.",
+          "jx1": "Mobile MMORPG engineering combining device optimization, resource loading, SDK integration, faction progression, and large-scale multiplayer content for a martial-arts setting.",
+          "dalgona": "Unity WebGL candy challenge with responsive UI, animated feedback, difficulty progression, and rankings, delivered for World App within a 15-person team.",
+          "shibainu": "Casual food-truck simulation with customer service gameplay, responsive mobile interactions, progression feedback, reward flows, and Android performance and release work.",
+          "idleCyber": "Idle tower-defense gameplay with hero upgrades, stage progression, rewards, ads, UI animation, and mobile performance work for a funded GameFi title.",
+          "nekoverse": "Unity performance profiling and device optimization alongside battles and elemental skills for a funded mobile GameFi MMORPG with NFT integration.",
+          "sandwich": "Idle sandwich-shop game development covering sandwich assembly, customer orders, gameplay UI, device performance optimization, and analytics for player engagement.",
+          "archero": "Mobile action roguelite prototype with one-touch movement and attacks, optimized controls and effects, enemy AI, room progression, and randomized skill selection.",
+          "bike": "Physics-based bike stunt game development covering the bike controller, obstacle-track progression, gameplay HUD, visual feedback, and mobile build maintenance.",
+          "MeowFlow": "Cat-themed path-connection puzzle development covering puzzle rules, level progression, clear gameplay UI, mobile performance optimization, and integrated player analytics.",
+          "share001-ludo": "Playable Unity Ludo sample built around classic board rules, local turn flow, polished game UI, and a browser-accessible WebGL demo.",
+          "share002-pixelshooter3d": "Playable 3D pixel shooter sample with fast arena combat, enemy encounters, weapon handling, and a WebGL demo for browser play.",
+          "galaxiga": "Arcade space shooter development covering campaign and endless modes, player ships, wingmen, bullet patterns, boss encounters, localization, and push notifications.",
+          "homeDesign": "Casual home makeover game development combining renovation and puzzle progression with mobile UI, reward feedback, Android optimization, and release delivery.",
+          "tilecandy": "Candy-themed tile puzzle development covering matching rules, slot management, level progression, UI animation, daily rewards, hint boosters, and mobile optimization.",
+          "tilesmatch3": "Mahjong-inspired tile puzzle development covering matching rules, board clearing, level progression, themes, rewards, offline-friendly play, UI integration, and publishing.",
+          "sudoku": "Mobile Sudoku with clear UI, dark mode, saved progress, offline play, generated puzzles, daily challenges, hints, undo, and four difficulty levels.",
+          "ageofbattle": "Playable strategy battler sample with configurable melee and ranged units, data-driven waves, cards, upgrades, economy, persistence, and coordinated game-state and UI systems.",
+          "surviver": "Survivor-style action template with auto-attack combat, enemy waves, randomized skill synergies, permanent hero progression, stage hazards, and mobile gameplay feedback.",
+          "metameAmusementPark": "Unreal Engine amusement park development covering quest guidance, synchronized passcodes, camera and ride interactions, sitting animations, scene audio, and SceneCapture fixes.",
+          "cryptoquest": "Unity WebGL GameFi RPG development covering inventory UI, localization, character systems, backend-connected quests, live-ops fixes, and performance optimization within a 14-person team.",
+          "flyingphoenix": "Personal mobile MMORPG in development, bringing combat, equipment, inventory, mounts, pets, and connected feature navigation into a portrait Unity interface."
+        }
+      },
+      "rpg": {
+        "label": "RPG / MMORPG",
+        "intro": "Unity gameplay engineering for RPG and MMORPG systems, from combat and character progression to quests, multiplayer content, resource loading, and mobile optimization.",
+        "skills": [
+          "Unity",
+          "C#",
+          "Combat Systems",
+          "Character Progression",
+          "Multiplayer Systems",
+          "Performance Profiling"
+        ],
+        "cta": "Discuss an RPG or MMORPG role",
+        "projectKeys": [
+          "flyingphoenix",
+          "muloren",
+          "jx1",
+          "archero",
+          "surviver",
+          "nekoverse",
+          "cryptoquest"
+        ],
+        "projectDescriptions": {
+          "brproxies": "Cross-platform browser profile and proxy management launcher for macOS, Windows, and Linux, with local HTTP automation, MCP, and Python/Node SDKs.",
+          "gamestudio-codexkit": "MOStudio Kit: a beta evidence-first operating toolkit for Codex and Hermes, spanning Unity clients, C++/Lua MMORPG services, MySQL, player data, content pipelines, release gates, and live operations.",
+          "proxyapi-mad": "Independent full-stack integration and adaptation of CLIProxyAPI, connecting multi-provider AI proxy operations with API key management, dashboards, request logs, and agent workflows.",
+          "muloren": "Mobile MMORPG systems covering quests, class mechanics, monster spawning, PvE/PvP events, and battle interactions, supported by UI integration and 3D profiling.",
+          "jx1": "Martial-arts MMORPG systems spanning faction progression, differentiated combat styles, large-scale PvP content, multiplayer implementation, resource loading, and mobile device optimization.",
+          "dalgona": "Technical leadership within a 15-person team delivering a Unity WebGL candy challenge with difficulty progression, rankings, and World App integration.",
+          "shibainu": "Casual food-truck simulation with customer service gameplay, responsive mobile interactions, progression feedback, reward flows, and Android performance and release work.",
+          "idleCyber": "Idle tower-defense combat with hero collection, stages, boss waves, upgrades, and reward progression, developed for a funded GameFi title across mobile and WebGL.",
+          "nekoverse": "MMORPG battles with elemental skills, equipment modifiers, PvE/PvP combat feedback, resource farming, and crafting alongside Unity NFT and staking integration.",
+          "sandwich": "Idle sandwich-shop game development covering sandwich assembly, customer orders, gameplay UI, device performance optimization, and analytics for player engagement.",
+          "archero": "Action roguelite prototype with room-based combat, enemy AI, bosses, randomized skill choices, and connected hero and gear progression for mobile play.",
+          "bike": "Physics-based bike stunt game development covering the bike controller, obstacle-track progression, gameplay HUD, visual feedback, and mobile build maintenance.",
+          "MeowFlow": "Cat-themed path-connection puzzle development covering puzzle rules, level progression, clear gameplay UI, mobile performance optimization, and integrated player analytics.",
+          "share001-ludo": "Playable Unity Ludo sample built around classic board rules, local turn flow, polished game UI, and a browser-accessible WebGL demo.",
+          "share002-pixelshooter3d": "Playable 3D pixel shooter sample with fast arena combat, enemy encounters, weapon handling, and a WebGL demo for browser play.",
+          "galaxiga": "Arcade space shooter development covering campaign and endless modes, player ships, wingmen, bullet patterns, boss encounters, localization, and push notifications.",
+          "homeDesign": "Casual home makeover game development combining renovation and puzzle progression with mobile UI, reward feedback, Android optimization, and release delivery.",
+          "tilecandy": "Candy-themed tile puzzle development covering matching rules, slot management, level progression, UI animation, daily rewards, hint boosters, and mobile optimization.",
+          "tilesmatch3": "Mahjong-inspired tile puzzle development covering matching rules, board clearing, level progression, themes, rewards, offline-friendly play, UI integration, and publishing.",
+          "sudoku": "Sudoku development covering puzzle generation and validation, four difficulty levels, daily challenges, hints, undo, progress tracking, offline play, and mobile publishing.",
+          "ageofbattle": "Playable strategy battler sample with configurable melee and ranged units, data-driven waves, cards, upgrades, economy, persistence, and coordinated game-state and UI systems.",
+          "surviver": "Survivor-style action template connecting auto-attack combat, enemy waves, randomized upgrade synergies, permanent hero progression, stage spawn zones, and environmental hazards.",
+          "metameAmusementPark": "Unreal Engine virtual amusement park with integrated quest guidance, synchronized passcodes, camera controls, sitting animations, and ride interactions for exploration.",
+          "cryptoquest": "Turn-based GameFi RPG systems covering dynamic backend-connected quests, beasts, equipment, skills, consumables, rarity, inventory, and localization within a 14-person team.",
+          "flyingphoenix": "Personal Unity MMORPG in development, linking live combat, skill builds, hero equipment, inventory, mount advancement, pet collection, and mounted world exploration."
+        }
+      },
+      "web3": {
+        "label": "GameFi / Web3",
+        "intro": "Unity gameplay delivery connected to NFT assets, wallets, staking, and Web3 mini-app platforms, with hands-on work on funded GameFi products.",
+        "skills": [
+          "Unity",
+          "WebGL",
+          "NFT Integration",
+          "Wallet Integration",
+          "GameFi",
+          "World App"
+        ],
+        "cta": "Discuss a GameFi or Web3 role",
+        "projectKeys": [
+          "idleCyber",
+          "nekoverse",
+          "dalgona",
+          "cryptoquest"
+        ],
+        "projectDescriptions": {
+          "brproxies": "Cross-platform browser profile and proxy management launcher for macOS, Windows, and Linux, with local HTTP automation, MCP, and Python/Node SDKs.",
+          "gamestudio-codexkit": "MOStudio Kit: a beta evidence-first operating toolkit for Codex and Hermes, spanning Unity clients, C++/Lua MMORPG services, MySQL, player data, content pipelines, release gates, and live operations.",
+          "proxyapi-mad": "Independent full-stack integration and adaptation of CLIProxyAPI, connecting multi-provider AI proxy operations with API key management, dashboards, request logs, and agent workflows.",
+          "muloren": "Mobile MMORPG development covering quests, class mechanics, monster spawning, PvE/PvP events, UI integration, and performance profiling within a collaborative Unity team.",
+          "jx1": "Martial-arts MMORPG development covering faction progression, large-scale multiplayer content, resource loading, SDK integration, and optimization across mobile devices.",
+          "dalgona": "World App mini-game delivery combining Unity WebGL optimization, candy challenge mechanics, difficulty progression, and rankings under technical leadership within a 15-person team.",
+          "shibainu": "Casual food-truck simulation with customer service gameplay, responsive mobile interactions, progression feedback, reward flows, and Android performance and release work.",
+          "idleCyber": "Unity GameFi development combining idle tower-defense gameplay with wallet and testnet flows, plus a basic NFT marketplace proof of concept.",
+          "nekoverse": "Unity integration of NFT assets and staking mechanisms alongside battles, elemental skills, and mobile profiling for a funded GameFi MMORPG.",
+          "sandwich": "Idle sandwich-shop game development covering sandwich assembly, customer orders, gameplay UI, device performance optimization, and analytics for player engagement.",
+          "archero": "Action roguelite prototype with one-touch controls, enemy AI, room progression, bosses, randomized skills, and hero and gear progression for mobile play.",
+          "bike": "Physics-based bike stunt game development covering the bike controller, obstacle-track progression, gameplay HUD, visual feedback, and mobile build maintenance.",
+          "MeowFlow": "Cat-themed path-connection puzzle development covering puzzle rules, level progression, clear gameplay UI, mobile performance optimization, and integrated player analytics.",
+          "share001-ludo": "Playable Unity Ludo sample built around classic board rules, local turn flow, polished game UI, and a browser-accessible WebGL demo.",
+          "share002-pixelshooter3d": "Playable 3D pixel shooter sample with fast arena combat, enemy encounters, weapon handling, and a WebGL demo for browser play.",
+          "galaxiga": "Arcade space shooter development covering campaign and endless modes, player ships, wingmen, bullet patterns, boss encounters, localization, and push notifications.",
+          "homeDesign": "Casual home makeover game development combining renovation and puzzle progression with mobile UI, reward feedback, Android optimization, and release delivery.",
+          "tilecandy": "Candy-themed tile puzzle development covering matching rules, slot management, level progression, UI animation, daily rewards, hint boosters, and mobile optimization.",
+          "tilesmatch3": "Mahjong-inspired tile puzzle development covering matching rules, board clearing, level progression, themes, rewards, offline-friendly play, UI integration, and publishing.",
+          "sudoku": "Sudoku development covering puzzle generation and validation, four difficulty levels, daily challenges, hints, undo, progress tracking, offline play, and mobile publishing.",
+          "ageofbattle": "Playable strategy battler sample with configurable melee and ranged units, data-driven waves, cards, upgrades, economy, persistence, and coordinated game-state and UI systems.",
+          "surviver": "Survivor-style action template with auto-attack combat, enemy waves, randomized skill synergies, permanent hero progression, stage hazards, and mobile gameplay feedback.",
+          "metameAmusementPark": "Unreal Engine amusement park development covering quest guidance, synchronized passcodes, camera and ride interactions, sitting animations, scene audio, and SceneCapture fixes.",
+          "cryptoquest": "Unity gameplay delivery for a WebGL GameFi RPG, covering backend-connected quests, character systems, localization, internal tooling, and live-ops within a 14-person team.",
+          "flyingphoenix": "Personal Unity MMORPG in development, connecting live combat, skills, equipment, inventory, mounts, pets, and world traversal through a portrait mobile interface."
+        }
+      },
+      "automation": {
+        "label": "Full-stack / AI Automation",
+        "intro": "Full-stack development across clients, server-side systems, AI proxy infrastructure, dashboards, and agentic workflows, with Telegram and n8n integrations.",
+        "skills": [
+          "Agentic AI",
+          "Proxy API",
+          "Internal Tools",
+          "N8N",
+          "Telegram Bot API",
+          "Docker"
+        ],
+        "cta": "Discuss an AI automation role",
+        "projectKeys": [
+          "proxyapi-mad",
+          "brproxies",
+          "gamestudio-codexkit"
+        ],
+        "projectDescriptions": {
+          "brproxies": "Cross-platform browser profile and proxy management launcher for macOS, Windows, and Linux, with local HTTP automation, MCP, and Python/Node SDKs.",
+          "gamestudio-codexkit": "MOStudio Kit: a beta evidence-first operating toolkit for Codex and Hermes, spanning Unity clients, C++/Lua MMORPG services, MySQL, player data, content pipelines, release gates, and live operations.",
+          "proxyapi-mad": "Independent full-stack integration and adaptation of CLIProxyAPI, combining a React/TypeScript management UI with a Go proxy backend for multi-provider operations and agent workflows.",
+          "muloren": "Mobile MMORPG development covering quests, class mechanics, monster spawning, PvE/PvP events, UI integration, and performance profiling within a collaborative Unity team.",
+          "jx1": "Martial-arts MMORPG development covering faction progression, large-scale multiplayer content, resource loading, SDK integration, and optimization across mobile devices.",
+          "dalgona": "Technical leadership within a 15-person team delivering a Unity WebGL candy challenge with difficulty progression, rankings, and World App integration.",
+          "shibainu": "Casual food-truck simulation with customer service gameplay, responsive mobile interactions, progression feedback, reward flows, and Android performance and release work.",
+          "idleCyber": "Funded GameFi tower-defense development covering idle progression, combat, rewards, ads, mobile/WebGL delivery, and wallet and NFT marketplace prototype flows.",
+          "nekoverse": "Funded GameFi MMORPG development combining PvE/PvP battles, elemental skills, Unity NFT and staking integration, and mobile performance profiling.",
+          "sandwich": "Idle sandwich-shop game development covering sandwich assembly, customer orders, gameplay UI, device performance optimization, and analytics for player engagement.",
+          "archero": "Action roguelite prototype with one-touch controls, enemy AI, room progression, bosses, randomized skills, and hero and gear progression for mobile play.",
+          "bike": "Physics-based bike stunt game development covering the bike controller, obstacle-track progression, gameplay HUD, visual feedback, and mobile build maintenance.",
+          "MeowFlow": "Cat-themed path-connection puzzle development covering puzzle rules, level progression, clear gameplay UI, mobile performance optimization, and integrated player analytics.",
+          "share001-ludo": "Playable Unity Ludo sample built around classic board rules, local turn flow, polished game UI, and a browser-accessible WebGL demo.",
+          "share002-pixelshooter3d": "Playable 3D pixel shooter sample with fast arena combat, enemy encounters, weapon handling, and a WebGL demo for browser play.",
+          "galaxiga": "Arcade space shooter development covering campaign and endless modes, player ships, wingmen, bullet patterns, boss encounters, localization, and push notifications.",
+          "homeDesign": "Casual home makeover game development combining renovation and puzzle progression with mobile UI, reward feedback, Android optimization, and release delivery.",
+          "tilecandy": "Candy-themed tile puzzle development covering matching rules, slot management, level progression, UI animation, daily rewards, hint boosters, and mobile optimization.",
+          "tilesmatch3": "Mahjong-inspired tile puzzle development covering matching rules, board clearing, level progression, themes, rewards, offline-friendly play, UI integration, and publishing.",
+          "sudoku": "Sudoku engineering covering puzzle generation, rule validation, four difficulty levels, daily challenges, hints, undo, and persistent progress with offline play.",
+          "ageofbattle": "Strategy battler sample structured around ScriptableObject-driven waves, configurable units, progression data, persistence, and separate game-state and UI responsibilities in Unity.",
+          "surviver": "Survivor-style action template with auto-attack combat, enemy waves, randomized skill synergies, permanent hero progression, stage hazards, and mobile gameplay feedback.",
+          "metameAmusementPark": "Unreal Engine amusement park development covering quest guidance, synchronized passcodes, camera and ride interactions, sitting animations, scene audio, and SceneCapture fixes.",
+          "cryptoquest": "Backend-connected quest logic and internal account, cutscene, and ScriptableObject tools supporting gameplay delivery, live-ops fixes, and optimization in a 14-person RPG team.",
+          "flyingphoenix": "Personal Unity MMORPG in development, connecting live combat, skills, equipment, inventory, mounts, pets, and world traversal through a portrait mobile interface."
+        }
+      },
+      "all": {
+        "label": "All Work",
+        "intro": "Explore the complete portfolio across mobile games, RPG and MMORPG systems, GameFi integrations, and AI automation tools.",
+        "skills": [
+          "Unity",
+          "C#",
+          "Game Development",
+          "Web3/NFT",
+          "Agentic AI",
+          "Automation Tools"
+        ],
+        "cta": "Discuss a role or project",
+        "projectKeys": [
+          "brproxies",
+          "gamestudio-codexkit",
+          "proxyapi-mad",
+          "muloren",
+          "jx1",
+          "dalgona",
+          "shibainu",
+          "idleCyber",
+          "nekoverse",
+          "sandwich",
+          "archero",
+          "bike",
+          "MeowFlow",
+          "share001-ludo",
+          "share002-pixelshooter3d",
+          "galaxiga",
+          "homeDesign",
+          "tilecandy",
+          "tilesmatch3",
+          "sudoku",
+          "ageofbattle",
+          "surviver",
+          "metameAmusementPark",
+          "cryptoquest",
+          "iceBreakingBattle",
+          "citybuilder",
+          "neighborhood",
+          "flyingphoenix"
+        ],
+        "projectDescriptions": {
+          "brproxies": "Cross-platform browser profile and proxy management launcher for macOS, Windows, and Linux, with local HTTP automation, MCP, and Python/Node SDKs.",
+          "gamestudio-codexkit": "MOStudio Kit: a beta evidence-first operating toolkit for Codex and Hermes, spanning Unity clients, C++/Lua MMORPG services, MySQL, player data, content pipelines, release gates, and live operations.",
+          "proxyapi-mad": "Independent full-stack integration and adaptation of CLIProxyAPI, connecting multi-provider AI proxy operations with API key management, dashboards, request logs, and agent workflows.",
+          "muloren": "Mobile MMORPG development covering quests, class mechanics, monster spawning, PvE/PvP events, UI integration, and performance profiling within a collaborative Unity team.",
+          "jx1": "Martial-arts MMORPG development covering faction progression, large-scale multiplayer content, resource loading, SDK integration, and optimization across mobile devices.",
+          "dalgona": "Technical leadership within a 15-person team delivering a Unity WebGL candy challenge with difficulty progression, rankings, and World App integration.",
+          "shibainu": "Casual food-truck simulation with customer service gameplay, responsive mobile interactions, progression feedback, reward flows, and Android performance and release work.",
+          "idleCyber": "Funded GameFi tower-defense development covering idle progression, combat, rewards, ads, mobile/WebGL delivery, and wallet and NFT marketplace prototype flows.",
+          "nekoverse": "Funded GameFi MMORPG development combining PvE/PvP battles, elemental skills, Unity NFT and staking integration, and mobile performance profiling.",
+          "sandwich": "Idle sandwich-shop game development covering sandwich assembly, customer orders, gameplay UI, device performance optimization, and analytics for player engagement.",
+          "archero": "Action roguelite prototype with one-touch controls, enemy AI, room progression, bosses, randomized skills, and hero and gear progression for mobile play.",
+          "bike": "Physics-based bike stunt game development covering the bike controller, obstacle-track progression, gameplay HUD, visual feedback, and mobile build maintenance.",
+          "MeowFlow": "Cat-themed path-connection puzzle development covering puzzle rules, level progression, clear gameplay UI, mobile performance optimization, and integrated player analytics.",
+          "share001-ludo": "Playable Unity Ludo sample built around classic board rules, local turn flow, polished game UI, and a browser-accessible WebGL demo.",
+          "share002-pixelshooter3d": "Playable 3D pixel shooter sample with fast arena combat, enemy encounters, weapon handling, and a WebGL demo for browser play.",
+          "galaxiga": "Arcade space shooter development covering campaign and endless modes, player ships, wingmen, bullet patterns, boss encounters, localization, and push notifications.",
+          "homeDesign": "Casual home makeover game development combining renovation and puzzle progression with mobile UI, reward feedback, Android optimization, and release delivery.",
+          "tilecandy": "Candy-themed tile puzzle development covering matching rules, slot management, level progression, UI animation, daily rewards, hint boosters, and mobile optimization.",
+          "tilesmatch3": "Mahjong-inspired tile puzzle development covering matching rules, board clearing, level progression, themes, rewards, offline-friendly play, UI integration, and publishing.",
+          "sudoku": "Sudoku development covering puzzle generation and validation, four difficulty levels, daily challenges, hints, undo, progress tracking, offline play, and mobile publishing.",
+          "ageofbattle": "Playable strategy battler sample with configurable melee and ranged units, data-driven waves, cards, upgrades, economy, persistence, and coordinated game-state and UI systems.",
+          "surviver": "Survivor-style action template with auto-attack combat, enemy waves, randomized skill synergies, permanent hero progression, stage hazards, and mobile gameplay feedback.",
+          "metameAmusementPark": "Unreal Engine amusement park development covering quest guidance, synchronized passcodes, camera and ride interactions, sitting animations, scene audio, and SceneCapture fixes.",
+          "cryptoquest": "Senior Unity development within a 14-person GameFi RPG team, covering backend-connected quests, character systems, inventory, localization, internal tools, and live-ops support.",
+          "flyingphoenix": "Personal Unity MMORPG in development, connecting live combat, skills, equipment, inventory, mounts, pets, and world traversal through a portrait mobile interface."
+        }
+      }
+    }
+  },
   "identity": {
     "fullName": "TRAN VAN HOA",
     "displayName": "HoaTV",
     "alias": "MAD",
     "title": "Senior Game Developer",
-    "headline": "8+ years building high-quality 2D/3D games, funded GameFi/Web3 titles, agentic systems, automation, and AI-powered tools",
+    "headline": "Senior Unity Developer with 8+ years in games; full-stack client/server development, system architecture, and AI automation workflows",
     "nationality": "Vietnamese",
     "location": {
       "city": "Ha Noi",
@@ -35,8 +303,8 @@
     "itchIo": "https://o0-mad-0o.itch.io/"
   },
   "about": {
-    "summary": "Senior Unity Developer with 8+ years in the game industry and primary hands-on development responsibility across the projects in this portfolio, including 2D/3D games, funded GameFi/Web3 products, agentic systems, automation workflows, and internal tools.",
-    "pitch": "As a primary developer, I build and deliver cross-platform Unity experiences and automation systems with custom game mechanics, clean UI/UX, optimized performance, scalable design systems, agentic workflows, proxy APIs, Telegram/n8n pipelines, and production support.",
+    "summary": "Senior Unity Developer with 8+ years in the game industry and primary hands-on development responsibility across the projects in this portfolio. My freelance scope also includes full-stack client and server/backend development, system architecture, automation design, and AI skills and agent workflows for companies and large projects.",
+    "pitch": "I connect gameplay, backend services, APIs, and internal tools to deliver working products. My hands-on game work spans gameplay systems, UI/UX, mobile optimization, release delivery, and live-ops support; my automation work connects AI agents, proxy infrastructure, and operational workflows.",
     "techStack": [
       "Unity",
       "C#",
@@ -80,7 +348,7 @@
     },
     {
       "title": "Game Blockchain Integration",
-      "description": "Integrate NFTs, wallets, and GameFi features seamlessly into Unity games."
+      "description": "Connect NFTs, wallets, and GameFi features to Unity gameplay."
     },
     {
       "title": "Agentic AI & Automation",
@@ -209,7 +477,7 @@
     {
       "company": "Freelancer / Remote Team Developer",
       "position": "Lead Developer / Freelancer",
-      "period": "Jan 2025 - Present",
+      "period": "2025 - Present",
       "description": "Full-stack development across Unity clients, server-side systems, automation architecture, and AI workflows for companies and large-scale projects.",
       "highlights": [
         "Build Unity client applications and server-side systems, connecting gameplay, backend services, and APIs",
@@ -221,7 +489,7 @@
     {
       "company": "Gamota - Gabros Team",
       "position": "Senior Unity Developer",
-      "period": "July 2023 - June 2024",
+      "period": "2023 - 2024",
       "description": "Casual and idle mobile game development for publisher-backed releases.",
       "highlights": [
         "Built and maintained gameplay for Sandwich Please, DOP, DIY, and puzzle titles",
@@ -232,10 +500,10 @@
     {
       "company": "Neko Global",
       "position": "Project Manager / Senior Unity Developer",
-      "period": "July 2022 - May 2023",
+      "period": "2022 - 2023",
       "description": "Hands-on Unity development and project coordination for Nekoverse, a funded GameFi MMORPG.",
       "highlights": [
-        "Owned core Unity gameplay implementation for Nekoverse, including real-time PvE/PvP combat and elemental skill interactions",
+        "Owned core Unity gameplay implementation for Nekoverse, including PvE/PvP battles and elemental skill interactions",
         "Integrated NFT assets, staking, resource farming, and crafting with gameplay systems",
         "Profiled gameplay scenes and optimized performance across mobile devices",
         "Managed task breakdown and team coordination while remaining hands-on in development"
@@ -244,7 +512,7 @@
     {
       "company": "BLAMEO Technology",
       "position": "Project Manager / Technical Leader",
-      "period": "June 2021 - May 2022",
+      "period": "2021 - 2022",
       "description": "Game team setup, technical planning, and hands-on multiplayer development.",
       "highlights": [
         "Built the game development team, including hiring, onboarding, task assignment, and technical standards",
@@ -255,7 +523,7 @@
     {
       "company": "BEEMOB Studio",
       "position": "Unity Developer",
-      "period": "March 2021 - June 2021",
+      "period": "2020 - 2021",
       "description": "Hands-on Unity development for Idle Cyber, a funded idle tower-defense/GameFi title, within a team of 10.",
       "highlights": [
         "Owned core Unity implementation for Idle Cyber, including idle progression, tower-defense combat, upgrades, and rewards",
@@ -264,20 +532,9 @@
       ]
     },
     {
-      "company": "Techies Studio",
-      "position": "Technical Leader",
-      "period": "November 2019 - June 2020",
-      "description": "Technical architecture, Unity implementation, and development team coordination.",
-      "highlights": [
-        "Designed project architecture and developed Unity features directly",
-        "Managed task assignment and mentored developers through implementation",
-        "Handled release support and trained team members on project systems"
-      ]
-    },
-    {
       "company": "2NF Office Solutions",
       "position": "Unity Developer",
-      "period": "March 2019 - August 2019",
+      "period": "2019 - 2020",
       "description": "Unity feature development and maintenance across active products.",
       "highlights": [
         "Implemented Unity features, resolved bugs, and maintained active products",
@@ -287,7 +544,7 @@
     {
       "company": "CSCMobi Studio",
       "position": "Unity Developer",
-      "period": "November 2017 - June 2018",
+      "period": "2017 - 2018",
       "description": "Gameplay implementation and maintenance for shipped Unity games.",
       "highlights": [
         "Built gameplay features and resolved bugs in shipped Unity games",
@@ -297,6 +554,318 @@
   ],
   "projects": [
     {
+      "id": "brproxies",
+      "ownership": "Primary Developer",
+      "title": "BrProxies",
+      "category": "agentic",
+      "genre": "Developer Tool / AI Automation",
+      "engine": "Rust / Tauri / React / TypeScript",
+      "role": "Primary Developer",
+      "description": "Cross-platform browser profile and proxy management launcher for macOS, Windows, and Linux, with local HTTP automation, MCP, and Python/Node SDKs.",
+      "summary": "Cross-platform browser profile and proxy management launcher for macOS, Windows, and Linux, with local HTTP automation, MCP, and Python/Node SDKs.",
+      "slug": "brproxies",
+      "legacyId": "brproxies",
+      "detailKey": "brproxies",
+      "status": "active",
+      "type": "tool",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "macOS (Apple Silicon)",
+        "Windows (x64)",
+        "Linux (x64)"
+      ],
+      "links": {
+        "github": "https://github.com/hoatv2211/BrProxies",
+        "website": "https://hoatv2211.github.io/BrProxies/"
+      },
+      "image": {
+        "src": "assets/images/portfolio-details/brproxies/fingerprints.detail.webp",
+        "alt": "BrProxies genuine fingerprint library UI, cropped to hardware presets"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 24,
+      "detail": {
+        "tier": "B",
+        "mode": "rendered",
+        "statusLabel": "Developer tool case study",
+        "context": "Cross-platform browser profile and proxy management launcher for macOS, Windows, and Linux, with local HTTP automation, MCP, and Python/Node SDKs.",
+        "presentation": {
+          "layoutVariant": "product-console",
+          "theme": "brproxies",
+          "eyebrow": "AI / Automation · Developer Tool",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#071018",
+            "panel": "#102331",
+            "accent": "#55d5e8",
+            "accentAlt": "#7ee787",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "workflow",
+              "kicker": "Implementation overview",
+              "title": "Profiles and local automation in one workspace",
+              "body": "A Rust/Tauri launcher connects profile and proxy management to HTTP API, MCP, and SDK entry points. Platform-specific runtime archives and release builds cover macOS Apple Silicon, Windows x64, and Linux x64.",
+              "mediaKeys": [
+                "settings",
+                "website"
+              ],
+              "layout": "console"
+            }
+          ]
+        },
+        "contribution": [
+          "Primary developer: built the Rust/Tauri desktop launcher and React/TypeScript workspace for browser profiles, fingerprints, and proxy management.",
+          "Connected profile launch and CDP handoff with the local HTTP automation API, MCP server, and Python/Node SDKs.",
+          "Integrated local proxy services with platform-specific browser runtime loading and release builds for macOS Apple Silicon, Windows x64, and Linux x64."
+        ],
+        "engineering": {
+          "challenge": "Bring isolated browser profiles, proxy infrastructure, and scriptable operations into one cross-platform desktop workspace, with platform-specific runtime installation and local services.",
+          "implementation": [
+            "Built the Rust/Tauri desktop launcher and React/TypeScript workspace for browser profiles, fingerprints, and proxy management.",
+            "Connected profile launch and CDP handoff with the local HTTP automation API, MCP server, and Python/Node SDKs.",
+            "Integrated local proxy services with platform-specific browser runtime loading and release builds for macOS Apple Silicon, Windows x64, and Linux x64."
+          ],
+          "outcome": "Delivered a desktop launcher and local automation integration spanning profile management, proxy operations, HTTP API access, MCP, and SDK entry points.",
+          "evidenceNote": "Release assets and CI cover macOS Apple Silicon, Windows x64, and Linux x64; the Rust runtime loader selects platform-specific browser archives. Account Keeper uses Windows-specific DPAPI protection, and Android AVD guidance targets Windows. The browser runtime is downloaded separately and retains upstream terms."
+        },
+        "evidence": [
+          {
+            "label": "Github",
+            "url": "https://github.com/hoatv2211/BrProxies",
+            "status": "public"
+          },
+          {
+            "label": "Website",
+            "url": "https://hoatv2211.github.io/BrProxies/",
+            "status": "public"
+          },
+          {
+            "label": "Releases",
+            "url": "https://github.com/hoatv2211/BrProxies/releases",
+            "status": "public"
+          },
+          {
+            "label": "Cross-platform build matrix",
+            "url": "https://github.com/hoatv2211/BrProxies/blob/main/.github/workflows/release.yml",
+            "status": "public"
+          },
+          {
+            "label": "Platform runtime loader",
+            "url": "https://github.com/hoatv2211/BrProxies/blob/main/src-tauri/src/runtime.rs",
+            "status": "public"
+          },
+          {
+            "label": "README and scope",
+            "url": "https://github.com/hoatv2211/BrProxies/blob/main/README.md",
+            "status": "public"
+          }
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/brproxies/fingerprints.detail.webp",
+            "alt": "BrProxies genuine fingerprint library UI, cropped to hardware presets",
+            "fit": "contain",
+            "featured": true,
+            "width": 1000,
+            "height": 733,
+            "key": "hero",
+            "sourceUrl": "https://github.com/hoatv2211/BrProxies/blob/main/docs/screenshots/fingerprints.png"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/brproxies/settings.detail.webp",
+            "alt": "BrProxies genuine settings UI: proxy geo checker and fingerprint screen resolution; automation credentials excluded by crop",
+            "fit": "contain",
+            "featured": false,
+            "width": 1000,
+            "height": 353,
+            "key": "settings",
+            "sourceUrl": "https://github.com/hoatv2211/BrProxies/blob/main/docs/screenshots/settings.png"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/brproxies/website.detail.webp",
+            "alt": "BrProxies official website preview, cropped to landing copy to exclude account and proxy data in embedded screenshot",
+            "fit": "contain",
+            "featured": false,
+            "width": 610,
+            "height": 495,
+            "key": "website",
+            "sourceUrl": "https://hoatv2211.github.io/BrProxies/"
+          }
+        ]
+      },
+      "logo": {
+        "src": "assets/images/portfolio-details/brproxies/logo.webp",
+        "alt": "BrProxies official application icon",
+        "sourceUrl": "https://github.com/hoatv2211/BrProxies/blob/main/src-tauri/icons/icon.png"
+      }
+    },
+    {
+      "id": "gamestudio-codexkit",
+      "ownership": "Primary Developer",
+      "title": "GameStudio-CodexKIT",
+      "category": "agentic",
+      "genre": "Developer Tool / AI Automation",
+      "engine": "Python / AI Agent Skills",
+      "role": "Primary Developer",
+      "description": "MOStudio Kit: a beta evidence-first operating toolkit for Codex and Hermes, spanning Unity clients, C++/Lua MMORPG services, MySQL, player data, content pipelines, release gates, and live operations.",
+      "summary": "MOStudio Kit: a beta evidence-first operating toolkit for Codex and Hermes, spanning Unity clients, C++/Lua MMORPG services, MySQL, player data, content pipelines, release gates, and live operations.",
+      "slug": "gamestudio-codexkit",
+      "legacyId": "gamestudio-codexkit",
+      "detailKey": "gamestudio-codexkit",
+      "status": "active",
+      "type": "tool",
+      "featured": false,
+      "featuredOrder": null,
+      "platforms": [
+        "Codex App / CLI",
+        "Hermes Agent"
+      ],
+      "links": {
+        "github": "https://github.com/hoatv2211/GameStudio-CodexKIT",
+        "website": "https://hoatv2211.github.io/GameStudio-CodexKIT/"
+      },
+      "image": {
+        "src": "assets/images/portfolio-details/gamestudio-codexkit/website.detail.webp",
+        "alt": "MOStudio Kit official website preview; illustrative route console is landing-page content, not verified runtime output"
+      },
+      "detailRoute": null,
+      "playableUrl": null,
+      "externalUrl": null,
+      "runtimeLinks": {
+        "apiUrlAndroid": null,
+        "apiUrlIos": null
+      },
+      "displayOrder": 25,
+      "detail": {
+        "tier": "B",
+        "mode": "rendered",
+        "statusLabel": "Beta developer toolkit",
+        "context": "MOStudio Kit: a beta evidence-first operating toolkit for Codex and Hermes, spanning Unity clients, C++/Lua MMORPG services, MySQL, player data, content pipelines, release gates, and live operations.",
+        "presentation": {
+          "layoutVariant": "product-console",
+          "theme": "gamestudio-codexkit",
+          "eyebrow": "AI / Automation · Developer Tool",
+          "heroMediaKey": "hero",
+          "palette": {
+            "ink": "#071018",
+            "panel": "#102331",
+            "accent": "#55d5e8",
+            "accentAlt": "#7ee787",
+            "text": "#f7f6f1",
+            "muted": "#b7bfd4"
+          },
+          "storyBeats": [
+            {
+              "id": "workflow",
+              "kicker": "Implementation overview",
+              "title": "Evidence-aware workflows for game studios",
+              "body": "MOStudio Kit separates verified results, snapshots, unverified work, and blocked tasks while routing specialist workflows.",
+              "mediaKeys": [
+                "evidence",
+                "overview"
+              ],
+              "layout": "console"
+            }
+          ]
+        },
+        "contribution": [
+          "Primary developer: developed canonical AI skills and agent workflows for Unity, C++/Lua MMORPG servers, game databases, and release operations.",
+          "Built Python maintenance and terminal-adapter tooling around shared workflow catalogs and deterministic routing evaluations.",
+          "Defined evidence states and mutation gates that keep verified results, snapshots, unverified work, and blocked tasks distinct."
+        ],
+        "engineering": {
+          "challenge": "Route live-game maintenance requests into bounded specialist workflows while protecting player data and requiring inspectable evidence.",
+          "implementation": [
+            "Developed canonical AI skills and agent workflows for Unity, C++/Lua MMORPG servers, game databases, and release operations.",
+            "Built Python maintenance and terminal-adapter tooling around shared workflow catalogs and deterministic routing evaluations.",
+            "Defined evidence states and mutation gates that keep verified results, snapshots, unverified work, and blocked tasks distinct."
+          ],
+          "outcome": "Delivered the beta MOStudio Kit catalog and distribution workflows for Codex and Hermes Agent, with Python tooling, evaluation fixtures, and documented adoption evidence.",
+          "evidenceNote": "The README, architecture, and adoption report describe the implementation and observed evidence separately. The toolkit is beta; individual workflows may remain experimental or blocked. Repository overview artwork is product documentation, not an application screenshot or proof that every workflow is production-validated."
+        },
+        "evidence": [
+          {
+            "label": "Github",
+            "url": "https://github.com/hoatv2211/GameStudio-CodexKIT",
+            "status": "public"
+          },
+          {
+            "label": "Website",
+            "url": "https://hoatv2211.github.io/GameStudio-CodexKIT/",
+            "status": "public"
+          },
+          {
+            "label": "README and scope",
+            "url": "https://github.com/hoatv2211/GameStudio-CodexKIT/blob/main/README.md",
+            "status": "public"
+          },
+          {
+            "label": "Architecture",
+            "url": "https://github.com/hoatv2211/GameStudio-CodexKIT/blob/main/docs/architecture/overview.md",
+            "status": "public"
+          },
+          {
+            "label": "Adoption evidence and limitations",
+            "url": "https://github.com/hoatv2211/GameStudio-CodexKIT/blob/main/docs/adoption.md",
+            "status": "public"
+          }
+        ],
+        "media": [
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/gamestudio-codexkit/website.detail.webp",
+            "alt": "MOStudio Kit official website preview; illustrative route console is landing-page content, not verified runtime output",
+            "fit": "contain",
+            "featured": true,
+            "width": 1440,
+            "height": 1000,
+            "key": "hero",
+            "sourceUrl": "https://hoatv2211.github.io/GameStudio-CodexKIT/"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/gamestudio-codexkit/evidence.detail.webp",
+            "alt": "MOStudio Kit repository artwork explaining evidence states",
+            "fit": "contain",
+            "featured": false,
+            "width": 1440,
+            "height": 810,
+            "key": "evidence",
+            "sourceUrl": "https://github.com/hoatv2211/GameStudio-CodexKIT/blob/main/docs/assets/showcase-handcrafted/slide-05.webp"
+          },
+          {
+            "type": "image",
+            "src": "assets/images/portfolio-details/gamestudio-codexkit/overview.detail.webp",
+            "alt": "MOStudio Kit repository overview artwork, not an application screenshot",
+            "fit": "contain",
+            "featured": false,
+            "width": 1440,
+            "height": 810,
+            "key": "overview",
+            "sourceUrl": "https://github.com/hoatv2211/GameStudio-CodexKIT/blob/main/docs/assets/showcase-handcrafted/slide-01.webp"
+          }
+        ]
+      },
+      "logo": {
+        "src": "assets/images/portfolio-details/gamestudio-codexkit/logo.webp",
+        "alt": "MOStudio Kit official website brand mark",
+        "sourceUrl": "https://hoatv2211.github.io/GameStudio-CodexKIT/"
+      }
+    },
+    {
       "id": "proxyapi-mad",
       "ownership": "Primary Developer",
       "title": "ProxyAPI.MAD",
@@ -304,7 +873,7 @@
       "genre": "Developer Tool / AI Infrastructure",
       "period": "2024 - Present",
       "role": "Founder / Solo Developer",
-      "description": "Part of the mad-agentic ecosystem. An AI proxy infrastructure that enables flexible API proxy solutions, supporting advanced AI automation systems and multi-provider integration.",
+      "description": "Part of the mad-agentic ecosystem. A full-stack integration and adaptation of the upstream CLIProxyAPI project, combining a React/Vite/TypeScript management UI with a Go proxy backend for multi-provider AI operations and automation workflows.",
       "keyFeatures": [
         "Agentic AI Integration: Intelligent automation flows and pipelines via AI Agents",
         "Seamless Proxying: Granular control over incoming/outgoing AI API requests and responses",
@@ -326,7 +895,7 @@
       "platforms": [
         "Web"
       ],
-      "summary": "AI proxy infrastructure with dashboard tools, API key management, logs, provider routing, and agent-ready automation workflows.",
+      "summary": "CLIProxyAPI adaptation integrating a React/TypeScript management UI and Go proxy backend, with API key controls, logs, provider operations, and agent workflows.",
       "image": {
         "src": "assets/images/portfolio-details/proxyapi-mad/323915db83ec.detail.webp",
         "alt": "ProxyAPI.MAD"
@@ -344,11 +913,21 @@
         "mode": "rendered",
         "statusLabel": "Project case study",
         "contribution": [
-          "Primary developer: designed and implemented a multi-provider API proxy layer for agentic automation workflows.",
-          "Built dashboard flows for API keys, providers, chat requests, logs, and runtime settings.",
-          "Added request/response observability and configuration controls for safer provider operations.",
-          "Structured the proxy so additional providers and agents can be integrated without rewriting the core flow."
+          "Primary developer: independently integrated and adapted CLIProxyAPI for the mad-agentic ecosystem.",
+          "Integrated dashboard flows for API keys, providers, chat requests, logs, and runtime settings.",
+          "Connected management UI and backend configuration for provider operations and request observability.",
+          "Adapted the existing multi-provider proxy foundation for agent workflows."
         ],
+        "engineering": {
+          "challenge": "Bring multi-provider AI access and its management workflow together for local and self-managed agent tooling, while building on an existing proxy foundation.",
+          "implementation": [
+            "Integrated and adapted the upstream CLIProxyAPI foundation as ProxyAPI.MAD.",
+            "Connected the React/Vite/TypeScript management UI with the Go proxy and management APIs.",
+            "Integrated API key, provider, chat, log, and settings workflows for operating the adapted system."
+          ],
+          "outcome": "Delivered a full-stack proxy management integration for the mad-agentic ecosystem, connecting provider configuration, operational dashboards, and agent workflows.",
+          "evidenceNote": "Explore the linked source for frontend/backend structure and configuration, and the screenshots for dashboard, API key, provider, chat, log, and settings workflows."
+        },
         "media": [
           {
             "type": "image",
@@ -446,7 +1025,7 @@
               "id": "world",
               "kicker": "Proxy foundation",
               "title": "One proxy layer across multiple AI providers",
-              "body": "Primary developer: designed and implemented a multi-provider API proxy layer for agentic automation workflows.",
+              "body": "The CLIProxyAPI foundation connects multi-provider AI access with a management interface for self-managed agent workflows.",
               "mediaKeys": [
                 "screen-1",
                 "screen-2"
@@ -457,7 +1036,7 @@
               "id": "systems",
               "kicker": "Operational workflow",
               "title": "Dashboard workflows make operations observable",
-              "body": "Built dashboard flows for API keys, providers, chat requests, logs, and runtime settings.",
+              "body": "Integrated dashboard flows for API keys, providers, chat requests, logs, and runtime settings across the management UI and proxy backend.",
               "mediaKeys": [
                 "screen-3",
                 "screen-4"
@@ -468,7 +1047,7 @@
               "id": "progression",
               "kicker": "Extensible delivery",
               "title": "Extensible routing supports new providers and agents",
-              "body": "Added request/response observability and configuration controls for safer provider operations. Structured the proxy so additional providers and agents can be integrated without rewriting the core flow.",
+              "body": "Connected provider configuration, runtime settings, and request observability to support day-to-day proxy operations.",
               "mediaKeys": [
                 "screen-5"
               ],
@@ -544,6 +1123,16 @@
         "tier": "A",
         "mode": "hybrid",
         "statusLabel": "Flagship case study",
+        "engineering": {
+          "challenge": "Carry MU-style quests, class progression, monster encounters, and battle events into a mobile Unity experience with usable UI and device performance constraints.",
+          "implementation": [
+            "Developed and maintained quest flows, class mechanics, and monster-spawning logic as the primary developer within a collaborative team.",
+            "Integrated gameplay UI, in-game events, and battle interactions.",
+            "Performed mobile 3D performance profiling and optimization alongside feature delivery."
+          ],
+          "outcome": "Delivered and maintained interconnected MMORPG gameplay and UI systems for the team's mobile product, with profiling and optimization included in the implementation scope.",
+          "evidenceNote": "The linked trailer and screenshots show the product's world, combat presentation, and UI; product links provide release context."
+        },
         "context": "Mobile MMORPG inspired by the legendary MU Online, bringing classic character classes and intense PvE/PvP content with stunning 3D graphics optimized for mobile.",
         "problem": "Adapt classic MMORPG systems to mobile while preserving familiar MU-style progression and combat.",
         "contribution": [
@@ -1482,14 +2071,14 @@
       "role": "Senior Unity Developer",
       "description": "Play-to-Earn MMORPG built on blockchain technology, offering players a decentralized in-game economy and a Guild system utilizing DAO governance. Players engage in PvE/PvP battles, explore the world, farm resources, and craft items.",
       "keyFeatures": [
-        "Real-time Skill-based Battles: 1v1, 3v3, Tournaments, Boss Raids with elements/skills/equipment",
+        "Battles: 1v1, 3v3, Tournaments, Boss Raids with elements/skills/equipment",
         "Exploration & Resource Farming: discover hidden areas, harvest ores and wood, sell in marketplace",
         "Comprehensive Crafting System: craft items that drive game progression",
         "Neko Temple: stake in-game currencies to earn governance tokens and passive income"
       ],
       "myContributions": [
         "Primary developer: implemented core gameplay mechanics and optimized performance",
-        "Developed real-time battle systems including skill mechanics and elemental interactions",
+        "Developed battle systems including skill mechanics and elemental interactions",
         "Integrated blockchain features (NFT assets, staking mechanisms) into Unity",
         "Conducted performance profiling and optimization for various devices"
       ],
@@ -1499,7 +2088,7 @@
         "Developed PvE/PvP gameplay and optimized mobile performance."
       ],
       "technicalHighlights": [
-        "Real-time PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback",
+        "PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback",
         "Unity gameplay integration for NFT assets, staking concepts, resource farming, crafting, and marketplace value loops",
         "Performance profiling for mobile gameplay scenes inside a distributed GameFi production workflow"
       ],
@@ -1523,7 +2112,7 @@
         "Mobile",
         "Web3"
       ],
-      "summary": "Funded GameFi MMORPG work across real-time PvE/PvP battles, elemental skills, resource farming, crafting, NFT assets, staking, DAO economy, and mobile profiling.",
+      "summary": "Funded GameFi MMORPG work across PvE/PvP battles, elemental skills, resource farming, crafting, NFT assets, staking, DAO economy, and mobile profiling.",
       "image": {
         "src": "assets/images/game/Nekoverse/4.jpg",
         "alt": "nekoverse"
@@ -1540,22 +2129,32 @@
         "tier": "A",
         "mode": "hybrid",
         "statusLabel": "Flagship case study",
+        "engineering": {
+          "challenge": "Connect RPG battle mechanics and elemental skills with GameFi asset and staking integrations while supporting mobile gameplay performance.",
+          "implementation": [
+            "Implemented core Unity gameplay, battle systems, skill mechanics, and elemental interactions as the primary developer.",
+            "Integrated NFT assets and staking mechanisms into Unity gameplay alongside resource farming and crafting systems.",
+            "Profiled gameplay scenes and optimized performance across mobile devices."
+          ],
+          "outcome": "Delivered Unity battles, progression-related systems, GameFi integrations, and mobile optimization work within the funded product team.",
+          "evidenceNote": "The linked trailer and screenshots show the game presentation, while the product page describes its gameplay and GameFi systems."
+        },
         "context": "Play-to-Earn MMORPG built on blockchain technology, offering players a decentralized in-game economy and a Guild system utilizing DAO governance. Players engage in PvE/PvP battles, explore the world, farm resources, and craft items.",
         "problem": "Bring blockchain ownership and economy features into an MMORPG without making gameplay feel wallet-first.",
         "contribution": [
           "Primary developer: implemented core gameplay mechanics and optimized performance",
-          "Developed real-time battle systems including skill mechanics and elemental interactions",
+          "Developed battle systems including skill mechanics and elemental interactions",
           "Integrated blockchain features (NFT assets, staking mechanisms) into Unity",
           "Conducted performance profiling and optimization for various devices"
         ],
         "technicalDecisions": [
-          "Real-time PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback",
+          "PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback",
           "Unity gameplay integration for NFT assets, staking concepts, resource farming, crafting, and marketplace value loops",
           "Performance profiling for mobile gameplay scenes inside a distributed GameFi production workflow"
         ],
         "personalOutcome": [
           "Primary developer: implemented core gameplay mechanics and optimized performance",
-          "Developed real-time battle systems including skill mechanics and elemental interactions"
+          "Developed battle systems including skill mechanics and elemental interactions"
         ],
         "productContext": [
           "Primary developer on a funded GameFi MMORPG."
@@ -1661,7 +2260,7 @@
             {
               "id": "systems",
               "kicker": "Production challenge",
-              "title": "Real-time combat driven by elemental interactions",
+              "title": "Battles driven by elemental interactions",
               "body": "Bring blockchain ownership and economy features into an MMORPG without making gameplay feel wallet-first.",
               "mediaKeys": [
                 "screen-3"
@@ -1672,7 +2271,7 @@
               "id": "progression",
               "kicker": "Systems delivered",
               "title": "Resources, crafting, NFTs, and staking in one loop",
-              "body": "Implemented core gameplay mechanics and optimized performance. Developed real-time battle systems including skill mechanics and elemental interactions.",
+              "body": "Implemented core gameplay mechanics and optimized performance. Developed battle systems including skill mechanics and elemental interactions.",
               "mediaKeys": [
                 "screen-4"
               ],
@@ -1682,7 +2281,7 @@
               "id": "delivery",
               "kicker": "Engineering decisions",
               "title": "Performance profiling across production devices",
-              "body": "Real-time PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback.",
+              "body": "PvE/PvP battle logic with elemental skills, equipment modifiers, and combat feedback.",
               "mediaKeys": [
                 "screen-5"
               ],
@@ -1753,6 +2352,16 @@
           "Implemented gameplay UI and feedback flows for fast mobile sessions.",
           "Optimized performance across target devices and integrated player analytics."
         ],
+        "engineering": {
+          "challenge": "Connect sandwich assembly, incoming orders, and customer service into a readable mobile shop-management loop while supporting device performance and engagement monitoring.",
+          "implementation": [
+            "Developed sandwich assembly, order handling, and customer service gameplay as the primary developer.",
+            "Implemented gameplay UI and feedback flows for mobile play.",
+            "Optimized performance across devices and integrated analytics tools to monitor player engagement."
+          ],
+          "outcome": "Delivered core shop-floor gameplay, UI, device optimization work, and analytics integration for the mobile game.",
+          "evidenceNote": "The linked gameplay video and screenshots show sandwich assembly, the customer service loop, and UI; store links provide product context."
+        },
         "media": [
           {
             "type": "embed",
@@ -3755,6 +4364,16 @@
           "Built beast, equipment, skills, consumables, rarity, inventory, and localization flows.",
           "Created internal account/cutscene/ScriptableObject tools and implemented live-ops fixes and optimization."
         ],
+        "engineering": {
+          "challenge": "Connect dynamic quest creation and completion with backend actor-condition logic, while delivering character-facing systems and practical tools for a WebGL RPG team.",
+          "implementation": [
+            "Implemented dynamic quest creation and completion with backend actor-condition integration as the primary developer within a 14-person team that included separate backend developers.",
+            "Built beast management API integration and UI, equipment, skills, consumables, rarity, inventory, and localization flows.",
+            "Created account-deletion, cutscene, and ScriptableObject Browser tools, alongside live-ops fixes and performance optimization."
+          ],
+          "outcome": "Delivered backend-connected Unity quest and progression features plus internal production tools in collaboration with the team's backend developers.",
+          "evidenceNote": "The screenshots show quest, NPC, equipment, and production-tool interfaces, with website and demo links for product context."
+        },
         "media": [
           {
             "key": "revive",
@@ -4532,7 +5151,7 @@
               "Contributed to a funded GameFi MMORPG",
               "Contributed to a full-scale Play-to-Earn MMORPG with real blockchain token economy",
               "Integrated NFT assets, on-chain staking, and DAO governance systems into Unity",
-              "Developed real-time PvP/PvE battle systems with elemental skill mechanics",
+              "Developed PvP/PvE battle systems with elemental skill mechanics",
               "Part of a distributed team; handled performance profiling across low-end devices"
             ],
             "blockchain": {

@@ -79,7 +79,7 @@ window.SITE_CONFIG = {
         width: 40
       },
       title: "Game Blockchain Integration",
-      description: "Integrate NFTs, wallets, and GameFi features seamlessly into Unity games."
+      description: "Connect NFTs, wallets, and GameFi features to Unity gameplay."
     },
     {
       icon: {

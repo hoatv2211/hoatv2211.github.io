@@ -139,10 +139,22 @@ window.PORTFOLIO_DETAIL_INDEX = [
     "tier": "B"
   },
   {
+    "detailKey": "brproxies",
+    "status": "active",
+    "type": "tool",
+    "tier": "B"
+  },
+  {
     "detailKey": "iceBreakingBattle",
     "status": "archived",
     "type": "archived",
     "tier": "C"
+  },
+  {
+    "detailKey": "gamestudio-codexkit",
+    "status": "active",
+    "type": "tool",
+    "tier": "B"
   },
   {
     "detailKey": "citybuilder",
