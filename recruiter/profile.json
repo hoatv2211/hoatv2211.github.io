@@ -1,14 +1,51 @@
 {
   "role": "Senior Unity Developer",
-  "summary": "Hands-on Unity development for casual and puzzle games: gameplay rules, mobile UI, progression, performance profiling, analytics, and release support.",
-  "projectKeys": ["sandwich", "MeowFlow", "tilesmatch3", "sudoku", "bike", "muloren"],
-  "experienceHighlights": [[0, 3], [0, 1, 2], [0, 2], [0, 1], [0, 2], [0], [0]],
+  "summary": "Senior Unity Developer with 8+ years in games and 100+ games shipped across commercial MMORPGs and casual/simulation mobile production. I take game concepts from rapid prototypes through production, optimization, and release, using my own tools and AI-agent skills to accelerate delivery. The public portfolio shows selected work from that broader delivery history.",
+  "snapshot": ["8+ years Unity / C#", "100+ games shipped", "Commercial MMORPGs & mobile optimization", "Rapid prototyping → production tooling"],
+  "projectKeys": ["jx1", "muloren", "sandwich", "dalgona", "sudoku", "MeowFlow"],
+  "experienceHighlights": [[0, 1, 2, 3], [0, 1, 2], [0, 2], [1, 0, 2], [0, 2], [0], [0]],
+  "projectCopy": {
+    "jx1": ["Owned Unity gameplay implementation and mobile production delivery for a commercial MMORPG.", "Built multiplayer systems, resource loading, and SDK integration for broad device coverage.", "Delivered faction progression and large-scale PvP content alongside mobile optimization."],
+    "muloren": ["Built quest, class, and monster-spawning systems within a collaborative team.", "Profiled and optimized mobile gameplay; integrated UI, in-game events, and battle systems."],
+    "sandwich": ["Built sandwich assembly, order handling, and customer-service systems for an idle simulation loop.", "Connected gameplay UI and feedback with target-device optimization and player analytics for mobile delivery."],
+    "dalgona": ["Led technical delivery of core mechanics, difficulty progression, and win/lose logic within a team of 15.", "Built animated UI and rankings; optimized World App mini-app integration and maintained published updates."],
+    "sudoku": ["Implemented puzzle generation and validation across four difficulty levels.", "Connected daily challenges, hints, undo, saved progress, and offline play with mobile UI, dark mode, optimization, and publishing."],
+    "MeowFlow": ["Built path-connection puzzle rules and level progression with clear gameplay UI and feedback.", "Integrated analytics and optimized performance for mobile delivery."],
+    "gamestudio-codexkit": ["Built MOStudio Kit (beta): AI skills and evidence-first workflows for Unity, C++/Lua MMORPG services, databases, and release operations.", "Developed Python maintenance tools and deterministic routing evaluations with explicit evidence states and mutation gates."],
+    "proxyapi-mad": ["Independently integrated and adapted the upstream CLIProxyAPI foundation for agent workflows.", "Connected provider configuration, API-key dashboards, request logs, and management UI/backend operations."],
+    "brproxies": ["Built the Rust/Tauri launcher and React/TypeScript browser-profile and proxy workspace.", "Connected CDP handoff, local HTTP automation, MCP, and Python/Node SDKs with cross-platform runtime and release delivery."]
+  },
+  "skillGroups": {
+    "Client / core production": "Unity, C#; gameplay, multiplayer, resource loading, mobile UI, profiling, SDK integration; Android, iOS, WebGL.",
+    "Server / integrations": "C++, Lua, Go; client/server systems, backend services, APIs, Firebase, Supabase.",
+    "Web / developer tooling": "TypeScript, JavaScript, PHP, React, Python; Git, Docker, GitHub Actions; AI skills and agent workflows.",
+    "Engineering / leadership": "OOP, SOLID, design patterns; technical planning, hiring, onboarding, mentoring, cross-discipline delivery."
+  },
+  "cvSummary": "Senior Unity Developer with 8+ years in game development and 100+ games shipped across commercial MMORPGs and casual, idle, and puzzle games. Hands-on gameplay ownership from prototype through mobile optimization and release, with technical planning, mentoring, and team coordination.",
+  "toolingSummary": "Builds and uses reusable tools and AI-agent skills to accelerate prototype-to-production delivery.",
+  "fullstack": {
+    "role": "Full-stack Developer | Client/Server & Automation",
+    "summary": "Hands-on developer delivering client/server systems, APIs, integrations, and automation from prototype to production. Background includes 8+ years in game development and 100+ games shipped; current freelance scope extends to system architecture, web tooling, and AI-agent workflows.",
+    "delivery": "Build and use my own reusable tools, AI skills, and agent workflows to accelerate prototyping, implementation, and production delivery. Own requirements breakdown, architecture, integration, and release support while coordinating distributed teams.",
+    "skillGroups": {
+      "Client / applications": "Unity, C#; React, TypeScript, JavaScript; desktop tooling with Rust/Tauri; mobile and WebGL delivery.",
+      "Server / APIs": "C++, Lua, Go; client/server architecture, backend services, API integrations; Firebase, Supabase, AWS; MySQL workflows.",
+      "Web / automation": "PHP, HTML5, Python, Node SDKs; HTTP APIs, MCP, CDP, n8n, Telegram Bot API; AI skills and agent workflows.",
+      "Delivery / collaboration": "Git, Docker, GitHub Actions, CI/CD; technical scoping, milestones, remote team coordination, release support."
+    },
+    "projectKeys": ["flyingphoenix", "jx1", "brproxies", "gamestudio-codexkit", "proxyapi-mad"],
+    "projectCopy": {
+      "flyingphoenix": ["Designed and built a personal Unity MMORPG: combat, skills, characters, inventory, mounts, pets, and connected feature navigation.", "Maintains the client and supporting development environment; personal project in development, not a commercial release."],
+      "jx1": ["Owned Unity gameplay and mobile production delivery for a commercial MMORPG, connecting multiplayer systems, resource loading, SDK integration, and progression."],
+      "brproxies": ["Built a Rust/Tauri launcher and React/TypeScript workspace for browser profiles and proxies.", "Connected CDP handoff, local HTTP automation, MCP, and Python/Node SDKs; integrated runtime loading and release builds for macOS, Windows, and Linux."],
+      "gamestudio-codexkit": ["Built MOStudio Kit (beta): reusable AI skills for Unity, C++/Lua MMORPG services, MySQL workflows, and release operations.", "Developed Python maintenance tools and routing evaluations with explicit evidence states and mutation gates."],
+      "proxyapi-mad": ["Integrated and adapted the upstream CLIProxyAPI foundation, connecting a React/Vite/TypeScript management UI with the Go proxy backend.", "Integrated API-key controls, provider settings, chat requests, logs, and runtime settings for agents."]
+    }
+  },
   "evidence": [
-    {"title": "C# · Unity · OOP · Design Patterns", "source": "skills.fullSkillset", "text": "Core development skills for gameplay systems, mobile interfaces, and maintainable Unity code."},
-    {"title": "Casual & puzzle gameplay", "projectKey": "sudoku", "contributionIndex": 0},
-    {"title": "UI animation & feedback", "projectKey": "tilecandy", "contributionIndex": 1},
-    {"title": "Physics & particles", "projectKey": "bike", "contributionIndex": 0, "extraContributionIndex": 1},
-    {"title": "3D mobile optimization", "projectKey": "muloren", "contributionIndex": 2},
-    {"title": "Core gameplay ownership", "projectKey": "sandwich", "contributionIndex": 0}
+    {"title": "Multiplayer & live-ops systems", "projectKey": "jx1", "text": "JX1 combines multiplayer delivery, resource loading, faction progression, and large-scale PvP content. MU Loren adds quests, class mechanics, monster spawning, and in-game events."},
+    {"title": "Mobile profiling & delivery", "projectKey": "muloren", "text": "Mobile gameplay profiling and device optimization across MU Loren and Sandwich Please!, with SDK integration, analytics, and release support across production work."},
+    {"title": "Gameplay & puzzle systems", "projectKey": "sudoku", "text": "Sudoku generation, validation, and persistence; Meow Flow rules and progression; Sandwich Please! order handling and gameplay feedback. C#, Unity, OOP, SOLID, and design patterns underpin the profile-listed stack."},
+    {"title": "Rapid prototyping & production workflows", "projectKey": "gamestudio-codexkit", "text": "I build and use developer tools and AI-agent skills to accelerate prototyping, implementation, and production delivery. MOStudio Kit (beta) connects Unity and MMORPG workflows with evidence states and release gates; BrProxies provides automation interfaces, and ProxyAPI.MAD adapts upstream CLIProxyAPI for provider operations."}
   ]
 }

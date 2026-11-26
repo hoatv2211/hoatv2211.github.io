@@ -33,6 +33,12 @@ const server = http.createServer((req,res)=>{
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,`overflow at ${width}`);
    const rendered=await page.locator('.project').evaluateAll(cards=>cards.map(c=>c.dataset.project));
    assert.deepEqual([...rendered].sort(),[...activeKeys].sort(),'exact active catalog, once each');
+   const editorial=JSON.parse(fs.readFileSync(path.join(root,'recruiter/profile.json')));
+   assert.deepEqual(rendered.slice(0,6),editorial.projectKeys,'senior priority order');
+   for(const item of editorial.snapshot){
+    assert.equal(await page.getByText(item,{exact:true}).isVisible(),true,'impact fact visible');
+   }
+   assert.equal(await page.locator('#skills').innerText().then(text=>text.includes('Pending measurements')),false);
    for(const project of activeProjects){
     const card=page.locator(`.project[data-project="${project.detailKey}"]`);
     await card.locator(`.project-links a[href="/?project=${project.detailKey}"]`).waitFor({state:'attached'});

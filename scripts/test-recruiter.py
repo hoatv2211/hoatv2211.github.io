@@ -11,7 +11,39 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class RecruiterContract(unittest.TestCase):
-    def test_flying_phoenix_sits_beside_jx1_in_more_work(self):
+    def test_shared_senior_editorial_content_and_factual_guards(self):
+        config = json.loads((ROOT / 'recruiter/profile.json').read_text())
+        html = (ROOT / 'recruiter/index.html').read_text()
+        self.assertIn('100+ games shipped', config['summary'])
+        self.assertIn('selected work from that broader delivery history', config['summary'])
+        for entry in config['evidence']:
+            self.assertIn(escape(entry['text']), html)
+        self.assertNotIn('Pending measurements', html)
+        for label, value in config['skillGroups'].items():
+            self.assertIn(escape(label + ': ' + value), html)
+        self.assertNotIn('Primary developer:', html)
+        self.assertIn('CLIProxyAPI', html)
+        self.assertIn('beta', html)
+        for unsupported in ['Addressables', 'entity culling', 'Object Pooling', '60 FPS', '30%']:
+            self.assertNotIn(unsupported, html)
+
+    def test_editorial_copy_escaping_canonical_dates_and_titles(self):
+        import importlib.util
+        import copy
+        spec = importlib.util.spec_from_file_location('recruiter_builder', ROOT / 'scripts/build-recruiter-portfolio.py')
+        assert spec is not None and spec.loader is not None
+        builder = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(builder)
+        data, config, projects = builder.load()
+        self.assertEqual(projects['jx1']['period'], '2025 - 2026')
+        self.assertEqual(projects['muloren']['period'], '2024 - 2025')
+        edited = copy.deepcopy(config)
+        edited['projectCopy']['jx1'] = ['Built <system> & "UI".']
+        self.assertIn(escape(edited['projectCopy']['jx1'][0]), builder.render(data, edited, projects))
+        for job in data['experience']:
+            self.assertNotIn('Handled ', ' '.join(builder.career_bullets(job, [0, 1])))
+
+    def test_flying_phoenix_retains_personal_classification_in_more_work(self):
         import importlib.util
         spec = importlib.util.spec_from_file_location('recruiter_builder', ROOT / 'scripts/build-recruiter-portfolio.py')
         assert spec is not None and spec.loader is not None
@@ -21,7 +53,8 @@ class RecruiterContract(unittest.TestCase):
         groups = dict(builder.project_groups(data, config))
         keys = [p['detailKey'] for p in groups['More production & interactive work']]
         self.assertEqual(len(keys), 12)
-        self.assertEqual(keys[keys.index('jx1') + 1], 'flyingphoenix')
+        self.assertIn('flyingphoenix', keys)
+        self.assertNotIn('jx1', keys)
         self.assertEqual(projects['flyingphoenix']['type'], 'personal')
 
     def test_visual_identity_and_canonical_media(self):
@@ -83,17 +116,16 @@ class RecruiterContract(unittest.TestCase):
         keys = [p['detailKey'] for p in canonical['projects'] if p.get('status') == 'active']
         rendered = re.findall(r'data-project="([^"]+)"', html)
         self.assertCountEqual(rendered, keys, 'Every active project must appear exactly once on the recruiter page')
-        self.assertEqual(rendered[:6], ['sandwich', 'MeowFlow', 'tilesmatch3', 'sudoku', 'bike', 'muloren'])
+        self.assertEqual(rendered[:6], ['jx1', 'muloren', 'sandwich', 'dalgona', 'sudoku', 'MeowFlow'])
         for key in keys:
             project = next(p for p in canonical['projects'] if p['detailKey'] == key)
             match = re.search(r'<article class="project" data-project="' + re.escape(key) + r'">(.*?)</article>', html, re.S)
             assert match is not None
             card = match.group(1)
-            for field in ['role', 'ownership']:
+            for field in ['role']:
                 if project.get(field):
                     self.assertIn(escape(project[field]), card)
-            for line in (project.get('detail') or {}).get('contribution') or project.get('myContributions') or []:
-                self.assertIn(escape(line), card)
+            self.assertNotRegex(card, r'<li>Primary developer')
             self.assertIn(f'data-project="{key}"', html)
             self.assertIn(f'?project={key}', html)
             self.assertIn(escape(project['title']), html)

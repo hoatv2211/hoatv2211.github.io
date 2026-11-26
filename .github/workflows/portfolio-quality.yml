@@ -29,6 +29,8 @@ jobs:
             /package-lock.json
             /assets/
             /backup/
+            /recruiter/
+            /themes/
             /scripts/
             /projects/
             /cloudflare/
@@ -95,6 +97,11 @@ jobs:
             /index.html
             /404.html
             /backup/recruiter-clean/index.html
+            /recruiter/
+            /assets/Tran-Van-Hoa-Unity-CV.pdf
+            /assets/Tran-Van-Hoa-Fullstack-CV.pdf
+            /themes/game-studio/
+            /themes/dev-console/
             /backup/dev-console/index.html
             /backup/game-studio/index.html
             /projects/dalgona-worldchain/

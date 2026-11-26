@@ -49,7 +49,7 @@ nav a:hover { text-decoration:underline; }
 .hero-portrait { display:flex; justify-content:center; overflow:hidden; background:#292e39; }
 .hero-portrait img { height:100%; max-width:100%; width:100%; min-width:0; object-fit:contain; }
 .hero-portrait img:not(:first-child) { display:none; }
-.work-index { display:flex; justify-content:space-between; align-items:center; gap:24px; padding:22px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font:12px/1.6 var(--mono); color:var(--muted); }
+.work-index { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:24px; padding:22px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font:12px/1.6 var(--mono); color:var(--muted); }
 .work-index strong { color:var(--ink); font-size:26px; font-weight:500; margin-right:10px; }
 .work-index b { color:#74756e; margin:0 8px; font-weight:400; }
 .work-index a { display:inline-flex; align-items:center; min-height:44px; }
@@ -110,3 +110,5 @@ footer nav a { color:var(--muted); font-size:12px; }
 @media(min-width:601px) and (max-width:800px) { .hero-work { display:block; max-width:590px; } .hero-main { height:auto; aspect-ratio:526 / 296; } .hero-bottom { height:245px; min-height:0; border-left:0; border-top:1px solid var(--line); } .hero-note { padding:24px; } .hero-note h2 { font-size:28px; } .hero-portrait img { object-fit:contain; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important; transition:none!important; } .project:hover,.button:hover,.button:active,.project-cover:hover img,.hero-main:hover img,.hero-portrait:hover img { transform:none; } }
 @media print { :root { color-scheme:light; --ink:#222; --muted:#444; --paper:white; --ground:white; --accent:#333; --line:#ccc; } .topbar,footer,.actions,.closing,.hero-work,.work-index,.project-cover { display:none; } main { width:100%; } .intro { display:block; } .project,.job { break-inside:avoid; } .project-body>p,.project ul,.job ul,.summary { color:#333; } }
+/* All impact facts remain visible on compact screens. */
+@media(max-width:800px) { .work-index>span:nth-child(2) { display:block; } }

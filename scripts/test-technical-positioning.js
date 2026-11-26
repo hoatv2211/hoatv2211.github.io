@@ -71,12 +71,12 @@ async function main() {
     const mail = handoff.locator('.portfolio-cta-primary');
     assert.equal(await mail.innerText(), await page.locator('.about-text .portfolio-cta-primary').innerText());
     assert.equal(await mail.getAttribute("href"), await page.locator('.about-text .portfolio-cta-primary').getAttribute('href'));
-    assert.equal(await handoff.getByRole("link", { name: "Download CV" }).getAttribute("href"), "assets/Tran-Van-Hoa-CV.pdf");
+    assert.equal(await handoff.getByRole("link", { name: "Download CV" }).getAttribute("href"), "assets/Tran-Van-Hoa-Fullstack-CV.pdf");
     for (const viewport of [{ width: 1440, height: 900 }, { width: 390, height: 844 }]) {
       await page.setViewportSize(viewport);
       await page.evaluate(() => { window.scrollTo(0, 0); document.querySelector('#loading-overlay')?.remove(); });
       assert.equal(await page.locator('.technical-quick-access').count(), 0, "Redundant Technical work/CV shortcut buttons must be absent");
-      assert.equal(await page.locator('.about-text a[href="assets/Tran-Van-Hoa-CV.pdf"]').count(), 1, "Keep the main CV CTA");
+      assert.equal(await page.locator('.about-text a[href="assets/Tran-Van-Hoa-Fullstack-CV.pdf"]').count(), 1, "Keep the main CV CTA");
       assert.equal(await page.locator('.about-text a[href="#case-study-sample"]').count(), 1, "Keep the main work CTA");
       assert.ok(await page.locator(".hero-video-container").isVisible(), "Keep the intro animation");
     }

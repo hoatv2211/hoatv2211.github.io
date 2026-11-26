@@ -11,6 +11,12 @@ function expect(condition, message) {
 }
 
 const sparseCheckout = workflow.match(/sparse-checkout:\s*\|([\s\S]*?)sparse-checkout-cone-mode:/)?.[1] || "";
+for (const directory of ["recruiter", "themes"]) {
+  expect(
+    sparseCheckout.split("\n").some(line => line.trim() === `/${directory}/`),
+    `Static/data sparse checkout must include /${directory}/ for recruiter tests.`
+  );
+}
 expect(
   /^\s*\/service-worker\.js\s*$/m.test(sparseCheckout),
   "Static/data sparse checkout must include the root-scoped service worker."
