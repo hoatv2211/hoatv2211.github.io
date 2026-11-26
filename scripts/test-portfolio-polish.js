@@ -23,7 +23,8 @@ const mime = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript
     const page = await browser.newPage();
     const errors = [];
     page.on("pageerror", error => errors.push(error.message));
-    for (const width of [390, 320, 768, 1024, 1440]) {
+    const sidebarFailures = [];
+    for (const width of [320, 390, 768, 1024, 1250, 1440]) {
       await page.setViewportSize({ width, height: 900 });
       await page.goto(`http://127.0.0.1:${server.address().port}/index.html?focus=all`);
       await page.waitForSelector(".service-item-box2");
@@ -31,6 +32,50 @@ const mime = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript
         await document.fonts.ready;
         await Promise.all(document.getAnimations().filter(a => a.effect.getTiming().iterations !== Infinity).map(a => a.finished.catch(() => {})));
       });
+      // Exercise the shipped cascade before the isolated polish checks below.
+      const sidebar = page.locator('[data-sidebar]');
+      if (width < 1250) {
+        assert.equal(await sidebar.evaluate(e => e.classList.contains('active')), false, `${width}: contacts initially collapsed`);
+        assert.equal(await page.locator('.sidebar-info_more .contact-link').first().isVisible(), false);
+        await page.locator('[data-sidebar-btn]').click();
+        await page.waitForFunction(() => document.querySelector('[data-sidebar]').classList.contains('active'));
+      }
+      await page.evaluate(async () => {
+        await Promise.all(document.getAnimations().filter(a => a.effect.getTiming().iterations !== Infinity).map(a => a.finished.catch(() => {})));
+      });
+      const sidebarChecks = await sidebar.evaluate(sidebar => {
+        const failures = [];
+        const fields = [...sidebar.querySelectorAll('.realname, .name, .title, .contact-link, .contact-info address')];
+        for (const field of fields) {
+          const style = getComputedStyle(field);
+          const range = document.createRange();
+          range.selectNodeContents(field);
+          const rects = [...range.getClientRects()];
+          const label = field.textContent.trim();
+          if (style.textOverflow === 'ellipsis' || style.overflowX === 'hidden') failures.push(`${label}: truncation CSS`);
+          if (parseFloat(style.fontSize) < 13) failures.push(`${label}: unreadable font`);
+          // Text must fit its own box AND every ancestor, including the sidebar's
+          // intentional collapse clip. Range rects catch inline-flex text clipping.
+          for (let ancestor = field; ancestor && sidebar.contains(ancestor); ancestor = ancestor.parentElement) {
+            const box = ancestor.getBoundingClientRect();
+            if (rects.some(r => r.left < box.left - 1 || r.right > box.right + 1 || r.top < box.top - 1 || r.bottom > box.bottom + 1)) {
+              failures.push(`${label}: text outside ${ancestor.className} (${Math.round(box.width)}px)`);
+              break;
+            }
+          }
+        }
+        return failures;
+      });
+      sidebarFailures.push(...sidebarChecks.map(failure => `${width}px: ${failure}`));
+      assert.deepEqual(await page.locator('.sidebar .contact-link').allTextContents(), ['hoatv.mad@gmail.com', '+84 374 639 758']);
+      if (process.env.SIDEBAR_SCREENSHOT_DIR) {
+        fs.mkdirSync(process.env.SIDEBAR_SCREENSHOT_DIR, { recursive: true });
+        await sidebar.screenshot({ path: path.join(process.env.SIDEBAR_SCREENSHOT_DIR, `sidebar-${width}.png`) });
+      }
+      if (width < 1250) {
+        await page.locator('[data-sidebar-btn]').click();
+        assert.equal(await sidebar.evaluate(e => e.classList.contains('active')), false, `${width}: contacts collapse again`);
+      }
       // Independent of parent integration: mount this override last for its isolated contract.
       await page.evaluate(() => document.querySelectorAll('link[href*="portfolio-polish.css"]').forEach(e => { e.disabled = true; }));
       const original = await page.locator(".hero-video-container").boundingBox();
@@ -73,10 +118,14 @@ const mime = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript
       const ring = await page.locator('.focus-project-card .portfolio-cta').first().evaluate(e => ({ style: getComputedStyle(e).outlineStyle, width: parseFloat(getComputedStyle(e).outlineWidth) }));
       assert.ok(ring.style !== 'none' && ring.width >= 2, `${width}: visible keyboard focus`);
       assert.equal(result.overflow, false, `${width}: no horizontal overflow`);
-      assert.deepEqual(await page.locator('.hero-video-container').boundingBox(), original, `${width}: intro footprint preserved`);
+      const intro = await page.locator('.hero-video-container').boundingBox();
+      // A wrapping sidebar can move the article vertically, but must not resize
+      // or horizontally reposition the established intro layout.
+      assert.deepEqual({ x: intro.x, width: intro.width, height: intro.height }, { x: original.x, width: original.width, height: original.height }, `${width}: intro footprint preserved`);
       assert.equal(await page.evaluate(() => getComputedStyle(document.body).backgroundImage), wallpaper, `${width}: wallpaper preserved`);
       console.log(`PASS ${width}px: six services, shared edges, compact icons, original intro and wallpaper`);
     }
+    assert.deepEqual(sidebarFailures, [], "Sidebar text must remain fully readable in the actual CSS cascade");
     assert.deepEqual(errors, [], "No page exceptions");
   } finally { if (browser) await browser.close(); await new Promise(resolve => server.close(resolve)); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

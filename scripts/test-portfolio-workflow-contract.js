@@ -5,10 +5,14 @@ const root = path.resolve(__dirname, "..");
 const workflowPath = path.join(root, ".github", "workflows", "portfolio-quality.yml");
 const workflow = fs.readFileSync(workflowPath, "utf8");
 const failures = [];
+const browserInstall = workflow.indexOf('node node_modules/playwright-core/cli.js install --with-deps chromium');
+const testStep = workflow.indexOf('- name: Run tests');
 
 function expect(condition, message) {
   if (!condition) failures.push(message);
 }
+expect(browserInstall >= 0 && browserInstall < testStep,
+  "CI must install the locked Playwright Chromium and OS dependencies before browser tests.");
 
 const sparseCheckout = workflow.match(/sparse-checkout:\s*\|([\s\S]*?)sparse-checkout-cone-mode:/)?.[1] || "";
 for (const directory of ["recruiter", "themes"]) {

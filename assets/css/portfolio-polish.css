@@ -121,9 +121,44 @@
   scroll-margin-block: 80px;
 }
 .contact-link { min-height: 44px; display: inline-flex; align-items: center; }
+
+/* The contact row is already a two-column grid. Legacy calc(100% - 64px)
+   widths subtracted the icon a second time, then inline-flex clipped the text. */
+.sidebar .contacts-list .contact-info {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+.sidebar .contact-info .contact-link {
+  display: block;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+}
+.sidebar .info-content {
+  min-width: 0;
+  max-width: 100%;
+}
+.sidebar .info-content :is(.realname, .name, .title) {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  /* Reserve a separate top row for the contact toggle instead of squeezing
+     the name/title between the avatar and a large right-side padding. */
+  .sidebar .sidebar-info { padding-top: 44px; }
+  .sidebar .info-content { padding-right: 0; }
+}
 .skip-link:focus { position: fixed; top: 4px; left: 4px; z-index: 10002; }
 
 @media (max-width: 1249px) {
+  /* Let wrapped identity/contact text determine height, retaining collapse. */
+  .sidebar, .sidebar.active { max-height: none; }
+  .sidebar:not(.active) .sidebar-info_more { display: none; }
+  .sidebar.active .sidebar-info_more { display: block; }
   .sidebar:not(.active) .sidebar-info_more { visibility: hidden !important; opacity: 0 !important; pointer-events: none; }
   .sidebar:not(.active) .sidebar-info_more a { visibility: hidden !important; }
   .sidebar.active .sidebar-info_more { visibility: visible; opacity: 1; }
